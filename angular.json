@@ -129,12 +129,6 @@
             },
             "en": {
               "browserTarget": "wAVdio:build:en"
-            },
-            "prod-de": {
-              "browserTarget": "wAVdio:build:prod-de"
-            },
-            "prod-en": {
-              "browserTarget": "wAVdio:build:prod-en"
             }
           }
         },
