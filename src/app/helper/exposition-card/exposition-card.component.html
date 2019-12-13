@@ -1,7 +1,7 @@
 <a routerLink="{{ link }}" routerLinkActive="active" [attr.aria-labelledby]="'linkLabel_'+exposition._id">
   <div class="card m-1" [ngClass]="{'inactive-item' : exposition.active == false}" [ngStyle]="{'height': height, 'width': width}">
     <img *ngIf="exposition.logo; else elsecase" class="card-img-top"
-         [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename" [alt]="exposition.logo.alternativeText">
+         [src]="'http://localhost:3000/uploads/' + exposition._id + '/' + exposition.logo.filename" [alt]="exposition.logo.alternativeText">
     <ng-template #elsecase>
       <img src="/assets/images/noimage.png" [alt]="expositionAltTextNoImage">
     </ng-template>

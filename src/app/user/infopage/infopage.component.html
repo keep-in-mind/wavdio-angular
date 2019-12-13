@@ -18,7 +18,7 @@
           </li>
           <ng-container *ngIf="this.museum">
             <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
-              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+              <img width="100%" [src]="'http://localhost:3000/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
                    [alt]="getMuseumContent(locale).sitePlan.alternativeText">
             </li>
           </ng-container>

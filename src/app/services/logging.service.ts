@@ -8,7 +8,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 export class LoggingService {
 
-  private url = '/api/v2/logs/';
+  private url = 'http://localhost:3000/api/v2/logs/';
 
   constructor(private http: HttpClient) { }
 

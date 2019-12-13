@@ -22,7 +22,7 @@
           </li>
           <ng-container *ngIf="this.museum">
             <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
-              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+              <img width="100%" [src]="'http://localhost:3000/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
                    [alt]="getMuseumContent(locale).sitePlan.alternativeText">
             </li>
           </ng-container>
@@ -42,7 +42,7 @@
                  *ngFor="let image of getExhibitContent(locale).images"
                  class="slide">
               <img class="card-size" [alt]="image.alternativeText"
-                   [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+                   [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + image.filename">
             </div>
           </ng-container>
           <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
@@ -51,7 +51,7 @@
                    *ngFor="let image of getExhibitContent('de').images"
                    class="slide">
                 <img class="card-size" alt]="image.alternativeText"
-                     [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+                     [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + image.filename">
               </div>
             </ng-template>
           </ng-container>
@@ -73,7 +73,7 @@
           </div>
           <audio #audioplayer (timeupdate)="updateTimeAudio()">
             <ng-container *ngFor="let audio_file of getExhibitContent(locale).audio">
-              <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
+              <source [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + audio_file.filename"
                       [type]="audio_file.mimeType">
             </ng-container>
             <p i18n>Dein Browser unterstützt nicht das HTML5 Audio Feature</p>
@@ -127,7 +127,7 @@
           </div>
           <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
             <ng-container *ngFor="let video_file of getExhibitContent(locale).video">
-              <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
+              <source [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + video_file.filename"
                       [type]="video_file.mimeType">
             </ng-container>
             <p i18n>Dein Browser unterstützt nicht das HTML5 Video Feature.</p>
