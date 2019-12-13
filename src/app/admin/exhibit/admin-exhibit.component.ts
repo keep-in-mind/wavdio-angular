@@ -52,31 +52,31 @@ export class AdminExhibitComponent implements OnInit {
   alertMessage: string;
   showAlert: boolean;
 
-  @ViewChild('videoplayer') set content(content: ElementRef) {
+  @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
     this.videoplayer = content;
   }
 
-  @ViewChild('time') set content3(content: ElementRef) {
+  @ViewChild('time', {static: false}) set content3(content: ElementRef) {
     this.time = content;
   }
 
-  @ViewChild('progress') set content4(content: ElementRef) {
+  @ViewChild('progress', {static: false}) set content4(content: ElementRef) {
     this.progress = content;
   }
 
-  @ViewChild('audioplayer') set content5(content: ElementRef) {
+  @ViewChild('audioplayer', {static: false}) set content5(content: ElementRef) {
     this.audioplayer = content;
   }
 
-  @ViewChild('iconAudio') set content6(content: ElementRef) {
+  @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
     this.iconAudio = content;
   }
 
-  @ViewChild('timeAudio') set content7(content: ElementRef) {
+  @ViewChild('timeAudio', {static: false}) set content7(content: ElementRef) {
     this.timeAudio = content;
   }
 
-  @ViewChild('progressAudio') set content8(content: ElementRef) {
+  @ViewChild('progressAudio', {static: false}) set content8(content: ElementRef) {
     this.progressAudio = content;
   }
 
