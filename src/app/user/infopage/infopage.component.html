@@ -1,0 +1,53 @@
+<!-- Header Section -->
+<section>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" i18n>Informationsseite</a>
+      <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
+              (click)="isNavbarCollapsed = !isNavbarCollapsed"
+              data-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item border p-2">
+            <a routerLink="/" routerLinkActive="active" router i18n>Home</a>
+          </li>
+          <li *ngFor="let infopage of infopages" class="nav-item border p-2">
+            <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active" router>{{ infopage.name }}</a>
+          </li>
+          <ng-container *ngIf="this.museum">
+            <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
+              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+                   [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<!-- Body Section -->
+<section *ngIf="infopage">
+  <div class="container">
+    <h1>{{ infopage.name }}</h1>
+    <p>{{ infopage.text }}</p>
+  </div>
+</section>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3 i18n>Diese Website verwendet Cookies</h3>
+        <p i18n>
+          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
+          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
+          zu können.
+        </p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
+          Ich stimme zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

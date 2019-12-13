@@ -1,0 +1,152 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+  <section class="header ml-3 mt-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
+    </ol>
+    <h1>{{descHeader}}</h1>
+  </section>
+
+  <section *ngIf="this.museum" class="content-left ml-3 mr-2">
+    <!-- Section Museum Forms-->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <label class="form-label mb-2" for="museumname">
+                Museumsname
+              </label>
+              <input id="museumname" class="form-control" type="text" placeholder="Titel"
+                     [(ngModel)]="getMuseumContent(selectedLanguage).name">
+            </div>
+            <div class="col-3">
+              <label class="form-label mb-2" for="lang_select">
+                Sprache
+              </label>
+              <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+          <label class="form-label mb-2" for="welcomeText">
+            Begrüßungstext
+          </label>
+          <textarea id="welcomeText" class="form-control mb-2" rows="5"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
+          <label class="form-label mb-2" for="termsOfUse">
+            Nutzungsbedingungen
+          </label>
+          <textarea id="termsOfUse" class="form-control mb-2" rows="5"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
+          <label class="form-label mb-2" for="termsOfPrivacy">
+            Datenschutzerklärung
+          </label>
+          <textarea id="termsOfPrivacy" class="form-control mb-2"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <button (click)="updateMuseum()" class="btn btn-success w-100">
+                Speichern
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section *ngIf="this.museum" class="content-right ml-3 mr-2">
+    <!-- Section Logo -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descLogo">
+        <div header>
+          <fa-icon [hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
+          </fa-icon>
+          <form class="d-none">
+            <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
+          </form>
+          <fa-icon [hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
+                   (click)="deleteLogo()"></fa-icon>
+        </div>
+        <div body>
+          <img *ngIf="museum.logo" (click)="openImageBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" [alt]="museum.logo.alternativeText"/>
+        </div>
+      </app-box-card>
+    </section>
+    <!--Neues Passwort anlegen-->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-header">Benutzername und Passwort ändern</div>
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <label class="form-label mb-2" for="benutzernameAktuell">
+                Benutzername
+              </label>
+              <input id="benutzernameAktuell" class="form-control" type="text" placeholder="Benutzername"
+                     [(ngModel)]="user.username">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <label class="form-label mb-2" for="benutzernameNeu">
+                Neuer Benutzername
+              </label>
+              <input id="benutzernameNeu" class="form-control" type="text" placeholder="BenutzernameNeu"
+                     [(ngModel)]="user.newUsername">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <label class="form-label mb-2" for="passwortAktuell">
+                Passwort
+              </label>
+              <input id="passwortAktuell" class="form-control" type="password" placeholder="Aktuelles Passwort"
+                     [(ngModel)]="user.password">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <input id="passwortNeu" class="form-control" type="password" placeholder="Neues Passwort"
+                     [(ngModel)]="user.newPassword">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <input id="passwortNeuWiederholt" class="form-control" type="password"
+                     placeholder="Neues Passwort wiederholen" [(ngModel)]="newPasswordRepeat">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <button (click)="updateUser()" class="btn btn-success w-100">
+                Benutzerdaten aktualisieren
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3>Diese Website verwendet Cookies</h3>
+        <p> – nähere Informationen dazu und zu Ihren
+          Rechten als Benutzer finden Sie in
+          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
+          direkt unsere Website besuchen zu können.</p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
+          zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

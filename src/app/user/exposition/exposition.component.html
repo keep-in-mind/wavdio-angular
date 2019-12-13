@@ -1,0 +1,99 @@
+<!-- Header Section -->
+<section *ngIf="exposition">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <span class="navbar-brand font-weight-bold truncate">{{getExpositionContent(locale).name}}</span>
+      <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
+              (click)="isNavbarCollapsed = !isNavbarCollapsed"
+              data-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item border p-2">
+            <a routerLink="/" routerLinkActive="active" i18n>Home</a>
+          </li>
+          <li *ngFor="let infopage of infopages" class="nav-item border p-2">
+            <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
+          </li>
+          <ng-container *ngIf="this.museum">
+            <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
+              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+                   [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<!-- Filter Section -->
+<section *ngIf="exposition" class="mt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 offset-3">
+        <form role="search">
+          <div class="form-group text-center mt-1">
+            <label for="filter" i18n>Exponatnummer eingeben:</label>
+            <input type="number" pattern="\d*" class="form-control" id="filter" [(ngModel)]="filterNumber"
+                   [ngModelOptions]="{standalone: true}"
+                   placeholder="Exponatnummer" i18n-placeholder min="100" step="1">
+            <button class="btn btn-primary mt-2" (click)="manualSelect()" i18n>Suchen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p>
+      <ngb-alert *ngIf="alertMessage" [dismissible]="false">
+        <span role="alert">
+          {{ alertMessage }}
+        </span>
+      </ngb-alert>
+    </p>
+  </div>
+</section>
+<!-- Exhibition List Section -->
+<section *ngIf="exposition" role="main">
+  <div class="container">
+    <div class="grid-container pb-5">
+      <div *ngFor="let exhibit of exhibits" class="mx-auto">
+        <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
+                          [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer Section -->
+<section *ngIf="exposition" role="contentinfo" class="fixed-bottom">
+  <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
+    <div class="container">
+      <div class="row">
+        <div class="col icons py-2 text-center">
+          <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
+                   [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
+        </div>
+        <div class="col icons py-2 text-center">
+          <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
+                   [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3 i18n>Diese Website verwendet Cookies</h3>
+        <p i18n>
+          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
+          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
+          zu können.
+        </p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
+          Ich stimme zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

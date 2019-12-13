@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit, Renderer2} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'wavdio-angular';
+export class AppComponent implements OnInit {
+
+  constructor(@Inject(DOCUMENT) doc: Document, @Inject(LOCALE_ID) locale: string, renderer: Renderer2) {
+    renderer.setAttribute(doc.documentElement, 'lang', locale);
+  }
+
+  ngOnInit(): void {
+  }
 }

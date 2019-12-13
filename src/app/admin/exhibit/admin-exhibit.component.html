@@ -1,0 +1,252 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+  <section *ngIf="exhibit" class="header ml-3 mt-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/admin/exposition/{{exhibit.exposition}}">Ausstellung</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
+    </ol>
+    <h1>{{descHeader}}</h1>
+  </section>
+  <section *ngIf="exhibit" class="content-left ml-3 mr-2">
+    <!-- Section Exposition Forms-->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <input class="form-control" type="text" placeholder="Titel"
+                     [(ngModel)]="getExhibitContent(selectedLanguage).name">
+
+            </div>
+            <div class="col-3">
+              <input class="form-control" type="number" min="100" max="999" placeholder="Code"
+                     [(ngModel)]="exhibit.code">
+            </div>
+            <div class="col-3">
+              <select class="form-control" [(ngModel)]="selectedLanguage">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="mr-2 form-check-label" for="active">
+              Aktiv
+            </label>
+            <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
+          </div>
+          <label class="form-label mb-2" for="beschr">
+            Beschreibung
+          </label>
+          <textarea id="beschr" class="form-control mb-2" rows="7"
+                    [(ngModel)]="getExhibitContent(selectedLanguage).info"></textarea>
+          <label class="form-label mb-2" for="notizen">
+            Notizen
+          </label>
+          <textarea id="notizen" notizen class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <button (click)="updateExhibit()" class="btn btn-success w-100">
+                Speichern
+              </button>
+            </div>
+            <div class="col-6">
+              <button (click)="deleteExhibit()" class="btn btn-danger w-100">
+                Löschen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section External Links -->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col-lg-6">
+              <button [routerLink]="'/admin/statistics/exhibit/'+ exhibit._id" class="btn btn-primary w-100">
+                Statistik anzeigen
+              </button>
+            </div>
+            <div class="col-lg-6">
+              <button (click)="this.openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top">
+                QR-Plakette
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section *ngIf="exhibit" class="content-right ml-3 mr-2">
+    <!-- Section Images -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descImages">
+        <div header>
+          <fa-icon (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
+        </div>
+        <div body *ngFor="let image of getExhibitContent(selectedLanguage).images; let i = index">
+          <div class="profile-pic p-1">
+            <img class="img-thumbnail" (click)="openImageBigView(i, selectedLanguage)"
+                 [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
+          </div>
+        </div>
+      </app-box-card>
+    </section>
+    <!-- Section Video -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descVideo">
+        <div header>
+          <fa-icon (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
+          <ng-container *ngIf="getExhibitContent(selectedLanguage).video.length">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px' ngbDropdownToggle>
+                <fa-icon icon="minus-circle" size="lg"></fa-icon>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div style="text-align:center">Datei löschen..</div>
+                <hr style="margin-top: 0;margin-bottom: 0;">
+                <button class="dropdown-item"
+                        *ngFor="let video_file of getExhibitContent(selectedLanguage).video"
+                        (click)="deleteVideo(video_file.filename)">{{video_file.filename}}</button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div body *ngIf="getExhibitContent(selectedLanguage).video.length">
+          <section class="player">
+            <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
+              <ng-container *ngFor="let video_file of getExhibitContent(selectedLanguage).video">
+                <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
+                        [type]="video_file.mimeType">
+              </ng-container>
+              <p>Your browser does not support the html5 video feature.</p>
+            </video>
+            <progress #progress class="progress" min='0' max='100' value='0'>0% played</progress>
+            <div #time class="time">00:00</div>
+            <div class="controls">
+              <button (click)="playPause()" class="playpause">
+                <ng-container *ngIf="!videoPlaying">
+                  <fa-icon icon="play" size="lg"></fa-icon>
+                </ng-container>
+                <ng-container *ngIf="videoPlaying">
+                  <fa-icon icon="pause" size="lg"></fa-icon>
+                </ng-container>
+              </button>
+              <button (click)="stopIt()" class="stop">
+                <fa-icon icon="stop" size="lg"></fa-icon>
+              </button>
+              <button (click)="rewind()" class="rwd">
+                <fa-icon icon="backward" size="lg"></fa-icon>
+              </button>
+              <button (click)="forward()" class="fwd">
+                <fa-icon icon="forward" size="lg"></fa-icon>
+              </button>
+            </div>
+          </section>
+        </div>
+      </app-box-card>
+    </section>
+    <!-- Section Audio -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descAudio">
+        <div header>
+          <!-- Transcript -->
+          <fa-icon *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
+          (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
+          <button *ngIf="!getExhibitContent(selectedLanguage).transcript"
+          (click)="uploadTranscriptInput.click()" style="margin-right: 10pt">
+            Transkript hinzufügen
+          </button>
+          <button *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt"
+          (click)="deleteTranscript(getExhibitContent(selectedLanguage).transcript.filename)">
+            Transkript löschen
+          </button>
+          <input #uploadTranscriptInput class="d-none" (change)="onTranscriptChanged($event)" type="file" accept=".txt">
+          <ng-template #transcriptModal let-c="close" let-d="dismiss">
+              <div class="modal-header" style="overflow-y: initial !important">
+                <h4 class="modal-title" id="modal-basic-title">Audio Transkript</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="overflow-y: auto; height:400pt;">
+                <p>{{getExhibitContent(selectedLanguage).transcript.text}}</p>
+              </div>
+            </ng-template>
+          <!-- End Transcript-->
+          <fa-icon (click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
+          <ng-container *ngIf="getExhibitContent(selectedLanguage).audio.length">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px' ngbDropdownToggle>
+                <fa-icon icon="minus-circle" size="lg"></fa-icon>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                <div style="text-align:center">Datei löschen..</div>
+                <hr style="margin-top: 0;margin-bottom: 0;">
+                <button class="dropdown-item"
+                        *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio"
+                        (click)="deleteAudio(audio_file.filename)">{{audio_file.filename}}</button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div body *ngIf="getExhibitContent(selectedLanguage).audio.length">
+          <section class="player">
+            <audio #audioplayer (timeupdate)="updateTimeAudio()">
+              <ng-container *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio">
+                <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
+                        [type]="audio_file.mimeType">
+              </ng-container>
+              <p>Your browser does not support the html5 audio feature.</p>
+            </audio>
+            <progress #progressAudio class="progress" min='0' max='100' value='0'>0% played</progress>
+            <div #timeAudio class="time">00:00</div>
+            <div class="controls">
+              <button (click)="playPauseAudio()" class="playpause">
+                <ng-container *ngIf="!audioPlaying">
+                  <fa-icon icon="play" size="lg"></fa-icon>
+                </ng-container>
+                <ng-container *ngIf="audioPlaying">
+                  <fa-icon icon="pause" size="lg"></fa-icon>
+                </ng-container>
+              </button>
+              <button (click)="stopItAudio()" class="stop">
+                <fa-icon class="fa-lg" icon="stop"></fa-icon>
+              </button>
+              <button (click)="rewindAudio()" class="rwd">
+                <fa-icon class="fa-lg" icon="backward"></fa-icon>
+              </button>
+              <button (click)="forwardAudio()" class="fwd">
+                <fa-icon class="fa-lg" icon="forward"></fa-icon>
+              </button>
+            </div>
+          </section>
+        </div>
+      </app-box-card>
+    </section>
+  </section>
+</div>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3>Diese Website verwendet Cookies</h3>
+        <p> – nähere Informationen dazu und zu Ihren
+          Rechten als Benutzer finden Sie in
+          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
+          direkt unsere Website besuchen zu können.</p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
+          zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

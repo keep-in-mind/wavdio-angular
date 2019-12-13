@@ -1,0 +1,51 @@
+<section class="content p-3">
+  <ng-container *ngIf="this.exhibit">
+    <img [src]="'/uploads/' + this.exhibit._id + '/' + this.getExhibitContent(this.lang).images[this.index].filename"
+    [alt]="this.getExhibitContent(this.lang).images[this.index].alternativeText">
+  </ng-container>
+  <ng-container *ngIf="this.exposition">
+    <img *ngIf="this.exposition.logo" [src]="'/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
+    [alt]="this.exposition.logo.alternativeText">
+  </ng-container>
+  <ng-container *ngIf="this.museum">
+    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
+  </ng-container>
+</section>
+<section class="content p-3">
+  <div class="form-row mb-2">
+    <ng-container *ngIf="this.exhibit">
+      <label class="form-label mb-2" for="exhibit">
+        Beschreibung
+      </label>
+      <textarea id="exhibit" class="form-control mb-2" rows="3"
+                [(ngModel)]="this.getExhibitContent(this.lang).images[this.index].alternativeText"></textarea>
+    </ng-container>
+    <ng-container *ngIf="this.exposition">
+      <label class="form-label mb-2" for="exposition">
+        Beschreibung
+      </label>
+      <textarea *ngIf="this.exposition.logo" id="exposition" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
+    </ng-container>
+    <ng-container *ngIf="this.museum">
+      <label class="form-label mb-2" for="museum">
+        Beschreibung
+      </label>
+      <textarea *ngIf="this.museum.logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
+    </ng-container>
+    <div class="col-4">
+      <button (click)="handleUpdate()" class="btn btn-success w-100">
+        Speichern
+      </button>
+    </div>
+    <div class="col-4">
+      <button (click)="handleDelete()" class="btn btn-danger w-100">
+        Löschen
+      </button>
+    </div>
+    <div class="col-4">
+      <button (click)="this.modal.close()" class="btn btn-secondary w-100">
+        Abbrechen
+      </button>
+    </div>
+  </div>
+</section>

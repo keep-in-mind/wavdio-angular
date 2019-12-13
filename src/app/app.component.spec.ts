@@ -1,31 +1,50 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'wavdio-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('wavdio-angular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('wavdio-angular app is running!');
-  });
-});
+// import {FormsModule} from '@angular/forms';
+// import {RouterModule, Routes} from '@angular/router';
+//
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {SlickCarouselModule} from 'ngx-slick-carousel';
+// import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+//
+// import {AppComponent} from './app.component';
+// import {MuseumComponent} from './user/museum/museum.component';
+// import {ExpositionComponent} from './user/exposition/exposition.component';
+// import {ExhibitComponent} from './user/exhibit/exhibit.component';
+//
+// import {NO_ERRORS_SCHEMA} from '@angular/core';
+// import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+//
+// const appRoutes: Routes = [
+//   {path: 'exhibit', component: ExhibitComponent},
+//   {path: 'exposition', component: ExpositionComponent},
+//   {path: '**', component: MuseumComponent},
+// ];
+//
+// describe('AppComponent', () => {
+//
+//   beforeEach((() => {
+//     TestBed.configureTestingModule({
+//       declarations: [
+//         AppComponent,
+//         MuseumComponent,
+//         ExpositionComponent,
+//         ExhibitComponent,
+//       ],
+//       imports: [
+//         NgbModule,
+//         SlickCarouselModule,
+//         FontAwesomeModule,
+//         RouterModule.forRoot(
+//           appRoutes
+//         ),
+//         FormsModule
+//       ],
+//       schemas: [NO_ERRORS_SCHEMA]
+//     }).compileComponents();
+//   }));
+//
+//   it('should create the app', () => {
+//     const fixture = TestBed.createComponent(AppComponent);
+//     const app = fixture.debugElement.componentInstance;
+//     expect(app).toBeTruthy();
+//   });
+// });

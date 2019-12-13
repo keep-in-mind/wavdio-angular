@@ -1,0 +1,42 @@
+<div class="container text-center w-25 my-5">
+  <form #form class="form-signin" (submit)="login()">
+    <img class="mb-4" src="../../../assets/images/wAVdio_Logo_gross.png" alt="wAVdio logo">
+
+    <h1 class="h3 mb-3 font-weight-normal">wAVdio-Anmeldeseite</h1>
+
+    <ng-container *ngIf="isIncorrect">
+      <div
+        style="font-size: 1em; border:2px solid red; border-radius: 1%; background: rgb(250, 188, 188); margin-bottom:1.5em;"
+        ng-hide="false" class="ng-hide">
+        <p>Benutzername oder Passwort inkorrekt!</p>
+      </div>
+    </ng-container>
+
+    <label for="inputUser" class="sr-only">Benutzername</label>
+    <input type="text" class="form-control" placeholder="Benutzername" name="username" required autofocus
+      [(ngModel)]="credentials.username">
+
+
+    <label for="inputPassword" class="sr-only">Passwort</label>
+    <input type="password" class="form-control my-2" name="password" placeholder="Passwort" required
+      [(ngModel)]="credentials.password">
+
+    <button class="btn btn-lg btn-primary btn-block my-4" type="submit">Anmelden</button>
+
+  </form>
+</div>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3>Diese Website verwendet Cookies</h3>
+        <p> – nähere Informationen dazu und zu Ihren
+          Rechten als Benutzer finden Sie in
+          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
+          direkt unsere Website besuchen zu können.</p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
+          zu</button>
+      </div>
+    </div>
+  </ng-container>
+</div>

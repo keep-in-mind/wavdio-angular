@@ -1,0 +1,20 @@
+.container-fluid {
+  padding: 16px;
+}
+
+.breadcrumb {
+  max-height: 25px;
+  font-size: smaller;
+  padding: 0;
+  background: white;
+  margin-bottom: 0;
+}
+
+textarea {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;  
+}
+
+.form-control[readonly] {
+  background-color: white;
+}

@@ -1,0 +1,12 @@
+img {
+  width: 75px;
+  height: 75px;
+
+  object-fit: cover;
+}
+
+.text-max {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
