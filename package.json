@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build --aot --i18n-locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf && lite-server --baseDir=dist/wAVdio",
+    "start": "ng serve --configuration=de",
     "start:nolang": "ng build && node ./bin/server.js",
     "start:en": "ng build --aot --i18n-locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf --output-path dist/wAVdio && ng build --aot --i18n-locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf --output-path dist/wAVdio/en --base-href /en/ && node ./bin/server.js",
     "build:prod": "ng build --prod --aot --i18n-locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf --output-path dist/wAVdio && ng build --prod --aot --i18n-locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf --output-path dist/wAVdio/en --base-href /en/",
