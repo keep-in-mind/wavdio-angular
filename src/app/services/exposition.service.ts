@@ -14,7 +14,7 @@ import {AuthenticationService} from './authentification.service';
 export class ExpositionService {
 
   errorCode: number;
-  private url = 'http://localhost:3000/api/v2/exposition';
+  private url = '/api/v2/exposition';
 
   public constructor(private http: HttpClient,
                      private loggingService: LoggingService,

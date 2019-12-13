@@ -56,7 +56,7 @@
           </div>
           <img *ngIf="getMuseumContent(selectedLanguage).sitePlan" class="w-100"
                [alt]="getMuseumContent(selectedLanguage).sitePlan.alternativeText"
-               [src]="'http://localhost:3000/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).sitePlan.filename"/>
+               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).sitePlan.filename"/>
         </div>
       </app-box-card>
     </section>

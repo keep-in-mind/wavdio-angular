@@ -13,7 +13,7 @@ import {AuthenticationService} from './authentification.service';
 export class InfopageService {
 
   errorCode: number;
-  private url = 'http://localhost:3000/api/v2/infopage';
+  private url = '/api/v2/infopage';
 
   public constructor(private http: HttpClient,
                      private auth: AuthenticationService,

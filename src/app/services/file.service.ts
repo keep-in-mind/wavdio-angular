@@ -23,14 +23,14 @@ export class FileService {
     const formData = new FormData();
     formData.append('file', file, uploadFilename);
 
-    return this.http.post<File>(`http://localhost:3000/upload/${id}`, formData).pipe(
+    return this.http.post<File>(`/upload/${id}`, formData).pipe(
       tap(() => console.log(`Uploaded file ${uploadFilename} to /upload/${id}`)),
       catchError(this.handleError<File>('uploadFile'))
     );
   }
 
   deleteFile(id: string, uploadFilename: string): Observable<File> {
-    return this.http.delete<File>(`http://localhost:3000/upload/${id}/${uploadFilename}`).pipe(
+    return this.http.delete<File>(`/upload/${id}/${uploadFilename}`).pipe(
       tap(() => console.log(`Deleted file ${uploadFilename} from /upload/${id}`)),
       catchError(this.handleError<File>('deleteFile'))
     );
