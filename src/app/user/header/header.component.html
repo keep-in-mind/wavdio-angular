@@ -1,1 +1,29 @@
-<p>header works!</p>
+<!-- Header Section -->
+<section *ngIf="museum">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <span class="navbar-brand font-weight-bold truncate">{{title}}</span>
+      <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
+              (click)="isNavbarCollapsed = !isNavbarCollapsed"
+              data-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item border p-2">
+            <a routerLink="/" routerLinkActive="active" i18n>Home</a>
+          </li>
+          <li *ngFor="let infopage of infopages" class="nav-item border p-2">
+            <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
+          </li>
+          <ng-container *ngIf="this.museum">
+            <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
+              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+                   [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
