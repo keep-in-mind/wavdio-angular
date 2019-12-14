@@ -58,6 +58,7 @@ const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
       {path: '', component: WelcomeComponent},
+      {path: 'museum', component: MuseumComponent},
       {path: 'exposition/:id', component: ExpositionComponent},
       {path: 'exhibit/:id', component: ExhibitComponent},
       {path: 'infopage/:id', component: InfopageComponent},

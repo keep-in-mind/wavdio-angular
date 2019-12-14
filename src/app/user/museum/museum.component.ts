@@ -39,6 +39,7 @@ export class MuseumComponent implements OnInit {
 
   exposition: Exposition;
   exhibits: Exhibit[];
+  expositions: Exposition[];
   infopages: Infopage[];
 
   museum: Museum;
@@ -69,33 +70,21 @@ export class MuseumComponent implements OnInit {
         infopages => this.infopages = infopages
       );
 
-      this.activatedRoute.params.subscribe(
-        params => {
-          const expositionId = params.id;
-
-          this.expositionService.getExposition(expositionId).subscribe(
-            exposition => {
-              this.exposition = exposition;
-              this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) === 'true';
-              this.exhibitService.getExhibits().subscribe(
-                exhibits => this.exhibits = exhibits.filter(exhibit => exhibit.active && exhibit.exposition === exposition._id)
-              );
-            }
-          );
-        });
-
       this.museumService.getMuseums().subscribe(
         museums => {
           this.museum = museums[0];
+          this.expositionService.getExpositions().subscribe(
+            expositions => this.expositions = expositions.filter(exposition => exposition.active)
+          );
         }
       );
     }
   }
 
   manualSelect() {
-    for (const exhibit of this.exhibits) {
-      if (exhibit.code === this.filterNumber) {
-        this.router.navigate([`/exhibit/`, exhibit._id]);
+    for (const exposition of this.expositions) {
+      if (exposition.code === this.filterNumber) {
+        this.router.navigate([`/exposition/`, exposition._id]);
         return;
       }
     }
