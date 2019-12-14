@@ -1,29 +1,46 @@
-<!-- Header Section -->
 <section *ngIf="museum">
   <nav class="navbar navbar-light bg-light">
     <div class="container">
+
+      <!-- Title -->
       <span class="navbar-brand font-weight-bold truncate">{{title}}</span>
-      <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
-              (click)="isNavbarCollapsed = !isNavbarCollapsed"
-              data-target="#mainNavbar">
+
+      <!-- Burger Menu -->
+      <button
+        class="navbar-toggler hidden-sm-up"
+        type="button"
+        [attr.aria-label]="ariaLabelBurgerMenu"
+        (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        data-target="#mainNavbar">
+
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="mainNavbar">
+
+      <!-- Collapsible Menu -->
+      <div id="mainNavbar" class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
         <ul class="navbar-nav mr-auto">
+
+          <!-- Home -->
           <li class="nav-item border p-2">
             <a routerLink="/" routerLinkActive="active" i18n>Home</a>
           </li>
+
+          <!-- Infopages -->
           <li *ngFor="let infopage of infopages" class="nav-item border p-2">
             <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
           </li>
-          <ng-container *ngIf="this.museum">
-            <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
-              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
-                   [alt]="getMuseumContent(locale).sitePlan.alternativeText">
-            </li>
-          </ng-container>
+
+          <!-- Site Plan -->
+          <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
+            <img
+              width="100%"
+              [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+              [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+          </li>
+
         </ul>
       </div>
+
     </div>
   </nav>
 </section>

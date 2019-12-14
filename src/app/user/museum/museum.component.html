@@ -1,5 +1,7 @@
-<app-header [title]="getMuseumContent(locale).name"
-            [ariaLabelBurgerMenu]="ariaLabelBurgerMenu">
+<app-header
+  *ngIf="museum"
+  [title]="getMuseumContent(locale).name"
+  [ariaLabelBurgerMenu]="ariaLabelBurgerMenu">
 </app-header>
 
 <!-- Filter Section -->
