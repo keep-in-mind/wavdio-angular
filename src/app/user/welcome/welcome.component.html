@@ -29,13 +29,8 @@
 <section id="expositions" class="mt-2">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <ngx-slick-carousel *ngIf="termsOfUseFlag" class="carousel mx-4" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let exposition of expositions" style="height: 175px" class="slide">
-            <app-exposition-card [exposition]="exposition" [width]="'95%'" [height]="'95%'" [selectedLanguage]="locale"
-              [link]="'/exposition/'+ exposition._id"></app-exposition-card>
-          </div>
-        </ngx-slick-carousel>
+      <div class="col-12 text-center">
+        <a routerLink="/museum"><button>Continue</button></a>
       </div>
     </div>
   </div>
