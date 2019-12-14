@@ -1,36 +1,5 @@
-<!-- Header Section -->
-<section *ngIf="exposition">
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand font-weight-bold truncate" routerLink="/exposition/{{ exhibit.exposition }}/"
-         routerLinkActive="active" [attr.aria-label]="ariaLabelBackToExposition">
-        <span class="mr-2"><fa-icon icon="chevron-left"></fa-icon></span>
-        <span>{{getExhibitContent(locale).name}}</span>
-      </a>
-      <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
-              (click)="isNavbarCollapsed = !isNavbarCollapsed"
-              data-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item border p-2">
-            <a routerLink="/" routerLinkActive="active" router i18n>Home</a>
-          </li>
-          <li *ngFor="let infopage of infopages" class="nav-item border p-2">
-            <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active" router>{{ infopage.name }}</a>
-          </li>
-          <ng-container *ngIf="this.museum">
-            <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
-              <img width="100%" [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
-                   [alt]="getMuseumContent(locale).sitePlan.alternativeText">
-            </li>
-          </ng-container>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</section>
+<app-header *ngIf="exhibit" [title]="getExhibitContent(locale).name" [showBackArrow]="true"></app-header>
+
 <!-- Carousel Section -->
 <section *ngIf="exhibit" class="mt-2">
   <div class="container">
