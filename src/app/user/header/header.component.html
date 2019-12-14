@@ -3,13 +3,13 @@
     <div class="container">
 
       <!-- Title -->
-      <span class="navbar-brand font-weight-bold truncate">{{title}}</span>
+      <span class="navbar-brand font-weight-bold truncate">{{ title }}</span>
 
       <!-- Burger Menu -->
       <button
         class="navbar-toggler hidden-sm-up"
         type="button"
-        (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        (click)="navbarCollapsed = !navbarCollapsed"
         data-target="#mainNavbar"
         aria-label="Open menu">
 
@@ -17,7 +17,7 @@
       </button>
 
       <!-- Collapsible Menu -->
-      <div id="mainNavbar" class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
+      <div id="mainNavbar" class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed">
         <ul class="navbar-nav mr-auto">
 
           <!-- Home -->

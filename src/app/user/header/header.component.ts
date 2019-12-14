@@ -15,26 +15,24 @@ export class HeaderComponent implements OnInit {
 
   @Input() title: string;
 
-  isNavbarCollapsed = true;
-  infopages: Infopage[];
   museum: Museum;
+  infopages: Infopage[];
+  navbarCollapsed = true;
 
   constructor(
-    @Inject(LOCALE_ID) private locale: string,
+    @Inject(LOCALE_ID) public locale: string,
     private infopageService: InfopageService,
     private museumService: MuseumService
   ) {
   }
 
   ngOnInit() {
-    this.infopageService.getInfopages().subscribe(
-      infopages => this.infopages = infopages
+    this.museumService.getMuseums().subscribe(
+      museums => this.museum = museums[0]
     );
 
-    this.museumService.getMuseums().subscribe(
-      museums => {
-        this.museum = museums[0];
-      }
+    this.infopageService.getInfopages().subscribe(
+      infopages => this.infopages = infopages
     );
   }
 
