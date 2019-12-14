@@ -2,8 +2,16 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container">
 
-      <!-- Title -->
-      <span class="navbar-brand font-weight-bold truncate">{{ title }}</span>
+      <!-- Back Arrow & Title -->
+      <a
+        class="navbar-brand font-weight-bold truncate"
+        routerLink="/museum/"
+        routerLinkActive="active"
+        aria-label="Go back">
+
+        <span *ngIf="showBackArrow" class="mr-2"><fa-icon icon="chevron-left"></fa-icon></span>
+        <span>{{ title }}</span>
+      </a>
 
       <!-- Burger Menu -->
       <button

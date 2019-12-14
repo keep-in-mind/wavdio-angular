@@ -14,6 +14,7 @@ import {MuseumService} from '../../services/museum.service';
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
+  @Input() showBackArrow = false;
 
   museum: Museum;
   infopages: Infopage[];
