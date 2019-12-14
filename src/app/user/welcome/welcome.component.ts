@@ -11,10 +11,10 @@ import {CookielawService} from '../../services/cookielaw.service';
 
 @Component({
   selector: 'app-visitor',
-  templateUrl: './museum.component.html',
-  styleUrls: ['./museum.component.css']
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.css']
 })
-export class MuseumComponent implements OnInit {
+export class WelcomeComponent implements OnInit {
   data: any;
   slideConfig = {
     'slidesToShow': 2,

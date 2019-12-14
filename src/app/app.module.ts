@@ -14,9 +14,9 @@ import {CookieService} from 'ngx-cookie-service';
 
 import {AppComponent} from './app.component';
 
-import {UsageTermsComponent} from './user/museum/usage-terms/usage-terms.component';
+import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
 import {UserComponent} from './user/user.component';
-import {MuseumComponent} from './user/museum/museum.component';
+import {WelcomeComponent} from './user/welcome/welcome.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {CommentComponent} from './user/comment/comment.component';
@@ -56,7 +56,7 @@ import {NgxPrintModule} from 'ngx-print';
 const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
-      {path: '', component: MuseumComponent},
+      {path: '', component: WelcomeComponent},
       {path: 'exposition/:id', component: ExpositionComponent},
       {path: 'exhibit/:id', component: ExhibitComponent},
       {path: 'infopage/:id', component: InfopageComponent},
@@ -91,7 +91,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MuseumComponent,
+    WelcomeComponent,
     ExpositionComponent,
     ExhibitComponent,
     AdminComponent,

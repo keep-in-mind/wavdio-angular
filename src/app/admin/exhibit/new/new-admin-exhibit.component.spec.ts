@@ -4,7 +4,7 @@
 // import {RouterLink, RouterModule, Routes} from '@angular/router';
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import {AppComponent} from '../../../app.component';
-// import {MuseumComponent} from '../../../user/museum/museum.component';
+// import {MuseumComponent} from '../../../user/welcome/welcome.component';
 // import {ExpositionComponent} from '../../../user/exposition/exposition.component';
 // import {ExhibitComponent} from '../../../user/exhibit/exhibit.component';
 // import {AdminComponent} from '../../admin.component';

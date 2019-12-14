@@ -8,7 +8,7 @@
 // import {InfopageComponent} from '../../user/infopage/infopage.component';
 // import {ExhibitComponent} from '../../user/exhibit/exhibit.component';
 // import {ExpositionComponent} from '../../user/exposition/exposition.component';
-// import {MuseumComponent} from '../../user/museum/museum.component';
+// import {MuseumComponent} from '../../user/welcome/welcome.component';
 // import {UserComponent} from '../../user/user.component';
 // import {RouterModule, Routes} from '@angular/router';
 // import {async, ComponentFixture, TestBed} from '@angular/core/testing';
