@@ -14,7 +14,6 @@ import {MuseumService} from '../../services/museum.service';
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
-  @Input() ariaLabelBurgerMenu: string;
 
   isNavbarCollapsed = true;
   infopages: Infopage[];

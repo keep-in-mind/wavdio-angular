@@ -31,7 +31,6 @@ export class MuseumComponent implements OnInit {
   filterNumber: number;
   likedFlag = false;
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
   ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
   ariaLabelLikeExposition = 'Ausstellung liken';
   ariaLabelOpenComment = 'Kommentarfeld öffnen';

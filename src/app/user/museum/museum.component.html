@@ -1,8 +1,4 @@
-<app-header
-  *ngIf="museum"
-  [title]="getMuseumContent(locale).name"
-  [ariaLabelBurgerMenu]="ariaLabelBurgerMenu">
-</app-header>
+<app-header *ngIf="museum" [title]="getMuseumContent(locale).name"></app-header>
 
 <!-- Filter Section -->
 <section *ngIf="museum" class="mt-2">
