@@ -1,9 +1,10 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
+
 import {Infopage} from '../../models/infopage';
-import {InfopageService} from '../../services/infopage.service';
 import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
 import {MuseumContent} from '../../models/museum-content';
+import {InfopageService} from '../../services/infopage.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-header',
