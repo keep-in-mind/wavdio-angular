@@ -51,6 +51,7 @@ import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
 import {NgxPrintModule} from 'ngx-print';
+import { MuseumComponent } from './user/museum/museum.component';
 
 
 const appRoutes: Routes = [
@@ -123,7 +124,8 @@ const appRoutes: Routes = [
     ImageDetailsComponent,
     AlertComponent,
     SpinnerComponent,
-    QrcodeComponent
+    QrcodeComponent,
+    MuseumComponent
   ],
   imports: [
     BrowserModule,
