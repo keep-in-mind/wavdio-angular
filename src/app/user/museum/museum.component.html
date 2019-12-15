@@ -5,31 +5,6 @@
      [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
      [alt]="museum.logo.alternativeText"/>
 
-<!-- Filter Section -->
-<section *ngIf="museum" class="mt-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 offset-3">
-        <form role="search">
-          <div class="form-group text-center mt-1">
-            <label for="filter" i18n>Exponatnummer eingeben:</label>
-            <input type="number" pattern="\d*" class="form-control" id="filter" [(ngModel)]="filterNumber"
-                   [ngModelOptions]="{standalone: true}"
-                   placeholder="Exponatnummer" i18n-placeholder min="100" step="1">
-            <button class="btn btn-primary mt-2" (click)="manualSelect()" i18n>Suchen</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <p>
-      <ngb-alert *ngIf="alertMessage" [dismissible]="false">
-        <span role="alert">
-          {{ alertMessage }}
-        </span>
-      </ngb-alert>
-    </p>
-  </div>
-</section>
 <!-- Exhibition List Section -->
 <section *ngIf="museum" role="main">
   <div class="container">
