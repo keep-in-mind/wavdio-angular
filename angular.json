@@ -34,6 +34,20 @@
             ]
           },
           "configurations": {
+            "de": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-de",
+              "i18nFile": "src/locale/messages.de.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "de"
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-en",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -66,6 +80,12 @@
             "browserTarget": "wAVdio:build"
           },
           "configurations": {
+            "de": {
+              "browserTarget": "wAVdio:build:de"
+            },
+            "en": {
+              "browserTarget": "wAVdio:build:en"
+            },
             "production": {
               "browserTarget": "wAVdio:build:production"
             }
