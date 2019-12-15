@@ -2,7 +2,11 @@
 <section *ngIf="exposition">
   <nav class="navbar navbar-light bg-light">
     <div class="container">
-      <span class="navbar-brand font-weight-bold truncate">{{getExpositionContent(locale).name}}</span>
+      <a class="navbar-brand font-weight-bold truncate" routerLink="/museum/"
+         routerLinkActive="active" [attr.aria-label]="ariaLabelBackToMuseum">
+        <span class="mr-2"><fa-icon icon="chevron-left"></fa-icon></span>
+        <span>{{getExpositionContent(locale).name}}</span>
+      </a>
       <button class="navbar-toggler hidden-sm-up" type="button" [attr.aria-label]="ariaLabelBurgerMenu"
               (click)="isNavbarCollapsed = !isNavbarCollapsed"
               data-target="#mainNavbar">

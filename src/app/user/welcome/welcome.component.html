@@ -1,0 +1,73 @@
+<!-- Language Selection Section -->
+<section id="language">
+  <div class="fixed-top text-right">
+    <div *ngIf="locale === 'en';else other">
+      <span><a href="/">DE</a></span>
+      <span class="text-muted mx-2">EN</span>
+    </div>
+    <ng-template #other>
+      <span class="text-muted mx-2">DE</span>
+      <span><a href="/en/">EN</a></span>
+    </ng-template>
+  </div>
+</section>
+<!-- Heading Section -->
+<section id="heading" class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <img *ngIf="museum && museum.logo" class="heading-image"
+          [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
+        <img *ngIf="museum && !museum.logo" class="heading-image" src="assets/images/wAVdio_Logo_gross.png"
+          alt="Logo">
+        <h1 *ngIf="museum" class="display-4 mt-2">{{ getMuseumContent(locale).welcomeText }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Exposition Selection Section -->
+<section id="expositions" class="mt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <a routerLink="/museum"><button>Continue</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Agreements Section -->
+<section id="agreement" class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
+            (change)="onTermsChange()">
+          <label for="termsOfUse">
+            <span i18n>Ich akzeptiere die</span>
+            <a routerLink="/user/usage-terms/termsOfUse" i18n> Nutzungsbedingungen</a>
+            <span i18n> und die</span>
+            <a routerLink="/user/usage-terms/termsOfPrivacy" i18n> Datenschutzbestimmungen</a>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3 i18n>Diese Website verwendet Cookies</h3>
+        <p i18n>
+          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
+          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
+          zu können.
+        </p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
+          Ich stimme zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

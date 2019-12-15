@@ -1,62 +1,137 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
 import {CookieService} from 'ngx-cookie-service';
-import {ExpositionService} from '../../services/exposition.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {CommentComponent} from '../comment/comment.component';
+import {Exhibit} from '../../models/exhibit';
+import {Infopage} from '../../models/infopage';
+import {ExhibitService} from '../../services/exhibit.service';
 import {Exposition} from '../../models/exposition';
-import {Museum} from 'src/app/models/museum';
-import {MuseumService} from 'src/app/services/museum.service';
-import {MuseumContent} from '../../models/museum-content';
-import {CookielawService} from '../../services/cookielaw.service';
+import {ExpositionService} from '../../services/exposition.service';
+import {InfopageService} from '../../services/infopage.service';
+import {Like} from '../../models/like';
+import {ExpositionContent} from '../../models/exposition-content';
 
+import {CookielawService} from '../../services/cookielaw.service';
+import {MuseumContent} from '../../models/museum-content';
+import {MuseumService} from '../../services/museum.service';
+import {Museum} from '../../models/museum';
 
 @Component({
-  selector: 'app-visitor',
+  selector: 'app-museum',
   templateUrl: './museum.component.html',
   styleUrls: ['./museum.component.css']
 })
 export class MuseumComponent implements OnInit {
-  data: any;
-  slideConfig = {
-    'slidesToShow': 2,
-    'slidesToScroll': 1,
-    infinite: true,
-    dots: true
-  };
+  private _success = new Subject<string>();
+  alertMessage: string;
 
-  termsOfUseFlag = false;
+  filterNumber: number;
+  isNavbarCollapsed = true;
+  likedFlag = false;
 
+  ariaLabelBurgerMenu = 'Menü öffnen';
+  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
+  ariaLabelLikeExposition = 'Ausstellung liken';
+  ariaLabelOpenComment = 'Kommentarfeld öffnen';
+
+  exposition: Exposition;
+  exhibits: Exhibit[];
   expositions: Exposition[];
+  infopages: Infopage[];
+
   museum: Museum;
 
   constructor(
-    @Inject(LOCALE_ID) public locale: string,
-    private expositionService: ExpositionService,
+    @Inject(LOCALE_ID) private locale: string,
     private cookieService: CookieService,
+    private modalService: NgbModal,
+    private router: Router,
     private museumService: MuseumService,
-    public cookieLawService: CookielawService,
-    private router: Router) {
+    private activatedRoute: ActivatedRoute,
+    private exhibitService: ExhibitService,
+    private expositionService: ExpositionService,
+    private infopageService: InfopageService,
+    public cookieLawService: CookielawService) {
   }
 
   ngOnInit() {
-    this.termsOfUseFlag = this.cookieService.get('termsOfUseAccepted') === 'true';
-    this.expositionService.getExpositions().subscribe(
-      expositions => this.expositions = expositions.filter(exposition => exposition.active)
-    );
-    this.museumService.getMuseums().subscribe(
-      museum => this.museum = museum[0]
-    );
-  }
+    if (this.cookieLawService.acceptedTermsOfUse()) {
+      this.router.navigate(['/']);
+    } else {
+      this._success.subscribe((message) => this.alertMessage = message);
+      this._success.pipe(
+        debounceTime(5000)
+      ).subscribe(() => this.alertMessage = null);
 
-  onTermsChange() {
-    this.termsOfUseFlag = !this.termsOfUseFlag;
-    this.cookieService.set('termsOfUseAccepted', this.termsOfUseFlag.toString());
+      this.infopageService.getInfopages().subscribe(
+        infopages => this.infopages = infopages
+      );
 
-    // Check amount of expositions. Case "1" redirect automatically
-    if (this.expositions.length === 1 && this.termsOfUseFlag === true) {
-      this.router.navigate(['/exposition', this.expositions[0]._id]);
+      this.museumService.getMuseums().subscribe(
+        museums => {
+          this.museum = museums[0];
+          this.expositionService.getExpositions().subscribe(
+            expositions => this.expositions = expositions.filter(exposition => exposition.active)
+          );
+        }
+      );
     }
   }
 
+  manualSelect() {
+    for (const exposition of this.expositions) {
+      if (exposition.code === this.filterNumber) {
+        this.router.navigate([`/exposition/`, exposition._id]);
+        return;
+      }
+    }
+    this._success.next('Falsche Nummer');
+  }
+
+  openComment() {
+    const modal = this.modalService.open(CommentComponent, {centered: true});
+    modal.componentInstance.exposition = this.exposition;
+  }
+
+  likeExposition() {
+    if (!this.likedFlag) {
+      this.exposition.likes.push(new Like(new Date()));
+      this.expositionService.updateExpositionCommentLike(this.exposition).subscribe(
+        exposition => {
+          this.likedFlag = true;
+          this.cookieService.set(`exposition${this.exposition._id}`, 'true');
+        }
+      );
+    }
+  }
+
+  getExpositionContent(lang: String): ExpositionContent {
+
+    /* return localized content */
+
+    for (const content of this.exposition.contents) {
+      if (content.lang === lang) {
+        return content;
+      }
+    }
+
+    /* not available ? fall back to German */
+
+    console.warn('No localized content available for locale ' + lang);
+
+    for (const content of this.exposition.contents) {
+      if (content.lang === 'de') {
+        return content;
+      }
+    }
+
+    /* not available ? must not happen. has to be created when constructing exposition */
+
+    console.error('No German fallback content available');
+  }
 
   getMuseumContent(lang: String): MuseumContent {
 

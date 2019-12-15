@@ -6,7 +6,7 @@
 // import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 //
 // import {AppComponent} from './app.component';
-// import {MuseumComponent} from './user/museum/museum.component';
+// import {WelcomeComponent} from './user/welcome/welcome.component';
 // import {ExpositionComponent} from './user/exposition/exposition.component';
 // import {ExhibitComponent} from './user/exhibit/exhibit.component';
 //

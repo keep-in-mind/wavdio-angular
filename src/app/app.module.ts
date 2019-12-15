@@ -14,9 +14,9 @@ import {CookieService} from 'ngx-cookie-service';
 
 import {AppComponent} from './app.component';
 
-import {UsageTermsComponent} from './user/museum/usage-terms/usage-terms.component';
+import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
 import {UserComponent} from './user/user.component';
-import {MuseumComponent} from './user/museum/museum.component';
+import {WelcomeComponent} from './user/welcome/welcome.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {CommentComponent} from './user/comment/comment.component';
@@ -51,12 +51,14 @@ import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
 import {NgxPrintModule} from 'ngx-print';
+import { MuseumComponent } from './user/museum/museum.component';
 
 
 const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
-      {path: '', component: MuseumComponent},
+      {path: '', component: WelcomeComponent},
+      {path: 'museum', component: MuseumComponent},
       {path: 'exposition/:id', component: ExpositionComponent},
       {path: 'exhibit/:id', component: ExhibitComponent},
       {path: 'infopage/:id', component: InfopageComponent},
@@ -91,7 +93,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MuseumComponent,
+    WelcomeComponent,
     ExpositionComponent,
     ExhibitComponent,
     AdminComponent,
@@ -123,7 +125,8 @@ const appRoutes: Routes = [
     ImageDetailsComponent,
     AlertComponent,
     SpinnerComponent,
-    QrcodeComponent
+    QrcodeComponent,
+    MuseumComponent
   ],
   imports: [
     BrowserModule,
