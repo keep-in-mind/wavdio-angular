@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <aside class="sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main class="content mx-3">
+
+    <!-- Breadcrumbs & Header -->
+
+    <header class="mt-2">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/admin/home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Museums-Statistik</li>
+      </ol>
+      <h1>Museums-Statistik</h1>
+    </header>
+
+    <!-- Expositions -->
+
+    <div class="card mt-2">
+      <div class="card-header">
+        Ausstellungen
+      </div>
+      <div class="card-body d-flex flex-wrap">
+        <app-exposition-card *ngFor="let exposition of expositions"
+                             [selectedLanguage]="locale"
+          [exposition]="exposition"
+          [width]="'125px'"
+          [height]="'150px'"
+          [link]="'/admin/statistics/exposition/'+ exposition._id">
+        </app-exposition-card>
+      </div>
+    </div>
+
+  </main>
+</div>

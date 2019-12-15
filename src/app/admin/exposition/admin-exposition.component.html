@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+  <section *ngIf="exposition" class="header ml-3 mt-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
+    </ol>
+    <h1>{{descHeader}}</h1>
+  </section>
+  <section *ngIf="exposition" class="content-left ml-3 mr-2">
+
+    <!-- Section Expositoin Forms-->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-9">
+              <input class="form-control" type="text" placeholder="Titel"
+                     [(ngModel)]="getExpositionContent(selectedLanguage).name">
+            </div>
+            <div class="col-3">
+              <select class="form-control" [(ngModel)]="selectedLanguage">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="mr-2 form-check-label" for="active">
+              Aktiv
+            </label>
+            <input id="active" type="checkbox" [(ngModel)]="exposition.active">
+          </div>
+          <label class="form-label mb-2" for="notizen">
+            Notizen
+          </label>
+          <textarea id="notizen" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <button (click)="updateExposition()" class="btn btn-success w-100">
+                Speichern
+              </button>
+            </div>
+            <div class="col-6">
+              <button (click)="deleteExposition()" class="btn btn-danger w-100">
+                Löschen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section External Links -->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row">
+            <div class="col-lg-6">
+              <button class="btn btn-primary w-100" [routerLink]="'/admin/statistics/exposition/'+ exposition._id">
+                Statistik anzeigen
+              </button>
+            </div>
+            <div class="col-lg-6">
+              <button (click)="openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top">
+                QR-Plakette
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section *ngIf="exposition" class="content-right ml-3 mr-2">
+    <!-- Section Logo-->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descLogo">
+        <div header>
+          <fa-icon [hidden]="exposition.logo" (click)="uploadLogoInput.click()" class="fa-lg" icon="plus-circle">
+          </fa-icon>
+          <form class="d-none">
+            <input #uploadLogoInput (change)="onLogoChanged($event)" type="file" name="file">
+          </form>
+          <fa-icon [hidden]="!exposition.logo" class="fa-lg" icon="minus-circle"
+                   (click)="deleteLogo()"></fa-icon>
+        </div>
+        <div body>
+          <img *ngIf="exposition.logo" (click)="openImageBigView()"
+               [src]="'http://localhost:3000/uploads/' + exposition._id + '/' + exposition.logo.filename"
+               [alt]="exposition.logo.alternativeText"/>
+        </div>
+      </app-box-card>
+    </section>
+    <!-- Section Exhibits -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descExhibitHeader">
+        <div header>
+          <a routerLink="/admin/exhibit/new/{{exposition._id}}" routerLinkActive="active">
+            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let exhibit of exhibits">
+          <app-exhibit-card  [selectedLanguage]="selectedLanguage" [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
+                            [link]="'/admin/exhibit/' + exhibit._id"></app-exhibit-card>
+        </div>
+      </app-box-card>
+    </section>
+  </section>
+</div>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3>Diese Website verwendet Cookies</h3>
+        <p> – nähere Informationen dazu und zu Ihren
+          Rechten als Benutzer finden Sie in
+          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
+          direkt unsere Website besuchen zu können.</p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
+          zu</button>
+      </div>
+    </div>
+  </ng-container>
+</div>

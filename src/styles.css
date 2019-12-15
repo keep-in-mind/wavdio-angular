@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+
+.breadcrumb {
+  max-height: 25px;
+  font-size: smaller;
+  padding: 0;
+  background: white;
+  margin-bottom: 0px;
+}
+
+
+.heading-image {
+  height: 100px;
+  width: auto;
+}
+
+.heading-image-small {
+  height: 50px;
+  width: auto;
+}
+
+fa-icon[icon="minus-circle"]:hover, fa-icon[icon="plus-circle"]:hover {
+  cursor: pointer;
+}
+
+fa-icon[icon="minus-circle"] {
+  color: #ff4444;
+}
+
+fa-icon[icon="plus-circle"] {
+  color: #008800;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: fit-content(100%);
+  grid-template-columns: 50px 1fr;
+  grid-template-areas: "sidebar header" "sidebar content-left" "sidebar content-right";
+}
+
+@media (min-width: 576px) {
+  .wrapper {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-areas: "sidebar header header" "sidebar content-left content-right";
+    height: 100vh;
+  }
+
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content-left {
+  grid-area: content-left;
+}
+
+.content-right {
+  grid-area: content-right;
+}
+
+.inactive-item {
+  background-color: #6c757d;
+  opacity: 0.3;
+  color: white;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

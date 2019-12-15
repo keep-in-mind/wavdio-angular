@@ -1,0 +1,20 @@
+<a routerLink="{{ link }}" routerLinkActive="active" [attr.aria-labelledby]="'linkLabel_'+exhibit._id">
+  <div class="card m-1" [ngClass]="{'inactive-item' : exhibit.active == false}"
+       [ngStyle]="{'height': height, 'width': width}">
+    <img *ngIf="getExhibitContent(selectedLanguage).images.length; else elseifcase"
+         [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + getExhibitContent(selectedLanguage).images[0].filename"
+         [alt]="getExhibitContent(selectedLanguage).images[0].alternativeText">
+    <ng-template #elseifcase>
+      <img *ngIf="getExhibitContent('de').images.length; else elsecase"
+           [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + getExhibitContent('de').images[0].filename" [alt]="exhibitAltTextNoImage">
+    </ng-template>
+    <ng-template #elsecase>
+      <img src="/assets/images/noimage.png" [alt]="exhibitAltTextNoImage">
+    </ng-template>
+    <div class="card-body p-0">
+      <p class="card-text text-center small p-1 my-0"
+         id="linkLabel_{{exhibit._id}}">{{exhibit.code}} - {{getExhibitContent(selectedLanguage).name}}
+      </p>
+    </div>
+  </div>
+</a>

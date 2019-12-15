@@ -1,0 +1,10 @@
+.card-size {
+  height: 55px;
+  width: 150px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

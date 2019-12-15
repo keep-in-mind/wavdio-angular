@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row border-bottom">
+    <div class="col text-center mt-2">
+        <img class="heading-image-small" src="../../../../assets/images/wAVdio_Logo_gross.png" alt="Wavdio-Logo">
+      <h3 *ngIf="descHeader === 'Nutzungsbedingungen'" i18n>Nutzungsbedingungen</h3>
+      <h3 *ngIf="descHeader === 'Datenschutzerklärung'" i18n>Datenschutzerklärung</h3>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div *ngIf="museum" class="col">
+      <div *ngIf="usageTerms === 'termsOfUse'">
+        <pre>{{getMuseumContent(locale).termsOfUse}}</pre>
+      </div>
+      <div *ngIf="usageTerms === 'termsOfPrivacy'">
+        <pre>{{getMuseumContent(locale).privacyTerms}}</pre>
+      </div>
+    </div>
+  </div>
+</div>

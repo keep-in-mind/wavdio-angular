@@ -1,0 +1,25 @@
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.icons {
+  font-size: 1.5rem;
+}
+
+.liked {
+  color: red;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+
+.truncate {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,64 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+  <!-- Section Headings -->
+  <section class="col-12 mt-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
+    </ol>
+    <h1>{{descHeader}}</h1>
+  </section>
+  <section *ngIf="infopage" class="content-left ml-3 mr-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <!-- Section Forms -->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-9">
+              <input class="form-control" type="text" placeholder="Titel" [(ngModel)]="infopage.name">
+            </div>
+            <div class="col-3">
+              <select class="form-control" [(ngModel)]="infopage.lang">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+          <label class="form-label mb-2" for="text">
+            Informationen
+          </label>
+          <textarea id="text" class="form-control mb-2" placeholder="Text" rows="5"
+                    [(ngModel)]="infopage.text"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()">Speichern
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()">Löschen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3>Diese Website verwendet Cookies</h3>
+        <p> – nähere Informationen dazu und zu Ihren
+          Rechten als Benutzer finden Sie in
+          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
+          direkt unsere Website besuchen zu können.</p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
+          zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

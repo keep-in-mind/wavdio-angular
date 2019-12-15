@@ -1,0 +1,31 @@
+<section id="comment" role="dialog" [attr.aria-label]="descCommentLabel">
+  <div class="container">
+    <div class="form py-3" role="form">
+      <div class="form-group">
+        <label for="formComment" i18n>Kommentar eingeben:</label>
+        <textarea class="form-control" [(ngModel)]="comment" id="formComment" rows="7"></textarea>
+      </div>
+      <div class="clearfix mb-2">
+        <button type="button" class="btn btn-secondary float-left" (click)="modal.close()" i18n>Abbrechen</button>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" i18n>Absenden</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div *ngIf="this.cookieLawService">
+  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
+    <div class="fixed-bottom text-center">
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <h3 i18n>Diese Website verwendet Cookies</h3>
+        <p i18n>
+          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
+          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
+          zu können.
+        </p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
+          Ich stimme zu
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
