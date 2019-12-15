@@ -1,5 +1,10 @@
 <app-header *ngIf="museum" [title]="getMuseumContent(locale).name"></app-header>
 
+<img *ngIf="museum.logo"
+     class="w-100"
+     [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
+     [alt]="museum.logo.alternativeText"/>
+
 <!-- Filter Section -->
 <section *ngIf="museum" class="mt-2">
   <div class="container">
