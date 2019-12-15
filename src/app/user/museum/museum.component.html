@@ -1,12 +1,19 @@
-<app-header *ngIf="museum" [title]="getMuseumContent(locale).name"></app-header>
+<app-header *ngIf="museum" [title]=""></app-header>
 
 <img *ngIf="museum.logo"
      class="w-100"
      [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
      [alt]="museum.logo.alternativeText"/>
 
+<h1 class="p-2">{{ getMuseumContent(locale).name }}</h1>
+
+<p class="p-2">
+  Das Stadtarchiv ist voll toll und so. Deswegen kann man viel drüber schreiben.
+  Es wurde damals gegründet und steht immernoch. Ziemlich krass wie ich meine.
+</p>
+
 <!-- Exhibition List Section -->
-<section *ngIf="museum" role="main">
+<section *ngIf="museum" class="mt-4" role="main">
   <div class="container">
     <div class="grid-container pb-5">
       <div *ngFor="let exposition of expositions" class="mx-auto">
