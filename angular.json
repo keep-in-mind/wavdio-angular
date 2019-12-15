@@ -33,37 +33,80 @@
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
+
           "configurations": {
             "de": {
+              "outputPath": "dist/wavdio-de",
               "aot": true,
-              "outputPath": "dist/wAVdio-de",
-              "i18nFile": "src/locale/messages.de.xlf",
+
+              "i18nLocale": "de",
               "i18nFormat": "xlf",
-              "i18nLocale": "de"
+              "i18nFile": "src/locale/messages.de.xlf"
             },
             "en": {
+              "outputPath": "dist/wavdio-en",
               "aot": true,
-              "outputPath": "dist/wAVdio-en",
-              "i18nFile": "src/locale/messages.en.xlf",
+
+              "i18nLocale": "en",
               "i18nFormat": "xlf",
-              "i18nLocale": "en"
+              "i18nFile": "src/locale/messages.en.xlf"
             },
-            "production": {
+            "prod-de": {
+              "outputPath": "dist/wavdio-prod-de",
+              "aot": true,
+
+              "i18nLocale": "de",
+              "i18nFormat": "xlf",
+              "i18nFile": "src/locale/messages.de.xlf",
+
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "prod-en": {
+              "outputPath": "dist/wavdio-prod-en",
+              "aot": true,
+
+              "i18nLocale": "en",
+              "i18nFormat": "xlf",
+              "i18nFile": "src/locale/messages.en.xlf",
+
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+
               "budgets": [
                 {
                   "type": "initial",
@@ -73,6 +116,7 @@
               ]
             }
           }
+
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -85,9 +129,6 @@
             },
             "en": {
               "browserTarget": "wAVdio:build:en"
-            },
-            "production": {
-              "browserTarget": "wAVdio:build:production"
             }
           }
         },
