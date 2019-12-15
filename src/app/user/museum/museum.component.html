@@ -18,23 +18,11 @@
     </div>
   </div>
 </section>
+
 <!-- Footer Section -->
-<section *ngIf="museum" role="contentinfo" class="fixed-bottom">
-  <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
-    <div class="container">
-      <div class="row">
-        <div class="col icons py-2 text-center">
-          <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
-                   [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
-        </div>
-        <div class="col icons py-2 text-center">
-          <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                   [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
-        </div>
-      </div>
-    </div>
-  </nav>
+<section role="contentinfo" class="fixed-bottom bg-light" style="height: 48px">
 </section>
+
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
     <div class="fixed-bottom text-center">
