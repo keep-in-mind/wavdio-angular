@@ -29,10 +29,8 @@ export class MuseumComponent implements OnInit {
   alertMessage: string;
 
   filterNumber: number;
-  isNavbarCollapsed = true;
   likedFlag = false;
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
   ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
   ariaLabelLikeExposition = 'Ausstellung liken';
   ariaLabelOpenComment = 'Kommentarfeld öffnen';
@@ -40,12 +38,11 @@ export class MuseumComponent implements OnInit {
   exposition: Exposition;
   exhibits: Exhibit[];
   expositions: Exposition[];
-  infopages: Infopage[];
 
   museum: Museum;
 
   constructor(
-    @Inject(LOCALE_ID) private locale: string,
+    @Inject(LOCALE_ID) public locale: string,
     private cookieService: CookieService,
     private modalService: NgbModal,
     private router: Router,
@@ -53,7 +50,6 @@ export class MuseumComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
-    private infopageService: InfopageService,
     public cookieLawService: CookielawService) {
   }
 
@@ -65,10 +61,6 @@ export class MuseumComponent implements OnInit {
       this._success.pipe(
         debounceTime(5000)
       ).subscribe(() => this.alertMessage = null);
-
-      this.infopageService.getInfopages().subscribe(
-        infopages => this.infopages = infopages
-      );
 
       this.museumService.getMuseums().subscribe(
         museums => {

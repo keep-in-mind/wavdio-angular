@@ -29,14 +29,11 @@ export class ExpositionComponent implements OnInit {
   alertMessage: string;
 
   filterNumber: number;
-  isNavbarCollapsed = true;
   likedFlag = false;
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
   ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
   ariaLabelLikeExposition = 'Ausstellung liken';
   ariaLabelOpenComment = 'Kommentarfeld öffnen';
-  ariaLabelBackToMuseum = 'Zurück zur Übersicht über das Museum';
 
   exposition: Exposition;
   exhibits: Exhibit[];

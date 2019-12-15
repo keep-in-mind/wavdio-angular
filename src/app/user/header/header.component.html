@@ -1,0 +1,54 @@
+<section *ngIf="museum">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+
+      <!-- Back Arrow & Title -->
+      <a
+        class="navbar-brand font-weight-bold truncate"
+        routerLink="/museum/"
+        routerLinkActive="active"
+        aria-label="Go back">
+
+        <span *ngIf="showBackArrow" class="mr-2"><fa-icon icon="chevron-left"></fa-icon></span>
+        <span>{{ title }}</span>
+      </a>
+
+      <!-- Burger Menu -->
+      <button
+        class="navbar-toggler hidden-sm-up"
+        type="button"
+        (click)="navbarCollapsed = !navbarCollapsed"
+        data-target="#mainNavbar"
+        aria-label="Open menu">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Menu -->
+      <div id="mainNavbar" class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed">
+        <ul class="navbar-nav mr-auto">
+
+          <!-- Home -->
+          <li class="nav-item border p-2">
+            <a routerLink="/" routerLinkActive="active" i18n>Home</a>
+          </li>
+
+          <!-- Infopages -->
+          <li *ngFor="let infopage of infopages" class="nav-item border p-2">
+            <a routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
+          </li>
+
+          <!-- Site Plan -->
+          <li *ngIf="getMuseumContent(locale).sitePlan" class="nav-item border p-2">
+            <img
+              width="100%"
+              [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+              [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</section>
