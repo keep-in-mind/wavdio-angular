@@ -13,7 +13,7 @@ import {LoggingService} from './logging.service';
 export class ExhibitService {
 
   errorCode = 0;
-  private url = 'http://localhost:3000/api/v2/exhibit';
+  private url = '/api/v2/exhibit';
 
   public constructor(
     private http: HttpClient,

@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col text-center">
         <img *ngIf="museum && museum.logo" class="heading-image"
-          [src]="'http://localhost:3000/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
+          [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
         <img *ngIf="museum && !museum.logo" class="heading-image" src="../../../assets/images/wAVdio_Logo_gross.png"
           alt="Logo">
         <h1 *ngIf="museum" class="display-4 mt-2">{{ getMuseumContent(locale).welcomeText }}</h1>

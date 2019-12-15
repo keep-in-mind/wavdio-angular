@@ -1,14 +1,14 @@
 <section class="content p-3">
   <ng-container *ngIf="this.exhibit">
-    <img [src]="'http://localhost:3000/uploads/' + this.exhibit._id + '/' + this.getExhibitContent(this.lang).images[this.index].filename"
+    <img [src]="'/uploads/' + this.exhibit._id + '/' + this.getExhibitContent(this.lang).images[this.index].filename"
     [alt]="this.getExhibitContent(this.lang).images[this.index].alternativeText">
   </ng-container>
   <ng-container *ngIf="this.exposition">
-    <img *ngIf="this.exposition.logo" [src]="'http://localhost:3000/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
+    <img *ngIf="this.exposition.logo" [src]="'/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
     [alt]="this.exposition.logo.alternativeText">
   </ng-container>
   <ng-container *ngIf="this.museum">
-    <img *ngIf="this.museum.logo" [src]="'http://localhost:3000/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
+    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
   </ng-container>
 </section>
 <section class="content p-3">

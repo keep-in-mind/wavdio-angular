@@ -13,7 +13,7 @@ import {AuthenticationService} from './authentification.service';
 export class MuseumService {
 
   errorCode: number;
-  private url = 'http://localhost:3000/api/v2/museum';
+  private url = '/api/v2/museum';
 
   public constructor(
     private http: HttpClient,

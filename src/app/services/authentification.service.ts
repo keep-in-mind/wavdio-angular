@@ -101,9 +101,9 @@ export class AuthenticationService {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`http://localhost:3000/api/v2/${type}`, user);
+      base = this.http.post(`/api/v2/${type}`, user);
     } else {
-      base = this.http.get(`http://localhost:3000/api/v2/${type}`, { headers: { Authorization: `${this.getUserDetails().session_id}` } });
+      base = this.http.get(`/api/v2/${type}`, { headers: { Authorization: `${this.getUserDetails().session_id}` } });
     }
 
     const request = base.pipe(

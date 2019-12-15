@@ -87,7 +87,7 @@
         </div>
         <div body>
           <img *ngIf="exposition.logo" (click)="openImageBigView()"
-               [src]="'http://localhost:3000/uploads/' + exposition._id + '/' + exposition.logo.filename"
+               [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
                [alt]="exposition.logo.alternativeText"/>
         </div>
       </app-box-card>

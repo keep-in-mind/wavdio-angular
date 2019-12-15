@@ -93,7 +93,7 @@
         <div body *ngFor="let image of getExhibitContent(selectedLanguage).images; let i = index">
           <div class="profile-pic p-1">
             <img class="img-thumbnail" (click)="openImageBigView(i, selectedLanguage)"
-                 [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
+                 [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
           </div>
         </div>
       </app-box-card>
@@ -123,7 +123,7 @@
           <section class="player">
             <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
               <ng-container *ngFor="let video_file of getExhibitContent(selectedLanguage).video">
-                <source [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + video_file.filename"
+                <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
                         [type]="video_file.mimeType">
               </ng-container>
               <p>Your browser does not support the html5 video feature.</p>
@@ -202,7 +202,7 @@
           <section class="player">
             <audio #audioplayer (timeupdate)="updateTimeAudio()">
               <ng-container *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio">
-                <source [src]="'http://localhost:3000/uploads/' + exhibit._id + '/' + audio_file.filename"
+                <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
                         [type]="audio_file.mimeType">
               </ng-container>
               <p>Your browser does not support the html5 audio feature.</p>
