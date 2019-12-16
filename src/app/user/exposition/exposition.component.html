@@ -11,19 +11,26 @@
 
     <h1 class="p-2">{{ getExpositionContent(locale).name }}</h1>
 
-    <p class="p-2">{{ getExpositionContent(locale).info }}</p>
+    <mat-tab-group mat-stretch-tabs>
+      <!-- Info -->
+      <mat-tab label="Info">
+        <p class="p-2">{{ getExpositionContent(locale).info }}</p>
+      </mat-tab>
 
-    <!-- Exhibition List Section -->
-    <section *ngIf="exposition" role="main">
-      <div class="container">
-        <div class="grid-container pb-5">
-          <div *ngFor="let exhibit of exhibits" class="mx-auto">
-            <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
-                              [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+      <!-- Exhibits -->
+      <mat-tab label="Exhibits">
+        <section *ngIf="exposition" role="main">
+          <div class="container">
+            <div class="grid-container pb-5">
+              <div *ngFor="let exhibit of exhibits" class="mx-auto">
+                <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
+                                  [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </mat-tab>
+    </mat-tab-group>
   </main>
 
   <footer>
