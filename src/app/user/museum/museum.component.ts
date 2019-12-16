@@ -54,8 +54,6 @@ export class MuseumComponent implements OnInit {
   }
 
   ngOnInit() {
-    document.getElementById('defaultOpen').click();
-
     if (this.cookieLawService.acceptedTermsOfUse()) {
       this.router.navigate(['/']);
     } else {
@@ -150,26 +148,5 @@ export class MuseumComponent implements OnInit {
     /* not available ? must not happen. has to be created when constructing exposition */
 
     console.error('No German fallback content available');
-  }
-
-  openCity(evt, cityName) {
-    // Declare all variables
-    let i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName('tabcontent');
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = 'none';
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName('tablinks');
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(' active', '');
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = 'block';
-    evt.currentTarget.className += ' active';
   }
 }
