@@ -89,3 +89,12 @@ body, html {
 * {
   box-sizing: border-box;
 }
+
+.slick-prev {
+  z-index: 1000;
+  left: 5%;
+}
+
+.slick-next {
+  right: 5%;
+}

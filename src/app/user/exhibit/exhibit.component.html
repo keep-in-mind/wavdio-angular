@@ -6,7 +6,7 @@
   <main>
     <!-- Carousel Section -->
     <section *ngIf="exhibit">
-            <ngx-slick-carousel class="carousel mx-4" #slickModal="slick-carousel" [config]="slideConfig">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
               <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
                 <div ngxSlickItem style="display: inline-grid; height: 200px"
                      *ngFor="let image of getExhibitContent(locale).images"
