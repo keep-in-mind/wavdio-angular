@@ -38,6 +38,11 @@
           </label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
+          <label class="form-label mb-2" for="info">
+            Beschreibung
+          </label>
+          <textarea id="info" class="form-control mb-2" rows="5"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
           <label class="form-label mb-2" for="termsOfUse">
             Nutzungsbedingungen
           </label>
