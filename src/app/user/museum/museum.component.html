@@ -3,10 +3,18 @@
 
     <mat-sidenav-container class="example-sidenav-container">
 
-      <mat-sidenav #snav mode="over"
+      <mat-sidenav #snav mode="over" style="width: 80%"
                    [fixedInViewport]="mobileQuery.matches">
         <mat-nav-list>
-          <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+          <a mat-list-item routerLink="/" routerLinkActive="active" i18n>Home</a>
+
+          <a mat-list-item *ngFor="let infopage of infopages"
+             routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
+
+          <img
+            width="100%"
+            [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+            [alt]="getMuseumContent(locale).sitePlan.alternativeText">
         </mat-nav-list>
       </mat-sidenav>
 

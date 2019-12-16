@@ -27,6 +27,8 @@ import {MediaMatcher} from '@angular/cdk/layout';
 })
 export class MuseumComponent implements OnInit, OnDestroy {
 
+  infopages: Infopage[];
+
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
@@ -59,6 +61,7 @@ export class MuseumComponent implements OnInit, OnDestroy {
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
     public cookieLawService: CookielawService,
+    private infopageService: InfopageService,
     changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -67,6 +70,10 @@ export class MuseumComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.infopageService.getInfopages().subscribe(
+      infopages => this.infopages = infopages
+    );
+
     if (this.cookieLawService.acceptedTermsOfUse()) {
       this.router.navigate(['/']);
     } else {
