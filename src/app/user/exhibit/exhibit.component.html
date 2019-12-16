@@ -31,11 +31,11 @@
     <h1 class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
 
     <!-- Media Player Section -->
-    <section *ngIf="exhibit" class="mt-4">
+    <section *ngIf="exhibit">
       <div class="container">
         <div class="mx-auto">
           <!-- AUDIO -->
-          <div body *ngIf="getExhibitContent(locale).audio.length">
+          <div class="mt-4" body *ngIf="getExhibitContent(locale).audio.length">
             <hr class="hl">
             <section class="player">
               <div class="phones">
