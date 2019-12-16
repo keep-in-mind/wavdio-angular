@@ -1,188 +1,194 @@
-<app-header *ngIf="exhibit" [title]="getExhibitContent(locale).name" [showBackArrow]="true"></app-header>
+<div id="page">
+  <header>
+    <app-header *ngIf="exhibit" [showBackArrow]="true"></app-header>
+  </header>
 
-<!-- Carousel Section -->
-<section *ngIf="exhibit" class="mt-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <ngx-slick-carousel class="carousel mx-4" #slickModal="slick-carousel" [config]="slideConfig">
-          <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
-            <div ngxSlickItem style="display: inline-grid; height: 200px"
-                 *ngFor="let image of getExhibitContent(locale).images"
-                 class="slide">
-              <img class="card-size" [alt]="image.alternativeText"
-                   [src]="'/uploads/' + exhibit._id + '/' + image.filename">
-            </div>
-          </ng-container>
-          <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
-            <ng-template>
-              <div ngxSlickItem style="height: 200px"
-                   *ngFor="let image of getExhibitContent('de').images"
-                   class="slide">
-                <img class="card-size" alt]="image.alternativeText"
-                     [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+  <main>
+    <!-- Carousel Section -->
+    <section *ngIf="exhibit">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+              <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
+                <div ngxSlickItem style="display: inline-grid; height: 200px"
+                     *ngFor="let image of getExhibitContent(locale).images"
+                     class="slide">
+                  <img class="card-size" [alt]="image.alternativeText"
+                       [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+                </div>
+              </ng-container>
+              <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
+                <ng-template>
+                  <div ngxSlickItem style="height: 200px"
+                       *ngFor="let image of getExhibitContent('de').images"
+                       class="slide">
+                    <img class="card-size" alt]="image.alternativeText"
+                         [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+                  </div>
+                </ng-template>
+              </ng-container>
+            </ngx-slick-carousel>
+    </section>
+
+    <h1 class="p-2">{{ getExhibitContent(locale).name }}</h1>
+
+    <!-- Media Player Section -->
+    <section *ngIf="exhibit" class="mt-4">
+      <div class="container">
+        <div class="mx-auto">
+          <!-- AUDIO -->
+          <div body *ngIf="getExhibitContent(locale).audio.length">
+            <hr class="hl">
+            <section class="player">
+              <div class="phones">
+                <fa-icon icon="headphones" size="lg"></fa-icon>
               </div>
-            </ng-template>
-          </ng-container>
-        </ngx-slick-carousel>
+              <audio #audioplayer (timeupdate)="updateTimeAudio()">
+                <ng-container *ngFor="let audio_file of getExhibitContent(locale).audio">
+                  <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
+                          [type]="audio_file.mimeType">
+                </ng-container>
+                <p i18n>Dein Browser unterstützt nicht das HTML5 Audio Feature</p>
+              </audio>
+              <progress #progressAudio class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
+              </progress>
+              <div #timeAudio class="time">00:00</div>
+              <div class="controls">
+                <button (click)="playPauseAudio()" class="playpause">
+                  <ng-container *ngIf="!audioPlaying">
+                    <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
+                  </ng-container>
+                  <ng-container *ngIf="audioPlaying">
+                    <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
+                  </ng-container>
+                </button>
+                <button (click)="stopItAudio()" class="stop">
+                  <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
+                </button>
+                <button (click)="rewindAudio()" class="rwd">
+                  <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
+                </button>
+                <button (click)="forwardAudio()" class="fwd">
+                  <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
+                </button>
+              </div>
+              <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
+                <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
+                  <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
+                </button>
+              </div>
+              <ng-template #transcriptModal let-c="close" let-d="dismiss">
+                <div class="modal-header" style="overflow-y: initial !important">
+                  <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transkript</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="overflow-y: auto; height:400pt;">
+                  <p>{{getExhibitContent(locale).transcript.text}}</p>
+                </div>
+              </ng-template>
+            </section>
+          </div>
+          <!-- VIDEO -->
+          <div body *ngIf="getExhibitContent(locale).video.length">
+            <hr class="hl">
+            <section class="player">
+              <div class="camera">
+                <fa-icon icon="video" size="lg"></fa-icon>
+              </div>
+              <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
+                <ng-container *ngFor="let video_file of getExhibitContent(locale).video">
+                  <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
+                          [type]="video_file.mimeType">
+                </ng-container>
+                <p i18n>Dein Browser unterstützt nicht das HTML5 Video Feature.</p>
+              </video>
+              <progress #progress class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span></progress>
+              <div #time class="time">00:00</div>
+              <div class="controls">
+                <button (click)="playPause()" class="playpause">
+                  <ng-container *ngIf="!videoPlaying">
+                    <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
+                  </ng-container>
+                  <ng-container *ngIf="videoPlaying">
+                    <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
+                  </ng-container>
+                </button>
+                <button (click)="stopIt()" class="stop">
+                  <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
+                </button>
+                <button (click)="rewind()" class="rwd">
+                  <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
+                </button>
+                <button (click)="forward()" class="fwd">
+                  <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Media Player Section -->
-<section *ngIf="exhibit" class="mt-4">
-  <div class="container">
-    <div class="mx-auto">
-      <!-- AUDIO -->
-      <div body *ngIf="getExhibitContent(locale).audio.length">
-        <hr class="hl">
-        <section class="player">
-          <div class="phones">
-            <fa-icon icon="headphones" size="lg"></fa-icon>
+    </section>
+    <!-- Description Section -->
+    <section *ngIf="exhibit" class="mt-3 pb-5" role="main">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="h1 mb-0">{{getExhibitContent(locale).name}}</h1>
+            <h5 class="h5">
+              <span i18n>Nr.</span>
+              <span class="ml-2">{{ exhibit.code }}</span>
+            </h5>
           </div>
-          <audio #audioplayer (timeupdate)="updateTimeAudio()">
-            <ng-container *ngFor="let audio_file of getExhibitContent(locale).audio">
-              <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
-                      [type]="audio_file.mimeType">
-            </ng-container>
-            <p i18n>Dein Browser unterstützt nicht das HTML5 Audio Feature</p>
-          </audio>
-          <progress #progressAudio class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
-          </progress>
-          <div #timeAudio class="time">00:00</div>
-          <div class="controls">
-            <button (click)="playPauseAudio()" class="playpause">
-              <ng-container *ngIf="!audioPlaying">
-                <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
-              </ng-container>
-              <ng-container *ngIf="audioPlaying">
-                <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
-              </ng-container>
-            </button>
-            <button (click)="stopItAudio()" class="stop">
-              <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
-            </button>
-            <button (click)="rewindAudio()" class="rwd">
-              <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
-            </button>
-            <button (click)="forwardAudio()" class="fwd">
-              <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
-            </button>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>{{getExhibitContent(locale).info}}</p>
           </div>
-          <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
-            <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
-              <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
-            </button>
-          </div>
-          <ng-template #transcriptModal let-c="close" let-d="dismiss">
-            <div class="modal-header" style="overflow-y: initial !important">
-              <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transkript</h4>
-              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-              </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section *ngIf="exhibit" role="contentinfo" class="fixed-bottom">
+      <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 icons py-2 text-center">
+              <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeExhibit()"
+                       [attr.aria-label]="ariaLabelLikeExhibit"></fa-icon>
             </div>
-            <div class="modal-body" style="overflow-y: auto; height:400pt;">
-              <p>{{getExhibitContent(locale).transcript.text}}</p>
+            <div class="col-8 input-group py-2">
+              <div class="input-group-prepend">
+                <button (click)="prevExhibit()" class="btn btn-outline-secondary" type="button"
+                        [attr.aria-label]="ariaLabelPrevExhibit">
+                  <fa-icon icon="chevron-left"></fa-icon>
+                </button>
+              </div>
+              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control" placeholder="Exponatnummer"
+                     i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
+              <div class="input-group-append">
+                <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
+                        [attr.aria-label]="ariaLabelSearchExhibit">
+                  <fa-icon icon="search-location"></fa-icon>
+                </button>
+                <button (click)="nextExhibit()" class="btn btn-outline-secondary" type="button"
+                        [attr.aria-label]="ariaLabelNextExhibit">
+                  <fa-icon icon="chevron-right"></fa-icon>
+                </button>
+              </div>
             </div>
-          </ng-template>
-        </section>
-      </div>
-      <!-- VIDEO -->
-      <div body *ngIf="getExhibitContent(locale).video.length">
-        <hr class="hl">
-        <section class="player">
-          <div class="camera">
-            <fa-icon icon="video" size="lg"></fa-icon>
-          </div>
-          <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
-            <ng-container *ngFor="let video_file of getExhibitContent(locale).video">
-              <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
-                      [type]="video_file.mimeType">
-            </ng-container>
-            <p i18n>Dein Browser unterstützt nicht das HTML5 Video Feature.</p>
-          </video>
-          <progress #progress class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span></progress>
-          <div #time class="time">00:00</div>
-          <div class="controls">
-            <button (click)="playPause()" class="playpause">
-              <ng-container *ngIf="!videoPlaying">
-                <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
-              </ng-container>
-              <ng-container *ngIf="videoPlaying">
-                <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
-              </ng-container>
-            </button>
-            <button (click)="stopIt()" class="stop">
-              <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
-            </button>
-            <button (click)="rewind()" class="rwd">
-              <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
-            </button>
-            <button (click)="forward()" class="fwd">
-              <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
-            </button>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Description Section -->
-<section *ngIf="exhibit" class="mt-3 pb-5" role="main">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1 class="h1 mb-0">{{getExhibitContent(locale).name}}</h1>
-        <h5 class="h5">
-          <span i18n>Nr.</span>
-          <span class="ml-2">{{ exhibit.code }}</span>
-        </h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p>{{getExhibitContent(locale).info}}</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Footer Section -->
-<section *ngIf="exhibit" role="contentinfo" class="fixed-bottom">
-  <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
-    <div class="container">
-      <div class="row">
-        <div class="col-2 icons py-2 text-center">
-          <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeExhibit()"
-                   [attr.aria-label]="ariaLabelLikeExhibit"></fa-icon>
-        </div>
-        <div class="col-8 input-group py-2">
-          <div class="input-group-prepend">
-            <button (click)="prevExhibit()" class="btn btn-outline-secondary" type="button"
-                    [attr.aria-label]="ariaLabelPrevExhibit">
-              <fa-icon icon="chevron-left"></fa-icon>
-            </button>
-          </div>
-          <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control" placeholder="Exponatnummer"
-                 i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
-          <div class="input-group-append">
-            <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
-                    [attr.aria-label]="ariaLabelSearchExhibit">
-              <fa-icon icon="search-location"></fa-icon>
-            </button>
-            <button (click)="nextExhibit()" class="btn btn-outline-secondary" type="button"
-                    [attr.aria-label]="ariaLabelNextExhibit">
-              <fa-icon icon="chevron-right"></fa-icon>
-            </button>
+            <div class="col-2 icons py-2 text-center">
+              <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
+                       [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
+            </div>
           </div>
         </div>
-        <div class="col-2 icons py-2 text-center">
-          <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
-                   [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
-        </div>
-      </div>
-    </div>
-  </nav>
-</section>
+      </nav>
+    </section>
+  </footer>
+</div>
+
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
     <div class="fixed-bottom text-center">

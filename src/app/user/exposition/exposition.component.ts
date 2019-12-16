@@ -42,7 +42,7 @@ export class ExpositionComponent implements OnInit {
   museum: Museum;
 
   constructor(
-    @Inject(LOCALE_ID) private locale: string,
+    @Inject(LOCALE_ID) public locale: string,
     private cookieService: CookieService,
     private modalService: NgbModal,
     private router: Router,

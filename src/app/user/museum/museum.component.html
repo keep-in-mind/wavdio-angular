@@ -1,58 +1,35 @@
-<app-header *ngIf="museum" [title]="getMuseumContent(locale).name"></app-header>
+<div id="page">
+  <header>
+    <app-header *ngIf="museum"></app-header>
+  </header>
 
-<!-- Filter Section -->
-<section *ngIf="museum" class="mt-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 offset-3">
-        <form role="search">
-          <div class="form-group text-center mt-1">
-            <label for="filter" i18n>Exponatnummer eingeben:</label>
-            <input type="number" pattern="\d*" class="form-control" id="filter" [(ngModel)]="filterNumber"
-                   [ngModelOptions]="{standalone: true}"
-                   placeholder="Exponatnummer" i18n-placeholder min="100" step="1">
-            <button class="btn btn-primary mt-2" (click)="manualSelect()" i18n>Suchen</button>
+  <main>
+    <img *ngIf="museum.logo"
+         class="w-100"
+         [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
+         [alt]="museum.logo.alternativeText"/>
+
+    <h1 class="p-2">{{ getMuseumContent(locale).name }}</h1>
+
+    <!-- Exhibition List Section -->
+    <section *ngIf="museum" class="mt-4" role="main">
+      <div class="container">
+        <div class="grid-container pb-5">
+          <div *ngFor="let exposition of expositions" class="mx-auto">
+            <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
+                                 [height]="'150px'"
+                                 [link]="'/exposition/' + exposition._id"></app-exposition-card>
           </div>
-        </form>
-      </div>
-    </div>
-    <p>
-      <ngb-alert *ngIf="alertMessage" [dismissible]="false">
-        <span role="alert">
-          {{ alertMessage }}
-        </span>
-      </ngb-alert>
-    </p>
-  </div>
-</section>
-<!-- Exhibition List Section -->
-<section *ngIf="museum" role="main">
-  <div class="container">
-    <div class="grid-container pb-5">
-      <div *ngFor="let exposition of expositions" class="mx-auto">
-        <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
-                             [link]="'/exposition/' + exposition._id"></app-exposition-card>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Footer Section -->
-<section *ngIf="museum" role="contentinfo" class="fixed-bottom">
-  <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
-    <div class="container">
-      <div class="row">
-        <div class="col icons py-2 text-center">
-          <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
-                   [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
-        </div>
-        <div class="col icons py-2 text-center">
-          <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                   [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
         </div>
       </div>
-    </div>
-  </nav>
-</section>
+    </section>
+  </main>
+
+  <footer>
+    <section role="contentinfo" class="bg-light" style="height: 48px"></section>
+  </footer>
+</div>
+
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
     <div class="fixed-bottom text-center">

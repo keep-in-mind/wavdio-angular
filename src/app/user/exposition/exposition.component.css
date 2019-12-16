@@ -1,3 +1,14 @@
+#page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#page main {
+  flex-grow: 1;
+  overflow: auto;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
@@ -22,4 +33,8 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+h1 {
+  font-size: 20px;
 }
