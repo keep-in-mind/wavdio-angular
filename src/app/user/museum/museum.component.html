@@ -1,76 +1,73 @@
-<div class="mat-app-background basic-container">
-  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<mat-sidenav-container>
 
-    <mat-sidenav-container class="example-sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav #snav mode="over" style="width: 80%"
+               [fixedInViewport]="mobileQuery.matches">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active" i18n>Home</a>
 
-      <mat-sidenav #snav mode="over" style="width: 80%"
-                   [fixedInViewport]="mobileQuery.matches">
-        <mat-nav-list>
-          <a mat-list-item routerLink="/" routerLinkActive="active" i18n>Home</a>
+      <a mat-list-item *ngFor="let infopage of infopages"
+         routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
 
-          <a mat-list-item *ngFor="let infopage of infopages"
-             routerLink="/infopage/{{ infopage._id }}" routerLinkActive="active">{{ infopage.name }}</a>
+      <img
+        width="100%"
+        [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+        [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+    </mat-nav-list>
+  </mat-sidenav>
 
-          <img
-            width="100%"
-            [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
-            [alt]="getMuseumContent(locale).sitePlan.alternativeText">
-        </mat-nav-list>
-      </mat-sidenav>
+  <!-- Main Page -->
+  <mat-sidenav-content id="page">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="example-app-name">Responsive App</h1>
+    </mat-toolbar>
 
-      <mat-sidenav-content id="page">
-        <mat-toolbar color="primary" class="example-toolbar">
-          <button mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <h1 class="example-app-name">Responsive App</h1>
-        </mat-toolbar>
+    <main>
+      <img *ngIf="museum.logo"
+           class="w-100"
+           [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
+           [alt]="museum.logo.alternativeText"/>
 
-        <main>
-          <img *ngIf="museum.logo"
-               class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
-               [alt]="museum.logo.alternativeText"/>
+      <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
 
-          <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
+      <mat-tab-group mat-stretch-tabs>
+        <!-- Info -->
+        <mat-tab label="Info">
+          <p class="p-2">{{ getMuseumContent(locale).info }}</p>
+        </mat-tab>
 
-          <mat-tab-group mat-stretch-tabs>
-            <!-- Info -->
-            <mat-tab label="Info">
-              <p class="p-2">{{ getMuseumContent(locale).info }}</p>
-            </mat-tab>
+        <!-- Exhibits -->
+        <mat-tab label="Exhibits">
+          TODO
+        </mat-tab>
 
-            <!-- Exhibits -->
-            <mat-tab label="Exhibits">
-              TODO
-            </mat-tab>
-
-            <!-- Expositions -->
-            <mat-tab label="Expositions">
-              <section *ngIf="museum" class="mt-4" role="main">
-                <div class="container">
-                  <div class="grid-container pb-5">
-                    <div *ngFor="let exposition of expositions" class="mx-auto">
-                      <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
-                                           [height]="'150px'"
-                                           [link]="'/exposition/' + exposition._id"></app-exposition-card>
-                    </div>
-                  </div>
+        <!-- Expositions -->
+        <mat-tab label="Expositions">
+          <section *ngIf="museum" class="mt-4" role="main">
+            <div class="container">
+              <div class="grid-container pb-5">
+                <div *ngFor="let exposition of expositions" class="mx-auto">
+                  <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
+                                       [height]="'150px'"
+                                       [link]="'/exposition/' + exposition._id"></app-exposition-card>
                 </div>
-              </section>
-            </mat-tab>
-          </mat-tab-group>
+              </div>
+            </div>
+          </section>
+        </mat-tab>
+      </mat-tab-group>
 
-        </main>
+    </main>
 
-        <footer>
-          <section role="contentinfo" style="height: 48px; background-color: #3F51B5"></section>
-        </footer>
-      </mat-sidenav-content>
+    <footer>
+      <section role="contentinfo" style="height: 48px; background-color: #3F51B5"></section>
+    </footer>
+  </mat-sidenav-content>
 
-    </mat-sidenav-container>
-  </div>
-</div>
+</mat-sidenav-container>
 
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
