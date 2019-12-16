@@ -6,29 +6,29 @@
   <main>
     <!-- Carousel Section -->
     <section *ngIf="exhibit">
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-              <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
-                <div ngxSlickItem style="display: inline-grid; height: 200px"
-                     *ngFor="let image of getExhibitContent(locale).images"
-                     class="slide">
-                  <img class="card-size" [alt]="image.alternativeText"
-                       [src]="'/uploads/' + exhibit._id + '/' + image.filename">
-                </div>
-              </ng-container>
-              <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
-                <ng-template>
-                  <div ngxSlickItem style="height: 200px"
-                       *ngFor="let image of getExhibitContent('de').images"
-                       class="slide">
-                    <img class="card-size" alt]="image.alternativeText"
-                         [src]="'/uploads/' + exhibit._id + '/' + image.filename">
-                  </div>
-                </ng-template>
-              </ng-container>
-            </ngx-slick-carousel>
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
+          <div ngxSlickItem style="display: inline-grid; height: 200px"
+               *ngFor="let image of getExhibitContent(locale).images"
+               class="slide">
+            <img class="card-size" [alt]="image.alternativeText"
+                 [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+          </div>
+        </ng-container>
+        <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
+          <ng-template>
+            <div ngxSlickItem style="height: 200px"
+                 *ngFor="let image of getExhibitContent('de').images"
+                 class="slide">
+              <img class="card-size" alt]="image.alternativeText"
+                   [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+            </div>
+          </ng-template>
+        </ng-container>
+      </ngx-slick-carousel>
     </section>
 
-    <h1 class="p-2">{{ getExhibitContent(locale).name }}</h1>
+    <h1 class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
 
     <!-- Media Player Section -->
     <section *ngIf="exhibit" class="mt-4">
@@ -102,7 +102,8 @@
                 </ng-container>
                 <p i18n>Dein Browser unterstützt nicht das HTML5 Video Feature.</p>
               </video>
-              <progress #progress class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span></progress>
+              <progress #progress class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
+              </progress>
               <div #time class="time">00:00</div>
               <div class="controls">
                 <button (click)="playPause()" class="playpause">
@@ -148,7 +149,8 @@
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
               </div>
-              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control" placeholder="Exponatnummer"
+              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
+                     placeholder="Exponatnummer"
                      i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
               <div class="input-group-append">
                 <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
