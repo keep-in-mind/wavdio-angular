@@ -54,7 +54,8 @@ import {NgxPrintModule} from 'ngx-print';
 import { MuseumComponent } from './user/museum/museum.component';
 import { HeaderComponent } from './user/header/header.component';
 
-import {MatTabsModule} from '@angular/material';
+import {MatButtonModule, MatListModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 
 const appRoutes: Routes = [
   {
@@ -146,7 +147,12 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NgxQRCodeModule,
     NgxPrintModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   exports: [
     CommentComponent
