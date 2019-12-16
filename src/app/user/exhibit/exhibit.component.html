@@ -128,25 +128,8 @@
         </div>
       </div>
     </section>
-    <!-- Description Section -->
-    <section *ngIf="exhibit" class="mt-3 pb-5" role="main">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1 class="h1 mb-0">{{getExhibitContent(locale).name}}</h1>
-            <h5 class="h5">
-              <span i18n>Nr.</span>
-              <span class="ml-2">{{ exhibit.code }}</span>
-            </h5>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>{{getExhibitContent(locale).info}}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
+    <p class="p-2">{{getExhibitContent(locale).info}}</p>
   </main>
 
   <footer>
