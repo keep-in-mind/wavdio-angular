@@ -5,6 +5,7 @@ export class MuseumContent {
   lang: string;
 
   name: string;
+  info: string;
   welcomeText: string;
   sitePlan: Image;
   termsOfUse: string;
