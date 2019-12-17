@@ -12,7 +12,7 @@
 
     <!-- Exposition Logo -->
     <img *ngIf="exposition.logo"
-         style="height: 61.8%"
+         style="height: 61.8%; object-fit: cover"
          class="w-100"
          [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
          [alt]="exposition.logo.alternativeText"/>
