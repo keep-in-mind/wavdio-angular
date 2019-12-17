@@ -11,11 +11,13 @@
   <main>
 
     <!-- Exposition Logo -->
-    <img *ngIf="exposition.logo"
-         style="height: 61.8%; object-fit: cover"
-         class="w-100"
-         [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
-         [alt]="exposition.logo.alternativeText"/>
+    <div style="position: relative; padding-top: 61.8%">
+      <img *ngIf="exposition.logo"
+           style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
+           class="w-100"
+           [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
+           [alt]="exposition.logo.alternativeText"/>
+    </div>
 
     <!-- Exposition Title -->
     <h1 class="mt-2 px-2">{{ getExpositionContent(locale).name }}</h1>
