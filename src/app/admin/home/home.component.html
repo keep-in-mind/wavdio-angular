@@ -14,7 +14,10 @@
     <section class="mt-2">
       <app-box-card descHeader="Exhibits">
         <div header>
-          <a routerLink="/admin/exhibit/new/{{museum._id}}" routerLinkActive="active">
+          <a *ngIf="museum"
+             routerLink="/admin/exhibit/new/{{museum._id}}"
+             routerLinkActive="active">
+            
             <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
