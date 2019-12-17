@@ -55,7 +55,7 @@ export class MuseumComponent implements OnInit, OnDestroy {
     @Inject(LOCALE_ID) public locale: string,
     private cookieService: CookieService,
     private modalService: NgbModal,
-    private router: Router,
+    public router: Router,
     private museumService: MuseumService,
     private activatedRoute: ActivatedRoute,
     private exhibitService: ExhibitService,

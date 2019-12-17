@@ -37,8 +37,8 @@
       <div style="flex-grow: 1"></div>
 
       <mat-menu #appMenu="matMenu">
-        <div><a href="/en/museum"><img class="ml-2" src="assets/images/en.png"/> Englisch</a></div>
-        <div><a href="/de/museum"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
+        <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png"/> Englisch</a></div>
+        <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
       </mat-menu>
 
       <button mat-icon-button [matMenuTriggerFor]="appMenu">
