@@ -33,6 +33,10 @@
             </label>
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">
           </div>
+
+          <label class="form-label mb-2" for="info">Info</label>
+          <textarea id="info" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
+
           <label class="form-label mb-2" for="notizen">
             Notizen
           </label>
