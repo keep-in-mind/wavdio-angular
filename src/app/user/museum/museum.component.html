@@ -39,6 +39,7 @@
 
       <!-- Museum Logo -->
       <img *ngIf="museum.logo"
+           style="height: 61.8%"
            class="w-100"
            [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
            [alt]="museum.logo.alternativeText"/>
