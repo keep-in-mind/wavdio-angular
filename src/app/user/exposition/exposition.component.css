@@ -1,10 +1,10 @@
-mat-sidenav-content {
+#page {
   display: flex;
   height: 100vh;
   flex-direction: column;
 }
 
-mat-sidenav-content main {
+#page main {
   flex-grow: 1;
   overflow: auto;
 }
@@ -44,8 +44,4 @@ h1 {
 mat-toolbar {
   flex-shrink: 0;
   z-index: 2;
-}
-
-mat-sidenav {
-  width: 80%;
 }
