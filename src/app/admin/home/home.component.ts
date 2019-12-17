@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit {
 
       this.exhibitService.getExhibits().subscribe(
         exhibits => this.exhibits = exhibits
+          .filter(exhibit => exhibit.exposition === this.museum._id)
+          .sort((e1, e2) => e1.code - e2.code)
       );
     }
   }
