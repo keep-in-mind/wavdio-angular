@@ -1,4 +1,22 @@
+#page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#page main {
+  flex-grow: 1;
+  overflow: auto;
+}
+
 a {
-  color: inherit; 
+  color: inherit;
   text-decoration: inherit;
+}
+
+/* SIDENAV */
+
+mat-toolbar {
+  flex-shrink: 0;
+  z-index: 2;
 }
