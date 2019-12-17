@@ -1,58 +1,98 @@
-<div id="page">
-  <header>
-    <app-header *ngIf="exposition" [showBackArrow]="true"></app-header>
-  </header>
+<mat-sidenav-container>
 
-  <main>
-    <img *ngIf="exposition.logo"
-         class="w-100"
-         [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
-         [alt]="exposition.logo.alternativeText"/>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
 
-    <h1 class="p-2">{{ getExpositionContent(locale).name }}</h1>
+      <!-- Home -->
+      <a mat-list-item routerLink="/" i18n>Home</a>
 
-    <mat-tab-group mat-stretch-tabs>
-      <!-- Info -->
-      <mat-tab label="Info">
-        <p class="p-2">{{ getExpositionContent(locale).info }}</p>
-      </mat-tab>
+      <!-- Info Pages -->
+      <a mat-list-item
+         *ngFor="let infopage of infopages"
+         routerLink="/infopage/{{ infopage._id }}"
+         routerLinkActive="active">
 
-      <!-- Exhibits -->
-      <mat-tab label="Exhibits">
-        <section *ngIf="exposition" role="main">
+        {{ infopage.name }}
+      </a>
+
+      <!-- Site Plan -->
+      <img width="100%"
+           [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+           [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Page -->
+  <mat-sidenav-content id="page">
+
+    <!-- App Bar -->
+    <mat-toolbar class="mat-elevation-z4">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <main>
+
+      <!-- Exposition Logo -->
+      <img *ngIf="exposition.logo"
+           class="w-100"
+           [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
+           [alt]="exposition.logo.alternativeText"/>
+
+      <!-- Exposition Title -->
+      <h1 class="mt-2 px-2">{{ getExpositionContent(locale).name }}</h1>
+
+      <!-- Tabs -->
+      <mat-tab-group mat-stretch-tabs>
+
+        <!-- Info -->
+        <mat-tab label="Info">
+          <p class="p-2">{{ getExpositionContent(locale).info }}</p>
+        </mat-tab>
+
+        <!-- Exhibits -->
+        <mat-tab label="Exhibits">
+          <section *ngIf="exposition" role="main">
+            <div class="container">
+              <div class="grid-container pb-5">
+                <div *ngFor="let exhibit of exhibits" class="mx-auto">
+                  <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
+                                    [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+                </div>
+              </div>
+            </div>
+          </section>
+        </mat-tab>
+
+      </mat-tab-group>
+    </main>
+
+    <footer>
+      <section *ngIf="exposition" role="contentinfo" class="fixed-bottom"
+               style="height: 48px; background-color: #f5f5f5">
+        <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
           <div class="container">
-            <div class="grid-container pb-5">
-              <div *ngFor="let exhibit of exhibits" class="mx-auto">
-                <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
-                                  [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+            <div class="row">
+              <div class="col icons py-2 text-center">
+                <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
+                         [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
+              </div>
+              <div class="col icons py-2 text-center">
+                <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
+                         [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
               </div>
             </div>
           </div>
-        </section>
-      </mat-tab>
-    </mat-tab-group>
-  </main>
+        </nav>
+      </section>
+    </footer>
 
-  <footer>
-    <!-- Footer Section -->
-    <section *ngIf="exposition" role="contentinfo" class="fixed-bottom">
-      <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
-        <div class="container">
-          <div class="row">
-            <div class="col icons py-2 text-center">
-              <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
-                       [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
-            </div>
-            <div class="col icons py-2 text-center">
-              <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                       [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </section>
-  </footer>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
