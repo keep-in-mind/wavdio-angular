@@ -17,7 +17,8 @@
       </a>
 
       <!-- Site Plan -->
-      <img width="100%"
+      <img *ngIf="museum"
+           width="100%"
            [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
            [alt]="getMuseumContent(locale).sitePlan.alternativeText">
 
@@ -47,14 +48,14 @@
       </div>
 
       <!-- Museum Title -->
-      <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
+      <h1 *ngIf="museum" class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
 
       <!-- Tabs -->
       <mat-tab-group mat-stretch-tabs>
 
         <!-- Info -->
         <mat-tab label="Info">
-          <p class="p-2">{{ getMuseumContent(locale).info }}</p>
+          <p *ngIf="museum" class="p-2">{{ getMuseumContent(locale).info }}</p>
         </mat-tab>
 
         <!-- Exhibits -->
