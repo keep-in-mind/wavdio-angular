@@ -5,6 +5,7 @@ export class MuseumContent {
   lang: string;
 
   name: string;
+  info: string;
   welcomeText: string;
   sitePlan: Image;
   termsOfUse: string;
@@ -13,6 +14,7 @@ export class MuseumContent {
   constructor(
     lang: string,
     name: string,
+    info: string,
     welcomeText: string,
     sitePlan: Image,
     termsOfUse: string,
@@ -20,6 +22,7 @@ export class MuseumContent {
 
     this.lang = lang;
     this.name = name;
+    this.info = info;
     this.welcomeText = welcomeText;
     this.sitePlan = sitePlan;
     this.termsOfUse = termsOfUse;
