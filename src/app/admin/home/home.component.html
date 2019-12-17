@@ -9,20 +9,41 @@
     <h1>{{descHeader}}</h1>
   </section>
   <section class="content-left ml-3 mr-2">
-      <!-- Section Expositions -->
-      <section class="mt-2">
-        <app-box-card [descHeader]="descExpositionsHeader">
-          <div header>
-            <a routerLink="/admin/exposition/new" routerLinkActive="active">
-              <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
-            </a>
-          </div>
-          <div body *ngFor="let exposition of expositions">
-            <app-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'" [selectedLanguage]="locale"
-              [link]="'/admin/exposition/'+ exposition._id"></app-exposition-card>
-          </div>
-        </app-box-card>
-      </section>
+
+    <!-- Stand-alone exhibits -->
+    <section class="mt-2">
+      <app-box-card descHeader="Exhibits">
+        <div header>
+          <a routerLink="/admin/exhibit/new/{{museum._id}}" routerLinkActive="active">
+            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let exhibit of exhibits">
+          <app-exhibit-card [exhibit]="exhibit"
+                            [width]="'125px'"
+                            [height]="'150px'"
+                            [selectedLanguage]="locale"
+                            [link]="'/admin/exposition/'+ exhibit._id">
+          </app-exhibit-card>
+        </div>
+      </app-box-card>
+    </section>
+
+    <!-- Section Expositions -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descExpositionsHeader">
+        <div header>
+          <a routerLink="/admin/exposition/new" routerLinkActive="active">
+            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let exposition of expositions">
+          <app-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
+                               [selectedLanguage]="locale"
+                               [link]="'/admin/exposition/'+ exposition._id"></app-exposition-card>
+        </div>
+      </app-box-card>
+    </section>
   </section>
 </div>
 <div *ngIf="this.cookieLawService">
@@ -35,7 +56,8 @@
           unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
           direkt unsere Website besuchen zu können.</p>
         <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
-          zu</button>
+          zu
+        </button>
       </div>
     </div>
   </ng-container>
