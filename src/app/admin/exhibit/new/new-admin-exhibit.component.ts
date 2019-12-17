@@ -61,6 +61,7 @@ export class NewAdminExhibitComponent implements OnInit {
               const germanContent = new ExhibitContent('de', '', '', null, [], [], []);
               this.exhibit = new Exhibit(
                 this.expositionId,
+                'Exposition',
                 true,
                 minCode,
                 '',

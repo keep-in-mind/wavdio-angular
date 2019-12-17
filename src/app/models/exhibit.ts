@@ -7,6 +7,7 @@ export class Exhibit {
 
   _id: string;
   parent: string;
+  parentModel: string;
 
   active: boolean;
   code: number;
@@ -19,7 +20,8 @@ export class Exhibit {
   contents: ExhibitContent[];
 
   constructor(
-    exposition: string,
+    parent: string,
+    parentModel: string,
     active: boolean,
     code: number,
     note: string,
@@ -28,7 +30,8 @@ export class Exhibit {
     comments: Comment[],
     contents: ExhibitContent[]) {
 
-    this.parent = exposition;
+    this.parent = parent;
+    this.parentModel = parentModel;
     this.active = active;
     this.code = code;
     this.note = note;
