@@ -160,7 +160,7 @@ export class AdminExhibitComponent implements OnInit {
     if (confirm('Sind Sie sicher, dass Sie dieses Ausstellungsstück unwiderruflich löschen möchten?')) {
       this.exhibitService.deleteExhibit(this.exhibit).subscribe(
         result => {
-          this.router.navigate(['admin/exposition/', this.exhibit.exposition]);
+          this.router.navigate(['admin/exposition/', this.exhibit.parent]);
         }
       );
     }

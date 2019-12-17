@@ -6,7 +6,7 @@ import {ExhibitContent} from './exhibit-content';
 export class Exhibit {
 
   _id: string;
-  exposition: string;
+  parent: string;
 
   active: boolean;
   code: number;
@@ -28,7 +28,7 @@ export class Exhibit {
     comments: Comment[],
     contents: ExhibitContent[]) {
 
-    this.exposition = exposition;
+    this.parent = exposition;
     this.active = active;
     this.code = code;
     this.note = note;

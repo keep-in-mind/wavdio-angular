@@ -65,7 +65,7 @@ export class AdminExpositionComponent implements OnInit {
               this.exhibitService.getExhibits().subscribe(
                 exhibits => {
                   this.exhibits = exhibits
-                    .filter(exhibit => this.exposition._id === exhibit.exposition)
+                    .filter(exhibit => this.exposition._id === exhibit.parent)
                     .sort((e1, e2) => e1.code - e2.code);
                 }
               );

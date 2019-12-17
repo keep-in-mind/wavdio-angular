@@ -76,7 +76,7 @@ export class ExpositionComponent implements OnInit {
               this.exposition = exposition;
               this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) === 'true';
               this.exhibitService.getExhibits().subscribe(
-                exhibits => this.exhibits = exhibits.filter(exhibit => exhibit.active && exhibit.exposition === exposition._id)
+                exhibits => this.exhibits = exhibits.filter(exhibit => exhibit.active && exhibit.parent === exposition._id)
               );
             }
           );

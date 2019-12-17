@@ -147,7 +147,7 @@ export class ExhibitComponent implements OnInit {
           exhibits => {
             this.exhibits = exhibits;
             this.exhibit = exhibits.filter(exhibit => exhibitId === exhibit._id)[0];
-            this.expositionService.getExposition(this.exhibit.exposition).subscribe(
+            this.expositionService.getExposition(this.exhibit.parent).subscribe(
               exposition => this.exposition = exposition
             );
             this.filterNumber = this.exhibit.code;
