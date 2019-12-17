@@ -17,7 +17,7 @@
       </a>
 
       <!-- Site Plan -->
-      <img *ngIf="museum"
+      <img *ngIf="museum && getMuseumContent(locale).sitePlan"
            width="100%"
            [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
            [alt]="getMuseumContent(locale).sitePlan.alternativeText">
