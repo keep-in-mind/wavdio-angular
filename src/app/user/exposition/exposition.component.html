@@ -20,14 +20,14 @@
     </div>
 
     <!-- Exposition Title -->
-    <h1 class="mt-2 px-2">{{ getExpositionContent(locale).name }}</h1>
+    <h1 *ngIf="exposition" class="mt-2 px-2">{{ getExpositionContent(locale).name }}</h1>
 
     <!-- Tabs -->
     <mat-tab-group mat-stretch-tabs>
 
       <!-- Info -->
       <mat-tab label="Info">
-        <p class="p-2">{{ getExpositionContent(locale).info }}</p>
+        <p *ngIf="exposition" class="p-2">{{ getExpositionContent(locale).info }}</p>
       </mat-tab>
 
       <!-- Exhibits -->
