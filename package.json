@@ -5,11 +5,9 @@
     "start": "npm run start:de",
     "start:de": "ng serve --configuration=de",
     "start:en": "ng serve --configuration=en",
-
     "build": "npm run build:de && npm run build:en",
     "build:de": "ng build --configuration=prod-de",
     "build:en": "ng build --configuration=prod-en",
-
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +20,7 @@
     "@angular/compiler": "~8.2.9",
     "@angular/core": "~8.2.9",
     "@angular/forms": "~8.2.9",
+    "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
@@ -42,6 +41,7 @@
     "express-fileupload": "^1.0.0",
     "express-jwt": "^5.3.1",
     "fs": "0.0.1-security",
+    "hammerjs": "^2.0.8",
     "http-errors": "^1.7.1",
     "jquery": "^3.3.1",
     "jsonwebtoken": "^8.5.0",
