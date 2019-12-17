@@ -1,10 +1,10 @@
-#page {
+mat-sidenav-content {
   display: flex;
   height: 100vh;
   flex-direction: column;
 }
 
-#page main {
+mat-sidenav-content main {
   flex-grow: 1;
   overflow: auto;
 }
@@ -37,4 +37,16 @@ a {
 
 h1 {
   font-size: 20px;
+}
+
+
+/* SIDENAV */
+
+mat-toolbar {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+mat-sidenav {
+  width: 80%;
 }

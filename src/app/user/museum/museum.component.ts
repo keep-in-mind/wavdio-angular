@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
@@ -18,13 +18,23 @@ import {CookielawService} from '../../services/cookielaw.service';
 import {MuseumContent} from '../../models/museum-content';
 import {MuseumService} from '../../services/museum.service';
 import {Museum} from '../../models/museum';
+import {MediaMatcher} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-museum',
   templateUrl: './museum.component.html',
   styleUrls: ['./museum.component.css']
 })
-export class MuseumComponent implements OnInit {
+export class MuseumComponent implements OnInit, OnDestroy {
+
+  infopages: Infopage[];
+
+  mobileQuery: MediaQueryList;
+
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+
+  private _mobileQueryListener: () => void;
+
   private _success = new Subject<string>();
   alertMessage: string;
 
@@ -50,10 +60,20 @@ export class MuseumComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
-    public cookieLawService: CookielawService) {
+    public cookieLawService: CookielawService,
+    private infopageService: InfopageService,
+    changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this.infopageService.getInfopages().subscribe(
+      infopages => this.infopages = infopages
+    );
+
     if (this.cookieLawService.acceptedTermsOfUse()) {
       this.router.navigate(['/']);
     } else {
@@ -71,6 +91,10 @@ export class MuseumComponent implements OnInit {
         }
       );
     }
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
   manualSelect() {

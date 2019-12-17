@@ -1,9 +1,15 @@
 <div id="page">
-  <header>
-    <app-header *ngIf="exhibit" [showBackArrow]="true"></app-header>
-  </header>
 
+  <!-- App Bar -->
+  <mat-toolbar class="mat-elevation-z4">
+    <a [routerLink]="'/exposition/' + exposition._id" routerLinkActive="active" i18n>
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <!-- Page Content -->
   <main>
+
     <!-- Carousel Section -->
     <section *ngIf="exhibit">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
@@ -28,6 +34,7 @@
       </ngx-slick-carousel>
     </section>
 
+    <!-- Exhibit Title -->
     <h1 class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
 
     <!-- Media Player Section -->

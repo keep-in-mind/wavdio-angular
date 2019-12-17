@@ -1,49 +1,88 @@
-<div id="page">
-  <header>
-    <app-header *ngIf="museum"></app-header>
-  </header>
+<mat-sidenav-container>
 
-  <main>
-    <img *ngIf="museum.logo"
-         class="w-100"
-         [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
-         [alt]="museum.logo.alternativeText"/>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
 
-    <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
+      <!-- Home -->
+      <a mat-list-item routerLink="/" i18n>Home</a>
 
-    <mat-tab-group mat-stretch-tabs>
-      <!-- Info -->
-      <mat-tab label="Info">
-        <p class="p-2">{{ getMuseumContent(locale).info }}</p>
-      </mat-tab>
+      <!-- Info Pages -->
+      <a mat-list-item
+         *ngFor="let infopage of infopages"
+         routerLink="/infopage/{{ infopage._id }}"
+         routerLinkActive="active">
 
-      <!-- Exhibits -->
-      <mat-tab label="Exhibits">
-        TODO
-      </mat-tab>
+        {{ infopage.name }}
+      </a>
 
-      <!-- Expositions -->
-      <mat-tab label="Expositions">
-        <section *ngIf="museum" class="mt-4" role="main">
-          <div class="container">
-            <div class="grid-container pb-5">
-              <div *ngFor="let exposition of expositions" class="mx-auto">
-                <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
-                                     [height]="'150px'"
-                                     [link]="'/exposition/' + exposition._id"></app-exposition-card>
+      <!-- Site Plan -->
+      <img width="100%"
+           [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
+           [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Page -->
+  <mat-sidenav-content id="page">
+
+    <!-- App Bar -->
+    <mat-toolbar class="mat-elevation-z4">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <main>
+
+      <!-- Museum Logo -->
+      <img *ngIf="museum.logo"
+           class="w-100"
+           [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
+           [alt]="museum.logo.alternativeText"/>
+
+      <!-- Museum Title -->
+      <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
+
+      <!-- Tabs -->
+      <mat-tab-group mat-stretch-tabs>
+
+        <!-- Info -->
+        <mat-tab label="Info">
+          <p class="p-2">{{ getMuseumContent(locale).info }}</p>
+        </mat-tab>
+
+        <!-- Exhibits -->
+        <mat-tab label="Exhibits">
+          TODO
+        </mat-tab>
+
+        <!-- Expositions -->
+        <mat-tab label="Expositions">
+          <section *ngIf="museum" class="mt-4" role="main">
+            <div class="container">
+              <div class="grid-container pb-5">
+                <div *ngFor="let exposition of expositions" class="mx-auto">
+                  <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
+                                       [height]="'150px'"
+                                       [link]="'/exposition/' + exposition._id"></app-exposition-card>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </mat-tab>
-    </mat-tab-group>
+          </section>
+        </mat-tab>
 
-  </main>
+      </mat-tab-group>
+    </main>
 
-  <footer>
-    <section role="contentinfo" class="bg-light" style="height: 48px"></section>
-  </footer>
-</div>
+    <footer>
+      <section role="contentinfo" style="height: 48px; background-color: #f5f5f5"></section>
+    </footer>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>
@@ -52,7 +91,8 @@
         <h3 i18n>Diese Website verwendet Cookies</h3>
         <p i18n>
           – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
+          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website
+          besuchen
           zu können.
         </p>
         <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
