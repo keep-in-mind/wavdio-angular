@@ -102,3 +102,10 @@ img {
   margin-bottom: auto;
   margin-top: auto;
 }
+
+/* SIDENAV */
+
+mat-toolbar {
+  flex-shrink: 0;
+  z-index: 2;
+}
