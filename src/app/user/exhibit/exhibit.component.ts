@@ -147,9 +147,13 @@ export class ExhibitComponent implements OnInit {
           exhibits => {
             this.exhibits = exhibits;
             this.exhibit = exhibits.filter(exhibit => exhibitId === exhibit._id)[0];
-            this.expositionService.getExposition(this.exhibit.parent).subscribe(
-              exposition => this.exposition = exposition
-            );
+            if (this.exhibit.parentModel === 'Exposition') {
+              this.expositionService.getExposition(this.exhibit.parent).subscribe(
+                exposition => this.exposition = exposition
+              );
+            } else {
+              this.exposition = null;
+            }
             this.filterNumber = this.exhibit.code;
             this.likedFlag = this.cookieService.get(`exhibit${this.exhibit._id}`) === 'true';
           }

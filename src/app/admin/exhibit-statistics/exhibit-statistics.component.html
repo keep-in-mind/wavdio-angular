@@ -11,7 +11,7 @@
         <li class="breadcrumb-item"><a routerLink="/admin/home">Home</a></li>
         <li class="breadcrumb-item"><a routerLink="/admin/statistics">Museums-Statistik</a></li>
         <li class="breadcrumb-item">
-          <a *ngIf="exhibit"
+          <a *ngIf="exhibit && exhibit.parentModel === 'Exposition'"
              [routerLink]="'/admin/statistics/exposition/' + exhibit.parent">Ausstellungs-Statistik</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Ausstellungsstücks-Statistik</li>

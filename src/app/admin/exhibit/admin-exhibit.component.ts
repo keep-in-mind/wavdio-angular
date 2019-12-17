@@ -157,10 +157,15 @@ export class AdminExhibitComponent implements OnInit {
   }
 
   deleteExhibit() {
+    const parentModel = this.exhibit.parentModel;
     if (confirm('Sind Sie sicher, dass Sie dieses Ausstellungsstück unwiderruflich löschen möchten?')) {
       this.exhibitService.deleteExhibit(this.exhibit).subscribe(
         result => {
-          this.router.navigate(['admin/exposition/', this.exhibit.parent]);
+          if (parentModel === 'Museum') {
+            this.router.navigate(['admin/home']);
+          } else {
+            this.router.navigate(['admin/exposition/', this.exhibit.parent]);
+          }
         }
       );
     }
