@@ -6,7 +6,9 @@
     <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item"><a routerLink="/admin/exposition/{{exhibit.exposition}}">Ausstellung</a></li>
+      <li *ngIf="exhibit.parentModel === 'Exposition'" class="breadcrumb-item">
+        <a routerLink="/admin/exposition/{{exhibit.parent}}">Ausstellung</a>
+      </li>
       <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
     </ol>
     <h1>{{descHeader}}</h1>

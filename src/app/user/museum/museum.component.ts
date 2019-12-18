@@ -85,6 +85,13 @@ export class MuseumComponent implements OnInit, OnDestroy {
       this.museumService.getMuseums().subscribe(
         museums => {
           this.museum = museums[0];
+
+          this.exhibitService.getExhibits().subscribe(
+            exhibits => this.exhibits = exhibits
+              .filter(exhibit => exhibit.active && exhibit.parent === this.museum._id)
+              .sort((e1, e2) => e1.code - e2.code)
+          );
+
           this.expositionService.getExpositions().subscribe(
             expositions => this.expositions = expositions.filter(exposition => exposition.active)
           );

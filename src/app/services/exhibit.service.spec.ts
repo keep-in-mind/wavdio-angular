@@ -13,6 +13,7 @@ import {Video} from '../models/video';
 
 const monaLisa = new Exhibit(
   '',
+  'Exposition',
   true,
   100,
   'note',
@@ -73,6 +74,7 @@ const monaLisa = new Exhibit(
 
 const thePersistenceOfMemory = new Exhibit(
   '',
+  'Exposition',
   true,
   200,
   'note',

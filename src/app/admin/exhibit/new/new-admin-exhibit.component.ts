@@ -6,6 +6,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import {AuthenticationService} from '../../../services/authentification.service';
 import {CookielawService} from '../../../services/cookielaw.service';
+import {MuseumService} from '../../../services/museum.service';
+import {Museum} from '../../../models/museum';
 
 @Component({
   selector: 'app-new-admin-exhibit',
@@ -16,6 +18,7 @@ export class NewAdminExhibitComponent implements OnInit {
 
   descHeader = 'Ausstellungsstück anlegen';
 
+  museum: Museum;
   exhibit: Exhibit;
   expositionId: string;
 
@@ -28,6 +31,7 @@ export class NewAdminExhibitComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
+    private museumService: MuseumService,
     private exhibitService: ExhibitService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -46,29 +50,37 @@ export class NewAdminExhibitComponent implements OnInit {
         params => {
           this.expositionId = params.expo_id;
 
-          this.exhibitService.getExhibits().subscribe(
-            exhibits => {
-              let array = [];
-              for (let i = 100; i < 1000; i++) {
-                array.push(i);
-              }
+          this.museumService.getMuseums().subscribe(
+            museums => {
+              const museumId = museums[0]._id;
 
-              exhibits.forEach(ex => array = array.filter(a => a !== ex.code));
+              const parentModel = this.expositionId === museumId ? 'Museum' : 'Exposition';
 
-              const minCode = array.reduce((min, code) => code < min ? code : min, 999);
+              this.exhibitService.getExhibits().subscribe(
+                exhibits => {
+                  let array = [];
+                  for (let i = 100; i < 1000; i++) {
+                    array.push(i);
+                  }
 
-              const englishContent = new ExhibitContent('en', 'Not available in your Language', '', null, [], [], []);
-              const germanContent = new ExhibitContent('de', '', '', null, [], [], []);
-              this.exhibit = new Exhibit(
-                this.expositionId,
-                true,
-                minCode,
-                '',
-                [],
-                [],
-                [],
-                [englishContent, germanContent]);
+                  exhibits.forEach(ex => array = array.filter(a => a !== ex.code));
 
+                  const minCode = array.reduce((min, code) => code < min ? code : min, 999);
+
+                  const englishContent = new ExhibitContent('en', 'Not available in your Language', '', null, [], [], []);
+                  const germanContent = new ExhibitContent('de', '', '', null, [], [], []);
+                  this.exhibit = new Exhibit(
+                    this.expositionId,
+                    parentModel,
+                    true,
+                    minCode,
+                    '',
+                    [],
+                    [],
+                    [],
+                    [englishContent, germanContent]);
+
+                });
             });
         });
     }

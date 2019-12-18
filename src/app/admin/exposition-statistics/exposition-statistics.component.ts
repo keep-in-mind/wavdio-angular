@@ -85,7 +85,7 @@ export class ExpositionStatisticsComponent implements OnInit {
         /* get exhibits that belong to exposition */
 
         this.exhibitService.getExhibits().subscribe(exhibits => {
-          this.exhibits = exhibits.filter(exhibit => exhibit.exposition === expositionId);
+          this.exhibits = exhibits.filter(exhibit => exhibit.parent === expositionId);
         });
       });
     });
