@@ -34,7 +34,7 @@ export class WelcomeComponent implements OnInit {
     private cookieService: CookieService,
     private museumService: MuseumService,
     public cookieLawService: CookielawService,
-    private router: Router) {
+    public router: Router) {
   }
 
   ngOnInit() {
