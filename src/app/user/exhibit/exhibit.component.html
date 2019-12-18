@@ -29,28 +29,39 @@
   <main>
 
     <!-- Carousel Section -->
+
     <section *ngIf="exhibit">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
-          <div ngxSlickItem style="display: inline-grid; height: 200px"
+          <div ngxSlickItem
                *ngFor="let image of getExhibitContent(locale).images"
                class="slide">
-            <img class="card-size" [alt]="image.alternativeText"
-                 [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+            <div style="position: relative; padding-top: 61.8%">
+              <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+                <img class="w-100 h-100" style="object-fit: contain; background-color: black"
+                     [alt]="image.alternativeText"
+                     [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+              </div>
+            </div>
           </div>
         </ng-container>
         <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
           <ng-template>
-            <div ngxSlickItem style="height: 200px"
+            <div ngxSlickItem
                  *ngFor="let image of getExhibitContent('de').images"
                  class="slide">
-              <img class="card-size" alt]="image.alternativeText"
+              <div style="position: relative; padding-top: 61.8%">
+                <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+              <img class="w-100" alt]="image.alternativeText"
                    [src]="'/uploads/' + exhibit._id + '/' + image.filename">
+                </div>
+              </div>
             </div>
           </ng-template>
         </ng-container>
       </ngx-slick-carousel>
     </section>
+
 
     <!-- Exhibit Title -->
     <h1 class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
@@ -159,7 +170,7 @@
   </main>
 
   <footer>
-    <section *ngIf="exhibit" role="contentinfo" class="fixed-bottom">
+    <section *ngIf="exhibit" role="contentinfo">
       <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
         <div class="container">
           <div class="row">
