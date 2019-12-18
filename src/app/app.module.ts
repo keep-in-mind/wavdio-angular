@@ -54,7 +54,7 @@ import {NgxPrintModule} from 'ngx-print';
 import { MuseumComponent } from './user/museum/museum.component';
 import { HeaderComponent } from './user/header/header.component';
 
-import {MatButtonModule, MatListModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 
 const appRoutes: Routes = [
@@ -132,28 +132,29 @@ const appRoutes: Routes = [
     MuseumComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes,
-      {onSameUrlNavigation: 'reload', enableTracing: false} // <-- debugging purposes only
-    ),
-    NgbModule,
-    SlickCarouselModule,
-    FontAwesomeModule,
-    NgxChartsModule,
-    BrowserAnimationsModule,
-    NgxQRCodeModule,
-    NgxPrintModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot(
+            appRoutes,
+            {onSameUrlNavigation: 'reload', enableTracing: false} // <-- debugging purposes only
+        ),
+        NgbModule,
+        SlickCarouselModule,
+        FontAwesomeModule,
+        NgxChartsModule,
+        BrowserAnimationsModule,
+        NgxQRCodeModule,
+        NgxPrintModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        MatButtonModule,
+        MatMenuModule,
+    ],
   exports: [
     CommentComponent
   ],

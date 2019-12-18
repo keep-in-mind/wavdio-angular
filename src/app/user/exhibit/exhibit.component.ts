@@ -102,7 +102,7 @@ export class ExhibitComponent implements OnInit {
     private expositionService: ExpositionService,
     private museumService: MuseumService,
     private mediaplayerService: MediaplayerService,
-    private router: Router,
+    public router: Router,
     private cookieService: CookieService,
     public cookieLawService: CookielawService) {
     // this code tricks the router to always reload

@@ -29,7 +29,7 @@ export class InfopageComponent implements OnInit {
     private route: ActivatedRoute,
     private museumService: MuseumService,
     public cookieLawService: CookielawService,
-    private router: Router) {
+    public router: Router) {
   }
 
   ngOnInit() {
