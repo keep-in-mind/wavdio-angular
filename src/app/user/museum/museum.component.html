@@ -35,13 +35,16 @@
     </mat-toolbar>
 
     <!-- Page Content -->
-    <main>
+    <main style="position: relative">
 
       <!-- Museum Logo -->
-      <img *ngIf="museum.logo"
-           class="w-100"
-           [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
-           [alt]="museum.logo.alternativeText"/>
+      <div style="position: relative; padding-top: 61.8%">
+        <img *ngIf="museum.logo"
+             style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
+             class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
+             [alt]="museum.logo.alternativeText"/>
+      </div>
 
       <!-- Museum Title -->
       <h1 class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
