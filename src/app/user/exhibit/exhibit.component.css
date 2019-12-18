@@ -26,10 +26,10 @@ a {
   color: red;
 }
 
-.card-size {
-  max-width: 100%;
-  max-height: 220px;
-}
+/*.card-size {*/
+/*  max-width: 100%;*/
+/*  max-height: 220px;*/
+/*}*/
 
 html {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
@@ -98,10 +98,10 @@ progress::-moz-progress-bar {background-color: white !important;}
   text-overflow: ellipsis;
 }
 
-img {
-  margin-bottom: auto;
-  margin-top: auto;
-}
+/*img {*/
+/*  margin-bottom: auto;*/
+/*  margin-top: auto;*/
+/*}*/
 
 /* SIDENAV */
 
@@ -109,3 +109,5 @@ mat-toolbar {
   flex-shrink: 0;
   z-index: 2;
 }
+
+

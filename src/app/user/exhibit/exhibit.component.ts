@@ -43,10 +43,10 @@ export class ExhibitComponent implements OnInit {
   ariaLabelFwdButton = 'Zurückspulen';
 
   slideConfig = {
-    'slidesToShow': 1,
-    'slidesToScroll': 1,
-    infinite: true,
-    dots: true
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true
   };
 
   exhibits: Exhibit[];
