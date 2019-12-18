@@ -28,24 +28,14 @@
 
     <!-- Welcome Text -->
     <h1 *ngIf="museum"
-        class="display-4 mt-2"
-        style="text-align: center; font-size: 6vw">
+        style="margin: 5%; text-align: center; font-size: 4vw">
 
       {{ getMuseumContent(locale).welcomeText }}
     </h1>
 
-    <!-- Exposition Selection Section -->
-    <section id="expositions" style="margin-top: 10%">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <a routerLink="/museum">
-              <button>Continue</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <a [routerLink]="termsOfUseFlag ? '/museum' : ''" style="display: block; text-align: center; margin: auto">
+      <img style="width: 30%" [src]="'assets/images/continue_' + locale + '.png'">
+    </a>
 
     <!-- Agreements Section -->
     <section id="agreement" class="mt-4">
