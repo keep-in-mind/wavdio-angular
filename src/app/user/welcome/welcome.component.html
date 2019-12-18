@@ -17,27 +17,31 @@
   <!-- Page Content -->
   <main>
 
-    <!-- Heading Section -->
-    <section id="heading" class="mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <img *ngIf="museum && museum.logo" class="heading-image"
-              [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
-            <img *ngIf="museum && !museum.logo" class="heading-image" src="assets/images/wAVdio_Logo_gross.png"
-              alt="Logo">
-            <h1 *ngIf="museum" class="display-4 mt-2">{{ getMuseumContent(locale).welcomeText }}</h1>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- wAVdio Logo -->
+    <div style="position: relative; padding-top: 30%; margin: 8%">
+      <img *ngIf="museum && museum.logo"
+           style="position: absolute; height: 100%; left: 0; top: 0; object-fit: contain"
+           class="w-100"
+           src="assets/images/wAVdio_Logo_gross.png"
+           [alt]="museum.logo.alternativeText"/>
+    </div>
+
+    <!-- Welcome Text -->
+    <h1 *ngIf="museum"
+        class="display-4 mt-2"
+        style="text-align: center; font-size: 6vw">
+
+      {{ getMuseumContent(locale).welcomeText }}
+    </h1>
 
     <!-- Exposition Selection Section -->
-    <section id="expositions" class="mt-2">
+    <section id="expositions" style="margin-top: 10%">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
-            <a routerLink="/museum"><button>Continue</button></a>
+            <a routerLink="/museum">
+              <button>Continue</button>
+            </a>
           </div>
         </div>
       </div>
@@ -50,7 +54,7 @@
           <div class="col-12 text-center">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
-                (change)="onTermsChange()">
+                     (change)="onTermsChange()">
               <label for="termsOfUse">
                 <span i18n>Ich akzeptiere die</span>
                 <a routerLink="/user/usage-terms/termsOfUse" i18n> Nutzungsbedingungen</a>
