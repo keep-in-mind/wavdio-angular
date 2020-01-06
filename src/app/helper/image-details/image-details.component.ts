@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Exhibit} from '../../models/exhibit';
 import {ExhibitService} from '../../services/exhibit.service';
@@ -7,6 +7,7 @@ import {ExpositionService} from '../../services/exposition.service';
 import {Museum} from '../../models/museum';
 import {MuseumService} from '../../services/museum.service';
 import {FileService} from '../../services/file.service';
+import {MuseumContent} from '../../models/museum-content';
 
 @Component({
   selector: 'app-image-details',
@@ -22,6 +23,7 @@ export class ImageDetailsComponent implements OnInit {
   lang: string;
 
   constructor(
+    @Inject(LOCALE_ID) public locale: string,
     public modal: NgbActiveModal,
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
@@ -64,8 +66,8 @@ export class ImageDetailsComponent implements OnInit {
   }
 
   deleteMuseumImage() {
-    this.fileService.deleteFile(this.museum._id, this.museum.logo.filename).subscribe(() => {
-      this.museum.logo = null;
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).logo = null;
       this.updateMuseum();
     });
   }
@@ -112,5 +114,30 @@ export class ImageDetailsComponent implements OnInit {
 
     // not available ? must not happen. has to be created when constructing exhibit
     console.error(`ExhibitContent missing for locale ${locale}`);
+  }
+
+  getMuseumContent(lang: String): MuseumContent {
+
+    /* return localized content */
+
+    for (const content of this.museum.contents) {
+      if (content.lang === lang) {
+        return content;
+      }
+    }
+
+    /* not available ? fall back to German */
+
+    console.warn('No localized content available for locale ' + lang);
+
+    for (const content of this.museum.contents) {
+      if (content.lang === 'de') {
+        return content;
+      }
+    }
+
+    /* not available ? must not happen. has to be created when constructing exposition */
+
+    console.error('No German fallback content available');
   }
 }

@@ -8,7 +8,7 @@
     [alt]="this.exposition.logo.alternativeText">
   </ng-container>
   <ng-container *ngIf="this.museum">
-    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
+    <img *ngIf="this.getMuseumContent(this.locale).logo" [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).logo.filename">
   </ng-container>
 </section>
 <section class="content p-3">
@@ -30,7 +30,7 @@
       <label class="form-label mb-2" for="museum">
         Beschreibung
       </label>
-      <textarea *ngIf="this.museum.logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
+      <textarea *ngIf="this.getMuseumContent(this.locale).logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
     </ng-container>
     <div class="col-4">
       <button (click)="handleUpdate()" class="btn btn-success w-100">
