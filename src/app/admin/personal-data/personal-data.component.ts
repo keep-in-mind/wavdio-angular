@@ -107,15 +107,15 @@ export class PersonalDataComponent implements OnInit {
 
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.museum.logo = new Image(randomFilename, 'alt');
+      this.getMuseumContent(this.locale).logo = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteLogo() {
-    this.fileService.deleteFile(this.museum._id, this.museum.logo.filename).subscribe(() => {
-      this.museum.logo = null;
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).logo = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
