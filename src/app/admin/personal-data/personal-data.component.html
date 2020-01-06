@@ -78,7 +78,7 @@
                    (click)="deleteLogo()"></fa-icon>
         </div>
         <div body>
-          <img *ngIf="getMuseumContent(locale).logo" (click)="openImageBigView()" class="w-100"
+          <img *ngIf="getMuseumContent(locale).logo" (click)="openLogoBigView()" class="w-100"
                [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename" [alt]="getMuseumContent(locale).logo.alternativeText"/>
         </div>
       </app-box-card>

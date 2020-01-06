@@ -71,9 +71,16 @@ export class PersonalDataComponent implements OnInit {
     }
   }
 
+  openLogoBigView() {
+    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    modal.componentInstance.museum = this.museum;
+    modal.componentInstance.logo = true;
+  }
+
   openImageBigView() {
     const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
     modal.componentInstance.museum = this.museum;
+    modal.componentInstance.logo = false;
   }
 
   updateMuseum() {

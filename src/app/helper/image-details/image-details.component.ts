@@ -21,6 +21,7 @@ export class ImageDetailsComponent implements OnInit {
   museum: Museum;
   index: number;
   lang: string;
+  logo: boolean; // if museum: show logo or image
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
@@ -51,7 +52,9 @@ export class ImageDetailsComponent implements OnInit {
       this.deleteExpositionImage();
     } else if (this.exhibit) {
       this.deleteExhibitImage();
-    } else if (this.museum) {
+    } else if (this.museum && this.logo) {
+      this.deleteMuseumLogo();
+    } else if (this.museum && !this.logo) {
       this.deleteMuseumImage();
     }
   }
@@ -65,9 +68,16 @@ export class ImageDetailsComponent implements OnInit {
     );
   }
 
-  deleteMuseumImage() {
+  deleteMuseumLogo() {
     this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
       this.getMuseumContent(this.locale).logo = null;
+      this.updateMuseum();
+    });
+  }
+
+  deleteMuseumImage() {
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = null;
       this.updateMuseum();
     });
   }
