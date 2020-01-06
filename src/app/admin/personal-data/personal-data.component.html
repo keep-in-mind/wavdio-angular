@@ -83,6 +83,26 @@
         </div>
       </app-box-card>
     </section>
+
+    <!-- Image -->
+    <section class="mt-2">
+      <app-box-card [descHeader]="descImage">
+        <div header>
+          <fa-icon [hidden]="getMuseumContent(locale).image" (click)="onImageInput.click()" class="fa-lg" icon="plus-circle">
+          </fa-icon>
+          <form class="d-none">
+            <input #onImageInput (change)="onImageChanged($event)" type="file" name="file">
+          </form>
+          <fa-icon [hidden]="!getMuseumContent(locale).image" class="fa-lg" icon="minus-circle"
+                   (click)="deleteImage()"></fa-icon>
+        </div>
+        <div body>
+          <img *ngIf="getMuseumContent(locale).image" (click)="openImageBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename" [alt]="getMuseumContent(locale).image.alternativeText"/>
+        </div>
+      </app-box-card>
+    </section>
+    
     <!--Neues Passwort anlegen-->
     <section class="mt-2">
       <div class="card">

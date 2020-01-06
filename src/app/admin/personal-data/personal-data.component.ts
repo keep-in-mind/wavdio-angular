@@ -22,6 +22,7 @@ export class PersonalDataComponent implements OnInit {
 
   descHeader = 'Persönlicher Bereich';
   descLogo = 'Logo';
+  descImage = 'Image';
 
   user: TokenPayloadUpdate = {
     username: '',
@@ -113,9 +114,29 @@ export class PersonalDataComponent implements OnInit {
     });
   }
 
+  onImageChanged(event: Event) {
+    const inputElement = <HTMLInputElement>event.target;
+    const file = inputElement.files[0];
+    const randomFilename = FileService.randomizeFilename(file.name);
+
+    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
+      this.museumService.updateMuseum(this.museum).subscribe();
+      spinner.close();
+    });
+  }
+
   deleteLogo() {
     this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
       this.getMuseumContent(this.locale).logo = null;
+      this.museumService.updateMuseum(this.museum).subscribe();
+    });
+  }
+
+  deleteImage() {
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
