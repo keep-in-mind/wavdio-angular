@@ -56,7 +56,6 @@ import { HeaderComponent } from './user/header/header.component';
 
 import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
-import { SettingsComponent } from './user/settings/settings.component';
 
 const appRoutes: Routes = [
   {
@@ -131,8 +130,7 @@ const appRoutes: Routes = [
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
-    HeaderComponent,
-    SettingsComponent
+    HeaderComponent
   ],
     imports: [
         BrowserModule,
