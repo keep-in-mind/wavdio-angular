@@ -19,27 +19,27 @@
   <div style="flex-grow: 1"></div>
 
   <mat-menu #appMenu="matMenu">
-    <div>
+    <div class="menu-entry">
       <a [href]="'/de' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/de.png" [alt]="langAltTexts['de']"/>
+        <img src="assets/images/de.png" [alt]="langAltTexts['de']"/>
         German
       </a>
     </div>
-    <div>
+    <div class="menu-entry">
       <a [href]="'/en' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/en.png" [alt]="langAltTexts['en']"/>
+        <img src="assets/images/en.png" [alt]="langAltTexts['en']"/>
         English
       </a>
     </div>
-    <div>
+    <div class="menu-entry">
       <a [href]="'/es' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/es.png" [alt]="langAltTexts['es']"/>
+        <img src="assets/images/es.png" [alt]="langAltTexts['es']"/>
         Spanish
       </a>
     </div>
-    <div>
+    <div class="menu-entry">
       <a [href]="'/fr' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/fr.png" [alt]="langAltTexts['fr']"/>
+        <img src="assets/images/fr.png" [alt]="langAltTexts['fr']"/>
         French
       </a>
     </div>
