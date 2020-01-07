@@ -28,23 +28,7 @@
   <!-- Main Page -->
   <mat-sidenav-content id="page">
 
-    <!-- App Bar -->
-    <mat-toolbar class="mat-elevation-z4" style="display: flex">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <div style="flex-grow: 1"></div>
-
-      <mat-menu #appMenu="matMenu">
-        <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png"/> Englisch</a></div>
-        <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
-      </mat-menu>
-
-      <button mat-icon-button [matMenuTriggerFor]="appMenu">
-        <img [src]="'assets/images/' + locale + '.png'"/>
-      </button>
-    </mat-toolbar>
+    <app-app-bar [sidenav]="sidenav"></app-app-bar>
 
     <!-- Page Content -->
     <main style="position: relative">

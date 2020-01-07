@@ -57,6 +57,7 @@ import { HeaderComponent } from './user/header/header.component';
 import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { SettingsComponent } from './admin/settings/settings.component';
+import { AppBarComponent } from './user/app-bar/app-bar.component';
 
 const appRoutes: Routes = [
   {
@@ -133,7 +134,8 @@ const appRoutes: Routes = [
     QrcodeComponent,
     MuseumComponent,
     HeaderComponent,
-    SettingsComponent
+    SettingsComponent,
+    AppBarComponent
   ],
     imports: [
         BrowserModule,
