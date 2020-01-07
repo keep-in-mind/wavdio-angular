@@ -21,32 +21,32 @@
   <mat-menu #appMenu="matMenu">
     <div>
       <a [href]="'/de' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/de.png" alt="German Flag Icon"/>
+        <img class="ml-2" src="assets/images/de.png" [alt]="langAltTexts['de']"/>
         German
       </a>
     </div>
     <div>
       <a [href]="'/en' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/en.png" alt="British Flag Icon"/>
+        <img class="ml-2" src="assets/images/en.png" [alt]="langAltTexts['en']"/>
         English
       </a>
     </div>
     <div>
       <a [href]="'/es' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/es.png" alt="Spanish Flag Icon"/>
+        <img class="ml-2" src="assets/images/es.png" [alt]="langAltTexts['es']"/>
         Spanish
       </a>
     </div>
     <div>
       <a [href]="'/fr' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/fr.png" alt="French Flag Icon"/>
+        <img class="ml-2" src="assets/images/fr.png" [alt]="langAltTexts['fr']"/>
         French
       </a>
     </div>
   </mat-menu>
 
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
-    <img [src]="'assets/images/' + locale + '.png'" alt="Current Language Icon"/>
+    <img [src]="'assets/images/' + locale + '.png'" [alt]="langAltTexts[locale]"/>
   </button>
 
 </mat-toolbar>
