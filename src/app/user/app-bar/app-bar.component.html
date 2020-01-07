@@ -8,7 +8,7 @@
 
   <!-- Back Arrow -->
 
-  <a *ngIf="back_arrow" routerLink="/museum" routerLinkActive="active"
+  <a *ngIf="back_arrow_link" [routerLink]="back_arrow_link" routerLinkActive="active"
      style="color: inherit; text-decoration: inherit">
 
     <mat-icon>arrow_back</mat-icon>

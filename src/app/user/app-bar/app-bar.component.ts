@@ -10,7 +10,7 @@ import {MatSidenav} from '@angular/material';
 export class AppBarComponent implements OnInit {
 
   @Input() sidenav: MatSidenav;
-  @Input() back_arrow: boolean;
+  @Input() back_arrow_link: string;
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
