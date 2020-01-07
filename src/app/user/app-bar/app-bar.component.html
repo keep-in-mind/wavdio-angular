@@ -20,15 +20,27 @@
 
   <mat-menu #appMenu="matMenu">
     <div>
+      <a [href]="'/de' + this.router.url" i18n>
+        <img class="ml-2" src="assets/images/de.png" alt="German Flag Icon"/>
+        German
+      </a>
+    </div>
+    <div>
       <a [href]="'/en' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/en.png" alt="English Language Icon"/>
+        <img class="ml-2" src="assets/images/en.png" alt="British Flag Icon"/>
         English
       </a>
     </div>
     <div>
-      <a [href]="'/de' + this.router.url" i18n>
-        <img class="ml-2" src="assets/images/de.png" alt="German Language Icon"/>
-        German
+      <a [href]="'/es' + this.router.url" i18n>
+        <img class="ml-2" src="assets/images/es.png" alt="Spanish Flag Icon"/>
+        Spanish
+      </a>
+    </div>
+    <div>
+      <a [href]="'/fr' + this.router.url" i18n>
+        <img class="ml-2" src="assets/images/fr.png" alt="French Flag Icon"/>
+        French
       </a>
     </div>
   </mat-menu>
