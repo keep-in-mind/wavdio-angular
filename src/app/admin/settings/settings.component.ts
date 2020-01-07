@@ -32,4 +32,19 @@ export class SettingsComponent implements OnInit {
       );
     }
   }
+
+  updateSetting() {
+    console.log(this.setting)
+    this.settingService.updateSetting(this.setting).subscribe(
+      res => {
+        console.log(res);
+        // if (this.settingService.errorCode === 500) {
+        //   this.showAlertMessage(3, 5, 'Es ist ein Fehler aufgetreten. ' +
+        //     'Mehr Informationen finden Sie in den Serverlogs.');
+        // } else {
+        //   this.showAlertMessage(0, 5, 'Ihre Änderungen wurden erfolgreich übernommen');
+        // }
+      }
+    );
+  }
 }
