@@ -52,7 +52,6 @@ import {NgxQRCodeModule} from 'ngx-qrcode2';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
 import {NgxPrintModule} from 'ngx-print';
 import { MuseumComponent } from './user/museum/museum.component';
-import { HeaderComponent } from './user/header/header.component';
 
 import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
@@ -133,7 +132,6 @@ const appRoutes: Routes = [
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
-    HeaderComponent,
     SettingsComponent,
     AppBarComponent
   ],
