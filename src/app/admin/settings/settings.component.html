@@ -16,24 +16,24 @@
     <app-box-card descHeader="Sprachen">
       <div body>
 
-        <ul style="margin: 0; padding: 0; list-style-type:none">
+        <ul *ngIf="this.setting" style="margin: 0; padding: 0; list-style-type:none">
           <li style="display: flex; align-items: center">
-            <input id="check_german" type="checkbox" name="active_language" value="de">
+            <input id="check_german" type="checkbox" name="active_language" value="de" [checked]="this.setting.activeLangs.de">
             <img class="mx-2" src="assets/images/de.png"/>
             <label for="check_german" style="margin: 0">Deutsch</label>
           </li>
           <li style="display: flex; align-items: center">
-            <input id="check_english" type="checkbox" name="active_language" value="en">
+            <input id="check_english" type="checkbox" name="active_language" value="en" [checked]="this.setting.activeLangs.en">
             <img class="mx-2" src="assets/images/en.png"/>
             <label for="check_english" style="margin: 0">Englisch</label>
           </li>
           <li style="display: flex; align-items: center">
-            <input id="check_spanish" type="checkbox" name="active_language" value="es">
+            <input id="check_spanish" type="checkbox" name="active_language" value="es" [checked]="this.setting.activeLangs.es">
             <img class="mx-2" src="assets/images/es.png"/>
             <label for="check_spanish" style="margin: 0">Spanisch</label>
           </li>
           <li style="display: flex; align-items: center">
-            <input id="check_french" type="checkbox" name="active_language" value="fr">
+            <input id="check_french" type="checkbox" name="active_language" value="fr" [checked]="this.setting.activeLangs.fr">
             <img class="mx-2" src="assets/images/fr.png"/>
             <label for="check_french" style="margin: 0">Französisch</label>
           </li>
