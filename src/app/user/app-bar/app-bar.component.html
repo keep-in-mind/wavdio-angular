@@ -8,7 +8,9 @@
 
   <!-- Back Arrow -->
 
-  <a *ngIf="back_arrow" routerLink="/museum" routerLinkActive="active" i18n>
+  <a *ngIf="back_arrow" routerLink="/museum" routerLinkActive="active"
+     style="color: inherit; text-decoration: inherit">
+
     <mat-icon>arrow_back</mat-icon>
   </a>
 
@@ -17,12 +19,22 @@
   <div style="flex-grow: 1"></div>
 
   <mat-menu #appMenu="matMenu">
-    <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png"/> Englisch</a></div>
-    <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
+    <div>
+      <a [href]="'/en' + this.router.url">
+        <img class="ml-2" src="assets/images/en.png" alt="English Language Icon"/>
+        English
+      </a>
+    </div>
+    <div>
+      <a [href]="'/de' + this.router.url">
+        <img class="ml-2" src="assets/images/de.png" alt="German Language Icon"/>
+        German
+      </a>
+    </div>
   </mat-menu>
 
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
-    <img [src]="'assets/images/' + locale + '.png'"/>
+    <img [src]="'assets/images/' + locale + '.png'" alt="Current Language Icon"/>
   </button>
 
 </mat-toolbar>

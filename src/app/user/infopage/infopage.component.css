@@ -9,11 +9,6 @@
   overflow: auto;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
 /* SIDENAV */
 
 mat-toolbar {
