@@ -11,28 +11,37 @@
     <h1>{{descHeader}}</h1>
   </section>
 
-  <ul style="list-style-type:none">
-    <li style="display: flex; align-items: center">
-      <input id="check_german" type="checkbox" name="active_language" value="de">
-      <img class="mx-2" src="assets/images/de.png"/>
-      <label for="check_german" style="margin: 0">German</label>
-    </li>
-    <li style="display: flex; align-items: center">
-      <input id="check_english" type="checkbox" name="active_language" value="en">
-      <img class="mx-2" src="assets/images/en.png"/>
-      <label for="check_english" style="margin: 0">English</label>
-    </li>
-    <li style="display: flex; align-items: center">
-      <input id="check_spanish" type="checkbox" name="active_language" value="es">
-      <img class="mx-2" src="assets/images/es.png"/>
-      <label for="check_spanish" style="margin: 0">Spanish</label>
-    </li>
-    <li style="display: flex; align-items: center">
-      <input id="check_french" type="checkbox" name="active_language" value="fr">
-      <img class="mx-2" src="assets/images/fr.png"/>
-      <label for="check_french" style="margin: 0">French</label>
-    </li>
-  </ul>
+  <!-- Active languages -->
+  <section class="m-2">
+    <app-box-card descHeader="Sprachen">
+      <div body>
+
+        <ul style="margin: 0; padding: 0; list-style-type:none">
+          <li style="display: flex; align-items: center">
+            <input id="check_german" type="checkbox" name="active_language" value="de">
+            <img class="mx-2" src="assets/images/de.png"/>
+            <label for="check_german" style="margin: 0">Deutsch</label>
+          </li>
+          <li style="display: flex; align-items: center">
+            <input id="check_english" type="checkbox" name="active_language" value="en">
+            <img class="mx-2" src="assets/images/en.png"/>
+            <label for="check_english" style="margin: 0">Englisch</label>
+          </li>
+          <li style="display: flex; align-items: center">
+            <input id="check_spanish" type="checkbox" name="active_language" value="es">
+            <img class="mx-2" src="assets/images/es.png"/>
+            <label for="check_spanish" style="margin: 0">Spanisch</label>
+          </li>
+          <li style="display: flex; align-items: center">
+            <input id="check_french" type="checkbox" name="active_language" value="fr">
+            <img class="mx-2" src="assets/images/fr.png"/>
+            <label for="check_french" style="margin: 0">Französisch</label>
+          </li>
+        </ul>
+
+      </div>
+    </app-box-card>
+  </section>
 
 </div>
 <div *ngIf="this.cookieLawService">
