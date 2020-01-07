@@ -1,7 +1,18 @@
 <mat-toolbar class="mat-elevation-z4" style="display: flex">
+
+  <!-- Burger Menu -->
+
   <button *ngIf="sidenav" mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
+
+  <!-- Back Arrow -->
+
+  <a *ngIf="back_arrow" routerLink="/museum" routerLinkActive="active" i18n>
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+
+  <!-- Language Selection -->
 
   <div style="flex-grow: 1"></div>
 
@@ -13,4 +24,5 @@
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
     <img [src]="'assets/images/' + locale + '.png'"/>
   </button>
+
 </mat-toolbar>
