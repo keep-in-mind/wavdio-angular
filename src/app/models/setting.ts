@@ -1,4 +1,4 @@
-export class Settings {
+export class Setting {
 
   _id: string;
   activeLangs: ActiveLangs;
