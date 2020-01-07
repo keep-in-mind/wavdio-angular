@@ -83,7 +83,8 @@ const appRoutes: Routes = [
       {path: 'statistics/exposition/:id', component: ExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: ExhibitStatisticsComponent},
       {path: 'logging', component: LoggingComponent},
-      {path: 'personal-data', component: PersonalDataComponent}
+      {path: 'personal-data', component: PersonalDataComponent},
+      {path: 'settings', component: SettingsComponent}
     ]
   },
   {
