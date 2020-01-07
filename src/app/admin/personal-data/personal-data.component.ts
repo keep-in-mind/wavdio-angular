@@ -22,6 +22,7 @@ export class PersonalDataComponent implements OnInit {
 
   descHeader = 'Persönlicher Bereich';
   descLogo = 'Logo';
+  descImage = 'Image';
 
   user: TokenPayloadUpdate = {
     username: '',
@@ -70,9 +71,16 @@ export class PersonalDataComponent implements OnInit {
     }
   }
 
+  openLogoBigView() {
+    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    modal.componentInstance.museum = this.museum;
+    modal.componentInstance.logo = true;
+  }
+
   openImageBigView() {
     const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
     modal.componentInstance.museum = this.museum;
+    modal.componentInstance.logo = false;
   }
 
   updateMuseum() {
@@ -107,15 +115,35 @@ export class PersonalDataComponent implements OnInit {
 
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.museum.logo = new Image(randomFilename, 'alt');
+      this.getMuseumContent(this.locale).logo = new Image(randomFilename, 'alt');
+      this.museumService.updateMuseum(this.museum).subscribe();
+      spinner.close();
+    });
+  }
+
+  onImageChanged(event: Event) {
+    const inputElement = <HTMLInputElement>event.target;
+    const file = inputElement.files[0];
+    const randomFilename = FileService.randomizeFilename(file.name);
+
+    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteLogo() {
-    this.fileService.deleteFile(this.museum._id, this.museum.logo.filename).subscribe(() => {
-      this.museum.logo = null;
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).logo = null;
+      this.museumService.updateMuseum(this.museum).subscribe();
+    });
+  }
+
+  deleteImage() {
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }

@@ -7,8 +7,11 @@
     <img *ngIf="this.exposition.logo" [src]="'/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
     [alt]="this.exposition.logo.alternativeText">
   </ng-container>
-  <ng-container *ngIf="this.museum">
-    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
+  <ng-container *ngIf="this.museum && this.logo">
+    <img *ngIf="this.getMuseumContent(this.locale).logo" [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).logo.filename">
+  </ng-container>
+  <ng-container *ngIf="this.museum && !this.logo">
+    <img *ngIf="this.getMuseumContent(this.locale).image" [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).image.filename">
   </ng-container>
 </section>
 <section class="content p-3">
@@ -26,11 +29,17 @@
       </label>
       <textarea *ngIf="this.exposition.logo" id="exposition" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
     </ng-container>
-    <ng-container *ngIf="this.museum">
+    <ng-container *ngIf="this.museum && this.logo">
       <label class="form-label mb-2" for="museum">
         Beschreibung
       </label>
-      <textarea *ngIf="this.museum.logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
+      <textarea *ngIf="this.getMuseumContent(this.locale).logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.getMuseumContent(locale).logo.alternativeText"></textarea>
+    </ng-container>
+    <ng-container *ngIf="this.museum && !this.logo">
+      <label class="form-label mb-2" for="museum">
+        Beschreibung
+      </label>
+      <textarea *ngIf="this.getMuseumContent(this.locale).image" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.getMuseumContent(locale).image.alternativeText"></textarea>
     </ng-container>
     <div class="col-4">
       <button (click)="handleUpdate()" class="btn btn-success w-100">
