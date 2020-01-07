@@ -3,6 +3,14 @@
     <app-sidebar></app-sidebar>
   </section>
 
+  <section class="header ml-3 mt-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
+    </ol>
+    <h1>{{descHeader}}</h1>
+  </section>
+
 </div>
 <div *ngIf="this.cookieLawService">
   <ng-container *ngIf='this.cookieLawService.isAccepted()'>

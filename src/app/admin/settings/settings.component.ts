@@ -8,6 +8,8 @@ import {CookielawService} from '../../services/cookielaw.service';
 })
 export class SettingsComponent implements OnInit {
 
+  descHeader = 'Einstellungen';
+
   constructor(
     public cookieLawService: CookielawService) {
   }
