@@ -256,95 +256,9 @@
       
       
       
-      <trans-unit id="2831dbea11c33aaac04b8bb2e71c0c60f968ba79" datatype="html">
-        <source>Diese Website verwendet Cookies</source><target state="final">Diese Website verwendet Cookies</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
-          <context context-type="linenumber">71</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">197</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/infopage/infopage.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">100</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="53cf4b922dfd192d90df1de0e4c1b69f0bfb84e0" datatype="html">
-        <source>
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
-          zu können.
-        </source><target state="final">
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
-          zu können.
-        </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">66</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
-          <context context-type="linenumber">72</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">198</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/infopage/infopage.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f8c557a9f504b39db57e24f28141ef1b7d397021" datatype="html">
-        <source>
-          Ich stimme zu
-        </source><target state="final">
-          Ich stimme zu
-        </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">71</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
-          <context context-type="linenumber">77</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">203</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/infopage/infopage.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">107</context>
-        </context-group>
-      </trans-unit>
+      
+      
+      
       <trans-unit id="07df0eb7964642fd296a604271dd1ddc10c5e6ad" datatype="html">
         <source>Kommentar eingeben:</source><target state="final">Kommentar eingeben:</target>
         <context-group purpose="location">
@@ -468,24 +382,36 @@
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="8e3720c2601feec49452019bf815e518f1b5754f" datatype="html">
+      </trans-unit><trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
+        <source>This website uses cookies</source><target state="final">This website uses cookies</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="c83eac6edc22b24f6493b414818ffed1dedb57d4" datatype="html">
         <source>
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website
-          besuchen
-          zu können.
+          For more information on this and your rights as a user, please see our privacy policy at the bottom of the
+          page. Click on "I agree" to accept cookies and visit our website directly.
         </source><target state="final">
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website
-          besuchen
-          zu können.
+          For more information on this and your rights as a user, please see our privacy policy at the bottom of the
+          page. Click on "I agree" to accept cookies and visit our website directly.
         </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="b509d7fdd1d728f9de5bf0983704076fcd92f9cf" datatype="html">
+        <source>
+          I agree
+        </source><target state="final">
+          I agree
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
+      
       <trans-unit id="38747b1074c11845febe44eef5fc1ef0c1c30925" datatype="html">
         <source>
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
