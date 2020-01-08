@@ -2,12 +2,12 @@
   <div class="container">
     <div class="form py-3" role="form">
       <div class="form-group">
-        <label for="formComment" i18n>Kommentar eingeben:</label>
+        <label for="formComment" i18n>Enter comment:</label>
         <textarea class="form-control" [(ngModel)]="comment" id="formComment" rows="7"></textarea>
       </div>
       <div class="clearfix mb-2">
-        <button type="button" class="btn btn-secondary float-left" (click)="modal.close()" i18n>Abbrechen</button>
-        <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" i18n>Absenden</button>
+        <button type="button" class="btn btn-secondary float-left" (click)="modal.close()" i18n>Cancel</button>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" i18n>Submit</button>
       </div>
     </div>
   </div>

@@ -251,35 +251,35 @@
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
-      </trans-unit>
-
-
-
-
-      
-      
-      
-      <trans-unit id="07df0eb7964642fd296a604271dd1ddc10c5e6ad" datatype="html">
-        <source>Kommentar eingeben:</source><target state="new">Kommentar eingeben:</target>
+      </trans-unit><trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
+        <source>Enter comment:</source><target state="new">Entrez un commentaire:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="1b24932d0f2269e4b41d0f936fdb5de1b94da401" datatype="html">
-        <source>Abbrechen</source><target state="new">Abbrechen</target>
+      </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source><target state="new">Annuler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="f504721f06d60b5f234278f84ffeb23086f292ba" datatype="html">
-        <source>Absenden</source><target state="new">Absenden</target>
+      </trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source><target state="new">Soumettre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
+
+
+
+
+
+
+
+
+
+
       <trans-unit id="24917c23a20d0917333641416997463c4cb51587" datatype="html">
         <source>Dein Browser unterstützt nicht das HTML5 Audio Feature</source><target state="new">Dein Browser unterstützt nicht das HTML5 Audio Feature</target>
         <context-group purpose="location">
@@ -411,7 +411,7 @@
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
-      
+
       <trans-unit id="38747b1074c11845febe44eef5fc1ef0c1c30925" datatype="html">
         <source>
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>

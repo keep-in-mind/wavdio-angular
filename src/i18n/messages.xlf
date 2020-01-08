@@ -256,22 +256,22 @@
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="07df0eb7964642fd296a604271dd1ddc10c5e6ad" datatype="html">
-        <source>Kommentar eingeben:</source>
+      <trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
+        <source>Enter comment:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1b24932d0f2269e4b41d0f936fdb5de1b94da401" datatype="html">
-        <source>Abbrechen</source>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f504721f06d60b5f234278f84ffeb23086f292ba" datatype="html">
-        <source>Absenden</source>
+      <trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">10</context>
