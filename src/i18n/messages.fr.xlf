@@ -418,7 +418,7 @@
           German
         </source><target state="new">
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
-          German
+          Allemand
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
@@ -431,7 +431,7 @@
           English
         </source><target state="new">
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
-          English
+          Anglais
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
@@ -444,7 +444,7 @@
           Spanish
         </source><target state="new">
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
-          Spanish
+          Espagnol
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
@@ -457,7 +457,7 @@
           French
         </source><target state="new">
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
-          French
+          Français
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
