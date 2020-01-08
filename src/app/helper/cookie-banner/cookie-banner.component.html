@@ -1,12 +1,14 @@
 <div *ngIf="this.cookielawService">
-  <ng-container *ngIf='this.cookielawService.isAccepted()'>
+  <ng-container *ngIf="this.cookielawService.isAccepted()">
     <div class="fixed-bottom text-center">
       <div class="p-3 mb-2 bg-secondary text-white">
         <h3 i18n>Diese Website verwendet Cookies</h3>
+        -
         <p i18n>
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
-          zu können.
+          Nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie
+          in unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf
+          "Ich stimme zu", um Cookies zu akzeptieren und direkt unsere Website
+          besuchen zu können.
         </p>
         <button type="button" class="btn btn-light btn-lg" (click)="this.cookielawService.accepted()" i18n>
           Ich stimme zu
