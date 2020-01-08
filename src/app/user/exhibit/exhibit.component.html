@@ -62,10 +62,9 @@
                   <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
                           [type]="audio_file.mimeType">
                 </ng-container>
-                <p i18n>Dein Browser unterstützt nicht das HTML5 Audio Feature</p>
+                <p i18n>Your browser does not support the HTML5 audio feature</p>
               </audio>
-              <progress #progressAudio class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
-              </progress>
+              <progress #progressAudio class="progress" min='0' max='100' value='0'></progress>
               <div #timeAudio class="time">00:00</div>
               <div class="controls">
                 <button (click)="playPauseAudio()" class="playpause">
@@ -93,7 +92,7 @@
               </div>
               <ng-template #transcriptModal let-c="close" let-d="dismiss">
                 <div class="modal-header" style="overflow-y: initial !important">
-                  <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transkript</h4>
+                  <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transcript</h4>
                   <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -116,10 +115,9 @@
                   <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
                           [type]="video_file.mimeType">
                 </ng-container>
-                <p i18n>Dein Browser unterstützt nicht das HTML5 Video Feature.</p>
+                <p i18n>Your browser does not support the HTML5 video feature</p>
               </video>
-              <progress #progress class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
-              </progress>
+              <progress #progress class="progress" min='0' max='100' value='0'></progress>
               <div #time class="time">00:00</div>
               <div class="controls">
                 <button (click)="playPause()" class="playpause">
