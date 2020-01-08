@@ -1,11 +1,12 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 import {Exposition} from '../../../models/exposition';
 import {ExpositionContent} from '../../../models/exposition-content';
-import {ExpositionService} from '../../../services/exposition.service';
-import {Router} from '@angular/router';
-import {MuseumService} from '../../../services/museum.service';
 import {Museum} from '../../../models/museum';
 import {AuthenticationService} from '../../../services/authentification.service';
+import {ExpositionService} from '../../../services/exposition.service';
+import {MuseumService} from '../../../services/museum.service';
 
 @Component({
   selector: 'app-new-admin-exposition-component',
