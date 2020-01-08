@@ -227,8 +227,8 @@
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">72</context>
         </context-group>
-      </trans-unit><trans-unit id="a42350c5165435aceffea802b6e4449aba431c80" datatype="html">
-        <source>I accept the</source><target state="final">I accept the</target>
+      </trans-unit><trans-unit id="d0b41d9d91deb15ea9d9d1040340f93221bfddc5" datatype="html">
+        <source>I accept the </source><target state="final">I accept the </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
@@ -239,8 +239,8 @@
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
-      </trans-unit><trans-unit id="128b80baef1fc73c59cce8111863ffb95e83f420" datatype="html">
-        <source>and the</source><target state="final">and the</target>
+      </trans-unit><trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
+        <source> and the </source><target state="final"> and the </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
