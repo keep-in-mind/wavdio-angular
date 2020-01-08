@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CookieBannerComponent } from './cookie-banner.component';
+import {CookieBannerComponent} from './cookie-banner.component';
 
 describe('CookieBannerComponent', () => {
   let component: CookieBannerComponent;
@@ -8,9 +8,9 @@ describe('CookieBannerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CookieBannerComponent ]
+      declarations: [CookieBannerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
