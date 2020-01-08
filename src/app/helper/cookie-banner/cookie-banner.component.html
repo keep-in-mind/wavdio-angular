@@ -2,16 +2,14 @@
   <ng-container *ngIf="this.cookielawService.isAccepted()">
     <div class="fixed-bottom text-center">
       <div class="p-3 mb-2 bg-secondary text-white">
-        <h3 i18n>Diese Website verwendet Cookies</h3>
+        <h3 i18n>This website uses cookies</h3>
         -
         <p i18n>
-          Nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie
-          in unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf
-          "Ich stimme zu", um Cookies zu akzeptieren und direkt unsere Website
-          besuchen zu können.
+          For more information on this and your rights as a user, please see our privacy policy at the bottom of the
+          page. Click on "I agree" to accept cookies and visit our website directly.
         </p>
         <button type="button" class="btn btn-light btn-lg" (click)="this.cookielawService.accepted()" i18n>
-          Ich stimme zu
+          I agree
         </button>
       </div>
     </div>
