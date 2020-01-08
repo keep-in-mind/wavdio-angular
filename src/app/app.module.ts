@@ -55,6 +55,7 @@ import { MuseumComponent } from './user/museum/museum.component';
 
 import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
+import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
 import { SettingsComponent } from './admin/settings/settings.component';
 import { AppBarComponent } from './user/app-bar/app-bar.component';
 
@@ -132,6 +133,7 @@ const appRoutes: Routes = [
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
+    CookieBannerComponent,
     SettingsComponent,
     AppBarComponent
   ],
