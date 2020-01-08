@@ -228,29 +228,29 @@
           <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f0551faf3b021646f356b0ba2aba44f730a4dec8" datatype="html">
-        <source>Ich akzeptiere die</source>
+      <trans-unit id="a42350c5165435aceffea802b6e4449aba431c80" datatype="html">
+        <source>I accept the</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="358ff8a4907cabcbf191b27cd83c91fd764c46c6" datatype="html">
-        <source> Nutzungsbedingungen</source>
+      <trans-unit id="645b2c426c6a9d4d1c00653a78ede4673b1ec511" datatype="html">
+        <source>terms of use</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4420989878259349fc18141e1b26aa50ad0d2a94" datatype="html">
-        <source> und die</source>
+      <trans-unit id="128b80baef1fc73c59cce8111863ffb95e83f420" datatype="html">
+        <source>and the</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a0d54db36bfcc1e54bbbb58b6920a5d84e4e0674" datatype="html">
-        <source> Datenschutzbestimmungen</source>
+      <trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
+        <source>privacy policy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>

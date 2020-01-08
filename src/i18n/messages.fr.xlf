@@ -227,35 +227,35 @@
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">72</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="f0551faf3b021646f356b0ba2aba44f730a4dec8" datatype="html">
-        <source>Ich akzeptiere die</source><target state="new">Ich akzeptiere die</target>
+      </trans-unit><trans-unit id="a42350c5165435aceffea802b6e4449aba431c80" datatype="html">
+        <source>I accept the</source><target state="new">J'accepte les</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="358ff8a4907cabcbf191b27cd83c91fd764c46c6" datatype="html">
-        <source> Nutzungsbedingungen</source><target state="new"> Nutzungsbedingungen</target>
+      </trans-unit><trans-unit id="645b2c426c6a9d4d1c00653a78ede4673b1ec511" datatype="html">
+        <source>terms of use</source><target state="new">conditions d'utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="4420989878259349fc18141e1b26aa50ad0d2a94" datatype="html">
-        <source> und die</source><target state="new"> und die</target>
+      </trans-unit><trans-unit id="128b80baef1fc73c59cce8111863ffb95e83f420" datatype="html">
+        <source>and the</source><target state="new">et la</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="a0d54db36bfcc1e54bbbb58b6920a5d84e4e0674" datatype="html">
-        <source> Datenschutzbestimmungen</source><target state="new"> Datenschutzbestimmungen</target>
+      </trans-unit><trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
+        <source>privacy policy</source><target state="new">politique de confidentialité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
+
+
+
+
       <trans-unit id="2831dbea11c33aaac04b8bb2e71c0c60f968ba79" datatype="html">
         <source>Diese Website verwendet Cookies</source><target state="new">Diese Website verwendet Cookies</target>
         <context-group purpose="location">
