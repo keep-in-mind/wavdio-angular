@@ -362,14 +362,26 @@
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
-        <source>Home</source><target state="new">Home</target>
+      </trans-unit><trans-unit id="321e4419a943044e674beb55b8039f42a9761ca5" datatype="html">
+        <source>Info</source><target state="new">Info</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">52</context>
         </context-group>
-      </trans-unit><trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
+      </trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
+        <source>Exhibits</source><target state="new">Objets</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit><trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
+        <source>Expositions</source><target state="new">Expositions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
         <source>This website uses cookies</source><target state="new">This website uses cookies</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
