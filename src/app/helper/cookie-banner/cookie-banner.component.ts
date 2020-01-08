@@ -9,7 +9,7 @@ import {CookielawService} from '../../services/cookielaw.service';
 })
 export class CookieBannerComponent implements OnInit {
 
-  constructor(private cookielawService: CookielawService) {
+  constructor(public cookielawService: CookielawService) {
   }
 
   ngOnInit() {
