@@ -7,7 +7,7 @@
     "start-en": "ng serve --configuration=en",
     "start-es": "ng serve --configuration=es",
     "start-fr": "ng serve --configuration=fr",
-    "build": "npm run build:de && npm run build:en && npm run build:es && npm run build:fr",
+    "build": "npm run build-de && npm run build-en && npm run build-es && npm run build-fr",
     "build-de": "ng build --configuration=prod-de",
     "build-en": "ng build --configuration=prod-en",
     "build-es": "ng build --configuration=prod-es",
