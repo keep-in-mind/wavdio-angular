@@ -1,18 +1,16 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-
-import {Infopage} from '../../models/infopage';
-import {InfopageService} from '../../services/infopage.service';
-import {MuseumService} from '../../services/museum.service';
-import {Museum} from '../../models/museum';
-import {Image} from '../../models/image';
-
 import {Router} from '@angular/router';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
+import {SpinnerComponent} from '../../helper/spinner/spinner.component';
+import {Infopage} from '../../models/infopage';
+import {Image} from '../../models/image';
+import {Museum} from '../../models/museum';
 import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
 import {FileService} from '../../services/file.service';
-import {SpinnerComponent} from '../../helper/spinner/spinner.component';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {InfopageService} from '../../services/infopage.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-infopage-overwiev',
