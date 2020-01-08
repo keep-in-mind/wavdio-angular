@@ -49,6 +49,20 @@
               "i18nFormat": "xlf",
               "i18nLocale": "en"
             },
+            "es": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-es",
+              "i18nFile": "src/i18n/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es"
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-fr",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
+            },
             "prod-de": {
               "aot": true,
               "outputPath": "dist/wAVdio-prod-de",
@@ -108,6 +122,66 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "prod-es": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-prod-es",
+              "i18nFile": "src/i18n/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es",
+              "baseHref": "/es/",
+              "deployUrl": "/es/",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "prod-fr": {
+              "aot": true,
+              "outputPath": "dist/wAVdio-prod-fr",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "baseHref": "/fr/",
+              "deployUrl": "/fr/",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -123,6 +197,12 @@
             },
             "en": {
               "browserTarget": "wAVdio:build:en"
+            },
+            "es": {
+              "browserTarget": "wAVdio:build:es"
+            },
+            "fr": {
+              "browserTarget": "wAVdio:build:fr"
             }
           }
         },
@@ -177,8 +257,10 @@
               "genDir": "src/i18n",
               "defaultLanguage": "en",
               "languages": [
+                "de",
                 "en",
-                "de"
+                "es",
+                "fr"
               ]
             }
           }
