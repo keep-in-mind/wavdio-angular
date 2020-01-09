@@ -61,9 +61,6 @@ export class ExhibitComponent implements OnInit {
   timeAudio: ElementRef;
   progressAudio: ElementRef;
 
-  videoPlaying = false;
-  audioPlaying = false;
-
   @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
     this.videoplayer = content;
   }
@@ -207,60 +204,6 @@ export class ExhibitComponent implements OnInit {
         return;
       }
     }
-  }
-
-  /**
-   * Media player controls
-   */
-
-  playPause() {
-    this.mediaplayerService.playPausePlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  playPauseAudio() {
-    this.mediaplayerService.playPausePlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  stopIt() {
-    this.mediaplayerService.stopPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  stopItAudio() {
-    this.mediaplayerService.stopPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  rewind() {
-    this.mediaplayerService.rewindPlayer(this.videoplayer);
-  }
-
-  rewindAudio() {
-    this.mediaplayerService.rewindPlayer(this.audioplayer);
-  }
-
-  forward() {
-    this.mediaplayerService.forwardPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  forwardAudio() {
-    this.mediaplayerService.forwardPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  updateTime() {
-    this.mediaplayerService.timeUpdate(this.videoplayer,
-      this.time, this.progress, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  updateTimeAudio() {
-    this.mediaplayerService.timeUpdate(this.audioplayer,
-      this.timeAudio, this.progressAudio, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
   }
 
   getExhibitContent(lang: String): ExhibitContent {
