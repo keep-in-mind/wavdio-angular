@@ -122,36 +122,7 @@
           </ng-container>
         </div>
         <div body *ngIf="getExhibitContent(selectedLanguage).video.length">
-          <section class="player">
-            <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
-              <ng-container *ngFor="let video_file of getExhibitContent(selectedLanguage).video">
-                <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
-                        [type]="video_file.mimeType">
-              </ng-container>
-              <p>Your browser does not support the html5 video feature.</p>
-            </video>
-            <progress #progress class="progress" min='0' max='100' value='0'>0% played</progress>
-            <div #time class="time">00:00</div>
-            <div class="controls">
-              <button (click)="playPause()" class="playpause">
-                <ng-container *ngIf="!videoPlaying">
-                  <fa-icon icon="play" size="lg"></fa-icon>
-                </ng-container>
-                <ng-container *ngIf="videoPlaying">
-                  <fa-icon icon="pause" size="lg"></fa-icon>
-                </ng-container>
-              </button>
-              <button (click)="stopIt()" class="stop">
-                <fa-icon icon="stop" size="lg"></fa-icon>
-              </button>
-              <button (click)="rewind()" class="rwd">
-                <fa-icon icon="backward" size="lg"></fa-icon>
-              </button>
-              <button (click)="forward()" class="fwd">
-                <fa-icon icon="forward" size="lg"></fa-icon>
-              </button>
-            </div>
-          </section>
+          <app-video-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-video-player>
         </div>
       </app-box-card>
     </section>

@@ -36,29 +36,11 @@ export class AdminExhibitComponent implements OnInit {
   languages = ['de', 'en'];
   selectedLanguage = this.locale;
 
-  videoplayer: ElementRef;
-  time: ElementRef;
-  progress: ElementRef;
-
   iconAudio: ElementRef;
-
-  videoPlaying = false;
 
   alertType: number;
   alertMessage: string;
   showAlert: boolean;
-
-  @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
-    this.videoplayer = content;
-  }
-
-  @ViewChild('time', {static: false}) set content3(content: ElementRef) {
-    this.time = content;
-  }
-
-  @ViewChild('progress', {static: false}) set content4(content: ElementRef) {
-    this.progress = content;
-  }
 
   @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
     this.iconAudio = content;
@@ -260,35 +242,6 @@ export class AdminExhibitComponent implements OnInit {
         console.log(err);
       }
     );
-  }
-
-  /**
-   * Media player controls
-   */
-
-  playPause() {
-    this.mediaplayerService.playPausePlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  stopIt() {
-    this.mediaplayerService.stopPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  rewind() {
-    this.mediaplayerService.rewindPlayer(this.videoplayer);
-  }
-
-  forward() {
-    this.mediaplayerService.forwardPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  updateTime() {
-    this.mediaplayerService.timeUpdate(this.videoplayer,
-      this.time, this.progress, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
   }
 
   private showAlertMessage(type: number, seconds: number, message: string) {
