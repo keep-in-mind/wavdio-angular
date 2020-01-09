@@ -2,7 +2,7 @@
 
   <!-- App Bar -->
   <mat-toolbar class="mat-elevation-z4" style="display: flex">
-    <a routerLink="/museum" routerLinkActive="active" i18n>
+    <a aria-label="Zurück" routerLink="/museum" routerLinkActive="active" i18n>
       <mat-icon>arrow_back</mat-icon>
     </a>
 
@@ -13,8 +13,8 @@
       <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
     </mat-menu>
 
-    <button mat-icon-button [matMenuTriggerFor]="appMenu">
-      <img [src]="'assets/images/' + locale + '.png'"/>
+    <button aria-label="select language"mat-icon-button [matMenuTriggerFor]="appMenu">
+      <img alt="Current language"[src]="'assets/images/' + locale + '.png'"/>
     </button>
   </mat-toolbar>
 
@@ -90,7 +90,7 @@
           Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website besuchen
           zu können.
         </p>
-        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
+        <button aria-label="accept terms of use" type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
           Ich stimme zu
         </button>
       </div>

@@ -20,34 +20,31 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-6">
-              <input class="form-control" type="text" placeholder="Titel"
+              <label class="form-label mb-2" for="exhibit">Titel</label>
+              <input id="exhibit"class="form-control" type="text"
                      [(ngModel)]="getExhibitContent(selectedLanguage).name">
 
             </div>
             <div class="col-3">
-              <input class="form-control" type="number" min="100" max="999" placeholder="Code"
+              <label class="form-label mb-2" for="nr_">Code</label>
+              <input id="nr_"class="form-control" type="number" min="100" max="999"
                      [(ngModel)]="exhibit.code">
             </div>
             <div class="col-3">
-              <select class="form-control" [(ngModel)]="selectedLanguage">
+              <label class="form-label mb-2" for="lang_select">Sprache</label>
+              <select id="lang_select"class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <div class="mb-2">
-            <label class="mr-2 form-check-label" for="active">
-              Aktiv
-            </label>
+            <label class="mr-2 form-check-label" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
           </div>
-          <label class="form-label mb-2" for="beschr">
-            Beschreibung
-          </label>
+          <label class="form-label mb-2" for="beschr">Beschreibung</label>
           <textarea id="beschr" class="form-control mb-2" rows="7"
                     [(ngModel)]="getExhibitContent(selectedLanguage).info"></textarea>
-          <label class="form-label mb-2" for="notizen">
-            Notizen
-          </label>
+          <label class="form-label mb-2" for="notizen">Notizen</label>
           <textarea id="notizen" notizen class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">

@@ -21,36 +21,26 @@
               <label class="form-label mb-2" for="museumname">
                 Museumsname
               </label>
-              <input id="museumname" class="form-control" type="text" placeholder="Titel"
+              <input id="museumname" class="form-control" type="text"
                      [(ngModel)]="getMuseumContent(selectedLanguage).name">
             </div>
             <div class="col-3">
-              <label class="form-label mb-2" for="lang_select">
-                Sprache
-              </label>
+              <label class="form-label mb-2" for="lang_select">Sprache</label>
               <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
-          <label class="form-label mb-2" for="welcomeText">
-            Begrüßungstext
-          </label>
+          <label class="form-label mb-2" for="welcomeText">Begrüßungstext</label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
-          <label class="form-label mb-2" for="info">
-            Beschreibung
-          </label>
+          <label class="form-label mb-2" for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
-          <label class="form-label mb-2" for="termsOfUse">
-            Nutzungsbedingungen
-          </label>
+          <label class="form-label mb-2" for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
-          <label class="form-label mb-2" for="termsOfPrivacy">
-            Datenschutzerklärung
-          </label>
+          <label class="form-label mb-2" for="termsOfPrivacy">Datenschutzerklärung</label>
           <textarea id="termsOfPrivacy" class="form-control mb-2"
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
           <div class="form-row mb-2">
@@ -69,40 +59,20 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descLogo">
         <div header>
-          <fa-icon [hidden]="getMuseumContent(locale).logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
+          <fa-icon [hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
           </fa-icon>
           <form class="d-none">
             <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!getMuseumContent(locale).logo" class="fa-lg" icon="minus-circle"
+          <fa-icon [hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"></fa-icon>
         </div>
         <div body>
-          <img *ngIf="getMuseumContent(locale).logo" (click)="openLogoBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename" [alt]="getMuseumContent(locale).logo.alternativeText"/>
+          <img *ngIf="museum.logo" (click)="openImageBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" [alt]="museum.logo.alternativeText"/>
         </div>
       </app-box-card>
     </section>
-
-    <!-- Image -->
-    <section class="mt-2">
-      <app-box-card [descHeader]="descImage">
-        <div header>
-          <fa-icon [hidden]="getMuseumContent(locale).image" (click)="onImageInput.click()" class="fa-lg" icon="plus-circle">
-          </fa-icon>
-          <form class="d-none">
-            <input #onImageInput (change)="onImageChanged($event)" type="file" name="file">
-          </form>
-          <fa-icon [hidden]="!getMuseumContent(locale).image" class="fa-lg" icon="minus-circle"
-                   (click)="deleteImage()"></fa-icon>
-        </div>
-        <div body>
-          <img *ngIf="getMuseumContent(locale).image" (click)="openImageBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename" [alt]="getMuseumContent(locale).image.alternativeText"/>
-        </div>
-      </app-box-card>
-    </section>
-    
     <!--Neues Passwort anlegen-->
     <section class="mt-2">
       <div class="card">
@@ -128,21 +98,21 @@
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
-              <label class="form-label mb-2" for="passwortAktuell">
-                Passwort
-              </label>
+              <label class="form-label mb-2" for="passwortAktuell">Altes Passwort</label>
               <input id="passwortAktuell" class="form-control" type="password" placeholder="Aktuelles Passwort"
                      [(ngModel)]="user.password">
             </div>
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
+              <label class="form-label mb-2" for="passwortNeu">Neues Passwort</label>
               <input id="passwortNeu" class="form-control" type="password" placeholder="Neues Passwort"
                      [(ngModel)]="user.newPassword">
             </div>
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
+              <label class="form-label mb-2" for="passwortNeuWiederholt">Neues Passwort wiederholen</label>
               <input id="passwortNeuWiederholt" class="form-control" type="password"
                      placeholder="Neues Passwort wiederholen" [(ngModel)]="newPasswordRepeat">
             </div>

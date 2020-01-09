@@ -17,11 +17,14 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <input class="form-control" type="text" placeholder="Titel"
+              <label for="newAexpo">Titel</label>
+              <input id="newAexpo" class="form-control" type="text"
                      [(ngModel)]="getExpositionContent(selectedLanguage).name" required="true">
+
             </div>
             <div class="col-3">
-              <select class="form-control" [(ngModel)]="selectedLanguage">
+              <label class="form-label mb-2" for="lang_select">Sprache</label>
+              <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
@@ -33,13 +36,11 @@
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">
           </div>
 
-          <label class="form-label mb-2" for="info">Info</label>
+          <label class="form-label mb-2" for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
 
-          <label class="form-label mb-2" [htmlFor]="notizen">
-            Notizen
-          </label>
-          <textarea #notizen class="form-control mb-2" [(ngModel)]="exposition.note" rows="7"></textarea>
+          <label class="form-label mb-2" for="notizen">Notizen</label>
+          <textarea id="notizen" class="form-control mb-2" [(ngModel)]="exposition.note" rows="7"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">
               <button (click)="createExposition()" class="btn btn-success w-100">

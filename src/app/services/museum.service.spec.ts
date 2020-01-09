@@ -7,55 +7,45 @@ import {Image} from '../models/image';
 import {MuseumContent} from '../models/museum-content';
 
 const louvre = new Museum(
+  new Image('louvre.jpg', 'Louvre'),
   [
     new MuseumContent(
       'en',
       'Louvre',
-      'The Louvre was built in ...',
       'Welcome to the Louvre!',
+      new Image('site_plan_en.png', 'Site Plan'),
       'terms of use...',
-      'privacy terms...',
-      new Image('louvre_logo_en.jpg', 'Louvre Logo'),
-      new Image('louvre_image_de.jpg', 'Louvre Image'),
-      new Image('site_plan_en.png', 'Site Plan')
+      'privacy terms...'
     ),
     new MuseumContent(
       'de',
       'Louvre',
       'Willkommen im Louvre!',
-      'Das Louvre wurde im Jahre ...',
-      'Nutzungsbedingungen...',
-      'Datenschutzrichtlinien...',
-      new Image('louvre_logo_de.png', 'Louvre Logo'),
-      new Image('louvre_image_de.png', 'Louvre Bild'),
       new Image('site_plan_de.png', 'Lageplan'),
+      'Nutzungsbedingungen...',
+      'Datenschutzrichtlinien...'
     )
   ]
 );
 
 const germanMuseum = new Museum(
+  new Image('german_museum.jpg', 'German Museum'),
   [
     new MuseumContent(
       'en',
       'German Museum',
-      'The German Museum was built in ...',
       'Welcome to the German Museum!',
+      new Image('site_plan_en.png', 'Site Plan'),
       'terms of use...',
-      'privacy terms...',
-      new Image('german_museum_logo_en.jpg', 'German Museum Logo'),
-      new Image('german_museum_image_de.jpg', 'German Museum Image'),
-      new Image('site_plan_en.png', 'Site Plan')
+      'privacy terms...'
     ),
     new MuseumContent(
       'de',
       'Deutsches Museum',
       'Willkommen im Deutschen Museum!',
-      'Das Deutsche Museum wurde im Jahre ...',
-      'Nutzungsbedingungen...',
-      'Datenschutzrichtlinien...',
-      new Image('german_museum_logo_de.png', 'Deutsches Museum Logo'),
-      new Image('german_museum_image_de.png', 'Deutsches Museum Bild'),
       new Image('site_plan_de.png', 'Lageplan'),
+      'Nutzungsbedingungen...',
+      'Datenschutzrichtlinien...'
     )
   ]
 );

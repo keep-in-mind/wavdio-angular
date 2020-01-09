@@ -15,7 +15,7 @@
       <app-box-card [descHeader]="descInfopageBox">
         <div header>
           <a routerLink="/admin/infopage/new" routerLinkActive="active">
-            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+            <fa-icon aria-label="AddInfoseite"class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
         <div body *ngFor="let infopage of infopages">
@@ -47,9 +47,7 @@
         </div>
         <div body>
           <div style="width: 100px" class="mb-3">
-            <label class="form-label mb-2" for="lang_select">
-              Sprache
-            </label>
+            <label class="form-label mb-2" for="lang_select">Sprache</label>
             <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
               <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
             </select>

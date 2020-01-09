@@ -18,7 +18,9 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <input class="form-control" type="text" placeholder="Titel" [(ngModel)]="infopage.name">
+              <label for="infopage">Titel</label>
+              <input id="infopage"class="form-control" type="text"  [(ngModel)]="infopage.name">
+
             </div>
             <div class="col-3">
               <select class="form-control" [(ngModel)]="infopage.lang">
