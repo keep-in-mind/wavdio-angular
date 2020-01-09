@@ -1,11 +1,11 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {InfopageService} from '../../services/infopage.service';
-import {Infopage} from '../../models/infopage';
 
-import {CookielawService} from '../../services/cookielaw.service';
-import {MuseumContent} from '../../models/museum-content';
+import {Infopage} from '../../models/infopage';
 import {Museum} from '../../models/museum';
+import {MuseumContent} from '../../models/museum-content';
+import {CookielawService} from '../../services/cookielaw.service';
+import {InfopageService} from '../../services/infopage.service';
 import {MuseumService} from '../../services/museum.service';
 
 @Component({
