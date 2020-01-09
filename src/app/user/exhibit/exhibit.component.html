@@ -2,12 +2,12 @@
 
   <!-- App Bar -->
   <mat-toolbar class="mat-elevation-z4" style="display: flex">
-    <a aria-label="backToMuseum" *ngIf="exhibit && exhibit.parentModel === 'Museum'"
+    <a aria-label="Go back to museum" *ngIf="exhibit && exhibit.parentModel === 'Museum'"
        [routerLink]="'/museum'"
        routerLinkActive="active">
       <mat-icon>arrow_back</mat-icon>
     </a>
-    <a aria-label="backToExposition"*ngIf="exhibit && exhibit.parentModel === 'Exposition'"
+    <a aria-label="Go back to exposition" *ngIf="exhibit && exhibit.parentModel === 'Exposition'"
        [routerLink]="'/exposition/' + exposition._id"
        routerLinkActive="active">
       <mat-icon>arrow_back</mat-icon>
@@ -20,7 +20,7 @@
       <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
     </mat-menu>
 
-    <button aria-label="select language" mat-icon-button [matMenuTriggerFor]="appMenu">
+    <button aria-label="Select language" mat-icon-button [matMenuTriggerFor]="appMenu">
       <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
     </button>
   </mat-toolbar>
@@ -107,14 +107,14 @@
                 </button>
               </div>
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
-                <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
+                <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">
                   <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
                 </button>
               </div>
               <ng-template #transcriptModal let-c="close" let-d="dismiss">
                 <div class="modal-header" style="overflow-y: initial !important">
                   <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transkript</h4>
-                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <button type="button" class="close" aria-label="Close transcript" (click)="d('Cross click')">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>

@@ -79,12 +79,12 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descLogo">
         <div header>
-          <fa-icon aria-label="addAusstellung" [hidden]="exposition.logo" (click)="uploadLogoInput.click()" class="fa-lg" icon="plus-circle">
+          <fa-icon aria-label="Upload logo" [hidden]="exposition.logo" (click)="uploadLogoInput.click()" class="fa-lg" icon="plus-circle">
           </fa-icon>
           <form class="d-none">
             <input #uploadLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon aria-label="deleteAusstellung" [hidden]="!exposition.logo" class="fa-lg" icon="minus-circle"
+          <fa-icon aria-label="Delete logo" [hidden]="!exposition.logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"></fa-icon>
         </div>
         <div body>
@@ -99,7 +99,7 @@
       <app-box-card [descHeader]="descExhibitHeader">
         <div header>
           <a routerLink="/admin/exhibit/new/{{exposition._id}}" routerLinkActive="active">
-            <fa-icon aria-label="addAusstellung" class="fa-lg" icon="plus-circle"></fa-icon>
+            <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
         <div body *ngFor="let exhibit of exhibits">
