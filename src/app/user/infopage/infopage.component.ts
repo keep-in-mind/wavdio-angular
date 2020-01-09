@@ -14,6 +14,12 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./infopage.component.css']
 })
 export class InfopageComponent implements OnInit {
+
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
+
   infopages: Infopage[];
   infopage: Infopage;
 

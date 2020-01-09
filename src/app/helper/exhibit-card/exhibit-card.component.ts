@@ -9,8 +9,6 @@ import {Exhibit} from '../../models/exhibit';
 })
 export class ExhibitCardComponent implements OnInit {
 
-  exhibitAltTextNoImage = 'Kein Bild verfügbar';
-
   private _height: string;
   private _width: string;
 

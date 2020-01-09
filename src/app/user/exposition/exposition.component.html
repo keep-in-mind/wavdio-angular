@@ -9,12 +9,12 @@
     <div style="flex-grow: 1"></div>
 
     <mat-menu #appMenu="matMenu">
-      <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png"/> Englisch</a></div>
-      <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png"/> Deutsch</a></div>
+      <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png" alt="British Flag"/> Englisch</a></div>
+      <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
     </mat-menu>
 
     <button aria-label="select language"mat-icon-button [matMenuTriggerFor]="appMenu">
-      <img alt="Current language"[src]="'assets/images/' + locale + '.png'"/>
+      <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
     </button>
   </mat-toolbar>
 

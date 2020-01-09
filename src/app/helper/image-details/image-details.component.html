@@ -8,7 +8,7 @@
     [alt]="this.exposition.logo.alternativeText">
   </ng-container>
   <ng-container *ngIf="this.museum">
-    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename">
+    <img *ngIf="this.museum.logo" [src]="'/uploads/' + this.museum._id + '/' + this.museum.logo.filename" [alt]="museum.logo.alternativeText">
   </ng-container>
 </section>
 <section class="content p-3">

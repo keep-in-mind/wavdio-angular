@@ -15,6 +15,12 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
+
   data: any;
   slideConfig = {
     'slidesToShow': 2,

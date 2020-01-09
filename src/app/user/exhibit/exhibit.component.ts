@@ -25,6 +25,11 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class ExhibitComponent implements OnInit {
 
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
+
   isNavbarCollapsed = true;
 
   ariaLabelBurgerMenu = 'Menü öffnen';
