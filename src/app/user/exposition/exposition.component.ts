@@ -1,23 +1,23 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {CookieService} from 'ngx-cookie-service';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
-import {CookieService} from 'ngx-cookie-service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
 import {CommentComponent} from '../comment/comment.component';
 import {Exhibit} from '../../models/exhibit';
-import {Infopage} from '../../models/infopage';
-import {ExhibitService} from '../../services/exhibit.service';
 import {Exposition} from '../../models/exposition';
+import {ExpositionContent} from '../../models/exposition-content';
+import {Infopage} from '../../models/infopage';
+import {Like} from '../../models/like';
+import {Museum} from '../../models/museum';
+import {MuseumContent} from '../../models/museum-content';
+import {CookielawService} from '../../services/cookielaw.service';
+import {ExhibitService} from '../../services/exhibit.service';
 import {ExpositionService} from '../../services/exposition.service';
 import {InfopageService} from '../../services/infopage.service';
-import {Like} from '../../models/like';
-import {ExpositionContent} from '../../models/exposition-content';
-
-import {CookielawService} from '../../services/cookielaw.service';
-import {MuseumContent} from '../../models/museum-content';
 import {MuseumService} from '../../services/museum.service';
-import {Museum} from '../../models/museum';
 
 @Component({
   selector: 'app-exposition',

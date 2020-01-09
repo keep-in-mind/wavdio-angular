@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
 import {Exhibit} from '../../models/exhibit';
-import {ExhibitService} from '../../services/exhibit.service';
 import {Exposition} from '../../models/exposition';
-import {ExpositionService} from '../../services/exposition.service';
 import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
+import {ExhibitService} from '../../services/exhibit.service';
+import {ExpositionService} from '../../services/exposition.service';
 import {FileService} from '../../services/file.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-image-details',

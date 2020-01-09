@@ -1,16 +1,14 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {Exposition} from '../../models/exposition';
-import {ExpositionService} from '../../services/exposition.service';
-import {LoggingService} from '../../services/logging.service';
 import {Comment} from '../../models/comment';
 import {Exhibit} from '../../models/exhibit';
-import {ExhibitService} from '../../services/exhibit.service';
-
+import {Exposition} from '../../models/exposition';
 import {CookielawService} from '../../services/cookielaw.service';
-
-import {Router} from '@angular/router';
+import {ExhibitService} from '../../services/exhibit.service';
+import {ExpositionService} from '../../services/exposition.service';
+import {LoggingService} from '../../services/logging.service';
 
 @Component({
   selector: 'app-comment',

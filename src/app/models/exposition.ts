@@ -1,8 +1,8 @@
+import {Comment} from './comment';
+import {ExpositionContent} from './exposition-content';
 import {Image} from './image';
 import {Like} from './like';
 import {View} from './view';
-import {Comment} from './comment';
-import {ExpositionContent} from './exposition-content';
 
 export class Exposition {
 

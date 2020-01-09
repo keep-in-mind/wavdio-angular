@@ -109,21 +109,4 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div *ngIf="this.cookieLawService">
-  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
-    <div class="fixed-bottom text-center">
-      <div class="p-3 mb-2 bg-secondary text-white">
-        <h3 i18n>Diese Website verwendet Cookies</h3>
-        <p i18n>
-          – nähere Informationen dazu und zu Ihren Rechten als Benutzer finden Sie in unserer Datenschutzerklärung am
-          Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und direkt unsere Website
-          besuchen
-          zu können.
-        </p>
-        <button aria-label="accept terms of use" type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()" i18n>
-          Ich stimme zu
-        </button>
-      </div>
-    </div>
-  </ng-container>
-</div>
+<app-cookie-banner></app-cookie-banner>

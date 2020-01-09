@@ -1,17 +1,16 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
 import {HttpClient} from '@angular/common/http';
-import {Image} from '../../models/image';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
-import {AuthenticationService, TokenPayloadUpdate} from '../../services/authentification.service';
-
-import {CookielawService} from '../../services/cookielaw.service';
-import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FileService} from '../../services/file.service';
+
+import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
 import {SpinnerComponent} from '../../helper/spinner/spinner.component';
+import {Image} from '../../models/image';
+import {Museum} from '../../models/museum';
+import {AuthenticationService, TokenPayloadUpdate} from '../../services/authentification.service';
+import {CookielawService} from '../../services/cookielaw.service';
+import {FileService} from '../../services/file.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-personal-data',

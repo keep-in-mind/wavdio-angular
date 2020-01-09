@@ -1,19 +1,19 @@
+import {HttpClient} from '@angular/common/http';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Exposition} from '../../models/exposition';
-import {Exhibit} from '../../models/exhibit';
-import {ExpositionService} from '../../services/exposition.service';
-import {ExhibitService} from '../../services/exhibit.service';
-import {HttpClient} from '@angular/common/http';
-import {Image} from '../../models/image';
-import {AuthenticationService} from '../../services/authentification.service';
-
-import {CookielawService} from '../../services/cookielaw.service';
-import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FileService} from '../../services/file.service';
+
+import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
 import {SpinnerComponent} from '../../helper/spinner/spinner.component';
 import {QrcodeComponent} from '../../helper/qrcode/qrcode.component';
+import {Exhibit} from '../../models/exhibit';
+import {Exposition} from '../../models/exposition';
+import {Image} from '../../models/image';
+import {AuthenticationService} from '../../services/authentification.service';
+import {CookielawService} from '../../services/cookielaw.service';
+import {ExhibitService} from '../../services/exhibit.service';
+import {ExpositionService} from '../../services/exposition.service';
+import {FileService} from '../../services/file.service';
 
 @Component({
   selector: 'app-admin-expositions',
