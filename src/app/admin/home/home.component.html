@@ -17,7 +17,7 @@
           <a *ngIf="museum"
              routerLink="/admin/exhibit/new/{{museum._id}}"
              routerLinkActive="active">
-            
+
             <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
@@ -49,19 +49,5 @@
     </section>
   </section>
 </div>
-<div *ngIf="this.cookieLawService">
-  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
-    <div class="fixed-bottom text-center">
-      <div class="p-3 mb-2 bg-secondary text-white">
-        <h3>Diese Website verwendet Cookies</h3>
-        <p> – nähere Informationen dazu und zu Ihren
-          Rechten als Benutzer finden Sie in
-          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
-          direkt unsere Website besuchen zu können.</p>
-        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
-          zu
-        </button>
-      </div>
-    </div>
-  </ng-container>
-</div>
+
+<app-cookie-banner></app-cookie-banner>

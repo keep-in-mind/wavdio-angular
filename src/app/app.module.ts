@@ -44,6 +44,7 @@ import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
 import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
 import {BoxCardComponent} from './helper/box-card/box-card.component';
+import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
 import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
 import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
@@ -135,6 +136,7 @@ const appRoutes: Routes = [
     QrcodeComponent,
     MuseumComponent,
     HeaderComponent,
+    CookieBannerComponent,
     AudioPlayerComponent,
     VideoPlayerComponent
   ],
