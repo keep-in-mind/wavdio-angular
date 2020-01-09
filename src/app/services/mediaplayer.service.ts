@@ -1,4 +1,4 @@
-import { Injectable, ElementRef } from '@angular/core';
+import {ElementRef, Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

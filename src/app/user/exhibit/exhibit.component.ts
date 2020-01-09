@@ -1,21 +1,21 @@
-import {Component, OnInit, ViewChild, ElementRef, Inject, LOCALE_ID} from '@angular/core';
-import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
-import {Exhibit} from '../../models/exhibit';
-import {ExhibitService} from '../../services/exhibit.service';
-import {InfopageService} from '../../services/infopage.service';
-import {Like} from '../../models/like';
-import {CookieService} from 'ngx-cookie-service';
-import {MediaplayerService} from '../../services/mediaplayer.service';
-import {Exposition} from '../../models/exposition';
-import {ExpositionService} from '../../services/exposition.service';
-import {ExhibitContent} from '../../models/exhibit-content';
+import {Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {CommentComponent} from '../comment/comment.component';
+import {CookieService} from 'ngx-cookie-service';
 
-import {CookielawService} from '../../services/cookielaw.service';
-import {MuseumService} from '../../services/museum.service';
+import {CommentComponent} from '../comment/comment.component';
+import {Exhibit} from '../../models/exhibit';
+import {ExhibitContent} from '../../models/exhibit-content';
+import {Exposition} from '../../models/exposition';
+import {Like} from '../../models/like';
 import {Museum} from '../../models/museum';
 import {MuseumContent} from '../../models/museum-content';
+import {CookielawService} from '../../services/cookielaw.service';
+import {ExhibitService} from '../../services/exhibit.service';
+import {ExpositionService} from '../../services/exposition.service';
+import {InfopageService} from '../../services/infopage.service';
+import {MediaplayerService} from '../../services/mediaplayer.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-exhibit',

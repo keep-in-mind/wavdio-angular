@@ -1,13 +1,11 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
-import {LoggingService} from './logging.service';
-
-import {Infopage} from '../models/infopage';
 
 import {AuthenticationService} from './authentification.service';
+import {LoggingService} from './logging.service';
+import {Infopage} from '../models/infopage';
 
 @Injectable({providedIn: 'root'})
 export class InfopageService {

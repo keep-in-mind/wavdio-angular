@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { User } from '../../models/user';
-
-import { AuthenticationService, TokenPayload } from '../../services/authentification.service';
-import { CookielawService } from '../../services/cookielaw.service';
+import {User} from '../../models/user';
+import {AuthenticationService, TokenPayload} from '../../services/authentification.service';
+import {CookielawService} from '../../services/cookielaw.service';
 
 @Component({
   selector: 'app-login',

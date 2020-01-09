@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
-
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { CookieService } from 'ngx-cookie-service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 export interface UserDetails {
   session_id: string;

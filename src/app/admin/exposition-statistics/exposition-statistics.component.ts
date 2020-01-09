@@ -2,9 +2,9 @@ import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {Exhibit} from '../../models/exhibit';
-import {ExpositionService} from '../../services/exposition.service';
-import {ExhibitService} from '../../services/exhibit.service';
 import {Exposition} from '../../models/exposition';
+import {ExhibitService} from '../../services/exhibit.service';
+import {ExpositionService} from '../../services/exposition.service';
 
 @Component({
   selector: 'app-exposition-statistics',

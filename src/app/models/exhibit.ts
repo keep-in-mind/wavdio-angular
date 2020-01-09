@@ -1,7 +1,7 @@
-import {Like} from './like';
-import {View} from './view';
 import {Comment} from './comment';
 import {ExhibitContent} from './exhibit-content';
+import {Like} from './like';
+import {View} from './view';
 
 export class Exhibit {
 
