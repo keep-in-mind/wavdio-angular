@@ -185,7 +185,8 @@
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
               </div>
-              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
+              <label for="code" style="display: none">Code</label>
+              <input id="code" role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
                      placeholder="Exponatnummer"
                      i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
               <div class="input-group-append">

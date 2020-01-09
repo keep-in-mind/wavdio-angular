@@ -47,8 +47,8 @@
         </div>
         <div body>
           <div style="width: 100px" class="mb-3">
-            <label for="selectLanguage">Sprache</label>
-            <select id="selectLanguage" class="form-control" [(ngModel)]="selectedLanguage">
+            <label for="lang">Sprache</label>
+            <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
               <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
             </select>
           </div>

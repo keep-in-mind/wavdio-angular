@@ -18,24 +18,24 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <label for="exposition">Titel</label>
-              <input id="exposition" class="form-control" type="text"
+              <label for="name">Titel</label>
+              <input id="name" class="form-control" type="text"
                      [(ngModel)]="getExpositionContent(selectedLanguage).name">
             </div>
             <div class="col-3">
-              <label for="selectLanguage" >Sprache</label>
-              <select id="selectLanguage"class="form-control" [(ngModel)]="selectedLanguage">
+              <label for="lang">Sprache</label>
+              <select id="lang"class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <div class="mb-2">
-            <label class="mr-2 form-check-label" for="active">Aktiv</label>
+            <label class="mr-2" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">
           </div>
 
-          <label for="description">Beschreibung</label>
-          <textarea id="description" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
+          <label for="info">Beschreibung</label>
+          <textarea id="info" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
 
           <label for="note">Notizen</label>
           <textarea id="note" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>

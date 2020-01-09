@@ -18,8 +18,8 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <label for="infopage">Titel</label>
-              <input id="infopage"class="form-control" type="text"  [(ngModel)]="infopage.name">
+              <label for="name">Titel</label>
+              <input id="name"class="form-control" type="text"  [(ngModel)]="infopage.name">
 
             </div>
             <div class="col-3">
@@ -28,9 +28,7 @@
               </select>
             </div>
           </div>
-          <label for="text">
-            Informationen
-          </label>
+          <label for="text">Informationen</label>
           <textarea id="text" class="form-control mb-2" placeholder="Text" rows="5"
                     [(ngModel)]="infopage.text"></textarea>
           <div class="form-row mb-2">

@@ -14,23 +14,17 @@
 <section class="content p-3">
   <div class="form-row mb-2">
     <ng-container *ngIf="this.exhibit">
-      <label for="exhibit">
-        Beschreibung
-      </label>
-      <textarea id="exhibit" class="form-control mb-2" rows="3"
+      <label for="image-alternativeText">Beschreibung</label>
+      <textarea id="image-alternativeText" class="form-control mb-2" rows="3"
                 [(ngModel)]="this.getExhibitContent(this.lang).images[this.index].alternativeText"></textarea>
     </ng-container>
     <ng-container *ngIf="this.exposition">
-      <label for="exposition">
-        Beschreibung
-      </label>
-      <textarea *ngIf="this.exposition.logo" id="exposition" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
+      <label for="exposition-logo-alternativeText">Beschreibung</label>
+      <textarea *ngIf="this.exposition.logo" id="exposition-logo-alternativeText" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
     </ng-container>
     <ng-container *ngIf="this.museum">
-      <label for="museum">
-        Beschreibung
-      </label>
-      <textarea *ngIf="this.museum.logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
+      <label for="museum-logo-alternativeText">Beschreibung</label>
+      <textarea *ngIf="this.museum.logo" id="museum-logo-alternativeText" class="form-control mb-2" rows="3" [(ngModel)]="this.museum.logo.alternativeText"></textarea>
     </ng-container>
     <div class="col-4">
       <button (click)="handleUpdate()" class="btn btn-success w-100">
