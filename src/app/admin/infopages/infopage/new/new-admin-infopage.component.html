@@ -18,19 +18,19 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <label class="form-label mb-2" for="newAinfopage">Titel</label>
-              <input id="newAinfopage" class="form-control" type="text" [(ngModel)]="infopage.name">
+              <label for="newAInfopage">Titel</label>
+              <input id="newAInfopage" class="form-control" type="text" [(ngModel)]="infopage.name">
 
             </div>
             <div class="col-3">
-              <label for="lang_select">Sprache</label>
-              <select id="lang_select" class="form-control" [(ngModel)]="infopage.lang">
+              <label for="selectLanguage">Sprache</label>
+              <select id="selectLanguage" class="form-control" [(ngModel)]="infopage.lang">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
-          <label class="form-label mb-2" for="text">Beschreibungen</label>
-          <textarea id="text" class="form-control mb-2" rows="5"
+          <label for="description">Beschreibung</label>
+          <textarea id="description" class="form-control mb-2" rows="5"
                     [(ngModel)]="infopage.text"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">

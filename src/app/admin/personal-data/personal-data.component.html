@@ -18,29 +18,27 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-6">
-              <label class="form-label mb-2" for="museumname">
-                Museumsname
-              </label>
-              <input id="museumname" class="form-control" type="text"
+              <label for="museumName">Museumsname</label>
+              <input id="museumName" class="form-control" type="text"
                      [(ngModel)]="getMuseumContent(selectedLanguage).name">
             </div>
             <div class="col-3">
-              <label class="form-label mb-2" for="lang_select">Sprache</label>
-              <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
+              <label for="selectLanguage">Sprache</label>
+              <select id="selectLanguage" class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
-          <label class="form-label mb-2" for="welcomeText">Begrüßungstext</label>
+          <label for="welcomeText">Begrüßungstext</label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
-          <label class="form-label mb-2" for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="5"
+          <label for="description">Beschreibung</label>
+          <textarea id="description" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
-          <label class="form-label mb-2" for="termsOfUse">Nutzungsbedingungen</label>
+          <label for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5"
                     [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
-          <label class="form-label mb-2" for="termsOfPrivacy">Datenschutzerklärung</label>
+          <label for="termsOfPrivacy">Datenschutzerklärung</label>
           <textarea id="termsOfPrivacy" class="form-control mb-2"
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
           <div class="form-row mb-2">
@@ -59,12 +57,12 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descLogo">
         <div header>
-          <fa-icon [hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
+          <fa-icon aria-label="AddLogo"[hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
           </fa-icon>
           <form class="d-none">
             <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
+          <fa-icon aria-label="DeleteLogo"[hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"></fa-icon>
         </div>
         <div body>
@@ -81,33 +79,29 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-12">
-              <label class="form-label mb-2" for="benutzernameAktuell">
-                Benutzername
-              </label>
-              <input id="benutzernameAktuell" class="form-control" type="text" placeholder="Benutzername"
+              <label for="currentUser">Benutzername</label>
+              <input id="currentUser" class="form-control" type="text" placeholder="Benutzername"
                      [(ngModel)]="user.username">
             </div>
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
-              <label class="form-label mb-2" for="benutzernameNeu">
-                Neuer Benutzername
-              </label>
+              <label for="newUser">Neuer Benutzername</label>
               <input id="benutzernameNeu" class="form-control" type="text" placeholder="BenutzernameNeu"
                      [(ngModel)]="user.newUsername">
             </div>
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
-              <label class="form-label mb-2" for="passwortAktuell">Altes Passwort</label>
-              <input id="passwortAktuell" class="form-control" type="password" placeholder="Aktuelles Passwort"
+              <label for="currentPassword">Altes Passwort</label>
+              <input id="currentPassword" class="form-control" type="password" placeholder="Aktuelles Passwort"
                      [(ngModel)]="user.password">
             </div>
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
-              <label class="form-label mb-2" for="passwortNeu">Neues Passwort</label>
-              <input id="passwortNeu" class="form-control" type="password" placeholder="Neues Passwort"
+              <label for="NewPassword">Neues Passwort</label>
+              <input id="NewPassword" class="form-control" type="password" placeholder="Neues Passwort"
                      [(ngModel)]="user.newPassword">
             </div>
           </div>

@@ -17,30 +17,28 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <label for="newAexpo">Titel</label>
-              <input id="newAexpo" class="form-control" type="text"
+              <label for="newAExposition">Titel</label>
+              <input id="newAExposition" class="form-control" type="text"
                      [(ngModel)]="getExpositionContent(selectedLanguage).name" required="true">
 
             </div>
             <div class="col-3">
-              <label class="form-label mb-2" for="lang_select">Sprache</label>
-              <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
+              <label for="selectLanguage">Sprache</label>
+              <select id="selectLanguage" class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <div class="mb-2">
-            <label class="mr-2" for="active">
-              Aktiv
-            </label>
+            <label class="mr-2" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">
           </div>
 
-          <label class="form-label mb-2" for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
+          <label for="description">Beschreibung</label>
+          <textarea id="description" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
 
-          <label class="form-label mb-2" for="notizen">Notizen</label>
-          <textarea id="notizen" class="form-control mb-2" [(ngModel)]="exposition.note" rows="7"></textarea>
+          <label for="note">Notizen</label>
+          <textarea id="note" class="form-control mb-2" [(ngModel)]="exposition.note" rows="7"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">
               <button (click)="createExposition()" class="btn btn-success w-100">
