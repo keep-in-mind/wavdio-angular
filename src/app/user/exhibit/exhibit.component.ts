@@ -36,11 +36,6 @@ export class ExhibitComponent implements OnInit {
   ariaLabelOpenComment = 'Kommentarfeld öffnen';
   ariaLabelBackToExposition = 'Zurück zur Übersicht über die Ausstellung';
   ariaLabelInputExhibitnumber = 'Exponatnummer eingeben';
-  ariaLabelPlayButton = 'Play';
-  ariaLabelPauseButton = 'Pause';
-  ariaLabelStopButton = 'Stopp';
-  ariaLabelRwdButton = 'Vorspulen';
-  ariaLabelFwdButton = 'Zurückspulen';
 
   slideConfig = {
     slidesToShow: 1,

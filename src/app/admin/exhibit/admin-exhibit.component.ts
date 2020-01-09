@@ -250,6 +250,7 @@ export class AdminExhibitComponent implements OnInit {
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
   }
+
   getExhibitContent(locale: string) {
     for (const content of this.exhibit.contents) {
       if (content.lang === locale) {
