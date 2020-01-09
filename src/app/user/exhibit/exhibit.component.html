@@ -77,35 +77,9 @@
               <div class="phones">
                 <fa-icon icon="headphones" size="lg"></fa-icon>
               </div>
-              <audio #audioplayer (timeupdate)="updateTimeAudio()">
-                <ng-container *ngFor="let audio_file of getExhibitContent(locale).audio">
-                  <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
-                          [type]="audio_file.mimeType">
-                </ng-container>
-                <p i18n>Dein Browser unterstützt nicht das HTML5 Audio Feature</p>
-              </audio>
-              <progress #progressAudio class="progress" min='0' max='100' value='0'>0% <span i18n>abgespielt</span>
-              </progress>
-              <div #timeAudio class="time">00:00</div>
-              <div class="controls">
-                <button (click)="playPauseAudio()" class="playpause">
-                  <ng-container *ngIf="!audioPlaying">
-                    <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
-                  </ng-container>
-                  <ng-container *ngIf="audioPlaying">
-                    <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
-                  </ng-container>
-                </button>
-                <button (click)="stopItAudio()" class="stop">
-                  <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
-                </button>
-                <button (click)="rewindAudio()" class="rwd">
-                  <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
-                </button>
-                <button (click)="forwardAudio()" class="fwd">
-                  <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
-                </button>
-              </div>
+
+              <app-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-audio-player>
+
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
                 <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
                   <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
