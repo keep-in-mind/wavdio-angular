@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
-
 import {AuthenticationService} from '../../../../services/authentification.service';
-
 import {CookielawService} from '../../../../services/cookielaw.service';
+import {InfopageService} from '../../../../services/infopage.service';
 
 @Component({
   selector: 'app-new-admin-infopage',

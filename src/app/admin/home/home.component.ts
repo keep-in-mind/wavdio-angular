@@ -1,15 +1,15 @@
+import {HttpClient} from '@angular/common/http';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Exposition} from '../../models/exposition';
-import {ExpositionService} from '../../services/exposition.service';
+import {Router} from '@angular/router';
 
+import {Exhibit} from '../../models/exhibit';
+import {Exposition} from '../../models/exposition';
+import {Museum} from '../../models/museum';
 import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
-import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {MuseumService} from '../../services/museum.service';
 import {ExhibitService} from '../../services/exhibit.service';
-import {Museum} from '../../models/museum';
-import {Exhibit} from '../../models/exhibit';
+import {ExpositionService} from '../../services/exposition.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-home',

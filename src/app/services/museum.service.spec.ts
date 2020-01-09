@@ -1,9 +1,9 @@
-import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TestBed} from '@angular/core/testing';
 
 import {MuseumService} from './museum.service';
-import {Museum} from '../models/museum';
 import {Image} from '../models/image';
+import {Museum} from '../models/museum';
 import {MuseumContent} from '../models/museum-content';
 
 const louvre = new Museum(

@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { CookielawService } from './cookielaw.service';
+import {CookielawService} from './cookielaw.service';
 
 describe('CookielawService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

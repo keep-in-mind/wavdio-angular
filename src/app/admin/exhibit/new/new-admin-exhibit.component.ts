@@ -1,13 +1,13 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {ExhibitService} from '../../../services/exhibit.service';
-import {Exhibit} from '../../../models/exhibit';
-import {ExhibitContent} from '../../../models/exhibit-content';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {AuthenticationService} from '../../../services/authentification.service';
 import {CookielawService} from '../../../services/cookielaw.service';
-import {MuseumService} from '../../../services/museum.service';
+import {Exhibit} from '../../../models/exhibit';
+import {ExhibitContent} from '../../../models/exhibit-content';
+import {ExhibitService} from '../../../services/exhibit.service';
 import {Museum} from '../../../models/museum';
+import {MuseumService} from '../../../services/museum.service';
 
 @Component({
   selector: 'app-new-admin-exhibit',
