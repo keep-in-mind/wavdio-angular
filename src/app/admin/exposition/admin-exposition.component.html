@@ -23,26 +23,22 @@
                      [(ngModel)]="getExpositionContent(selectedLanguage).name">
             </div>
             <div class="col-3">
-              <label for="lang_select" class="from-label m2">Sprache</label>
-              <select id="lang_select"class="form-control" [(ngModel)]="selectedLanguage">
+              <label for="selectLanguage" >Sprache</label>
+              <select id="selectLanguage"class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <div class="mb-2">
-            <label class="mr-2 form-check-label" for="active">
-              Aktiv
-            </label>
+            <label class="mr-2 form-check-label" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">
           </div>
 
-          <label class="form-label mb-2" for="info">Info</label>
-          <textarea id="info" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
+          <label for="description">Beschreibung</label>
+          <textarea id="description" class="form-control mb-2" rows="7" [(ngModel)]="getExpositionContent(locale).info"></textarea>
 
-          <label class="form-label mb-2" for="notizen">
-            Notizen
-          </label>
-          <textarea id="notizen" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>
+          <label for="note">Notizen</label>
+          <textarea id="note" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
               <button (click)="updateExposition()" class="btn btn-success w-100">

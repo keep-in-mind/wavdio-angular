@@ -2,12 +2,12 @@
 
   <!-- App Bar -->
   <mat-toolbar class="mat-elevation-z4" style="display: flex">
-    <a aria-label="Zurück" *ngIf="exhibit && exhibit.parentModel === 'Museum'"
+    <a aria-label="backToMuseum" *ngIf="exhibit && exhibit.parentModel === 'Museum'"
        [routerLink]="'/museum'"
        routerLinkActive="active">
       <mat-icon>arrow_back</mat-icon>
     </a>
-    <a aria-label="Zurück"*ngIf="exhibit && exhibit.parentModel === 'Exposition'"
+    <a aria-label="backToExposition"*ngIf="exhibit && exhibit.parentModel === 'Exposition'"
        [routerLink]="'/exposition/' + exposition._id"
        routerLinkActive="active">
       <mat-icon>arrow_back</mat-icon>

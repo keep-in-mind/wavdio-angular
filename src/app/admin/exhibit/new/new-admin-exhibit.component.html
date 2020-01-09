@@ -42,11 +42,11 @@
             <label class="mr-2 form-check-label" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
           </div>
-          <label for="beschr">Beschreibung</label>
-          <textarea id="beschr" class="form-control mb-2" rows="7"
+          <label for="description">Beschreibung</label>
+          <textarea id="description" class="form-control mb-2" rows="7"
                     [(ngModel)]="getExhibitContent(selectedLanguage).info" ></textarea>
-          <label for="notizen">Notizen</label>
-          <textarea id="notizen" class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
+          <label for="note">Notizen</label>
+          <textarea id="note" class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">
               <button (click)="createExhibit()" class="btn btn-success w-100">
