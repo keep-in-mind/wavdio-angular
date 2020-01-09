@@ -201,6 +201,7 @@
           </ng-container>
         </div>
         <div body *ngIf="getExhibitContent(selectedLanguage).audio.length">
+
           <section class="player">
             <audio #audioplayer (timeupdate)="updateTimeAudio()">
               <ng-container *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio">
@@ -231,6 +232,7 @@
               </button>
             </div>
           </section>
+
         </div>
       </app-box-card>
     </section>
