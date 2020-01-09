@@ -40,13 +40,9 @@ export class AdminExhibitComponent implements OnInit {
   time: ElementRef;
   progress: ElementRef;
 
-  audioplayer: ElementRef;
   iconAudio: ElementRef;
-  timeAudio: ElementRef;
-  progressAudio: ElementRef;
 
   videoPlaying = false;
-  audioPlaying = false;
 
   alertType: number;
   alertMessage: string;
@@ -64,20 +60,8 @@ export class AdminExhibitComponent implements OnInit {
     this.progress = content;
   }
 
-  @ViewChild('audioplayer', {static: false}) set content5(content: ElementRef) {
-    this.audioplayer = content;
-  }
-
   @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
     this.iconAudio = content;
-  }
-
-  @ViewChild('timeAudio', {static: false}) set content7(content: ElementRef) {
-    this.timeAudio = content;
-  }
-
-  @ViewChild('progressAudio', {static: false}) set content8(content: ElementRef) {
-    this.progressAudio = content;
   }
 
   constructor(
@@ -287,27 +271,13 @@ export class AdminExhibitComponent implements OnInit {
     this.videoPlaying = this.mediaplayerService.videoPlaying;
   }
 
-  playPauseAudio() {
-    this.mediaplayerService.playPausePlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
   stopIt() {
     this.mediaplayerService.stopPlayer(this.videoplayer, true);
     this.videoPlaying = this.mediaplayerService.videoPlaying;
   }
 
-  stopItAudio() {
-    this.mediaplayerService.stopPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
   rewind() {
     this.mediaplayerService.rewindPlayer(this.videoplayer);
-  }
-
-  rewindAudio() {
-    this.mediaplayerService.rewindPlayer(this.audioplayer);
   }
 
   forward() {
@@ -315,21 +285,10 @@ export class AdminExhibitComponent implements OnInit {
     this.videoPlaying = this.mediaplayerService.videoPlaying;
   }
 
-  forwardAudio() {
-    this.mediaplayerService.forwardPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
   updateTime() {
     this.mediaplayerService.timeUpdate(this.videoplayer,
       this.time, this.progress, true);
     this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  updateTimeAudio() {
-    this.mediaplayerService.timeUpdate(this.audioplayer,
-      this.timeAudio, this.progressAudio, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
   }
 
   private showAlertMessage(type: number, seconds: number, message: string) {
