@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from 'ngx-cookie-service';
@@ -14,14 +14,12 @@ import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {ExpositionService} from '../../services/exposition.service';
 import {InfopageService} from '../../services/infopage.service';
-import {MediaplayerService} from '../../services/mediaplayer.service';
 import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-exhibit',
   templateUrl: './exhibit.component.html',
-  styleUrls: ['./exhibit.component.css'],
-  providers: [MediaplayerService]
+  styleUrls: ['./exhibit.component.css']
 })
 export class ExhibitComponent implements OnInit {
 
@@ -53,38 +51,6 @@ export class ExhibitComponent implements OnInit {
   likedFlag = false;
   filterNumber: number;
 
-  videoplayer: ElementRef;
-  time: ElementRef;
-  progress: ElementRef;
-
-  audioplayer: ElementRef;
-  timeAudio: ElementRef;
-  progressAudio: ElementRef;
-
-  @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
-    this.videoplayer = content;
-  }
-
-  @ViewChild('time', {static: false}) set content3(content: ElementRef) {
-    this.time = content;
-  }
-
-  @ViewChild('progress', {static: false}) set content4(content: ElementRef) {
-    this.progress = content;
-  }
-
-  @ViewChild('audioplayer', {static: false}) set content5(content: ElementRef) {
-    this.audioplayer = content;
-  }
-
-  @ViewChild('timeAudio', {static: false}) set content7(content: ElementRef) {
-    this.timeAudio = content;
-  }
-
-  @ViewChild('progressAudio', {static: false}) set content8(content: ElementRef) {
-    this.progressAudio = content;
-  }
-
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private activatedRoute: ActivatedRoute,
@@ -93,10 +59,10 @@ export class ExhibitComponent implements OnInit {
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
     private museumService: MuseumService,
-    private mediaplayerService: MediaplayerService,
     public router: Router,
     private cookieService: CookieService,
     public cookieLawService: CookielawService) {
+
     // this code tricks the router to always reload
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -121,13 +87,6 @@ export class ExhibitComponent implements OnInit {
 
       this.activatedRoute.params.subscribe(params => {
         const exhibitId = params.id;
-
-        // this.exhibitService.getExhibit(exhibitId).subscribe(
-        //   exhibit => {
-        //     this.exhibit = exhibit;
-        //     this.likedFlag = this.cookieService.get(`exhibit${this.exhibit._id}`) === 'true';
-        //   }
-        // );
 
         this.museumService.getMuseums().subscribe(
           museums => {

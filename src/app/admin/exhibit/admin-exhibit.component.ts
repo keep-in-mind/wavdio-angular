@@ -15,13 +15,11 @@ import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {FileService} from '../../services/file.service';
-import {MediaplayerService} from '../../services/mediaplayer.service';
 
 @Component({
   selector: 'app-admin-exhibit',
   templateUrl: './admin-exhibit.component.html',
-  styleUrls: ['./admin-exhibit.component.css'],
-  providers: [MediaplayerService]
+  styleUrls: ['./admin-exhibit.component.css']
 })
 export class AdminExhibitComponent implements OnInit {
 
@@ -54,7 +52,6 @@ export class AdminExhibitComponent implements OnInit {
     private exhibitService: ExhibitService,
     private auth: AuthenticationService,
     public cookieLawService: CookielawService,
-    private mediaplayerService: MediaplayerService,
     private config: NgbDropdownConfig,
     private fileService: FileService) {
     config.placement = 'bottom-right';
