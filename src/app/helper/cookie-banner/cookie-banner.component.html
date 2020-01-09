@@ -1,0 +1,16 @@
+<div *ngIf="this.cookielawService">
+  <ng-container *ngIf="this.cookielawService.isAccepted()">
+    <div class="fixed-bottom text-center">
+      <div class="p-3 bg-secondary text-white">
+        <h3 i18n>This website uses cookies</h3>
+        <p i18n>
+          For more information on this and your rights as a user, please see our privacy policy at the bottom of the
+          page. Click on "I agree" to accept cookies and visit our website directly.
+        </p>
+        <button type="button" class="btn btn-light btn-lg" (click)="this.cookielawService.accepted()" i18n>
+          I agree
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
