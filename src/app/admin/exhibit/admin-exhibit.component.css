@@ -1,94 +1,9 @@
-.player {
-  box-sizing: border-box;
-}
-
 html {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 button:hover {
   color: black;
-}
-
-.player {
-  width: 360px;
-  margin: 10px auto;
-  max-width: 100%;
-  resize: none;
-}
-
-video, .progress, .time, .transcript {
-  width: 100%;
-}
-
-.progress {
-  height: 15px;
-}
-
-.transcript {
-  height: 30px;
-}
-
-.tcbutton {
-  float: right;
-  height: 100%;
-  border: 1px solid;
-}
-
-@media only screen
-and (min-device-width: 600px) {
-  .controls {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-
-  .playpause, .stop, .fwd, .rwd {
-    width: 25%;
-    height: 30px;
-    display: inline-block;
-    border: 1px solid;
-  }
-
-  .time {
-    font-size: 15pt;
-    height: 100%;
-    text-align: center;
-  }
-}
-
-@media only screen
-and (max-device-width: 599px) {
-  .controls {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-  }
-
-  .time {
-    text-align: center;
-    font-size: 10pt;
-    height: 100%;
-  }
-
-  .playpause, .stop, .fwd, .rwd {
-    width: 23%;
-    display: inline-block;
-    border: 1px solid;
-  }
-
-  .fa-lg {
-    margin-left: -5px;
-  }
-
-}
-
-progress {
-  background-color: black;
-}
-
-progress::-moz-progress-bar {
-  background-color: white !important;
 }
 
 /*
