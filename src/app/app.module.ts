@@ -57,6 +57,7 @@ import { HeaderComponent } from './user/header/header.component';
 import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { AudioPlayerComponent } from './helper/audio-player/audio-player.component';
+import { VideoPlayerComponent } from './helper/video-player/video-player.component';
 
 const appRoutes: Routes = [
   {
@@ -132,7 +133,8 @@ const appRoutes: Routes = [
     QrcodeComponent,
     MuseumComponent,
     HeaderComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    VideoPlayerComponent
   ],
     imports: [
         BrowserModule,
