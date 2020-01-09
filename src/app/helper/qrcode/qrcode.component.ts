@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+
 import {Exhibit} from '../../models/exhibit';
-import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-qrcode',

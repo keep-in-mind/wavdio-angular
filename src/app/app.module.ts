@@ -1,62 +1,64 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {
+  MatButtonModule,
+  MatListModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule, Routes} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons';
-import {SlickCarouselModule} from 'ngx-slick-carousel';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CookieService} from 'ngx-cookie-service';
-
-import {AppComponent} from './app.component';
-
-import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
-import {UserComponent} from './user/user.component';
-import {WelcomeComponent} from './user/welcome/welcome.component';
-import {ExpositionComponent} from './user/exposition/exposition.component';
-import {ExhibitComponent} from './user/exhibit/exhibit.component';
-import {CommentComponent} from './user/comment/comment.component';
-import {InfopageComponent} from './user/infopage/infopage.component';
+import {SlickCarouselModule} from 'ngx-slick-carousel';
+import {NgxPrintModule} from 'ngx-print';
+import {NgxQRCodeModule} from 'ngx-qrcode2';
 
 import {AdminComponent} from './admin/admin.component';
-import {LoginComponent} from './admin/login/login.component';
-import {HomeComponent} from './admin/home/home.component';
-import {SidebarComponent} from './admin/sidebar/sidebar.component';
-import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
-import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
-import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
+import {CommentCardComponent} from './admin/comment-card/comment-card.component';
 import {AdminExhibitComponent} from './admin/exhibit/admin-exhibit.component';
 import {NewAdminExhibitComponent} from './admin/exhibit/new/new-admin-exhibit.component';
-import {LoggingComponent} from './admin/logging/logging.component';
-import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
-import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
-
-import {ErrorPageComponent} from './helper/error-page/error-page.component';
-import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
-import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
-import {BoxCardComponent} from './helper/box-card/box-card.component';
+import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
+import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
+import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
+import {ExpositionStatisticsComponent} from './admin/exposition-statistics/exposition-statistics.component';
+import {HomeComponent} from './admin/home/home.component';
+import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
 import {AdminInfopageComponent} from './admin/infopages/infopage/admin-infopage.component';
 import {NewAdminInfopageComponent} from './admin/infopages/infopage/new/new-admin-infopage.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ExpositionStatisticsComponent} from './admin/exposition-statistics/exposition-statistics.component';
-import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
-import {CommentCardComponent} from './admin/comment-card/comment-card.component';
-import {ImageDetailsComponent} from './helper/image-details/image-details.component';
+import {LoggingComponent} from './admin/logging/logging.component';
+import {LoginComponent} from './admin/login/login.component';
+import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
+import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
+import {SidebarComponent} from './admin/sidebar/sidebar.component';
+import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
-import {SpinnerComponent} from './helper/spinner/spinner.component';
-import {NgxQRCodeModule} from 'ngx-qrcode2';
-import {QrcodeComponent} from './helper/qrcode/qrcode.component';
-import {NgxPrintModule} from 'ngx-print';
-import { MuseumComponent } from './user/museum/museum.component';
-import { HeaderComponent } from './user/header/header.component';
-
-import {MatButtonModule, MatListModule, MatMenuModule, MatSidenavModule, MatTabsModule, MatToolbarModule} from '@angular/material';
-import {MatIconModule} from '@angular/material/icon';
+import {BoxCardComponent} from './helper/box-card/box-card.component';
 import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
+import {ErrorPageComponent} from './helper/error-page/error-page.component';
+import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
+import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
+import {HeaderComponent} from './user/header/header.component';
+import {ImageDetailsComponent} from './helper/image-details/image-details.component';
+import {SpinnerComponent} from './helper/spinner/spinner.component';
+import {QrcodeComponent} from './helper/qrcode/qrcode.component';
+import {CommentComponent} from './user/comment/comment.component';
+import {ExhibitComponent} from './user/exhibit/exhibit.component';
+import {ExpositionComponent} from './user/exposition/exposition.component';
+import {InfopageComponent} from './user/infopage/infopage.component';
+import {MuseumComponent} from './user/museum/museum.component';
+import {UserComponent} from './user/user.component';
+import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
+import {WelcomeComponent} from './user/welcome/welcome.component';
 
 const appRoutes: Routes = [
   {

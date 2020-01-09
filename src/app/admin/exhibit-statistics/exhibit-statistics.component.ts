@@ -1,6 +1,7 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Exhibit} from '../../models/exhibit';
 import {ActivatedRoute} from '@angular/router';
+
+import {Exhibit} from '../../models/exhibit';
 import {ExhibitService} from '../../services/exhibit.service';
 
 @Component({

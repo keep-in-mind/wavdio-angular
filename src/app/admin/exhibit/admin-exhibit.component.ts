@@ -1,22 +1,21 @@
-import {Component, OnInit, ViewChild, ElementRef, Inject, LOCALE_ID} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-import {Exhibit} from '../../models/exhibit';
-import {ExhibitService} from '../../services/exhibit.service';
-import {Image} from '../../models/image';
-import {Audio} from '../../models/audio';
-import {MediaplayerService} from '../../services/mediaplayer.service';
-import {Video} from '../../models/video';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
-import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NgbDropdownConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
+import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
+import {QrcodeComponent} from '../../helper/qrcode/qrcode.component';
+import {SpinnerComponent} from '../../helper/spinner/spinner.component';
+import {Audio} from '../../models/audio';
+import {Exhibit} from '../../models/exhibit';
+import {Image} from '../../models/image';
+import {Transcript} from '../../models/transcript';
+import {Video} from '../../models/video';
 import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
+import {ExhibitService} from '../../services/exhibit.service';
 import {FileService} from '../../services/file.service';
-import {SpinnerComponent} from '../../helper/spinner/spinner.component';
-import { Transcript } from 'src/app/models/transcript';
-import {QrcodeComponent} from '../../helper/qrcode/qrcode.component';
+import {MediaplayerService} from '../../services/mediaplayer.service';
 
 @Component({
   selector: 'app-admin-exhibit',

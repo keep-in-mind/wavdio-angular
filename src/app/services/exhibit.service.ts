@@ -1,13 +1,11 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
-import {Exhibit} from '../models/exhibit';
 import {AuthenticationService} from './authentification.service';
 import {LoggingService} from './logging.service';
-
+import {Exhibit} from '../models/exhibit';
 
 @Injectable({providedIn: 'root'})
 export class ExhibitService {

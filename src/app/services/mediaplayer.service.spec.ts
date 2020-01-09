@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { MediaplayerService } from './mediaplayer.service';
+import {MediaplayerService} from './mediaplayer.service';
 
 describe('MediaplayerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

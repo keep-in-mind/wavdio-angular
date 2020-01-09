@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ExpositionService } from 'src/app/services/exposition.service';
-import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
-import { AuthenticationService} from '../../services/authentification.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
+
+import {AuthenticationService} from '../../services/authentification.service';
+import {ExpositionService} from '../../services/exposition.service';
 
 @Component({
   selector: 'app-sidebar',
