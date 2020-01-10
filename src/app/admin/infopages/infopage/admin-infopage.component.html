@@ -23,7 +23,8 @@
 
             </div>
             <div class="col-3">
-              <select class="form-control" [(ngModel)]="infopage.lang">
+              <label for="lang">Sprache</label>
+              <select id="lang" class="form-control" [(ngModel)]="infopage.lang">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
