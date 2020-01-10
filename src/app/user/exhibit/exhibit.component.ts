@@ -23,17 +23,12 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class ExhibitComponent implements OnInit {
 
-  isNavbarCollapsed = true;
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
-  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
-  ariaLabelLikeExhibit = 'Exponat liken';
-  ariaLabelPrevExhibit = 'Zum vorherigen Exponat springen';
-  ariaLabelSearchExhibit = 'Exponat mit eigegebener Nummer suchen';
-  ariaLabelNextExhibit = 'Zum nächsten Exponat springen';
-  ariaLabelOpenComment = 'Kommentarfeld öffnen';
-  ariaLabelBackToExposition = 'Zurück zur Übersicht über die Ausstellung';
-  ariaLabelInputExhibitnumber = 'Exponatnummer eingeben';
+  isNavbarCollapsed = true;
 
   slideConfig = {
     slidesToShow: 1,

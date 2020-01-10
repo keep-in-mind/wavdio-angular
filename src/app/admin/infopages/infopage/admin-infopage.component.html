@@ -18,26 +18,29 @@
         <div class="card-body">
           <div class="form-row mb-2">
             <div class="col-9">
-              <input class="form-control" type="text" placeholder="Titel" [(ngModel)]="infopage.name">
+              <label for="name">Titel</label>
+              <input id="name"class="form-control" type="text"  [(ngModel)]="infopage.name">
+
             </div>
             <div class="col-3">
-              <select class="form-control" [(ngModel)]="infopage.lang">
+              <label for="lang">Sprache</label>
+              <select id="lang" class="form-control" [(ngModel)]="infopage.lang">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
-          <label class="form-label mb-2" for="text">
-            Informationen
-          </label>
-          <textarea id="text" class="form-control mb-2" placeholder="Text" rows="5"
+          <label for="text">Informationen</label>
+          <textarea id="text" class="form-control mb-2" rows="5"
                     [(ngModel)]="infopage.text"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
-              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()">Speichern
+              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()" aria-label="Save info page">
+                Speichern
               </button>
             </div>
             <div class="col-6">
-              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()">Löschen
+              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()" aria-label="Delete info page">
+                Löschen
               </button>
             </div>
           </div>

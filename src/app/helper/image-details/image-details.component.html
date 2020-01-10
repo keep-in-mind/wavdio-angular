@@ -8,51 +8,55 @@
     [alt]="this.exposition.logo.alternativeText">
   </ng-container>
   <ng-container *ngIf="this.museum && this.logo">
-    <img *ngIf="this.getMuseumContent(this.locale).logo" [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).logo.filename">
+    <img *ngIf="this.getMuseumContent(this.locale).logo"
+         [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).logo.filename"
+         [alt]="getMuseumContent(locale).logo.alternativeText">
   </ng-container>
   <ng-container *ngIf="this.museum && !this.logo">
-    <img *ngIf="this.getMuseumContent(this.locale).image" [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).image.filename">
+    <img *ngIf="this.getMuseumContent(this.locale).image"
+         [src]="'/uploads/' + this.museum._id + '/' + this.getMuseumContent(this.locale).image.filename"
+         [alt]="getMuseumContent(locale).image.alternativeText">
   </ng-container>
 </section>
 <section class="content p-3">
   <div class="form-row mb-2">
     <ng-container *ngIf="this.exhibit">
-      <label class="form-label mb-2" for="exhibit">
-        Beschreibung
-      </label>
-      <textarea id="exhibit" class="form-control mb-2" rows="3"
+      <label for="image-alternativeText">Beschreibung</label>
+      <textarea id="image-alternativeText" class="form-control mb-2" rows="3"
                 [(ngModel)]="this.getExhibitContent(this.lang).images[this.index].alternativeText"></textarea>
     </ng-container>
     <ng-container *ngIf="this.exposition">
-      <label class="form-label mb-2" for="exposition">
-        Beschreibung
-      </label>
-      <textarea *ngIf="this.exposition.logo" id="exposition" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
+      <label for="exposition-logo-alternativeText">Beschreibung</label>
+      <textarea *ngIf="this.exposition.logo" id="exposition-logo-alternativeText" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
     </ng-container>
+
     <ng-container *ngIf="this.museum && this.logo">
-      <label class="form-label mb-2" for="museum">
-        Beschreibung
-      </label>
-      <textarea *ngIf="this.getMuseumContent(this.locale).logo" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.getMuseumContent(locale).logo.alternativeText"></textarea>
+      <label for="museum-logo-alternativeText">Beschreibung</label>
+      <textarea *ngIf="this.getMuseumContent(this.locale).logo"
+                id="museum-logo-alternativeText"
+                class="form-control mb-2" rows="3"
+                [(ngModel)]="this.getMuseumContent(locale).logo.alternativeText"></textarea>
     </ng-container>
     <ng-container *ngIf="this.museum && !this.logo">
-      <label class="form-label mb-2" for="museum">
-        Beschreibung
-      </label>
-      <textarea *ngIf="this.getMuseumContent(this.locale).image" id="museum" class="form-control mb-2" rows="3" [(ngModel)]="this.getMuseumContent(locale).image.alternativeText"></textarea>
+      <label for="museum-image-alternativeText">Beschreibung</label>
+      <textarea *ngIf="this.getMuseumContent(this.locale).image"
+                id="museum-image-alternativeText"
+                class="form-control mb-2" rows="3"
+                [(ngModel)]="this.getMuseumContent(locale).image.alternativeText"></textarea>
     </ng-container>
+
     <div class="col-4">
-      <button (click)="handleUpdate()" class="btn btn-success w-100">
+      <button (click)="handleUpdate()" class="btn btn-success w-100" aria-label="Save image details">
         Speichern
       </button>
     </div>
     <div class="col-4">
-      <button (click)="handleDelete()" class="btn btn-danger w-100">
+      <button (click)="handleDelete()" class="btn btn-danger w-100" aria-label="Delete image">
         Löschen
       </button>
     </div>
     <div class="col-4">
-      <button (click)="this.modal.close()" class="btn btn-secondary w-100">
+      <button (click)="this.modal.close()" class="btn btn-secondary w-100" aria-label="Cancel">
         Abbrechen
       </button>
     </div>

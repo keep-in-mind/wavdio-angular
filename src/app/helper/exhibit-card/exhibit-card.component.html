@@ -6,10 +6,11 @@
          [alt]="getExhibitContent(selectedLanguage).images[0].alternativeText">
     <ng-template #elseifcase>
       <img *ngIf="getExhibitContent('de').images.length; else elsecase"
-           [src]="'/uploads/' + exhibit._id + '/' + getExhibitContent('de').images[0].filename" [alt]="exhibitAltTextNoImage">
+           [src]="'/uploads/' + exhibit._id + '/' + getExhibitContent('de').images[0].filename"
+           [alt]="getExhibitContent('de').images[0].filename">
     </ng-template>
     <ng-template #elsecase>
-      <img src="/assets/images/noimage.png" [alt]="exhibitAltTextNoImage">
+      <img src="/assets/images/noimage.png" alt="No Image">
     </ng-template>
     <div class="card-body p-0">
       <p class="card-text text-center small p-1 my-0"

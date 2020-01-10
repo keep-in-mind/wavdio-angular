@@ -27,6 +27,11 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class MuseumComponent implements OnInit, OnDestroy {
 
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
+
   infopages: Infopage[];
 
   mobileQuery: MediaQueryList;

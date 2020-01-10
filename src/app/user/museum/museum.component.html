@@ -5,7 +5,7 @@
     <mat-nav-list>
 
       <!-- Home -->
-      <a mat-list-item routerLink="/">Home</a>
+      <a mat-list-item routerLink="/" i18n>Home</a>
 
       <!-- Info Pages -->
       <a mat-list-item
@@ -49,12 +49,12 @@
       <mat-tab-group mat-stretch-tabs>
 
         <!-- Info -->
-        <mat-tab label="Info" i18n-label>
+        <mat-tab label="Info">
           <p *ngIf="museum" class="p-2">{{ getMuseumContent(locale).info }}</p>
         </mat-tab>
 
         <!-- Exhibits -->
-        <mat-tab *ngIf="exhibits && exhibits.length > 0" label="Exhibits" i18n-label>
+        <mat-tab *ngIf="exhibits && exhibits.length > 0" label="Exponate">
           <section *ngIf="museum" class="mt-4" role="main">
             <div class="container">
               <div class="grid-container pb-5">
@@ -69,7 +69,7 @@
         </mat-tab>
 
         <!-- Expositions -->
-        <mat-tab *ngIf="expositions && expositions.length > 0" label="Expositions" i18n-label>
+        <mat-tab *ngIf="expositions && expositions.length > 0" label="Ausstellungen">
           <section *ngIf="museum" class="mt-4" role="main">
             <div class="container">
               <div class="grid-container pb-5">

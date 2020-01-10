@@ -1,6 +1,6 @@
 <div class="container text-center w-25 my-5">
   <form #form class="form-signin" (submit)="login()">
-    <img class="mb-4" src="assets/images/wAVdio_Logo_gross.png" alt="wAVdio logo">
+    <img class="mb-4" src="assets/images/wAVdio_Logo_gross.png" alt="wAVdio Logo">
 
     <h1 class="h3 mb-3 font-weight-normal">wAVdio-Anmeldeseite</h1>
 
@@ -12,16 +12,16 @@
       </div>
     </ng-container>
 
-    <label for="inputUser" class="sr-only">Benutzername</label>
-    <input type="text" class="form-control" placeholder="Benutzername" name="username" required autofocus
+    <label for="username" class="sr-only">Benutzername</label>
+    <input id="username" type="text" class="form-control" placeholder="Benutzername" name="username" required autofocus
       [(ngModel)]="credentials.username">
 
 
-    <label for="inputPassword" class="sr-only">Passwort</label>
-    <input type="password" class="form-control my-2" name="password" placeholder="Passwort" required
+    <label for="password" class="sr-only">Passwort</label>
+    <input id="password" type="password" class="form-control my-2" name="password" placeholder="Passwort" required
       [(ngModel)]="credentials.password">
 
-    <button class="btn btn-lg btn-primary btn-block my-4" type="submit">Anmelden</button>
+    <button class="btn btn-lg btn-primary btn-block my-4" type="submit" aria-label="Log in">Anmelden</button>
 
   </form>
 </div>

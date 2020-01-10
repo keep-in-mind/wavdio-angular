@@ -9,8 +9,6 @@ import {Exposition} from '../../models/exposition';
 })
 export class ExpositionCardComponent implements OnInit {
 
-  expositionAltTextNoImage = 'Kein Bild verfügbar';
-
   private _height: string;
   private _width: string;
   public _default_name: string;
