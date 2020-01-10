@@ -27,8 +27,6 @@ export class InfopageComponent implements OnInit {
 
   museum: Museum;
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
-
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private infopageService: InfopageService,

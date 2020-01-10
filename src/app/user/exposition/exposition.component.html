@@ -61,16 +61,16 @@
   <footer>
     <section *ngIf="exposition" role="contentinfo" class="fixed-bottom"
              style="height: 48px; background-color: #f5f5f5">
-      <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
+      <nav class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col icons py-2 text-center">
-              <fa-icon role="button" [attr.aria-label]="ariaLabelLikeExposition" icon="heart"
+              <fa-icon role="button" aria-label="Like exposition" icon="heart"
                        [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
             </div>
             <div class="col icons py-2 text-center">
               <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                       [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
+                       aria-label="Open comment field"></fa-icon>
             </div>
           </div>
         </div>

@@ -90,20 +90,20 @@
               <div class="controls">
                 <button (click)="playPauseAudio()" class="playpause">
                   <ng-container *ngIf="!audioPlaying">
-                    <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
+                    <fa-icon icon="play" size="lg" aria-label="Play audio"></fa-icon>
                   </ng-container>
                   <ng-container *ngIf="audioPlaying">
-                    <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
+                    <fa-icon icon="pause" size="lg" aria-label="Pause audio"></fa-icon>
                   </ng-container>
                 </button>
                 <button (click)="stopItAudio()" class="stop">
-                  <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
+                  <fa-icon icon="stop" size="lg" aria-label="Stop audio"></fa-icon>
                 </button>
                 <button (click)="rewindAudio()" class="rwd">
-                  <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
+                  <fa-icon icon="backward" size="lg" aria-label="Rewind audio"></fa-icon>
                 </button>
                 <button (click)="forwardAudio()" class="fwd">
-                  <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
+                  <fa-icon icon="forward" size="lg" aria-label="Fast forward audio"></fa-icon>
                 </button>
               </div>
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
@@ -144,20 +144,20 @@
               <div class="controls">
                 <button (click)="playPause()" class="playpause">
                   <ng-container *ngIf="!videoPlaying">
-                    <fa-icon icon="play" size="lg" [attr.aria-label]="ariaLabelPlayButton"></fa-icon>
+                    <fa-icon icon="play" size="lg" aria-label="Play video"></fa-icon>
                   </ng-container>
                   <ng-container *ngIf="videoPlaying">
-                    <fa-icon icon="pause" size="lg" [attr.aria-label]="ariaLabelPauseButton"></fa-icon>
+                    <fa-icon icon="pause" size="lg" aria-label="Pause video"></fa-icon>
                   </ng-container>
                 </button>
                 <button (click)="stopIt()" class="stop">
-                  <fa-icon icon="stop" size="lg" [attr.aria-label]="ariaLabelStopButton"></fa-icon>
+                  <fa-icon icon="stop" size="lg" aria-label="Stop video"></fa-icon>
                 </button>
                 <button (click)="rewind()" class="rwd">
-                  <fa-icon icon="backward" size="lg" [attr.aria-label]="ariaLabelRwdButton"></fa-icon>
+                  <fa-icon icon="backward" size="lg" aria-label="Rewind video"></fa-icon>
                 </button>
                 <button (click)="forward()" class="fwd">
-                  <fa-icon icon="forward" size="lg" [attr.aria-label]="ariaLabelFwdButton"></fa-icon>
+                  <fa-icon icon="forward" size="lg" aria-label="Fast forward video"></fa-icon>
                 </button>
               </div>
             </section>
@@ -171,38 +171,37 @@
 
   <footer>
     <section *ngIf="exhibit" role="contentinfo">
-      <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
+      <nav class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col-2 icons py-2 text-center">
               <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeExhibit()"
-                       [attr.aria-label]="ariaLabelLikeExhibit"></fa-icon>
+                       aria-label="Like exhibit"></fa-icon>
             </div>
             <div class="col-8 input-group py-2">
               <div class="input-group-prepend">
                 <button (click)="prevExhibit()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelPrevExhibit">
+                        aria-label="Go back to previous exhibit">
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
               </div>
               <label for="code" style="display: none">Code</label>
               <input id="code" role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
-                     placeholder="Exponatnummer"
-                     i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
+                     placeholder="Exponatnummer" aria-label="Enter exhibit code">
               <div class="input-group-append">
                 <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelSearchExhibit">
+                        aria-label="Search exhibit">
                   <fa-icon icon="search-location"></fa-icon>
                 </button>
                 <button (click)="nextExhibit()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelNextExhibit">
+                        aria-label="Go to next exhibit">
                   <fa-icon icon="chevron-right"></fa-icon>
                 </button>
               </div>
             </div>
             <div class="col-2 icons py-2 text-center">
               <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
-                       [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
+                       aria-label="Open comment field"></fa-icon>
             </div>
           </div>
         </div>

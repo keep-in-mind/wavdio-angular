@@ -37,10 +37,6 @@ export class ExpositionComponent implements OnInit {
   filterNumber: number;
   likedFlag = false;
 
-  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
-  ariaLabelLikeExposition = 'Ausstellung liken';
-  ariaLabelOpenComment = 'Kommentarfeld öffnen';
-
   exposition: Exposition;
   exhibits: Exhibit[];
   infopages: Infopage[];

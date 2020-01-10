@@ -32,21 +32,6 @@ export class ExhibitComponent implements OnInit {
 
   isNavbarCollapsed = true;
 
-  ariaLabelBurgerMenu = 'Menü öffnen';
-  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
-  ariaLabelLikeExhibit = 'Exponat liken';
-  ariaLabelPrevExhibit = 'Zum vorherigen Exponat springen';
-  ariaLabelSearchExhibit = 'Exponat mit eigegebener Nummer suchen';
-  ariaLabelNextExhibit = 'Zum nächsten Exponat springen';
-  ariaLabelOpenComment = 'Kommentarfeld öffnen';
-  ariaLabelBackToExposition = 'Zurück zur Übersicht über die Ausstellung';
-  ariaLabelInputExhibitnumber = 'Exponatnummer eingeben';
-  ariaLabelPlayButton = 'Play';
-  ariaLabelPauseButton = 'Pause';
-  ariaLabelStopButton = 'Stopp';
-  ariaLabelRwdButton = 'Vorspulen';
-  ariaLabelFwdButton = 'Zurückspulen';
-
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
