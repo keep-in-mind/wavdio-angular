@@ -51,11 +51,11 @@
 
       <!-- Museum Logo -->
       <div style="position: relative; padding-top: 61.8%">
-        <img *ngIf="museum && museum.logo"
+        <img *ngIf="museum && getMuseumContent(locale).image"
              style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
              class="w-100"
-             [src]="'/uploads/' + museum._id + '/' + museum.logo.filename"
-             [alt]="museum.logo.alternativeText"/>
+             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename"
+             [alt]="getMuseumContent(locale).image.alternativeText"/>
       </div>
 
       <!-- Museum Title -->
