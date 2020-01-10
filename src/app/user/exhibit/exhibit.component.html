@@ -185,9 +185,9 @@
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
               </div>
-              <label for="code" style="display: none">Code</label>
+              <label for="code" class="sr-only">Code</label>
               <input id="code" role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
-                     placeholder="Exponatnummer" aria-label="Enter exhibit code">
+                     aria-label="Enter exhibit code">
               <div class="input-group-append">
                 <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
                         aria-label="Search exhibit">
