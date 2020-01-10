@@ -42,6 +42,7 @@ import {PersonalDataComponent} from './admin/personal-data/personal-data.compone
 import {SidebarComponent} from './admin/sidebar/sidebar.component';
 import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
+import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
 import {BoxCardComponent} from './helper/box-card/box-card.component';
 import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
@@ -51,6 +52,7 @@ import {HeaderComponent} from './user/header/header.component';
 import {ImageDetailsComponent} from './helper/image-details/image-details.component';
 import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
+import {VideoPlayerComponent} from './helper/video-player/video-player.component';
 import {CommentComponent} from './user/comment/comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
@@ -134,7 +136,9 @@ const appRoutes: Routes = [
     QrcodeComponent,
     MuseumComponent,
     HeaderComponent,
-    CookieBannerComponent
+    CookieBannerComponent,
+    AudioPlayerComponent,
+    VideoPlayerComponent
   ],
     imports: [
         BrowserModule,
