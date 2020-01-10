@@ -44,7 +44,7 @@
 
 
     <!-- Exhibit Title -->
-    <h1 class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
+    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
 
     <!-- Media Player Section -->
     <section *ngIf="exhibit">
@@ -94,7 +94,7 @@
       </div>
     </section>
 
-    <p class="p-2">{{getExhibitContent(locale).info}}</p>
+    <p *ngIf="exhibit" class="p-2">{{getExhibitContent(locale).info}}</p>
   </main>
 
   <footer>
