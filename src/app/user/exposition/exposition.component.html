@@ -13,7 +13,7 @@
       <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
     </mat-menu>
 
-    <button aria-label="select language"mat-icon-button [matMenuTriggerFor]="appMenu">
+    <button aria-label="Select language" mat-icon-button [matMenuTriggerFor]="appMenu">
       <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
     </button>
   </mat-toolbar>

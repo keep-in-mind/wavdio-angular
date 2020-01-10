@@ -43,7 +43,7 @@
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">
-              <button (click)="updateMuseum()" class="btn btn-success w-100">
+              <button (click)="updateMuseum()" class="btn btn-success w-100" aria-label="Save museum">
                 Speichern
               </button>
             </div>
@@ -114,7 +114,7 @@
           </div>
           <div class="form-row mb-2">
             <div class="col-12">
-              <button (click)="updateUser()" class="btn btn-success w-100">
+              <button (click)="updateUser()" class="btn btn-success w-100" aria-label="Update user data">
                 Benutzerdaten aktualisieren
               </button>
             </div>

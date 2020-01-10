@@ -33,11 +33,13 @@
                     [(ngModel)]="infopage.text"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
-              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()">Speichern
+              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()" aria-label="Save info page">
+                Speichern
               </button>
             </div>
             <div class="col-6">
-              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()">Löschen
+              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()" aria-label="Delete info page">
+                Löschen
               </button>
             </div>
           </div>

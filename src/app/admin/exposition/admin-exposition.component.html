@@ -41,12 +41,12 @@
           <textarea id="note" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
-              <button (click)="updateExposition()" class="btn btn-success w-100">
+              <button (click)="updateExposition()" class="btn btn-success w-100" aria-label="Save exposition">
                 Speichern
               </button>
             </div>
             <div class="col-6">
-              <button (click)="deleteExposition()" class="btn btn-danger w-100">
+              <button (click)="deleteExposition()" class="btn btn-danger w-100" aria-label="Delete exposition">
                 Löschen
               </button>
             </div>
@@ -60,12 +60,14 @@
         <div class="card-body">
           <div class="form-row">
             <div class="col-lg-6">
-              <button class="btn btn-primary w-100" [routerLink]="'/admin/statistics/exposition/'+ exposition._id">
+              <button class="btn btn-primary w-100" [routerLink]="'/admin/statistics/exposition/'+ exposition._id"
+                      aria-label="Show exposition statistics">
                 Statistik anzeigen
               </button>
             </div>
             <div class="col-lg-6">
-              <button (click)="openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top">
+              <button (click)="openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top"
+                      aria-label="Show exposition QR code">
                 QR-Plakette
               </button>
             </div>

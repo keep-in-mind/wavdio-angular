@@ -48,12 +48,12 @@
           <textarea id="note" notizen class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
-              <button (click)="updateExhibit()" class="btn btn-success w-100">
+              <button (click)="updateExhibit()" class="btn btn-success w-100" aria-label="Save exhibit">
                 Speichern
               </button>
             </div>
             <div class="col-6">
-              <button (click)="deleteExhibit()" class="btn btn-danger w-100">
+              <button (click)="deleteExhibit()" class="btn btn-danger w-100" aria-label="Delete exhibit">
                 Löschen
               </button>
             </div>
@@ -67,12 +67,14 @@
         <div class="card-body">
           <div class="form-row">
             <div class="col-lg-6">
-              <button [routerLink]="'/admin/statistics/exhibit/'+ exhibit._id" class="btn btn-primary w-100">
+              <button [routerLink]="'/admin/statistics/exhibit/'+ exhibit._id" class="btn btn-primary w-100"
+                      aria-label="Show exhibit statistics">
                 Statistik anzeigen
               </button>
             </div>
             <div class="col-lg-6">
-              <button (click)="this.openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top">
+              <button (click)="this.openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top"
+              aria-label="Show exhibit QR code">
                 QR-Plakette
               </button>
             </div>
@@ -105,7 +107,8 @@
           <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
           <ng-container *ngIf="getExhibitContent(selectedLanguage).video.length">
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px' ngbDropdownToggle>
+              <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px' ngbDropdownToggle
+                      aria-label="Show deletable videos">
                 <fa-icon icon="minus-circle" size="lg"></fa-icon>
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -113,7 +116,10 @@
                 <hr style="margin-top: 0;margin-bottom: 0;">
                 <button class="dropdown-item"
                         *ngFor="let video_file of getExhibitContent(selectedLanguage).video"
-                        (click)="deleteVideo(video_file.filename)">{{video_file.filename}}</button>
+                        (click)="deleteVideo(video_file.filename)"
+                        aria-label="Delete video">
+                  {{video_file.filename}}
+                </button>
               </div>
             </div>
           </ng-container>
@@ -130,7 +136,7 @@
             <progress #progress class="progress" min='0' max='100' value='0'>0% played</progress>
             <div #time class="time">00:00</div>
             <div class="controls">
-              <button (click)="playPause()" class="playpause">
+              <button (click)="playPause()" class="playpause" aria-label="Play video">
                 <ng-container *ngIf="!videoPlaying">
                   <fa-icon icon="play" size="lg"></fa-icon>
                 </ng-container>
@@ -138,13 +144,13 @@
                   <fa-icon icon="pause" size="lg"></fa-icon>
                 </ng-container>
               </button>
-              <button (click)="stopIt()" class="stop">
+              <button (click)="stopIt()" class="stop" aria-label="Stop video">
                 <fa-icon icon="stop" size="lg"></fa-icon>
               </button>
-              <button (click)="rewind()" class="rwd">
+              <button (click)="rewind()" class="rwd" aria-label="Rewind video">
                 <fa-icon icon="backward" size="lg"></fa-icon>
               </button>
-              <button (click)="forward()" class="fwd">
+              <button (click)="forward()" class="fwd" aria-label="Fast forward video">
                 <fa-icon icon="forward" size="lg"></fa-icon>
               </button>
             </div>
@@ -160,11 +166,13 @@
           <fa-icon *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
           (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
           <button *ngIf="!getExhibitContent(selectedLanguage).transcript"
-          (click)="uploadTranscriptInput.click()" style="margin-right: 10pt">
+                  (click)="uploadTranscriptInput.click()" style="margin-right: 10pt"
+                  aria-label="Add transcript">
             Transkript hinzufügen
           </button>
           <button *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt"
-          (click)="deleteTranscript(getExhibitContent(selectedLanguage).transcript.filename)">
+                  (click)="deleteTranscript(getExhibitContent(selectedLanguage).transcript.filename)"
+                  aria-label="Delete transcript">
             Transkript löschen
           </button>
           <input #uploadTranscriptInput class="d-none" (change)="onTranscriptChanged($event)" type="file" accept=".txt">
@@ -184,7 +192,8 @@
           <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
           <ng-container *ngIf="getExhibitContent(selectedLanguage).audio.length">
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px' ngbDropdownToggle>
+              <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px' ngbDropdownToggle
+                      aria-label="Show deletable audios">
                 <fa-icon icon="minus-circle" size="lg"></fa-icon>
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
@@ -192,7 +201,10 @@
                 <hr style="margin-top: 0;margin-bottom: 0;">
                 <button class="dropdown-item"
                         *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio"
-                        (click)="deleteAudio(audio_file.filename)">{{audio_file.filename}}</button>
+                        (click)="deleteAudio(audio_file.filename)"
+                        aria-label="Delete audio">
+                  {{audio_file.filename}}
+                </button>
               </div>
             </div>
           </ng-container>
@@ -209,7 +221,7 @@
             <progress #progressAudio class="progress" min='0' max='100' value='0'>0% played</progress>
             <div #timeAudio class="time">00:00</div>
             <div class="controls">
-              <button (click)="playPauseAudio()" class="playpause">
+              <button (click)="playPauseAudio()" class="playpause" aria-label="Play and pause audio">
                 <ng-container *ngIf="!audioPlaying">
                   <fa-icon icon="play" size="lg"></fa-icon>
                 </ng-container>
@@ -217,13 +229,13 @@
                   <fa-icon icon="pause" size="lg"></fa-icon>
                 </ng-container>
               </button>
-              <button (click)="stopItAudio()" class="stop">
+              <button (click)="stopItAudio()" class="stop" aria-label="Stop audio">
                 <fa-icon class="fa-lg" icon="stop"></fa-icon>
               </button>
-              <button (click)="rewindAudio()" class="rwd">
+              <button (click)="rewindAudio()" class="rwd" aria-label="Rewind audio">
                 <fa-icon class="fa-lg" icon="backward"></fa-icon>
               </button>
-              <button (click)="forwardAudio()" class="fwd">
+              <button (click)="forwardAudio()" class="fwd" aria-label="Fast forward audio">
                 <fa-icon class="fa-lg" icon="forward"></fa-icon>
               </button>
             </div>
