@@ -57,12 +57,13 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descLogo">
         <div header>
-          <fa-icon aria-label="AddLogo"[hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg" icon="plus-circle">
+          <fa-icon aria-label="Add logo" [hidden]="museum.logo" (click)="onLogoInput.click()" class="fa-lg"
+                   icon="plus-circle">
           </fa-icon>
           <form class="d-none">
             <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon aria-label="DeleteLogo"[hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
+          <fa-icon aria-label="Delete logo" [hidden]="!museum.logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"></fa-icon>
         </div>
         <div body>
