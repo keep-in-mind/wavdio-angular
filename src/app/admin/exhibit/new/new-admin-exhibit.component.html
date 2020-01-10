@@ -23,16 +23,15 @@
               <label for="name">Titel</label>
               <input id="name" class="form-control" type="text"
                      [(ngModel)]="getExhibitContent(selectedLanguage).name" required="true">
-
             </div>
             <div class="col-3">
               <label for="code">Code</label>
-              <input id="code"class="form-control" type="number" min="100" max="999"
+              <input id="code" class="form-control" type="number" min="100" max="999"
                      [(ngModel)]="exhibit.code" required="true">
             </div>
             <div class="col-3">
               <label for="lang">Sprache</label>
-              <select id="lang"class="form-control" [(ngModel)]="selectedLanguage">
+              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
 
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>

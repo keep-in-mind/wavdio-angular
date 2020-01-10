@@ -27,12 +27,12 @@
             </div>
             <div class="col-3">
               <label for="code">Code</label>
-              <input id="code"class="form-control" type="number" min="100" max="999"
+              <input id="code" class="form-control" type="number" min="100" max="999"
                      [(ngModel)]="exhibit.code">
             </div>
             <div class="col-3">
               <label for="lang">Sprache</label>
-              <select id="lang"class="form-control" [(ngModel)]="selectedLanguage">
+              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
@@ -159,7 +159,7 @@
               </div>
             </ng-template>
           <!-- End Transcript-->
-          <fa-icon area-label="Upload Audio Input"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <fa-icon area-label="Upload audio"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
           <ng-container *ngIf="getExhibitContent(selectedLanguage).audio.length">
             <div ngbDropdown class="d-inline-block">
