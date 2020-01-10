@@ -1,28 +1,25 @@
-import {Component, OnInit, ViewChild, ElementRef, Inject, LOCALE_ID} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-import {Exhibit} from '../../models/exhibit';
-import {ExhibitService} from '../../services/exhibit.service';
-import {Image} from '../../models/image';
-import {Audio} from '../../models/audio';
-import {MediaplayerService} from '../../services/mediaplayer.service';
-import {Video} from '../../models/video';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
-import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NgbDropdownConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
+import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
+import {QrcodeComponent} from '../../helper/qrcode/qrcode.component';
+import {SpinnerComponent} from '../../helper/spinner/spinner.component';
+import {Audio} from '../../models/audio';
+import {Exhibit} from '../../models/exhibit';
+import {Image} from '../../models/image';
+import {Transcript} from '../../models/transcript';
+import {Video} from '../../models/video';
 import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
+import {ExhibitService} from '../../services/exhibit.service';
 import {FileService} from '../../services/file.service';
-import {SpinnerComponent} from '../../helper/spinner/spinner.component';
-import { Transcript } from 'src/app/models/transcript';
-import {QrcodeComponent} from '../../helper/qrcode/qrcode.component';
 
 @Component({
   selector: 'app-admin-exhibit',
   templateUrl: './admin-exhibit.component.html',
-  styleUrls: ['./admin-exhibit.component.css'],
-  providers: [MediaplayerService]
+  styleUrls: ['./admin-exhibit.component.css']
 })
 export class AdminExhibitComponent implements OnInit {
 
@@ -36,48 +33,14 @@ export class AdminExhibitComponent implements OnInit {
   languages = ['de', 'en'];
   selectedLanguage = this.locale;
 
-  videoplayer: ElementRef;
-  time: ElementRef;
-  progress: ElementRef;
-
-  audioplayer: ElementRef;
   iconAudio: ElementRef;
-  timeAudio: ElementRef;
-  progressAudio: ElementRef;
-
-  videoPlaying = false;
-  audioPlaying = false;
 
   alertType: number;
   alertMessage: string;
   showAlert: boolean;
 
-  @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
-    this.videoplayer = content;
-  }
-
-  @ViewChild('time', {static: false}) set content3(content: ElementRef) {
-    this.time = content;
-  }
-
-  @ViewChild('progress', {static: false}) set content4(content: ElementRef) {
-    this.progress = content;
-  }
-
-  @ViewChild('audioplayer', {static: false}) set content5(content: ElementRef) {
-    this.audioplayer = content;
-  }
-
   @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
     this.iconAudio = content;
-  }
-
-  @ViewChild('timeAudio', {static: false}) set content7(content: ElementRef) {
-    this.timeAudio = content;
-  }
-
-  @ViewChild('progressAudio', {static: false}) set content8(content: ElementRef) {
-    this.progressAudio = content;
   }
 
   constructor(
@@ -89,7 +52,6 @@ export class AdminExhibitComponent implements OnInit {
     private exhibitService: ExhibitService,
     private auth: AuthenticationService,
     public cookieLawService: CookielawService,
-    private mediaplayerService: MediaplayerService,
     private config: NgbDropdownConfig,
     private fileService: FileService) {
     config.placement = 'bottom-right';
@@ -278,66 +240,13 @@ export class AdminExhibitComponent implements OnInit {
     );
   }
 
-  /**
-   * Media player controls
-   */
-
-  playPause() {
-    this.mediaplayerService.playPausePlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  playPauseAudio() {
-    this.mediaplayerService.playPausePlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  stopIt() {
-    this.mediaplayerService.stopPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  stopItAudio() {
-    this.mediaplayerService.stopPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  rewind() {
-    this.mediaplayerService.rewindPlayer(this.videoplayer);
-  }
-
-  rewindAudio() {
-    this.mediaplayerService.rewindPlayer(this.audioplayer);
-  }
-
-  forward() {
-    this.mediaplayerService.forwardPlayer(this.videoplayer, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  forwardAudio() {
-    this.mediaplayerService.forwardPlayer(this.audioplayer, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
-  updateTime() {
-    this.mediaplayerService.timeUpdate(this.videoplayer,
-      this.time, this.progress, true);
-    this.videoPlaying = this.mediaplayerService.videoPlaying;
-  }
-
-  updateTimeAudio() {
-    this.mediaplayerService.timeUpdate(this.audioplayer,
-      this.timeAudio, this.progressAudio, false);
-    this.audioPlaying = this.mediaplayerService.audioPlaying;
-  }
-
   private showAlertMessage(type: number, seconds: number, message: string) {
     this.showAlert = true;
     this.alertType = type;
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
   }
+
   getExhibitContent(locale: string) {
     for (const content of this.exhibit.contents) {
       if (content.lang === locale) {

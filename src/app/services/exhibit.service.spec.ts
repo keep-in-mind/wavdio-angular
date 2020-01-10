@@ -1,15 +1,15 @@
-import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TestBed} from '@angular/core/testing';
 
 import {ExhibitService} from './exhibit.service';
-import {Exhibit} from '../models/exhibit';
-import {Like} from '../models/like';
-import {View} from '../models/view';
+import {Audio} from '../models/audio';
 import {Comment} from '../models/comment';
+import {Exhibit} from '../models/exhibit';
 import {ExhibitContent} from '../models/exhibit-content';
 import {Image} from '../models/image';
-import {Audio} from '../models/audio';
+import {Like} from '../models/like';
 import {Video} from '../models/video';
+import {View} from '../models/view';
 
 const monaLisa = new Exhibit(
   '',

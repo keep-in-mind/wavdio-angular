@@ -1,7 +1,7 @@
-import {Image} from './image';
 import {Audio} from './audio';
-import {Video} from './video';
+import {Image} from './image';
 import {Transcript} from './transcript';
+import {Video} from './video';
 
 export class ExhibitContent {
 

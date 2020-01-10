@@ -1,9 +1,9 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
-import {MuseumService} from '../../services/museum.service';
-import {ExpositionService} from '../../services/exposition.service';
-import {Museum} from '../../models/museum';
 import {Exposition} from '../../models/exposition';
+import {Museum} from '../../models/museum';
+import {ExpositionService} from '../../services/exposition.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-statistics',

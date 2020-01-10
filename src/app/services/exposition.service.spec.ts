@@ -1,13 +1,13 @@
-import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TestBed} from '@angular/core/testing';
 
 import {ExpositionService} from './exposition.service';
+import {Comment} from '../models/comment';
 import {Exposition} from '../models/exposition';
+import {ExpositionContent} from '../models/exposition-content';
 import {Image} from '../models/image';
 import {Like} from '../models/like';
 import {View} from '../models/view';
-import {Comment} from '../models/comment';
-import {ExpositionContent} from '../models/exposition-content';
 
 const bestOfLeonardoDaVinci = new Exposition(
   '',

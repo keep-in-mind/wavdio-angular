@@ -1,13 +1,13 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
-import {ExpositionService} from '../../services/exposition.service';
+
 import {Exposition} from '../../models/exposition';
-import {Museum} from 'src/app/models/museum';
-import {MuseumService} from 'src/app/services/museum.service';
+import {Museum} from '../../models/museum';
 import {MuseumContent} from '../../models/museum-content';
 import {CookielawService} from '../../services/cookielaw.service';
-
+import {ExpositionService} from '../../services/exposition.service';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-visitor',

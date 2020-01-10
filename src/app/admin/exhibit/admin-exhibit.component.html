@@ -122,36 +122,7 @@
           </ng-container>
         </div>
         <div body *ngIf="getExhibitContent(selectedLanguage).video.length">
-          <section class="player">
-            <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
-              <ng-container *ngFor="let video_file of getExhibitContent(selectedLanguage).video">
-                <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
-                        [type]="video_file.mimeType">
-              </ng-container>
-              <p>Your browser does not support the html5 video feature.</p>
-            </video>
-            <progress #progress class="progress" min='0' max='100' value='0'>0% played</progress>
-            <div #time class="time">00:00</div>
-            <div class="controls">
-              <button (click)="playPause()" class="playpause">
-                <ng-container *ngIf="!videoPlaying">
-                  <fa-icon icon="play" size="lg"></fa-icon>
-                </ng-container>
-                <ng-container *ngIf="videoPlaying">
-                  <fa-icon icon="pause" size="lg"></fa-icon>
-                </ng-container>
-              </button>
-              <button (click)="stopIt()" class="stop">
-                <fa-icon icon="stop" size="lg"></fa-icon>
-              </button>
-              <button (click)="rewind()" class="rwd">
-                <fa-icon icon="backward" size="lg"></fa-icon>
-              </button>
-              <button (click)="forward()" class="fwd">
-                <fa-icon icon="forward" size="lg"></fa-icon>
-              </button>
-            </div>
-          </section>
+          <app-video-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-video-player>
         </div>
       </app-box-card>
     </section>
@@ -201,36 +172,7 @@
           </ng-container>
         </div>
         <div body *ngIf="getExhibitContent(selectedLanguage).audio.length">
-          <section class="player">
-            <audio #audioplayer (timeupdate)="updateTimeAudio()">
-              <ng-container *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio">
-                <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
-                        [type]="audio_file.mimeType">
-              </ng-container>
-              <p>Your browser does not support the html5 audio feature.</p>
-            </audio>
-            <progress #progressAudio class="progress" min='0' max='100' value='0'>0% played</progress>
-            <div #timeAudio class="time">00:00</div>
-            <div class="controls">
-              <button (click)="playPauseAudio()" class="playpause">
-                <ng-container *ngIf="!audioPlaying">
-                  <fa-icon icon="play" size="lg"></fa-icon>
-                </ng-container>
-                <ng-container *ngIf="audioPlaying">
-                  <fa-icon icon="pause" size="lg"></fa-icon>
-                </ng-container>
-              </button>
-              <button (click)="stopItAudio()" class="stop">
-                <fa-icon class="fa-lg" icon="stop"></fa-icon>
-              </button>
-              <button (click)="rewindAudio()" class="rwd">
-                <fa-icon class="fa-lg" icon="backward"></fa-icon>
-              </button>
-              <button (click)="forwardAudio()" class="fwd">
-                <fa-icon class="fa-lg" icon="forward"></fa-icon>
-              </button>
-            </div>
-          </section>
+          <app-audio-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-audio-player>
         </div>
       </app-box-card>
     </section>
