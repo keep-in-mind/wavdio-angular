@@ -62,6 +62,7 @@ import {MuseumComponent} from './user/museum/museum.component';
 import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
+import { LanguageSelectionComponent } from './helper/language-selection/language-selection.component';
 
 const appRoutes: Routes = [
   {
@@ -141,7 +142,8 @@ const appRoutes: Routes = [
     AudioPlayerComponent,
     VideoPlayerComponent,
     SettingsComponent,
-    AppBarComponent
+    AppBarComponent,
+    LanguageSelectionComponent
   ],
     imports: [
         BrowserModule,

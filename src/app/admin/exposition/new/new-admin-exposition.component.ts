@@ -20,7 +20,7 @@ export class NewAdminExpositionComponent implements OnInit {
   exposition: Exposition;
   museum: Museum;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;

@@ -26,7 +26,7 @@ export class AdminInfopagesComponent implements OnInit {
   infopages: Infopage[];
   museum: Museum;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   constructor(

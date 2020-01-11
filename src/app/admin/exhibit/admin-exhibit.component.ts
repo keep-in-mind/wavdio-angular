@@ -30,7 +30,7 @@ export class AdminExhibitComponent implements OnInit {
 
   exhibit: Exhibit;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   iconAudio: ElementRef;
