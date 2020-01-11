@@ -9,7 +9,7 @@
   <progress #progressAudio class="progress" min='0' max='100' value='0'>0%</progress>
   <div #timeAudio class="time">00:00</div>
   <div class="controls">
-    <button (click)="playPauseAudio()" class="playpause" aria-label="Play and pause audio" i18n-aria-label>
+    <button class="playpause" (click)="playPauseAudio()" i18n-aria-label aria-label="Play and pause audio">
       <ng-container *ngIf="!audioPlaying">
         <fa-icon icon="play" size="lg"></fa-icon>
       </ng-container>
@@ -17,13 +17,13 @@
         <fa-icon icon="pause" size="lg"></fa-icon>
       </ng-container>
     </button>
-    <button (click)="stopItAudio()" class="stop" aria-label="Stop audio" i18n-aria-label>
+    <button class="stop" (click)="stopItAudio()" i18n-aria-label aria-label="Stop audio">
       <fa-icon class="fa-lg" icon="stop"></fa-icon>
     </button>
-    <button (click)="rewindAudio()" class="rwd" aria-label="Rewind audio" i18n-aria-label>
+    <button class="rwd" (click)="rewindAudio()" i18n-aria-label aria-label="Rewind audio">
       <fa-icon class="fa-lg" icon="backward"></fa-icon>
     </button>
-    <button (click)="forwardAudio()" class="fwd" aria-label="Fast forward audio" i18n-aria-label>
+    <button class="fwd" (click)="forwardAudio()" i18n-aria-label aria-label="Fast forward audio">
       <fa-icon class="fa-lg" icon="forward"></fa-icon>
     </button>
   </div>
