@@ -227,65 +227,76 @@
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">72</context>
         </context-group>
-      </trans-unit><trans-unit id="d0b41d9d91deb15ea9d9d1040340f93221bfddc5" datatype="html">
-        <source>I accept the </source><target state="new">Acepto las </target>
+      </trans-unit><trans-unit id="f0551faf3b021646f356b0ba2aba44f730a4dec8" datatype="html">
+        <source>Ich akzeptiere die</source><target state="new">Ich akzeptiere die</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
-      </trans-unit><trans-unit id="645b2c426c6a9d4d1c00653a78ede4673b1ec511" datatype="html">
-        <source>terms of use</source><target state="new">condiciones de uso</target>
+      </trans-unit><trans-unit id="358ff8a4907cabcbf191b27cd83c91fd764c46c6" datatype="html">
+        <source> Nutzungsbedingungen</source><target state="new"> Nutzungsbedingungen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
-      </trans-unit><trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
-        <source> and the </source><target state="new"> y la </target>
+      </trans-unit><trans-unit id="4420989878259349fc18141e1b26aa50ad0d2a94" datatype="html">
+        <source> und die</source><target state="new"> und die</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
-      </trans-unit><trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
-        <source>privacy policy</source><target state="new">política de privacidad</target>
+      </trans-unit><trans-unit id="a0d54db36bfcc1e54bbbb58b6920a5d84e4e0674" datatype="html">
+        <source> Datenschutzbestimmungen</source><target state="new"> Datenschutzbestimmungen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
-      </trans-unit><trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
-        <source>Enter comment:</source><target state="new">Escribe un comentario:</target>
+      </trans-unit><trans-unit id="07df0eb7964642fd296a604271dd1ddc10c5e6ad" datatype="html">
+        <source>Kommentar eingeben:</source><target state="new">Kommentar eingeben:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
-        <source>Cancel</source><target state="new">Cancelar</target>
+      </trans-unit><trans-unit id="d9853eb6e700fd722c8392a1ac293821a5a01347" datatype="html">
+        <source>
+          Abbrechen
+        </source><target state="new">
+          Abbrechen
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
-      </trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
-        <source>Submit</source><target state="new">Enviar</target>
+      </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source><target state="new">Cancelar</target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/comment/comment.component.html</context><context context-type="linenumber">9</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/helper/image-details/image-details.component.html</context><context context-type="linenumber">59</context></context-group></trans-unit><trans-unit id="b6e9ce67bc2476a1d9d5ea84e8f791f393bce850" datatype="html">
+        <source>
+          Absenden
+        </source><target state="new">
+          Absenden
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">12</context>
         </context-group>
-      </trans-unit><trans-unit id="10031bf7ba02f61ca265fcb99a498a7f4538e165" datatype="html">
-        <source>Your browser does not support the HTML5 audio feature</source><target state="new">Su navegador no soporta la función de audio HTML5</target>
+      </trans-unit><trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
+        <source>Submit</source><target state="new">Enviar</target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/comment/comment.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit><trans-unit id="3f72f752108031ff81d36c1af05508a7592313ef" datatype="html">
+        <source>transcript</source><target state="new">transcript</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit><trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
         <source>Audio Transcript</source><target state="new">Transkripción de audio</target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">71</context></context-group></trans-unit><trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source><target state="new">Close</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">95</context>
-        </context-group>
-      </trans-unit><trans-unit id="5c1895bc86dbe668847303a6774d1368631235e6" datatype="html">
-        <source>Your browser does not support the HTML5 video feature</source><target state="new">Su navegador no soporta la función de vídeo HTML5</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
 
@@ -305,7 +316,37 @@
       <trans-unit id="01f9adcf7fdc82937b8b818e4293a694adc4d94d" datatype="html">
         <source>Exponatnummer</source><target state="new">Exponatnummer</target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">167</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">118</context></context-group></trans-unit><trans-unit id="f093d9574ab746b231504bd2cbb65f04bd7b00db" datatype="html">
+        <source>Log in</source><target state="new">Log in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit><trans-unit id="480f984ecfb9635f9eb26b6b83bc2da4217d0bbc" datatype="html">
+        <source>Add exhibit</source><target state="new">Add exhibit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/home/home.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit><trans-unit id="566f146a61f7fd0dda0f9b183ec91c03303abb36" datatype="html">
+        <source>Add exposition</source><target state="new">Add exposition</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/admin/home/home.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="555172d1e68b2580648415069061353897404192" datatype="html">
+        <source>Save image details</source><target state="new">Save image details</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit><trans-unit id="f7692461111e9696aa44d99ec0d78d56148e0225" datatype="html">
+        <source>Delete image</source><target state="new">Delete image</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4994cde8a37f09afed5111064888779b215de195" datatype="html">
         <source>Laden...</source><target state="new">Laden...</target>
         <context-group purpose="location">
@@ -334,6 +375,12 @@
           <context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
+      </trans-unit><trans-unit id="6a62ce6f42c86c4485c5530754ef603723d816bd" datatype="html">
+        <source>Print QR code</source><target state="new">Print QR code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="cedd5f9cee5d6a1681605d996cf45ab5398fbd6f" datatype="html">
         <source>Es ist ein Fehler aufgetreten</source><target state="new">Es ist ein Fehler aufgetreten</target>
@@ -341,14 +388,24 @@
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="d67d41141fce7b733404e900b6f7dac3f2a6a692" datatype="html">
-        <source>Zurück zur Startseite</source><target state="new">Zurück zur Startseite</target>
+      </trans-unit><trans-unit id="b0fcbe3f488866b428f641035694a73ff00e8405" datatype="html">
+        <source>
+      Zurück zur Startseite
+    </source><target state="new">
+      Zurück zur Startseite
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit><trans-unit id="eb061694f44ccb287aba0c4e91c162736144123e" datatype="html">
+        <source>Back to home page</source><target state="new">Back to home page</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="816ffabe6995460c3c6542e6fb63ae42c7693fe4" datatype="html">
         <source>Nutzungsbedingungen</source><target state="new">Nutzungsbedingungen</target>
         <context-group purpose="location">
@@ -362,23 +419,11 @@
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-      </trans-unit><trans-unit id="321e4419a943044e674beb55b8039f42a9761ca5" datatype="html">
-        <source>Info</source><target state="new">Información</target>
+      </trans-unit><trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>Home</source><target state="new">Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-      </trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
-        <source>Exhibits</source><target state="new">Objetos</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">57</context>
-        </context-group>
-      </trans-unit><trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
-        <source>Expositions</source><target state="new">Exposiciones</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
@@ -407,7 +452,73 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit><trans-unit id="7cd9c61cb3c632d05355ba45b63771e74c57af15" datatype="html">
+        <source>Agree to cookie usage</source><target state="new">Agree to cookie usage</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit><trans-unit id="a2bc0e854affa68a86352fadafb8dbaf1e4fb8fe" datatype="html">
+        <source>Play and pause audio</source><target state="new">Play and pause audio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/audio-player/audio-player.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit><trans-unit id="4d566e12efcda7f9c13fb6bc13e17ad0420d9b78" datatype="html">
+        <source>Stop audio</source><target state="new">Stop audio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/audio-player/audio-player.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="0f8e2c80dd412e99d59c301f22ed4563ec7152e4" datatype="html">
+        <source>Rewind audio</source><target state="new">Rewind audio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/audio-player/audio-player.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit><trans-unit id="65ba98d6eeaba4b0f72194ca51a38a171ff496e8" datatype="html">
+        <source>Fast forward audio</source><target state="new">Fast forward audio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/audio-player/audio-player.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit><trans-unit id="113e4989c353e5db31a2fa71b27f6fe5a822674b" datatype="html">
+        <source>Play and pause video</source><target state="new">Reproducir y pausar el vídeo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/video-player/video-player.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit><trans-unit id="96ce29748d23823593de86f8dc301fb431d0422a" datatype="html">
+        <source>Stop video</source><target state="new">Detener el video</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/video-player/video-player.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="418c9419944d80a1dd6ebb74bcb8e43b8819b702" datatype="html">
+        <source>Rewind video</source><target state="new">Rebobinar el video</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/video-player/video-player.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit><trans-unit id="43ee51ed784937227f46173c3d107eff0b8ec1aa" datatype="html">
+        <source>Fast forward video</source><target state="new">Video de avance rápido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/video-player/video-player.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit><trans-unit id="c28cb747c5a8e39f1748c191157972cee93eb7b0" datatype="html">
+        <source>Open menu</source><target state="new">Abrir el Menú</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="ae896d92003a6f35eda56cb77447539dbf833015" datatype="html">
+        <source>Go back to previous page</source><target state="new">Volver a la página anterior</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
 
@@ -419,9 +530,12 @@
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
           Alemán
         </target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">25</context></context-group></trans-unit><trans-unit id="94553a5491dcb78287652bf96c33eba3ec3104c3" datatype="html">
+        <source>Switch to German</source><target state="new">Cambiar a alemán</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7f9e9fc91d2fb8a0043e37514dd05d55ee975047" datatype="html">
@@ -432,9 +546,12 @@
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
           Inglés
         </target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit><trans-unit id="c8fde9c6d3f0c3ed19c0e890f17975897da69758" datatype="html">
+        <source>Switch to English</source><target state="new">Cambiar a inglés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5fd3c6bcade00eef46728c806cbf96567a24f95b" datatype="html">
@@ -445,9 +562,12 @@
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
           Español
         </target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">37</context></context-group></trans-unit><trans-unit id="067ece880bc8044b23beb1c04120727e16e19011" datatype="html">
+        <source>Switch to Spanish</source><target state="new">Cambiar a español</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e255e9362e434c3a324ae6665e20ab55fdc17cb0" datatype="html">
@@ -458,9 +578,18 @@
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
           Francés
         </target>
+
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">43</context></context-group></trans-unit><trans-unit id="2c1ecbc912243135f874bfe1fd69445021d71743" datatype="html">
+        <source>Switch to French</source><target state="new">Cambiar a francés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit><trans-unit id="57006d9cd0b6a7ff7aba7a9521b60fe0345f2271" datatype="html">
+        <source>Show available languages</source><target state="new">Mostrar los idiomas disponibles</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
     </body>
