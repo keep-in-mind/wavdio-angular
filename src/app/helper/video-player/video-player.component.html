@@ -9,7 +9,7 @@
   <progress #progress class="progress" min='0' max='100' value='0'>0%</progress>
   <div #time class="time">00:00</div>
   <div class="controls">
-    <button (click)="playPause()" class="playpause" aria-label="Play and pause video">
+    <button (click)="playPause()" class="playpause" aria-label="Play and pause video" i18n-aria-label>
       <ng-container *ngIf="!videoPlaying">
         <fa-icon icon="play" size="lg"></fa-icon>
       </ng-container>
@@ -17,13 +17,13 @@
         <fa-icon icon="pause" size="lg"></fa-icon>
       </ng-container>
     </button>
-    <button (click)="stopIt()" class="stop" aria-label="Stop video">
+    <button (click)="stopIt()" class="stop" aria-label="Stop video" i18n-aria-label>
       <fa-icon icon="stop" size="lg"></fa-icon>
     </button>
-    <button (click)="rewind()" class="rwd" aria-label="Rewind video">
+    <button (click)="rewind()" class="rwd" aria-label="Rewind video" i18n-aria-label>
       <fa-icon icon="backward" size="lg"></fa-icon>
     </button>
-    <button (click)="forward()" class="fwd" aria-label="Fast forward video">
+    <button (click)="forward()" class="fwd" aria-label="Fast forward video" i18n-aria-label>
       <fa-icon icon="forward" size="lg"></fa-icon>
     </button>
   </div>

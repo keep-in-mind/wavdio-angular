@@ -14,6 +14,7 @@
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
           <div ngxSlickItem
+          <div ngxSlickItem
                *ngFor="let image of getExhibitContent(locale).images"
                class="slide">
             <div style="position: relative; padding-top: 61.8%">
@@ -61,14 +62,14 @@
               <app-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-audio-player>
 
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
-                <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
+                <button (click)="openTranscript(transcriptModal)" aria-label="transcript" i18n-aria-label>
                   <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
                 </button>
               </div>
               <ng-template #transcriptModal let-c="close" let-d="dismiss">
                 <div class="modal-header" style="overflow-y: initial !important">
                   <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transcript</h4>
-                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <button type="button" class="close" aria-label="Close" i18n-aria-label (click)="d('Cross click')">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
