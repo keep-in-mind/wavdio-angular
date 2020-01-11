@@ -1,8 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-
-import {Setting} from '../../models/setting';
-import {SettingService} from '../../services/setting.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-language-selection',
@@ -11,25 +7,9 @@ import {SettingService} from '../../services/setting.service';
 })
 export class LanguageSelectionComponent implements OnInit {
 
-  setting: Setting;
-
-  // Same alt texts used multiple times
-  langAltTexts = {
-    de: 'German Flag Icon',
-    en: 'British Flag Icon',
-    es: 'Spanish Flag Icon',
-    fr: 'French Flag Icon'
-  };
-
-  constructor(
-    @Inject(LOCALE_ID) public locale: string,
-    public router: Router,
-    private settingService: SettingService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.settingService.getSettings().subscribe(
-      settings => this.setting = settings[0]
-    );
   }
 }
