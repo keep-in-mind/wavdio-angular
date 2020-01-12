@@ -14,7 +14,6 @@
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
           <div ngxSlickItem
-          <div ngxSlickItem
                *ngFor="let image of getExhibitContent(locale).images"
                class="slide">
             <div style="position: relative; padding-top: 61.8%">
@@ -26,14 +25,14 @@
             </div>
           </div>
         </ng-container>
-        <ng-container #elsecase *ngIf="getExhibitContent('de').images.length">
+        <ng-container #elsecase>
           <ng-template>
             <div ngxSlickItem
                  *ngFor="let image of getExhibitContent('de').images"
                  class="slide">
               <div style="position: relative; padding-top: 61.8%">
                 <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
-              <img class="w-100" alt]="image.alternativeText"
+              <img class="w-100" [alt]="image.alternativeText"
                    [src]="'/uploads/' + exhibit._id + '/' + image.filename">
                 </div>
               </div>
@@ -42,7 +41,6 @@
         </ng-container>
       </ngx-slick-carousel>
     </section>
-
 
     <!-- Exhibit Title -->
     <h1 *ngIf="exhibit" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
@@ -62,7 +60,7 @@
               <app-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-audio-player>
 
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
-                <button (click)="openTranscript(transcriptModal)" aria-label="transcript">
+                <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">
                   <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
                 </button>
               </div>
@@ -100,37 +98,36 @@
 
   <footer>
     <section *ngIf="exhibit" role="contentinfo">
-      <nav class="bg-light" [attr.aria-label]="ariaLabelFooterNavigation">
+      <nav class="bg-light">
         <div class="container">
           <div class="row">
             <div class="col-2 icons py-2 text-center">
               <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeExhibit()"
-                       [attr.aria-label]="ariaLabelLikeExhibit"></fa-icon>
+                       aria-label="Like"></fa-icon>
             </div>
             <div class="col-8 input-group py-2">
               <div class="input-group-prepend">
                 <button (click)="prevExhibit()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelPrevExhibit">
+                        aria-label="Go to previous exhibit">
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
               </div>
               <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
-                     placeholder="Exponatnummer"
-                     i18n-placeholder [attr.aria-label]="ariaLabelInputExhibitnumber">
+                     placeholder="Exhibit number">
               <div class="input-group-append">
                 <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelSearchExhibit">
+                        aria-label="Search by exhibit number">
                   <fa-icon icon="search-location"></fa-icon>
                 </button>
                 <button (click)="nextExhibit()" class="btn btn-outline-secondary" type="button"
-                        [attr.aria-label]="ariaLabelNextExhibit">
+                        aria-label="Go to next exhibit">
                   <fa-icon icon="chevron-right"></fa-icon>
                 </button>
               </div>
             </div>
             <div class="col-2 icons py-2 text-center">
               <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
-                       [attr.aria-label]="ariaLabelOpenComment"></fa-icon>
+                       aria-label="Comment"></fa-icon>
             </div>
           </div>
         </div>
