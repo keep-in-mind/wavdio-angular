@@ -227,167 +227,202 @@
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">72</context>
         </context-group>
-      </trans-unit><trans-unit id="f0551faf3b021646f356b0ba2aba44f730a4dec8" datatype="html">
-        <source>Ich akzeptiere die</source><target state="new">Ich akzeptiere die</target>
+      </trans-unit><trans-unit id="d0b41d9d91deb15ea9d9d1040340f93221bfddc5" datatype="html">
+        <source>I accept the </source><target state="new">I accept the </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
-      </trans-unit><trans-unit id="358ff8a4907cabcbf191b27cd83c91fd764c46c6" datatype="html">
-        <source> Nutzungsbedingungen</source><target state="new"> Nutzungsbedingungen</target>
+      </trans-unit><trans-unit id="29ca9c1548c84afe69e7bd03650f6b256352a17d" datatype="html">
+        <source>usage terms</source><target state="new">usage terms</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
-      </trans-unit><trans-unit id="4420989878259349fc18141e1b26aa50ad0d2a94" datatype="html">
-        <source> und die</source><target state="new"> und die</target>
+      </trans-unit><trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
+        <source> and the </source><target state="new"> and the </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
-      </trans-unit><trans-unit id="a0d54db36bfcc1e54bbbb58b6920a5d84e4e0674" datatype="html">
-        <source> Datenschutzbestimmungen</source><target state="new"> Datenschutzbestimmungen</target>
+      </trans-unit><trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
+        <source>privacy policy</source><target state="new">privacy policy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
-      </trans-unit><trans-unit id="07df0eb7964642fd296a604271dd1ddc10c5e6ad" datatype="html">
-        <source>Kommentar eingeben:</source><target state="new">Kommentar eingeben:</target>
+      </trans-unit><trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
+        <source>Enter comment:</source><target state="new">Enter comment:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit><trans-unit id="d9853eb6e700fd722c8392a1ac293821a5a01347" datatype="html">
+      </trans-unit><trans-unit id="fb8aad312b72bbb7e5a1e2cc0b55fae8962bf0fb" datatype="html">
         <source>
-          Abbrechen
+          Cancel
         </source><target state="new">
-          Abbrechen
+          Cancel
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
-      </trans-unit><trans-unit id="b6e9ce67bc2476a1d9d5ea84e8f791f393bce850" datatype="html">
+      </trans-unit><trans-unit id="729411b7f2d3f8d9112be6db06e97d485d6efdae" datatype="html">
         <source>
-          Absenden
+          Submit
         </source><target state="new">
-          Absenden
+          Submit
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
+      </trans-unit><trans-unit id="321e4419a943044e674beb55b8039f42a9761ca5" datatype="html">
+        <source>Info</source><target state="new">Info</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
+        <source>Exhibits</source><target state="new">Exhibits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
       </trans-unit><trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
         <source>Audio Transcript</source><target state="new">Transcription audio</target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">71</context></context-group></trans-unit>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <trans-unit id="01f9adcf7fdc82937b8b818e4293a694adc4d94d" datatype="html">
-        <source>Exponatnummer</source><target state="new">Exponatnummer</target>
-
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">118</context></context-group></trans-unit><trans-unit id="0b5251ea00648caadba78fecc986aa3fc76176ca" datatype="html">
-        <source>
-        Speichern
-      </source><target state="new">
-        Speichern
-      </target>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit><trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
+        <source>Description</source><target state="new">Description</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">24</context>
         </context-group>
-      </trans-unit><trans-unit id="d43ab7331ab7e0d74992518b321b6308420c667e" datatype="html">
-        <source>
-        Löschen
-      </source><target state="new">
-        Löschen
-      </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">29</context>
         </context-group>
-      </trans-unit><trans-unit id="4d2fd7e6c886ae7865f75486986e43070d227ae4" datatype="html">
-        <source>
-        Abbrechen
-      </source><target state="new">
-        Abbrechen
-      </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">34</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="4994cde8a37f09afed5111064888779b215de195" datatype="html">
-        <source>Laden...</source><target state="new">Laden...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit><trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source><target state="new">Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit><trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source><target state="new">Delete</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source><target state="new">Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit><trans-unit id="94516fa213706c67ce5a5b5765681d7fb032033a" datatype="html">
+        <source>Loading...</source><target state="new">Loading...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="2824b1cd6257485b7d595fa4cd5886d665badb61" datatype="html">
+      </trans-unit><trans-unit id="9e27e5208ad6d4a563ea1733a851e8fa20387710" datatype="html">
         <source>
-    Lade Datei hoch...
+    Uploading file...
   </source><target state="new">
-    Lade Datei hoch...
+    Uploading file...
   </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="94006b19f03acb527c41e88f8d16b1f9513a1293" datatype="html">
+      </trans-unit><trans-unit id="ad5d5911834c88cee73c38949a280b0efcfe3ea4" datatype="html">
         <source>
-          Drucken
+          Print
         </source><target state="new">
-          Drucken
+          Print
         </target>
-
-      <context-group purpose="location"><context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit>
-      <trans-unit id="cedd5f9cee5d6a1681605d996cf45ab5398fbd6f" datatype="html">
-        <source>Es ist ein Fehler aufgetreten</source><target state="new">Es ist ein Fehler aufgetreten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit><trans-unit id="348cc5d553b18e862eb1c1770e5636f6b05ba130" datatype="html">
+        <source>An error has occurred</source><target state="new">An error has occurred</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit><trans-unit id="b0fcbe3f488866b428f641035694a73ff00e8405" datatype="html">
+      </trans-unit><trans-unit id="7c92d687499b4696a5375e4a93e3535e088701ee" datatype="html">
         <source>
-      Zurück zur Startseite
+      Back to home page
     </source><target state="new">
-      Zurück zur Startseite
+      Back to home page
     </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/helper/error-page/error-page.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
 
-      <trans-unit id="816ffabe6995460c3c6542e6fb63ae42c7693fe4" datatype="html">
-        <source>Nutzungsbedingungen</source><target state="new">Nutzungsbedingungen</target>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      <trans-unit id="52d091913ab19e06c3c1d60c858deee3ca585754" datatype="html">
+        <source>Terms of use</source><target state="new">Terms of use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="d8062417e174603544f2f421382c2741c121dc87" datatype="html">
-        <source>Datenschutzerklärung</source><target state="new">Datenschutzerklärung</target>
+      </trans-unit><trans-unit id="d0969b2f97e4de7eec3d16c223b42d9fa4af4c5d" datatype="html">
+        <source>Privacy policy</source><target state="new">Privacy policy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-      </trans-unit><trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+      </trans-unit>
+
+      
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
         <source>Home</source><target state="new">Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
           <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit><trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
+        <source>Expositions</source><target state="new">Expositions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
