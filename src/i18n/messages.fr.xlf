@@ -228,31 +228,31 @@
           <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit><trans-unit id="d0b41d9d91deb15ea9d9d1040340f93221bfddc5" datatype="html">
-        <source>I accept the </source><target state="new">I accept the </target>
+        <source>I accept the </source><target state="new">J'accepte les </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit><trans-unit id="29ca9c1548c84afe69e7bd03650f6b256352a17d" datatype="html">
-        <source>usage terms</source><target state="new">usage terms</target>
+        <source>usage terms</source><target state="new">conditions d'utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit><trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
-        <source> and the </source><target state="new"> and the </target>
+        <source> and the </source><target state="new"> et la </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit><trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
-        <source>privacy policy</source><target state="new">privacy policy</target>
+        <source>privacy policy</source><target state="new">politique de confidentialité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit><trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
-        <source>Enter comment:</source><target state="new">Enter comment:</target>
+        <source>Enter comment:</source><target state="new">Entrez un commentaire:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
           <context context-type="linenumber">5</context>
@@ -261,7 +261,7 @@
         <source>
           Cancel
         </source><target state="new">
-          Cancel
+          Annuler
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
@@ -271,7 +271,7 @@
         <source>
           Submit
         </source><target state="new">
-          Submit
+          Soumettre
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/comment/comment.component.html</context>
@@ -288,7 +288,7 @@
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
-        <source>Exhibits</source><target state="new">Exhibits</target>
+        <source>Exhibits</source><target state="new">Exposés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
           <context context-type="linenumber">29</context>
@@ -319,25 +319,25 @@
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit><trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
-        <source>Save</source><target state="new">Save</target>
+        <source>Save</source><target state="new">Sauver</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit><trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
-        <source>Delete</source><target state="new">Delete</target>
+        <source>Delete</source><target state="new">Supprimer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
-        <source>Cancel</source><target state="new">Cancel</target>
+        <source>Cancel</source><target state="new">Annuler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit><trans-unit id="94516fa213706c67ce5a5b5765681d7fb032033a" datatype="html">
-        <source>Loading...</source><target state="new">Loading...</target>
+        <source>Loading...</source><target state="new">Chargement...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
           <context context-type="linenumber">3</context>
@@ -346,7 +346,7 @@
         <source>
     Uploading file...
   </source><target state="new">
-    Uploading file...
+    Chargement du fichier...
   </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
@@ -356,14 +356,14 @@
         <source>
           Print
         </source><target state="new">
-          Print
+          Imprimer
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit><trans-unit id="348cc5d553b18e862eb1c1770e5636f6b05ba130" datatype="html">
-        <source>An error has occurred</source><target state="new">An error has occurred</target>
+        <source>An error has occurred</source><target state="new">Une erreur est survenue</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
           <context context-type="linenumber">5</context>
@@ -372,7 +372,7 @@
         <source>
       Back to home page
     </source><target state="new">
-      Back to home page
+      Retour à la page d'accueil
     </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
@@ -393,25 +393,25 @@
 
 
 
-      
-      
-      
-      
+
+
+
+
       <trans-unit id="52d091913ab19e06c3c1d60c858deee3ca585754" datatype="html">
-        <source>Terms of use</source><target state="new">Terms of use</target>
+        <source>Terms of use</source><target state="new">Conditions d'utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit><trans-unit id="d0969b2f97e4de7eec3d16c223b42d9fa4af4c5d" datatype="html">
-        <source>Privacy policy</source><target state="new">Privacy policy</target>
+        <source>Privacy policy</source><target state="new">Politique de confidentialité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
 
-      
+
       <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
         <source>Home</source><target state="new">Home</target>
         <context-group purpose="location">
@@ -426,7 +426,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
-        <source>This website uses cookies</source><target state="new">This website uses cookies</target>
+        <source>This website uses cookies</source><target state="new">Ce site Web utilise des cookies</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
           <context context-type="linenumber">5</context>
@@ -436,8 +436,8 @@
           For more information on this and your rights as a user, please see our privacy policy at the bottom of the
           page. Click on "I agree" to accept cookies and visit our website directly.
         </source><target state="new">
-          For more information on this and your rights as a user, please see our privacy policy at the bottom of the
-          page. Click on "I agree" to accept cookies and visit our website directly.
+          Pour plus d'informations à ce sujet et sur vos droits en tant qu'utilisateur, veuillez consulter notre politique de confidentialité au bas de la
+          page. Cliquez sur "J'accepte" pour accepter les cookies et visiter directement notre site Web.
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
@@ -447,7 +447,7 @@
         <source>
           I agree
         </source><target state="new">
-          I agree
+          J'accepte
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
