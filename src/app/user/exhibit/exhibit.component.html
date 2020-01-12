@@ -25,20 +25,18 @@
             </div>
           </div>
         </ng-container>
-        <ng-container #elsecase>
-          <ng-template>
-            <div ngxSlickItem
-                 *ngFor="let image of getExhibitContent('de').images"
-                 class="slide">
-              <div style="position: relative; padding-top: 61.8%">
-                <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
-              <img class="w-100" [alt]="image.alternativeText"
-                   [src]="'/uploads/' + exhibit._id + '/' + image.filename">
-                </div>
+        <ng-template #elsecase>
+          <div ngxSlickItem
+               *ngFor="let image of getExhibitContent('de').images"
+               class="slide">
+            <div style="position: relative; padding-top: 61.8%">
+              <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+            <img class="w-100" [alt]="image.alternativeText"
+                 [src]="'/uploads/' + exhibit._id + '/' + image.filename">
               </div>
             </div>
-          </ng-template>
-        </ng-container>
+          </div>
+        </ng-template>
       </ngx-slick-carousel>
     </section>
 
