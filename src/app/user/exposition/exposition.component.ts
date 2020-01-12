@@ -25,15 +25,17 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./exposition.component.css']
 })
 export class ExpositionComponent implements OnInit {
+
+  langFlagAltTexts = {
+    'de': 'German Flag',
+    'en': 'British Flag'
+  };
+
   private _success = new Subject<string>();
   alertMessage: string;
 
   filterNumber: number;
   likedFlag = false;
-
-  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
-  ariaLabelLikeExposition = 'Ausstellung liken';
-  ariaLabelOpenComment = 'Kommentarfeld öffnen';
 
   exposition: Exposition;
   exhibits: Exhibit[];

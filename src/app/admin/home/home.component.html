@@ -18,7 +18,7 @@
              routerLink="/admin/exhibit/new/{{museum._id}}"
              routerLinkActive="active">
 
-            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+            <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
         <div body *ngFor="let exhibit of exhibits">
@@ -37,7 +37,7 @@
       <app-box-card [descHeader]="descExpositionsHeader">
         <div header>
           <a routerLink="/admin/exposition/new" routerLinkActive="active">
-            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+            <fa-icon aria-label="Add exposition" class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
         <div body *ngFor="let exposition of expositions">

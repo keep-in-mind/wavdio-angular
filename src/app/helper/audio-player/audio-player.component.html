@@ -4,12 +4,12 @@
       <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
               [type]="audio_file.mimeType">
     </ng-container>
-    <p>Your browser does not support the html5 audio feature.</p>
+    <p>Your browser does not support the HTML5 audio feature.</p>
   </audio>
-  <progress #progressAudio class="progress" min='0' max='100' value='0'>0% played</progress>
+  <progress #progressAudio class="progress" min='0' max='100' value='0'>0%</progress>
   <div #timeAudio class="time">00:00</div>
   <div class="controls">
-    <button (click)="playPauseAudio()" class="playpause">
+    <button (click)="playPauseAudio()" class="playpause" aria-label="Play and pause audio">
       <ng-container *ngIf="!audioPlaying">
         <fa-icon icon="play" size="lg"></fa-icon>
       </ng-container>
@@ -17,13 +17,13 @@
         <fa-icon icon="pause" size="lg"></fa-icon>
       </ng-container>
     </button>
-    <button (click)="stopItAudio()" class="stop">
+    <button (click)="stopItAudio()" class="stop" aria-label="Stop audio">
       <fa-icon class="fa-lg" icon="stop"></fa-icon>
     </button>
-    <button (click)="rewindAudio()" class="rwd">
+    <button (click)="rewindAudio()" class="rwd" aria-label="Rewind audio">
       <fa-icon class="fa-lg" icon="backward"></fa-icon>
     </button>
-    <button (click)="forwardAudio()" class="fwd">
+    <button (click)="forwardAudio()" class="fwd" aria-label="Fast forward audio">
       <fa-icon class="fa-lg" icon="forward"></fa-icon>
     </button>
   </div>

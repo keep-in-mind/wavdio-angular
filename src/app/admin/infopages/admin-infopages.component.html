@@ -15,7 +15,7 @@
       <app-box-card [descHeader]="descInfopageBox">
         <div header>
           <a routerLink="/admin/infopage/new" routerLinkActive="active">
-            <fa-icon class="fa-lg" icon="plus-circle"></fa-icon>
+            <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
         <div body *ngFor="let infopage of infopages">
@@ -35,22 +35,20 @@
     <section *ngIf="museum" class="mt-2">
       <app-box-card [descHeader]="descLageplan">
         <div header>
-          <fa-icon [hidden]="getMuseumContent(selectedLanguage).sitePlan" (click)="onSitePlanInput.click()"
+          <fa-icon aria-label="Add site plan" [hidden]="getMuseumContent(selectedLanguage).sitePlan" (click)="onSitePlanInput.click()"
                    class="fa-lg"
                    icon="plus-circle">
           </fa-icon>
           <form class="d-none">
             <input #onSitePlanInput (change)="onSitePlanChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!getMuseumContent(selectedLanguage).sitePlan" class="fa-lg" icon="minus-circle"
+          <fa-icon aria-label="Delete site plan" [hidden]="!getMuseumContent(selectedLanguage).sitePlan" class="fa-lg" icon="minus-circle"
                    (click)="deleteSitePlan()"></fa-icon>
         </div>
         <div body>
           <div style="width: 100px" class="mb-3">
-            <label class="form-label mb-2" for="lang_select">
-              Sprache
-            </label>
-            <select id="lang_select" class="form-control" [(ngModel)]="selectedLanguage">
+            <label for="lang">Sprache</label>
+            <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
               <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
             </select>
           </div>

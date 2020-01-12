@@ -3,7 +3,7 @@
     <img *ngIf="exposition.logo; else elsecase" class="card-img-top"
          [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename" [alt]="exposition.logo.alternativeText">
     <ng-template #elsecase>
-      <img src="/assets/images/noimage.png" [alt]="expositionAltTextNoImage">
+      <img src="/assets/images/noimage.png" alt="No Image">
     </ng-template>
     <div class="card-body p-0">
       <p class="card-text text-center small p-1" id="linkLabel_{{exposition._id}}">
