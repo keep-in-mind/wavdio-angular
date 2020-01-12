@@ -25,12 +25,6 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./exposition.component.css']
 })
 export class ExpositionComponent implements OnInit {
-
-  langFlagAltTexts = {
-    'de': 'German Flag',
-    'en': 'British Flag'
-  };
-
   private _success = new Subject<string>();
   alertMessage: string;
 

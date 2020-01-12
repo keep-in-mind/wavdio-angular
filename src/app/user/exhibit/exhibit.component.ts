@@ -22,14 +22,6 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./exhibit.component.css']
 })
 export class ExhibitComponent implements OnInit {
-
-  langFlagAltTexts = {
-    'de': 'German Flag',
-    'en': 'British Flag'
-  };
-
-  isNavbarCollapsed = true;
-
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
