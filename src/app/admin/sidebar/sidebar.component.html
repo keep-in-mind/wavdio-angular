@@ -1,43 +1,49 @@
 <div class="bg-dark">
   <ul>
     <li>
-      <a aria-label="Back home" class="text-light" routerLink="/admin/home" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/home" routerLinkActive="active">
         <span class="long-text">Home</span>
         <span class="short-text"><fa-icon icon="home"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Add exposition" class="text-light" routerLink="/admin/exposition/new" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/exposition/new" routerLinkActive="active">
         <span class="long-text">Neue Ausstellung</span>
         <span class="short-text"><fa-icon icon="plus"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Go to info pages" class="text-light" routerLink="/admin/infopages" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/infopages" routerLinkActive="active">
         <span class="long-text">Infoseiten</span>
         <span class="short-text"><fa-icon icon="info"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Go to statistics" class="text-light" routerLink="/admin/statistics" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/statistics" routerLinkActive="active">
         <span class="long-text">Statistiken</span>
         <span class="short-text"><fa-icon icon="chart-line"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Go to server logs" class="text-light" routerLink="/admin/logging" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/logging" routerLinkActive="active">
         <span class="long-text">Serverlogs</span>
         <span class="short-text"><fa-icon icon="align-left"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Go to personal area" class="text-light" routerLink="/admin/personal-data" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/personal-data" routerLinkActive="active">
         <span class="long-text">Persönlicher Bereich</span>
         <span class="short-text"><fa-icon icon="user-circle"></fa-icon></span>
       </a>
     </li>
     <li>
-      <a aria-label="Log out" class="text-light" routerLink="/admin" (click)="logout()" routerLinkActive="active">
+      <a class="text-light" routerLink="/admin/settings" routerLinkActive="active">
+        <span class="long-text">Einstellungen</span>
+        <span class="short-text"><fa-icon icon="cog"></fa-icon></span>
+      </a>
+    </li>
+    <li>
+      <a class="text-light" routerLink="/admin" (click)="logout()" routerLinkActive="active" aria-label="Log out">
         <span class="long-text">Abmelden</span>
         <span class="short-text"><fa-icon icon="sign-out-alt"></fa-icon></span>
       </a>

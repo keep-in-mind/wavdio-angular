@@ -31,7 +31,7 @@ export class PersonalDataComponent implements OnInit {
   };
   museum: Museum;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
   newPasswordRepeat: string;
 

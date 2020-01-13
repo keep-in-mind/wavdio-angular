@@ -29,7 +29,7 @@ export class AdminExpositionComponent implements OnInit {
   exposition: Exposition;
   exhibits: Exhibit[];
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;

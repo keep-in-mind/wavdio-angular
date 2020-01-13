@@ -1,18 +1,6 @@
 <div id="page">
 
-  <!-- App Bar -->
-  <mat-toolbar class="mat-elevation-z4" style="display: flex">
-    <div style="flex-grow: 1"></div>
-
-    <mat-menu #appMenu="matMenu">
-      <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png" alt="British Flag"/> Englisch</a></div>
-      <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
-    </mat-menu>
-
-    <button aria-label="Select language" mat-icon-button [matMenuTriggerFor]="appMenu">
-      <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
-    </button>
-  </mat-toolbar>
+  <app-app-bar></app-app-bar>
 
   <!-- Page Content -->
   <main>
@@ -40,7 +28,7 @@
     </h1>
 
     <a [routerLink]="termsOfUseFlag ? '/museum' : ''" style="display: block; text-align: center; margin: auto">
-      <img alt="Continue" style="width: 30%" [src]="'assets/images/continue_' + locale + '.png'">
+      <img style="width: 30%" [src]="'assets/images/continue_' + locale + '.png'">
     </a>
 
     <!-- Agreements Section -->
@@ -52,10 +40,10 @@
               <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
                      (change)="onTermsChange()">
               <label for="termsOfUse">
-                <span i18n>Ich akzeptiere die</span>
-                <a routerLink="/user/usage-terms/termsOfUse" i18n> Nutzungsbedingungen</a>
-                <span i18n> und die</span>
-                <a routerLink="/user/usage-terms/termsOfPrivacy" i18n> Datenschutzbestimmungen</a>
+                <span i18n>I accept the </span>
+                <a routerLink="/user/usage-terms/termsOfUse" i18n>usage terms</a>
+                <span i18n> and the </span>
+                <a routerLink="/user/usage-terms/termsOfPrivacy" i18n>privacy policy</a>
               </label>
             </div>
           </div>

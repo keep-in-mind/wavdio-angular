@@ -28,23 +28,7 @@
   <!-- Main Page -->
   <mat-sidenav-content id="page">
 
-    <!-- App Bar -->
-    <mat-toolbar class="mat-elevation-z4" style="display: flex">
-      <button aria-label="Open menu" mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <div style="flex-grow: 1"></div>
-
-      <mat-menu #appMenu="matMenu">
-        <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png" alt="British Flag"/> Englisch</a></div>
-        <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
-      </mat-menu>
-
-      <button aria-label="Select language" mat-icon-button [matMenuTriggerFor]="appMenu">
-        <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
-      </button>
-    </mat-toolbar>
+    <app-app-bar [sidenav]="sidenav"></app-app-bar>
 
     <!-- Page Content -->
     <main style="position: relative">
@@ -65,12 +49,12 @@
       <mat-tab-group mat-stretch-tabs>
 
         <!-- Info -->
-        <mat-tab label="Info">
+        <mat-tab label="Info" i18n-label>
           <p *ngIf="museum" class="p-2">{{ getMuseumContent(locale).info }}</p>
         </mat-tab>
 
         <!-- Exhibits -->
-        <mat-tab *ngIf="exhibits && exhibits.length > 0" label="Exponate">
+        <mat-tab *ngIf="exhibits && exhibits.length > 0" label="Exhibits" i18n-label>
           <section *ngIf="museum" class="mt-4" role="main">
             <div class="container">
               <div class="grid-container pb-5">
@@ -85,7 +69,7 @@
         </mat-tab>
 
         <!-- Expositions -->
-        <mat-tab *ngIf="expositions && expositions.length > 0" label="Ausstellungen">
+        <mat-tab *ngIf="expositions && expositions.length > 0" label="Expositions" i18n-label>
           <section *ngIf="museum" class="mt-4" role="main">
             <div class="container">
               <div class="grid-container pb-5">

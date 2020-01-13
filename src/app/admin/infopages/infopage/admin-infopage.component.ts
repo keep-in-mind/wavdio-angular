@@ -17,7 +17,7 @@ export class AdminInfopageComponent implements OnInit {
 
   infopage: Infopage;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
 
   alertType: number;
   alertMessage: string;

@@ -1,22 +1,6 @@
 <div id="page">
 
-  <!-- App Bar -->
-  <mat-toolbar class="mat-elevation-z4" style="display: flex">
-    <a aria-label="backToMusuem" routerLink="/museum" routerLinkActive="active" i18n>
-      <mat-icon>arrow_back</mat-icon>
-    </a>
-
-    <div style="flex-grow: 1"></div>
-
-    <mat-menu #appMenu="matMenu">
-      <div><a [href]="'/en' + this.router.url"><img class="ml-2" src="assets/images/en.png" alt="British Flag"/> Englisch</a></div>
-      <div><a [href]="'/de' + this.router.url"><img class="ml-2" src="assets/images/de.png" alt="German Flag"/> Deutsch</a></div>
-    </mat-menu>
-
-    <button aria-label="Select language" mat-icon-button [matMenuTriggerFor]="appMenu">
-      <img [src]="'assets/images/' + locale + '.png'" [alt]="langFlagAltTexts[locale]"/>
-    </button>
-  </mat-toolbar>
+  <app-app-bar back_arrow_link="/museum"></app-app-bar>
 
   <!-- Page Content -->
   <main>
@@ -37,12 +21,12 @@
     <mat-tab-group mat-stretch-tabs>
 
       <!-- Info -->
-      <mat-tab label="Info">
+      <mat-tab label="Info" i18n-label>
         <p *ngIf="exposition" class="p-2">{{ getExpositionContent(locale).info }}</p>
       </mat-tab>
 
       <!-- Exhibits -->
-      <mat-tab label="Exponate">
+      <mat-tab label="Exhibits" i18n-label>
         <section *ngIf="exposition" role="main">
           <div class="container">
             <div class="grid-container pb-5">
@@ -65,12 +49,12 @@
         <div class="container">
           <div class="row">
             <div class="col icons py-2 text-center">
-              <fa-icon role="button" aria-label="Like exposition" icon="heart"
+              <fa-icon role="button" aria-label="Like" icon="heart"
                        [ngClass]="{'liked' : likedFlag == true}" (click)="likeExposition()"></fa-icon>
             </div>
             <div class="col icons py-2 text-center">
               <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                       aria-label="Open comment field"></fa-icon>
+                       aria-label="Comment"></fa-icon>
             </div>
           </div>
         </div>

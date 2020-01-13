@@ -20,7 +20,7 @@ export class NewAdminExpositionComponent implements OnInit {
   exposition: Exposition;
   museum: Museum;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;
@@ -44,8 +44,10 @@ export class NewAdminExpositionComponent implements OnInit {
         museums => {
           this.museum = museums[0];
 
-          const englishContent = new ExpositionContent('en', 'Not available in your Language', '');
           const germanContent = new ExpositionContent('de', '', '');
+          const englishContent = new ExpositionContent('en', '', '');
+          const spanishContent = new ExpositionContent('es', '', '');
+          const frenchContent = new ExpositionContent('fr', '', '');
           this.exposition = new Exposition(
             this.museum._id,
             true,
@@ -55,7 +57,7 @@ export class NewAdminExpositionComponent implements OnInit {
             [],
             [],
             [],
-            [englishContent, germanContent]);
+            [germanContent, englishContent, spanishContent, frenchContent]);
         }
       );
     }

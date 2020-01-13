@@ -39,6 +39,7 @@ import {LoggingComponent} from './admin/logging/logging.component';
 import {LoginComponent} from './admin/login/login.component';
 import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
 import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
+import {SettingsComponent} from './admin/settings/settings.component';
 import {SidebarComponent} from './admin/sidebar/sidebar.component';
 import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
@@ -48,11 +49,11 @@ import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.compon
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
 import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
 import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
-import {HeaderComponent} from './user/header/header.component';
 import {ImageDetailsComponent} from './helper/image-details/image-details.component';
 import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
 import {VideoPlayerComponent} from './helper/video-player/video-player.component';
+import {AppBarComponent} from './user/app-bar/app-bar.component';
 import {CommentComponent} from './user/comment/comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
@@ -87,7 +88,8 @@ const appRoutes: Routes = [
       {path: 'statistics/exposition/:id', component: ExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: ExhibitStatisticsComponent},
       {path: 'logging', component: LoggingComponent},
-      {path: 'personal-data', component: PersonalDataComponent}
+      {path: 'personal-data', component: PersonalDataComponent},
+      {path: 'settings', component: SettingsComponent}
     ]
   },
   {
@@ -135,10 +137,11 @@ const appRoutes: Routes = [
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
-    HeaderComponent,
     CookieBannerComponent,
     AudioPlayerComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    SettingsComponent,
+    AppBarComponent
   ],
     imports: [
         BrowserModule,

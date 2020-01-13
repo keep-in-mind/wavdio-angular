@@ -22,7 +22,7 @@ export class NewAdminExhibitComponent implements OnInit {
   exhibit: Exhibit;
   expositionId: string;
 
-  languages = ['de', 'en'];
+  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;
@@ -67,8 +67,10 @@ export class NewAdminExhibitComponent implements OnInit {
 
                   const minCode = array.reduce((min, code) => code < min ? code : min, 999);
 
-                  const englishContent = new ExhibitContent('en', 'Not available in your Language', '', null, [], [], []);
                   const germanContent = new ExhibitContent('de', '', '', null, [], [], []);
+                  const englishContent = new ExhibitContent('en', '', '', null, [], [], []);
+                  const spanishContent = new ExhibitContent('es', '', '', null, [], [], []);
+                  const frenchContent = new ExhibitContent('fr', '', '', null, [], [], []);
                   this.exhibit = new Exhibit(
                     this.expositionId,
                     parentModel,
@@ -78,7 +80,7 @@ export class NewAdminExhibitComponent implements OnInit {
                     [],
                     [],
                     [],
-                    [englishContent, germanContent]);
+                    [germanContent, englishContent, spanishContent, frenchContent]);
 
                 });
             });

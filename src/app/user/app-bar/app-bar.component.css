@@ -1,0 +1,9 @@
+.menu-entry {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+a, a:hover {
+  color: black;
+  text-decoration: none;
+}

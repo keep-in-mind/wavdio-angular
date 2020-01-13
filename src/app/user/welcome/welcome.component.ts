@@ -16,19 +16,7 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  langFlagAltTexts = {
-    'de': 'German Flag',
-    'en': 'British Flag'
-  };
-
   data: any;
-  slideConfig = {
-    'slidesToShow': 2,
-    'slidesToScroll': 1,
-    infinite: true,
-    dots: true
-  };
-
   termsOfUseFlag = false;
 
   expositions: Exposition[];

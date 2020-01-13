@@ -13,10 +13,9 @@
         </section>
         <button class="btn btn-primary w-100"
                 [printStyle]="{body: {'text-align': 'center', 'padding': '20px'}, h1: {'font-size': '1.7em'}, h2: {'font-size': '3em'}}"
-                printSectionId="print-section-{{ exhibit._id }}"
-                printTitle="{{getExhibitContent(exhibit, lang).name}}"
-                ngxPrint aria-label="Print QR code" i18n>
-          Drucken
+                ngxPrint printSectionId="print-section-{{ exhibit._id }}" printTitle="{{getExhibitContent(exhibit, lang).name}}"
+                aria-label="Print QR code" i18n>
+          Print
         </button>
       </div>
     </div>
