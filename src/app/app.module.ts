@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
+import {ServiceWorkerModule} from '@angular/service-worker';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons';
@@ -62,6 +63,7 @@ import {MuseumComponent} from './user/museum/museum.component';
 import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
+import {environment} from '../environments/environment';
 
 const appRoutes: Routes = [
   {
@@ -165,6 +167,7 @@ const appRoutes: Routes = [
         MatIconModule,
         MatButtonModule,
         MatMenuModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
   exports: [
     CommentComponent
