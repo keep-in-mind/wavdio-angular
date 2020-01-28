@@ -1,4 +1,4 @@
-<div id="page">
+<div *ngIf="infopage" id="page">
   <app-app-bar back_arrow_link="/museum" [title]="infopage.name"></app-app-bar>
 
   <main style="padding: 8px">{{infopage.text}}</main>

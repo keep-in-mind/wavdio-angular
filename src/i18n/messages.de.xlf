@@ -240,7 +240,7 @@
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit><trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
-        <source> and the </source><target state="new"> and the </target>
+        <source> and the </source><target state="new"> und die </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">45</context>
