@@ -96,7 +96,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'user', component: UserComponent, children: [
-      {path: 'usage-terms/:terms', component: UsageTermsComponent}
+      {path: 'usage-terms', component: UsageTermsComponent}
     ]
   },
   {path: '**', component: ErrorPageComponent},
