@@ -1,8 +1,7 @@
 <div id="page">
 
-  <app-app-bar back_arrow_link="/museum"></app-app-bar>
+  <app-app-bar back_arrow_link="/museum" [title]="infopage.name"></app-app-bar>
 
-  <!-- Page Content -->
   <main>
     <section *ngIf="infopage">
       <div class="container">

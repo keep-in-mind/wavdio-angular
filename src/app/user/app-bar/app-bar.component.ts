@@ -14,6 +14,7 @@ export class AppBarComponent implements OnInit {
 
   @Input() sidenav: MatSidenav;
   @Input() back_arrow_link: string;
+  @Input() title: string;
 
   setting: Setting;
 
