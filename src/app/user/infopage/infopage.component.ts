@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {Infopage} from '../../models/infopage';
@@ -14,6 +14,10 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./infopage.component.css']
 })
 export class InfopageComponent implements OnInit {
+
+  @Input() title: string;
+  @Input() back_arrow_link: string;
+
   infopages: Infopage[];
   infopage: Infopage;
   museum: Museum;
