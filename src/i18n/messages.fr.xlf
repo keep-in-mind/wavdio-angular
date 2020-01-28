@@ -234,7 +234,7 @@
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit><trans-unit id="29ca9c1548c84afe69e7bd03650f6b256352a17d" datatype="html">
-        <source>Terms of Use</source><target state="new">Conditions d'utilisation</target>
+        <source>usage terms</source><target state="new">Conditions d'utilisation</target>
       <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
           <context context-type="linenumber">44</context>
@@ -488,7 +488,13 @@
           Français
         </target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
+        <source>Privacy Policy</source><target state="new">Politique de confidentialité</target>
+      <context-group purpose="location">
+          <context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
