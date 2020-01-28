@@ -15,7 +15,6 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class InfopageComponent implements OnInit {
 
-  infopages: Infopage[];
   infopage: Infopage;
   museum: Museum;
 
@@ -34,15 +33,8 @@ export class InfopageComponent implements OnInit {
     } else {
       this.route.params.subscribe(params => {
         const infopageId = params.id;
-        this.infopageService.getInfopages().subscribe(
-          infopages => {
-            this.infopages = infopages;
-            for (const page of infopages) {
-              if (page._id === infopageId) {
-                this.infopage = page;
-              }
-            }
-          }
+        this.infopageService.getInfopage(infopageId).subscribe(
+          infopage => this.infopage = infopage
         );
       });
       this.museumService.getMuseums().subscribe(
