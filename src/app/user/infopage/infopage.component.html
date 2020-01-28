@@ -1,18 +1,10 @@
 <div id="page">
-
   <app-app-bar back_arrow_link="/museum" [title]="infopage.name"></app-app-bar>
 
-  <main>
-    <section *ngIf="infopage">
-      <div class="container">
-        <h1>{{ infopage.name }}</h1>
-        <p>{{ infopage.text }}</p>
-      </div>
-    </section>
-  </main>
+  <main style="padding: 8px">{{infopage.text}}</main>
 
   <footer>
-    <section role="contentinfo" style="height: 48px; background-color: #f5f5f5"></section>
+    <section style="height: 48px; background-color: #f5f5f5"></section>
   </footer>
 </div>
 
