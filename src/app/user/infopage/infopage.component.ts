@@ -17,9 +17,9 @@ export class InfopageComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private infopageService: InfopageService,
+    private router: Router,
     private route: ActivatedRoute,
-    public cookieLawService: CookielawService,
-    public router: Router) {
+    private cookieLawService: CookielawService) {
   }
 
   ngOnInit() {

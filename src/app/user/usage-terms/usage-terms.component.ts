@@ -1,8 +1,8 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {Museum} from '../../../models/museum';
-import {MuseumService} from '../../../services/museum.service';
+import {Museum} from '../../models/museum';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-usage-terms',
