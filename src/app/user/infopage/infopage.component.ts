@@ -15,8 +15,9 @@ import {MuseumService} from '../../services/museum.service';
 })
 export class InfopageComponent implements OnInit {
 
-  @Input() title: string;
   @Input() back_arrow_link: string;
+  @Input() title: string;
+  @Input() text: string;
 
   infopages: Infopage[];
   infopage: Infopage;
