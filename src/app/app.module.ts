@@ -61,9 +61,10 @@ import {ExpositionComponent} from './user/exposition/exposition.component';
 import {InfopageComponent} from './user/infopage/infopage.component';
 import {MuseumComponent} from './user/museum/museum.component';
 import {UserComponent} from './user/user.component';
-import {UsageTermsComponent} from './user/welcome/usage-terms/usage-terms.component';
+import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
+import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
 
 const appRoutes: Routes = [
   {
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'user', component: UserComponent, children: [
-      {path: 'usage-terms/:terms', component: UsageTermsComponent}
+      {path: 'usage-terms', component: UsageTermsComponent},
+      {path: 'privacy-policy', component: PrivacyPolicyComponent}
     ]
   },
   {path: '**', component: ErrorPageComponent},
@@ -143,7 +145,8 @@ const appRoutes: Routes = [
     AudioPlayerComponent,
     VideoPlayerComponent,
     SettingsComponent,
-    AppBarComponent
+    AppBarComponent,
+    PrivacyPolicyComponent
   ],
     imports: [
         BrowserModule,

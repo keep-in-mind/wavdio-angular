@@ -1,8 +1,7 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 
-import {Museum} from '../../../models/museum';
-import {MuseumService} from '../../../services/museum.service';
+import {Museum} from '../../models/museum';
+import {MuseumService} from '../../services/museum.service';
 
 @Component({
   selector: 'app-usage-terms',
@@ -11,14 +10,12 @@ import {MuseumService} from '../../../services/museum.service';
 })
 export class UsageTermsComponent implements OnInit {
 
-  usageTerms: String;
   museum: Museum;
-  descHeader: String;
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
-    private museumService: MuseumService,
-    private activatedRoute: ActivatedRoute) {
+    private museumService: MuseumService) {
+
     this.museumService.getMuseums().subscribe(
       museum => this.museum = museum[0]
     );
@@ -28,16 +25,6 @@ export class UsageTermsComponent implements OnInit {
     this.museumService.getMuseums().subscribe(
       museum => this.museum = museum[0]
     );
-    this.activatedRoute.params.subscribe(
-      params => {
-        this.usageTerms = params.terms;
-
-        if (this.usageTerms === 'termsOfUse') {
-          this.descHeader = 'Nutzungsbedingungen';
-        } else {
-          this.descHeader = 'Datenschutzerklärung';
-        }
-      });
   }
 
   getMuseumContent(locale: string) {
@@ -51,4 +38,3 @@ export class UsageTermsComponent implements OnInit {
     console.error(`MuseumContent missing for locale ${locale}`);
   }
 }
-

@@ -1,0 +1,11 @@
+<div id="page">
+  <app-app-bar back_arrow_link="/" title="Terms of Use" i18n-title></app-app-bar>
+
+  <main *ngIf="museum" style="padding: 8px">{{getMuseumContent(locale).termsOfUse}}</main>
+
+  <footer>
+    <section style="height: 48px; background-color: #f5f5f5"></section>
+  </footer>
+</div>
+
+<app-cookie-banner></app-cookie-banner>

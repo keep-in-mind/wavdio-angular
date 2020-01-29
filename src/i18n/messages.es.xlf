@@ -300,7 +300,7 @@
       </trans-unit><trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
         <source>Audio Transcript</source><target state="new">Transkripción de audio</target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit><trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">67</context></context-group></trans-unit><trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
         <source>Description</source><target state="new">Descripción</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
@@ -378,38 +378,32 @@
           <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
-      </trans-unit>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <trans-unit id="52d091913ab19e06c3c1d60c858deee3ca585754" datatype="html">
-        <source>Terms of use</source><target state="new">Condiciones de uso</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit><trans-unit id="d0969b2f97e4de7eec3d16c223b42d9fa4af4c5d" datatype="html">
-        <source>Privacy policy</source><target state="new">Política de privacidad</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/usage-terms/usage-terms.component.html</context>
-          <context context-type="linenumber">6</context>
+      </trans-unit><trans-unit id="0dd8a3bafea23b5595cfcb897f16acd2cc60cf02" datatype="html">
+        <source>Terms of Use</source><target state="new">Condiciones de uso</target>
+      <context-group purpose="location">
+          <context context-type="sourcefile">app/user/usage-terms/usage-terms.component.html</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
@@ -464,7 +458,7 @@
           Alemán
         </target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">25</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">27</context></context-group></trans-unit>
       <trans-unit id="7f9e9fc91d2fb8a0043e37514dd05d55ee975047" datatype="html">
         <source>
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
@@ -474,7 +468,7 @@
           Inglés
         </target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">33</context></context-group></trans-unit>
       <trans-unit id="5fd3c6bcade00eef46728c806cbf96567a24f95b" datatype="html">
         <source>
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
@@ -484,7 +478,7 @@
           Español
         </target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">37</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit>
       <trans-unit id="e255e9362e434c3a324ae6665e20ab55fdc17cb0" datatype="html">
         <source>
           <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/>"/>
@@ -494,7 +488,13 @@
           Francés
         </target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">43</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
+        <source>Privacy Policy</source><target state="new">Política de privacidad</target>
+      <context-group purpose="location">
+          <context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
