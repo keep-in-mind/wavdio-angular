@@ -42,12 +42,3 @@ button:hover {
 .phones, .camera {
   text-align: center;
 }
-
-/* SIDENAV */
-
-mat-toolbar {
-  flex-shrink: 0;
-  z-index: 2;
-}
-
-
