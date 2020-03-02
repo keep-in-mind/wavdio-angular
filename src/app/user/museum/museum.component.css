@@ -39,14 +39,6 @@ h1 {
   font-size: 20px;
 }
 
-
-/* SIDENAV */
-
-mat-toolbar {
-  flex-shrink: 0;
-  z-index: 2;
-}
-
 mat-sidenav {
   width: 80%;
 }
