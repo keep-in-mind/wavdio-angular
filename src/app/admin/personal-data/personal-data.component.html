@@ -58,21 +58,21 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descLogo">
         <div header>
-          <fa-icon [hidden]="getMuseumContent(locale).logo" (click)="onLogoInput.click()"
+          <fa-icon [hidden]="getMuseumContent(selectedLanguage).logo" (click)="onLogoInput.click()"
                    class="fa-lg" icon="plus-circle"
                    aria-label="Add logo">
           </fa-icon>
           <form class="d-none">
             <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!getMuseumContent(locale).logo" class="fa-lg" icon="minus-circle"
+          <fa-icon [hidden]="!getMuseumContent(selectedLanguage).logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"
                    aria-label="Delete logo"></fa-icon>
         </div>
         <div body>
-          <img *ngIf="getMuseumContent(locale).logo" (click)="openLogoBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename"
-               [alt]="getMuseumContent(locale).logo.alternativeText"/>
+          <img *ngIf="getMuseumContent(selectedLanguage).logo" (click)="openLogoBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).logo.filename"
+               [alt]="getMuseumContent(selectedLanguage).logo.alternativeText"/>
         </div>
       </app-box-card>
     </section>
@@ -81,21 +81,21 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descImage">
         <div header>
-          <fa-icon [hidden]="getMuseumContent(locale).image" (click)="onImageInput.click()"
+          <fa-icon [hidden]="getMuseumContent(selectedLanguage).image" (click)="onImageInput.click()"
                    class="fa-lg" icon="plus-circle"
                    aria-label="Add image">
           </fa-icon>
           <form class="d-none">
             <input #onImageInput (change)="onImageChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!getMuseumContent(locale).image" class="fa-lg" icon="minus-circle"
+          <fa-icon [hidden]="!getMuseumContent(selectedLanguage).image" class="fa-lg" icon="minus-circle"
                    (click)="deleteImage()"
                    aria-label="Delete image"></fa-icon>
         </div>
         <div body>
-          <img *ngIf="getMuseumContent(locale).image" (click)="openImageBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename"
-               [alt]="getMuseumContent(locale).image.alternativeText"/>
+          <img *ngIf="getMuseumContent(selectedLanguage).image" (click)="openImageBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).image.filename"
+               [alt]="getMuseumContent(selectedLanguage).image.alternativeText"/>
         </div>
       </app-box-card>
     </section>
