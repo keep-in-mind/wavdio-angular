@@ -70,7 +70,7 @@ export class ExpositionComponent implements OnInit {
           this.expositionService.getExposition(expositionId).subscribe(
             exposition => {
               this.exposition = exposition;
-              this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) === 'true';
+              this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) !== '';
               this.exhibitService.getExhibits().subscribe(
                 exhibits => this.exhibits = exhibits.filter(exhibit => exhibit.active && exhibit.parent === exposition._id)
               );
@@ -107,7 +107,8 @@ export class ExpositionComponent implements OnInit {
       this.expositionService.updateExpositionCommentLike(this.exposition).subscribe(
         exposition => {
           this.likedFlag = true;
-          this.cookieService.set(`exposition${this.exposition._id}`, 'true');
+          const like = exposition.likes[exposition.likes.length - 1];
+          this.cookieService.set(`exposition${this.exposition._id}`, `${like._id}`);
         }
       );
     }
