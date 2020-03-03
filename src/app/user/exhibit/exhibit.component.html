@@ -2,7 +2,7 @@
 
   <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Museum'"
                back_arrow_link="/museum"></app-app-bar>
-  <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition'"
+  <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition' && exposition"
                [back_arrow_link]="'/exposition/' + exposition._id"></app-app-bar>
 
   <!-- Page Content -->
