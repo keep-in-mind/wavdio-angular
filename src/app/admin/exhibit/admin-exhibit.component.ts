@@ -163,6 +163,9 @@ export class AdminExhibitComponent implements OnInit {
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
 
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
+
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
       this.getExhibitContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
@@ -174,6 +177,9 @@ export class AdminExhibitComponent implements OnInit {
   onAudioChanged(event: Event) {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
+
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
 
     if (!(file.type.startsWith('Audio') || file.type.startsWith('audio') || file.type.startsWith('video/ogg'))) {
       alert('Only audio types allowed.');
@@ -191,6 +197,9 @@ export class AdminExhibitComponent implements OnInit {
   onVideoChanged(event: Event) {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
+
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
 
     if (!(file.type.startsWith('video'))) {
       alert('Only video types allowed.');

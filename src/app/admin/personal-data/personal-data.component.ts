@@ -112,6 +112,9 @@ export class PersonalDataComponent implements OnInit {
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
 
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
+
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       this.getMuseumContent(this.locale).logo = new Image(randomFilename, 'alt');
@@ -124,6 +127,9 @@ export class PersonalDataComponent implements OnInit {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
+
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
 
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
