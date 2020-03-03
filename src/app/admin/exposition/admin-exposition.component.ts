@@ -129,6 +129,9 @@ export class AdminExpositionComponent implements OnInit {
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
 
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
+
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exposition._id, file, randomFilename).subscribe(() => {
       this.exposition.logo = new Image(randomFilename, 'alt');
