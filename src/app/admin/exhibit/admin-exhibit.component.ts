@@ -162,6 +162,7 @@ export class AdminExhibitComponent implements OnInit {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
+    inputElement.value = '';
 
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
