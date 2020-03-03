@@ -100,7 +100,7 @@ export class ExhibitComponent implements OnInit {
     }
   }
 
-  likeExhibit() {
+  likeUnlikeExhibit() {
     if (!this.likedFlag) {
       this.exhibit.likes.push(new Like(new Date()));
       this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe(exhibit => {
@@ -109,6 +109,13 @@ export class ExhibitComponent implements OnInit {
             this.cookieService.set(`exhibit${exhibit._id}`, `${like._id}`);
           }
       );
+    } else {
+      const likeId = this.cookieService.get(`exhibit${this.exhibit._id}`);
+      this.exhibit.likes = this.exhibit.likes.filter(like => like._id !== likeId);
+      this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe(exhibit => {
+        this.likedFlag = false;
+        this.cookieService.delete(`exhibit${exhibit._id}`);
+      });
     }
   }
 
