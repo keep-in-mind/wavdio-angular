@@ -102,19 +102,32 @@ export class ExhibitComponent implements OnInit {
 
   likeUnlikeExhibit() {
     if (!this.likedFlag) {
-      this.exhibit.likes.push(new Like(new Date()));
-      this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe(exhibit => {
+
+      /* Not liked yet -> Create exhibit like, wait for server, set cookie */
+
+      const like = new Like(new Date());
+
+      this.exhibitService.createExhibitLike(this.exhibit, like).subscribe(updatedExhibit => {
+            this.exhibit = updatedExhibit;
             this.likedFlag = true;
-            const like = exhibit.likes[exhibit.likes.length - 1];
-            this.cookieService.set(`exhibit${exhibit._id}`, `${like._id}`);
+
+            const createdLike = this.exhibit.likes[this.exhibit.likes.length - 1];
+            this.cookieService.set(`exhibit${this.exhibit._id}`, `${createdLike._id}`);
           }
       );
+
     } else {
+
+      /* Already like -> Get cookie, delete exhibit like, wait for server, delete cookie */
+
       const likeId = this.cookieService.get(`exhibit${this.exhibit._id}`);
-      this.exhibit.likes = this.exhibit.likes.filter(like => like._id !== likeId);
-      this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe(exhibit => {
+      const like = this.exhibit.likes.find(obj => obj._id === likeId);
+
+      this.exhibitService.deleteExhibitLike(this.exhibit, like).subscribe(updatedExhibit => {
+        this.exhibit = updatedExhibit;
         this.likedFlag = false;
-        this.cookieService.delete(`exhibit${exhibit._id}`);
+
+        this.cookieService.delete(`exhibit${updatedExhibit._id}`);
       });
     }
   }
