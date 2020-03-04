@@ -1,5 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -14,9 +15,12 @@ export class ExhibitService {
   private url = '/api/v2/exhibit';
 
   public constructor(
+    private logger: NGXLogger,
     private http: HttpClient,
     private auth: AuthenticationService,
     private loggingService: LoggingService) {
+
+    this.logger.debug('Your log message goes here');
   }
 
 

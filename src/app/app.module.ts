@@ -20,6 +20,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CookieService} from 'ngx-cookie-service';
+import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
@@ -171,6 +172,11 @@ const appRoutes: Routes = [
         MatButtonModule,
         MatMenuModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        LoggerModule.forRoot({
+          level: environment.production ? NgxLoggerLevel.ERROR : NgxLoggerLevel.DEBUG,
+          serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.OFF,
+          serverLoggingUrl: '/api/v2/logs'
+        })
     ],
   exports: [
     CommentComponent
