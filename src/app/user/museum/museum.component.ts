@@ -103,58 +103,6 @@ export class MuseumComponent implements OnInit, OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  manualSelect() {
-    for (const exposition of this.expositions) {
-      if (exposition.code === this.filterNumber) {
-        this.router.navigate([`/exposition/`, exposition._id]);
-        return;
-      }
-    }
-    this._success.next('Falsche Nummer');
-  }
-
-  openComment() {
-    const modal = this.modalService.open(CommentComponent, {centered: true});
-    modal.componentInstance.exposition = this.exposition;
-  }
-
-  likeExposition() {
-    if (!this.likedFlag) {
-      this.exposition.likes.push(new Like(new Date()));
-      this.expositionService.updateExpositionCommentLike(this.exposition).subscribe(
-        exposition => {
-          this.likedFlag = true;
-          this.cookieService.set(`exposition${this.exposition._id}`, 'true');
-        }
-      );
-    }
-  }
-
-  getExpositionContent(lang: String): ExpositionContent {
-
-    /* return localized content */
-
-    for (const content of this.exposition.contents) {
-      if (content.lang === lang) {
-        return content;
-      }
-    }
-
-    /* not available ? fall back to German */
-
-    console.warn('No localized content available for locale ' + lang);
-
-    for (const content of this.exposition.contents) {
-      if (content.lang === 'de') {
-        return content;
-      }
-    }
-
-    /* not available ? must not happen. has to be created when constructing exposition */
-
-    console.error('No German fallback content available');
-  }
-
   getMuseumContent(lang: String): MuseumContent {
 
     /* return localized content */

@@ -70,7 +70,7 @@ export class ExpositionComponent implements OnInit {
           this.expositionService.getExposition(expositionId).subscribe(
             exposition => {
               this.exposition = exposition;
-              this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) === 'true';
+              this.likedFlag = this.cookieService.get(`exposition${this.exposition._id}`) !== '';
               this.exhibitService.getExhibits().subscribe(
                 exhibits => this.exhibits = exhibits.filter(exhibit => exhibit.active && exhibit.parent === exposition._id)
               );
@@ -101,15 +101,35 @@ export class ExpositionComponent implements OnInit {
     modal.componentInstance.exposition = this.exposition;
   }
 
-  likeExposition() {
+  likeUnlikeExposition() {
     if (!this.likedFlag) {
-      this.exposition.likes.push(new Like(new Date()));
-      this.expositionService.updateExpositionCommentLike(this.exposition).subscribe(
-        exposition => {
+
+      /* Not liked yet -> Create exposition like, wait for server, set cookie */
+
+      const like = new Like(new Date());
+
+      this.expositionService.createExpositionLike(this.exposition, like).subscribe(updatedExposition => {
+          this.exposition = updatedExposition;
           this.likedFlag = true;
-          this.cookieService.set(`exposition${this.exposition._id}`, 'true');
+
+          const createdLike = this.exposition.likes[this.exposition.likes.length - 1];
+          this.cookieService.set(`exposition${this.exposition._id}`, `${createdLike._id}`);
         }
       );
+
+    } else {
+
+      /* Already like -> Get cookie, delete exposition like, wait for server, delete cookie */
+
+      const likeId = this.cookieService.get(`exposition${this.exposition._id}`);
+      const like = this.exposition.likes.find(obj => obj._id === likeId);
+
+      this.expositionService.deleteExpositionLike(this.exposition, like).subscribe(updatedExposition => {
+        this.exposition = updatedExposition;
+        this.likedFlag = false;
+
+        this.cookieService.delete(`exposition${updatedExposition._id}`);
+      });
     }
   }
 

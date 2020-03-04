@@ -93,22 +93,42 @@ export class ExhibitComponent implements OnInit {
               this.exposition = null;
             }
             this.filterNumber = this.exhibit.code;
-            this.likedFlag = this.cookieService.get(`exhibit${this.exhibit._id}`) === 'true';
+            this.likedFlag = this.cookieService.get(`exhibit${this.exhibit._id}`) !== '';
           }
         );
       });
     }
   }
 
-  likeExhibit() {
+  likeUnlikeExhibit() {
     if (!this.likedFlag) {
-      this.exhibit.likes.push(new Like(new Date()));
-      this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe(
-        exhibit => {
-          this.likedFlag = true;
-          this.cookieService.set(`exhibit${this.exhibit._id}`, 'true');
-        }
+
+      /* Not liked yet -> Create exhibit like, wait for server, set cookie */
+
+      const like = new Like(new Date());
+
+      this.exhibitService.createExhibitLike(this.exhibit, like).subscribe(updatedExhibit => {
+            this.exhibit = updatedExhibit;
+            this.likedFlag = true;
+
+            const createdLike = this.exhibit.likes[this.exhibit.likes.length - 1];
+            this.cookieService.set(`exhibit${this.exhibit._id}`, `${createdLike._id}`);
+          }
       );
+
+    } else {
+
+      /* Already like -> Get cookie, delete exhibit like, wait for server, delete cookie */
+
+      const likeId = this.cookieService.get(`exhibit${this.exhibit._id}`);
+      const like = this.exhibit.likes.find(obj => obj._id === likeId);
+
+      this.exhibitService.deleteExhibitLike(this.exhibit, like).subscribe(updatedExhibit => {
+        this.exhibit = updatedExhibit;
+        this.likedFlag = false;
+
+        this.cookieService.delete(`exhibit${updatedExhibit._id}`);
+      });
     }
   }
 
