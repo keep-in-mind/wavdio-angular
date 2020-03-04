@@ -6,6 +6,7 @@ import {catchError, tap} from 'rxjs/operators';
 import {AuthenticationService} from './authentification.service';
 import {LoggingService} from './logging.service';
 import {Exhibit} from '../models/exhibit';
+import {Like} from "../models/like";
 
 @Injectable({providedIn: 'root'})
 export class ExhibitService {
@@ -45,6 +46,24 @@ export class ExhibitService {
     return this.http.patch<Exhibit>(`${this.url}/${exhibit._id}`, exhibit, this.auth.getAuthorizationHeader()).pipe(
       tap((updatedExhibit: Exhibit) => this.loggingService.logInfo(`Updated exhibit. (exhibit = ${JSON.stringify(updatedExhibit)})`)),
       catchError(this.handleError<Exhibit>(`updateExhibit(exhibit = ${JSON.stringify(exhibit)})`))
+    );
+  }
+
+  public createExhibitLike(exhibit: Exhibit, like: Like): Observable<Exhibit> {
+    return this.http.post<Exhibit>(`${this.url}/${exhibit._id}/like`, like).pipe(
+      tap((updatedExhibit: Exhibit) => this.loggingService.logInfo(
+        `Created exhibit like. (exhibit = ${JSON.stringify(updatedExhibit)})`)),
+      catchError(this.handleError<Exhibit>(
+        `createExhibitLike(exhibit = ${JSON.stringify(exhibit)}, like = ${JSON.stringify(like)})`))
+    );
+  }
+
+  public deleteExhibitLike(exhibit: Exhibit, like: Like): Observable<Exhibit> {
+    return this.http.delete<Exhibit>(`${this.url}/${exhibit._id}/like/${like._id}`).pipe(
+      tap((updatedExhibit: Exhibit) => this.loggingService.logInfo(
+        `Deleted exhibit like. (exhibit = ${JSON.stringify(updatedExhibit)})`)),
+      catchError(this.handleError<Exhibit>(
+        `deleteExhibitLike(exhibit = ${JSON.stringify(exhibit)}, like = ${JSON.stringify(like)}`))
     );
   }
 

@@ -6,6 +6,7 @@ import {catchError, tap} from 'rxjs/operators';
 import {AuthenticationService} from './authentification.service';
 import {LoggingService} from './logging.service';
 import {Exposition} from '../models/exposition';
+import {Like} from '../models/like';
 
 @Injectable({providedIn: 'root'})
 export class ExpositionService {
@@ -47,6 +48,24 @@ export class ExpositionService {
       tap((updatedExposition: Exposition) =>
         this.loggingService.logInfo(`Updated exposition. (exposition = ${JSON.stringify(updatedExposition)})`)),
       catchError(this.handleError<Exposition>(`updateExposition(exposition = ${JSON.stringify(exposition)})`))
+    );
+  }
+
+  public createExpositionLike(exposition: Exposition, like: Like): Observable<Exposition> {
+    return this.http.post<Exposition>(`${this.url}/${exposition._id}/like`, like).pipe(
+      tap((updatedExposition: Exposition) => this.loggingService.logInfo(
+        `Created exposition like. (exposition = ${JSON.stringify(updatedExposition)})`)),
+      catchError(this.handleError<Exposition>(
+        `createExpositionLike(exposition = ${JSON.stringify(exposition)}, like = ${JSON.stringify(like)})`))
+    );
+  }
+
+  public deleteExpositionLike(exposition: Exposition, like: Like): Observable<Exposition> {
+    return this.http.delete<Exposition>(`${this.url}/${exposition._id}/like/${like._id}`).pipe(
+      tap((updatedExposition: Exposition) => this.loggingService.logInfo(
+        `Deleted exposition like. (exposition = ${JSON.stringify(updatedExposition)})`)),
+      catchError(this.handleError<Exposition>(
+        `deleteExpositionLike(exposition = ${JSON.stringify(exposition)}, like = ${JSON.stringify(like)}`))
     );
   }
 

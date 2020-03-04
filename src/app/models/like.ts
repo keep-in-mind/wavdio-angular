@@ -1,6 +1,6 @@
 export class Like {
 
-  _id: number;
+  _id: string;
 
   timestamp: Date;
 
