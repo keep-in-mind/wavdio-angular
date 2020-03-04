@@ -174,7 +174,7 @@ const appRoutes: Routes = [
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         LoggerModule.forRoot({
           level: environment.production ? NgxLoggerLevel.ERROR : NgxLoggerLevel.DEBUG,
-          serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.OFF,
+          serverLogLevel: environment.production ? NgxLoggerLevel.ERROR : NgxLoggerLevel.DEBUG,
           serverLoggingUrl: '/api/v2/logs'
         })
     ],

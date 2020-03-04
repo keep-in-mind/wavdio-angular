@@ -19,10 +19,7 @@ export class ExhibitService {
     private http: HttpClient,
     private auth: AuthenticationService,
     private loggingService: LoggingService) {
-
-    this.logger.debug('Your log message goes here');
   }
-
 
   public getExhibits(): Observable<Exhibit[]> {
     return this.http.get<Exhibit[]>(this.url).pipe(
