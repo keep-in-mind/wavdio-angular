@@ -1,5 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -13,50 +14,67 @@ export class InfopageService {
   errorCode: number;
   private url = '/api/v2/infopage';
 
-  public constructor(private http: HttpClient,
-                     private auth: AuthenticationService,
-                     private loggingService: LoggingService) {
+  public constructor(
+    private logger: NGXLogger,
+    private http: HttpClient,
+    private auth: AuthenticationService,
+    private loggingService: LoggingService) {
   }
 
   public getInfopages(): Observable<Infopage[]> {
+    this.logger.trace('getInfopages()');
+
     return this.http.get<Infopage[]>(this.url).pipe(
-      tap((readInfopages: Infopage[]) => this.loggingService.logInfo(`Read infopages. (infopages = ${JSON.stringify(readInfopages)})`)),
+      tap((readInfopages: Infopage[]) =>
+        this.logger.trace('getInfopages().next(readInfopages: Infopage[])', readInfopages)),
       catchError(this.handleError('getInfopages()', []))
     );
   }
 
   public createInfopage(infopage: Infopage): Observable<Infopage> {
+    this.logger.trace('createInfopage(infopage: Infopage)', infopage);
+
     return this.http.post<Infopage>(this.url, infopage, this.auth.getAuthorizationHeader()).pipe(
-      tap((createdInfopage: Infopage) => this.loggingService.logInfo(`Created infopage. (created = ${JSON.stringify(createdInfopage)})`)),
-      catchError(this.handleError<Infopage>(`createInfopage(infopage = ${JSON.stringify(infopage)})`))
+      tap((createdInfopage: Infopage) =>
+        this.logger.trace('createInfopage().next(createdInfopage: Infopage)', createdInfopage)),
+      catchError(this.handleError<Infopage>('createInfopage()'))
     );
   }
 
   public getInfopage(_id: string): Observable<Infopage> {
+    this.logger.trace('getInfopage(_id: string)', _id);
+
     return this.http.get<Infopage>(`${this.url}/${_id}`).pipe(
-      tap((readInfopage: Infopage) => this.loggingService.logInfo(`Read infopage. (infopage = ${JSON.stringify(readInfopage)})`)),
-      catchError(this.handleError<Infopage>(`getInfopage(_id = ${_id})`))
+      tap((readInfopage: Infopage) =>
+        this.logger.trace('getInfopage().next(readInfopage: Infopage)', readInfopage)),
+      catchError(this.handleError<Infopage>('getInfopage()'))
     );
   }
 
   public updateInfopage(infopage: Infopage): Observable<Infopage> {
+    this.logger.trace('updateInfopage(infopage: Infopage)', infopage);
+
     return this.http.patch<Infopage>(`${this.url}/${infopage._id}`, infopage, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedInfopage: Infopage) => this.loggingService.logInfo(`Updated infopage. (infopage = ${JSON.stringify(updatedInfopage)})`)),
-      catchError(this.handleError<Infopage>(`updateInfopage(infopage = ${JSON.stringify(infopage)})`))
+      tap((updatedInfopage: Infopage) =>
+        this.logger.trace('updateInfopage().next(updatedInfopage: Infopage)')),
+      catchError(this.handleError<Infopage>('updateInfopage()'))
     );
   }
 
   public deleteInfopage(infopage: Infopage): Observable<Infopage> {
-    const _id = (typeof infopage === 'number') ? infopage : infopage._id;
+    this.logger.trace('deleteInfopage(infopage: Infopage)', infopage);
+
     return this.http.delete<Infopage>(`${this.url}/${infopage._id}`, this.auth.getAuthorizationHeader()).pipe(
-      tap((deletedInfopage: Infopage) => this.loggingService.logInfo(`Deleted infopage. (infopage = ${JSON.stringify(deletedInfopage)})`)),
-      catchError(this.handleError<Infopage>(`deleteInfopage(infopage = ${JSON.stringify(infopage)})`))
+      tap((deletedInfopage: Infopage) =>
+        this.logger.trace('deleteInfopage().next(deletedInfopage: Infopage)')),
+      catchError(this.handleError<Infopage>('deleteInfopage()'))
     );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      this.loggingService.logError(`${operation} failed: ${error.message}`);
+      this.logger.error(operation, error);
+
       const errorString = JSON.stringify(error);
       const errorJson = JSON.parse(errorString);
 
