@@ -26,7 +26,10 @@ export class ExhibitComponent implements OnInit {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    infinite: true
+    infinite: true,
+    prevArrow: '#prevB',
+    nextArrow: '#nextB',
+    // appendArrows: '#slick-slide00'
   };
 
   exhibits: Exhibit[];

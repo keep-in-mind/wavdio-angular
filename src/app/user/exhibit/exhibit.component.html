@@ -10,8 +10,15 @@
 
     <!-- Carousel Section -->
 
-    <section *ngIf="exhibit">
-      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <section style="position: relative" *ngIf="exhibit">
+      <button mat-button id="prevB" type="button" style="background-color: rgba(20, 20, 20, 0.5); color: white; width: 50px; height: 50px; position: absolute; top: 50%; left: 5%; transform: translateY(-50%); z-index: 1000">
+        <mat-icon style="transform: scale(2)">chevron_left</mat-icon>
+      </button>
+      <button mat-button id="nextB" type="button" style="background-color: rgba(20, 20, 20, 0.5); color: white; width: 50px; height: 50px; position: absolute; top: 50%; right: 5%; transform: translateY(-50%); z-index: 1000">
+        <mat-icon style="transform: scale(2)">chevron_right</mat-icon>
+      </button>
+
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" id="slick-carousel" [config]="slideConfig">
         <ng-container *ngIf="getExhibitContent(locale).images.length; else elsecase">
           <div ngxSlickItem
                *ngFor="let image of getExhibitContent(locale).images"
@@ -41,7 +48,7 @@
     </section>
 
     <!-- Exhibit Title -->
-    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
+    <h1 *ngIf="exhibit" id="test" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
 
     <!-- Media Player Section -->
     <section *ngIf="exhibit">
