@@ -151,6 +151,22 @@ export class ExhibitComponent implements OnInit {
       }
     }
   }
+  isFirst() {
+    for (const exhibit of this.exhibits) {
+      if (exhibit.code < this.exhibit.code && exhibit.active) {
+        return null;
+      }
+    }
+    return true;
+  }
+  isLast() {
+    for (const exhibit of this.exhibits) {
+      if (exhibit.code > this.exhibit.code && exhibit.active) {
+        return null;
+      }
+    }
+    return true;
+  }
 
   prevExhibit() {
     for (let i = this.exhibit.code - 1; i > 99; i--) {
