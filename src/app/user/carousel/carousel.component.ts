@@ -13,12 +13,9 @@ export class CarouselComponent implements OnInit {
   @Input() images: Image[];
 
   slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
     dots: true,
-    infinite: true,
-    prevArrow: '#prevB',
-    nextArrow: '#nextB',
+    prevArrow: '#prevSlide',
+    nextArrow: '#nextSlide',
   };
 
   constructor() {

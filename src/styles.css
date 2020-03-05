@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-.slick-prev:before, .slick-next:before {
-  color: black !important;
-}
-
 .breadcrumb {
   max-height: 25px;
   font-size: smaller;
@@ -88,18 +84,6 @@ body, html {
 
 * {
   box-sizing: border-box;
-}
-
-.slick-prev {
-  z-index: 1000;
-  left: 5%;
-  background-color: white !important;
-}
-
-.slick-next {
-  z-index: 1000;
-  right: 5%;
-  background-color: white !important;
 }
 
 html, body { height: 100%; }

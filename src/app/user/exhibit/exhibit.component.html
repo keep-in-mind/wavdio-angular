@@ -9,7 +9,8 @@
   <main>
 
     <!-- Carousel Section -->
-    <app-carousel *ngIf="exhibit" [id]="exhibit._id" [images]="getExhibitContent(locale).images"></app-carousel>
+    <app-carousel *ngIf="exhibit && getExhibitContent(locale).images.length"
+                  [id]="exhibit._id" [images]="getExhibitContent(locale).images"></app-carousel>
 
     <!-- Exhibit Title -->
     <h1 *ngIf="exhibit" id="test" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
