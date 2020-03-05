@@ -56,6 +56,7 @@
     "mongoose": "^4.13.17",
     "morgan": "^1.9.1",
     "ngx-cookie-service": "^2.1.0",
+    "ngx-logger": "^4.1.2",
     "ngx-print": "^1.1.4",
     "ngx-qrcode2": "0.0.9",
     "ngx-slick-carousel": "^0.4.4",
