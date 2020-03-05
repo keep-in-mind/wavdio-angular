@@ -22,16 +22,6 @@ import {MuseumService} from '../../services/museum.service';
   styleUrls: ['./exhibit.component.css']
 })
 export class ExhibitComponent implements OnInit {
-  slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    prevArrow: '#prevB',
-    nextArrow: '#nextB',
-    // appendArrows: '#slick-slide00'
-  };
-
   exhibits: Exhibit[];
   exhibit: Exhibit;
   exposition: Exposition;
