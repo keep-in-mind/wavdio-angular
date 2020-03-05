@@ -22,7 +22,7 @@ export class FileService {
   }
 
   public uploadFile(id: string, file: File, uploadFilename: string): Observable<File> {
-    this.logger.trace('uploadFile(id: string, file: File, uploadFilename: string)');
+    this.logger.trace('uploadFile(id: string, file: File, uploadFilename: string)', id, file, uploadFilename);
 
     const formData = new FormData();
     formData.append('file', file, uploadFilename);

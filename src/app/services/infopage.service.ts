@@ -54,7 +54,7 @@ export class InfopageService {
 
     return this.http.patch<Infopage>(`${this.url}/${infopage._id}`, infopage, this.auth.getAuthorizationHeader()).pipe(
       tap((updatedInfopage: Infopage) =>
-        this.logger.trace('updateInfopage().next(updatedInfopage: Infopage)')),
+        this.logger.trace('updateInfopage().next(updatedInfopage: Infopage)', updatedInfopage)),
       catchError(this.handleError<Infopage>('updateInfopage()'))
     );
   }
@@ -64,7 +64,7 @@ export class InfopageService {
 
     return this.http.delete<Infopage>(`${this.url}/${infopage._id}`, this.auth.getAuthorizationHeader()).pipe(
       tap((deletedInfopage: Infopage) =>
-        this.logger.trace('deleteInfopage().next(deletedInfopage: Infopage)')),
+        this.logger.trace('deleteInfopage().next(deletedInfopage: Infopage)', deletedInfopage)),
       catchError(this.handleError<Infopage>('deleteInfopage()'))
     );
   }

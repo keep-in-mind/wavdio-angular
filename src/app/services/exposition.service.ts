@@ -41,7 +41,7 @@ export class ExpositionService {
   }
 
   public getExposition(_id: string): Observable<Exposition> {
-    this.logger.trace('getExposition(_id: string)');
+    this.logger.trace('getExposition(_id: string)', _id);
 
     return this.http.get<Exposition>(`${this.url}/${_id}`).pipe(
       tap((readExposition: Exposition) =>
@@ -51,7 +51,7 @@ export class ExpositionService {
   }
 
   public updateExposition(exposition: Exposition): Observable<Exposition> {
-    this.logger.trace('updateExposition(exposition: Exposition)');
+    this.logger.trace('updateExposition(exposition: Exposition)', exposition);
 
     return this.http.patch<Exposition>(`${this.url}/${exposition._id}`, exposition, this.auth.getAuthorizationHeader()).pipe(
       tap((updatedExposition: Exposition) =>
@@ -61,7 +61,7 @@ export class ExpositionService {
   }
 
   public createExpositionLike(exposition: Exposition, like: Like): Observable<Exposition> {
-    this.logger.trace('createExpositionLike(exposition: Exposition, like: Like)');
+    this.logger.trace('createExpositionLike(exposition: Exposition, like: Like)', exposition, like);
 
     return this.http.post<Exposition>(`${this.url}/${exposition._id}/like`, like).pipe(
       tap((updatedExposition: Exposition) =>
