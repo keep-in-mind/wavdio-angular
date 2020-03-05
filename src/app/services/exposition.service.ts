@@ -5,7 +5,6 @@ import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
 import {AuthenticationService} from './authentification.service';
-import {LoggingService} from './logging.service';
 import {Exposition} from '../models/exposition';
 import {Like} from '../models/like';
 
@@ -18,7 +17,6 @@ export class ExpositionService {
   public constructor(
     private logger: NGXLogger,
     private http: HttpClient,
-    private loggingService: LoggingService,
     private auth: AuthenticationService) {
   }
 

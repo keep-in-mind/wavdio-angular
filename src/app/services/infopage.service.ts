@@ -5,7 +5,6 @@ import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
 import {AuthenticationService} from './authentification.service';
-import {LoggingService} from './logging.service';
 import {Infopage} from '../models/infopage';
 
 @Injectable({providedIn: 'root'})
@@ -17,8 +16,7 @@ export class InfopageService {
   public constructor(
     private logger: NGXLogger,
     private http: HttpClient,
-    private auth: AuthenticationService,
-    private loggingService: LoggingService) {
+    private auth: AuthenticationService) {
   }
 
   public getInfopages(): Observable<Infopage[]> {
