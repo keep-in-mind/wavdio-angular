@@ -1,5 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -9,6 +10,7 @@ import {catchError, tap} from 'rxjs/operators';
 export class FileService {
 
   constructor(
+    private logger: NGXLogger,
     private http: HttpClient) {
   }
 
@@ -19,20 +21,24 @@ export class FileService {
     return randomString + '.' + extension;
   }
 
-  uploadFile(id: string, file: File, uploadFilename: string): Observable<File> {
+  public uploadFile(id: string, file: File, uploadFilename: string): Observable<File> {
+    this.logger.trace('uploadFile(id: string, file: File, uploadFilename: string)');
+
     const formData = new FormData();
     formData.append('file', file, uploadFilename);
 
     return this.http.post<File>(`/upload/${id}`, formData).pipe(
-      tap(() => console.log(`Uploaded file ${uploadFilename} to /upload/${id}`)),
-      catchError(this.handleError<File>('uploadFile'))
+      tap(() => this.logger.trace('uploadFile().next()')),
+      catchError(this.handleError<File>('uploadFile()'))
     );
   }
 
-  deleteFile(id: string, uploadFilename: string): Observable<File> {
+  public deleteFile(id: string, uploadFilename: string): Observable<File> {
+    this.logger.trace('deleteFile(id: string, uploadFilename: string)', id, uploadFilename);
+
     return this.http.delete<File>(`/upload/${id}/${uploadFilename}`).pipe(
-      tap(() => console.log(`Deleted file ${uploadFilename} from /upload/${id}`)),
-      catchError(this.handleError<File>('deleteFile'))
+      tap(() => this.logger.trace('deleteFile().next()')),
+      catchError(this.handleError<File>('deleteFile()'))
     );
   }
 
@@ -44,12 +50,7 @@ export class FileService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      console.error(`${operation} failed: ${error.message}`);
+      this.logger.error(operation, error);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
