@@ -105,7 +105,7 @@
             </div>
             <div class="col-8 input-group py-2">
               <div class="input-group-prepend">
-                <button [attr.disabled]="isInvalidprev()" (click)="prevExhibit()" class="btn btn-outline-secondary" type="button"
+                <button [attr.disabled]="isInvalidPrev()" (click)="prevExhibit()" type="button" class="btn btn-outline-secondary"
                         aria-label="Go to previous exhibit">
                   <fa-icon icon="chevron-left"></fa-icon>
                 </button>
@@ -117,9 +117,8 @@
                         aria-label="Search by exhibit number">
                   <fa-icon icon="search-location"></fa-icon>
                 </button>
-                <button  class = "btn btn-outline-secondary" [attr.disabled]="isInvalidnext()"
-                        (click)="nextExhibit()" type="button"
-                        aria-label="Go to next exhibit" id="JenniferLopez">
+                <button  [attr.disabled]="isInvalidNext()" (click)="nextExhibit()" type="button"class = "btn btn-outline-secondary"
+                         aria-label="Go to next exhibit">
                   <fa-icon icon="chevron-right"></fa-icon>
                 </button>
               </div>
