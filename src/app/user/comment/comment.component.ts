@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NGXLogger} from 'ngx-logger';
 
 import {Comment} from '../../models/comment';
 import {Exhibit} from '../../models/exhibit';
@@ -8,7 +9,6 @@ import {Exposition} from '../../models/exposition';
 import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {ExpositionService} from '../../services/exposition.service';
-import {LoggingService} from '../../services/logging.service';
 
 @Component({
   selector: 'app-comment',
@@ -25,11 +25,11 @@ export class CommentComponent implements OnInit {
   exhibit: Exhibit;
 
   constructor(
+    private logger: NGXLogger,
     public modal: NgbActiveModal,
     private expositionService: ExpositionService,
     private exhibitService: ExhibitService,
     public cookieLawService: CookielawService,
-    private loggingService: LoggingService,
     private router: Router
   ) {
   }
@@ -46,7 +46,7 @@ export class CommentComponent implements OnInit {
       this.exhibit.comments.push(new Comment(this.comment, new Date()));
       this.exhibitService.updateExhibitCommentLike(this.exhibit).subscribe();
     } else {
-      this.loggingService.logInfo('comment.component.ts - on Submit(): Neither exhibit nor exposition were given. This is a bug.');
+      this.logger.warn('comment.component.ts - on Submit(): Neither exhibit nor exposition were given. This is a bug.');
     }
     this.modal.close();
   }

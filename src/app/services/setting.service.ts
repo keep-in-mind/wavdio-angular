@@ -6,7 +6,6 @@ import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
 import {Setting} from '../models/setting';
-import {LoggingService} from './logging.service';
 
 import {AuthenticationService} from './authentification.service';
 
@@ -19,8 +18,7 @@ export class SettingService {
   public constructor(
     private logger: NGXLogger,
     private http: HttpClient,
-    private auth: AuthenticationService,
-    private loggingService: LoggingService) {
+    private auth: AuthenticationService) {
   }
 
   public getSettings(): Observable<Setting[]> {
