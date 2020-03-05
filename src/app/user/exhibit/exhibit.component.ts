@@ -131,19 +131,17 @@ export class ExhibitComponent implements OnInit {
       }
     }
   }
-  isInvalidPrev() {
-    const temp = this.exhibit.code;
+  isFirst() {
     for (const exhibit of this.exhibits) {
-      if (exhibit.code < temp && exhibit.active) {
+      if (exhibit.code < this.exhibit.code && exhibit.active) {
         return null;
       }
     }
     return true;
   }
-  isInvalidNext() {
-    const temp = this.exhibit.code;
+  isLast() {
     for (const exhibit of this.exhibits) {
-      if (exhibit.code > temp && exhibit.active) {
+      if (exhibit.code > this.exhibit.code && exhibit.active) {
         return null;
       }
     }
