@@ -91,7 +91,9 @@
       </div>
     </section>
 
-    <p *ngIf="exhibit" class="p-2">{{getExhibitContent(locale).info}}</p>
+    <p *ngIf="exhibit" class="p-2">
+      <markdown>{{getExhibitContent(locale).info}}</markdown>
+    </p>
   </main>
 
   <footer>
