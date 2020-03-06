@@ -21,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CookieService} from 'ngx-cookie-service';
 import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
+import {MarkdownModule} from 'ngx-markdown';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
@@ -66,7 +67,6 @@ import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
-import {MarkdownModule} from "ngx-markdown";
 
 const appRoutes: Routes = [
   {
