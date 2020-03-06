@@ -66,6 +66,7 @@ import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
+import {MarkdownModule} from "ngx-markdown";
 
 const appRoutes: Routes = [
   {
@@ -176,7 +177,8 @@ const appRoutes: Routes = [
           level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
           serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
           serverLoggingUrl: '/api/v2/logs'
-        })
+        }),
+        MarkdownModule.forRoot()
     ],
   exports: [
     CommentComponent
