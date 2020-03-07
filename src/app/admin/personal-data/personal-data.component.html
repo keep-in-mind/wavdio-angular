@@ -30,10 +30,10 @@
             </div>
           </div>
           <label for="welcomeText">Begrüßungstext</label>
-          <textarea id="welcomeText" class="form-control mb-2" rows="5"
+          <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
           <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="5"
+          <textarea id="info" class="form-control mb-2" rows="5" placeholder="asdf"
                     [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
           <label for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5"
