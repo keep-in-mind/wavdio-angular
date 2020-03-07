@@ -33,13 +33,13 @@
           <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
           <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="5" placeholder="asdf"
+          <textarea id="info" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
           <label for="termsOfUse">Nutzungsbedingungen</label>
-          <textarea id="termsOfUse" class="form-control mb-2" rows="5"
+          <textarea id="termsOfUse" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
           <label for="privacyTerms">Datenschutzerklärung</label>
-          <textarea id="privacyTerms" class="form-control mb-2"
+          <textarea id="privacyTerms" class="form-control mb-2" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">

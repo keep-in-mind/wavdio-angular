@@ -35,7 +35,7 @@
           </div>
 
           <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="7"
+          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
                     [(ngModel)]="getExpositionContent(selectedLanguage).info"></textarea>
 
           <label for="note">Notizen</label>
