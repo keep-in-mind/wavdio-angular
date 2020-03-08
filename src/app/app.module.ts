@@ -67,6 +67,7 @@ import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
+import { CarouselComponent } from './user/carousel/carousel.component';
 
 const appRoutes: Routes = [
   {
@@ -148,7 +149,8 @@ const appRoutes: Routes = [
     VideoPlayerComponent,
     SettingsComponent,
     AppBarComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    CarouselComponent
   ],
     imports: [
         BrowserModule,
