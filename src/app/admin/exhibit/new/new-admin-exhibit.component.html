@@ -42,7 +42,7 @@
             <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
           </div>
           <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="7"
+          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
                     [(ngModel)]="getExhibitContent(selectedLanguage).info" ></textarea>
           <label for="note">Notizen</label>
           <textarea id="note" class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>

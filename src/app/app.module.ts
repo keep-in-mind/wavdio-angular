@@ -21,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CookieService} from 'ngx-cookie-service';
 import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
+import {MarkdownModule} from 'ngx-markdown';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
@@ -178,7 +179,8 @@ const appRoutes: Routes = [
           level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
           serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
           serverLoggingUrl: '/api/v2/logs'
-        })
+        }),
+        MarkdownModule.forRoot()
     ],
   exports: [
     CommentComponent

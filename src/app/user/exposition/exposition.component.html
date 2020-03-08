@@ -22,7 +22,9 @@
 
       <!-- Info -->
       <mat-tab label="Info" i18n-label>
-        <p *ngIf="exposition" class="p-2">{{ getExpositionContent(locale).info }}</p>
+        <p *ngIf="exposition" class="p-2">
+          <markdown>{{ getExpositionContent(locale).info }}</markdown>
+        </p>
       </mat-tab>
 
       <!-- Exhibits -->
