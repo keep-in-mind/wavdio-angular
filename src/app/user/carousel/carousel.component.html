@@ -11,7 +11,8 @@
       <div ngxSlickItem *ngFor="let image of this.images">
         <div class="golden-cut-outer">
           <div class="golden-cut-inner">
-            <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText">
+            <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText"
+                 [routerLink]="'/exhibit/' + this.id + '/fullscreen'">
           </div>
         </div>
       </div>
