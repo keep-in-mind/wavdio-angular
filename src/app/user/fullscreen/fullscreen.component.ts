@@ -14,6 +14,8 @@ import {ExhibitService} from '../../services/exhibit.service';
 export class FullscreenComponent implements OnInit {
 
   slideConfig = {
+    infinite: true,
+    initialSlide: 1,
     prevArrow: '#prevSlide',
     nextArrow: '#nextSlide',
   };
@@ -32,10 +34,16 @@ export class FullscreenComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const exhibitId = params.id;
 
-      this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
-          this.exhibit = exhibit;
+      this.activatedRoute.queryParams.subscribe(queryParams => {
+        if (queryParams.slide) {
+          this.slideConfig.initialSlide = Number(queryParams.slide);
         }
-      );
+
+        this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
+            this.exhibit = exhibit;
+          }
+        );
+      });
     });
   }
 
