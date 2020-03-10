@@ -68,6 +68,7 @@ import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
 import { CarouselComponent } from './user/carousel/carousel.component';
+import { FullscreenComponent } from './user/fullscreen/fullscreen.component';
 
 const appRoutes: Routes = [
   {
@@ -150,7 +151,8 @@ const appRoutes: Routes = [
     SettingsComponent,
     AppBarComponent,
     PrivacyPolicyComponent,
-    CarouselComponent
+    CarouselComponent,
+    FullscreenComponent
   ],
     imports: [
         BrowserModule,
