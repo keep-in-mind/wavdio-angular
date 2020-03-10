@@ -1,7 +1,6 @@
-import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
-import {CookielawService} from '../../services/cookielaw.service';
 import {Exhibit} from '../../models/exhibit';
 import {ExhibitContent} from '../../models/exhibit-content';
 import {ExhibitService} from '../../services/exhibit.service';
@@ -15,19 +14,18 @@ export class FullscreenComponent implements OnInit {
 
   slideConfig = {
     infinite: true,
-    initialSlide: 1,
+    initialSlide: 0,
     prevArrow: '#prevSlide',
     nextArrow: '#nextSlide',
   };
 
   exhibit: Exhibit;
+  ready = false;
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private activatedRoute: ActivatedRoute,
-    private exhibitService: ExhibitService,
-    public router: Router,
-    public cookieLawService: CookielawService) {
+    private exhibitService: ExhibitService) {
   }
 
   ngOnInit() {
@@ -35,12 +33,19 @@ export class FullscreenComponent implements OnInit {
       const exhibitId = params.id;
 
       this.activatedRoute.queryParams.subscribe(queryParams => {
+        let slide = null;
         if (queryParams.slide) {
-          this.slideConfig.initialSlide = Number(queryParams.slide);
+          slide = Number(queryParams.slide);
         }
 
         this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
             this.exhibit = exhibit;
+
+            if (0 <= slide && slide < this.getExhibitContent(this.locale).images.length) {
+              this.slideConfig.initialSlide = slide;
+            }
+
+            this.ready = true;
           }
         );
       });
