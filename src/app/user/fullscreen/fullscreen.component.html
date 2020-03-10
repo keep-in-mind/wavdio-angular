@@ -1,4 +1,4 @@
-<div *ngIf="exhibit" id="carousel-container">
+<div *ngIf="exhibit" id="fullscreen-component">
   <button mat-button id="prevSlide" class="carousel-button" type="button">
     <mat-icon>chevron_left</mat-icon>
   </button>
@@ -9,7 +9,9 @@
   <ngx-slick-carousel [config]="slideConfig">
     <ng-container>
       <div ngxSlickItem *ngFor="let image of getExhibitContent(locale).images">
-        <img [src]="'/uploads/' + this.exhibit._id + '/' + image.filename" [alt]="image.alternativeText">
+        <div style="width: 100vw; height: 100vh">
+          <img [src]="'/uploads/' + this.exhibit._id + '/' + image.filename" [alt]="image.alternativeText">
+        </div>
       </div>
     </ng-container>
   </ngx-slick-carousel>

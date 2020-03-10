@@ -1,7 +1,3 @@
-#carousel-container {
-  position: relative;
-}
-
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -27,25 +23,10 @@
   transform: scale(2);
 }
 
-.golden-cut-outer {
-  position: relative;
-  padding-top: 61.8%;
-}
-
-.golden-cut-inner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-
-.golden-cut-inner img {
-  width: 100%;
-  height: 100%;
-}
-
 img {
+  width: 100%;
+  height: 100%;
+
   object-fit: contain;
   background-color: black
 }

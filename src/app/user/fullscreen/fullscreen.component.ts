@@ -3,9 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import {CookielawService} from '../../services/cookielaw.service';
 import {Exhibit} from '../../models/exhibit';
+import {ExhibitContent} from '../../models/exhibit-content';
 import {ExhibitService} from '../../services/exhibit.service';
-import {Image} from '../../models/image';
-import {ExhibitContent} from "../../models/exhibit-content";
 
 @Component({
   selector: 'app-fullscreen',
@@ -15,7 +14,6 @@ import {ExhibitContent} from "../../models/exhibit-content";
 export class FullscreenComponent implements OnInit {
 
   slideConfig = {
-    dots: true,
     prevArrow: '#prevSlide',
     nextArrow: '#nextSlide',
   };
