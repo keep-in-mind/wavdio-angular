@@ -1,7 +1,5 @@
-.carousel-button {
+button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1000;
 
   width: 50px;
@@ -12,11 +10,22 @@
 }
 
 #prevSlide {
-  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  left: 20px;
 }
 
 #nextSlide {
-  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  right: 20px;
+}
+
+#close {
+  top: 20px;
+  right: 20px;
 }
 
 .carousel-button mat-icon {

@@ -5,6 +5,10 @@
   <button mat-button id="nextSlide" class="carousel-button" type="button">
     <mat-icon>chevron_right</mat-icon>
   </button>
+  <button mat-button id="close" class="carousel-button" type="button"
+          [routerLink]="'/exhibit/' + this.exhibit._id">
+    <mat-icon>close</mat-icon>
+  </button>
 
   <ngx-slick-carousel [config]="slideConfig">
     <ng-container>
