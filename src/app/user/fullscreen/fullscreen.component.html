@@ -1,1 +1,16 @@
-<p>fullscreen works!</p>
+<div *ngIf="exhibit" id="carousel-container">
+  <button mat-button id="prevSlide" class="carousel-button" type="button">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button mat-button id="nextSlide" class="carousel-button" type="button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <ngx-slick-carousel [config]="slideConfig">
+    <ng-container>
+      <div ngxSlickItem *ngFor="let image of getExhibitContent(locale).images">
+        <img [src]="'/uploads/' + this.exhibit._id + '/' + image.filename" [alt]="image.alternativeText">
+      </div>
+    </ng-container>
+  </ngx-slick-carousel>
+</div>
