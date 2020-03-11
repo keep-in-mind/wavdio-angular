@@ -1,6 +1,10 @@
-<div *ngIf="exposition" id="exposition-fullscreen-component"
-style="width: 100%; height: 100%">
+<div *ngIf="exposition" id="exposition-fullscreen-component">
+
+  <button mat-button id="close" class="carousel-button" type="button"
+          [routerLink]="'/exposition/' + this.exposition._id">
+    <mat-icon>close</mat-icon>
+  </button>
+
   <img [src]="'/uploads/' + this.exposition._id + '/' + exposition.logo.filename"
-       [alt]="exposition.logo.alternativeText"
-  style="width: 100%; height: 100%; object-fit: contain; background-color: black">
+       [alt]="exposition.logo.alternativeText">
 </div>
