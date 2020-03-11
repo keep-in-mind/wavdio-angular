@@ -39,7 +39,9 @@
              style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
              class="w-100"
              [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename"
-             [alt]="getMuseumContent(locale).image.alternativeText"/>
+             [alt]="getMuseumContent(locale).image.alternativeText"
+             routerLink="/museum/fullscreen"/>
+
       </div>
 
       <!-- Museum Title -->
@@ -62,8 +64,8 @@
               <div class="grid-container pb-5">
                 <div *ngFor="let exhibit of exhibits" class="mx-auto">
                   <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'"
-                                       [height]="'150px'"
-                                       [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+                                    [height]="'150px'"
+                                    [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
                 </div>
               </div>
             </div>

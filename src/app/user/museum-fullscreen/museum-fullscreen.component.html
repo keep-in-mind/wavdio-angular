@@ -1,0 +1,9 @@
+<div *ngIf="museum" id="museum-fullscreen-component">
+
+  <button mat-button id="close" type="button" routerLink="/museum">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <img [src]="'/uploads/' + this.museum._id + '/' + getMuseumContent(locale).image.filename"
+       [alt]="getMuseumContent(locale).image.alternativeText">
+</div>

@@ -8,10 +8,11 @@
 
   <ngx-slick-carousel [config]="slideConfig">
     <ng-container>
-      <div ngxSlickItem *ngFor="let image of this.images">
+      <div ngxSlickItem *ngFor="let image of this.images; let i = index" [attr.data-index]="i">
         <div class="golden-cut-outer">
           <div class="golden-cut-inner">
-            <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText">
+            <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText"
+                 [routerLink]="'/exhibit/' + this.id + '/fullscreen'" [queryParams]="{slide: i}">
           </div>
         </div>
       </div>
