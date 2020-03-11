@@ -6,11 +6,11 @@ import {ExhibitContent} from '../../models/exhibit-content';
 import {ExhibitService} from '../../services/exhibit.service';
 
 @Component({
-  selector: 'app-fullscreen',
-  templateUrl: './fullscreen.component.html',
-  styleUrls: ['./fullscreen.component.css']
+  selector: 'app-exhibit-fullscreen',
+  templateUrl: './exhibit-fullscreen.component.html',
+  styleUrls: ['./exhibit-fullscreen.component.css']
 })
-export class FullscreenComponent implements OnInit {
+export class ExhibitFullscreenComponent implements OnInit {
 
   slideConfig = {
     infinite: true,
