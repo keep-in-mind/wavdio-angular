@@ -77,6 +77,7 @@ const appRoutes: Routes = [
       {path: '', component: WelcomeComponent},
       {path: 'museum', component: MuseumComponent},
       {path: 'exposition/:id', component: ExpositionComponent},
+      {path: 'exposition/:id/fullscreen', component: ExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: ExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: ExhibitFullscreenComponent},
       {path: 'infopage/:id', component: InfopageComponent},

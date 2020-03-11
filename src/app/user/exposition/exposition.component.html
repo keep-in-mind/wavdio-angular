@@ -11,7 +11,8 @@
            style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
            class="w-100"
            [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
-           [alt]="exposition.logo.alternativeText"/>
+           [alt]="exposition.logo.alternativeText"
+           [routerLink]="'/exposition/' + this.exposition._id + '/fullscreen'"/>
     </div>
 
     <!-- Exposition Title -->

@@ -1,1 +1,6 @@
-<p>exposition-fullscreen works!</p>
+<div *ngIf="exposition" id="exposition-fullscreen-component"
+style="width: 100%; height: 100%">
+  <img [src]="'/uploads/' + this.exposition._id + '/' + exposition.logo.filename"
+       [alt]="exposition.logo.alternativeText"
+  style="width: 100%; height: 100%; object-fit: contain; background-color: black">
+</div>
