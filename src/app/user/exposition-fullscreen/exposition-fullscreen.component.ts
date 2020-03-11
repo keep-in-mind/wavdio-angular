@@ -3,8 +3,6 @@ import {ActivatedRoute} from '@angular/router';
 
 import {Exposition} from '../../models/exposition';
 import {ExpositionService} from '../../services/exposition.service';
-import {ExhibitContent} from "../../models/exhibit-content";
-import {ExpositionContent} from "../../models/exposition-content";
 
 @Component({
   selector: 'app-exposition-fullscreen',
@@ -29,20 +27,5 @@ export class ExpositionFullscreenComponent implements OnInit {
         this.exposition = exposition;
       });
     });
-  }
-
-  getExpositionContent(lang: String): ExpositionContent {
-
-    /* return localized content */
-
-    for (const content of this.exposition.contents) {
-      if (content.lang === lang) {
-        return content;
-      }
-    }
-
-    /* not available ? must not happen. has to be created when constructing exposition */
-
-    console.error(`No content available for ${lang}`);
   }
 }
