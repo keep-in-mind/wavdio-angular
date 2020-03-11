@@ -1,6 +1,11 @@
 @media (min-width: 1000px)
 {
-  #bla {
+  #user-component {
     max-width: 100vh;
+    margin: auto
   }
+}
+
+#user-component {
+  height: 100vh;
 }
