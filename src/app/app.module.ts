@@ -69,6 +69,7 @@ import {environment} from '../environments/environment';
 import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
 import { CarouselComponent } from './user/carousel/carousel.component';
 import { ExhibitFullscreenComponent } from './user/exhibit-fullscreen/exhibit-fullscreen.component';
+import { ExpositionFullscreenComponent } from './user/exposition-fullscreen/exposition-fullscreen.component';
 
 const appRoutes: Routes = [
   {
@@ -153,7 +154,8 @@ const appRoutes: Routes = [
     AppBarComponent,
     PrivacyPolicyComponent,
     CarouselComponent,
-    ExhibitFullscreenComponent
+    ExhibitFullscreenComponent,
+    ExpositionFullscreenComponent
   ],
     imports: [
         BrowserModule,
