@@ -1,7 +1,9 @@
 <div *ngIf="infopage" id="page">
   <app-app-bar back_arrow_link="/museum" [title]="infopage.name"></app-app-bar>
 
-  <main style="padding: 8px">{{infopage.text}}</main>
+  <main style="padding: 8px">
+    <markdown>{{infopage.text}}</markdown>
+  </main>
 
   <footer>
     <section style="height: 48px; background-color: #f5f5f5"></section>
