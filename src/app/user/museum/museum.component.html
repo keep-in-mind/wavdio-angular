@@ -17,10 +17,7 @@
       </a>
 
       <!-- Site Plan -->
-      <img *ngIf="museum && getMuseumContent(locale).sitePlan"
-           width="100%"
-           [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
-           [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+      <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
 
     </mat-nav-list>
   </mat-sidenav>
