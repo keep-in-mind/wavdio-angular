@@ -71,6 +71,7 @@ import { CarouselComponent } from './user/carousel/carousel.component';
 import { ExhibitFullscreenComponent } from './user/exhibit-fullscreen/exhibit-fullscreen.component';
 import { ExpositionFullscreenComponent } from './user/exposition-fullscreen/exposition-fullscreen.component';
 import { MuseumFullscreenComponent } from './user/museum-fullscreen/museum-fullscreen.component';
+import { SiteplanFullscreenComponent } from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 
 const appRoutes: Routes = [
   {
@@ -159,7 +160,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     ExhibitFullscreenComponent,
     ExpositionFullscreenComponent,
-    MuseumFullscreenComponent
+    MuseumFullscreenComponent,
+    SiteplanFullscreenComponent
   ],
     imports: [
         BrowserModule,
