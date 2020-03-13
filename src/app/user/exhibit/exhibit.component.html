@@ -1,9 +1,9 @@
 <div id="page">
 
   <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Museum'"
-               back_arrow_link="/museum"></app-app-bar>
+               backArrow="true"></app-app-bar>
   <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition' && exposition"
-               [back_arrow_link]="'/exposition/' + exposition._id"></app-app-bar>
+               backArrow="true"></app-app-bar>
 
   <!-- Page Content -->
   <main>
