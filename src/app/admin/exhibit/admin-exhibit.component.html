@@ -88,7 +88,7 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descImages">
         <div header>
-          <fa-icon area-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
         </div>
         <div body *ngFor="let image of getExhibitContent(selectedLanguage).images; let i = index">
@@ -103,7 +103,7 @@
     <section class="mt-2">
       <app-box-card [descHeader]="descVideo">
         <div header>
-          <fa-icon areal-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
           <ng-container *ngIf="getExhibitContent(selectedLanguage).video.length">
             <div ngbDropdown class="d-inline-block">
@@ -134,7 +134,7 @@
       <app-box-card [descHeader]="descAudio">
         <div header>
           <!-- Transcript -->
-          <fa-icon area-label="Open Transcript" *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
+          <fa-icon aria-label="Open Transcript" *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
           (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
           <button *ngIf="!getExhibitContent(selectedLanguage).transcript"
                   (click)="uploadTranscriptInput.click()" style="margin-right: 10pt"
@@ -159,7 +159,7 @@
               </div>
             </ng-template>
           <!-- End Transcript-->
-          <fa-icon area-label="Upload audio"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
+          <fa-icon aria-label="Upload audio"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
           <ng-container *ngIf="getExhibitContent(selectedLanguage).audio.length">
             <div ngbDropdown class="d-inline-block">
