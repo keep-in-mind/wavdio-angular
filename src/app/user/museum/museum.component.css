@@ -2,6 +2,11 @@ mat-sidenav {
   max-width: 280px;
 }
 
+mat-sidenav header img {
+  width: 100%;
+  padding: 20px 20% 20px 20%;
+}
+
 mat-sidenav-content {
   display: flex;
   height: 100vh;
