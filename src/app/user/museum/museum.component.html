@@ -2,6 +2,26 @@
 
   <!-- Sidenav -->
   <mat-sidenav #sidenav>
+
+    <!-- wAVdio Logo -->
+    <header>
+      <div style="position: relative; padding-top: 30%; margin: 8%">
+        <img *ngIf="museum && getMuseumContent(locale).logo; else defaultLogo"
+             style="position: absolute; height: 100%; left: 0; top: 0; object-fit: contain"
+             class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename"
+             [alt]="getMuseumContent(locale).logo.alternativeText"/>
+        <ng-template #defaultLogo>
+          <img style="position: absolute; height: 100%; left: 0; top: 0; object-fit: contain"
+               class="w-100"
+               src="assets/images/wAVdio_Logo_gross.png"
+               alt="wAVdio Logo"/>
+        </ng-template>
+      </div>
+    </header>
+
+    <mat-divider></mat-divider>
+    
     <mat-nav-list>
 
       <!-- Site Plan -->
