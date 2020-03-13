@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 
 import {Setting} from '../../models/setting';
 import {SettingService} from '../../services/setting.service';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-app-bar',
@@ -29,7 +30,8 @@ export class AppBarComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     public router: Router,
-    private settingService: SettingService) {
+    private settingService: SettingService,
+    public location: Location) {
   }
 
   ngOnInit() {
