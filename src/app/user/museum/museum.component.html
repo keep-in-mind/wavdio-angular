@@ -4,6 +4,9 @@
   <mat-sidenav #sidenav>
     <mat-nav-list>
 
+      <!-- Site Plan -->
+      <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
+
       <!-- Info Pages -->
       <a mat-list-item
          *ngFor="let infopage of infopages"
@@ -12,9 +15,6 @@
 
         {{ infopage.name }}
       </a>
-
-      <!-- Site Plan -->
-      <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
 
     </mat-nav-list>
   </mat-sidenav>
