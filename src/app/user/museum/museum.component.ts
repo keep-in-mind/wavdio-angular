@@ -61,7 +61,8 @@ export class MuseumComponent implements OnInit, OnDestroy {
     private expositionService: ExpositionService,
     public cookieLawService: CookielawService,
     private infopageService: InfopageService,
-    changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher) {
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

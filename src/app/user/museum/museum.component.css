@@ -1,3 +1,22 @@
+mat-sidenav {
+  max-width: 280px;
+}
+
+#sidenav-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#sidenav-flex main {
+  flex-grow: 1;
+}
+
+mat-sidenav header img {
+  width: 100%;
+  padding: 20px 20% 20px 20%;
+}
+
 mat-sidenav-content {
   display: flex;
   height: 100vh;

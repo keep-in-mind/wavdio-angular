@@ -1,3 +1,4 @@
+import {Location} from '@angular/common';
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
 import {MatSidenav} from '@angular/material';
 import {Router} from '@angular/router';
@@ -13,7 +14,7 @@ import {SettingService} from '../../services/setting.service';
 export class AppBarComponent implements OnInit {
 
   @Input() sidenav: MatSidenav;
-  @Input() back_arrow_link: string;
+  @Input() backArrow: boolean;
   @Input() title: string;
 
   setting: Setting;
@@ -29,7 +30,8 @@ export class AppBarComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     public router: Router,
-    private settingService: SettingService) {
+    private settingService: SettingService,
+    public location: Location) {
   }
 
   ngOnInit() {

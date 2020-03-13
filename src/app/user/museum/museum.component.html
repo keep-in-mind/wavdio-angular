@@ -2,24 +2,45 @@
 
   <!-- Sidenav -->
   <mat-sidenav #sidenav>
-    <mat-nav-list>
+    <div id="sidenav-flex">
 
-      <!-- Home -->
-      <a mat-list-item routerLink="/" i18n>Home</a>
+      <!-- wAVdio Logo -->
+      <header>
+        <img *ngIf="museum && getMuseumContent(locale).logo; else defaultLogo"
+             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename"
+             [alt]="getMuseumContent(locale).logo.alternativeText"/>
+        <ng-template #defaultLogo>
+          <img src="assets/images/wAVdio_Logo_gross.png" alt="wAVdio Logo"/>
+        </ng-template>
+      </header>
 
-      <!-- Info Pages -->
-      <a mat-list-item
-         *ngFor="let infopage of infopages"
-         routerLink="/infopage/{{ infopage._id }}"
-         routerLinkActive="active">
+      <mat-divider></mat-divider>
 
-        {{ infopage.name }}
-      </a>
+      <!-- Site Plan and Info Pages -->
+      <main>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
 
-      <!-- Site Plan -->
-      <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
+          <a mat-list-item *ngFor="let infopage of infopages"
+             routerLink="/infopage/{{ infopage._id }}"
+             routerLinkActive="active">
 
-    </mat-nav-list>
+            {{ infopage.name }}
+          </a>
+        </mat-nav-list>
+      </main>
+
+      <mat-divider></mat-divider>
+
+      <!-- Usage Terms and Privacy Policy -->
+      <footer>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/user/usage-terms" i18n>Terms of Use</a>
+          <a mat-list-item routerLink="/user/privacy-policy" i18n>Privacy Policy</a>
+        </mat-nav-list>
+      </footer>
+
+    </div>
   </mat-sidenav>
 
   <!-- Main Page -->
