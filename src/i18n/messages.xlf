@@ -232,28 +232,28 @@
         <source>I accept the </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="29ca9c1548c84afe69e7bd03650f6b256352a17d" datatype="html">
-        <source>usage terms</source>
+      <trans-unit id="645b2c426c6a9d4d1c00653a78ede4673b1ec511" datatype="html">
+        <source>terms of use</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c4f72c3fa61fc495ee25cfd88ed157f47bfcfe4c" datatype="html">
         <source> and the </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="26242c2924ef6d1648455377ab4534eb94f5b4fe" datatype="html">
         <source>privacy policy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="10ff54c9a683f36d6709ff7c25e9e126fa3aafd9" datatype="html">
@@ -285,29 +285,29 @@
         <source>Info</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
         <source>Exhibits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
         <source>Audio Transcript</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
@@ -397,19 +397,34 @@
           <context context-type="sourcefile">app/user/usage-terms/usage-terms.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
-        <source>Home</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b2d70aaee677e07b5de2d79af43225c31dc4d21a" datatype="html">
+        <source>Site Plan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
+        <source>Privacy Policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
         <source>Expositions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
@@ -445,7 +460,7 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7f9e9fc91d2fb8a0043e37514dd05d55ee975047" datatype="html">
@@ -455,7 +470,7 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5fd3c6bcade00eef46728c806cbf96567a24f95b" datatype="html">
@@ -465,7 +480,7 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e255e9362e434c3a324ae6665e20ab55fdc17cb0" datatype="html">
@@ -475,14 +490,7 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
-        <source>Privacy Policy</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
     </body>
