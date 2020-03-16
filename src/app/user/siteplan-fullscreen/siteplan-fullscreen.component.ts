@@ -1,3 +1,4 @@
+import {Location} from '@angular/common';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
@@ -17,7 +18,8 @@ export class SiteplanFullscreenComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private activatedRoute: ActivatedRoute,
-    private museumService: MuseumService) {
+    private museumService: MuseumService,
+    public location: Location) {
   }
 
   ngOnInit() {

@@ -1,7 +1,6 @@
 <div *ngIf="exposition" id="exposition-fullscreen-component">
 
-  <button mat-button id="close" type="button"
-          [routerLink]="'/exposition/' + this.exposition._id">
+  <button mat-button id="close" type="button" (click)="location.back()">
     <mat-icon>close</mat-icon>
   </button>
 
