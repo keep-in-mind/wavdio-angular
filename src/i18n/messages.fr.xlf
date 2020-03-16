@@ -272,11 +272,11 @@
         <source>Info</source><target state="new">Info</target>
 
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exposition/exposition.component.html</context><context context-type="linenumber">25</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">72</context></context-group></trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exposition/exposition.component.html</context><context context-type="linenumber">25</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit><trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
         <source>Exhibits</source><target state="new">Exposés</target>
 
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/exposition/exposition.component.html</context><context context-type="linenumber">32</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">79</context></context-group></trans-unit><trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/exposition/exposition.component.html</context><context context-type="linenumber">32</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">80</context></context-group></trans-unit><trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
         <source>Audio Transcript</source><target state="new">Transcription audio</target>
 
       <context-group purpose="location"><context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit><trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
@@ -391,7 +391,7 @@
       <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
         <source>Expositions</source><target state="new">Expositions</target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">94</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">95</context></context-group></trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
         <source>This website uses cookies</source><target state="new">Ce site Web utilise des cookies</target>
         <context-group purpose="location">
@@ -464,7 +464,17 @@
       <context-group purpose="location"><context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context><context context-type="linenumber">44</context></context-group></trans-unit><trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
         <source>Privacy Policy</source><target state="new">Politique de confidentialité</target>
 
-      <context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">39</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context><context context-type="linenumber">2</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/museum/museum.component.html</context><context context-type="linenumber">39</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context><context context-type="linenumber">2</context></context-group></trans-unit><trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
+        <source>Imprint</source><target state="new">Impressum</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/imprint/imprint.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

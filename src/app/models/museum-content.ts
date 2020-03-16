@@ -9,6 +9,7 @@ export class MuseumContent {
   welcomeText: string;
   termsOfUse: string;
   privacyTerms: string;
+  imprint: string;
 
   logo: Image;
   image: Image;
@@ -21,6 +22,7 @@ export class MuseumContent {
     welcomeText: string,
     termsOfUse: string,
     privacyTerms: string,
+    imprint: string,
     logo: Image,
     image: Image,
     sitePlan: Image) {
@@ -31,6 +33,7 @@ export class MuseumContent {
     this.welcomeText = welcomeText;
     this.termsOfUse = termsOfUse;
     this.privacyTerms = privacyTerms;
+    this.imprint = imprint;
     this.logo = logo;
     this.image = image;
     this.sitePlan = sitePlan;
