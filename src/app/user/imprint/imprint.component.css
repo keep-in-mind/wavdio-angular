@@ -1,0 +1,10 @@
+#page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#page main {
+  flex-grow: 1;
+  overflow: auto;
+}
