@@ -110,7 +110,8 @@ const appRoutes: Routes = [
   {
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UsageTermsComponent},
-      {path: 'privacy-policy', component: PrivacyPolicyComponent}
+      {path: 'privacy-policy', component: PrivacyPolicyComponent},
+      {path: 'imprint', component: ImprintComponent}
     ]
   },
   {path: '**', component: ErrorPageComponent},
