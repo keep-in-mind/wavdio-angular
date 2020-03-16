@@ -1,5 +1,5 @@
 <div *ngIf="museum" id="siteplan-fullscreen-component">
-  <button mat-button id="close" type="button" routerLink="/museum">
+  <button mat-button id="close" type="button" (click)="location.back()">
     <mat-icon>close</mat-icon>
   </button>
 

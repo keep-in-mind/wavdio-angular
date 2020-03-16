@@ -5,8 +5,7 @@
   <button mat-button id="nextSlide" class="carousel-button" type="button">
     <mat-icon>chevron_right</mat-icon>
   </button>
-  <button mat-button id="close" class="carousel-button" type="button"
-          [routerLink]="'/exhibit/' + this.exhibit._id">
+  <button mat-button id="close" class="carousel-button" type="button" (click)="location.back()">
     <mat-icon>close</mat-icon>
   </button>
 
