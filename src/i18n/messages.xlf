@@ -289,7 +289,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
@@ -300,7 +300,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7c722fbc99b4a5dd786664d7043c45cc65b759e2" datatype="html">
@@ -420,11 +420,22 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
+        <source>Imprint</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/imprint/imprint.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
         <source>Expositions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="741b8d18999569ed7be4027a2221c8eaeeb05056" datatype="html">
