@@ -41,6 +41,11 @@
           <label for="privacyTerms">Datenschutzerklärung</label>
           <textarea id="privacyTerms" class="form-control mb-2" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
+
+          <label for="imprint">Impressum</label>
+          <textarea id="imprint" class="form-control mb-2" [placeholder]="placeholder"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).imprint" rows="5"></textarea>
+
           <div class="form-row mb-2">
             <div class="col-12">
               <button (click)="updateMuseum()" class="btn btn-success w-100" aria-label="Save museum">
