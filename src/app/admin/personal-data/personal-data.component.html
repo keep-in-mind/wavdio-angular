@@ -17,11 +17,6 @@
       <div class="card">
         <div class="card-body">
           <div class="form-row mb-2">
-            <div class="col-6">
-              <label for="name">Museumsname</label>
-              <input id="name" class="form-control" type="text"
-                     [(ngModel)]="getMuseumContent(selectedLanguage).name">
-            </div>
             <div class="col-3">
               <label for="lang">Sprache</label>
               <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
@@ -29,15 +24,15 @@
               </select>
             </div>
           </div>
+
           <label for="welcomeText">Begrüßungstext</label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
-          <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
+
           <label for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
+
           <label for="privacyTerms">Datenschutzerklärung</label>
           <textarea id="privacyTerms" class="form-control mb-2" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
@@ -78,29 +73,6 @@
           <img *ngIf="getMuseumContent(selectedLanguage).logo" (click)="openLogoBigView()" class="w-100"
                [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).logo.filename"
                [alt]="getMuseumContent(selectedLanguage).logo.alternativeText"/>
-        </div>
-      </app-box-card>
-    </section>
-
-    <!-- Image -->
-    <section class="mt-2">
-      <app-box-card [descHeader]="descImage">
-        <div header>
-          <fa-icon [hidden]="getMuseumContent(selectedLanguage).image" (click)="onImageInput.click()"
-                   class="fa-lg" icon="plus-circle"
-                   aria-label="Add image">
-          </fa-icon>
-          <form class="d-none">
-            <input #onImageInput (change)="onImageChanged($event)" type="file" name="file">
-          </form>
-          <fa-icon [hidden]="!getMuseumContent(selectedLanguage).image" class="fa-lg" icon="minus-circle"
-                   (click)="deleteImage()"
-                   aria-label="Delete image"></fa-icon>
-        </div>
-        <div body>
-          <img *ngIf="getMuseumContent(selectedLanguage).image" (click)="openImageBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).image.filename"
-               [alt]="getMuseumContent(selectedLanguage).image.alternativeText"/>
         </div>
       </app-box-card>
     </section>
