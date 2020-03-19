@@ -7,4 +7,52 @@
     <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
     <h1>Museum bearbeiten</h1>
   </section>
+
+  <section *ngIf="museum" class="content-left ml-3 mr-2">
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Title & Language -->
+
+          <div class="form-row mb-2">
+            <div class="col-9">
+              <label for="name">Titel</label>
+              <input id="name" class="form-control" type="text"
+                     [(ngModel)]="getMuseumContent(selectedLanguage).name">
+            </div>
+
+            <div class="col-3">
+              <label for="lang">Sprache</label>
+              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Description -->
+
+          <label for="info">Beschreibung</label>
+          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
+
+          <!-- Save & Delete -->
+
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <button (click)="updateExposition()" class="btn btn-success w-100" aria-label="Save exposition">
+                Speichern
+              </button>
+            </div>
+            <div class="col-6">
+              <button (click)="deleteExposition()" class="btn btn-danger w-100" aria-label="Delete exposition">
+                Löschen
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </section>
 </div>
