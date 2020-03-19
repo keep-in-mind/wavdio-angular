@@ -3,56 +3,92 @@
     <app-sidebar></app-sidebar>
   </section>
 
-  <section *ngIf="museum" class="header ml-3 mt-2">
+  <!-- Header -->
+
+  <section *ngIf="museum" class="header m-2">
     <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
     <h1>Museum bearbeiten</h1>
   </section>
 
-  <section *ngIf="museum" class="content-left ml-3 mr-2">
-    <section class="mt-2">
-      <div class="card">
-        <div class="card-body">
+  <!-- Left Column -->
 
-          <!-- Title & Language -->
+  <section *ngIf="museum" class="content-left m-2">
+    <div class="card">
+      <div class="card-body">
 
-          <div class="form-row mb-2">
-            <div class="col-9">
-              <label for="name">Titel</label>
-              <input id="name" class="form-control" type="text"
-                     [(ngModel)]="getMuseumContent(selectedLanguage).name">
-            </div>
+        <!-- Title & Language -->
 
-            <div class="col-3">
-              <label for="lang">Sprache</label>
-              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
-                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
-              </select>
-            </div>
+        <div class="form-row">
+          <div class="col-9">
+            <label for="name">Titel</label>
+            <input id="name" class="form-control" type="text"
+                   [(ngModel)]="getMuseumContent(selectedLanguage).name">
           </div>
 
-          <!-- Description -->
+          <div class="col-3">
+            <label for="lang">Sprache</label>
+            <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
+              <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+            </select>
+          </div>
+        </div>
 
+        <!-- Description -->
+
+        <div class="mt-2">
           <label for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
                     [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
+        </div>
 
-          <!-- Save & Delete -->
+        <!-- Save & Delete -->
 
-          <div class="form-row mb-2">
-            <div class="col-6">
-              <button (click)="updateExposition()" class="btn btn-success w-100" aria-label="Save exposition">
-                Speichern
-              </button>
-            </div>
-            <div class="col-6">
-              <button (click)="deleteExposition()" class="btn btn-danger w-100" aria-label="Delete exposition">
-                Löschen
-              </button>
-            </div>
+        <div class="form-row mt-2">
+          <div class="col-6">
+            <button class="btn btn-success w-100" (click)="updateExposition()" aria-label="Save exposition">
+              Speichern
+            </button>
           </div>
 
+          <div class="col-6">
+            <button class="btn btn-danger w-100" (click)="deleteExposition()" aria-label="Delete exposition">
+              Löschen
+            </button>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <!-- Right Column: Image -->
+
+  <section *ngIf="museum" class="content-right m-2">
+    <app-box-card descHeader="Bild">
+
+      <!-- Header: Upload/Delete Button -->
+
+      <div header>
+        <fa-icon class="fa-lg" (click)="onImageInput.click()"
+                 [hidden]="getMuseumContent(selectedLanguage).image"
+                 icon="plus-circle" aria-label="Add image"></fa-icon>
+
+        <form class="d-none">
+          <input #onImageInput type="file" name="file" (change)="onImageChanged($event)">
+        </form>
+
+        <fa-icon class="fa-lg" (click)="deleteImage()"
+                 [hidden]="!getMuseumContent(selectedLanguage).image"
+                 icon="minus-circle" aria-label="Delete image"></fa-icon>
+      </div>
+
+      <!-- Body: Image -->
+
+      <div body>
+        <img *ngIf="getMuseumContent(selectedLanguage).image" class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).image.filename"
+             [alt]="getMuseumContent(selectedLanguage).image.alternativeText"
+             (click)="openImageBigView()"/>
+      </div>
+    </app-box-card>
   </section>
 </div>

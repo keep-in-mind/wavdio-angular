@@ -4,6 +4,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../services/authentification.service';
 import {Museum} from '../../models/museum';
 import {MuseumService} from '../../services/museum.service';
+import {FileService} from "../../services/file.service";
+import {SpinnerComponent} from "../../helper/spinner/spinner.component";
+import {Image} from "../../models/image";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ImageDetailsComponent} from "../../helper/image-details/image-details.component";
 
 @Component({
   selector: 'app-admin-museum',
@@ -36,6 +41,8 @@ export class AdminMuseumComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
+    private modalService: NgbModal,
+    private fileService: FileService,
     private activatedRoute: ActivatedRoute,
     private auth: AuthenticationService,
     private router: Router,
@@ -91,6 +98,35 @@ export class AdminMuseumComponent implements OnInit {
           'Da ist etwas schief gegangen. Prüfen Sie bitte erneut Ihre Eingabedaten.');
       });
     }
+  }
+
+  onImageChanged(event: Event) {
+    const inputElement = <HTMLInputElement>event.target;
+    const file = inputElement.files[0];
+    const randomFilename = FileService.randomizeFilename(file.name);
+
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
+
+    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
+      this.museumService.updateMuseum(this.museum).subscribe();
+      spinner.close();
+    });
+  }
+
+  deleteImage() {
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
+      this.getMuseumContent(this.locale).image = null;
+      this.museumService.updateMuseum(this.museum).subscribe();
+    });
+  }
+
+  openImageBigView() {
+    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    modal.componentInstance.museum = this.museum;
+    modal.componentInstance.image = true;
   }
 
   getMuseumContent(locale: string) {
