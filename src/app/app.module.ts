@@ -38,7 +38,6 @@ import {HomeComponent} from './admin/home/home.component';
 import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
 import {AdminInfopageComponent} from './admin/infopages/infopage/admin-infopage.component';
 import {NewAdminInfopageComponent} from './admin/infopages/infopage/new/new-admin-infopage.component';
-import {LoggingComponent} from './admin/logging/logging.component';
 import {LoginComponent} from './admin/login/login.component';
 import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
 import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
@@ -102,7 +101,6 @@ const appRoutes: Routes = [
       {path: 'statistics', component: MuseumStatisticsComponent},
       {path: 'statistics/exposition/:id', component: ExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: ExhibitStatisticsComponent},
-      {path: 'logging', component: LoggingComponent},
       {path: 'personal-data', component: PersonalDataComponent},
       {path: 'settings', component: SettingsComponent}
     ]
@@ -129,7 +127,6 @@ const appRoutes: Routes = [
     SidebarComponent,
     AdminExpositionComponent,
     AdminExhibitComponent,
-    LoggingComponent,
     AdminInfopagesComponent,
     PersonalDataComponent,
     HomeComponent,
