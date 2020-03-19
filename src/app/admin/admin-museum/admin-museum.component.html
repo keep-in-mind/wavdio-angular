@@ -1,1 +1,10 @@
-<p>admin-museum works!</p>
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+
+  <section *ngIf="museum" class="header ml-3 mt-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <h1>Museum bearbeiten</h1>
+  </section>
+</div>

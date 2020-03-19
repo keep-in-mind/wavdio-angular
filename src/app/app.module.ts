@@ -91,6 +91,7 @@ const appRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       {path: '', component: LoginComponent},
+      {path: 'museum', component: AdminMuseumComponent},
       {path: 'home', component: HomeComponent},
       {path: 'exposition/new', component: NewAdminExpositionComponent},
       {path: 'exposition/:id', component: AdminExpositionComponent},
