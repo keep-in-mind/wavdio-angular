@@ -1,0 +1,94 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-sidebar></app-sidebar>
+  </section>
+
+  <!-- Header -->
+
+  <section *ngIf="museum" class="header m-2">
+    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+    <h1>Museum bearbeiten</h1>
+  </section>
+
+  <!-- Left Column -->
+
+  <section *ngIf="museum" class="content-left m-2">
+    <div class="card">
+      <div class="card-body">
+
+        <!-- Title & Language -->
+
+        <div class="form-row">
+          <div class="col-9">
+            <label for="name">Titel</label>
+            <input id="name" class="form-control" type="text"
+                   [(ngModel)]="getMuseumContent(selectedLanguage).name">
+          </div>
+
+          <div class="col-3">
+            <label for="lang">Sprache</label>
+            <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
+              <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Description -->
+
+        <div class="mt-2">
+          <label for="info">Beschreibung</label>
+          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
+                    [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
+        </div>
+
+        <!-- Save & Delete -->
+
+        <div class="form-row mt-2">
+          <div class="col-6">
+            <button class="btn btn-success w-100" (click)="updateExposition()" aria-label="Save exposition">
+              Speichern
+            </button>
+          </div>
+
+          <div class="col-6">
+            <button class="btn btn-danger w-100" (click)="deleteExposition()" aria-label="Delete exposition">
+              Löschen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right Column: Image -->
+
+  <section *ngIf="museum" class="content-right m-2">
+    <app-box-card descHeader="Bild">
+
+      <!-- Header: Upload/Delete Button -->
+
+      <div header>
+        <fa-icon class="fa-lg" (click)="onImageInput.click()"
+                 [hidden]="getMuseumContent(selectedLanguage).image"
+                 icon="plus-circle" aria-label="Add image"></fa-icon>
+
+        <form class="d-none">
+          <input #onImageInput type="file" name="file" (change)="onImageChanged($event)">
+        </form>
+
+        <fa-icon class="fa-lg" (click)="deleteImage()"
+                 [hidden]="!getMuseumContent(selectedLanguage).image"
+                 icon="minus-circle" aria-label="Delete image"></fa-icon>
+      </div>
+
+      <!-- Body: Image -->
+
+      <div body>
+        <img *ngIf="getMuseumContent(selectedLanguage).image" class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).image.filename"
+             [alt]="getMuseumContent(selectedLanguage).image.alternativeText"
+             (click)="openImageBigView()"/>
+      </div>
+    </app-box-card>
+  </section>
+</div>

@@ -72,6 +72,7 @@ import { ExpositionFullscreenComponent } from './user/exposition-fullscreen/expo
 import { MuseumFullscreenComponent } from './user/museum-fullscreen/museum-fullscreen.component';
 import { SiteplanFullscreenComponent } from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 import { ImprintComponent } from './user/imprint/imprint.component';
+import { AdminMuseumComponent } from './admin/admin-museum/admin-museum.component';
 
 const appRoutes: Routes = [
   {
@@ -90,6 +91,7 @@ const appRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       {path: '', component: LoginComponent},
+      {path: 'museum', component: AdminMuseumComponent},
       {path: 'home', component: HomeComponent},
       {path: 'exposition/new', component: NewAdminExpositionComponent},
       {path: 'exposition/:id', component: AdminExpositionComponent},
@@ -162,7 +164,8 @@ const appRoutes: Routes = [
     ExpositionFullscreenComponent,
     MuseumFullscreenComponent,
     SiteplanFullscreenComponent,
-    ImprintComponent
+    ImprintComponent,
+    AdminMuseumComponent
   ],
     imports: [
         BrowserModule,
