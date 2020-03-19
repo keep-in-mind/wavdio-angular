@@ -110,15 +110,15 @@ export class AdminMuseumComponent implements OnInit {
 
     const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
+      this.getMuseumContent(this.selectedLanguage).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteImage() {
-    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
-      this.getMuseumContent(this.locale).image = null;
+    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.selectedLanguage).image.filename).subscribe(() => {
+      this.getMuseumContent(this.selectedLanguage).image = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
