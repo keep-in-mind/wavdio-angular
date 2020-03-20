@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AuthenticationService} from '../../services/authentification.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 import {FileService} from '../../services/file.service';
 import {Image} from '../../models/image';
 import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
@@ -38,6 +39,10 @@ export class AdminMuseumComponent implements OnInit {
     '- Aufzählungen\n' +
     '- Tabellen\n' +
     '- Zitate';
+
+  breadcrumbs = [
+    new Breadcrumb('Museum')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

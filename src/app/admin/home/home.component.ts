@@ -25,10 +25,9 @@ export class HomeComponent implements OnInit {
 
   descHeader = 'wAVdio';
   descExpositionsHeader = 'Austellungen';
+
   breadcrumbs = [
-    new Breadcrumb('Foo', '#'),
-    new Breadcrumb('Bar', '#'),
-    new Breadcrumb('Baz')
+    new Breadcrumb('Home')
   ];
 
   constructor(
