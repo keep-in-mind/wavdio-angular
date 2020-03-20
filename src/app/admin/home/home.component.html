@@ -3,7 +3,10 @@
     <app-sidebar></app-sidebar>
   </section>
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
   <section class="content-left ml-3 mr-2">
 
@@ -22,7 +25,7 @@
           <app-exhibit-card [exhibit]="exhibit"
                             [width]="'125px'"
                             [height]="'150px'"
-                            [selectedLanguage]="locale"
+                            [selectedLanguage]="selectedLanguage"
                             [link]="'/admin/exhibit/'+ exhibit._id">
           </app-exhibit-card>
         </div>
@@ -39,7 +42,7 @@
         </div>
         <div body *ngFor="let exposition of expositions">
           <app-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
-                               [selectedLanguage]="locale"
+                               [selectedLanguage]="selectedLanguage"
                                [link]="'/admin/exposition/'+ exposition._id"></app-exposition-card>
         </div>
       </app-box-card>

@@ -8,6 +8,7 @@ import {ExhibitContent} from '../../../models/exhibit-content';
 import {ExhibitService} from '../../../services/exhibit.service';
 import {Museum} from '../../../models/museum';
 import {MuseumService} from '../../../services/museum.service';
+import {Breadcrumb} from "../../../models/breadcrumb";
 
 @Component({
   selector: 'app-new-admin-exhibit',
@@ -42,6 +43,8 @@ export class NewAdminExhibitComponent implements OnInit {
     '- Tabellen\n' +
     '- Zitate';
 
+  breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
+
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private museumService: MuseumService,
@@ -68,6 +71,17 @@ export class NewAdminExhibitComponent implements OnInit {
               const museumId = museums[0]._id;
 
               const parentModel = this.expositionId === museumId ? 'Museum' : 'Exposition';
+
+              if (parentModel === 'Museum') {
+                this.breadcrumbs = [
+                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Neues Exponat')];
+              } else {
+                this.breadcrumbs = [
+                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Ausstellung', '/admin/exposition/' + this.expositionId),
+                  new Breadcrumb('Neues Exponat')];
+              }
 
               this.exhibitService.getExhibits().subscribe(
                 exhibits => {

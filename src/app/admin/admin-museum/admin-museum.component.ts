@@ -40,7 +40,7 @@ export class AdminMuseumComponent implements OnInit {
     '- Tabellen\n' +
     '- Zitate';
 
-  breadcrumbs = [
+  breadcrumbs: Breadcrumb[] = [
     new Breadcrumb('Museum')
   ];
 

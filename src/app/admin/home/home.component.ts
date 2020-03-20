@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   breadcrumbs = [
     new Breadcrumb('Home')
   ];
+  selectedLanguage: string = this.locale;
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
