@@ -14,7 +14,7 @@ import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {ExpositionService} from '../../services/exposition.service';
 import {FileService} from '../../services/file.service';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-expositions',
@@ -50,7 +50,10 @@ export class AdminExpositionComponent implements OnInit {
     '- Tabellen\n' +
     '- Zitate';
 
-  breadcrumbs: Breadcrumb[] = [new Breadcrumb('Home', '/admin/home')];
+  breadcrumbs: Breadcrumb[] = [
+    new Breadcrumb('Home', '/admin/home'),
+    new Breadcrumb('Ausstellung')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

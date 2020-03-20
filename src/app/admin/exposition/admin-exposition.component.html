@@ -19,19 +19,11 @@
     <section class="mt-2">
       <div class="card">
         <div class="card-body">
-          <div class="form-row mb-2">
-            <div class="col-9">
-              <label for="name">Titel</label>
-              <input id="name" class="form-control" type="text"
-                     [(ngModel)]="getExpositionContent(selectedLanguage).name">
-            </div>
-            <div class="col-3">
-              <label for="lang">Sprache</label>
-              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
-                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
-              </select>
-            </div>
-          </div>
+
+          <label for="name">Titel</label>
+          <input id="name" class="form-control" type="text"
+                 [(ngModel)]="getExpositionContent(selectedLanguage).name">
+
           <div class="mb-2">
             <label class="mr-2" for="active">Aktiv</label>
             <input id="active" type="checkbox" [(ngModel)]="exposition.active">

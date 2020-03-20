@@ -41,7 +41,10 @@ export class NewAdminExpositionComponent implements OnInit {
     '- Tabellen\n' +
     '- Zitate';
 
-  breadcrumbs: Breadcrumb[] = [new Breadcrumb('Home', '/admin/home')];
+  breadcrumbs: Breadcrumb[] = [
+    new Breadcrumb('Home', '/admin/home'),
+    new Breadcrumb('Neue Ausstellung')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
