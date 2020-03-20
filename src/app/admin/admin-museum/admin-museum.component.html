@@ -5,13 +5,11 @@
 
   <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs" (languageSelected)="selectedLanguage = $event">
-  </app-admin-header>
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
-<!--  <section *ngIf="museum" class="header m-2">-->
-<!--    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>-->
-<!--    <h1>Museum bearbeiten</h1>-->
-<!--  </section>-->
+  <app-alert *ngIf="showAlert" class="header mt-2"
+             [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
 
   <!-- Left Column -->
 
