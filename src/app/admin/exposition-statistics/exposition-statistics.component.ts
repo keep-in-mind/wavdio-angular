@@ -5,6 +5,7 @@ import {Exhibit} from '../../models/exhibit';
 import {Exposition} from '../../models/exposition';
 import {ExhibitService} from '../../services/exhibit.service';
 import {ExpositionService} from '../../services/exposition.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
   selector: 'app-exposition-statistics',
@@ -48,6 +49,8 @@ export class ExpositionStatisticsComponent implements OnInit {
     }
   ];
 
+  breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
+
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private activatedRoute: ActivatedRoute,
@@ -65,6 +68,11 @@ export class ExpositionStatisticsComponent implements OnInit {
       this.expositionService.getExposition(expositionId).subscribe(exposition => {
 
         this.exposition = exposition;
+
+        this.breadcrumbs = [
+          new Breadcrumb('Home', '/admin/home'),
+          new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exposition._id),
+          new Breadcrumb('Statistik')];
 
         /* accumulate exposition likes over time
         *

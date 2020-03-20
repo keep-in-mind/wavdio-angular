@@ -2,18 +2,12 @@
   <aside class="sidebar">
     <app-sidebar></app-sidebar>
   </aside>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+
   <main class="content mx-3">
-
-    <!-- Breadcrumbs & Header -->
-
-    <header class="mt-2">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/admin/home">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/admin/statistics">Museums-Statistik</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Ausstellungs-Statistik</li>
-      </ol>
-      <h1>Ausstellungs-Statistik</h1>
-    </header>
 
     <!-- Likes -->
 

@@ -2,14 +2,17 @@
   <section class="sidebar">
     <app-sidebar></app-sidebar>
   </section>
-  <section *ngIf="exposition" class="header ml-3 mt-2">
-    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
-    </ol>
-    <h1>{{descHeader}}</h1>
-  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <app-alert *ngIf="showAlert" class="header mt-2"
+             [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+
+  <!-- -->
+
   <section *ngIf="exposition" class="content-left ml-3 mr-2">
 
     <!-- Section Expositoin Forms-->

@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 
 import {Exhibit} from '../../models/exhibit';
 import {ExhibitService} from '../../services/exhibit.service';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
   selector: 'app-exhibit-statistics',
@@ -47,7 +47,6 @@ export class ExhibitStatisticsComponent implements OnInit {
   ];
 
   breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
-  selectedLanguage: string = this.locale;
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
