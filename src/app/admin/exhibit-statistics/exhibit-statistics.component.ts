@@ -67,7 +67,7 @@ export class ExhibitStatisticsComponent implements OnInit {
         if (this.exhibit.parentModel === 'Museum') {
           this.breadcrumbs = [
             new Breadcrumb('Home', '/admin/home'),
-            new Breadcrumb('Exponat', '/admin/exhibit' + this.exhibit._id),
+            new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
             new Breadcrumb('Statistik')];
         } else {
           this.breadcrumbs = [
