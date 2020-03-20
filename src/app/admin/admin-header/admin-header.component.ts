@@ -1,18 +1,9 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
+import {Breadcrumb} from '../../models/breadcrumb';
 import {Setting} from '../../models/setting';
 import {SettingService} from '../../services/setting.service';
-
-class Breadcrumb {
-  text: string;
-  url: string;
-
-  constructor(text: string, url: string) {
-    this.text = text;
-    this.url = url;
-  }
-}
 
 @Component({
   selector: 'app-admin-header',
