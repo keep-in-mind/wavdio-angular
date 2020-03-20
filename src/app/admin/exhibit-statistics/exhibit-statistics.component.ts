@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 
 import {Exhibit} from '../../models/exhibit';
 import {ExhibitService} from '../../services/exhibit.service';
+import {Breadcrumb} from "../../models/breadcrumb";
 
 @Component({
   selector: 'app-exhibit-statistics',
@@ -45,6 +46,9 @@ export class ExhibitStatisticsComponent implements OnInit {
     }
   ];
 
+  breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
+  selectedLanguage: string = this.locale;
+
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private activatedRoute: ActivatedRoute,
@@ -60,6 +64,19 @@ export class ExhibitStatisticsComponent implements OnInit {
 
       this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
         this.exhibit = exhibit;
+
+        if (this.exhibit.parentModel === 'Museum') {
+          this.breadcrumbs = [
+            new Breadcrumb('Home', '/admin/home'),
+            new Breadcrumb('Exponat', '/admin/exhibit' + this.exhibit._id),
+            new Breadcrumb('Statistik')];
+        } else {
+          this.breadcrumbs = [
+            new Breadcrumb('Home', '/admin/home'),
+            new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+            new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
+            new Breadcrumb('Statistik')];
+        }
 
         /* accumulate exhibit likes over time
         *

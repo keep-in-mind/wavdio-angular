@@ -15,7 +15,7 @@ import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {FileService} from '../../services/file.service';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-exhibit',
