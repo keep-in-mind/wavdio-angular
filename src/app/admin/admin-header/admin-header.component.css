@@ -8,6 +8,10 @@
   margin: 16px;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 /*
  * BREADCRUMBS
  */
@@ -36,4 +40,12 @@ ol.breadcrumbs li a {
 ol.breadcrumbs li a:hover {
   color: #01447e;
   text-decoration: underline;
+}
+
+/*
+ * LANGUAGE SELECTION
+ */
+
+.language-buttons button {
+  display: block;
 }

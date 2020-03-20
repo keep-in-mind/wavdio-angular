@@ -1,7 +1,8 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
-import {Setting} from "../../models/setting";
-import {Router} from "@angular/router";
-import {SettingService} from "../../services/setting.service";
+import {Router} from '@angular/router';
+
+import {Setting} from '../../models/setting';
+import {SettingService} from '../../services/setting.service';
 
 class Breadcrumb {
   text: string;
@@ -23,6 +24,7 @@ export class AdminHeaderComponent implements OnInit {
   @Input() breadcrumbs: Breadcrumb[];
 
   setting: Setting;
+  selectedLanguage: string = this.locale;
 
   // Same alt texts used multiple times
   langAltTexts = {
