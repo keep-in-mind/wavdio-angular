@@ -27,7 +27,7 @@ import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
 
 import {AdminComponent} from './admin/admin.component';
-import {CommentCardComponent} from './admin/comment-card/comment-card.component';
+import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/admin-part-comment-card.component';
 import {AdminExhibitComponent} from './admin/exhibit/admin-exhibit.component';
 import {NewAdminExhibitComponent} from './admin/exhibit/new/new-admin-exhibit.component';
 import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
@@ -148,7 +148,7 @@ const appRoutes: Routes = [
     UsageTermsComponent,
     ExpositionStatisticsComponent,
     ExhibitStatisticsComponent,
-    CommentCardComponent,
+    AdminPartCommentCardComponent,
     ImageDetailsComponent,
     AlertComponent,
     SpinnerComponent,

@@ -1,3 +1,3 @@
-.comment-card:not(:first-child) {
+.admin-part-comment-card:not(:first-child) {
   margin-top: 8px;
 }

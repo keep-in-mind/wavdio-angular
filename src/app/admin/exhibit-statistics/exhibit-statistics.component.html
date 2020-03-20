@@ -40,8 +40,8 @@
         Kommentare
       </div>
       <div class="card-body">
-        <div class="comment-card" *ngFor="let comment of exhibit.comments">
-          <app-comment-card>{{comment.text}}</app-comment-card>
+        <div *ngFor="let comment of exhibit.comments">
+          <app-admin-part-comment-card>{{comment.text}}</app-admin-part-comment-card>
         </div>
       </div>
     </div>
