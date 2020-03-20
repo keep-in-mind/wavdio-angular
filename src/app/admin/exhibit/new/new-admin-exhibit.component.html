@@ -6,7 +6,7 @@
   <!-- Header -->
 
   <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
-                    (languageSelected)="selectedLanguage = $event"></app-admin-header>
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
   <app-alert *ngIf="showAlert" class="header mt-2"
              [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
