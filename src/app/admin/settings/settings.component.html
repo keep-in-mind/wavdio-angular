@@ -3,13 +3,11 @@
     <app-sidebar></app-sidebar>
   </section>
 
-  <section class="header ml-3 mt-2">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
-    </ol>
-    <h1>{{descHeader}}</h1>
-  </section>
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+
+  <!-- -->
 
   <!-- Active languages -->
   <section class="m-2">

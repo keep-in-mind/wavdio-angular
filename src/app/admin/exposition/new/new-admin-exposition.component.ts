@@ -7,6 +7,7 @@ import {Museum} from '../../../models/museum';
 import {AuthenticationService} from '../../../services/authentification.service';
 import {ExpositionService} from '../../../services/exposition.service';
 import {MuseumService} from '../../../services/museum.service';
+import {Breadcrumb} from "../../../models/breadcrumb";
 
 @Component({
   selector: 'app-new-admin-exposition-component',
@@ -39,6 +40,11 @@ export class NewAdminExpositionComponent implements OnInit {
     '- Aufzählungen\n' +
     '- Tabellen\n' +
     '- Zitate';
+
+  breadcrumbs: Breadcrumb[] = [
+    new Breadcrumb('Home', '/admin/home'),
+    new Breadcrumb('Neue Ausstellung')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

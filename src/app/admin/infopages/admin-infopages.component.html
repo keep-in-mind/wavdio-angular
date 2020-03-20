@@ -2,13 +2,12 @@
   <section class="sidebar">
     <app-sidebar></app-sidebar>
   </section>
-  <section class="header ml-3 mt-2">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
-    </ol>
-    <h1>{{descHeader}}</h1>
-  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
   <section class="content-left ml-3 mr-2">
     <!-- Section Infoseiten -->
     <section *ngIf="infopages" class="mt-2">
@@ -46,12 +45,6 @@
                    (click)="deleteSitePlan()"></fa-icon>
         </div>
         <div body>
-          <div style="width: 100px" class="mb-3">
-            <label for="lang">Sprache</label>
-            <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
-              <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
-            </select>
-          </div>
           <img *ngIf="getMuseumContent(selectedLanguage).sitePlan" class="w-100"
                [alt]="getMuseumContent(selectedLanguage).sitePlan.alternativeText"
                [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).sitePlan.filename"/>

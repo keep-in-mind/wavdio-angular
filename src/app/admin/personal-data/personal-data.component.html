@@ -2,28 +2,22 @@
   <section class="sidebar">
     <app-sidebar></app-sidebar>
   </section>
-  <section class="header ml-3 mt-2">
-    <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
-    </ol>
-    <h1>{{descHeader}}</h1>
-  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <app-alert *ngIf="showAlert" class="header mt-2"
+             [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+
+  <!-- -->
 
   <section *ngIf="this.museum" class="content-left ml-3 mr-2">
     <!-- Section Museum Forms-->
     <section class="mt-2">
       <div class="card">
         <div class="card-body">
-          <div class="form-row mb-2">
-            <div class="col-3">
-              <label for="lang">Sprache</label>
-              <select id="lang" class="form-control" [(ngModel)]="selectedLanguage">
-                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
-              </select>
-            </div>
-          </div>
 
           <label for="welcomeText">Begrüßungstext</label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
