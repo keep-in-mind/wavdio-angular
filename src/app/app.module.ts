@@ -73,7 +73,7 @@ import { MuseumFullscreenComponent } from './user/museum-fullscreen/museum-fulls
 import { SiteplanFullscreenComponent } from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 import { ImprintComponent } from './user/imprint/imprint.component';
 import { AdminMuseumComponent } from './admin/admin-museum/admin-museum.component';
-import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
+import { AdminPartHeaderComponent } from './admin/admin-part-header/admin-part-header.component';
 
 const appRoutes: Routes = [
   {
@@ -167,7 +167,7 @@ const appRoutes: Routes = [
     SiteplanFullscreenComponent,
     ImprintComponent,
     AdminMuseumComponent,
-    AdminHeaderComponent
+    AdminPartHeaderComponent
   ],
     imports: [
         BrowserModule,

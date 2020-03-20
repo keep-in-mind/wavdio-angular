@@ -6,11 +6,11 @@ import {Setting} from '../../models/setting';
 import {SettingService} from '../../services/setting.service';
 
 @Component({
-  selector: 'app-admin-header',
-  templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  selector: 'app-admin-part-header',
+  templateUrl: './admin-part-header.component.html',
+  styleUrls: ['./admin-part-header.component.css']
 })
-export class AdminHeaderComponent implements OnInit {
+export class AdminPartHeaderComponent implements OnInit {
 
   @Input() breadcrumbs: Breadcrumb[];
   @Input() showLanguageSelection = false;

@@ -1,11 +1,11 @@
-#admin-header {
+#admin-part-header {
   display: flex;
   align-items: center;
   height: 60px;
   background-color: #eee;
 }
 
-#admin-header > * {
+#admin-part-header > * {
   margin: 16px;
 }
 
