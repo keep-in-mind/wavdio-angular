@@ -11,6 +11,7 @@ import {AuthenticationService, TokenPayloadUpdate} from '../../services/authenti
 import {CookielawService} from '../../services/cookielaw.service';
 import {FileService} from '../../services/file.service';
 import {MuseumService} from '../../services/museum.service';
+import {Breadcrumb} from "../../models/breadcrumb";
 
 @Component({
   selector: 'app-personal-data',
@@ -51,6 +52,8 @@ export class PersonalDataComponent implements OnInit {
     '- Aufzählungen\n' +
     '- Tabellen\n' +
     '- Zitate';
+
+  breadcrumbs: Breadcrumb[] = [new Breadcrumb('Persönlicher Bereich')];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

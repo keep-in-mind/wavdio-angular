@@ -4,6 +4,7 @@ import {SettingService} from '../../services/setting.service';
 import {AuthenticationService} from '../../services/authentification.service';
 import {Router} from '@angular/router';
 import {Setting} from '../../models/setting';
+import {Breadcrumb} from "../../models/breadcrumb";
 
 @Component({
   selector: 'app-settings',
@@ -15,6 +16,8 @@ export class SettingsComponent implements OnInit {
   setting: Setting;
 
   descHeader = 'Einstellungen';
+
+  breadcrumbs: Breadcrumb[] = [new Breadcrumb('Einstellungen')];
 
   constructor(
     private router: Router,
