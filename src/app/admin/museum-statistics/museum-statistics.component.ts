@@ -4,6 +4,7 @@ import {Exposition} from '../../models/exposition';
 import {Museum} from '../../models/museum';
 import {ExpositionService} from '../../services/exposition.service';
 import {MuseumService} from '../../services/museum.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
   selector: 'app-statistics',
@@ -13,6 +14,10 @@ import {MuseumService} from '../../services/museum.service';
 export class MuseumStatisticsComponent implements OnInit {
 
   expositions: Exposition[];
+
+  breadcrumbs = [
+    new Breadcrumb('Statistiken')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

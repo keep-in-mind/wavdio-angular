@@ -2,14 +2,16 @@
   <section class="sidebar">
     <app-sidebar></app-sidebar>
   </section>
-  <!-- Section Headings -->
-  <section class="col-12 mt-2">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/admin/home" routerLinkActive="active">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{descHeader}}</li>
-    </ol>
-    <h1>{{descHeader}}</h1>
-  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+
+  <app-alert *ngIf="showAlert" class="header mt-2"
+             [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+
+  <!-- -->
+
   <section *ngIf="infopage" class="content-left ml-3 mr-2">
     <app-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
     <!-- Section Forms -->

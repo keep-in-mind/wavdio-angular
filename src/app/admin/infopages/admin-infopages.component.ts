@@ -11,6 +11,7 @@ import {CookielawService} from '../../services/cookielaw.service';
 import {FileService} from '../../services/file.service';
 import {InfopageService} from '../../services/infopage.service';
 import {MuseumService} from '../../services/museum.service';
+import {Breadcrumb} from "../../models/breadcrumb";
 
 @Component({
   selector: 'app-infopage-overwiev',
@@ -28,6 +29,10 @@ export class AdminInfopagesComponent implements OnInit {
 
   languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
+
+  breadcrumbs = [
+    new Breadcrumb('Infoseiten')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,

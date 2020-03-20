@@ -5,6 +5,7 @@ import {Infopage} from '../../../../models/infopage';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {CookielawService} from '../../../../services/cookielaw.service';
 import {InfopageService} from '../../../../services/infopage.service';
+import {Breadcrumb} from "../../../../models/breadcrumb";
 
 @Component({
   selector: 'app-new-admin-infopage',
@@ -35,6 +36,11 @@ export class NewAdminInfopageComponent implements OnInit {
     '- Aufzählungen\n' +
     '- Tabellen\n' +
     '- Zitate';
+
+  breadcrumbs = [
+    new Breadcrumb('Infoseiten', '/admin/infopages'),
+    new Breadcrumb('Neue Infoseite')
+  ];
 
   constructor(
     private infopageService: InfopageService,
