@@ -1,11 +1,12 @@
 #admin-header {
   display: flex;
   align-items: center;
+  height: 60px;
   background-color: #eee;
 }
 
 #admin-header > * {
-  margin: 10px 16px;
+  margin: 16px;
 }
 
 .flex-grow {

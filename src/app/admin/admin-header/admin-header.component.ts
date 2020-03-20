@@ -13,6 +13,8 @@ import {SettingService} from '../../services/setting.service';
 export class AdminHeaderComponent implements OnInit {
 
   @Input() breadcrumbs: Breadcrumb[];
+  @Input() showLanguageSelection = false;
+
   @Output() languageSelected: EventEmitter<string> = new EventEmitter<string>();
 
   setting: Setting;
