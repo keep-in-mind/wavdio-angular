@@ -1,6 +1,13 @@
 <ol class="breadcrumbs">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Pictures</a></li>
-  <li><a href="#">Summer 15</a></li>
-  <li>Italy</li>
+  <li *ngFor="let breadcrumb of breadcrumbs">
+    <ng-container *ngIf="breadcrumb.url; then link else text"></ng-container>
+
+    <ng-template #link>
+      <a [href]="breadcrumb.url">{{breadcrumb.text}}</a>
+    </ng-template>
+    
+    <ng-template #text>
+      {{breadcrumb.text}}
+    </ng-template>
+  </li>
 </ol>

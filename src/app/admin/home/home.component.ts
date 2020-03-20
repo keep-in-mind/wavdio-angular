@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   descHeader = 'wAVdio';
   descExpositionsHeader = 'Austellungen';
+  breadcrumbs = [{text: 'Foo', url: '#'}, {text: 'Bar', url: '#'}, {text: 'Baz'}];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
