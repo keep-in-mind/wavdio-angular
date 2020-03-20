@@ -12,11 +12,11 @@ import {MuseumService} from '../../services/museum.service';
 import {SpinnerComponent} from '../../helper/spinner/spinner.component';
 
 @Component({
-  selector: 'app-admin-museum',
-  templateUrl: './admin-museum.component.html',
-  styleUrls: ['./admin-museum.component.css']
+  selector: 'app-admin-page-museum',
+  templateUrl: './admin-page-museum.component.html',
+  styleUrls: ['./admin-page-museum.component.css']
 })
-export class AdminMuseumComponent implements OnInit {
+export class AdminPageMuseumComponent implements OnInit {
 
   museum: Museum;
 
