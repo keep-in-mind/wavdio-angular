@@ -1,4 +1,4 @@
-import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, LOCALE_ID, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {Breadcrumb} from '../../models/breadcrumb';
@@ -13,6 +13,7 @@ import {SettingService} from '../../services/setting.service';
 export class AdminHeaderComponent implements OnInit {
 
   @Input() breadcrumbs: Breadcrumb[];
+  @Output() languageSelected: EventEmitter<string> = new EventEmitter<string>();
 
   setting: Setting;
   selectedLanguage: string = this.locale;
@@ -36,5 +37,10 @@ export class AdminHeaderComponent implements OnInit {
       console.log(settings);
       this.setting = settings[0];
     });
+  }
+
+  onLanguageSelected(lang: string) {
+    this.selectedLanguage = lang;
+    this.languageSelected.emit(lang);
   }
 }

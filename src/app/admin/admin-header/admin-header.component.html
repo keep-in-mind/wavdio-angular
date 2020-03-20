@@ -26,23 +26,23 @@
     <mat-menu #appMenu="matMenu">
       <div class="language-buttons">
 
-        <button mat-button i18n>
-          <img src="assets/images/de.png" [alt]="langAltTexts['de']" (click)="selectedLanguage = 'de'"/>
+        <button mat-button (click)="onLanguageSelected('de')" i18n>
+          <img src="assets/images/de.png" [alt]="langAltTexts['de']"/>
           Deutsch
         </button>
 
-        <button mat-button i18n>
-          <img src="assets/images/en.png" [alt]="langAltTexts['en']" (click)="selectedLanguage = 'en'"/>
+        <button mat-button (click)="onLanguageSelected('en')" i18n>
+          <img src="assets/images/en.png" [alt]="langAltTexts['en']"/>
           Englisch
         </button>
 
-        <button mat-button i18n>
-          <img src="assets/images/es.png" [alt]="langAltTexts['es']" (click)="selectedLanguage = 'es'"/>
+        <button mat-button (click)="onLanguageSelected('es')" i18n>
+          <img src="assets/images/es.png" [alt]="langAltTexts['es']"/>
           Spanish
         </button>
 
-        <button mat-button i18n>
-          <img src="assets/images/fr.png" [alt]="langAltTexts['fr']" (click)="selectedLanguage = 'fr'"/>
+        <button mat-button (click)="onLanguageSelected('fr')" i18n>
+          <img src="assets/images/fr.png" [alt]="langAltTexts['fr']"/>
           French
         </button>
 
