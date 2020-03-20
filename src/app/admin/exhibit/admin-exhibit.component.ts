@@ -15,6 +15,7 @@ import {AuthenticationService} from '../../services/authentification.service';
 import {CookielawService} from '../../services/cookielaw.service';
 import {ExhibitService} from '../../services/exhibit.service';
 import {FileService} from '../../services/file.service';
+import {Breadcrumb} from "../../models/breadcrumb";
 
 @Component({
   selector: 'app-admin-exhibit',
@@ -56,6 +57,8 @@ export class AdminExhibitComponent implements OnInit {
     this.iconAudio = content;
   }
 
+  breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
+
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private activatedRoute: ActivatedRoute,
@@ -81,6 +84,17 @@ export class AdminExhibitComponent implements OnInit {
           this.exhibitService.getExhibit(exhibitId).subscribe(
             exhibit => {
               this.exhibit = exhibit;
+
+              if (this.exhibit.parentModel === 'Museum') {
+                this.breadcrumbs = [
+                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Exponat')];
+              } else {
+                this.breadcrumbs = [
+                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+                  new Breadcrumb('Exponat')];
+              }
             }
           );
         }
