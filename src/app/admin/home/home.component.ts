@@ -2,13 +2,14 @@ import {HttpClient} from '@angular/common/http';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Exhibit} from '../../models/exhibit';
-import {Exposition} from '../../models/exposition';
-import {Museum} from '../../models/museum';
 import {AuthenticationService} from '../../services/authentification.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 import {CookielawService} from '../../services/cookielaw.service';
+import {Exhibit} from '../../models/exhibit';
 import {ExhibitService} from '../../services/exhibit.service';
+import {Exposition} from '../../models/exposition';
 import {ExpositionService} from '../../services/exposition.service';
+import {Museum} from '../../models/museum';
 import {MuseumService} from '../../services/museum.service';
 
 @Component({
@@ -24,7 +25,11 @@ export class HomeComponent implements OnInit {
 
   descHeader = 'wAVdio';
   descExpositionsHeader = 'Austellungen';
-  breadcrumbs = [{text: 'Foo', url: '#'}, {text: 'Bar', url: '#'}, {text: 'Baz'}];
+  breadcrumbs = [
+    new Breadcrumb('Foo', '#'),
+    new Breadcrumb('Bar', '#'),
+    new Breadcrumb('Baz')
+  ];
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,

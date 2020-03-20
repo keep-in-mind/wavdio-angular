@@ -1,14 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AuthenticationService} from '../../services/authentification.service';
+import {FileService} from '../../services/file.service';
+import {Image} from '../../models/image';
+import {ImageDetailsComponent} from '../../helper/image-details/image-details.component';
 import {Museum} from '../../models/museum';
 import {MuseumService} from '../../services/museum.service';
-import {FileService} from "../../services/file.service";
-import {SpinnerComponent} from "../../helper/spinner/spinner.component";
-import {Image} from "../../models/image";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ImageDetailsComponent} from "../../helper/image-details/image-details.component";
+import {SpinnerComponent} from '../../helper/spinner/spinner.component';
 
 @Component({
   selector: 'app-admin-museum',
