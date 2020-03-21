@@ -28,8 +28,8 @@ import {NgxQRCodeModule} from 'ngx-qrcode2';
 
 import {AdminComponent} from './admin/admin.component';
 import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/admin-part-comment-card.component';
-import {AdminExhibitComponent} from './admin/exhibit/admin-exhibit.component';
-import {NewAdminExhibitComponent} from './admin/exhibit/new/new-admin-exhibit.component';
+import {AdminPageExhibitComponent} from './admin/admin-page-exhibit/admin-page-exhibit.component';
+import {AdminPageNewExhibitComponent} from './admin/admin-page-exhibit/admin-page-new-exhibit/admin-page-new-exhibit.component';
 import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
 import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
 import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
@@ -96,8 +96,8 @@ const appRoutes: Routes = [
       {path: 'home', component: HomeComponent},
       {path: 'exposition/new', component: NewAdminExpositionComponent},
       {path: 'exposition/:id', component: AdminExpositionComponent},
-      {path: 'exhibit/new/:expo_id', component: NewAdminExhibitComponent},
-      {path: 'exhibit/:id', component: AdminExhibitComponent},
+      {path: 'exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
+      {path: 'exhibit/:id', component: AdminPageExhibitComponent},
       {path: 'infopages', component: AdminInfopagesComponent},
       {path: 'infopage/new', component: NewAdminInfopageComponent},
       {path: 'infopage/:id', component: AdminInfopageComponent},
@@ -129,7 +129,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SidebarComponent,
     AdminExpositionComponent,
-    AdminExhibitComponent,
+    AdminPageExhibitComponent,
     AdminInfopagesComponent,
     PersonalDataComponent,
     HomeComponent,
@@ -139,7 +139,7 @@ const appRoutes: Routes = [
     ErrorPageComponent,
     UserComponent,
     NewAdminExpositionComponent,
-    NewAdminExhibitComponent,
+    AdminPageNewExhibitComponent,
     ExpositionCardComponent,
     ExhibitCardComponent,
     BoxCardComponent,

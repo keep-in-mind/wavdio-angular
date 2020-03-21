@@ -8,14 +8,14 @@ import {ExhibitContent} from '../../../models/exhibit-content';
 import {ExhibitService} from '../../../services/exhibit.service';
 import {Museum} from '../../../models/museum';
 import {MuseumService} from '../../../services/museum.service';
-import {Breadcrumb} from "../../../models/breadcrumb";
+import {Breadcrumb} from '../../../models/breadcrumb';
 
 @Component({
-  selector: 'app-new-admin-exhibit',
-  templateUrl: './new-admin-exhibit.component.html',
-  styleUrls: ['./new-admin-exhibit.component.css']
+  selector: 'app-admin-page-new-exhibit',
+  templateUrl: './admin-page-new-exhibit.component.html',
+  styleUrls: ['./admin-page-new-exhibit.component.css']
 })
-export class NewAdminExhibitComponent implements OnInit {
+export class AdminPageNewExhibitComponent implements OnInit {
 
   descHeader = 'Ausstellungsstück anlegen';
 
