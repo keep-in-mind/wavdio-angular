@@ -6,12 +6,12 @@ import {AuthenticationService, TokenPayload} from '../../services/authentificati
 import {CookielawService} from '../../services/cookielaw.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin-page-login',
+  templateUrl: './admin-page-login.component.html',
+  styleUrls: ['./admin-page-login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class AdminPageLoginComponent implements OnInit {
   user: User;
   isIncorrect = false;
   credentials: TokenPayload = {
