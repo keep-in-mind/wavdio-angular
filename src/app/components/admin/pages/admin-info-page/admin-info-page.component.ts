@@ -4,8 +4,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
-import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPage} from '../../../../models/info-page';
+import {InfoPageService} from '../../../../services/info-page.service';
 
 @Component({
   selector: 'app-admin-info-page',
@@ -16,7 +16,7 @@ export class AdminInfoPageComponent implements OnInit {
 
   descHeader = 'Informationsseite bearbeiten';
 
-  infopage: Infopage;
+  infoPage: InfoPage;
 
   languages = ['de', 'en', 'es', 'fr'];
 
@@ -38,12 +38,12 @@ export class AdminInfoPageComponent implements OnInit {
     '- Zitate';
 
   breadcrumbs = [
-    new Breadcrumb('Infoseiten', '/admin/infopages'),
+    new Breadcrumb('Infoseiten', '/admin/info-pages'),
     new Breadcrumb('Infoseite')
   ];
 
   constructor(
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private auth: AuthenticationService,
@@ -57,29 +57,29 @@ export class AdminInfoPageComponent implements OnInit {
 
       this.activatedRoute.params.subscribe(
         params => {
-          const infopageId = params.id;
+          const infoPageId = params.id;
 
-          this.infopageService.getInfopage(infopageId).subscribe(
-            infopage => this.infopage = infopage
+          this.infoPageService.getInfoPage(infoPageId).subscribe(
+            infoPage => this.infoPage = infoPage
           );
         });
     }
   }
 
-  updateInfopage() {
-    if (!this.infopage.name) {
+  updateInfoPage() {
+    if (!this.infoPage.name) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.infopage.name.startsWith(' ')) {
+    if (this.infoPage.name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten. ' +
         'Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    this.infopageService.updateInfopage(this.infopage).subscribe(
-      infopage => {
-        console.log(infopage);
-        if (this.infopageService.errorCode === 500) {
+    this.infoPageService.updateInfoPage(this.infoPage).subscribe(
+      infoPage => {
+        console.log(infoPage);
+        if (this.infoPageService.errorCode === 500) {
           this.showAlertMessage(3, 5, 'Es ist ein Fehler aufgetreten. ' +
             'Mehr Informationen finden Sie in den Serverlogs.');
         } else {
@@ -91,11 +91,11 @@ export class AdminInfoPageComponent implements OnInit {
     );
   }
 
-  deleteInfopage() {
+  deleteInfoPage() {
     if (confirm('Sind Sie sicher, dass Sie diese Infoseite unwiderruflich löschen möchten?')) {
 
-      this.infopageService.deleteInfopage(this.infopage).subscribe(
-        () => this.router.navigate(['admin/infopages/'])
+      this.infoPageService.deleteInfoPage(this.infoPage).subscribe(
+        () => this.router.navigate(['admin/info-pages/'])
       );
     }
   }

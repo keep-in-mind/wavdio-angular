@@ -10,18 +10,18 @@
 
   <section class="content-left ml-3 mr-2">
     <!-- Section Infoseiten -->
-    <section *ngIf="infopages" class="mt-2">
+    <section *ngIf="infoPages" class="mt-2">
       <app-admin-box-card [descHeader]="descInfopageBox">
         <div header>
-          <a routerLink="/admin/infopage/new" routerLinkActive="active">
+          <a routerLink="/admin/info-page/new" routerLinkActive="active">
             <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
           </a>
         </div>
-        <div body *ngFor="let infopage of infopages">
-          <a routerLink="/admin/infopage/{{ infopage._id }}" routerLinkActive="active">
+        <div body *ngFor="let infoPage of infoPages">
+          <a routerLink="/admin/info-page/{{ infoPage._id }}" routerLinkActive="active">
             <div class="card-size card m-1">
               <div class="card-body">
-                <h4 class="small truncate">{{infopage.name}}</h4>
+                <h4 class="small truncate">{{infoPage.name}}</h4>
               </div>
             </div>
           </a>

@@ -12,7 +12,7 @@
 
   <!-- -->
 
-  <section *ngIf="infopage" class="content-left ml-3 mr-2">
+  <section *ngIf="infoPage" class="content-left ml-3 mr-2">
     <app-admin-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
     <!-- Section Forms -->
     <section class="mt-2">
@@ -21,27 +21,27 @@
           <div class="form-row mb-2">
             <div class="col-9">
               <label for="name">Titel</label>
-              <input id="name"class="form-control" type="text"  [(ngModel)]="infopage.name">
+              <input id="name"class="form-control" type="text"  [(ngModel)]="infoPage.name">
 
             </div>
             <div class="col-3">
               <label for="lang">Sprache</label>
-              <select id="lang" class="form-control" [(ngModel)]="infopage.lang">
+              <select id="lang" class="form-control" [(ngModel)]="infoPage.lang">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <label for="text">Informationen</label>
           <textarea id="text" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="infopage.text"></textarea>
+                    [(ngModel)]="infoPage.text"></textarea>
           <div class="form-row mb-2">
             <div class="col-6">
-              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()" aria-label="Save info page">
+              <button class="btn btn-success w-100" type="button" (click)="updateInfoPage()" aria-label="Save info page">
                 Speichern
               </button>
             </div>
             <div class="col-6">
-              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()" aria-label="Delete info page">
+              <button class="btn btn-danger w-100" type="button" (click)="deleteInfoPage()" aria-label="Delete info page">
                 Löschen
               </button>
             </div>

@@ -9,8 +9,8 @@ import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
 import {FileService} from '../../../../services/file.service';
 import {Image} from '../../../../models/image';
-import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPage} from '../../../../models/info-page';
+import {InfoPageService} from '../../../../services/info-page.service';
 import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
 
@@ -25,7 +25,7 @@ export class AdminInfoPagesComponent implements OnInit {
   descInfopageBox = 'Infoseiten';
   descLageplan = 'Lageplan';
 
-  infopages: Infopage[];
+  infoPages: InfoPage[];
   museum: Museum;
 
   languages = ['de', 'en', 'es', 'fr'];
@@ -37,7 +37,7 @@ export class AdminInfoPagesComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     private museumService: MuseumService,
     private router: Router,
     private auth: AuthenticationService,
@@ -50,8 +50,8 @@ export class AdminInfoPagesComponent implements OnInit {
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['/admin']);
     } else {
-      this.infopageService.getInfopages().subscribe(
-        infopages => this.infopages = infopages
+      this.infoPageService.getInfoPages().subscribe(
+        infoPages => this.infoPages = infoPages
       );
 
       this.museumService.getMuseums().subscribe(

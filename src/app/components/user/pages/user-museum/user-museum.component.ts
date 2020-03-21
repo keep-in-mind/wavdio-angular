@@ -12,8 +12,8 @@ import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
-import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPage} from '../../../../models/info-page';
+import {InfoPageService} from '../../../../services/info-page.service';
 import {Museum} from '../../../../models/museum';
 import {MuseumContent} from '../../../../models/museum-content';
 import {MuseumService} from '../../../../services/museum.service';
@@ -24,7 +24,7 @@ import {MuseumService} from '../../../../services/museum.service';
   styleUrls: ['./user-museum.component.css']
 })
 export class UserMuseumComponent implements OnInit, OnDestroy {
-  infopages: Infopage[];
+  infoPages: InfoPage[];
 
   mobileQuery: MediaQueryList;
 
@@ -58,7 +58,7 @@ export class UserMuseumComponent implements OnInit, OnDestroy {
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
     public cookieLawService: CookielawService,
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher) {
 
@@ -68,8 +68,8 @@ export class UserMuseumComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.infopageService.getInfopages().subscribe(
-      infopages => this.infopages = infopages
+    this.infoPageService.getInfoPages().subscribe(
+      infoPages => this.infoPages = infoPages
     );
 
     if (this.cookieLawService.acceptedTermsOfUse()) {

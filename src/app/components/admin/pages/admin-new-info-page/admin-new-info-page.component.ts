@@ -4,8 +4,8 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
-import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPage} from '../../../../models/info-page';
+import {InfoPageService} from '../../../../services/info-page.service';
 
 @Component({
   selector: 'app-admin-new-info-page',
@@ -16,7 +16,7 @@ export class AdminNewInfoPageComponent implements OnInit {
 
   descHeader = 'Informationsseite anlegen';
 
-  infopage: Infopage;
+  infoPage: InfoPage;
 
   languages = ['de', 'en', 'es', 'fr'];
 
@@ -38,12 +38,12 @@ export class AdminNewInfoPageComponent implements OnInit {
     '- Zitate';
 
   breadcrumbs = [
-    new Breadcrumb('Infoseiten', '/admin/infopages'),
+    new Breadcrumb('Infoseiten', '/admin/info-pages'),
     new Breadcrumb('Neue Infoseite')
   ];
 
   constructor(
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     private router: Router,
     private auth: AuthenticationService,
     public cookieLawService: CookielawService) {
@@ -53,24 +53,24 @@ export class AdminNewInfoPageComponent implements OnInit {
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['/admin']);
     } else {
-      this.infopage = new Infopage('', '', 'de');
+      this.infoPage = new InfoPage('', '', 'de');
     }
   }
 
-  createInfopage() {
-    if (!this.infopage.name) {
+  createInfoPage() {
+    if (!this.infoPage.name) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.infopage.name.startsWith(' ')) {
+    if (this.infoPage.name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten.' +
         ' Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    this.infopageService.createInfopage(this.infopage).subscribe(
-      infopage => {
-        this.router.navigate(['admin/infopage/', infopage._id]);
-        if (this.infopageService.errorCode === 500) {
+    this.infoPageService.createInfoPage(this.infoPage).subscribe(
+      infoPage => {
+        this.router.navigate(['admin/info-page/', infoPage._id]);
+        if (this.infoPageService.errorCode === 500) {
           this.showAlertMessage(3, 5, 'Es ist ein Fehler aufgetreten. ' +
             'Mehr Informationen finden Sie in den Serverlogs.');
         } else {

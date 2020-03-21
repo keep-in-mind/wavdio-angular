@@ -22,22 +22,22 @@
           <div class="form-row mb-2">
             <div class="col-9">
               <label for="name">Titel</label>
-              <input id="name" class="form-control" type="text" [(ngModel)]="infopage.name">
+              <input id="name" class="form-control" type="text" [(ngModel)]="infoPage.name">
 
             </div>
             <div class="col-3">
               <label for="lang">Sprache</label>
-              <select id="lang" class="form-control" [(ngModel)]="infopage.lang">
+              <select id="lang" class="form-control" [(ngModel)]="infoPage.lang">
                 <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
               </select>
             </div>
           </div>
           <label for="text">Beschreibung</label>
           <textarea id="text" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="infopage.text"></textarea>
+                    [(ngModel)]="infoPage.text"></textarea>
           <div class="form-row mb-2">
             <div class="col-12">
-              <button class="btn btn-success w-100" type="button" (click)="createInfopage()"
+              <button class="btn btn-success w-100" type="button" (click)="createInfoPage()"
                       aria-label="Create info page">
                 Speichern
               </button>

@@ -12,8 +12,8 @@ import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
 import {ExpositionContent} from '../../../../models/exposition-content';
 import {ExpositionService} from '../../../../services/exposition.service';
-import {Infopage} from '../../../../models/infopage';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPage} from '../../../../models/info-page';
+import {InfoPageService} from '../../../../services/info-page.service';
 import {Like} from '../../../../models/like';
 import {Museum} from '../../../../models/museum';
 import {MuseumContent} from '../../../../models/museum-content';
@@ -34,7 +34,7 @@ export class UserExpositionComponent implements OnInit {
 
   exposition: Exposition;
   exhibits: Exhibit[];
-  infopages: Infopage[];
+  infoPages: InfoPage[];
 
   museum: Museum;
 
@@ -47,7 +47,7 @@ export class UserExpositionComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     public cookieLawService: CookielawService) {
   }
 
@@ -60,8 +60,8 @@ export class UserExpositionComponent implements OnInit {
         debounceTime(5000)
       ).subscribe(() => this.alertMessage = null);
 
-      this.infopageService.getInfopages().subscribe(
-        infopages => this.infopages = infopages
+      this.infoPageService.getInfoPages().subscribe(
+        infoPages => this.infoPages = infoPages
       );
 
       this.activatedRoute.params.subscribe(

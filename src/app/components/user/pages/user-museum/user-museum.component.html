@@ -21,11 +21,11 @@
         <mat-nav-list>
           <a mat-list-item routerLink="/siteplan" i18n>Site Plan</a>
 
-          <a mat-list-item *ngFor="let infopage of infopages"
-             routerLink="/infopage/{{ infopage._id }}"
+          <a mat-list-item *ngFor="let infoPage of infoPages"
+             routerLink="/info-page/{{ infoPage._id }}"
              routerLinkActive="active">
 
-            {{ infopage.name }}
+            {{ infoPage.name }}
           </a>
         </mat-nav-list>
       </main>

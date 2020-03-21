@@ -1,4 +1,4 @@
-export class Infopage {
+export class InfoPage {
 
   _id: string;
 

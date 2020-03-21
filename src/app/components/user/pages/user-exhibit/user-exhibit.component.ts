@@ -10,7 +10,7 @@ import {ExhibitContent} from '../../../../models/exhibit-content';
 import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
-import {InfopageService} from '../../../../services/infopage.service';
+import {InfoPageService} from '../../../../services/info-page.service';
 import {Like} from '../../../../models/like';
 import {Museum} from '../../../../models/museum';
 import {MuseumContent} from '../../../../models/museum-content';
@@ -26,7 +26,7 @@ export class UserExhibitComponent implements OnInit {
   exhibits: Exhibit[];
   exhibit: Exhibit;
   exposition: Exposition;
-  infopages = [];
+  infoPages = [];
   museum: Museum;
 
   likedFlag = false;
@@ -36,7 +36,7 @@ export class UserExhibitComponent implements OnInit {
     @Inject(LOCALE_ID) public locale: string,
     private activatedRoute: ActivatedRoute,
     private modalService: NgbModal,
-    private infopageService: InfopageService,
+    private infoPageService: InfoPageService,
     private exhibitService: ExhibitService,
     private expositionService: ExpositionService,
     private museumService: MuseumService,
@@ -62,8 +62,8 @@ export class UserExhibitComponent implements OnInit {
     if (this.cookieLawService.acceptedTermsOfUse()) {
       this.router.navigate(['/']);
     } else {
-      this.infopageService.getInfopages().subscribe(
-        infopages => this.infopages = infopages
+      this.infoPageService.getInfoPages().subscribe(
+        infoPages => this.infoPages = infoPages
       );
 
       this.activatedRoute.params.subscribe(params => {
