@@ -63,15 +63,4 @@ export class CommonAudioPlayerComponent implements OnInit {
       this.timeAudio, this.progressAudio, false);
     this.audioPlaying = this.mediaplayerService.audioPlaying;
   }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
-  }
 }

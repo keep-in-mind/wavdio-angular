@@ -94,8 +94,8 @@ export class AdminImageDetailsComponent implements OnInit {
   }
 
   deleteExhibitImage() {
-    this.fileService.deleteFile(this.exhibit._id, this.getExhibitContent(this.lang).images[this.index].filename).subscribe(() => {
-      this.getExhibitContent(this.lang).images.splice(this.index, 1);
+    this.fileService.deleteFile(this.exhibit._id, this.exhibit.getContent(this.lang).images[this.index].filename).subscribe(() => {
+      this.exhibit.getContent(this.lang).images.splice(this.index, 1);
       this.updateExhibit();
     });
   }
@@ -115,17 +115,6 @@ export class AdminImageDetailsComponent implements OnInit {
       this.exposition.logo = null;
       this.updateExposition();
     });
-  }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
   }
 
   getMuseumContent(lang: String): MuseumContent {

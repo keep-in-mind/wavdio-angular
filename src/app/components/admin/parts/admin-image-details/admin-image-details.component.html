@@ -1,7 +1,7 @@
 <section class="content p-3">
   <ng-container *ngIf="this.exhibit">
-    <img [src]="'/uploads/' + this.exhibit._id + '/' + this.getExhibitContent(this.lang).images[this.index].filename"
-    [alt]="this.getExhibitContent(this.lang).images[this.index].alternativeText">
+    <img [src]="'/uploads/' + this.exhibit._id + '/' + this.exhibit.getContent(this.lang).images[this.index].filename"
+    [alt]="this.exhibit.getContent(this.lang).images[this.index].alternativeText">
   </ng-container>
   <ng-container *ngIf="this.exposition">
     <img *ngIf="this.exposition.logo" [src]="'/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
@@ -23,7 +23,7 @@
     <ng-container *ngIf="this.exhibit">
       <label for="image-alternativeText" i18n>Description</label>
       <textarea id="image-alternativeText" class="form-control mb-2" rows="3"
-                [(ngModel)]="this.getExhibitContent(this.lang).images[this.index].alternativeText"></textarea>
+                [(ngModel)]="this.exhibit.getContent(this.lang).images[this.index].alternativeText"></textarea>
     </ng-container>
     <ng-container *ngIf="this.exposition">
       <label for="exposition-logo-alternativeText" i18n>Description</label>

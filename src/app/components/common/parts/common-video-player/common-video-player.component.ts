@@ -60,15 +60,4 @@ export class CommonVideoPlayerComponent implements OnInit {
       this.time, this.progress, true);
     this.videoPlaying = this.mediaplayerService.videoPlaying;
   }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
-  }
 }

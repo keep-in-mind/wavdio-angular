@@ -43,7 +43,7 @@ export class UserExhibitFullscreenComponent implements OnInit {
         this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
             this.exhibit = exhibit;
 
-            if (0 <= slide && slide < this.getExhibitContent(this.locale).images.length) {
+            if (0 <= slide && slide < this.exhibit.getContent(this.locale).images.length) {
               this.slideConfig.initialSlide = slide;
             }
 
@@ -52,20 +52,5 @@ export class UserExhibitFullscreenComponent implements OnInit {
         );
       });
     });
-  }
-
-  getExhibitContent(lang: String): ExhibitContent {
-
-    /* return localized content */
-
-    for (const content of this.exhibit.contents) {
-      if (content.lang === lang) {
-        return content;
-      }
-    }
-
-    /* not available ? must not happen. has to be created when constructing exhibit */
-
-    console.error(`No content available for ${lang}`);
   }
 }

@@ -91,19 +91,8 @@ export class AdminExhibitStatsComponent implements OnInit {
           data.push({name: new Date(like.timestamp), value: accumulatedLikes});
         }
 
-        this.multi = [{name: this.getExhibitContent(this.locale).name, series: data}];
+        this.multi = [{name: this.exhibit.getContent(this.locale).name, series: data}];
       });
     });
-  }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
   }
 }

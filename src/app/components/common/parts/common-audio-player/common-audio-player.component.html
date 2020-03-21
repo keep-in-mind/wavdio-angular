@@ -1,6 +1,6 @@
 <section class="player">
   <audio #audioplayer (timeupdate)="updateTimeAudio()">
-    <ng-container *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio">
+    <ng-container *ngFor="let audio_file of exhibit.getContent(selectedLanguage).audio">
       <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
               [type]="audio_file.mimeType">
     </ng-container>

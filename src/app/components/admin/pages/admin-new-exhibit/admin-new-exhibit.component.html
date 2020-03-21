@@ -22,7 +22,7 @@
             <div class="col-9">
               <label for="name">Titel</label>
               <input id="name" class="form-control" type="text"
-                     [(ngModel)]="getExhibitContent(selectedLanguage).name" required="true">
+                     [(ngModel)]="exhibit.getContent(selectedLanguage).name" required="true">
             </div>
             <div class="col-3">
               <label for="code">Code</label>
@@ -36,7 +36,7 @@
           </div>
           <label for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="getExhibitContent(selectedLanguage).info" ></textarea>
+                    [(ngModel)]="exhibit.getContent(selectedLanguage).info" ></textarea>
           <label for="note">Notizen</label>
           <textarea id="note" class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
           <div class="form-row mb-2">

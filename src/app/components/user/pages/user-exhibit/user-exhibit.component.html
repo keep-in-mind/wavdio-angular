@@ -9,18 +9,18 @@
   <main>
 
     <!-- Carousel Section -->
-    <app-user-carousel *ngIf="exhibit && getExhibitContent(locale).images.length"
-                       [id]="exhibit._id" [images]="getExhibitContent(locale).images"></app-user-carousel>
+    <app-user-carousel *ngIf="exhibit && exhibit.getContent(locale).images.length"
+                       [id]="exhibit._id" [images]="exhibit.getContent(locale).images"></app-user-carousel>
 
     <!-- Exhibit Title -->
-    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ getExhibitContent(locale).name }}</h1>
+    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ exhibit.getContent(locale).name }}</h1>
 
     <!-- Media Player Section -->
     <section *ngIf="exhibit">
       <div class="container">
         <div class="mx-auto">
           <!-- AUDIO -->
-          <div class="mt-4" body *ngIf="getExhibitContent(locale).audio.length">
+          <div class="mt-4" body *ngIf="exhibit.getContent(locale).audio.length">
             <hr class="hl">
             <section class="player">
               <div class="phones">
@@ -29,7 +29,7 @@
 
               <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-audio-player>
 
-              <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
+              <div *ngIf="exhibit.getContent(locale).transcript" style="text-align: center; margin-top: 2pt">
                 <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">
                   <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
                 </button>
@@ -42,13 +42,13 @@
                   </button>
                 </div>
                 <div class="modal-body" style="overflow-y: auto; height:400pt;">
-                  <p>{{getExhibitContent(locale).transcript.text}}</p>
+                  <p>{{exhibit.getContent(locale).transcript.text}}</p>
                 </div>
               </ng-template>
             </section>
           </div>
           <!-- VIDEO -->
-          <div body *ngIf="getExhibitContent(locale).video.length">
+          <div body *ngIf="exhibit.getContent(locale).video.length">
             <hr class="hl">
             <section class="player">
               <div class="camera">
@@ -64,7 +64,7 @@
     </section>
 
     <p *ngIf="exhibit" class="p-2">
-      <markdown>{{getExhibitContent(locale).info}}</markdown>
+      <markdown>{{exhibit.getContent(locale).info}}</markdown>
     </p>
   </main>
 

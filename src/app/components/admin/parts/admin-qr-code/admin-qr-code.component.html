@@ -3,7 +3,7 @@
     <div class="card card-size m-2">
       <div class="card-body">
         <section class="" id="print-section-{{ exhibit._id }}">
-          <h1 class="card-title truncate"> {{ getExhibitContent(exhibit, lang).name }}</h1>
+          <h1 class="card-title truncate"> {{ exhibit.getContent(lang).name }}</h1>
           <h2 class="card-subtitle">{{ exhibit.code }}</h2>
           <div>
             <ngx-qrcode [qrc-element-type]="this.elementType"
@@ -13,7 +13,7 @@
         </section>
         <button class="btn btn-primary w-100"
                 [printStyle]="{body: {'text-align': 'center', 'padding': '20px'}, h1: {'font-size': '1.7em'}, h2: {'font-size': '3em'}}"
-                ngxPrint printSectionId="print-section-{{ exhibit._id }}" printTitle="{{getExhibitContent(exhibit, lang).name}}"
+                ngxPrint printSectionId="print-section-{{ exhibit._id }}" printTitle="{{exhibit.getContent(lang).name}}"
                 aria-label="Print QR code" i18n>
           Print
         </button>

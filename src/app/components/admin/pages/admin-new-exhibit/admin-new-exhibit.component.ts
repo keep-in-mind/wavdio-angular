@@ -95,11 +95,11 @@ export class AdminNewExhibitComponent implements OnInit {
   }
 
   createExhibit() {
-    if (!this.getExhibitContent(this.selectedLanguage).name) {
+    if (!this.exhibit.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.getExhibitContent(this.selectedLanguage).name.startsWith(' ')) {
+    if (this.exhibit.getContent(this.selectedLanguage).name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten. ' +
         'Bitte korrigieren Sie Ihre Eingabe.');
       return;
@@ -133,16 +133,5 @@ export class AdminNewExhibitComponent implements OnInit {
     this.alertType = type;
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
-  }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
   }
 }

@@ -182,31 +182,6 @@ export class UserExhibitComponent implements OnInit {
     }
   }
 
-  getExhibitContent(lang: String): ExhibitContent {
-
-    /* return localized content */
-
-    for (const content of this.exhibit.contents) {
-      if (content.lang === lang) {
-        return content;
-      }
-    }
-
-    /* not available ? fall back to German */
-
-    console.warn('No localized content available for locale ' + lang);
-
-    for (const content of this.exhibit.contents) {
-      if (content.lang === 'de') {
-        return content;
-      }
-    }
-
-    /* not available ? must not happen. has to be created when constructing exhibit */
-
-    console.error('No German fallback content available');
-  }
-
   getMuseumContent(lang: String): MuseumContent {
 
     /* return localized content */

@@ -1,6 +1,6 @@
 <section class="player">
   <video #videoplayer (timeupdate)="updateTime()" preload="metadata">
-    <ng-container *ngFor="let video_file of getExhibitContent(selectedLanguage).video">
+    <ng-container *ngFor="let video_file of exhibit.getContent(selectedLanguage).video">
       <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
               [type]="video_file.mimeType">
     </ng-container>
