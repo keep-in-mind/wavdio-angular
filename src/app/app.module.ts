@@ -26,23 +26,23 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
 
-import {AdminComponent} from './admin/admin.component';
-import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/admin-part-comment-card.component';
-import {AdminPageExhibitComponent} from './admin/admin-page-exhibit/admin-page-exhibit.component';
-import {AdminPageNewExhibitComponent} from './admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
-import {AdminPageStatisticsComponent} from './admin/admin-page-statistics/admin-page-statistics.component';
-import {AdminPageExpositionComponent} from './admin/admin-page-exposition/admin-page-exposition.component';
-import {AdminPageNewExpositionComponent} from './admin/admin-page-new-exposition/admin-page-new-exposition.component';
-import {AdminPageExpositionStatisticsComponent} from './admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
-import {AdminPageHomeComponent} from './admin/admin-page-home/admin-page-home.component';
-import {AdminPageInfoPagesComponent} from './admin/admin-page-info-pages/admin-page-info-pages.component';
-import {AdminPageInfoPageComponent} from './admin/admin-page-info-page/admin-page-info-page.component';
-import {AdminPageNewInfoPageComponent} from './admin/admin-page-new-info-page/admin-page-new-info-page.component';
-import {AdminPageLoginComponent} from './admin/admin-page-login/admin-page-login.component';
-import {AdminPageMuseumStatisticsComponent} from './admin/admin-page-museum-statistics/admin-page-museum-statistics.component';
-import {AdminPagePersonalDataComponent} from './admin/admin-page-personal-data/admin-page-personal-data.component';
-import {AdminPageSettingsComponent} from './admin/admin-page-settings/admin-page-settings.component';
-import {AdminPartSidebarComponent} from './admin/admin-part-sidebar/admin-part-sidebar.component';
+import {AdminPartCommentCardComponent} from './components/admin/admin-part-comment-card/admin-part-comment-card.component';
+import {AdminPageExhibitComponent} from './components/admin/admin-page-exhibit/admin-page-exhibit.component';
+import {AdminPageNewExhibitComponent} from './components/admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
+import {AdminPageStatisticsComponent} from './components/admin/admin-page-statistics/admin-page-statistics.component';
+import {AdminPageExpositionComponent} from './components/admin/admin-page-exposition/admin-page-exposition.component';
+import {AdminPageNewExpositionComponent} from './components/admin/admin-page-new-exposition/admin-page-new-exposition.component';
+// tslint:disable-next-line:max-line-length
+import {AdminPageExpositionStatisticsComponent} from './components/admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
+import {AdminPageHomeComponent} from './components/admin/admin-page-home/admin-page-home.component';
+import {AdminPageInfoPagesComponent} from './components/admin/admin-page-info-pages/admin-page-info-pages.component';
+import {AdminPageInfoPageComponent} from './components/admin/admin-page-info-page/admin-page-info-page.component';
+import {AdminPageNewInfoPageComponent} from './components/admin/admin-page-new-info-page/admin-page-new-info-page.component';
+import {AdminPageLoginComponent} from './components/admin/admin-page-login/admin-page-login.component';
+import {AdminPageMuseumStatisticsComponent} from './components/admin/admin-page-museum-statistics/admin-page-museum-statistics.component';
+import {AdminPagePersonalDataComponent} from './components/admin/admin-page-personal-data/admin-page-personal-data.component';
+import {AdminPageSettingsComponent} from './components/admin/admin-page-settings/admin-page-settings.component';
+import {AdminPartSidebarComponent} from './components/admin/admin-part-sidebar/admin-part-sidebar.component';
 import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
 import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
@@ -65,15 +65,15 @@ import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
-import { PrivacyPolicyComponent } from './user/privacy-policy/privacy-policy.component';
-import { CarouselComponent } from './user/carousel/carousel.component';
-import { ExhibitFullscreenComponent } from './user/exhibit-fullscreen/exhibit-fullscreen.component';
-import { ExpositionFullscreenComponent } from './user/exposition-fullscreen/exposition-fullscreen.component';
-import { MuseumFullscreenComponent } from './user/museum-fullscreen/museum-fullscreen.component';
-import { SiteplanFullscreenComponent } from './user/siteplan-fullscreen/siteplan-fullscreen.component';
-import { ImprintComponent } from './user/imprint/imprint.component';
-import { AdminPageMuseumComponent } from './admin/admin-page-museum/admin-page-museum.component';
-import { AdminPartHeaderComponent } from './admin/admin-part-header/admin-part-header.component';
+import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.component';
+import {CarouselComponent} from './user/carousel/carousel.component';
+import {ExhibitFullscreenComponent} from './user/exhibit-fullscreen/exhibit-fullscreen.component';
+import {ExpositionFullscreenComponent} from './user/exposition-fullscreen/exposition-fullscreen.component';
+import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
+import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
+import {ImprintComponent} from './user/imprint/imprint.component';
+import {AdminPageMuseumComponent} from './components/admin/admin-page-museum/admin-page-museum.component';
+import {AdminPartHeaderComponent} from './components/admin/admin-part-header/admin-part-header.component';
 
 const appRoutes: Routes = [
   {
@@ -89,25 +89,21 @@ const appRoutes: Routes = [
       {path: 'infopage/:id', component: InfopageComponent},
     ]
   },
-  {
-    path: 'admin', component: AdminComponent, children: [
-      {path: '', component: AdminPageLoginComponent},
-      {path: 'museum', component: AdminPageMuseumComponent},
-      {path: 'home', component: AdminPageHomeComponent},
-      {path: 'exposition/new', component: AdminPageNewExpositionComponent},
-      {path: 'exposition/:id', component: AdminPageExpositionComponent},
-      {path: 'exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
-      {path: 'exhibit/:id', component: AdminPageExhibitComponent},
-      {path: 'infopages', component: AdminPageInfoPagesComponent},
-      {path: 'infopage/new', component: AdminPageNewInfoPageComponent},
-      {path: 'infopage/:id', component: AdminPageInfoPageComponent},
-      {path: 'statistics', component: AdminPageMuseumStatisticsComponent},
-      {path: 'statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
-      {path: 'statistics/exhibit/:id', component: AdminPageStatisticsComponent},
-      {path: 'personal-data', component: AdminPagePersonalDataComponent},
-      {path: 'settings', component: AdminPageSettingsComponent}
-    ]
-  },
+  {path: 'admin', component: AdminPageLoginComponent},
+  {path: 'admin/museum', component: AdminPageMuseumComponent},
+  {path: 'admin/home', component: AdminPageHomeComponent},
+  {path: 'admin/exposition/new', component: AdminPageNewExpositionComponent},
+  {path: 'admin/exposition/:id', component: AdminPageExpositionComponent},
+  {path: 'admin/exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
+  {path: 'admin/exhibit/:id', component: AdminPageExhibitComponent},
+  {path: 'admin/infopages', component: AdminPageInfoPagesComponent},
+  {path: 'admin/infopage/new', component: AdminPageNewInfoPageComponent},
+  {path: 'admin/infopage/:id', component: AdminPageInfoPageComponent},
+  {path: 'admin/statistics', component: AdminPageMuseumStatisticsComponent},
+  {path: 'admin/statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
+  {path: 'admin/statistics/exhibit/:id', component: AdminPageStatisticsComponent},
+  {path: 'admin/personal-data', component: AdminPagePersonalDataComponent},
+  {path: 'admin/settings', component: AdminPageSettingsComponent},
   {
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UsageTermsComponent},
@@ -124,7 +120,6 @@ const appRoutes: Routes = [
     WelcomeComponent,
     ExpositionComponent,
     ExhibitComponent,
-    AdminComponent,
     AdminPageLoginComponent,
     AdminPageHomeComponent,
     AdminPartSidebarComponent,
@@ -169,36 +164,36 @@ const appRoutes: Routes = [
     AdminPageMuseumComponent,
     AdminPartHeaderComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        RouterModule.forRoot(
-            appRoutes,
-            {onSameUrlNavigation: 'reload', enableTracing: false} // <-- debugging purposes only
-        ),
-        NgbModule,
-        SlickCarouselModule,
-        FontAwesomeModule,
-        NgxChartsModule,
-        BrowserAnimationsModule,
-        NgxQRCodeModule,
-        NgxPrintModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatListModule,
-        MatIconModule,
-        MatButtonModule,
-        MatMenuModule,
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-        LoggerModule.forRoot({
-          level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
-          serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
-          serverLoggingUrl: '/api/v2/logs'
-        }),
-        MarkdownModule.forRoot()
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {onSameUrlNavigation: 'reload', enableTracing: false} // <-- debugging purposes only
+    ),
+    NgbModule,
+    SlickCarouselModule,
+    FontAwesomeModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
+    NgxQRCodeModule,
+    NgxPrintModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    LoggerModule.forRoot({
+      level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
+      serverLogLevel: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
+      serverLoggingUrl: '/api/v2/logs'
+    }),
+    MarkdownModule.forRoot()
+  ],
   exports: [
     CommentComponent
   ],
