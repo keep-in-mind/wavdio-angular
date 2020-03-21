@@ -61,7 +61,7 @@ import {UserExhibitComponent} from './components/user/pages/user-exhibit/user-ex
 import {UserExpositionComponent} from './components/user/pages/user-exposition/user-exposition.component';
 import {UserInfoPageComponent} from './components/user/pages/user-info-page/user-info-page.component';
 import {UserMuseumComponent} from './components/user/pages/user-museum/user-museum.component';
-import {UserComponent} from './user/user.component';
+import {UserComponent} from './components/user/user.component';
 import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/user-usage-terms.component';
 import {UserWelcomeComponent} from './components/user/pages/user-welcome/user-welcome.component';
 import {environment} from '../environments/environment';
