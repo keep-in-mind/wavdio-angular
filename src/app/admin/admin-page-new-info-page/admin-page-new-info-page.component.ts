@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Infopage} from '../../../models/infopage';
-import {AuthenticationService} from '../../../services/authentification.service';
-import {CookielawService} from '../../../services/cookielaw.service';
-import {InfopageService} from '../../../services/infopage.service';
-import {Breadcrumb} from "../../../models/breadcrumb";
+import {Infopage} from '../../models/infopage';
+import {AuthenticationService} from '../../services/authentification.service';
+import {CookielawService} from '../../services/cookielaw.service';
+import {InfopageService} from '../../services/infopage.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-new-admin-infopage',
-  templateUrl: './new-admin-infopage.component.html',
-  styleUrls: ['./new-admin-infopage.component.css']
+  selector: 'app-admin-page-new-info-page',
+  templateUrl: './admin-page-new-info-page.component.html',
+  styleUrls: ['./admin-page-new-info-page.component.css']
 })
-export class NewAdminInfopageComponent implements OnInit {
+export class AdminPageNewInfoPageComponent implements OnInit {
 
   descHeader = 'Informationsseite anlegen';
 
