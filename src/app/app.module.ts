@@ -36,8 +36,8 @@ import {AdminPageNewExpositionComponent} from './admin/admin-page-new-exposition
 import {AdminPageExpositionStatisticsComponent} from './admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
 import {AdminPageHomeComponent} from './admin/admin-page-home/admin-page-home.component';
 import {AdminPageInfoPagesComponent} from './admin/admin-page-info-pages/admin-page-info-pages.component';
-import {AdminInfopageComponent} from './admin/admin-page-info-pages/infopage/admin-infopage.component';
-import {NewAdminInfopageComponent} from './admin/admin-page-info-pages/infopage/new/new-admin-infopage.component';
+import {AdminPageInfoPageComponent} from './admin/admin-page-info-page/admin-page-info-page.component';
+import {NewAdminInfopageComponent} from './admin/admin-page-info-page/new/new-admin-infopage.component';
 import {LoginComponent} from './admin/login/login.component';
 import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
 import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
@@ -100,7 +100,7 @@ const appRoutes: Routes = [
       {path: 'exhibit/:id', component: AdminPageExhibitComponent},
       {path: 'infopages', component: AdminPageInfoPagesComponent},
       {path: 'infopage/new', component: NewAdminInfopageComponent},
-      {path: 'infopage/:id', component: AdminInfopageComponent},
+      {path: 'infopage/:id', component: AdminPageInfoPageComponent},
       {path: 'statistics', component: MuseumStatisticsComponent},
       {path: 'statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: AdminPageStatisticsComponent},
@@ -144,7 +144,7 @@ const appRoutes: Routes = [
     ExhibitCardComponent,
     BoxCardComponent,
     NewAdminInfopageComponent,
-    AdminInfopageComponent,
+    AdminPageInfoPageComponent,
     UsageTermsComponent,
     AdminPageExpositionStatisticsComponent,
     AdminPageStatisticsComponent,

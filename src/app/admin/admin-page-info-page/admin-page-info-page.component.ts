@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Infopage} from '../../../models/infopage';
-import {AuthenticationService} from '../../../services/authentification.service';
-import {CookielawService} from '../../../services/cookielaw.service';
-import {InfopageService} from '../../../services/infopage.service';
-import {Breadcrumb} from "../../../models/breadcrumb";
+import {Infopage} from '../../models/infopage';
+import {AuthenticationService} from '../../services/authentification.service';
+import {CookielawService} from '../../services/cookielaw.service';
+import {InfopageService} from '../../services/infopage.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-admin-infopage',
-  templateUrl: './admin-infopage.component.html',
-  styleUrls: ['./admin-infopage.component.css']
+  selector: 'app-admin-page-info-page',
+  templateUrl: './admin-page-info-page.component.html',
+  styleUrls: ['./admin-page-info-page.component.css']
 })
-export class AdminInfopageComponent implements OnInit {
+export class AdminPageInfoPageComponent implements OnInit {
 
   descHeader = 'Informationsseite bearbeiten';
 
