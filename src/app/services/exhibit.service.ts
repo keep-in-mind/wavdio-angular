@@ -24,80 +24,79 @@ export class ExhibitService {
     this.logger.trace('getExhibits()');
 
     return this.http.get<Exhibit[]>(this.url).pipe(
-      tap((readExhibits: Exhibit[]) =>
-        this.logger.trace('getExhibits().next(readExhibits: Exhibit[])', readExhibits)),
-      catchError(this.handleError('getExhibits()', []))
+      map(jsonExhibits => jsonExhibits.map(jsonExhibit => Exhibit.fromJSON(jsonExhibit))),
+      tap(readExhibits => this.logger.trace('getExhibits(...)', readExhibits)),
+      catchError(this.handleError('getExhibits(...)', []))
     );
   }
 
   public createExhibit(exhibit: Exhibit): Observable<Exhibit> {
-    this.logger.trace('createExhibit(exhibit: Exhibit)', exhibit);
+    this.logger.trace('createExhibit(exhibit)', exhibit);
 
     return this.http.post<Exhibit>(this.url, exhibit, this.auth.getAuthorizationHeader()).pipe(
-      tap((createdExhibit: Exhibit) =>
-        this.logger.trace('createExhibits().next(createdExhibit: Exhibit)', createdExhibit)),
-      catchError(this.handleError<Exhibit>('createExhibit(exhibit: Exhibit)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(createdExhibit => this.logger.trace('createExhibit(...)', createdExhibit)),
+      catchError(this.handleError<Exhibit>('createExhibit(...)'))
     );
   }
 
   public getExhibit(_id: string): Observable<Exhibit> {
-    this.logger.trace('getExhibit(_id: string)', _id);
+    this.logger.trace('getExhibit(_id)', _id);
 
     return this.http.get<Exhibit>(`${this.url}/${_id}`).pipe(
-      map(json => Exhibit.fromJSON(json)),
-      tap((readExhibit: Exhibit) =>
-        this.logger.trace('getExhibit().next(readExhibit: Exhibit)', readExhibit)),
-      catchError(this.handleError<Exhibit>('getExhibit(_id: string)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(readExhibit => this.logger.trace('getExhibit(...)', readExhibit)),
+      catchError(this.handleError<Exhibit>('getExhibit(...)'))
     );
   }
 
   public updateExhibit(exhibit: Exhibit): Observable<Exhibit> {
-    this.logger.trace('updateExhibit(exhibit: Exhibit)', exhibit);
+    this.logger.trace('updateExhibit(exhibit)', exhibit);
 
     return this.http.patch<Exhibit>(`${this.url}/${exhibit._id}`, exhibit, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedExhibit: Exhibit) =>
-        this.logger.trace('updateExhibit().next(updatedExhibit: Exhibit)', updatedExhibit)),
-      catchError(this.handleError<Exhibit>('updateExhibit(exhibit: Exhibit)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(updatedExhibit => this.logger.trace('updateExhibit(...)', updatedExhibit)),
+      catchError(this.handleError<Exhibit>('updateExhibit(...)'))
     );
   }
 
   public createExhibitLike(exhibit: Exhibit, like: Like): Observable<Exhibit> {
-    this.logger.trace('createExhibitLike(exhibit: Exhibit, like: Like)', exhibit, like);
+    this.logger.trace('createExhibitLike(exhibit, like)', exhibit, like);
 
     return this.http.post<Exhibit>(`${this.url}/${exhibit._id}/like`, like).pipe(
-      tap((updatedExhibit: Exhibit) =>
-        this.logger.trace('createExhibitLike().next(updatedExhibit: Exhibit)', updatedExhibit)),
-      catchError(this.handleError<Exhibit>('createExhibitLike(exhibit: Exhibit, like: Like)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(updatedExhibit => this.logger.trace('createExhibitLike(...)', updatedExhibit)),
+      catchError(this.handleError<Exhibit>('createExhibitLike(...)'))
     );
   }
 
   public deleteExhibitLike(exhibit: Exhibit, like: Like): Observable<Exhibit> {
-    this.logger.trace('deleteExhibitLike(exhibit: Exhibit, like: Like)', exhibit, like);
+    this.logger.trace('deleteExhibitLike(exhibit, like)', exhibit, like);
 
     return this.http.delete<Exhibit>(`${this.url}/${exhibit._id}/like/${like._id}`).pipe(
-      tap((updatedExhibit: Exhibit) =>
-        this.logger.trace('deleteExhibitLike().next(updatedExhibit: Exhibit)', updatedExhibit)),
-      catchError(this.handleError<Exhibit>('deleteExhibitLike(exhibit: Exhibit, like: Like)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(updatedExhibit => this.logger.trace('deleteExhibitLike(...)', updatedExhibit)),
+      catchError(this.handleError<Exhibit>('deleteExhibitLike(...)'))
     );
   }
 
   public updateExhibitCommentLike(exhibit: Exhibit): Observable<Exhibit> {
-    this.logger.trace('updateExhibitCommentLike(exhibit: Exhibit)', exhibit);
+    this.logger.trace('updateExhibitCommentLike(exhibit)', exhibit);
 
     return this.http.patch<Exhibit>(`${this.url}/${exhibit._id}/comment_like`, exhibit).pipe(
-      tap((updatedExhibit: Exhibit) =>
-        this.logger.trace('updateExhibitCommentLike().next(updatedExhibit: Exhibit)', updatedExhibit)),
-      catchError(this.handleError<Exhibit>('updateExhibitCommentLike(exhibit: Exhibit)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(updatedExhibit => this.logger.trace('updateExhibitCommentLike(...)', updatedExhibit)),
+      catchError(this.handleError<Exhibit>('updateExhibitCommentLike(...)'))
     );
   }
 
   public deleteExhibit(exhibit: Exhibit): Observable<Exhibit> {
-    this.logger.trace('deleteExhibit(exhibit: Exhibit)', exhibit);
+    this.logger.trace('deleteExhibit(exhibit)', exhibit);
 
     return this.http.delete<Exhibit>(`${this.url}/${exhibit._id}`, this.auth.getAuthorizationHeader()).pipe(
-      tap((deletedExhibit: Exhibit) =>
-        this.logger.trace('deleteExhibit().next(deletedExhibit: Exhibit)', deletedExhibit)),
-      catchError(this.handleError<Exhibit>('deleteExhibit(exhibit: Exhibit)'))
+      map(jsonExhibit => Exhibit.fromJSON(jsonExhibit)),
+      tap(deletedExhibit => this.logger.trace('deleteExhibit(...)', deletedExhibit)),
+      catchError(this.handleError<Exhibit>('deleteExhibit(...)'))
     );
   }
 
