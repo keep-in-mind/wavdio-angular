@@ -60,7 +60,7 @@ import {UserCommentComponent} from './components/user/parts/user-comment/user-co
 import {UserExhibitComponent} from './components/user/pages/user-exhibit/user-exhibit.component';
 import {UserExpositionComponent} from './components/user/pages/user-exposition/user-exposition.component';
 import {UserInfoPageComponent} from './components/user/pages/user-info-page/user-info-page.component';
-import {MuseumComponent} from './user/museum/museum.component';
+import {UserMuseumComponent} from './components/user/pages/user-museum/user-museum.component';
 import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
@@ -79,7 +79,7 @@ const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
       {path: '', component: WelcomeComponent},
-      {path: 'museum', component: MuseumComponent},
+      {path: 'museum', component: UserMuseumComponent},
       {path: 'museum/fullscreen', component: MuseumFullscreenComponent},
       {path: 'siteplan', component: SiteplanFullscreenComponent},
       {path: 'exposition/:id', component: UserExpositionComponent},
@@ -148,7 +148,7 @@ const appRoutes: Routes = [
     AdminAlertComponent,
     AdminSpinnerComponent,
     AdminQrCodeComponent,
-    MuseumComponent,
+    UserMuseumComponent,
     CommonCookieBannerComponent,
     CommonAudioPlayerComponent,
     CommonVideoPlayerComponent,

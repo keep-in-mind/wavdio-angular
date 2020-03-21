@@ -6,26 +6,26 @@ import {CookieService} from 'ngx-cookie-service';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 
-import {UserCommentComponent} from '../../components/user/parts/user-comment/user-comment.component';
-import {Exhibit} from '../../models/exhibit';
-import {Exposition} from '../../models/exposition';
-import {ExpositionContent} from '../../models/exposition-content';
-import {Infopage} from '../../models/infopage';
-import {Like} from '../../models/like';
-import {Museum} from '../../models/museum';
-import {MuseumContent} from '../../models/museum-content';
-import {CookielawService} from '../../services/cookielaw.service';
-import {ExhibitService} from '../../services/exhibit.service';
-import {ExpositionService} from '../../services/exposition.service';
-import {InfopageService} from '../../services/infopage.service';
-import {MuseumService} from '../../services/museum.service';
+import {UserCommentComponent} from '../../parts/user-comment/user-comment.component';
+import {Exhibit} from '../../../../models/exhibit';
+import {Exposition} from '../../../../models/exposition';
+import {ExpositionContent} from '../../../../models/exposition-content';
+import {Infopage} from '../../../../models/infopage';
+import {Like} from '../../../../models/like';
+import {Museum} from '../../../../models/museum';
+import {MuseumContent} from '../../../../models/museum-content';
+import {CookielawService} from '../../../../services/cookielaw.service';
+import {ExhibitService} from '../../../../services/exhibit.service';
+import {ExpositionService} from '../../../../services/exposition.service';
+import {InfopageService} from '../../../../services/infopage.service';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-museum',
-  templateUrl: './museum.component.html',
-  styleUrls: ['./museum.component.css']
+  selector: 'app-user-museum',
+  templateUrl: './user-museum.component.html',
+  styleUrls: ['./user-museum.component.css']
 })
-export class MuseumComponent implements OnInit, OnDestroy {
+export class UserMuseumComponent implements OnInit, OnDestroy {
   infopages: Infopage[];
 
   mobileQuery: MediaQueryList;
