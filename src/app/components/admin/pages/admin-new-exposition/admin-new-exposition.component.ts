@@ -1,13 +1,13 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
+import {AuthenticationService} from '../../../../services/authentification.service';
+import {Breadcrumb} from '../../../../models/breadcrumb';
 import {Exposition} from '../../../../models/exposition';
 import {ExpositionContent} from '../../../../models/exposition-content';
-import {Museum} from '../../../../models/museum';
-import {AuthenticationService} from '../../../../services/authentification.service';
 import {ExpositionService} from '../../../../services/exposition.service';
+import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
-import {Breadcrumb} from '../../../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-new-exposition',

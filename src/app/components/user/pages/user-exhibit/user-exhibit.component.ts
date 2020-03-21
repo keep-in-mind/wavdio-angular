@@ -1,20 +1,21 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from 'ngx-cookie-service';
 
-import {UserCommentComponent} from '../../parts/user-comment/user-comment.component';
+import {CookielawService} from '../../../../services/cookielaw.service';
 import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitContent} from '../../../../models/exhibit-content';
+import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
+import {ExpositionService} from '../../../../services/exposition.service';
+import {InfopageService} from '../../../../services/infopage.service';
 import {Like} from '../../../../models/like';
 import {Museum} from '../../../../models/museum';
 import {MuseumContent} from '../../../../models/museum-content';
-import {CookielawService} from '../../../../services/cookielaw.service';
-import {ExhibitService} from '../../../../services/exhibit.service';
-import {ExpositionService} from '../../../../services/exposition.service';
-import {InfopageService} from '../../../../services/infopage.service';
 import {MuseumService} from '../../../../services/museum.service';
+import {UserCommentComponent} from '../../parts/user-comment/user-comment.component';
 
 @Component({
   selector: 'app-user-exhibit',

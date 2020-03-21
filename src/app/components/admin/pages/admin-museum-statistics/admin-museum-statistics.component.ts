@@ -1,10 +1,10 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
-import {Exposition} from '../../../../models/exposition';
-import {Museum} from '../../../../models/museum';
-import {ExpositionService} from '../../../../services/exposition.service';
-import {MuseumService} from '../../../../services/museum.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
+import {Exposition} from '../../../../models/exposition';
+import {ExpositionService} from '../../../../services/exposition.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
   selector: 'app-admin-museum-statistics',

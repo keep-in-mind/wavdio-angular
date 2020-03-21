@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
-import {MediaplayerService} from '../../../../services/mediaplayer.service';
 import {Exhibit} from '../../../../models/exhibit';
+import {MediaplayerService} from '../../../../services/mediaplayer.service';
 
 @Component({
   selector: 'app-common-video-player',

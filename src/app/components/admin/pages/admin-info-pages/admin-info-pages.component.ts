@@ -1,17 +1,18 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
-import {Infopage} from '../../../../models/infopage';
-import {Image} from '../../../../models/image';
-import {Museum} from '../../../../models/museum';
 import {AuthenticationService} from '../../../../services/authentification.service';
+import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
 import {FileService} from '../../../../services/file.service';
+import {Image} from '../../../../models/image';
+import {Infopage} from '../../../../models/infopage';
 import {InfopageService} from '../../../../services/infopage.service';
+import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
-import {Breadcrumb} from '../../../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-info-pages',

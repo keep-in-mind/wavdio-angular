@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {CookielawService} from '../../../../services/cookielaw.service';
-import {SettingService} from '../../../../services/setting.service';
-import {AuthenticationService} from '../../../../services/authentification.service';
 import {Router} from '@angular/router';
-import {Setting} from '../../../../models/setting';
+
+import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
+import {CookielawService} from '../../../../services/cookielaw.service';
+import {Setting} from '../../../../models/setting';
+import {SettingService} from '../../../../services/setting.service';
 
 @Component({
   selector: 'app-admin-settings',

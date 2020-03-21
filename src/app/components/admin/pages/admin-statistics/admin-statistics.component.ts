@@ -1,9 +1,9 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
+import {Breadcrumb} from '../../../../models/breadcrumb';
 import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
-import {Breadcrumb} from '../../../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-statistics',

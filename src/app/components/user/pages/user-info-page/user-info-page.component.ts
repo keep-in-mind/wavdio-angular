@@ -1,8 +1,8 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Infopage} from '../../../../models/infopage';
 import {CookielawService} from '../../../../services/cookielaw.service';
+import {Infopage} from '../../../../models/infopage';
 import {InfopageService} from '../../../../services/infopage.service';
 
 @Component({

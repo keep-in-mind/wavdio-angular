@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {NGXLogger} from 'ngx-logger';
 
 import {Comment} from '../../../../models/comment';
-import {Exhibit} from '../../../../models/exhibit';
-import {Exposition} from '../../../../models/exposition';
 import {CookielawService} from '../../../../services/cookielaw.service';
+import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
+import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
 
 @Component({

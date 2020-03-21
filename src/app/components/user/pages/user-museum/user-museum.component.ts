@@ -1,23 +1,21 @@
-import {ChangeDetectorRef, Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from 'ngx-cookie-service';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 
-import {UserCommentComponent} from '../../parts/user-comment/user-comment.component';
+import {CookielawService} from '../../../../services/cookielaw.service';
 import {Exhibit} from '../../../../models/exhibit';
+import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
-import {ExpositionContent} from '../../../../models/exposition-content';
+import {ExpositionService} from '../../../../services/exposition.service';
 import {Infopage} from '../../../../models/infopage';
-import {Like} from '../../../../models/like';
+import {InfopageService} from '../../../../services/infopage.service';
 import {Museum} from '../../../../models/museum';
 import {MuseumContent} from '../../../../models/museum-content';
-import {CookielawService} from '../../../../services/cookielaw.service';
-import {ExhibitService} from '../../../../services/exhibit.service';
-import {ExpositionService} from '../../../../services/exposition.service';
-import {InfopageService} from '../../../../services/infopage.service';
 import {MuseumService} from '../../../../services/museum.service';
 
 @Component({

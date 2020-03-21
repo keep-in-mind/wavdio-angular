@@ -1,20 +1,21 @@
 import {HttpClient} from '@angular/common/http';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminImageDetailsComponent} from '../../parts/admin-part-image-details/admin-image-details.component';
-import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
 import {AdminQrCodeComponent} from '../../parts/admin-part-qr-code/admin-qr-code.component';
-import {Exhibit} from '../../../../models/exhibit';
-import {Exposition} from '../../../../models/exposition';
-import {Image} from '../../../../models/image';
+import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
 import {AuthenticationService} from '../../../../services/authentification.service';
+import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
+import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
+import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
 import {FileService} from '../../../../services/file.service';
-import {Breadcrumb} from '../../../../models/breadcrumb';
+import {Image} from '../../../../models/image';
 
 @Component({
   selector: 'app-admin-exposition',

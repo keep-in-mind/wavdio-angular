@@ -1,13 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {Exhibit} from '../../../../models/exhibit';
-import {Exposition} from '../../../../models/exposition';
-import {Museum} from '../../../../models/museum';
-import {MuseumContent} from '../../../../models/museum-content';
 import {ExhibitService} from '../../../../services/exhibit.service';
+import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
 import {FileService} from '../../../../services/file.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumContent} from '../../../../models/museum-content';
 import {MuseumService} from '../../../../services/museum.service';
 
 @Component({

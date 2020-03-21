@@ -1,13 +1,11 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
 import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
-import {Setting} from '../models/setting';
-
 import {AuthenticationService} from './authentification.service';
+import {Setting} from '../models/setting';
 
 @Injectable({providedIn: 'root'})
 export class SettingService {

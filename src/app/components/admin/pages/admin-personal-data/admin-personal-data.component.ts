@@ -1,17 +1,18 @@
 import {HttpClient} from '@angular/common/http';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminImageDetailsComponent} from '../../parts/admin-part-image-details/admin-image-details.component';
 import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
-import {Image} from '../../../../models/image';
-import {Museum} from '../../../../models/museum';
 import {AuthenticationService, TokenPayloadUpdate} from '../../../../services/authentification.service';
+import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
 import {FileService} from '../../../../services/file.service';
+import {Image} from '../../../../models/image';
+import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
-import {Breadcrumb} from '../../../../models/breadcrumb';
 
 @Component({
   selector: 'app-admin-personal-data',
