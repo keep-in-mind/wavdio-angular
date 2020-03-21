@@ -80,7 +80,7 @@
   <section *ngIf="exhibit" class="content-right ml-3 mr-2">
     <!-- Section Images -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descImages">
+      <app-admin-part-box-card [descHeader]="descImages">
         <div header>
           <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
@@ -91,11 +91,11 @@
                  [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
           </div>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
     <!-- Section Video -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descVideo">
+      <app-admin-part-box-card [descHeader]="descVideo">
         <div header>
           <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
@@ -121,11 +121,11 @@
         <div body *ngIf="getExhibitContent(selectedLanguage).video.length">
           <app-video-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-video-player>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
     <!-- Section Audio -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descAudio">
+      <app-admin-part-box-card [descHeader]="descAudio">
         <div header>
           <!-- Transcript -->
           <fa-icon aria-label="Open Transcript" *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
@@ -177,7 +177,7 @@
         <div body *ngIf="getExhibitContent(selectedLanguage).audio.length">
           <app-common-part-audio-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-part-audio-player>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
   </section>
 </div>

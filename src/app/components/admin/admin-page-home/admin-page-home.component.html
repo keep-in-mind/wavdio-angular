@@ -12,7 +12,7 @@
 
     <!-- Stand-alone exhibits -->
     <section class="mt-2">
-      <app-box-card descHeader="Exhibits">
+      <app-admin-part-box-card descHeader="Exhibits">
         <div header>
           <a *ngIf="museum"
              routerLink="/admin/exhibit/new/{{museum._id}}"
@@ -29,12 +29,12 @@
                             [link]="'/admin/exhibit/'+ exhibit._id">
           </app-exhibit-card>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
 
     <!-- Section Expositions -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descExpositionsHeader">
+      <app-admin-part-box-card [descHeader]="descExpositionsHeader">
         <div header>
           <a routerLink="/admin/exposition/new" routerLinkActive="active">
             <fa-icon aria-label="Add exposition" class="fa-lg" icon="plus-circle"></fa-icon>
@@ -45,7 +45,7 @@
                                [selectedLanguage]="selectedLanguage"
                                [link]="'/admin/exposition/'+ exposition._id"></app-exposition-card>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
   </section>
 </div>

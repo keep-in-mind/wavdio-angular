@@ -46,7 +46,7 @@ import {AdminPartSidebarComponent} from './components/admin/admin-part-sidebar/a
 import {AppComponent} from './app.component';
 import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin-part-alert.component';
 import {CommonPartAudioPlayerComponent} from './components/common/common-part-audio-player/common-part-audio-player.component';
-import {BoxCardComponent} from './helper/box-card/box-card.component';
+import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
 import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
 import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
@@ -137,7 +137,7 @@ const appRoutes: Routes = [
     AdminPageNewExhibitComponent,
     ExpositionCardComponent,
     ExhibitCardComponent,
-    BoxCardComponent,
+    AdminPartBoxCardComponent,
     AdminPageNewInfoPageComponent,
     AdminPageInfoPageComponent,
     UsageTermsComponent,

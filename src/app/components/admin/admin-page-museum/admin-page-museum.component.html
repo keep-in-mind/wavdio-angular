@@ -52,7 +52,7 @@
   <!-- Right Column: Image -->
 
   <section *ngIf="museum" class="content-right m-2">
-    <app-box-card descHeader="Bild">
+    <app-admin-part-box-card descHeader="Bild">
 
       <!-- Header: Upload/Delete Button -->
 
@@ -78,6 +78,6 @@
              [alt]="getMuseumContent(selectedLanguage).image.alternativeText"
              (click)="openImageBigView()"/>
       </div>
-    </app-box-card>
+    </app-admin-part-box-card>
   </section>
 </div>

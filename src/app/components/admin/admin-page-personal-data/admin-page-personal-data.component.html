@@ -50,7 +50,7 @@
 
     <!-- Logo -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descLogo">
+      <app-admin-part-box-card [descHeader]="descLogo">
         <div header>
           <fa-icon [hidden]="getMuseumContent(selectedLanguage).logo" (click)="onLogoInput.click()"
                    class="fa-lg" icon="plus-circle"
@@ -68,7 +68,7 @@
                [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).logo.filename"
                [alt]="getMuseumContent(selectedLanguage).logo.alternativeText"/>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
 
     <!--Neues Passwort anlegen-->

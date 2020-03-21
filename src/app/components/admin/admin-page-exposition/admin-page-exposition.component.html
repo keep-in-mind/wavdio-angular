@@ -75,7 +75,7 @@
   <section *ngIf="exposition" class="content-right ml-3 mr-2">
     <!-- Section Logo-->
     <section class="mt-2">
-      <app-box-card [descHeader]="descLogo">
+      <app-admin-part-box-card [descHeader]="descLogo">
         <div header>
           <fa-icon aria-label="Upload logo" [hidden]="exposition.logo" (click)="uploadLogoInput.click()" class="fa-lg" icon="plus-circle">
           </fa-icon>
@@ -90,11 +90,11 @@
                [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
                [alt]="exposition.logo.alternativeText"/>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
     <!-- Section Exhibits -->
     <section class="mt-2">
-      <app-box-card [descHeader]="descExhibitHeader">
+      <app-admin-part-box-card [descHeader]="descExhibitHeader">
         <div header>
           <a routerLink="/admin/exhibit/new/{{exposition._id}}" routerLinkActive="active">
             <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
@@ -104,7 +104,7 @@
           <app-exhibit-card  [selectedLanguage]="selectedLanguage" [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
                             [link]="'/admin/exhibit/' + exhibit._id"></app-exhibit-card>
         </div>
-      </app-box-card>
+      </app-admin-part-box-card>
     </section>
   </section>
 </div>
