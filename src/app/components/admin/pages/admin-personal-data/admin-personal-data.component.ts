@@ -31,7 +31,6 @@ export class AdminPersonalDataComponent implements OnInit {
   };
   museum: Museum;
 
-  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
   newPasswordRepeat: string;
 

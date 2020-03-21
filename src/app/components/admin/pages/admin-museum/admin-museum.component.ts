@@ -23,7 +23,6 @@ export class AdminMuseumComponent implements OnInit {
 
   museum: Museum;
 
-  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;

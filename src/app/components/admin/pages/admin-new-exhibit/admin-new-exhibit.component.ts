@@ -23,7 +23,6 @@ export class AdminNewExhibitComponent implements OnInit {
   exhibit: Exhibit;
   expositionId: string;
 
-  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;

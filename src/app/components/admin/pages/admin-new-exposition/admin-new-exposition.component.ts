@@ -21,7 +21,6 @@ export class AdminNewExpositionComponent implements OnInit {
   exposition: Exposition;
   museum: Museum;
 
-  languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
   alertType: number;
