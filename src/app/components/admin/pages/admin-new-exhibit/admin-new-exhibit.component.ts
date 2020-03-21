@@ -86,17 +86,8 @@ export class AdminNewExhibitComponent implements OnInit {
                   const englishContent = new ExhibitContent('en', '', '', null, [], [], []);
                   const spanishContent = new ExhibitContent('es', '', '', null, [], [], []);
                   const frenchContent = new ExhibitContent('fr', '', '', null, [], [], []);
-                  this.exhibit = new Exhibit(
-                    this.expositionId,
-                    parentModel,
-                    true,
-                    minCode,
-                    '',
-                    [],
-                    [],
-                    [],
+                  this.exhibit = new Exhibit(null, this.expositionId, parentModel, true, minCode, '', [], [], [],
                     [germanContent, englishContent, spanishContent, frenchContent]);
-
                 });
             });
         });

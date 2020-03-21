@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
 
 import {AuthenticationService} from './authentification.service';
 import {Exhibit} from '../models/exhibit';
@@ -44,6 +44,7 @@ export class ExhibitService {
     this.logger.trace('getExhibit(_id: string)', _id);
 
     return this.http.get<Exhibit>(`${this.url}/${_id}`).pipe(
+      map(json => Exhibit.fromJSON(json)),
       tap((readExhibit: Exhibit) =>
         this.logger.trace('getExhibit().next(readExhibit: Exhibit)', readExhibit)),
       catchError(this.handleError<Exhibit>('getExhibit(_id: string)'))
