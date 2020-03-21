@@ -40,7 +40,7 @@ import {AdminPageInfoPageComponent} from './admin/admin-page-info-page/admin-pag
 import {AdminPageNewInfoPageComponent} from './admin/admin-page-new-info-page/admin-page-new-info-page.component';
 import {AdminPageLoginComponent} from './admin/admin-page-login/admin-page-login.component';
 import {AdminPageMuseumStatisticsComponent} from './admin/admin-page-museum-statistics/admin-page-museum-statistics.component';
-import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
+import {AdminPagePersonalDataComponent} from './admin/admin-page-personal-data/admin-page-personal-data.component';
 import {SettingsComponent} from './admin/settings/settings.component';
 import {SidebarComponent} from './admin/sidebar/sidebar.component';
 import {AppComponent} from './app.component';
@@ -104,7 +104,7 @@ const appRoutes: Routes = [
       {path: 'statistics', component: AdminPageMuseumStatisticsComponent},
       {path: 'statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: AdminPageStatisticsComponent},
-      {path: 'personal-data', component: PersonalDataComponent},
+      {path: 'personal-data', component: AdminPagePersonalDataComponent},
       {path: 'settings', component: SettingsComponent}
     ]
   },
@@ -131,7 +131,7 @@ const appRoutes: Routes = [
     AdminPageExpositionComponent,
     AdminPageExhibitComponent,
     AdminPageInfoPagesComponent,
-    PersonalDataComponent,
+    AdminPagePersonalDataComponent,
     AdminPageHomeComponent,
     AdminPageMuseumStatisticsComponent,
     CommentComponent,

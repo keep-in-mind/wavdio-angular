@@ -11,14 +11,14 @@ import {AuthenticationService, TokenPayloadUpdate} from '../../services/authenti
 import {CookielawService} from '../../services/cookielaw.service';
 import {FileService} from '../../services/file.service';
 import {MuseumService} from '../../services/museum.service';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-personal-data',
-  templateUrl: './personal-data.component.html',
-  styleUrls: ['./personal-data.component.css']
+  selector: 'app-admin-page-personal-data',
+  templateUrl: './admin-page-personal-data.component.html',
+  styleUrls: ['./admin-page-personal-data.component.css']
 })
-export class PersonalDataComponent implements OnInit {
+export class AdminPagePersonalDataComponent implements OnInit {
 
   descHeader = 'Persönlicher Bereich';
   descLogo = 'Logo';
