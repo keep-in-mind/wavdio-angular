@@ -7,11 +7,11 @@ import {MuseumService} from '../../services/museum.service';
 import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-statistics',
-  templateUrl: './museum-statistics.component.html',
-  styleUrls: ['./museum-statistics.component.css']
+  selector: 'app-admin-page-museum-statistics',
+  templateUrl: './admin-page-museum-statistics.component.html',
+  styleUrls: ['./admin-page-museum-statistics.component.css']
 })
-export class MuseumStatisticsComponent implements OnInit {
+export class AdminPageMuseumStatisticsComponent implements OnInit {
 
   expositions: Exposition[];
 
