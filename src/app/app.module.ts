@@ -57,7 +57,7 @@ import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/
 import {CommonVideoPlayerComponent} from './components/common/parts/common-video-player/common-video-player.component';
 import {UserAppBarComponent} from './components/user/parts/user-app-bar/user-app-bar.component';
 import {UserCommentComponent} from './components/user/parts/user-comment/user-comment.component';
-import {ExhibitComponent} from './user/exhibit/exhibit.component';
+import {UserExhibitComponent} from './components/user/pages/user-exhibit/user-exhibit.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
 import {InfopageComponent} from './user/infopage/infopage.component';
 import {MuseumComponent} from './user/museum/museum.component';
@@ -84,7 +84,7 @@ const appRoutes: Routes = [
       {path: 'siteplan', component: SiteplanFullscreenComponent},
       {path: 'exposition/:id', component: ExpositionComponent},
       {path: 'exposition/:id/fullscreen', component: ExpositionFullscreenComponent},
-      {path: 'exhibit/:id', component: ExhibitComponent},
+      {path: 'exhibit/:id', component: UserExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: ExhibitFullscreenComponent},
       {path: 'infopage/:id', component: InfopageComponent},
     ]
@@ -119,7 +119,7 @@ const appRoutes: Routes = [
     AppComponent,
     WelcomeComponent,
     ExpositionComponent,
-    ExhibitComponent,
+    UserExhibitComponent,
     AdminLoginComponent,
     AdminHomeComponent,
     AdminSidebarComponent,
