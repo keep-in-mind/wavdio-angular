@@ -6,11 +6,11 @@ import {AuthenticationService} from '../../services/authentification.service';
 import {ExpositionService} from '../../services/exposition.service';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-admin-part-sidebar',
+  templateUrl: './admin-part-sidebar.component.html',
+  styleUrls: ['./admin-part-sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class AdminPartSidebarComponent implements OnInit {
 
   constructor(private expositionService: ExpositionService, private router: Router,
     private cookieService: CookieService,

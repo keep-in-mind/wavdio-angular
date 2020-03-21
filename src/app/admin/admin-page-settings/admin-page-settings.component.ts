@@ -7,11 +7,11 @@ import {Setting} from '../../models/setting';
 import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  selector: 'app-admin-page-settings',
+  templateUrl: './admin-page-settings.component.html',
+  styleUrls: ['./admin-page-settings.component.css']
 })
-export class SettingsComponent implements OnInit {
+export class AdminPageSettingsComponent implements OnInit {
 
   setting: Setting;
 

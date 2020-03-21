@@ -41,8 +41,8 @@ import {AdminPageNewInfoPageComponent} from './admin/admin-page-new-info-page/ad
 import {AdminPageLoginComponent} from './admin/admin-page-login/admin-page-login.component';
 import {AdminPageMuseumStatisticsComponent} from './admin/admin-page-museum-statistics/admin-page-museum-statistics.component';
 import {AdminPagePersonalDataComponent} from './admin/admin-page-personal-data/admin-page-personal-data.component';
-import {SettingsComponent} from './admin/settings/settings.component';
-import {SidebarComponent} from './admin/sidebar/sidebar.component';
+import {AdminPageSettingsComponent} from './admin/admin-page-settings/admin-page-settings.component';
+import {AdminPartSidebarComponent} from './admin/admin-part-sidebar/admin-part-sidebar.component';
 import {AppComponent} from './app.component';
 import {AlertComponent} from './helper/alert/alert.component';
 import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
@@ -105,7 +105,7 @@ const appRoutes: Routes = [
       {path: 'statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
       {path: 'statistics/exhibit/:id', component: AdminPageStatisticsComponent},
       {path: 'personal-data', component: AdminPagePersonalDataComponent},
-      {path: 'settings', component: SettingsComponent}
+      {path: 'settings', component: AdminPageSettingsComponent}
     ]
   },
   {
@@ -127,7 +127,7 @@ const appRoutes: Routes = [
     AdminComponent,
     AdminPageLoginComponent,
     AdminPageHomeComponent,
-    SidebarComponent,
+    AdminPartSidebarComponent,
     AdminPageExpositionComponent,
     AdminPageExhibitComponent,
     AdminPageInfoPagesComponent,
@@ -157,7 +157,7 @@ const appRoutes: Routes = [
     CookieBannerComponent,
     AudioPlayerComponent,
     VideoPlayerComponent,
-    SettingsComponent,
+    AdminPageSettingsComponent,
     AppBarComponent,
     PrivacyPolicyComponent,
     CarouselComponent,
