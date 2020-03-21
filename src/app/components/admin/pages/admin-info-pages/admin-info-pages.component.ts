@@ -22,7 +22,7 @@ import {MuseumService} from '../../../../services/museum.service';
 export class AdminInfoPagesComponent implements OnInit {
 
   descHeader = 'Infoseiten';
-  descInfopageBox = 'Infoseiten';
+  descInfoPageBox = 'Infoseiten';
   descLageplan = 'Lageplan';
 
   infoPages: InfoPage[];
