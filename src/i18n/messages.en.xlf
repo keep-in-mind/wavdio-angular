@@ -364,9 +364,9 @@
         <source>I accept the</source>
         <target state="final">I accept the</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-welcome/user-welcome.component.html
+          </context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
@@ -376,7 +376,8 @@
         <target state="final">terms of use</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-welcome/user-welcome.component.html
+          </context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
@@ -385,9 +386,9 @@
         <source>and the</source>
         <target state="final">and the</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-welcome/user-welcome.component.html
+          </context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
@@ -396,9 +397,9 @@
         <source>privacy policy</source>
         <target state="final">privacy policy</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/welcome/welcome.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-welcome/user-welcome.component.html
+          </context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
@@ -408,7 +409,8 @@
         <target state="final">Enter comment:</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-comment/user-comment.component.html
+          </context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -422,7 +424,8 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-comment/user-comment.component.html
+          </context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -436,7 +439,8 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/comment/comment.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-comment/user-comment.component.html
+          </context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
@@ -445,13 +449,13 @@
         <source>Info</source>
         <target state="final">Info</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-exposition/user-exposition.component.html
+          </context>
           <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
           <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
@@ -460,13 +464,13 @@
         <source>Exhibits</source>
         <target state="final">Exhibits</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exposition/exposition.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-exposition/user-exposition.component.html
+          </context>
           <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
           <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
@@ -475,9 +479,9 @@
         <source>Audio Transcript</source>
         <target state="final">Audio Transcript</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/exhibit/exhibit.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-exhibit/user-exhibit.component.html
+          </context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
@@ -487,19 +491,27 @@
         <target state="final">Description</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
@@ -509,7 +521,9 @@
         <target state="final">Save</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
@@ -519,7 +533,9 @@
         <target state="final">Delete</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
@@ -529,7 +545,9 @@
         <target state="final">Cancel</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/image-details/image-details.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+          </context>
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
@@ -539,7 +557,9 @@
         <target state="final">Loading...</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-spinner/admin-spinner.component.html
+          </context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -553,7 +573,9 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/spinner/spinner.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-spinner/admin-spinner.component.html
+          </context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -567,7 +589,9 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/qrcode/qrcode.component.html</context>
+          <context context-type="sourcefile">
+            app/components/admin/parts/admin-part-qr-code/admin-qr-code.component.html
+          </context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
@@ -577,7 +601,8 @@
         <target state="final">An error has occurred</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
+          <context context-type="sourcefile">app/components/common/pages/common-error/common-error.component.html
+          </context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -591,7 +616,8 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/error-page/error-page.component.html</context>
+          <context context-type="sourcefile">app/components/common/pages/common-error/common-error.component.html
+          </context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
@@ -600,14 +626,15 @@
         <source>Terms of Use</source>
         <target state="final">Terms of Use</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/usage-terms/usage-terms.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="sourcefile">
+            app/components/user/pages/user-usage-terms/user-usage-terms.component.html
+          </context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
 
@@ -616,19 +643,17 @@
         <target state="final">Site Plan</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
-
 
       <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
         <source>Expositions</source>
         <target state="final">Expositions</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
           <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
@@ -638,7 +663,9 @@
         <target state="final">This website uses cookies</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="sourcefile">
+            app/components/common/parts/common-cookie-banner/common-cookie-banner.component.html
+          </context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -654,7 +681,9 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="sourcefile">
+            app/components/common/parts/common-cookie-banner/common-cookie-banner.component.html
+          </context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
@@ -668,11 +697,12 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/helper/cookie-banner/cookie-banner.component.html</context>
+          <context context-type="sourcefile">
+            app/components/common/parts/common-cookie-banner/common-cookie-banner.component.html
+          </context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-
 
       <trans-unit id="38747b1074c11845febe44eef5fc1ef0c1c30925" datatype="html">
         <source>
@@ -684,9 +714,9 @@
           German
         </target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-app-bar/user-app-bar.component.html
+          </context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
@@ -701,9 +731,9 @@
           English
         </target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-app-bar/user-app-bar.component.html
+          </context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
@@ -718,9 +748,9 @@
           Spanish
         </target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-app-bar/user-app-bar.component.html
+          </context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
@@ -735,9 +765,9 @@
           French
         </target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/app-bar/app-bar.component.html</context>
+          <context context-type="sourcefile">app/components/user/parts/user-app-bar/user-app-bar.component.html
+          </context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
@@ -746,13 +776,14 @@
         <source>Privacy Policy</source>
         <target state="final">Privacy Policy</target>
 
-
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/privacy-policy/privacy-policy.component.html</context>
+          <context context-type="sourcefile">
+            app/components/user/pages/user-privacy-policy/user-privacy-policy.component.html
+          </context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
@@ -762,12 +793,13 @@
         <target state="final">Imprint</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/museum/museum.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="sourcefile">app/components/user/pages/user-imprint/user-imprint.component.html
+          </context>
+          <context context-type="linenumber">2</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/imprint/imprint.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
 
