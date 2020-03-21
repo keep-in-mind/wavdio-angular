@@ -49,11 +49,11 @@ import {CommonPartAudioPlayerComponent} from './components/common/common-part-au
 import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
 import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
 import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
-import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-part/common-part-exhibit-card.component';
+import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-card/common-part-exhibit-card.component';
 import {CommonPartExpositionCardComponent} from './components/common/common-part-exposition-card/common-part-exposition-card.component';
 import {AdminPartImageDetailsComponent} from './components/admin/admin-part-image-details/admin-part-image-details.component';
-import {SpinnerComponent} from './helper/spinner/spinner.component';
-import {QrcodeComponent} from './helper/qrcode/qrcode.component';
+import {AdminPartSpinnerComponent} from './components/admin/admin-part-spinner/admin-part-spinner.component';
+import {AdminPartQrCodeComponent} from './components/admin/admin-part-qr-code/admin-part-qr-code.component';
 import {VideoPlayerComponent} from './helper/video-player/video-player.component';
 import {AppBarComponent} from './user/app-bar/app-bar.component';
 import {CommentComponent} from './user/comment/comment.component';
@@ -146,8 +146,8 @@ const appRoutes: Routes = [
     AdminPartCommentCardComponent,
     AdminPartImageDetailsComponent,
     AdminPartAlertComponent,
-    SpinnerComponent,
-    QrcodeComponent,
+    AdminPartSpinnerComponent,
+    AdminPartQrCodeComponent,
     MuseumComponent,
     CommonPartCookieBannerComponent,
     CommonPartAudioPlayerComponent,
@@ -200,8 +200,8 @@ const appRoutes: Routes = [
   entryComponents: [
     CommentComponent,
     AdminPartImageDetailsComponent,
-    SpinnerComponent,
-    QrcodeComponent
+    AdminPartSpinnerComponent,
+    AdminPartQrCodeComponent
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import {Image} from '../../../models/image';
 import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
 import {Museum} from '../../../models/museum';
 import {MuseumService} from '../../../services/museum.service';
-import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
+import {AdminPartSpinnerComponent} from '../admin-part-spinner/admin-part-spinner.component';
 
 @Component({
   selector: 'app-admin-page-museum',
@@ -113,7 +113,7 @@ export class AdminPageMuseumComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       this.getMuseumContent(this.selectedLanguage).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();

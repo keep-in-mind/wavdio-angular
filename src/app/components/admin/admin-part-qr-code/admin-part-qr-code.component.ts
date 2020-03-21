@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Exhibit} from '../../models/exhibit';
+import {Exhibit} from '../../../models/exhibit';
 
 @Component({
-  selector: 'app-qrcode',
-  templateUrl: './qrcode.component.html',
-  styleUrls: ['./qrcode.component.css']
+  selector: 'app-admin-part-qr-code',
+  templateUrl: './admin-part-qr-code.component.html',
+  styleUrls: ['./admin-part-qr-code.component.css']
 })
-export class QrcodeComponent implements OnInit {
+export class AdminPartQrCodeComponent implements OnInit {
 
   elementType: 'url' | 'canvas' | 'img' = 'url';
   host: string;

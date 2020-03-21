@@ -2,7 +2,7 @@ import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
+import {AdminPartSpinnerComponent} from '../admin-part-spinner/admin-part-spinner.component';
 import {Infopage} from '../../../models/infopage';
 import {Image} from '../../../models/image';
 import {Museum} from '../../../models/museum';
@@ -69,7 +69,7 @@ export class AdminPageInfoPagesComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       const mapname = this.selectedLanguage === 'de' ? 'Karte' : 'map';
       this.getMuseumContent(this.selectedLanguage).sitePlan = new Image(randomFilename, mapname);

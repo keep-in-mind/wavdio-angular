@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
-import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
+import {AdminPartSpinnerComponent} from '../admin-part-spinner/admin-part-spinner.component';
 import {Image} from '../../../models/image';
 import {Museum} from '../../../models/museum';
 import {AuthenticationService, TokenPayloadUpdate} from '../../../services/authentification.service';
@@ -131,7 +131,7 @@ export class AdminPagePersonalDataComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       this.getMuseumContent(this.locale).logo = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
@@ -147,7 +147,7 @@ export class AdminPagePersonalDataComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();

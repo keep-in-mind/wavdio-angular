@@ -4,8 +4,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbDropdownConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
-import {QrcodeComponent} from '../../../helper/qrcode/qrcode.component';
-import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
+import {AdminPartQrCodeComponent} from '../admin-part-qr-code/admin-part-qr-code.component';
+import {AdminPartSpinnerComponent} from '../admin-part-spinner/admin-part-spinner.component';
 import {Audio} from '../../../models/audio';
 import {Exhibit} from '../../../models/exhibit';
 import {Image} from '../../../models/image';
@@ -107,7 +107,7 @@ export class AdminPageExhibitComponent implements OnInit {
   }
 
   openQRCode() {
-    const modal = this.modalService.open(QrcodeComponent, {centered: true});
+    const modal = this.modalService.open(AdminPartQrCodeComponent, {centered: true});
     modal.componentInstance.exhibits.push(this.exhibit);
     modal.componentInstance.lang = this.selectedLanguage;
   }
@@ -176,7 +176,7 @@ export class AdminPageExhibitComponent implements OnInit {
 
     reader.onload = () => {
       text = reader.result;
-      const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+      const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
       this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
         this.getExhibitContent(this.selectedLanguage).transcript = new Transcript(randomFilename, text);
         this.updateExhibit();
@@ -193,7 +193,7 @@ export class AdminPageExhibitComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
       this.getExhibitContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
       this.updateExhibit();
@@ -213,7 +213,7 @@ export class AdminPageExhibitComponent implements OnInit {
       return;
     }
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, file.name).subscribe(() => {
       this.getExhibitContent(this.selectedLanguage).audio.push(new Audio(file.name, file.type));
       this.updateExhibit();
@@ -233,7 +233,7 @@ export class AdminPageExhibitComponent implements OnInit {
       return;
     }
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, file.name).subscribe(() => {
       this.getExhibitContent(this.selectedLanguage).video.push(new Video(file.name, file.type, 'transcript'));
       this.updateExhibit();

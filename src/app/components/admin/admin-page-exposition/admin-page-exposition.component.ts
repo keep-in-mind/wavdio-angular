@@ -4,8 +4,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
-import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
-import {QrcodeComponent} from '../../../helper/qrcode/qrcode.component';
+import {AdminPartSpinnerComponent} from '../admin-part-spinner/admin-part-spinner.component';
+import {AdminPartQrCodeComponent} from '../admin-part-qr-code/admin-part-qr-code.component';
 import {Exhibit} from '../../../models/exhibit';
 import {Exposition} from '../../../models/exposition';
 import {Image} from '../../../models/image';
@@ -124,7 +124,7 @@ export class AdminPageExpositionComponent implements OnInit {
   }
 
   openQRCode() {
-    const modal = this.modalService.open(QrcodeComponent, {centered: true});
+    const modal = this.modalService.open(AdminPartQrCodeComponent, {centered: true});
     modal.componentInstance.exhibits = this.exhibits;
     modal.componentInstance.lang = this.selectedLanguage;
   }
@@ -152,7 +152,7 @@ export class AdminPageExpositionComponent implements OnInit {
     // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
     inputElement.value = '';
 
-    const spinner = this.modalService.open(SpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    const spinner = this.modalService.open(AdminPartSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exposition._id, file, randomFilename).subscribe(() => {
       this.exposition.logo = new Image(randomFilename, 'alt');
       this.expositionService.updateExposition(this.exposition).subscribe();
