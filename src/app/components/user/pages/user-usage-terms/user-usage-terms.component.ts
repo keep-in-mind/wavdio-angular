@@ -1,14 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
-import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-usage-terms',
-  templateUrl: './usage-terms.component.html',
-  styleUrls: ['./usage-terms.component.css']
+  selector: 'app-user-usage-terms',
+  templateUrl: './user-usage-terms.component.html',
+  styleUrls: ['./user-usage-terms.component.css']
 })
-export class UsageTermsComponent implements OnInit {
+export class UserUsageTermsComponent implements OnInit {
 
   museum: Museum;
 

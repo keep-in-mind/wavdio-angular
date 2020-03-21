@@ -62,7 +62,7 @@ import {UserExpositionComponent} from './components/user/pages/user-exposition/u
 import {UserInfoPageComponent} from './components/user/pages/user-info-page/user-info-page.component';
 import {UserMuseumComponent} from './components/user/pages/user-museum/user-museum.component';
 import {UserComponent} from './user/user.component';
-import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
+import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/user-usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import {UserPrivacyPolicyComponent} from './components/user/pages/user-privacy-policy/user-privacy-policy.component';
@@ -106,7 +106,7 @@ const appRoutes: Routes = [
   {path: 'admin/settings', component: AdminSettingsComponent},
   {
     path: 'user', component: UserComponent, children: [
-      {path: 'usage-terms', component: UsageTermsComponent},
+      {path: 'usage-terms', component: UserUsageTermsComponent},
       {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
       {path: 'imprint', component: UserImprintComponent}
     ]
@@ -140,7 +140,7 @@ const appRoutes: Routes = [
     AdminBoxCardComponent,
     AdminNewInfoPageComponent,
     AdminInfoPageComponent,
-    UsageTermsComponent,
+    UserUsageTermsComponent,
     AdminExpositionStatisticsComponent,
     AdminStatisticsComponent,
     AdminCommentCardComponent,
