@@ -47,7 +47,7 @@ import {AppComponent} from './app.component';
 import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin-part-alert.component';
 import {CommonPartAudioPlayerComponent} from './components/common/common-part-audio-player/common-part-audio-player.component';
 import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
-import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
+import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
 import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
 import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
@@ -149,7 +149,7 @@ const appRoutes: Routes = [
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
-    CookieBannerComponent,
+    CommonPartCookieBannerComponent,
     CommonPartAudioPlayerComponent,
     VideoPlayerComponent,
     AdminPageSettingsComponent,
