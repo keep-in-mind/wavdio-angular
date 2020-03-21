@@ -70,7 +70,7 @@ import {UserCarouselComponent} from './components/user/parts/user-carousel/user-
 import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhibit-fullscreen/user-exhibit-fullscreen.component';
 import {UserExpositionFullscreenComponent} from './components/user/pages/user-exposition-fullscreen/user-exposition-fullscreen.component';
 import {UserMuseumFullscreenComponent} from './components/user/pages/user-museum-fullscreen/user-museum-fullscreen.component';
-import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
+import {UserSitePlanFullscreenComponent} from './components/user/pages/user-site-plan-fullscreen/user-site-plan-fullscreen.component';
 import {UserImprintComponent} from './components/user/pages/user-imprint/user-imprint.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/admin-header.component';
@@ -81,7 +81,7 @@ const appRoutes: Routes = [
       {path: '', component: WelcomeComponent},
       {path: 'museum', component: UserMuseumComponent},
       {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
-      {path: 'siteplan', component: SiteplanFullscreenComponent},
+      {path: 'siteplan', component: UserSitePlanFullscreenComponent},
       {path: 'exposition/:id', component: UserExpositionComponent},
       {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: UserExhibitComponent},
@@ -159,7 +159,7 @@ const appRoutes: Routes = [
     UserExhibitFullscreenComponent,
     UserExpositionFullscreenComponent,
     UserMuseumFullscreenComponent,
-    SiteplanFullscreenComponent,
+    UserSitePlanFullscreenComponent,
     UserImprintComponent,
     AdminMuseumComponent,
     AdminHeaderComponent
