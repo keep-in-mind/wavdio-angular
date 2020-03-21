@@ -16,7 +16,7 @@
     </div>
 
     <!-- Exposition Title -->
-    <h1 *ngIf="exposition" class="mt-2 px-2">{{ getExpositionContent(locale).name }}</h1>
+    <h1 *ngIf="exposition" class="mt-2 px-2">{{ exposition.getContent(locale).name }}</h1>
 
     <!-- Tabs -->
     <mat-tab-group mat-stretch-tabs>
@@ -24,7 +24,7 @@
       <!-- Info -->
       <mat-tab label="Info" i18n-label>
         <p *ngIf="exposition" class="p-2">
-          <markdown>{{ getExpositionContent(locale).info }}</markdown>
+          <markdown>{{ exposition.getContent(locale).info }}</markdown>
         </p>
       </mat-tab>
 

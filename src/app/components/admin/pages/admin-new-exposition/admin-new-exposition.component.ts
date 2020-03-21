@@ -63,11 +63,11 @@ export class AdminNewExpositionComponent implements OnInit {
   }
 
   createExposition() {
-    if (!this.getExpositionContent(this.selectedLanguage).name) {
+    if (!this.exposition.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.getExpositionContent(this.selectedLanguage).name.startsWith(' ')) {
+    if (this.exposition.getContent(this.selectedLanguage).name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten. ' +
         'Bitte korrigieren Sie Ihre Eingabe.');
       return;
@@ -90,16 +90,5 @@ export class AdminNewExpositionComponent implements OnInit {
     this.alertType = type;
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
-  }
-
-  getExpositionContent(locale: string) {
-    for (const content of this.exposition.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exposition
-    console.error(`ExpositionContent missing for locale ${locale}`);
   }
 }

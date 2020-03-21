@@ -88,7 +88,7 @@ export class AdminExpositionStatsComponent implements OnInit {
           data.push({name: new Date(like.timestamp), value: accumulatedLikes});
         }
 
-        this.multi = [{name: this.getExpositionContent(this.locale).name, series: data}];
+        this.multi = [{name: this.exposition.getContent(this.locale).name, series: data}];
 
         /* get exhibits that belong to exposition */
 
@@ -97,16 +97,5 @@ export class AdminExpositionStatsComponent implements OnInit {
         });
       });
     });
-  }
-
-  getExpositionContent(locale: string) {
-    for (const content of this.exposition.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exposition
-    console.error(`ExpositionContent missing for locale ${locale}`);
   }
 }
