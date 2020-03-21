@@ -35,9 +35,9 @@ import {AdminPageExpositionComponent} from './admin/admin-page-exposition/admin-
 import {AdminPageNewExpositionComponent} from './admin/admin-page-new-exposition/admin-page-new-exposition.component';
 import {AdminPageExpositionStatisticsComponent} from './admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
 import {AdminPageHomeComponent} from './admin/admin-page-home/admin-page-home.component';
-import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
-import {AdminInfopageComponent} from './admin/infopages/infopage/admin-infopage.component';
-import {NewAdminInfopageComponent} from './admin/infopages/infopage/new/new-admin-infopage.component';
+import {AdminPageInfoPagesComponent} from './admin/admin-page-info-pages/admin-page-info-pages.component';
+import {AdminInfopageComponent} from './admin/admin-page-info-pages/infopage/admin-infopage.component';
+import {NewAdminInfopageComponent} from './admin/admin-page-info-pages/infopage/new/new-admin-infopage.component';
 import {LoginComponent} from './admin/login/login.component';
 import {MuseumStatisticsComponent} from './admin/museum-statistics/museum-statistics.component';
 import {PersonalDataComponent} from './admin/personal-data/personal-data.component';
@@ -98,7 +98,7 @@ const appRoutes: Routes = [
       {path: 'exposition/:id', component: AdminPageExpositionComponent},
       {path: 'exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
       {path: 'exhibit/:id', component: AdminPageExhibitComponent},
-      {path: 'infopages', component: AdminInfopagesComponent},
+      {path: 'infopages', component: AdminPageInfoPagesComponent},
       {path: 'infopage/new', component: NewAdminInfopageComponent},
       {path: 'infopage/:id', component: AdminInfopageComponent},
       {path: 'statistics', component: MuseumStatisticsComponent},
@@ -130,7 +130,7 @@ const appRoutes: Routes = [
     SidebarComponent,
     AdminPageExpositionComponent,
     AdminPageExhibitComponent,
-    AdminInfopagesComponent,
+    AdminPageInfoPagesComponent,
     PersonalDataComponent,
     AdminPageHomeComponent,
     MuseumStatisticsComponent,

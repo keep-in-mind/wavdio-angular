@@ -11,14 +11,14 @@ import {CookielawService} from '../../services/cookielaw.service';
 import {FileService} from '../../services/file.service';
 import {InfopageService} from '../../services/infopage.service';
 import {MuseumService} from '../../services/museum.service';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-infopage-overwiev',
-  templateUrl: './admin-infopages.component.html',
-  styleUrls: ['./admin-infopages.component.css']
+  selector: 'app-admin-page-info-pages',
+  templateUrl: './admin-page-info-pages.component.html',
+  styleUrls: ['./admin-page-info-pages.component.css']
 })
-export class AdminInfopagesComponent implements OnInit {
+export class AdminPageInfoPagesComponent implements OnInit {
 
   descHeader = 'Infoseiten';
   descInfopageBox = 'Infoseiten';
