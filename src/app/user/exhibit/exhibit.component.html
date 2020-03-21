@@ -27,7 +27,7 @@
                 <fa-icon icon="headphones" size="lg"></fa-icon>
               </div>
 
-              <app-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-audio-player>
+              <app-common-part-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-part-audio-player>
 
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
                 <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">

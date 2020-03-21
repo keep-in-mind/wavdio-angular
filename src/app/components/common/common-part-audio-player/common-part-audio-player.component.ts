@@ -1,15 +1,15 @@
 import {Component, ElementRef, Inject, Input, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
 
-import {Exhibit} from '../../models/exhibit';
-import {MediaplayerService} from '../../services/mediaplayer.service';
+import {Exhibit} from '../../../models/exhibit';
+import {MediaplayerService} from '../../../services/mediaplayer.service';
 
 @Component({
-  selector: 'app-audio-player',
-  templateUrl: './audio-player.component.html',
-  styleUrls: ['./audio-player.component.css'],
+  selector: 'app-common-part-audio-player',
+  templateUrl: './common-part-audio-player.component.html',
+  styleUrls: ['./common-part-audio-player.component.css'],
   providers: [MediaplayerService]
 })
-export class AudioPlayerComponent implements OnInit {
+export class CommonPartAudioPlayerComponent implements OnInit {
 
   @Input() exhibit: Exhibit;
   @Input() selectedLanguage;

@@ -45,7 +45,7 @@ import {AdminPageSettingsComponent} from './components/admin/admin-page-settings
 import {AdminPartSidebarComponent} from './components/admin/admin-part-sidebar/admin-part-sidebar.component';
 import {AppComponent} from './app.component';
 import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin-part-alert.component';
-import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
+import {CommonPartAudioPlayerComponent} from './components/common/common-part-audio-player/common-part-audio-player.component';
 import {BoxCardComponent} from './helper/box-card/box-card.component';
 import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
 import {ErrorPageComponent} from './helper/error-page/error-page.component';
@@ -150,7 +150,7 @@ const appRoutes: Routes = [
     QrcodeComponent,
     MuseumComponent,
     CookieBannerComponent,
-    AudioPlayerComponent,
+    CommonPartAudioPlayerComponent,
     VideoPlayerComponent,
     AdminPageSettingsComponent,
     AppBarComponent,
