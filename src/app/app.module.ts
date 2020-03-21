@@ -69,7 +69,7 @@ import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.compo
 import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
 import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhibit-fullscreen/user-exhibit-fullscreen.component';
 import {UserExpositionFullscreenComponent} from './components/user/pages/user-exposition-fullscreen/user-exposition-fullscreen.component';
-import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
+import {UserMuseumFullscreenComponent} from './components/user/pages/user-museum-fullscreen/user-museum-fullscreen.component';
 import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 import {UserImprintComponent} from './components/user/pages/user-imprint/user-imprint.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
@@ -80,7 +80,7 @@ const appRoutes: Routes = [
     path: '', component: UserComponent, children: [
       {path: '', component: WelcomeComponent},
       {path: 'museum', component: UserMuseumComponent},
-      {path: 'museum/fullscreen', component: MuseumFullscreenComponent},
+      {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
       {path: 'siteplan', component: SiteplanFullscreenComponent},
       {path: 'exposition/:id', component: UserExpositionComponent},
       {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
@@ -158,7 +158,7 @@ const appRoutes: Routes = [
     UserCarouselComponent,
     UserExhibitFullscreenComponent,
     UserExpositionFullscreenComponent,
-    MuseumFullscreenComponent,
+    UserMuseumFullscreenComponent,
     SiteplanFullscreenComponent,
     UserImprintComponent,
     AdminMuseumComponent,
