@@ -49,7 +49,7 @@ import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/
 import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
 import {AdminSidebarComponent} from './components/admin/parts/admin-part-sidebar/admin-sidebar.component';
 import {AdminSpinnerComponent} from './components/admin/parts/admin-part-spinner/admin-spinner.component';
-import {AdminStatsComponent} from './components/admin/pages/admin-stats/admin-stats.component';
+import {AdminExhibitStatsComponent} from './components/admin/pages/admin-exhibit-stats/admin-exhibit-stats.component';
 import {AppComponent} from './app.component';
 import {CommonAudioPlayerComponent} from './components/common/parts/common-audio-player/common-audio-player.component';
 import {CommonCookieBannerComponent} from './components/common/parts/common-cookie-banner/common-cookie-banner.component';
@@ -103,7 +103,7 @@ const appRoutes: Routes = [
       {path: 'infopage/new', component: AdminNewInfoPageComponent},
       {path: 'infopage/:id', component: AdminInfoPageComponent},
       {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
-      {path: 'statistics/exhibit/:id', component: AdminStatsComponent},
+      {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},
       {path: 'settings', component: AdminSettingsComponent}
     ]
@@ -142,7 +142,7 @@ const appRoutes: Routes = [
     AdminSettingsComponent,
     AdminSidebarComponent,
     AdminSpinnerComponent,
-    AdminStatsComponent,
+    AdminExhibitStatsComponent,
     AppComponent,
     CommonAudioPlayerComponent,
     CommonCookieBannerComponent,

@@ -6,11 +6,11 @@ import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
 
 @Component({
-  selector: 'app-admin-stats',
-  templateUrl: './admin-stats.component.html',
-  styleUrls: ['./admin-stats.component.css']
+  selector: 'app-admin-exhibit-stats',
+  templateUrl: './admin-exhibit-stats.component.html',
+  styleUrls: ['./admin-exhibit-stats.component.css']
 })
-export class AdminStatsComponent implements OnInit {
+export class AdminExhibitStatsComponent implements OnInit {
 
   exhibit: Exhibit;
 
