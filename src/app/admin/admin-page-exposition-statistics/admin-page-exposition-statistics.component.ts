@@ -8,11 +8,11 @@ import {ExpositionService} from '../../services/exposition.service';
 import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-exposition-statistics',
-  templateUrl: './exposition-statistics.component.html',
-  styleUrls: ['./exposition-statistics.component.css']
+  selector: 'app-admin-page-exposition-statistics',
+  templateUrl: './admin-page-exposition-statistics.component.html',
+  styleUrls: ['./admin-page-exposition-statistics.component.css']
 })
-export class ExpositionStatisticsComponent implements OnInit {
+export class AdminPageExpositionStatisticsComponent implements OnInit {
 
   exposition: Exposition;
   exhibits: Exhibit[];
