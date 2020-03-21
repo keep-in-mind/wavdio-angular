@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'app-alert',
-    templateUrl: './alert.component.html',
-    styleUrls: ['./alert.component.css']
+    selector: 'app-admin-part-alert',
+    templateUrl: './admin-part-alert.component.html',
+    styleUrls: ['./admin-part-alert.component.css']
 })
-export class AlertComponent implements OnInit {
+export class AdminPartAlertComponent implements OnInit {
 
     alertTypes = [
         'success',

@@ -8,8 +8,8 @@
   <app-admin-part-header class="header" [breadcrumbs]="breadcrumbs"
                          showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-part-header>
 
-  <app-alert *ngIf="showAlert" class="header mt-2"
-             [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-alert>
+  <app-admin-part-alert *ngIf="showAlert" class="header mt-2"
+                        [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-part-alert>
 
   <!-- -->
 

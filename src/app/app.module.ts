@@ -44,7 +44,7 @@ import {AdminPagePersonalDataComponent} from './components/admin/admin-page-pers
 import {AdminPageSettingsComponent} from './components/admin/admin-page-settings/admin-page-settings.component';
 import {AdminPartSidebarComponent} from './components/admin/admin-part-sidebar/admin-part-sidebar.component';
 import {AppComponent} from './app.component';
-import {AlertComponent} from './helper/alert/alert.component';
+import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin-part-alert.component';
 import {AudioPlayerComponent} from './helper/audio-player/audio-player.component';
 import {BoxCardComponent} from './helper/box-card/box-card.component';
 import {CookieBannerComponent} from './helper/cookie-banner/cookie-banner.component';
@@ -145,7 +145,7 @@ const appRoutes: Routes = [
     AdminPageStatisticsComponent,
     AdminPartCommentCardComponent,
     ImageDetailsComponent,
-    AlertComponent,
+    AdminPartAlertComponent,
     SpinnerComponent,
     QrcodeComponent,
     MuseumComponent,
