@@ -33,7 +33,7 @@ import {AdminCommentCardComponent} from './components/admin/parts/admin-part-com
 import {AdminComponent} from './components/admin/admin.component';
 import {AdminExhibitComponent} from './components/admin/pages/admin-exhibit/admin-exhibit.component';
 import {AdminExpositionComponent} from './components/admin/pages/admin-exposition/admin-exposition.component';
-import {AdminExpositionStatisticsComponent} from './components/admin/pages/admin-exposition-statistics/admin-exposition-statistics.component';
+import {AdminExpositionStatsComponent} from './components/admin/pages/admin-exposition-stats/admin-exposition-stats.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/admin-header.component';
 import {AdminHomeComponent} from './components/admin/pages/admin-home/admin-home.component';
 import {AdminImageDetailsComponent} from './components/admin/parts/admin-part-image-details/admin-image-details.component';
@@ -41,7 +41,7 @@ import {AdminInfoPageComponent} from './components/admin/pages/admin-info-page/a
 import {AdminInfoPagesComponent} from './components/admin/pages/admin-info-pages/admin-info-pages.component';
 import {AdminLoginComponent} from './components/admin/pages/admin-login/admin-login.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
-import {AdminMuseumStatisticsComponent} from './components/admin/pages/admin-museum-statistics/admin-museum-statistics.component';
+import {AdminMuseumStatsComponent} from './components/admin/pages/admin-museum-stats/admin-museum-stats.component';
 import {AdminNewExhibitComponent} from './components/admin/pages/admin-new-exhibit/admin-new-exhibit.component';
 import {AdminNewExpositionComponent} from './components/admin/pages/admin-new-exposition/admin-new-exposition.component';
 import {AdminNewInfoPageComponent} from './components/admin/pages/admin-new-info-page/admin-new-info-page.component';
@@ -50,7 +50,7 @@ import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/
 import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
 import {AdminSidebarComponent} from './components/admin/parts/admin-part-sidebar/admin-sidebar.component';
 import {AdminSpinnerComponent} from './components/admin/parts/admin-part-spinner/admin-spinner.component';
-import {AdminStatisticsComponent} from './components/admin/pages/admin-statistics/admin-statistics.component';
+import {AdminStatsComponent} from './components/admin/pages/admin-stats/admin-stats.component';
 import {AppComponent} from './app.component';
 import {CommonAudioPlayerComponent} from './components/common/parts/common-audio-player/common-audio-player.component';
 import {CommonCookieBannerComponent} from './components/common/parts/common-cookie-banner/common-cookie-banner.component';
@@ -103,9 +103,9 @@ const appRoutes: Routes = [
       {path: 'infopages', component: AdminInfoPagesComponent},
       {path: 'infopage/new', component: AdminNewInfoPageComponent},
       {path: 'infopage/:id', component: AdminInfoPageComponent},
-      {path: 'statistics', component: AdminMuseumStatisticsComponent},
-      {path: 'statistics/exposition/:id', component: AdminExpositionStatisticsComponent},
-      {path: 'statistics/exhibit/:id', component: AdminStatisticsComponent},
+      {path: 'statistics', component: AdminMuseumStatsComponent},
+      {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
+      {path: 'statistics/exhibit/:id', component: AdminStatsComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},
       {path: 'settings', component: AdminSettingsComponent}
     ]
@@ -134,7 +134,7 @@ const appRoutes: Routes = [
     AdminInfoPagesComponent,
     AdminPersonalDataComponent,
     AdminHomeComponent,
-    AdminMuseumStatisticsComponent,
+    AdminMuseumStatsComponent,
     UserCommentComponent,
     UserInfoPageComponent,
     CommonErrorComponent,
@@ -147,8 +147,8 @@ const appRoutes: Routes = [
     AdminNewInfoPageComponent,
     AdminInfoPageComponent,
     UserUsageTermsComponent,
-    AdminExpositionStatisticsComponent,
-    AdminStatisticsComponent,
+    AdminExpositionStatsComponent,
+    AdminStatsComponent,
     AdminCommentCardComponent,
     AdminImageDetailsComponent,
     AdminAlertComponent,

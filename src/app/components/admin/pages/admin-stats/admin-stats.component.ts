@@ -4,18 +4,15 @@ import {ActivatedRoute} from '@angular/router';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {Exhibit} from '../../../../models/exhibit';
 import {ExhibitService} from '../../../../services/exhibit.service';
-import {Exposition} from '../../../../models/exposition';
-import {ExpositionService} from '../../../../services/exposition.service';
 
 @Component({
-  selector: 'app-admin-exposition-statistics',
-  templateUrl: './admin-exposition-statistics.component.html',
-  styleUrls: ['./admin-exposition-statistics.component.css']
+  selector: 'app-admin-stats',
+  templateUrl: './admin-stats.component.html',
+  styleUrls: ['./admin-stats.component.css']
 })
-export class AdminExpositionStatisticsComponent implements OnInit {
+export class AdminStatsComponent implements OnInit {
 
-  exposition: Exposition;
-  exhibits: Exhibit[];
+  exhibit: Exhibit;
 
   // options for the chart
   showXAxis = true;
@@ -54,27 +51,33 @@ export class AdminExpositionStatisticsComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private activatedRoute: ActivatedRoute,
-    private expositionService: ExpositionService,
     private exhibitService: ExhibitService,
   ) {
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      const expositionId = params.id;
+      const exhibitId = params.id;
 
-      /* get exposition */
+      /* get exhibit */
 
-      this.expositionService.getExposition(expositionId).subscribe(exposition => {
+      this.exhibitService.getExhibit(exhibitId).subscribe(exhibit => {
+        this.exhibit = exhibit;
 
-        this.exposition = exposition;
+        if (this.exhibit.parentModel === 'Museum') {
+          this.breadcrumbs = [
+            new Breadcrumb('Home', '/admin/home'),
+            new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
+            new Breadcrumb('Statistik')];
+        } else {
+          this.breadcrumbs = [
+            new Breadcrumb('Home', '/admin/home'),
+            new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+            new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
+            new Breadcrumb('Statistik')];
+        }
 
-        this.breadcrumbs = [
-          new Breadcrumb('Home', '/admin/home'),
-          new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exposition._id),
-          new Breadcrumb('Statistik')];
-
-        /* accumulate exposition likes over time
+        /* accumulate exhibit likes over time
         *
         * likes: [{2019-03-11}, {2019-03-12}, {2019-03-14}]
         * ->
@@ -83,30 +86,24 @@ export class AdminExpositionStatisticsComponent implements OnInit {
 
         let accumulatedLikes = 0;
         const data = [];
-        for (const like of exposition.likes) {
+        for (const like of exhibit.likes) {
           accumulatedLikes++;
           data.push({name: new Date(like.timestamp), value: accumulatedLikes});
         }
 
-        this.multi = [{name: this.getExpositionContent(this.locale).name, series: data}];
-
-        /* get exhibits that belong to exposition */
-
-        this.exhibitService.getExhibits().subscribe(exhibits => {
-          this.exhibits = exhibits.filter(exhibit => exhibit.parent === expositionId);
-        });
+        this.multi = [{name: this.getExhibitContent(this.locale).name, series: data}];
       });
     });
   }
 
-  getExpositionContent(locale: string) {
-    for (const content of this.exposition.contents) {
+  getExhibitContent(locale: string) {
+    for (const content of this.exhibit.contents) {
       if (content.lang === locale) {
         return content;
       }
     }
 
-    // not available ? must not happen. has to be created when constructing exposition
-    console.error(`ExpositionContent missing for locale ${locale}`);
+    // not available ? must not happen. has to be created when constructing exhibit
+    console.error(`ExhibitContent missing for locale ${locale}`);
   }
 }

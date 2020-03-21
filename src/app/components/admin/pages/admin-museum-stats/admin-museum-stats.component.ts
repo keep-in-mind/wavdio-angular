@@ -7,11 +7,11 @@ import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-admin-museum-statistics',
-  templateUrl: './admin-museum-statistics.component.html',
-  styleUrls: ['./admin-museum-statistics.component.css']
+  selector: 'app-admin-museum-stats',
+  templateUrl: './admin-museum-stats.component.html',
+  styleUrls: ['./admin-museum-stats.component.css']
 })
-export class AdminMuseumStatisticsComponent implements OnInit {
+export class AdminMuseumStatsComponent implements OnInit {
 
   expositions: Exposition[];
 
