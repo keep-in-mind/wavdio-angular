@@ -16,13 +16,13 @@
         Ausstellungen
       </div>
       <div class="card-body d-flex flex-wrap">
-        <app-exposition-card *ngFor="let exposition of expositions"
-                             [selectedLanguage]="locale"
-          [exposition]="exposition"
-          [width]="'125px'"
-          [height]="'150px'"
-          [link]="'/admin/statistics/exposition/'+ exposition._id">
-        </app-exposition-card>
+        <app-common-part-exposition-card *ngFor="let exposition of expositions"
+                                         [selectedLanguage]="locale"
+                                         [exposition]="exposition"
+                                         [width]="'125px'"
+                                         [height]="'150px'"
+                                         [link]="'/admin/statistics/exposition/'+ exposition._id">
+        </app-common-part-exposition-card>
       </div>
     </div>
 

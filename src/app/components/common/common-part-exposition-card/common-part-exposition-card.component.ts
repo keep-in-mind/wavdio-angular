@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {Exposition} from '../../models/exposition';
+import {Exposition} from '../../../models/exposition';
 
 @Component({
-  selector: 'app-exposition-card',
-  templateUrl: './exposition-card.component.html',
-  styleUrls: ['./exposition-card.component.css']
+  selector: 'app-common-part-exposition-card',
+  templateUrl: './common-part-exposition-card.component.html',
+  styleUrls: ['./common-part-exposition-card.component.css']
 })
-export class ExpositionCardComponent implements OnInit {
+export class CommonPartExpositionCardComponent implements OnInit {
 
   private _height: string;
   private _width: string;

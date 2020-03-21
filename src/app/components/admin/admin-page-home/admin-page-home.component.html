@@ -41,9 +41,9 @@
           </a>
         </div>
         <div body *ngFor="let exposition of expositions">
-          <app-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
-                               [selectedLanguage]="selectedLanguage"
-                               [link]="'/admin/exposition/'+ exposition._id"></app-exposition-card>
+          <app-common-part-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
+                                           [selectedLanguage]="selectedLanguage"
+                                           [link]="'/admin/exposition/'+ exposition._id"></app-common-part-exposition-card>
         </div>
       </app-admin-part-box-card>
     </section>

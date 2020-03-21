@@ -97,9 +97,9 @@
             <div class="container">
               <div class="grid-container pb-5">
                 <div *ngFor="let exposition of expositions" class="mx-auto">
-                  <app-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
-                                       [height]="'150px'"
-                                       [link]="'/exposition/' + exposition._id"></app-exposition-card>
+                  <app-common-part-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
+                                                   [height]="'150px'"
+                                                   [link]="'/exposition/' + exposition._id"></app-common-part-exposition-card>
                 </div>
               </div>
             </div>

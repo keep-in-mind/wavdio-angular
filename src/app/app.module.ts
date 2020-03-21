@@ -50,7 +50,7 @@ import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/
 import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
 import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
 import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-part/common-part-exhibit-card.component';
-import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
+import {CommonPartExpositionCardComponent} from './components/common/common-part-exposition-card/common-part-exposition-card.component';
 import {ImageDetailsComponent} from './helper/image-details/image-details.component';
 import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
@@ -135,7 +135,7 @@ const appRoutes: Routes = [
     UserComponent,
     AdminPageNewExpositionComponent,
     AdminPageNewExhibitComponent,
-    ExpositionCardComponent,
+    CommonPartExpositionCardComponent,
     CommonPartExhibitCardComponent,
     AdminPartBoxCardComponent,
     AdminPageNewInfoPageComponent,
