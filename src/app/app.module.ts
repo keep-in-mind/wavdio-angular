@@ -58,7 +58,7 @@ import {CommonVideoPlayerComponent} from './components/common/parts/common-video
 import {UserAppBarComponent} from './components/user/parts/user-app-bar/user-app-bar.component';
 import {UserCommentComponent} from './components/user/parts/user-comment/user-comment.component';
 import {UserExhibitComponent} from './components/user/pages/user-exhibit/user-exhibit.component';
-import {ExpositionComponent} from './user/exposition/exposition.component';
+import {UserExpositionComponent} from './components/user/pages/user-exposition/user-exposition.component';
 import {InfopageComponent} from './user/infopage/infopage.component';
 import {MuseumComponent} from './user/museum/museum.component';
 import {UserComponent} from './user/user.component';
@@ -68,7 +68,7 @@ import {environment} from '../environments/environment';
 import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.component';
 import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
 import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhibit-fullscreen/user-exhibit-fullscreen.component';
-import {ExpositionFullscreenComponent} from './user/exposition-fullscreen/exposition-fullscreen.component';
+import {UserExpositionFullscreenComponent} from './components/user/pages/user-exposition-fullscreen/user-exposition-fullscreen.component';
 import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
 import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 import {ImprintComponent} from './user/imprint/imprint.component';
@@ -82,8 +82,8 @@ const appRoutes: Routes = [
       {path: 'museum', component: MuseumComponent},
       {path: 'museum/fullscreen', component: MuseumFullscreenComponent},
       {path: 'siteplan', component: SiteplanFullscreenComponent},
-      {path: 'exposition/:id', component: ExpositionComponent},
-      {path: 'exposition/:id/fullscreen', component: ExpositionFullscreenComponent},
+      {path: 'exposition/:id', component: UserExpositionComponent},
+      {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: UserExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: UserExhibitFullscreenComponent},
       {path: 'infopage/:id', component: InfopageComponent},
@@ -118,7 +118,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ExpositionComponent,
+    UserExpositionComponent,
     UserExhibitComponent,
     AdminLoginComponent,
     AdminHomeComponent,
@@ -157,7 +157,7 @@ const appRoutes: Routes = [
     PrivacyPolicyComponent,
     UserCarouselComponent,
     UserExhibitFullscreenComponent,
-    ExpositionFullscreenComponent,
+    UserExpositionFullscreenComponent,
     MuseumFullscreenComponent,
     SiteplanFullscreenComponent,
     ImprintComponent,
