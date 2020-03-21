@@ -18,6 +18,8 @@ import {Image} from '../../../../models/image';
 import {Transcript} from '../../../../models/transcript';
 import {Video} from '../../../../models/video';
 
+import {utils} from '../../../../utils/utils';
+
 @Component({
   selector: 'app-admin-exhibit',
   templateUrl: './admin-exhibit.component.html',
@@ -30,24 +32,13 @@ export class AdminExhibitComponent implements OnInit {
   languages = ['de', 'en', 'es', 'fr'];
   selectedLanguage = this.locale;
 
+  placeholder = utils.placeholder;
+
   iconAudio: ElementRef;
 
   alertType: number;
   alertMessage: string;
   showAlert: boolean;
-
-  placeholder =
-    'Dieser Text kann mit Markdown formattiert werden.\n' +
-    '\n' +
-    'Leere Zeilen bewirken Absätze. Text kann *kursiv* oder **fett** gedruckt werden. ' +
-    '[Links](www.google.de) auf externe Seiten sind ebenfalls möglich.\n' +
-    '\n' +
-    '### Unterkapitel\n' +
-    '\n' +
-    'Darüber hinaus sind viele weitere Formattierungen möglich (de.wikipedia.org/wiki/Markdown) wie zum Beispiel:\n' +
-    '- Aufzählungen\n' +
-    '- Tabellen\n' +
-    '- Zitate';
 
   @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
     this.iconAudio = content;

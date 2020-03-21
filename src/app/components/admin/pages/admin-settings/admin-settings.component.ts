@@ -36,7 +36,7 @@ export class AdminSettingsComponent implements OnInit {
   }
 
   updateSetting() {
-    console.log(this.setting)
+    console.log(this.setting);
     this.settingService.updateSetting(this.setting).subscribe(
       res => {
         console.log(res);
