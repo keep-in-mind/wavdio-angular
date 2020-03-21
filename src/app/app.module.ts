@@ -31,8 +31,8 @@ import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/adm
 import {AdminPageExhibitComponent} from './admin/admin-page-exhibit/admin-page-exhibit.component';
 import {AdminPageNewExhibitComponent} from './admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
 import {AdminPageStatisticsComponent} from './admin/admin-page-statistics/admin-page-statistics.component';
-import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
-import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
+import {AdminPageExpositionComponent} from './admin/admin-page-exposition/admin-page-exposition.component';
+import {NewAdminExpositionComponent} from './admin/admin-page-exposition/new/new-admin-exposition.component';
 import {ExpositionStatisticsComponent} from './admin/exposition-statistics/exposition-statistics.component';
 import {HomeComponent} from './admin/home/home.component';
 import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
@@ -95,7 +95,7 @@ const appRoutes: Routes = [
       {path: 'museum', component: AdminPageMuseumComponent},
       {path: 'home', component: HomeComponent},
       {path: 'exposition/new', component: NewAdminExpositionComponent},
-      {path: 'exposition/:id', component: AdminExpositionComponent},
+      {path: 'exposition/:id', component: AdminPageExpositionComponent},
       {path: 'exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
       {path: 'exhibit/:id', component: AdminPageExhibitComponent},
       {path: 'infopages', component: AdminInfopagesComponent},
@@ -128,7 +128,7 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     SidebarComponent,
-    AdminExpositionComponent,
+    AdminPageExpositionComponent,
     AdminPageExhibitComponent,
     AdminInfopagesComponent,
     PersonalDataComponent,

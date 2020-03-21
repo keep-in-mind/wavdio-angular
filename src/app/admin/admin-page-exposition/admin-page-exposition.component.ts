@@ -17,11 +17,11 @@ import {FileService} from '../../services/file.service';
 import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-admin-expositions',
-  templateUrl: './admin-exposition.component.html',
-  styleUrls: ['./admin-exposition.component.css']
+  selector: 'app-admin-page-exposition',
+  templateUrl: './admin-page-exposition.component.html',
+  styleUrls: ['./admin-page-exposition.component.css']
 })
-export class AdminExpositionComponent implements OnInit {
+export class AdminPageExpositionComponent implements OnInit {
 
   descHeader = 'Ausstellung bearbeiten';
   descExhibitHeader = 'Ausstellungsstücke';
