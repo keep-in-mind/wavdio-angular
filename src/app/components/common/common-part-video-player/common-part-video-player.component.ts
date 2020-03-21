@@ -1,14 +1,14 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
-import {MediaplayerService} from '../../services/mediaplayer.service';
-import {Exhibit} from "../../models/exhibit";
+import {MediaplayerService} from '../../../services/mediaplayer.service';
+import {Exhibit} from '../../../models/exhibit';
 
 @Component({
-  selector: 'app-video-player',
-  templateUrl: './video-player.component.html',
-  styleUrls: ['./video-player.component.css']
+  selector: 'app-common-part-video-player',
+  templateUrl: './common-part-video-player.component.html',
+  styleUrls: ['./common-part-video-player.component.css']
 })
-export class VideoPlayerComponent implements OnInit {
+export class CommonPartVideoPlayerComponent implements OnInit {
 
   @Input() exhibit: Exhibit;
   @Input() selectedLanguage;

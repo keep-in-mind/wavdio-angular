@@ -54,7 +54,7 @@ import {CommonPartExpositionCardComponent} from './components/common/common-part
 import {AdminPartImageDetailsComponent} from './components/admin/admin-part-image-details/admin-part-image-details.component';
 import {AdminPartSpinnerComponent} from './components/admin/admin-part-spinner/admin-part-spinner.component';
 import {AdminPartQrCodeComponent} from './components/admin/admin-part-qr-code/admin-part-qr-code.component';
-import {VideoPlayerComponent} from './helper/video-player/video-player.component';
+import {CommonPartVideoPlayerComponent} from './components/common/common-part-video-player/common-part-video-player.component';
 import {AppBarComponent} from './user/app-bar/app-bar.component';
 import {CommentComponent} from './user/comment/comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
@@ -151,7 +151,7 @@ const appRoutes: Routes = [
     MuseumComponent,
     CommonPartCookieBannerComponent,
     CommonPartAudioPlayerComponent,
-    VideoPlayerComponent,
+    CommonPartVideoPlayerComponent,
     AdminPageSettingsComponent,
     AppBarComponent,
     PrivacyPolicyComponent,
