@@ -1,9 +1,9 @@
 <div id="page">
 
-  <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Museum'"
-               backArrow="true"></app-app-bar>
-  <app-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition' && exposition"
-               backArrow="true"></app-app-bar>
+  <app-user-app-bar *ngIf="exhibit && exhibit.parentModel === 'Museum'"
+                    backArrow="true"></app-user-app-bar>
+  <app-user-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition' && exposition"
+                    backArrow="true"></app-user-app-bar>
 
   <!-- Page Content -->
   <main>

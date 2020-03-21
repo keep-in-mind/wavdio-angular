@@ -55,7 +55,7 @@ import {AdminImageDetailsComponent} from './components/admin/parts/admin-part-im
 import {AdminSpinnerComponent} from './components/admin/parts/admin-part-spinner/admin-spinner.component';
 import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/admin-qr-code.component';
 import {CommonVideoPlayerComponent} from './components/common/parts/common-video-player/common-video-player.component';
-import {AppBarComponent} from './user/app-bar/app-bar.component';
+import {UserAppBarComponent} from './components/user/parts/user-app-bar/user-app-bar.component';
 import {CommentComponent} from './user/comment/comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
@@ -153,7 +153,7 @@ const appRoutes: Routes = [
     CommonAudioPlayerComponent,
     CommonVideoPlayerComponent,
     AdminSettingsComponent,
-    AppBarComponent,
+    UserAppBarComponent,
     PrivacyPolicyComponent,
     CarouselComponent,
     ExhibitFullscreenComponent,
