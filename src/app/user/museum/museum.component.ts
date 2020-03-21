@@ -6,7 +6,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 
-import {CommentComponent} from '../comment/comment.component';
+import {UserCommentComponent} from '../../components/user/parts/user-comment/user-comment.component';
 import {Exhibit} from '../../models/exhibit';
 import {Exposition} from '../../models/exposition';
 import {ExpositionContent} from '../../models/exposition-content';

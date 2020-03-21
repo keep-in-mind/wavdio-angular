@@ -56,7 +56,7 @@ import {AdminSpinnerComponent} from './components/admin/parts/admin-part-spinner
 import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/admin-qr-code.component';
 import {CommonVideoPlayerComponent} from './components/common/parts/common-video-player/common-video-player.component';
 import {UserAppBarComponent} from './components/user/parts/user-app-bar/user-app-bar.component';
-import {CommentComponent} from './user/comment/comment.component';
+import {UserCommentComponent} from './components/user/parts/user-comment/user-comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
 import {ExpositionComponent} from './user/exposition/exposition.component';
 import {InfopageComponent} from './user/infopage/infopage.component';
@@ -129,7 +129,7 @@ const appRoutes: Routes = [
     AdminPersonalDataComponent,
     AdminHomeComponent,
     AdminMuseumStatisticsComponent,
-    CommentComponent,
+    UserCommentComponent,
     InfopageComponent,
     CommonErrorComponent,
     UserComponent,
@@ -195,10 +195,10 @@ const appRoutes: Routes = [
     MarkdownModule.forRoot()
   ],
   exports: [
-    CommentComponent
+    UserCommentComponent
   ],
   entryComponents: [
-    CommentComponent,
+    UserCommentComponent,
     AdminImageDetailsComponent,
     AdminSpinnerComponent,
     AdminQrCodeComponent

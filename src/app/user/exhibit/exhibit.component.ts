@@ -3,7 +3,7 @@ import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from 'ngx-cookie-service';
 
-import {CommentComponent} from '../comment/comment.component';
+import {UserCommentComponent} from '../../components/user/parts/user-comment/user-comment.component';
 import {Exhibit} from '../../models/exhibit';
 import {ExhibitContent} from '../../models/exhibit-content';
 import {Exposition} from '../../models/exposition';
@@ -126,7 +126,7 @@ export class ExhibitComponent implements OnInit {
   }
 
   openComment() {
-    const modal = this.modalService.open(CommentComponent, {centered: true});
+    const modal = this.modalService.open(UserCommentComponent, {centered: true});
     modal.componentInstance.exhibit = this.exhibit;
   }
 
