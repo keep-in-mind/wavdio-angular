@@ -88,6 +88,10 @@ const appRoutes: Routes = [
       {path: 'exhibit/:id', component: UserExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: UserExhibitFullscreenComponent},
       {path: 'infopage/:id', component: UserInfoPageComponent},
+
+      {path: 'usage-terms', component: UserUsageTermsComponent},
+      {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
+      {path: 'imprint', component: UserImprintComponent}
     ]
   },
   {
@@ -106,13 +110,6 @@ const appRoutes: Routes = [
       {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},
       {path: 'settings', component: AdminSettingsComponent}
-    ]
-  },
-  {
-    path: 'user', component: UserComponent, children: [
-      {path: 'usage-terms', component: UserUsageTermsComponent},
-      {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
-      {path: 'imprint', component: UserImprintComponent}
     ]
   },
   {path: '**', component: CommonErrorComponent},
