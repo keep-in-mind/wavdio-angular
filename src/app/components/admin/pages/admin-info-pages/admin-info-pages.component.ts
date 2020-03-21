@@ -21,10 +21,6 @@ import {MuseumService} from '../../../../services/museum.service';
 })
 export class AdminInfoPagesComponent implements OnInit {
 
-  descHeader = 'Infoseiten';
-  descInfoPageBox = 'Infoseiten';
-  descLageplan = 'Lageplan';
-
   infoPages: InfoPage[];
   museum: Museum;
 

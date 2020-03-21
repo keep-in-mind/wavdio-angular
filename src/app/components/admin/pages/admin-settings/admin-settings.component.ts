@@ -16,8 +16,6 @@ export class AdminSettingsComponent implements OnInit {
 
   setting: Setting;
 
-  descHeader = 'Einstellungen';
-
   breadcrumbs: Breadcrumb[] = [new Breadcrumb('Einstellungen')];
 
   constructor(

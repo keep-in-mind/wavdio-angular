@@ -16,8 +16,6 @@ import {MuseumService} from '../../../../services/museum.service';
 })
 export class AdminNewExpositionComponent implements OnInit {
 
-  descHeader = 'Ausstellung anlegen';
-
   exposition: Exposition;
   museum: Museum;
 

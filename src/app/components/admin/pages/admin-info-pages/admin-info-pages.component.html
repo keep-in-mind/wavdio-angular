@@ -11,7 +11,7 @@
   <section class="content-left ml-3 mr-2">
     <!-- Section Infoseiten -->
     <section *ngIf="infoPages" class="mt-2">
-      <app-admin-box-card [descHeader]="descInfoPageBox">
+      <app-admin-box-card descHeader="Info-Seiten">
         <div header>
           <a routerLink="/admin/info-page/new" routerLinkActive="active">
             <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
@@ -32,7 +32,7 @@
   <section class="content-right ml-3 mr-2">
     <!-- Section Lageplan -->
     <section *ngIf="museum" class="mt-2">
-      <app-admin-box-card [descHeader]="descLageplan">
+      <app-admin-box-card descHeader="Lageplan">
         <div header>
           <fa-icon aria-label="Add site plan" [hidden]="getMuseumContent(selectedLanguage).sitePlan" (click)="onSitePlanInput.click()"
                    class="fa-lg"

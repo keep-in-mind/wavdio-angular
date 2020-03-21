@@ -25,11 +25,6 @@ import {Video} from '../../../../models/video';
 })
 export class AdminExhibitComponent implements OnInit {
 
-  descHeader = 'Ausstellungsstück bearbeiten';
-  descImages = 'Bilder';
-  descAudio = 'Audio';
-  descVideo = 'Video';
-
   exhibit: Exhibit;
 
   languages = ['de', 'en', 'es', 'fr'];

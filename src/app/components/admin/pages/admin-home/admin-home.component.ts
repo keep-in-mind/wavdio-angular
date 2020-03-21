@@ -23,9 +23,6 @@ export class AdminHomeComponent implements OnInit {
   expositions: Exposition[];
   exhibits: Exhibit[];
 
-  descHeader = 'wAVdio';
-  descExpositionsHeader = 'Austellungen';
-
   breadcrumbs = [
     new Breadcrumb('Home')
   ];

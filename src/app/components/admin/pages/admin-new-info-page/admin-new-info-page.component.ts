@@ -14,8 +14,6 @@ import {InfoPageService} from '../../../../services/info-page.service';
 })
 export class AdminNewInfoPageComponent implements OnInit {
 
-  descHeader = 'Informationsseite anlegen';
-
   infoPage: InfoPage;
 
   languages = ['de', 'en', 'es', 'fr'];

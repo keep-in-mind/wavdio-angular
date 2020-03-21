@@ -24,10 +24,6 @@ import {Image} from '../../../../models/image';
 })
 export class AdminExpositionComponent implements OnInit {
 
-  descHeader = 'Ausstellung bearbeiten';
-  descExhibitHeader = 'Ausstellungsstücke';
-  descLogo = 'Logo';
-
   exposition: Exposition;
   exhibits: Exhibit[];
 

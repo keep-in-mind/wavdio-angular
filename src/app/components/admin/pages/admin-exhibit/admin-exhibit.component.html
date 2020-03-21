@@ -80,7 +80,7 @@
   <section *ngIf="exhibit" class="content-right ml-3 mr-2">
     <!-- Section Images -->
     <section class="mt-2">
-      <app-admin-box-card [descHeader]="descImages">
+      <app-admin-box-card descHeader="Bilder">
         <div header>
           <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
@@ -95,7 +95,7 @@
     </section>
     <!-- Section Video -->
     <section class="mt-2">
-      <app-admin-box-card [descHeader]="descVideo">
+      <app-admin-box-card descHeader="Video">
         <div header>
           <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
@@ -125,7 +125,7 @@
     </section>
     <!-- Section Audio -->
     <section class="mt-2">
-      <app-admin-box-card [descHeader]="descAudio">
+      <app-admin-box-card descHeader="Audio">
         <div header>
           <!-- Transcript -->
           <fa-icon aria-label="Open Transcript" *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"

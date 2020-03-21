@@ -21,10 +21,6 @@ import {MuseumService} from '../../../../services/museum.service';
 })
 export class AdminPersonalDataComponent implements OnInit {
 
-  descHeader = 'Persönlicher Bereich';
-  descLogo = 'Logo';
-  descImage = 'Image';
-
   user: TokenPayloadUpdate = {
     username: '',
     password: '',
