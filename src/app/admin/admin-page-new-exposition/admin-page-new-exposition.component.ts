@@ -1,20 +1,20 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Exposition} from '../../../models/exposition';
-import {ExpositionContent} from '../../../models/exposition-content';
-import {Museum} from '../../../models/museum';
-import {AuthenticationService} from '../../../services/authentification.service';
-import {ExpositionService} from '../../../services/exposition.service';
-import {MuseumService} from '../../../services/museum.service';
-import {Breadcrumb} from "../../../models/breadcrumb";
+import {Exposition} from '../../models/exposition';
+import {ExpositionContent} from '../../models/exposition-content';
+import {Museum} from '../../models/museum';
+import {AuthenticationService} from '../../services/authentification.service';
+import {ExpositionService} from '../../services/exposition.service';
+import {MuseumService} from '../../services/museum.service';
+import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-new-admin-exposition-component',
-  templateUrl: './new-admin-exposition.component.html',
-  styleUrls: ['./new-admin-exposition.component.css']
+  selector: 'app-admin-page-new-exposition',
+  templateUrl: './admin-page-new-exposition.component.html',
+  styleUrls: ['./admin-page-new-exposition.component.css']
 })
-export class NewAdminExpositionComponent implements OnInit {
+export class AdminPageNewExpositionComponent implements OnInit {
 
   descHeader = 'Ausstellung anlegen';
 
