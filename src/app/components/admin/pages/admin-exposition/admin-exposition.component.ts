@@ -4,9 +4,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {AdminImageDetailsComponent} from '../../parts/admin-part-image-details/admin-image-details.component';
-import {AdminQrCodeComponent} from '../../parts/admin-part-qr-code/admin-qr-code.component';
-import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
+import {AdminImageDetailsComponent} from '../../parts/admin-image-details/admin-image-details.component';
+import {AdminQrCodeComponent} from '../../parts/admin-qr-code/admin-qr-code.component';
+import {AdminSpinnerComponent} from '../../parts/admin-spinner/admin-spinner.component';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';

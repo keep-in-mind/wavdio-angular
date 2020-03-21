@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {AdminSpinnerComponent} from '../../parts/admin-part-spinner/admin-spinner.component';
+import {AdminSpinnerComponent} from '../../parts/admin-spinner/admin-spinner.component';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
