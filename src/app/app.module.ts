@@ -34,7 +34,7 @@ import {AdminPageStatisticsComponent} from './admin/admin-page-statistics/admin-
 import {AdminPageExpositionComponent} from './admin/admin-page-exposition/admin-page-exposition.component';
 import {AdminPageNewExpositionComponent} from './admin/admin-page-new-exposition/admin-page-new-exposition.component';
 import {AdminPageExpositionStatisticsComponent} from './admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
-import {HomeComponent} from './admin/home/home.component';
+import {AdminPageHomeComponent} from './admin/admin-page-home/admin-page-home.component';
 import {AdminInfopagesComponent} from './admin/infopages/admin-infopages.component';
 import {AdminInfopageComponent} from './admin/infopages/infopage/admin-infopage.component';
 import {NewAdminInfopageComponent} from './admin/infopages/infopage/new/new-admin-infopage.component';
@@ -93,7 +93,7 @@ const appRoutes: Routes = [
     path: 'admin', component: AdminComponent, children: [
       {path: '', component: LoginComponent},
       {path: 'museum', component: AdminPageMuseumComponent},
-      {path: 'home', component: HomeComponent},
+      {path: 'home', component: AdminPageHomeComponent},
       {path: 'exposition/new', component: AdminPageNewExpositionComponent},
       {path: 'exposition/:id', component: AdminPageExpositionComponent},
       {path: 'exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
@@ -126,13 +126,13 @@ const appRoutes: Routes = [
     ExhibitComponent,
     AdminComponent,
     LoginComponent,
-    HomeComponent,
+    AdminPageHomeComponent,
     SidebarComponent,
     AdminPageExpositionComponent,
     AdminPageExhibitComponent,
     AdminInfopagesComponent,
     PersonalDataComponent,
-    HomeComponent,
+    AdminPageHomeComponent,
     MuseumStatisticsComponent,
     CommentComponent,
     InfopageComponent,

@@ -13,11 +13,11 @@ import {Museum} from '../../models/museum';
 import {MuseumService} from '../../services/museum.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-admin-page-home',
+  templateUrl: './admin-page-home.component.html',
+  styleUrls: ['./admin-page-home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AdminPageHomeComponent implements OnInit {
 
   museum: Museum;
   expositions: Exposition[];
