@@ -101,8 +101,8 @@
           </a>
         </div>
         <div body *ngFor="let exhibit of exhibits">
-          <app-exhibit-card  [selectedLanguage]="selectedLanguage" [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
-                            [link]="'/admin/exhibit/' + exhibit._id"></app-exhibit-card>
+          <app-common-part-exhibit-card [selectedLanguage]="selectedLanguage" [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
+                                        [link]="'/admin/exhibit/' + exhibit._id"></app-common-part-exhibit-card>
         </div>
       </app-admin-part-box-card>
     </section>

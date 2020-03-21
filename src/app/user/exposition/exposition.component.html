@@ -34,8 +34,8 @@
           <div class="container">
             <div class="grid-container pb-5">
               <div *ngFor="let exhibit of exhibits" class="mx-auto">
-                <app-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
-                                  [link]="'/exhibit/' + exhibit._id"></app-exhibit-card>
+                <app-common-part-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
+                                              [link]="'/exhibit/' + exhibit._id"></app-common-part-exhibit-card>
               </div>
             </div>
           </div>

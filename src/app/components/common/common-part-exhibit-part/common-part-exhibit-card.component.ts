@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {Exhibit} from '../../models/exhibit';
+import {Exhibit} from '../../../models/exhibit';
 
 @Component({
-  selector: 'app-exhibit-card',
-  templateUrl: './exhibit-card.component.html',
-  styleUrls: ['./exhibit-card.component.css']
+  selector: 'app-common-part-exhibit-card',
+  templateUrl: './common-part-exhibit-card.component.html',
+  styleUrls: ['./common-part-exhibit-card.component.css']
 })
-export class ExhibitCardComponent implements OnInit {
+export class CommonPartExhibitCardComponent implements OnInit {
 
   private _height: string;
   private _width: string;

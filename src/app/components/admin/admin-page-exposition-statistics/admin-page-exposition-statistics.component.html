@@ -40,14 +40,14 @@
         Ausstellungsstücke
       </div>
       <div class="card-body d-flex flex-wrap">
-        <app-exhibit-card
+        <app-common-part-exhibit-card
           *ngFor="let exhibit of exhibits"
           [selectedLanguage]="locale"
           [exhibit]="exhibit"
           [width]="'125px'"
           [height]="'150px'"
           [link]="'/admin/statistics/exhibit/'+ exhibit._id">
-        </app-exhibit-card>
+        </app-common-part-exhibit-card>
       </div>
     </div>
 

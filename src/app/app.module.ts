@@ -49,7 +49,7 @@ import {CommonPartAudioPlayerComponent} from './components/common/common-part-au
 import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
 import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
 import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
-import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
+import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-part/common-part-exhibit-card.component';
 import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
 import {ImageDetailsComponent} from './helper/image-details/image-details.component';
 import {SpinnerComponent} from './helper/spinner/spinner.component';
@@ -136,7 +136,7 @@ const appRoutes: Routes = [
     AdminPageNewExpositionComponent,
     AdminPageNewExhibitComponent,
     ExpositionCardComponent,
-    ExhibitCardComponent,
+    CommonPartExhibitCardComponent,
     AdminPartBoxCardComponent,
     AdminPageNewInfoPageComponent,
     AdminPageInfoPageComponent,
