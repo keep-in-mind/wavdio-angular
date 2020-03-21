@@ -80,36 +80,35 @@ const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
       {path: '', component: UserWelcomeComponent},
-      {path: 'museum', component: UserMuseumComponent},
-      {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
-      {path: 'siteplan', component: UserSitePlanFullscreenComponent},
-      {path: 'exposition/:id', component: UserExpositionComponent},
-      {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: UserExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: UserExhibitFullscreenComponent},
+      {path: 'exposition/:id', component: UserExpositionComponent},
+      {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
+      {path: 'imprint', component: UserImprintComponent},
       {path: 'infopage/:id', component: UserInfoPageComponent},
-
-      {path: 'usage-terms', component: UserUsageTermsComponent},
+      {path: 'museum', component: UserMuseumComponent},
+      {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
       {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
-      {path: 'imprint', component: UserImprintComponent}
+      {path: 'siteplan', component: UserSitePlanFullscreenComponent},
+      {path: 'usage-terms', component: UserUsageTermsComponent}
     ]
   },
   {
     path: 'admin', component: AdminComponent, children: [
       {path: '', component: AdminLoginComponent},
-      {path: 'museum', component: AdminMuseumComponent},
-      {path: 'home', component: AdminHomeComponent},
-      {path: 'exposition/new', component: AdminNewExpositionComponent},
-      {path: 'exposition/:id', component: AdminExpositionComponent},
-      {path: 'exhibit/new/:expo_id', component: AdminNewExhibitComponent},
       {path: 'exhibit/:id', component: AdminExhibitComponent},
-      {path: 'infopages', component: AdminInfoPagesComponent},
-      {path: 'infopage/new', component: AdminNewInfoPageComponent},
+      {path: 'exhibit/new/:expo_id', component: AdminNewExhibitComponent},
+      {path: 'exposition/:id', component: AdminExpositionComponent},
+      {path: 'exposition/new', component: AdminNewExpositionComponent},
+      {path: 'home', component: AdminHomeComponent},
       {path: 'infopage/:id', component: AdminInfoPageComponent},
-      {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
-      {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
+      {path: 'infopage/new', component: AdminNewInfoPageComponent},
+      {path: 'infopages', component: AdminInfoPagesComponent},
+      {path: 'museum', component: AdminMuseumComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},
-      {path: 'settings', component: AdminSettingsComponent}
+      {path: 'settings', component: AdminSettingsComponent},
+      {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
+      {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent}
     ]
   },
   {path: '**', component: CommonErrorComponent},
