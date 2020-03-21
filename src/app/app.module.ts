@@ -66,7 +66,7 @@ import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.component';
-import {CarouselComponent} from './user/carousel/carousel.component';
+import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
 import {ExhibitFullscreenComponent} from './user/exhibit-fullscreen/exhibit-fullscreen.component';
 import {ExpositionFullscreenComponent} from './user/exposition-fullscreen/exposition-fullscreen.component';
 import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
@@ -155,7 +155,7 @@ const appRoutes: Routes = [
     AdminSettingsComponent,
     UserAppBarComponent,
     PrivacyPolicyComponent,
-    CarouselComponent,
+    UserCarouselComponent,
     ExhibitFullscreenComponent,
     ExpositionFullscreenComponent,
     MuseumFullscreenComponent,
