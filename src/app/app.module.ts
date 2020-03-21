@@ -41,7 +41,6 @@ import {AdminInfoPageComponent} from './components/admin/pages/admin-info-page/a
 import {AdminInfoPagesComponent} from './components/admin/pages/admin-info-pages/admin-info-pages.component';
 import {AdminLoginComponent} from './components/admin/pages/admin-login/admin-login.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
-import {AdminMuseumStatsComponent} from './components/admin/pages/admin-museum-stats/admin-museum-stats.component';
 import {AdminNewExhibitComponent} from './components/admin/pages/admin-new-exhibit/admin-new-exhibit.component';
 import {AdminNewExpositionComponent} from './components/admin/pages/admin-new-exposition/admin-new-exposition.component';
 import {AdminNewInfoPageComponent} from './components/admin/pages/admin-new-info-page/admin-new-info-page.component';
@@ -103,7 +102,6 @@ const appRoutes: Routes = [
       {path: 'infopages', component: AdminInfoPagesComponent},
       {path: 'infopage/new', component: AdminNewInfoPageComponent},
       {path: 'infopage/:id', component: AdminInfoPageComponent},
-      {path: 'statistics', component: AdminMuseumStatsComponent},
       {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
       {path: 'statistics/exhibit/:id', component: AdminStatsComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},
@@ -134,7 +132,6 @@ const appRoutes: Routes = [
     AdminInfoPagesComponent,
     AdminPersonalDataComponent,
     AdminHomeComponent,
-    AdminMuseumStatsComponent,
     UserCommentComponent,
     UserInfoPageComponent,
     CommonErrorComponent,
