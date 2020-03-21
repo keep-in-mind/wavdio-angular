@@ -3,7 +3,7 @@ import {Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild} from '@angu
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgbDropdownConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {ImageDetailsComponent} from '../../../helper/image-details/image-details.component';
+import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
 import {QrcodeComponent} from '../../../helper/qrcode/qrcode.component';
 import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
 import {Audio} from '../../../models/audio';
@@ -113,7 +113,7 @@ export class AdminPageExhibitComponent implements OnInit {
   }
 
   openImageBigView(index, lang) {
-    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    const modal = this.modalService.open(AdminPartImageDetailsComponent, {centered: true});
     modal.componentInstance.exhibit = this.exhibit;
     modal.componentInstance.index = index;
     modal.componentInstance.lang = lang;

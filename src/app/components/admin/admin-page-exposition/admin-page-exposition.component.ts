@@ -3,7 +3,7 @@ import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import {ImageDetailsComponent} from '../../../helper/image-details/image-details.component';
+import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
 import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
 import {QrcodeComponent} from '../../../helper/qrcode/qrcode.component';
 import {Exhibit} from '../../../models/exhibit';
@@ -119,7 +119,7 @@ export class AdminPageExpositionComponent implements OnInit {
   }
 
   openImageBigView() {
-    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    const modal = this.modalService.open(AdminPartImageDetailsComponent, {centered: true});
     modal.componentInstance.exposition = this.exposition;
   }
 

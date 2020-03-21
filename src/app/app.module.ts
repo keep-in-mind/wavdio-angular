@@ -51,7 +51,7 @@ import {CommonPartCookieBannerComponent} from './components/common/common-part-c
 import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
 import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-part/common-part-exhibit-card.component';
 import {CommonPartExpositionCardComponent} from './components/common/common-part-exposition-card/common-part-exposition-card.component';
-import {ImageDetailsComponent} from './helper/image-details/image-details.component';
+import {AdminPartImageDetailsComponent} from './components/admin/admin-part-image-details/admin-part-image-details.component';
 import {SpinnerComponent} from './helper/spinner/spinner.component';
 import {QrcodeComponent} from './helper/qrcode/qrcode.component';
 import {VideoPlayerComponent} from './helper/video-player/video-player.component';
@@ -144,7 +144,7 @@ const appRoutes: Routes = [
     AdminPageExpositionStatisticsComponent,
     AdminPageStatisticsComponent,
     AdminPartCommentCardComponent,
-    ImageDetailsComponent,
+    AdminPartImageDetailsComponent,
     AdminPartAlertComponent,
     SpinnerComponent,
     QrcodeComponent,
@@ -199,7 +199,7 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     CommentComponent,
-    ImageDetailsComponent,
+    AdminPartImageDetailsComponent,
     SpinnerComponent,
     QrcodeComponent
   ],

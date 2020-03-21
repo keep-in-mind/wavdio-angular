@@ -6,7 +6,7 @@ import {AuthenticationService} from '../../../services/authentification.service'
 import {Breadcrumb} from '../../../models/breadcrumb';
 import {FileService} from '../../../services/file.service';
 import {Image} from '../../../models/image';
-import {ImageDetailsComponent} from '../../../helper/image-details/image-details.component';
+import {AdminPartImageDetailsComponent} from '../admin-part-image-details/admin-part-image-details.component';
 import {Museum} from '../../../models/museum';
 import {MuseumService} from '../../../services/museum.service';
 import {SpinnerComponent} from '../../../helper/spinner/spinner.component';
@@ -129,7 +129,7 @@ export class AdminPageMuseumComponent implements OnInit {
   }
 
   openImageBigView() {
-    const modal = this.modalService.open(ImageDetailsComponent, {centered: true});
+    const modal = this.modalService.open(AdminPartImageDetailsComponent, {centered: true});
     modal.componentInstance.museum = this.museum;
     modal.componentInstance.image = true;
   }
