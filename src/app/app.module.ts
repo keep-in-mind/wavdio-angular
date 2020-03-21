@@ -71,7 +71,7 @@ import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhib
 import {UserExpositionFullscreenComponent} from './components/user/pages/user-exposition-fullscreen/user-exposition-fullscreen.component';
 import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
 import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
-import {ImprintComponent} from './user/imprint/imprint.component';
+import {UserImprintComponent} from './components/user/pages/user-imprint/user-imprint.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/admin-header.component';
 
@@ -108,7 +108,7 @@ const appRoutes: Routes = [
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UsageTermsComponent},
       {path: 'privacy-policy', component: PrivacyPolicyComponent},
-      {path: 'imprint', component: ImprintComponent}
+      {path: 'imprint', component: UserImprintComponent}
     ]
   },
   {path: '**', component: CommonErrorComponent},
@@ -160,7 +160,7 @@ const appRoutes: Routes = [
     UserExpositionFullscreenComponent,
     MuseumFullscreenComponent,
     SiteplanFullscreenComponent,
-    ImprintComponent,
+    UserImprintComponent,
     AdminMuseumComponent,
     AdminHeaderComponent
   ],

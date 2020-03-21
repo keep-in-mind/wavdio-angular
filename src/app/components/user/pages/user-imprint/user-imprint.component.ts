@@ -1,14 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
-import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-imprint',
-  templateUrl: './imprint.component.html',
-  styleUrls: ['./imprint.component.css']
+  selector: 'app-user-imprint',
+  templateUrl: './user-imprint.component.html',
+  styleUrls: ['./user-imprint.component.css']
 })
-export class ImprintComponent implements OnInit {
+export class UserImprintComponent implements OnInit {
 
   museum: Museum;
 
