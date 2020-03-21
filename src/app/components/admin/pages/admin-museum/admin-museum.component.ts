@@ -57,7 +57,7 @@ export class AdminMuseumComponent implements OnInit {
     });
   }
 
-  updateExposition() {
+  updateMuseum() {
     if (!this.museum.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5,
         'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
@@ -80,20 +80,6 @@ export class AdminMuseumComponent implements OnInit {
         }
       }
     );
-  }
-
-  deleteExposition() {
-    if (confirm('Sind Sie sicher, dass Sie diese Ausstellung löschen möchten? ' +
-      'Alle Ausstellungsstücke und die dazugehörigen Medien gehen dabei ebenfalls unwiderruflich verloren.')) {
-
-      this.museumService.deleteMuseum(this.museum).subscribe(res => {
-        this.router.navigate(['/admin/home']);
-      }, (err) => {
-        console.log(err);
-        this.showAlertMessage(3, 5,
-          'Da ist etwas schief gegangen. Prüfen Sie bitte erneut Ihre Eingabedaten.');
-      });
-    }
   }
 
   onImageChanged(event: Event) {
