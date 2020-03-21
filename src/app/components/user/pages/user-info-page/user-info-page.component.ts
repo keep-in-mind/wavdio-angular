@@ -1,16 +1,16 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Infopage} from '../../models/infopage';
-import {CookielawService} from '../../services/cookielaw.service';
-import {InfopageService} from '../../services/infopage.service';
+import {Infopage} from '../../../../models/infopage';
+import {CookielawService} from '../../../../services/cookielaw.service';
+import {InfopageService} from '../../../../services/infopage.service';
 
 @Component({
-  selector: 'app-infopage',
-  templateUrl: './infopage.component.html',
-  styleUrls: ['./infopage.component.css']
+  selector: 'app-user-info-page',
+  templateUrl: './user-info-page.component.html',
+  styleUrls: ['./user-info-page.component.css']
 })
-export class InfopageComponent implements OnInit {
+export class UserInfoPageComponent implements OnInit {
 
   infopage: Infopage;
 

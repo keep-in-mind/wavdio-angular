@@ -59,7 +59,7 @@ import {UserAppBarComponent} from './components/user/parts/user-app-bar/user-app
 import {UserCommentComponent} from './components/user/parts/user-comment/user-comment.component';
 import {UserExhibitComponent} from './components/user/pages/user-exhibit/user-exhibit.component';
 import {UserExpositionComponent} from './components/user/pages/user-exposition/user-exposition.component';
-import {InfopageComponent} from './user/infopage/infopage.component';
+import {UserInfoPageComponent} from './components/user/pages/user-info-page/user-info-page.component';
 import {MuseumComponent} from './user/museum/museum.component';
 import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
@@ -86,7 +86,7 @@ const appRoutes: Routes = [
       {path: 'exposition/:id/fullscreen', component: UserExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: UserExhibitComponent},
       {path: 'exhibit/:id/fullscreen', component: UserExhibitFullscreenComponent},
-      {path: 'infopage/:id', component: InfopageComponent},
+      {path: 'infopage/:id', component: UserInfoPageComponent},
     ]
   },
   {path: 'admin', component: AdminLoginComponent},
@@ -130,7 +130,7 @@ const appRoutes: Routes = [
     AdminHomeComponent,
     AdminMuseumStatisticsComponent,
     UserCommentComponent,
-    InfopageComponent,
+    UserInfoPageComponent,
     CommonErrorComponent,
     UserComponent,
     AdminNewExpositionComponent,
