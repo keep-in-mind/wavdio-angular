@@ -21,19 +21,19 @@
 
           <label for="welcomeText">Begrüßungstext</label>
           <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).welcomeText"></textarea>
+                    [(ngModel)]="museum.getContent(selectedLanguage).welcomeText"></textarea>
 
           <label for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).termsOfUse"></textarea>
+                    [(ngModel)]="museum.getContent(selectedLanguage).termsOfUse"></textarea>
 
           <label for="privacyTerms">Datenschutzerklärung</label>
           <textarea id="privacyTerms" class="form-control mb-2" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).privacyTerms" rows="5"></textarea>
+                    [(ngModel)]="museum.getContent(selectedLanguage).privacyTerms" rows="5"></textarea>
 
           <label for="imprint">Impressum</label>
           <textarea id="imprint" class="form-control mb-2" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).imprint" rows="5"></textarea>
+                    [(ngModel)]="museum.getContent(selectedLanguage).imprint" rows="5"></textarea>
 
           <div class="form-row mb-2">
             <div class="col-12">
@@ -52,21 +52,21 @@
     <section class="mt-2">
       <app-admin-box-card descHeader="Logo">
         <div header>
-          <fa-icon [hidden]="getMuseumContent(selectedLanguage).logo" (click)="onLogoInput.click()"
+          <fa-icon [hidden]="museum.getContent(selectedLanguage).logo" (click)="onLogoInput.click()"
                    class="fa-lg" icon="plus-circle"
                    aria-label="Add logo">
           </fa-icon>
           <form class="d-none">
             <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
           </form>
-          <fa-icon [hidden]="!getMuseumContent(selectedLanguage).logo" class="fa-lg" icon="minus-circle"
+          <fa-icon [hidden]="!museum.getContent(selectedLanguage).logo" class="fa-lg" icon="minus-circle"
                    (click)="deleteLogo()"
                    aria-label="Delete logo"></fa-icon>
         </div>
         <div body>
-          <img *ngIf="getMuseumContent(selectedLanguage).logo" (click)="openLogoBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).logo.filename"
-               [alt]="getMuseumContent(selectedLanguage).logo.alternativeText"/>
+          <img *ngIf="museum.getContent(selectedLanguage).logo" (click)="openLogoBigView()" class="w-100"
+               [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).logo.filename"
+               [alt]="museum.getContent(selectedLanguage).logo.alternativeText"/>
         </div>
       </app-admin-box-card>
     </section>

@@ -6,9 +6,9 @@
 
       <!-- wAVdio Logo -->
       <header>
-        <img *ngIf="museum && getMuseumContent(locale).logo; else defaultLogo"
-             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).logo.filename"
-             [alt]="getMuseumContent(locale).logo.alternativeText"/>
+        <img *ngIf="museum && museum.getContent(locale).logo; else defaultLogo"
+             [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).logo.filename"
+             [alt]="museum.getContent(locale).logo.alternativeText"/>
         <ng-template #defaultLogo>
           <img src="../../../../../assets/images/wAVdio_Logo_gross.png" alt="wAVdio Logo"/>
         </ng-template>
@@ -54,17 +54,17 @@
 
       <!-- Museum Logo -->
       <div style="position: relative; padding-top: 61.8%">
-        <img *ngIf="museum && getMuseumContent(locale).image"
+        <img *ngIf="museum && museum.getContent(locale).image"
              style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
              class="w-100"
-             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(locale).image.filename"
-             [alt]="getMuseumContent(locale).image.alternativeText"
+             [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).image.filename"
+             [alt]="museum.getContent(locale).image.alternativeText"
              routerLink="/museum/fullscreen"/>
 
       </div>
 
       <!-- Museum Title -->
-      <h1 *ngIf="museum" class="mt-2 px-2">{{ getMuseumContent(locale).name }}</h1>
+      <h1 *ngIf="museum" class="mt-2 px-2">{{ museum.getContent(locale).name }}</h1>
 
       <!-- Tabs -->
       <mat-tab-group mat-stretch-tabs>
@@ -72,7 +72,7 @@
         <!-- Info -->
         <mat-tab label="Info" i18n-label>
           <p *ngIf="museum" class="p-2">
-            <markdown>{{ getMuseumContent(locale).info }}</markdown>
+            <markdown>{{ museum.getContent(locale).info }}</markdown>
           </p>
         </mat-tab>
 

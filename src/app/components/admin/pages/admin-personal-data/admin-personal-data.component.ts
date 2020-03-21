@@ -86,11 +86,11 @@ export class AdminPersonalDataComponent implements OnInit {
   }
 
   updateMuseum() {
-    if (!this.getMuseumContent(this.selectedLanguage).name) {
+    if (!this.museum.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5, 'Der Name des Museums darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.getMuseumContent(this.selectedLanguage).name.startsWith(' ')) {
+    if (this.museum.getContent(this.selectedLanguage).name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Der Name des Museums darf keine vorangestellten Leerzeichen beinhalten.' +
         ' Bitte korrigieren Sie Ihre Eingabe.');
       return;
@@ -120,7 +120,7 @@ export class AdminPersonalDataComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.getMuseumContent(this.locale).logo = new Image(randomFilename, 'alt');
+      this.museum.getContent(this.locale).logo = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
@@ -136,22 +136,22 @@ export class AdminPersonalDataComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.getMuseumContent(this.locale).image = new Image(randomFilename, 'alt');
+      this.museum.getContent(this.locale).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteLogo() {
-    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).logo.filename).subscribe(() => {
-      this.getMuseumContent(this.locale).logo = null;
+    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.locale).logo.filename).subscribe(() => {
+      this.museum.getContent(this.locale).logo = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
 
   deleteImage() {
-    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.locale).image.filename).subscribe(() => {
-      this.getMuseumContent(this.locale).image = null;
+    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.locale).image.filename).subscribe(() => {
+      this.museum.getContent(this.locale).image = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
@@ -161,16 +161,5 @@ export class AdminPersonalDataComponent implements OnInit {
     this.alertType = type;
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
-  }
-
-  getMuseumContent(locale: string) {
-    for (const content of this.museum.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing museum
-    console.error(`MuseumContent missing for locale ${locale}`);
   }
 }

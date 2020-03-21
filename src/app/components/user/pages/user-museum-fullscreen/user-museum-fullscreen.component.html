@@ -4,6 +4,6 @@
     <mat-icon>close</mat-icon>
   </button>
 
-  <img [src]="'/uploads/' + this.museum._id + '/' + getMuseumContent(locale).image.filename"
-       [alt]="getMuseumContent(locale).image.alternativeText">
+  <img [src]="'/uploads/' + this.museum._id + '/' + museum.getContent(locale).image.filename"
+       [alt]="museum.getContent(locale).image.alternativeText">
 </div>

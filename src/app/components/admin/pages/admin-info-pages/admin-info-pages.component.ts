@@ -69,27 +69,16 @@ export class AdminInfoPagesComponent implements OnInit {
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
       const mapname = this.selectedLanguage === 'de' ? 'Karte' : 'map';
-      this.getMuseumContent(this.selectedLanguage).sitePlan = new Image(randomFilename, mapname);
+      this.museum.getContent(this.selectedLanguage).sitePlan = new Image(randomFilename, mapname);
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteSitePlan() {
-    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.selectedLanguage).sitePlan.filename).subscribe(() => {
-      this.getMuseumContent(this.selectedLanguage).sitePlan = null;
+    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.selectedLanguage).sitePlan.filename).subscribe(() => {
+      this.museum.getContent(this.selectedLanguage).sitePlan = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
-  }
-
-  getMuseumContent(locale: string) {
-    for (const content of this.museum.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing museum
-    console.error(`MuseumContent missing for locale ${locale}`);
   }
 }

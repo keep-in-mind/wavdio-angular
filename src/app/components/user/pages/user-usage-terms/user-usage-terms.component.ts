@@ -26,15 +26,4 @@ export class UserUsageTermsComponent implements OnInit {
       museum => this.museum = museum[0]
     );
   }
-
-  getMuseumContent(locale: string) {
-    for (const content of this.museum.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing museum
-    console.error(`MuseumContent missing for locale ${locale}`);
-  }
 }

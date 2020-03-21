@@ -2,7 +2,7 @@
   <app-user-app-bar backArrow="true" title="Privacy Policy" i18n-title></app-user-app-bar>
 
   <main *ngIf="museum" style="padding: 8px">
-    <markdown>{{ getMuseumContent(locale).privacyTerms }}</markdown>
+    <markdown>{{ museum.getContent(locale).privacyTerms }}</markdown>
   </main>
 
 

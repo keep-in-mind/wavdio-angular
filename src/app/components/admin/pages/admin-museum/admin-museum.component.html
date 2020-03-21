@@ -20,14 +20,14 @@
         <!-- Title -->
 
         <label for="name">Titel</label>
-        <input id="name" class="form-control" type="text" [(ngModel)]="getMuseumContent(selectedLanguage).name">
+        <input id="name" class="form-control" type="text" [(ngModel)]="museum.getContent(selectedLanguage).name">
 
         <!-- Description -->
 
         <div class="mt-2">
           <label for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="getMuseumContent(selectedLanguage).info"></textarea>
+                    [(ngModel)]="museum.getContent(selectedLanguage).info"></textarea>
         </div>
 
         <!-- Save & Delete -->
@@ -58,7 +58,7 @@
 
       <div header>
         <fa-icon class="fa-lg" (click)="onImageInput.click()"
-                 [hidden]="getMuseumContent(selectedLanguage).image"
+                 [hidden]="museum.getContent(selectedLanguage).image"
                  icon="plus-circle" aria-label="Add image"></fa-icon>
 
         <form class="d-none">
@@ -66,16 +66,16 @@
         </form>
 
         <fa-icon class="fa-lg" (click)="deleteImage()"
-                 [hidden]="!getMuseumContent(selectedLanguage).image"
+                 [hidden]="!museum.getContent(selectedLanguage).image"
                  icon="minus-circle" aria-label="Delete image"></fa-icon>
       </div>
 
       <!-- Body: Image -->
 
       <div body>
-        <img *ngIf="getMuseumContent(selectedLanguage).image" class="w-100"
-             [src]="'/uploads/' + museum._id + '/' + getMuseumContent(selectedLanguage).image.filename"
-             [alt]="getMuseumContent(selectedLanguage).image.alternativeText"
+        <img *ngIf="museum.getContent(selectedLanguage).image" class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).image.filename"
+             [alt]="museum.getContent(selectedLanguage).image.alternativeText"
              (click)="openImageBigView()"/>
       </div>
     </app-admin-box-card>

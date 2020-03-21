@@ -2,7 +2,7 @@
   <app-user-app-bar backArrow="true" title="Terms of Use" i18n-title></app-user-app-bar>
 
   <main *ngIf="museum" style="padding: 8px">
-    <markdown>{{ getMuseumContent(locale).termsOfUse }}</markdown>
+    <markdown>{{ museum.getContent(locale).termsOfUse }}</markdown>
   </main>
 
   <footer>

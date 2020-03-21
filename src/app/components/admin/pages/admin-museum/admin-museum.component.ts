@@ -58,13 +58,13 @@ export class AdminMuseumComponent implements OnInit {
   }
 
   updateExposition() {
-    if (!this.getMuseumContent(this.selectedLanguage).name) {
+    if (!this.museum.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5,
         'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
 
-    if (this.getMuseumContent(this.selectedLanguage).name.startsWith(' ')) {
+    if (this.museum.getContent(this.selectedLanguage).name.startsWith(' ')) {
       this.showAlertMessage(3, 5,
         'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten. ' +
         'Bitte korrigieren Sie Ihre Eingabe.');
@@ -106,15 +106,15 @@ export class AdminMuseumComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.getMuseumContent(this.selectedLanguage).image = new Image(randomFilename, 'alt');
+      this.museum.getContent(this.selectedLanguage).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
   }
 
   deleteImage() {
-    this.fileService.deleteFile(this.museum._id, this.getMuseumContent(this.selectedLanguage).image.filename).subscribe(() => {
-      this.getMuseumContent(this.selectedLanguage).image = null;
+    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.selectedLanguage).image.filename).subscribe(() => {
+      this.museum.getContent(this.selectedLanguage).image = null;
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
@@ -123,17 +123,6 @@ export class AdminMuseumComponent implements OnInit {
     const modal = this.modalService.open(AdminImageDetailsComponent, {centered: true});
     modal.componentInstance.museum = this.museum;
     modal.componentInstance.image = true;
-  }
-
-  getMuseumContent(locale: string) {
-    for (const content of this.museum.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing museum
-    console.error(`MuseumContent missing for locale ${locale}`);
   }
 
   private showAlertMessage(type: number, seconds: number, message: string) {

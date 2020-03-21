@@ -3,6 +3,6 @@
     <mat-icon>close</mat-icon>
   </button>
 
-  <img [src]="'/uploads/' + this.museum._id + '/' + getMuseumContent(locale).sitePlan.filename"
-       [alt]="getMuseumContent(locale).sitePlan.alternativeText">
+  <img [src]="'/uploads/' + this.museum._id + '/' + museum.getContent(locale).sitePlan.filename"
+       [alt]="museum.getContent(locale).sitePlan.alternativeText">
 </div>

@@ -27,19 +27,4 @@ export class UserSitePlanFullscreenComponent implements OnInit {
       this.museum = museums[0];
     });
   }
-
-  getMuseumContent(lang: String): MuseumContent {
-
-    /* return localized content */
-
-    for (const content of this.museum.contents) {
-      if (content.lang === lang) {
-        return content;
-      }
-    }
-
-    /* not available ? must not happen. has to be created when constructing museum */
-
-    console.error(`No content available for ${lang}`);
-  }
 }
