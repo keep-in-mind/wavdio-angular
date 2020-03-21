@@ -2,19 +2,19 @@ import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 
-import {Exposition} from '../../models/exposition';
-import {Museum} from '../../models/museum';
-import {MuseumContent} from '../../models/museum-content';
-import {CookielawService} from '../../services/cookielaw.service';
-import {ExpositionService} from '../../services/exposition.service';
-import {MuseumService} from '../../services/museum.service';
+import {Exposition} from '../../../../models/exposition';
+import {Museum} from '../../../../models/museum';
+import {MuseumContent} from '../../../../models/museum-content';
+import {CookielawService} from '../../../../services/cookielaw.service';
+import {ExpositionService} from '../../../../services/exposition.service';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-visitor',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  selector: 'app-user-welcome',
+  templateUrl: './user-welcome.component.html',
+  styleUrls: ['./user-welcome.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class UserWelcomeComponent implements OnInit {
 
   data: any;
   termsOfUseFlag = false;

@@ -63,7 +63,7 @@ import {UserInfoPageComponent} from './components/user/pages/user-info-page/user
 import {UserMuseumComponent} from './components/user/pages/user-museum/user-museum.component';
 import {UserComponent} from './user/user.component';
 import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/user-usage-terms.component';
-import {WelcomeComponent} from './user/welcome/welcome.component';
+import {UserWelcomeComponent} from './components/user/pages/user-welcome/user-welcome.component';
 import {environment} from '../environments/environment';
 import {UserPrivacyPolicyComponent} from './components/user/pages/user-privacy-policy/user-privacy-policy.component';
 import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
@@ -78,7 +78,7 @@ import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/a
 const appRoutes: Routes = [
   {
     path: '', component: UserComponent, children: [
-      {path: '', component: WelcomeComponent},
+      {path: '', component: UserWelcomeComponent},
       {path: 'museum', component: UserMuseumComponent},
       {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
       {path: 'siteplan', component: UserSitePlanFullscreenComponent},
@@ -117,7 +117,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
+    UserWelcomeComponent,
     UserExpositionComponent,
     UserExhibitComponent,
     AdminLoginComponent,
