@@ -65,7 +65,7 @@ import {UserComponent} from './user/user.component';
 import {UsageTermsComponent} from './user/usage-terms/usage-terms.component';
 import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
-import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.component';
+import {UserPrivacyPolicyComponent} from './components/user/pages/user-privacy-policy/user-privacy-policy.component';
 import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
 import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhibit-fullscreen/user-exhibit-fullscreen.component';
 import {UserExpositionFullscreenComponent} from './components/user/pages/user-exposition-fullscreen/user-exposition-fullscreen.component';
@@ -107,7 +107,7 @@ const appRoutes: Routes = [
   {
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UsageTermsComponent},
-      {path: 'privacy-policy', component: PrivacyPolicyComponent},
+      {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
       {path: 'imprint', component: UserImprintComponent}
     ]
   },
@@ -154,7 +154,7 @@ const appRoutes: Routes = [
     CommonVideoPlayerComponent,
     AdminSettingsComponent,
     UserAppBarComponent,
-    PrivacyPolicyComponent,
+    UserPrivacyPolicyComponent,
     UserCarouselComponent,
     UserExhibitFullscreenComponent,
     UserExpositionFullscreenComponent,

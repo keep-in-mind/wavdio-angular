@@ -1,14 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 
-import {Museum} from '../../models/museum';
-import {MuseumService} from '../../services/museum.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-privacy-policy',
-  templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.css']
+  selector: 'app-user-privacy-policy',
+  templateUrl: './user-privacy-policy.component.html',
+  styleUrls: ['./user-privacy-policy.component.css']
 })
-export class PrivacyPolicyComponent implements OnInit {
+export class UserPrivacyPolicyComponent implements OnInit {
 
   museum: Museum;
 
