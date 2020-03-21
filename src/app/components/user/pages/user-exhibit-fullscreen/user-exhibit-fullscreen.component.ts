@@ -2,16 +2,16 @@ import {Location} from '@angular/common';
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {Exhibit} from '../../models/exhibit';
-import {ExhibitContent} from '../../models/exhibit-content';
-import {ExhibitService} from '../../services/exhibit.service';
+import {Exhibit} from '../../../../models/exhibit';
+import {ExhibitContent} from '../../../../models/exhibit-content';
+import {ExhibitService} from '../../../../services/exhibit.service';
 
 @Component({
-  selector: 'app-exhibit-fullscreen',
-  templateUrl: './exhibit-fullscreen.component.html',
-  styleUrls: ['./exhibit-fullscreen.component.css']
+  selector: 'app-user-exhibit-fullscreen',
+  templateUrl: './user-exhibit-fullscreen.component.html',
+  styleUrls: ['./user-exhibit-fullscreen.component.css']
 })
-export class ExhibitFullscreenComponent implements OnInit {
+export class UserExhibitFullscreenComponent implements OnInit {
 
   slideConfig = {
     infinite: true,

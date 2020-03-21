@@ -67,7 +67,7 @@ import {WelcomeComponent} from './user/welcome/welcome.component';
 import {environment} from '../environments/environment';
 import {PrivacyPolicyComponent} from './user/privacy-policy/privacy-policy.component';
 import {UserCarouselComponent} from './components/user/parts/user-carousel/user-carousel.component';
-import {ExhibitFullscreenComponent} from './user/exhibit-fullscreen/exhibit-fullscreen.component';
+import {UserExhibitFullscreenComponent} from './components/user/pages/user-exhibit-fullscreen/user-exhibit-fullscreen.component';
 import {ExpositionFullscreenComponent} from './user/exposition-fullscreen/exposition-fullscreen.component';
 import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
 import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
@@ -85,7 +85,7 @@ const appRoutes: Routes = [
       {path: 'exposition/:id', component: ExpositionComponent},
       {path: 'exposition/:id/fullscreen', component: ExpositionFullscreenComponent},
       {path: 'exhibit/:id', component: UserExhibitComponent},
-      {path: 'exhibit/:id/fullscreen', component: ExhibitFullscreenComponent},
+      {path: 'exhibit/:id/fullscreen', component: UserExhibitFullscreenComponent},
       {path: 'infopage/:id', component: InfopageComponent},
     ]
   },
@@ -156,7 +156,7 @@ const appRoutes: Routes = [
     UserAppBarComponent,
     PrivacyPolicyComponent,
     UserCarouselComponent,
-    ExhibitFullscreenComponent,
+    UserExhibitFullscreenComponent,
     ExpositionFullscreenComponent,
     MuseumFullscreenComponent,
     SiteplanFullscreenComponent,
