@@ -107,7 +107,7 @@ export class AdminExhibitComponent implements OnInit {
 
   deleteAudio(filename: string) {
     this.fileService.deleteFile(this.exhibit._id, filename).subscribe(() => {
-      const audios = this.getExhibitContent(this.selectedLanguage).audio;
+      const audios = this.exhibit.getContent(this.selectedLanguage).audio;
       audios.splice(audios.findIndex(audio => audio.filename === filename), 1);
       this.updateExhibit();
     });
@@ -115,7 +115,7 @@ export class AdminExhibitComponent implements OnInit {
 
   deleteVideo(filename: string) {
     this.fileService.deleteFile(this.exhibit._id, filename).subscribe(() => {
-      const videos = this.getExhibitContent(this.selectedLanguage).video;
+      const videos = this.exhibit.getContent(this.selectedLanguage).video;
       videos.splice(videos.findIndex(video => video.filename === filename), 1);
       this.updateExhibit();
     });
@@ -126,7 +126,7 @@ export class AdminExhibitComponent implements OnInit {
       return;
     }
     this.fileService.deleteFile(this.exhibit._id, filename).subscribe(() => {
-      this.getExhibitContent(this.selectedLanguage).transcript = null;
+      this.exhibit.getContent(this.selectedLanguage).transcript = null;
       this.updateExhibit();
     });
   }
@@ -164,7 +164,7 @@ export class AdminExhibitComponent implements OnInit {
       text = reader.result;
       const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
       this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
-        this.getExhibitContent(this.selectedLanguage).transcript = new Transcript(randomFilename, text);
+        this.exhibit.getContent(this.selectedLanguage).transcript = new Transcript(randomFilename, text);
         this.updateExhibit();
         spinner.close();
       });
@@ -181,7 +181,7 @@ export class AdminExhibitComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
-      this.getExhibitContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
+      this.exhibit.getContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
       this.updateExhibit();
       spinner.close();
     });
@@ -201,7 +201,7 @@ export class AdminExhibitComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, file.name).subscribe(() => {
-      this.getExhibitContent(this.selectedLanguage).audio.push(new Audio(file.name, file.type));
+      this.exhibit.getContent(this.selectedLanguage).audio.push(new Audio(file.name, file.type));
       this.updateExhibit();
       spinner.close();
     });
@@ -221,18 +221,18 @@ export class AdminExhibitComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, file.name).subscribe(() => {
-      this.getExhibitContent(this.selectedLanguage).video.push(new Video(file.name, file.type, 'transcript'));
+      this.exhibit.getContent(this.selectedLanguage).video.push(new Video(file.name, file.type, 'transcript'));
       this.updateExhibit();
       spinner.close();
     });
   }
 
   updateExhibit() {
-    if (!this.getExhibitContent(this.selectedLanguage).name) {
+    if (!this.exhibit.getContent(this.selectedLanguage).name) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf nicht leer sein. Bitte korrigieren Sie Ihre Eingabe.');
       return;
     }
-    if (this.getExhibitContent(this.selectedLanguage).name.startsWith(' ')) {
+    if (this.exhibit.getContent(this.selectedLanguage).name.startsWith(' ')) {
       this.showAlertMessage(3, 5, 'Das Titelfeld darf keine vorangestellten Leerzeichen beinhalten. ' +
         'Bitte korrigieren Sie Ihre Eingabe.');
       return;
@@ -267,16 +267,5 @@ export class AdminExhibitComponent implements OnInit {
     this.alertType = type;
     this.alertMessage = message;
     setTimeout(() => this.showAlert = false, seconds * 1000);
-  }
-
-  getExhibitContent(locale: string) {
-    for (const content of this.exhibit.contents) {
-      if (content.lang === locale) {
-        return content;
-      }
-    }
-
-    // not available ? must not happen. has to be created when constructing exhibit
-    console.error(`ExhibitContent missing for locale ${locale}`);
   }
 }

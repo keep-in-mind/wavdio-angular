@@ -22,7 +22,7 @@
             <div class="col-9">
               <label for="name">Titel</label>
               <input id="name" class="form-control" type="text"
-                     [(ngModel)]="getExhibitContent(selectedLanguage).name">
+                     [(ngModel)]="exhibit.getContent(selectedLanguage).name">
 
             </div>
             <div class="col-3">
@@ -37,7 +37,7 @@
           </div>
           <label for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="getExhibitContent(selectedLanguage).info"></textarea>
+                    [(ngModel)]="exhibit.getContent(selectedLanguage).info"></textarea>
           <label for="note">Notizen</label>
           <textarea id="note" notizen class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
           <div class="form-row mb-2">
@@ -85,7 +85,7 @@
           <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
         </div>
-        <div body *ngFor="let image of getExhibitContent(selectedLanguage).images; let i = index">
+        <div body *ngFor="let image of exhibit.getContent(selectedLanguage).images; let i = index">
           <div class="profile-pic p-1">
             <img class="img-thumbnail" (click)="openImageBigView(i, selectedLanguage)"
                  [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
@@ -99,7 +99,7 @@
         <div header>
           <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
-          <ng-container *ngIf="getExhibitContent(selectedLanguage).video.length">
+          <ng-container *ngIf="exhibit.getContent(selectedLanguage).video.length">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px' ngbDropdownToggle
                       aria-label="Show deletable videos">
@@ -109,7 +109,7 @@
                 <div style="text-align:center">Datei löschen..</div>
                 <hr style="margin-top: 0;margin-bottom: 0;">
                 <button class="dropdown-item"
-                        *ngFor="let video_file of getExhibitContent(selectedLanguage).video"
+                        *ngFor="let video_file of exhibit.getContent(selectedLanguage).video"
                         (click)="deleteVideo(video_file.filename)"
                         aria-label="Delete video">
                   {{video_file.filename}}
@@ -118,7 +118,7 @@
             </div>
           </ng-container>
         </div>
-        <div body *ngIf="getExhibitContent(selectedLanguage).video.length">
+        <div body *ngIf="exhibit.getContent(selectedLanguage).video.length">
           <app-common-video-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-video-player>
         </div>
       </app-admin-box-card>
@@ -128,15 +128,15 @@
       <app-admin-box-card descHeader="Audio">
         <div header>
           <!-- Transcript -->
-          <fa-icon aria-label="Open Transcript" *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
+          <fa-icon aria-label="Open Transcript" *ngIf="exhibit.getContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
           (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
-          <button *ngIf="!getExhibitContent(selectedLanguage).transcript"
+          <button *ngIf="!exhibit.getContent(selectedLanguage).transcript"
                   (click)="uploadTranscriptInput.click()" style="margin-right: 10pt"
                   aria-label="Add transcript">
             Transkript hinzufügen
           </button>
-          <button *ngIf="getExhibitContent(selectedLanguage).transcript" style="margin-right: 10pt"
-                  (click)="deleteTranscript(getExhibitContent(selectedLanguage).transcript.filename)"
+          <button *ngIf="exhibit.getContent(selectedLanguage).transcript" style="margin-right: 10pt"
+                  (click)="deleteTranscript(exhibit.getContent(selectedLanguage).transcript.filename)"
                   aria-label="Delete transcript">
             Transkript löschen
           </button>
@@ -149,13 +149,13 @@
                 </button>
               </div>
               <div class="modal-body" style="overflow-y: auto; height:400pt;">
-                <p>{{getExhibitContent(selectedLanguage).transcript.text}}</p>
+                <p>{{exhibit.getContent(selectedLanguage).transcript.text}}</p>
               </div>
             </ng-template>
           <!-- End Transcript-->
           <fa-icon aria-label="Upload audio"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
           <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
-          <ng-container *ngIf="getExhibitContent(selectedLanguage).audio.length">
+          <ng-container *ngIf="exhibit.getContent(selectedLanguage).audio.length">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px' ngbDropdownToggle
                       aria-label="Show deletable audios">
@@ -165,7 +165,7 @@
                 <div style="text-align:center">Datei löschen..</div>
                 <hr style="margin-top: 0;margin-bottom: 0;">
                 <button class="dropdown-item"
-                        *ngFor="let audio_file of getExhibitContent(selectedLanguage).audio"
+                        *ngFor="let audio_file of exhibit.getContent(selectedLanguage).audio"
                         (click)="deleteAudio(audio_file.filename)"
                         aria-label="Delete audio">
                   {{audio_file.filename}}
@@ -174,7 +174,7 @@
             </div>
           </ng-container>
         </div>
-        <div body *ngIf="getExhibitContent(selectedLanguage).audio.length">
+        <div body *ngIf="exhibit.getContent(selectedLanguage).audio.length">
           <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-audio-player>
         </div>
       </app-admin-box-card>
