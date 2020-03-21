@@ -74,6 +74,7 @@ import {UserSitePlanFullscreenComponent} from './components/user/pages/user-site
 import {UserImprintComponent} from './components/user/pages/user-imprint/user-imprint.component';
 import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/admin-header.component';
+import {AdminComponent} from './components/admin/admin.component';
 
 const appRoutes: Routes = [
   {
@@ -89,21 +90,25 @@ const appRoutes: Routes = [
       {path: 'infopage/:id', component: UserInfoPageComponent},
     ]
   },
-  {path: 'admin', component: AdminLoginComponent},
-  {path: 'admin/museum', component: AdminMuseumComponent},
-  {path: 'admin/home', component: AdminHomeComponent},
-  {path: 'admin/exposition/new', component: AdminNewExpositionComponent},
-  {path: 'admin/exposition/:id', component: AdminExpositionComponent},
-  {path: 'admin/exhibit/new/:expo_id', component: AdminNewExhibitComponent},
-  {path: 'admin/exhibit/:id', component: AdminExhibitComponent},
-  {path: 'admin/infopages', component: AdminInfoPagesComponent},
-  {path: 'admin/infopage/new', component: AdminNewInfoPageComponent},
-  {path: 'admin/infopage/:id', component: AdminInfoPageComponent},
-  {path: 'admin/statistics', component: AdminMuseumStatisticsComponent},
-  {path: 'admin/statistics/exposition/:id', component: AdminExpositionStatisticsComponent},
-  {path: 'admin/statistics/exhibit/:id', component: AdminStatisticsComponent},
-  {path: 'admin/personal-data', component: AdminPersonalDataComponent},
-  {path: 'admin/settings', component: AdminSettingsComponent},
+  {
+    path: 'admin', component: AdminComponent, children: [
+      {path: '', component: AdminLoginComponent},
+      {path: 'museum', component: AdminMuseumComponent},
+      {path: 'home', component: AdminHomeComponent},
+      {path: 'exposition/new', component: AdminNewExpositionComponent},
+      {path: 'exposition/:id', component: AdminExpositionComponent},
+      {path: 'exhibit/new/:expo_id', component: AdminNewExhibitComponent},
+      {path: 'exhibit/:id', component: AdminExhibitComponent},
+      {path: 'infopages', component: AdminInfoPagesComponent},
+      {path: 'infopage/new', component: AdminNewInfoPageComponent},
+      {path: 'infopage/:id', component: AdminInfoPageComponent},
+      {path: 'statistics', component: AdminMuseumStatisticsComponent},
+      {path: 'statistics/exposition/:id', component: AdminExpositionStatisticsComponent},
+      {path: 'statistics/exhibit/:id', component: AdminStatisticsComponent},
+      {path: 'personal-data', component: AdminPersonalDataComponent},
+      {path: 'settings', component: AdminSettingsComponent}
+    ]
+  },
   {
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UserUsageTermsComponent},
@@ -162,7 +167,8 @@ const appRoutes: Routes = [
     UserSitePlanFullscreenComponent,
     UserImprintComponent,
     AdminMuseumComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
