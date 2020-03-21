@@ -48,7 +48,7 @@ import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin
 import {CommonPartAudioPlayerComponent} from './components/common/common-part-audio-player/common-part-audio-player.component';
 import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
 import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
-import {ErrorPageComponent} from './helper/error-page/error-page.component';
+import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
 import {ExhibitCardComponent} from './helper/exhibit-card/exhibit-card.component';
 import {ExpositionCardComponent} from './helper/exposition-card/exposition-card.component';
 import {ImageDetailsComponent} from './helper/image-details/image-details.component';
@@ -111,7 +111,7 @@ const appRoutes: Routes = [
       {path: 'imprint', component: ImprintComponent}
     ]
   },
-  {path: '**', component: ErrorPageComponent},
+  {path: '**', component: CommonPageErrorComponent},
 ];
 
 @NgModule({
@@ -131,7 +131,7 @@ const appRoutes: Routes = [
     AdminPageMuseumStatisticsComponent,
     CommentComponent,
     InfopageComponent,
-    ErrorPageComponent,
+    CommonPageErrorComponent,
     UserComponent,
     AdminPageNewExpositionComponent,
     AdminPageNewExhibitComponent,

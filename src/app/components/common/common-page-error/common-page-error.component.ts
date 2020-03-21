@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-error-page',
-  templateUrl: './error-page.component.html',
-  styleUrls: ['./error-page.component.css']
+  selector: 'app-common-page-error',
+  templateUrl: './common-page-error.component.html',
+  styleUrls: ['./common-page-error.component.css']
 })
-export class ErrorPageComponent implements OnInit {
+export class CommonPageErrorComponent implements OnInit {
 
   constructor(private router: Router) { }
 
