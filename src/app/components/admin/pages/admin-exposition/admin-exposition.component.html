@@ -22,7 +22,7 @@
 
           <label for="name">Titel</label>
           <input id="name" class="form-control" type="text"
-                 [(ngModel)]="getExpositionContent(selectedLanguage).name">
+                 [(ngModel)]="exposition.getContent(selectedLanguage).name">
 
           <div class="mb-2">
             <label class="mr-2" for="active">Aktiv</label>
@@ -31,7 +31,7 @@
 
           <label for="info">Beschreibung</label>
           <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="getExpositionContent(selectedLanguage).info"></textarea>
+                    [(ngModel)]="exposition.getContent(selectedLanguage).info"></textarea>
 
           <label for="note">Notizen</label>
           <textarea id="note" class="form-control mb-2" rows="7" [(ngModel)]="exposition.note"></textarea>

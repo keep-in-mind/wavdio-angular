@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
 
 import {AuthenticationService} from './authentification.service';
 import {Exposition} from '../models/exposition';
@@ -24,79 +24,79 @@ export class ExpositionService {
     this.logger.trace('getExpositions()');
 
     return this.http.get<Exposition[]>(this.url).pipe(
-      tap((readExpositions: Exposition[]) =>
-        this.logger.trace('getExpositions().next(readExpositions: Exposition[])', readExpositions)),
-      catchError(this.handleError('getExpositions()', []))
+      map(jsonExpositions => jsonExpositions.map(jsonExposition => Exposition.fromJSON(jsonExposition))),
+      tap(readExpositions => this.logger.trace('getExpositions(...)', readExpositions)),
+      catchError(this.handleError('getExpositions(...)', []))
     );
   }
 
   public createExposition(exposition: Exposition): Observable<Exposition> {
-    this.logger.trace('createExposition(exposition: Exposition)', exposition);
+    this.logger.trace('createExposition(exposition)', exposition);
 
     return this.http.post<Exposition>(this.url, exposition, this.auth.getAuthorizationHeader()).pipe(
-      tap((createdExposition: Exposition) =>
-        this.logger.trace('createExposition().next(createdExposition: Exposition)', createdExposition)),
-      catchError(this.handleError<Exposition>('createExposition()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(createdExposition => this.logger.trace('createExposition(...)', createdExposition)),
+      catchError(this.handleError<Exposition>('createExposition(...)'))
     );
   }
 
   public getExposition(_id: string): Observable<Exposition> {
-    this.logger.trace('getExposition(_id: string)', _id);
+    this.logger.trace('getExposition(_id)', _id);
 
     return this.http.get<Exposition>(`${this.url}/${_id}`).pipe(
-      tap((readExposition: Exposition) =>
-        this.logger.trace('getExposition().next(readExposition: Exposition)', readExposition)),
-      catchError(this.handleError<Exposition>('getExposition()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(readExposition => this.logger.trace('getExposition(...)', readExposition)),
+      catchError(this.handleError<Exposition>('getExposition(...)'))
     );
   }
 
   public updateExposition(exposition: Exposition): Observable<Exposition> {
-    this.logger.trace('updateExposition(exposition: Exposition)', exposition);
+    this.logger.trace('updateExposition(exposition)', exposition);
 
     return this.http.patch<Exposition>(`${this.url}/${exposition._id}`, exposition, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedExposition: Exposition) =>
-        this.logger.trace('updateExposition().next(updatedExposition: Exposition)', updatedExposition)),
-      catchError(this.handleError<Exposition>('updateExposition()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(updatedExposition => this.logger.trace('updateExposition(...)', updatedExposition)),
+      catchError(this.handleError<Exposition>('updateExposition(...)'))
     );
   }
 
   public createExpositionLike(exposition: Exposition, like: Like): Observable<Exposition> {
-    this.logger.trace('createExpositionLike(exposition: Exposition, like: Like)', exposition, like);
+    this.logger.trace('createExpositionLike(exposition, like)', exposition, like);
 
     return this.http.post<Exposition>(`${this.url}/${exposition._id}/like`, like).pipe(
-      tap((updatedExposition: Exposition) =>
-        this.logger.trace('createExpositionLike().next(updatedExposition: Exposition)', updatedExposition)),
-      catchError(this.handleError<Exposition>('createExpositionLike()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(updatedExposition => this.logger.trace('createExpositionLike(...)', updatedExposition)),
+      catchError(this.handleError<Exposition>('createExpositionLike(...)'))
     );
   }
 
   public deleteExpositionLike(exposition: Exposition, like: Like): Observable<Exposition> {
-    this.logger.trace('deleteExpositionLike(exposition: Exposition, like: Like)', exposition, like);
+    this.logger.trace('deleteExpositionLike(exposition, like)', exposition, like);
 
     return this.http.delete<Exposition>(`${this.url}/${exposition._id}/like/${like._id}`).pipe(
-      tap((updatedExposition: Exposition) =>
-        this.logger.trace('deleteExpositionLike().next(updatedExposition: Exposition)', updatedExposition)),
-      catchError(this.handleError<Exposition>('deleteExpositionLike()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(updatedExposition => this.logger.trace('deleteExpositionLike(...)', updatedExposition)),
+      catchError(this.handleError<Exposition>('deleteExpositionLike(...)'))
     );
   }
 
   public updateExpositionCommentLike(exposition: Exposition): Observable<Exposition> {
-    this.logger.trace('updateExpositionCommentLike(exposition: Exposition)', exposition);
+    this.logger.trace('updateExpositionCommentLike(exposition)', exposition);
 
-    return this.http.patch<Exposition>(`${this.url}/${exposition._id}/comment_like`, exposition, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedExposition: Exposition) =>
-        this.logger.trace('updateExpositionCommentLike().next(updatedExposition: Exposition)', updatedExposition)),
-      catchError(this.handleError<Exposition>('updateExpositionCommentLike()'))
+    return this.http.patch<Exposition>(`${this.url}/${exposition._id}/comment_like`, exposition).pipe(
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(updatedExposition => this.logger.trace('updateExpositionCommentLike(...)', updatedExposition)),
+      catchError(this.handleError<Exposition>('updateExpositionCommentLike(...)'))
     );
   }
 
   public deleteExposition(exposition: Exposition): Observable<Exposition> {
-    this.logger.trace('deleteExposition(exposition: Exposition)', exposition);
+    this.logger.trace('deleteExposition(exposition)', exposition);
 
     return this.http.delete<Exposition>(`${this.url}/${exposition._id}`, this.auth.getAuthorizationHeader()).pipe(
-      tap((deletedExposition: Exposition) =>
-        this.logger.trace('deleteExposition().next(deletedExposition: Exposition)', deletedExposition)),
-      catchError(this.handleError<Exposition>('deleteExposition()'))
+      map(jsonExposition => Exposition.fromJSON(jsonExposition)),
+      tap(deletedExposition => this.logger.trace('deleteExposition(...)', deletedExposition)),
+      catchError(this.handleError<Exposition>('deleteExposition(...)'))
     );
   }
 

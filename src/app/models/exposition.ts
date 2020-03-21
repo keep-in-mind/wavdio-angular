@@ -21,6 +21,7 @@ export class Exposition {
   contents: ExpositionContent[];
 
   constructor(
+    _id: string = null,
     museum: string,
     active: boolean,
     code: number,
@@ -31,6 +32,7 @@ export class Exposition {
     comments: Comment[],
     contents: ExpositionContent[]) {
 
+    this._id = _id;
     this.museum = museum;
     this.active = active;
     this.code = code;
@@ -40,5 +42,31 @@ export class Exposition {
     this.views = views;
     this.comments = comments;
     this.contents = contents;
+  }
+
+  static fromJSON(json: any): Exposition {
+    return new this(
+      json._id,
+      json.museum,
+      json.active,
+      json.code,
+      json.note,
+      json.logo,
+      json.likes,
+      json.views,
+      json.comments,
+      json.contents);
+  }
+
+  getContent(locale: string): ExpositionContent {
+    for (const content of this.contents) {
+      if (content.lang === locale) {
+        return content;
+      }
+    }
+
+    // not found ? must not happen. has to be created when constructing exposition
+    console.error(`ExpositionContent missing for locale ${locale}`);
+    return null;
   }
 }

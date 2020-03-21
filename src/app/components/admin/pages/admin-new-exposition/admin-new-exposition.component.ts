@@ -55,15 +55,7 @@ export class AdminNewExpositionComponent implements OnInit {
           const englishContent = new ExpositionContent('en', '', '');
           const spanishContent = new ExpositionContent('es', '', '');
           const frenchContent = new ExpositionContent('fr', '', '');
-          this.exposition = new Exposition(
-            this.museum._id,
-            true,
-            0,
-            '',
-            null,
-            [],
-            [],
-            [],
+          this.exposition = new Exposition(null, this.museum._id, true, 0, '', null, [], [], [],
             [germanContent, englishContent, spanishContent, frenchContent]);
         }
       );
