@@ -82,9 +82,9 @@
             <div class="container">
               <div class="grid-container pb-5">
                 <div *ngFor="let exhibit of exhibits" class="mx-auto">
-                  <app-common-part-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'"
-                                                [height]="'150px'"
-                                                [link]="'/exhibit/' + exhibit._id"></app-common-part-exhibit-card>
+                  <app-common-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'"
+                                           [height]="'150px'"
+                                           [link]="'/exhibit/' + exhibit._id"></app-common-exhibit-card>
                 </div>
               </div>
             </div>
@@ -97,9 +97,9 @@
             <div class="container">
               <div class="grid-container pb-5">
                 <div *ngFor="let exposition of expositions" class="mx-auto">
-                  <app-common-part-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
-                                                   [height]="'150px'"
-                                                   [link]="'/exposition/' + exposition._id"></app-common-part-exposition-card>
+                  <app-common-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
+                                              [height]="'150px'"
+                                              [link]="'/exposition/' + exposition._id"></app-common-exposition-card>
                 </div>
               </div>
             </div>
@@ -116,4 +116,4 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<app-common-part-cookie-banner></app-common-part-cookie-banner>
+<app-common-cookie-banner></app-common-cookie-banner>

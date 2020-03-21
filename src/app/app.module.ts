@@ -26,35 +26,35 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
 import {NgxQRCodeModule} from 'ngx-qrcode2';
 
-import {AdminPartCommentCardComponent} from './components/admin/admin-part-comment-card/admin-part-comment-card.component';
-import {AdminPageExhibitComponent} from './components/admin/admin-page-exhibit/admin-page-exhibit.component';
-import {AdminPageNewExhibitComponent} from './components/admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
-import {AdminPageStatisticsComponent} from './components/admin/admin-page-statistics/admin-page-statistics.component';
-import {AdminPageExpositionComponent} from './components/admin/admin-page-exposition/admin-page-exposition.component';
-import {AdminPageNewExpositionComponent} from './components/admin/admin-page-new-exposition/admin-page-new-exposition.component';
+import {AdminCommentCardComponent} from './components/admin/parts/admin-part-comment-card/admin-comment-card.component';
+import {AdminExhibitComponent} from './components/admin/pages/admin-exhibit/admin-exhibit.component';
+import {AdminNewExhibitComponent} from './components/admin/pages/admin-new-exhibit/admin-new-exhibit.component';
+import {AdminStatisticsComponent} from './components/admin/pages/admin-statistics/admin-statistics.component';
+import {AdminExpositionComponent} from './components/admin/pages/admin-exposition/admin-exposition.component';
+import {AdminNewExpositionComponent} from './components/admin/pages/admin-new-exposition/admin-new-exposition.component';
 // tslint:disable-next-line:max-line-length
-import {AdminPageExpositionStatisticsComponent} from './components/admin/admin-page-exposition-statistics/admin-page-exposition-statistics.component';
-import {AdminPageHomeComponent} from './components/admin/admin-page-home/admin-page-home.component';
-import {AdminPageInfoPagesComponent} from './components/admin/admin-page-info-pages/admin-page-info-pages.component';
-import {AdminPageInfoPageComponent} from './components/admin/admin-page-info-page/admin-page-info-page.component';
-import {AdminPageNewInfoPageComponent} from './components/admin/admin-page-new-info-page/admin-page-new-info-page.component';
-import {AdminPageLoginComponent} from './components/admin/admin-page-login/admin-page-login.component';
-import {AdminPageMuseumStatisticsComponent} from './components/admin/admin-page-museum-statistics/admin-page-museum-statistics.component';
-import {AdminPagePersonalDataComponent} from './components/admin/admin-page-personal-data/admin-page-personal-data.component';
-import {AdminPageSettingsComponent} from './components/admin/admin-page-settings/admin-page-settings.component';
-import {AdminPartSidebarComponent} from './components/admin/admin-part-sidebar/admin-part-sidebar.component';
+import {AdminExpositionStatisticsComponent} from './components/admin/pages/admin-exposition-statistics/admin-exposition-statistics.component';
+import {AdminHomeComponent} from './components/admin/pages/admin-home/admin-home.component';
+import {AdminInfoPagesComponent} from './components/admin/pages/admin-info-pages/admin-info-pages.component';
+import {AdminInfoPageComponent} from './components/admin/pages/admin-info-page/admin-info-page.component';
+import {AdminNewInfoPageComponent} from './components/admin/pages/admin-new-info-page/admin-new-info-page.component';
+import {AdminLoginComponent} from './components/admin/pages/admin-login/admin-login.component';
+import {AdminMuseumStatisticsComponent} from './components/admin/pages/admin-museum-statistics/admin-museum-statistics.component';
+import {AdminPersonalDataComponent} from './components/admin/pages/admin-personal-data/admin-personal-data.component';
+import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
+import {AdminSidebarComponent} from './components/admin/parts/admin-part-sidebar/admin-sidebar.component';
 import {AppComponent} from './app.component';
-import {AdminPartAlertComponent} from './components/admin/admin-part-alert/admin-part-alert.component';
-import {CommonPartAudioPlayerComponent} from './components/common/common-part-audio-player/common-part-audio-player.component';
-import {AdminPartBoxCardComponent} from './components/admin/admin-part-box-card/admin-part-box-card.component';
-import {CommonPartCookieBannerComponent} from './components/common/common-part-cookie-banner/common-part-cookie-banner.component';
-import {CommonPageErrorComponent} from './components/common/common-page-error/common-page-error.component';
-import {CommonPartExhibitCardComponent} from './components/common/common-part-exhibit-card/common-part-exhibit-card.component';
-import {CommonPartExpositionCardComponent} from './components/common/common-part-exposition-card/common-part-exposition-card.component';
-import {AdminPartImageDetailsComponent} from './components/admin/admin-part-image-details/admin-part-image-details.component';
-import {AdminPartSpinnerComponent} from './components/admin/admin-part-spinner/admin-part-spinner.component';
-import {AdminPartQrCodeComponent} from './components/admin/admin-part-qr-code/admin-part-qr-code.component';
-import {CommonPartVideoPlayerComponent} from './components/common/common-part-video-player/common-part-video-player.component';
+import {AdminAlertComponent} from './components/admin/parts/admin-part-alert/admin-alert.component';
+import {CommonAudioPlayerComponent} from './components/common/parts/common-audio-player/common-audio-player.component';
+import {AdminBoxCardComponent} from './components/admin/parts/admin-part-box-card/admin-box-card.component';
+import {CommonCookieBannerComponent} from './components/common/parts/common-cookie-banner/common-cookie-banner.component';
+import {CommonErrorComponent} from './components/common/pages/common-error/common-error.component';
+import {CommonExhibitCardComponent} from './components/common/parts/common-exhibit-card/common-exhibit-card.component';
+import {CommonExpositionCardComponent} from './components/common/parts/common-exposition-card/common-exposition-card.component';
+import {AdminImageDetailsComponent} from './components/admin/parts/admin-part-image-details/admin-image-details.component';
+import {AdminSpinnerComponent} from './components/admin/parts/admin-part-spinner/admin-spinner.component';
+import {AdminQrCodeComponent} from './components/admin/parts/admin-part-qr-code/admin-qr-code.component';
+import {CommonVideoPlayerComponent} from './components/common/parts/common-video-player/common-video-player.component';
 import {AppBarComponent} from './user/app-bar/app-bar.component';
 import {CommentComponent} from './user/comment/comment.component';
 import {ExhibitComponent} from './user/exhibit/exhibit.component';
@@ -72,8 +72,8 @@ import {ExpositionFullscreenComponent} from './user/exposition-fullscreen/exposi
 import {MuseumFullscreenComponent} from './user/museum-fullscreen/museum-fullscreen.component';
 import {SiteplanFullscreenComponent} from './user/siteplan-fullscreen/siteplan-fullscreen.component';
 import {ImprintComponent} from './user/imprint/imprint.component';
-import {AdminPageMuseumComponent} from './components/admin/admin-page-museum/admin-page-museum.component';
-import {AdminPartHeaderComponent} from './components/admin/admin-part-header/admin-part-header.component';
+import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-museum.component';
+import {AdminHeaderComponent} from './components/admin/parts/admin-part-header/admin-header.component';
 
 const appRoutes: Routes = [
   {
@@ -89,21 +89,21 @@ const appRoutes: Routes = [
       {path: 'infopage/:id', component: InfopageComponent},
     ]
   },
-  {path: 'admin', component: AdminPageLoginComponent},
-  {path: 'admin/museum', component: AdminPageMuseumComponent},
-  {path: 'admin/home', component: AdminPageHomeComponent},
-  {path: 'admin/exposition/new', component: AdminPageNewExpositionComponent},
-  {path: 'admin/exposition/:id', component: AdminPageExpositionComponent},
-  {path: 'admin/exhibit/new/:expo_id', component: AdminPageNewExhibitComponent},
-  {path: 'admin/exhibit/:id', component: AdminPageExhibitComponent},
-  {path: 'admin/infopages', component: AdminPageInfoPagesComponent},
-  {path: 'admin/infopage/new', component: AdminPageNewInfoPageComponent},
-  {path: 'admin/infopage/:id', component: AdminPageInfoPageComponent},
-  {path: 'admin/statistics', component: AdminPageMuseumStatisticsComponent},
-  {path: 'admin/statistics/exposition/:id', component: AdminPageExpositionStatisticsComponent},
-  {path: 'admin/statistics/exhibit/:id', component: AdminPageStatisticsComponent},
-  {path: 'admin/personal-data', component: AdminPagePersonalDataComponent},
-  {path: 'admin/settings', component: AdminPageSettingsComponent},
+  {path: 'admin', component: AdminLoginComponent},
+  {path: 'admin/museum', component: AdminMuseumComponent},
+  {path: 'admin/home', component: AdminHomeComponent},
+  {path: 'admin/exposition/new', component: AdminNewExpositionComponent},
+  {path: 'admin/exposition/:id', component: AdminExpositionComponent},
+  {path: 'admin/exhibit/new/:expo_id', component: AdminNewExhibitComponent},
+  {path: 'admin/exhibit/:id', component: AdminExhibitComponent},
+  {path: 'admin/infopages', component: AdminInfoPagesComponent},
+  {path: 'admin/infopage/new', component: AdminNewInfoPageComponent},
+  {path: 'admin/infopage/:id', component: AdminInfoPageComponent},
+  {path: 'admin/statistics', component: AdminMuseumStatisticsComponent},
+  {path: 'admin/statistics/exposition/:id', component: AdminExpositionStatisticsComponent},
+  {path: 'admin/statistics/exhibit/:id', component: AdminStatisticsComponent},
+  {path: 'admin/personal-data', component: AdminPersonalDataComponent},
+  {path: 'admin/settings', component: AdminSettingsComponent},
   {
     path: 'user', component: UserComponent, children: [
       {path: 'usage-terms', component: UsageTermsComponent},
@@ -111,7 +111,7 @@ const appRoutes: Routes = [
       {path: 'imprint', component: ImprintComponent}
     ]
   },
-  {path: '**', component: CommonPageErrorComponent},
+  {path: '**', component: CommonErrorComponent},
 ];
 
 @NgModule({
@@ -120,39 +120,39 @@ const appRoutes: Routes = [
     WelcomeComponent,
     ExpositionComponent,
     ExhibitComponent,
-    AdminPageLoginComponent,
-    AdminPageHomeComponent,
-    AdminPartSidebarComponent,
-    AdminPageExpositionComponent,
-    AdminPageExhibitComponent,
-    AdminPageInfoPagesComponent,
-    AdminPagePersonalDataComponent,
-    AdminPageHomeComponent,
-    AdminPageMuseumStatisticsComponent,
+    AdminLoginComponent,
+    AdminHomeComponent,
+    AdminSidebarComponent,
+    AdminExpositionComponent,
+    AdminExhibitComponent,
+    AdminInfoPagesComponent,
+    AdminPersonalDataComponent,
+    AdminHomeComponent,
+    AdminMuseumStatisticsComponent,
     CommentComponent,
     InfopageComponent,
-    CommonPageErrorComponent,
+    CommonErrorComponent,
     UserComponent,
-    AdminPageNewExpositionComponent,
-    AdminPageNewExhibitComponent,
-    CommonPartExpositionCardComponent,
-    CommonPartExhibitCardComponent,
-    AdminPartBoxCardComponent,
-    AdminPageNewInfoPageComponent,
-    AdminPageInfoPageComponent,
+    AdminNewExpositionComponent,
+    AdminNewExhibitComponent,
+    CommonExpositionCardComponent,
+    CommonExhibitCardComponent,
+    AdminBoxCardComponent,
+    AdminNewInfoPageComponent,
+    AdminInfoPageComponent,
     UsageTermsComponent,
-    AdminPageExpositionStatisticsComponent,
-    AdminPageStatisticsComponent,
-    AdminPartCommentCardComponent,
-    AdminPartImageDetailsComponent,
-    AdminPartAlertComponent,
-    AdminPartSpinnerComponent,
-    AdminPartQrCodeComponent,
+    AdminExpositionStatisticsComponent,
+    AdminStatisticsComponent,
+    AdminCommentCardComponent,
+    AdminImageDetailsComponent,
+    AdminAlertComponent,
+    AdminSpinnerComponent,
+    AdminQrCodeComponent,
     MuseumComponent,
-    CommonPartCookieBannerComponent,
-    CommonPartAudioPlayerComponent,
-    CommonPartVideoPlayerComponent,
-    AdminPageSettingsComponent,
+    CommonCookieBannerComponent,
+    CommonAudioPlayerComponent,
+    CommonVideoPlayerComponent,
+    AdminSettingsComponent,
     AppBarComponent,
     PrivacyPolicyComponent,
     CarouselComponent,
@@ -161,8 +161,8 @@ const appRoutes: Routes = [
     MuseumFullscreenComponent,
     SiteplanFullscreenComponent,
     ImprintComponent,
-    AdminPageMuseumComponent,
-    AdminPartHeaderComponent
+    AdminMuseumComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -199,9 +199,9 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     CommentComponent,
-    AdminPartImageDetailsComponent,
-    AdminPartSpinnerComponent,
-    AdminPartQrCodeComponent
+    AdminImageDetailsComponent,
+    AdminSpinnerComponent,
+    AdminQrCodeComponent
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

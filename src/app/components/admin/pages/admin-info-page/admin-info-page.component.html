@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-admin-sidebar></app-admin-sidebar>
+  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+
+  <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+
+  <!-- -->
+
+  <section *ngIf="infopage" class="content-left ml-3 mr-2">
+    <app-admin-alert *ngIf="showAlert" [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+    <!-- Section Forms -->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-9">
+              <label for="name">Titel</label>
+              <input id="name"class="form-control" type="text"  [(ngModel)]="infopage.name">
+
+            </div>
+            <div class="col-3">
+              <label for="lang">Sprache</label>
+              <select id="lang" class="form-control" [(ngModel)]="infopage.lang">
+                <option *ngFor="let lang of languages" [ngValue]='lang'>{{lang}}</option>
+              </select>
+            </div>
+          </div>
+          <label for="text">Informationen</label>
+          <textarea id="text" class="form-control mb-2" rows="5" [placeholder]="placeholder"
+                    [(ngModel)]="infopage.text"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-6">
+              <button class="btn btn-success w-100" type="button" (click)="updateInfopage()" aria-label="Save info page">
+                Speichern
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger w-100" type="button" (click)="deleteInfopage()" aria-label="Delete info page">
+                Löschen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

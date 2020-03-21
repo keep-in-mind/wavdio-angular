@@ -27,7 +27,7 @@
                 <fa-icon icon="headphones" size="lg"></fa-icon>
               </div>
 
-              <app-common-part-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-part-audio-player>
+              <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-audio-player>
 
               <div *ngIf="getExhibitContent(locale).transcript" style="text-align: center; margin-top: 2pt">
                 <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">
@@ -55,7 +55,7 @@
                 <fa-icon icon="video" size="lg"></fa-icon>
               </div>
 
-              <app-common-part-video-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-part-video-player>
+              <app-common-video-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-video-player>
 
             </section>
           </div>
@@ -107,4 +107,4 @@
   </footer>
 </div>
 
-<app-common-part-cookie-banner></app-common-part-cookie-banner>
+<app-common-cookie-banner></app-common-cookie-banner>

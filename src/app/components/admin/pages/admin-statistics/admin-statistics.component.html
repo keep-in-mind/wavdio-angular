@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <aside class="sidebar">
+    <app-admin-sidebar></app-admin-sidebar>
+  </aside>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+
+  <main class="content mx-3">
+
+    <!-- Likes -->
+
+    <div class="card mt-2">
+      <div class="card-header">
+        Likes
+      </div>
+      <div class="card-body" style="width: 90%">
+        <ngx-charts-line-chart
+          [scheme]="colorScheme"
+          [results]="multi"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [autoScale]="autoScale"
+          [timeline]="timeline">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+
+    <!-- Comments -->
+
+    <div *ngIf="exhibit" class="card mt-2">
+      <div class="card-header">
+        Kommentare
+      </div>
+      <div class="card-body">
+        <div *ngFor="let comment of exhibit.comments">
+          <app-admin-comment-card>{{comment.text}}</app-admin-comment-card>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

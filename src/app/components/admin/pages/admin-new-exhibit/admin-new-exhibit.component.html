@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-admin-sidebar></app-admin-sidebar>
+  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+
+  <!-- -->
+
+  <section *ngIf="exhibit" class="content-left ml-3 mr-2">
+    <!-- Section Expositoin Forms-->
+    <section class="mt-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row mb-2">
+            <div class="col-9">
+              <label for="name">Titel</label>
+              <input id="name" class="form-control" type="text"
+                     [(ngModel)]="getExhibitContent(selectedLanguage).name" required="true">
+            </div>
+            <div class="col-3">
+              <label for="code">Code</label>
+              <input id="code" class="form-control" type="number" min="100" max="999"
+                     [(ngModel)]="exhibit.code" required="true">
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="mr-2" for="active">Aktiv</label>
+            <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
+          </div>
+          <label for="info">Beschreibung</label>
+          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
+                    [(ngModel)]="getExhibitContent(selectedLanguage).info" ></textarea>
+          <label for="note">Notizen</label>
+          <textarea id="note" class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
+          <div class="form-row mb-2">
+            <div class="col-12">
+              <button (click)="createExhibit()" class="btn btn-success w-100" aria-label="Create exhibit">
+                Anlegen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>
