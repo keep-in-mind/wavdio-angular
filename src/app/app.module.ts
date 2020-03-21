@@ -30,7 +30,7 @@ import {AdminComponent} from './admin/admin.component';
 import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/admin-part-comment-card.component';
 import {AdminPageExhibitComponent} from './admin/admin-page-exhibit/admin-page-exhibit.component';
 import {AdminPageNewExhibitComponent} from './admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
-import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
+import {AdminPageStatisticsComponent} from './admin/admin-page-statistics/admin-page-statistics.component';
 import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
 import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
 import {ExpositionStatisticsComponent} from './admin/exposition-statistics/exposition-statistics.component';
@@ -103,7 +103,7 @@ const appRoutes: Routes = [
       {path: 'infopage/:id', component: AdminInfopageComponent},
       {path: 'statistics', component: MuseumStatisticsComponent},
       {path: 'statistics/exposition/:id', component: ExpositionStatisticsComponent},
-      {path: 'statistics/exhibit/:id', component: ExhibitStatisticsComponent},
+      {path: 'statistics/exhibit/:id', component: AdminPageStatisticsComponent},
       {path: 'personal-data', component: PersonalDataComponent},
       {path: 'settings', component: SettingsComponent}
     ]
@@ -147,7 +147,7 @@ const appRoutes: Routes = [
     AdminInfopageComponent,
     UsageTermsComponent,
     ExpositionStatisticsComponent,
-    ExhibitStatisticsComponent,
+    AdminPageStatisticsComponent,
     AdminPartCommentCardComponent,
     ImageDetailsComponent,
     AlertComponent,

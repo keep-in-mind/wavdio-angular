@@ -6,11 +6,11 @@ import {ExhibitService} from '../../services/exhibit.service';
 import {Breadcrumb} from '../../models/breadcrumb';
 
 @Component({
-  selector: 'app-exhibit-statistics',
-  templateUrl: './exhibit-statistics.component.html',
-  styleUrls: ['./exhibit-statistics.component.css']
+  selector: 'app-admin-page-statistics',
+  templateUrl: './admin-page-statistics.component.html',
+  styleUrls: ['./admin-page-statistics.component.css']
 })
-export class ExhibitStatisticsComponent implements OnInit {
+export class AdminPageStatisticsComponent implements OnInit {
 
   exhibit: Exhibit;
 
