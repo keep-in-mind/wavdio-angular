@@ -29,7 +29,7 @@ import {NgxQRCodeModule} from 'ngx-qrcode2';
 import {AdminComponent} from './admin/admin.component';
 import {AdminPartCommentCardComponent} from './admin/admin-part-comment-card/admin-part-comment-card.component';
 import {AdminPageExhibitComponent} from './admin/admin-page-exhibit/admin-page-exhibit.component';
-import {AdminPageNewExhibitComponent} from './admin/admin-page-exhibit/admin-page-new-exhibit/admin-page-new-exhibit.component';
+import {AdminPageNewExhibitComponent} from './admin/admin-page-new-exhibit/admin-page-new-exhibit.component';
 import {ExhibitStatisticsComponent} from './admin/exhibit-statistics/exhibit-statistics.component';
 import {AdminExpositionComponent} from './admin/exposition/admin-exposition.component';
 import {NewAdminExpositionComponent} from './admin/exposition/new/new-admin-exposition.component';
