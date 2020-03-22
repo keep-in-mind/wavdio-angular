@@ -14,6 +14,8 @@ import {InfoPageService} from '../../../../services/info-page.service';
 import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
 
+import {utils} from '../../../../utils/utils';
+
 @Component({
   selector: 'app-admin-info-pages',
   templateUrl: './admin-info-pages.component.html',
@@ -21,44 +23,49 @@ import {MuseumService} from '../../../../services/museum.service';
 })
 export class AdminInfoPagesComponent implements OnInit {
 
-  infoPages: InfoPage[];
-  museum: Museum;
-
-  languages = ['de', 'en', 'es', 'fr'];
-  selectedLanguage = this.locale;
-
-  breadcrumbs = [
+  breadcrumbs: Breadcrumb[] = [
     new Breadcrumb('Infoseiten')
   ];
 
+  selectedLanguage = this.locale;
+
+  alertType: number;
+  alertMessage: string;
+  showAlert: boolean;
+
+  museum: Museum;
+  infoPages: InfoPage[];
+
+  placeholder = utils.placeholder;
+
   constructor(
     @Inject(LOCALE_ID) public locale: string,
-    private infoPageService: InfoPageService,
-    private museumService: MuseumService,
-    private router: Router,
     private auth: AuthenticationService,
-    public cookieLawService: CookielawService,
+    private router: Router,
+    private museumService: MuseumService,
+    private infoPageService: InfoPageService,
     private modalService: NgbModal,
-    private fileService: FileService) {
+    private fileService: FileService,
+    public cookieLawService: CookielawService,
+  ) {
   }
 
   ngOnInit() {
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['/admin']);
-    } else {
-      this.infoPageService.getInfoPages().subscribe(
-        infoPages => this.infoPages = infoPages
-      );
-
-      this.museumService.getMuseums().subscribe(
-        museums => {
-          this.museum = museums[0];
-        }
-      );
+      return;
     }
+
+    this.museumService.getMuseums().subscribe(museums => {
+      this.museum = museums[0];
+    });
+
+    this.infoPageService.getInfoPages().subscribe(infoPages => {
+      this.infoPages = infoPages;
+    });
   }
 
-  onSitePlanChanged(event: Event) {
+  uploadSitePlan(event: Event) {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
     const randomFilename = FileService.randomizeFilename(file.name);
@@ -68,8 +75,7 @@ export class AdminInfoPagesComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      const mapname = this.selectedLanguage === 'de' ? 'Karte' : 'map';
-      this.museum.getContent(this.selectedLanguage).sitePlan = new Image(randomFilename, mapname);
+      this.museum.getContent(this.selectedLanguage).sitePlan = new Image(randomFilename, null);
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
     });
