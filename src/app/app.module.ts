@@ -33,10 +33,10 @@ import {AdminCommentCardComponent} from './components/admin/parts/admin-comment-
 import {AdminComponent} from './components/admin/admin.component';
 import {AdminExhibitComponent} from './components/admin/pages/admin-exhibit/admin-exhibit.component';
 import {AdminExhibitStatsComponent} from './components/admin/pages/admin-exhibit-stats/admin-exhibit-stats.component';
+import {AdminExhibitsExpositionsComponent} from './components/admin/pages/admin-exhibits-expositions/admin-exhibits-expositions.component';
 import {AdminExpositionComponent} from './components/admin/pages/admin-exposition/admin-exposition.component';
 import {AdminExpositionStatsComponent} from './components/admin/pages/admin-exposition-stats/admin-exposition-stats.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-header/admin-header.component';
-import {AdminExhibitsExpositionsComponent} from './components/admin/pages/admin-exhibits-expositions/admin-exhibits-expositions.component';
 import {AdminImageDetailsComponent} from './components/admin/parts/admin-image-details/admin-image-details.component';
 import {AdminInfoPageComponent} from './components/admin/pages/admin-info-page/admin-info-page.component';
 import {AdminInfoPagesComponent} from './components/admin/pages/admin-info-pages/admin-info-pages.component';
@@ -124,10 +124,10 @@ const appRoutes: Routes = [
     AdminComponent,
     AdminExhibitComponent,
     AdminExhibitStatsComponent,
+    AdminExhibitsExpositionsComponent,
     AdminExpositionComponent,
     AdminExpositionStatsComponent,
     AdminHeaderComponent,
-    AdminExhibitsExpositionsComponent,
     AdminImageDetailsComponent,
     AdminInfoPageComponent,
     AdminInfoPagesComponent,

@@ -78,7 +78,7 @@ export class AdminExhibitComponent implements OnInit {
               } else {
                 this.breadcrumbs = [
                   new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
-                  new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+                  new Breadcrumb('Rundgang', '/admin/exposition/' + this.exhibit.parent),
                   new Breadcrumb('Exponat')];
               }
             }
@@ -133,7 +133,7 @@ export class AdminExhibitComponent implements OnInit {
 
   deleteExhibit() {
     const parentModel = this.exhibit.parentModel;
-    if (confirm('Sind Sie sicher, dass Sie dieses Ausstellungsstück unwiderruflich löschen möchten?')) {
+    if (confirm('Sind Sie sicher, dass Sie dieses Exponat unwiderruflich löschen möchten?')) {
       this.exhibitService.deleteExhibit(this.exhibit).subscribe(
         result => {
           if (parentModel === 'Museum') {
@@ -238,7 +238,7 @@ export class AdminExhibitComponent implements OnInit {
       return;
     }
     if (this.exhibit.code < 100 || this.exhibit.code > 999) {
-      this.showAlertMessage(3, 5, 'Der angegebene Code für das Ausstellungsstück ist ungültig. ' +
+      this.showAlertMessage(3, 5, 'Der angegebene Code für das Exponat ist ungültig. ' +
         'Bitte wählen Sie einen Code von 100 bis 999');
       return;
     }
@@ -249,7 +249,7 @@ export class AdminExhibitComponent implements OnInit {
             'Mehr Informationen finden Sie in den Serverlogs.');
           this.exhibitService.errorCode = 0;
         } else if (this.exhibitService.errorCode === 13) {
-          this.showAlertMessage(3, 5, 'Der angegebene Code ist bereits für ein anderes Ausstellungsstück vergeben. ' +
+          this.showAlertMessage(3, 5, 'Der angegebene Code ist bereits für ein anderes Exponat vergeben. ' +
             'Bitte wählen Sie einen anderen Code.');
           this.exhibitService.errorCode = 0;
         } else if (this.exhibitService.errorCode === 0) {

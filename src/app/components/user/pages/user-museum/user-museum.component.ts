@@ -35,13 +35,6 @@ export class UserMuseumComponent implements OnInit, OnDestroy {
   private _success = new Subject<string>();
   alertMessage: string;
 
-  filterNumber: number;
-  likedFlag = false;
-
-  ariaLabelFooterNavigation = 'Navigation für zurück, like und Kommentar';
-  ariaLabelLikeExposition = 'Ausstellung liken';
-  ariaLabelOpenComment = 'Kommentarfeld öffnen';
-
   exposition: Exposition;
   exhibits: Exhibit[];
   expositions: Exposition[];

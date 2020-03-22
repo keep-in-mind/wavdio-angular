@@ -72,7 +72,7 @@ export class AdminExhibitStatsComponent implements OnInit {
         } else {
           this.breadcrumbs = [
             new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
-            new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+            new Breadcrumb('Rundgang', '/admin/exposition/' + this.exhibit.parent),
             new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
             new Breadcrumb('Statistik')];
         }

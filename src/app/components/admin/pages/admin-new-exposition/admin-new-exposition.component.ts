@@ -31,7 +31,7 @@ export class AdminNewExpositionComponent implements OnInit {
 
   breadcrumbs: Breadcrumb[] = [
     new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
-    new Breadcrumb('Neue Ausstellung')
+    new Breadcrumb('Neuer Rundgang')
   ];
 
   constructor(

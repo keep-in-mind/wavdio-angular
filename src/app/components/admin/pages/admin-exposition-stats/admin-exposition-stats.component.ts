@@ -71,7 +71,7 @@ export class AdminExpositionStatsComponent implements OnInit {
 
         this.breadcrumbs = [
           new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
-          new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exposition._id),
+          new Breadcrumb('Rundgang', '/admin/exposition/' + this.exposition._id),
           new Breadcrumb('Statistik')];
 
         /* accumulate exposition likes over time
