@@ -1,1 +1,12 @@
-<p>admin-welcome works!</p>
+<div class="wrapper">
+  <app-admin-sidebar class="sidebar"></app-admin-sidebar>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+
+</div>
