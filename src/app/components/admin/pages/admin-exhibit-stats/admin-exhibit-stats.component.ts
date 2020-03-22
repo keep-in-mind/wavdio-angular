@@ -66,13 +66,13 @@ export class AdminExhibitStatsComponent implements OnInit {
 
         if (this.exhibit.parentModel === 'Museum') {
           this.breadcrumbs = [
-            new Breadcrumb('Home', '/admin/home'),
+            new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
             new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
             new Breadcrumb('Statistik')];
         } else {
           this.breadcrumbs = [
-            new Breadcrumb('Home', '/admin/home'),
-            new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
+            new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
+            new Breadcrumb('Rundgang', '/admin/exposition/' + this.exhibit.parent),
             new Breadcrumb('Exponat', '/admin/exhibit/' + this.exhibit._id),
             new Breadcrumb('Statistik')];
         }

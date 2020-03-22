@@ -650,7 +650,7 @@
 
       <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
         <source>Expositions</source>
-        <target state="new">Ausstellungen</target>
+        <target state="new">Rundgänge</target>
 
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/user/pages/user-museum/user-museum.component.html</context>

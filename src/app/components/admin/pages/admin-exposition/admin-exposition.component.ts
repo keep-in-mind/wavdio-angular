@@ -38,8 +38,8 @@ export class AdminExpositionComponent implements OnInit {
   placeholder = utils.placeholder;
 
   breadcrumbs: Breadcrumb[] = [
-    new Breadcrumb('Home', '/admin/home'),
-    new Breadcrumb('Ausstellung')
+    new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
+    new Breadcrumb('Rundgang')
   ];
 
   constructor(
@@ -117,13 +117,13 @@ export class AdminExpositionComponent implements OnInit {
   }
 
   deleteExposition() {
-    if (confirm('Sind Sie sicher, dass Sie diese Ausstellung löschen möchten? ' +
-      'Alle Ausstellungsstücke und die dazugehörigen Medien gehen dabei ebenfalls unwiderruflich verloren.')) {
+    if (confirm('Sind Sie sicher, dass Sie diesen Rundgang löschen möchten? ' +
+      'Alle Exponate und die dazugehörigen Medien gehen dabei ebenfalls unwiderruflich verloren.')) {
 
       this.expositionService.deleteExposition(this.exposition)
         .subscribe(res => {
           console.log(res);
-          this.router.navigate(['/admin/home']);
+          this.router.navigate(['/admin/exhibits-expositions']);
         }, (err) => {
           console.log(err);
           this.showAlertMessage(3, 5, 'Da ist etwas schief gegangen. Prüfen Sie bitte erneut Ihre Eingabedaten.');

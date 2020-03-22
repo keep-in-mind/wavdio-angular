@@ -13,18 +13,18 @@ import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
-  selector: 'app-admin-home',
-  templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.css']
+  selector: 'app-admin-exhibits-expositions',
+  templateUrl: './admin-exhibits-expositions.component.html',
+  styleUrls: ['./admin-exhibits-expositions.component.css']
 })
-export class AdminHomeComponent implements OnInit {
+export class AdminExhibitsExpositionsComponent implements OnInit {
 
   museum: Museum;
   expositions: Exposition[];
   exhibits: Exhibit[];
 
   breadcrumbs = [
-    new Breadcrumb('Home')
+    new Breadcrumb('Exponate & Rundgänge')
   ];
   selectedLanguage: string = this.locale;
 

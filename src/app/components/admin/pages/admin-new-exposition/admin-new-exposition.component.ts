@@ -30,8 +30,8 @@ export class AdminNewExpositionComponent implements OnInit {
   placeholder = utils.placeholder;
 
   breadcrumbs: Breadcrumb[] = [
-    new Breadcrumb('Home', '/admin/home'),
-    new Breadcrumb('Neue Ausstellung')
+    new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
+    new Breadcrumb('Neuer Rundgang')
   ];
 
   constructor(
