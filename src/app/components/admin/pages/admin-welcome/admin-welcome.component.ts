@@ -1,8 +1,14 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
+import {AdminImageDetailsComponent} from '../../parts/admin-image-details/admin-image-details.component';
+import {AdminSpinnerComponent} from '../../parts/admin-spinner/admin-spinner.component';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
+import {FileService} from '../../../../services/file.service';
+import {Image} from '../../../../models/image';
 import {Museum} from '../../../../models/museum';
 import {MuseumService} from '../../../../services/museum.service';
 
@@ -34,6 +40,8 @@ export class AdminWelcomeComponent implements OnInit {
     private auth: AuthenticationService,
     private router: Router,
     private museumService: MuseumService,
+    private fileService: FileService,
+    private modalService: NgbModal,
   ) {
   }
 
@@ -57,6 +65,35 @@ export class AdminWelcomeComponent implements OnInit {
         this.showAlertMessage(0, 5, 'Ihre Änderungen wurden erfolgreich übernommen');
       }
     });
+  }
+
+  uploadLogo(event: Event) {
+    const inputElement = <HTMLInputElement>event.target;
+    const file = inputElement.files[0];
+    const randomFilename = FileService.randomizeFilename(file.name);
+
+    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
+    inputElement.value = '';
+
+    const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
+    this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
+      this.museum.getContent(this.selectedLanguage).logo = new Image(randomFilename, 'alt');
+      this.museumService.updateMuseum(this.museum).subscribe();
+      spinner.close();
+    });
+  }
+
+  deleteLogo() {
+    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.selectedLanguage).logo.filename).subscribe(() => {
+      this.museum.getContent(this.selectedLanguage).logo = null;
+      this.museumService.updateMuseum(this.museum).subscribe();
+    });
+  }
+
+  openLogoBigView() {
+    const modal = this.modalService.open(AdminImageDetailsComponent, {centered: true});
+    modal.componentInstance.museum = this.museum;
+    modal.componentInstance.image = false; // show logo
   }
 
   private showAlertMessage(type: number, seconds: number, message: string) {

@@ -30,4 +30,36 @@
     </div>
   </section>
 
+  <!-- Right Column: Logo -->
+
+  <section *ngIf="museum" class="content-right m-2">
+    <app-admin-box-card descHeader="Logo">
+
+      <!-- Header: Upload/Delete Button -->
+
+      <div header>
+        <fa-icon class="fa-lg" (click)="logoInput.click()"
+                 [hidden]="museum.getContent(selectedLanguage).logo"
+                 icon="plus-circle" aria-label="Add logo"></fa-icon>
+
+        <form class="d-none">
+          <input #logoInput type="file" name="file" (change)="uploadLogo($event)">
+        </form>
+
+        <fa-icon class="fa-lg" (click)="deleteLogo()"
+                 [hidden]="!museum.getContent(selectedLanguage).logo"
+                 icon="minus-circle" aria-label="Delete logo"></fa-icon>
+      </div>
+
+      <!-- Body: Logo -->
+
+      <div body>
+        <img *ngIf="museum.getContent(selectedLanguage).logo" class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).logo.filename"
+             [alt]="museum.getContent(selectedLanguage).logo.alternativeText"
+             (click)="openLogoBigView()"/>
+      </div>
+    </app-admin-box-card>
+  </section>
+
 </div>
