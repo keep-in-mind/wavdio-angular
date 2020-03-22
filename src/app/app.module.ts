@@ -75,6 +75,7 @@ import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/
 import {UserWelcomeComponent} from './components/user/pages/user-welcome/user-welcome.component';
 
 import {environment} from '../environments/environment';
+import { AdminWelcomeComponent } from './components/admin/pages/admin-welcome/admin-welcome.component';
 
 const appRoutes: Routes = [
   {
@@ -161,7 +162,8 @@ const appRoutes: Routes = [
     UserPrivacyPolicyComponent,
     UserSitePlanFullscreenComponent,
     UserUsageTermsComponent,
-    UserWelcomeComponent
+    UserWelcomeComponent,
+    AdminWelcomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
