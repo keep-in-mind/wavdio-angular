@@ -9,4 +9,25 @@
   <app-admin-alert *ngIf="showAlert" class="header mt-2"
                    [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
 
+  <!-- Left Column -->
+
+  <section *ngIf="museum" class="content-left m-2">
+    <div class="card">
+      <div class="card-body">
+
+        <!-- Welcome Text -->
+
+        <label for="welcome-text">Begrüßungstext</label>
+        <textarea id="welcome-text" class="form-control" rows="7" [placeholder]="placeholder"
+                  [(ngModel)]="museum.getContent(selectedLanguage).welcomeText"></textarea>
+
+        <!-- Save -->
+
+        <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save changes">
+          Speichern
+        </button>
+      </div>
+    </div>
+  </section>
+
 </div>
