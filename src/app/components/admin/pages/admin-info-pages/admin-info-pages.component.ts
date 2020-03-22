@@ -24,7 +24,7 @@ import {utils} from '../../../../utils/utils';
 export class AdminInfoPagesComponent implements OnInit {
 
   breadcrumbs: Breadcrumb[] = [
-    new Breadcrumb('Infoseiten')
+    new Breadcrumb('Seitenleiste')
   ];
 
   selectedLanguage = this.locale;

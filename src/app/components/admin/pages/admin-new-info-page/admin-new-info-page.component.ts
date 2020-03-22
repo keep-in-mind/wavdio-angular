@@ -27,8 +27,8 @@ export class AdminNewInfoPageComponent implements OnInit {
   placeholder = utils.placeholder;
 
   breadcrumbs = [
-    new Breadcrumb('Infoseiten', '/admin/info-pages'),
-    new Breadcrumb('Neue Infoseite')
+    new Breadcrumb('Seitenleiste', '/admin/info-pages'),
+    new Breadcrumb('Neue Info-Seite')
   ];
 
   constructor(
