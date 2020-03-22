@@ -56,7 +56,7 @@ export class AdminPersonalDataComponent implements OnInit {
   updateUser() {
     if (this.user.newPassword === this.newPasswordRepeat) {
       this.auth.update(this.user).subscribe();
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/admin/personal-data']);
     }
   }
 

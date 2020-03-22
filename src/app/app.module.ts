@@ -32,6 +32,7 @@ import {AdminBoxCardComponent} from './components/admin/parts/admin-box-card/adm
 import {AdminCommentCardComponent} from './components/admin/parts/admin-comment-card/admin-comment-card.component';
 import {AdminComponent} from './components/admin/admin.component';
 import {AdminExhibitComponent} from './components/admin/pages/admin-exhibit/admin-exhibit.component';
+import {AdminExhibitStatsComponent} from './components/admin/pages/admin-exhibit-stats/admin-exhibit-stats.component';
 import {AdminExpositionComponent} from './components/admin/pages/admin-exposition/admin-exposition.component';
 import {AdminExpositionStatsComponent} from './components/admin/pages/admin-exposition-stats/admin-exposition-stats.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-header/admin-header.component';
@@ -49,7 +50,7 @@ import {AdminQrCodeComponent} from './components/admin/parts/admin-qr-code/admin
 import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
 import {AdminSidebarComponent} from './components/admin/parts/admin-sidebar/admin-sidebar.component';
 import {AdminSpinnerComponent} from './components/admin/parts/admin-spinner/admin-spinner.component';
-import {AdminExhibitStatsComponent} from './components/admin/pages/admin-exhibit-stats/admin-exhibit-stats.component';
+import {AdminWelcomeComponent} from './components/admin/pages/admin-welcome/admin-welcome.component';
 import {AppComponent} from './app.component';
 import {CommonAudioPlayerComponent} from './components/common/parts/common-audio-player/common-audio-player.component';
 import {CommonCookieBannerComponent} from './components/common/parts/common-cookie-banner/common-cookie-banner.component';
@@ -75,7 +76,6 @@ import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/
 import {UserWelcomeComponent} from './components/user/pages/user-welcome/user-welcome.component';
 
 import {environment} from '../environments/environment';
-import { AdminWelcomeComponent } from './components/admin/pages/admin-welcome/admin-welcome.component';
 
 const appRoutes: Routes = [
   {
@@ -109,7 +109,8 @@ const appRoutes: Routes = [
       {path: 'personal-data', component: AdminPersonalDataComponent},
       {path: 'settings', component: AdminSettingsComponent},
       {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
-      {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent}
+      {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
+      {path: 'welcome', component: AdminWelcomeComponent}
     ]
   },
   {path: '**', component: CommonErrorComponent},
@@ -122,6 +123,7 @@ const appRoutes: Routes = [
     AdminCommentCardComponent,
     AdminComponent,
     AdminExhibitComponent,
+    AdminExhibitStatsComponent,
     AdminExpositionComponent,
     AdminExpositionStatsComponent,
     AdminHeaderComponent,
@@ -139,7 +141,7 @@ const appRoutes: Routes = [
     AdminSettingsComponent,
     AdminSidebarComponent,
     AdminSpinnerComponent,
-    AdminExhibitStatsComponent,
+    AdminWelcomeComponent,
     AppComponent,
     CommonAudioPlayerComponent,
     CommonCookieBannerComponent,
@@ -162,8 +164,7 @@ const appRoutes: Routes = [
     UserPrivacyPolicyComponent,
     UserSitePlanFullscreenComponent,
     UserUsageTermsComponent,
-    UserWelcomeComponent,
-    AdminWelcomeComponent
+    UserWelcomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
