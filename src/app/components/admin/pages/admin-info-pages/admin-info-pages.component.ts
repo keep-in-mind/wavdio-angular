@@ -87,4 +87,23 @@ export class AdminInfoPagesComponent implements OnInit {
       this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
+
+  updateMuseum() {
+    this.museumService.updateMuseum(this.museum).subscribe(updatedMuseum => {
+      if (this.museumService.errorCode === 500) {
+        this.showAlertMessage(3, 5,
+          'Es ist ein Fehler aufgetreten. Mehr Informationen finden Sie in den Server-Logs.');
+      } else {
+        this.showAlertMessage(0, 5, 'Ihre Änderungen wurden erfolgreich übernommen');
+      }
+    });
+  }
+
+  private showAlertMessage(type: number, seconds: number, message: string) {
+    this.showAlert = true;
+    this.alertType = type;
+    this.alertMessage = message;
+
+    setTimeout(() => this.showAlert = false, seconds * 1000);
+  }
 }
