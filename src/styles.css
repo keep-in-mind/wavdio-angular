@@ -48,7 +48,7 @@ fa-icon[icon="plus-circle"] {
 @media (min-width: 992px) {
   .wrapper {
     display: grid;
-    grid-template-columns: 200px 1fr 1fr;
+    grid-template-columns: 240px 1fr 1fr;
     grid-template-areas: "sidebar header header" "sidebar content-left content-right";
     height: 100vh;
   }

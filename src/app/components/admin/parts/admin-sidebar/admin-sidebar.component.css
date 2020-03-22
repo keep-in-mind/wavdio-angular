@@ -18,7 +18,7 @@ ul > :last-child {
 ul li {
   border: 0 none;
   margin-top: -1px;
-  padding: 12px;
+  padding: 12px 0;
   text-align: center;
 }
 
@@ -44,4 +44,10 @@ ul li {
   ul li {
     text-align: left;
   }
+}
+
+.long-text fa-icon {
+  display: inline-block;
+  width: 40px;
+  text-align: center
 }
