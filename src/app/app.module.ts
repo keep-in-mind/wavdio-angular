@@ -97,13 +97,13 @@ const appRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       {path: '', component: AdminLoginComponent},
-      {path: 'exhibit/:id', component: AdminExhibitComponent},
       {path: 'exhibit/new/:expo_id', component: AdminNewExhibitComponent},
+      {path: 'exhibit/:id', component: AdminExhibitComponent},
       {path: 'exhibits-expositions', component: AdminExhibitsExpositionsComponent},
-      {path: 'exposition/:id', component: AdminExpositionComponent},
       {path: 'exposition/new', component: AdminNewExpositionComponent},
-      {path: 'info-page/:id', component: AdminInfoPageComponent},
+      {path: 'exposition/:id', component: AdminExpositionComponent},
       {path: 'info-page/new', component: AdminNewInfoPageComponent},
+      {path: 'info-page/:id', component: AdminInfoPageComponent},
       {path: 'info-pages', component: AdminInfoPagesComponent},
       {path: 'museum', component: AdminMuseumComponent},
       {path: 'personal-data', component: AdminPersonalDataComponent},

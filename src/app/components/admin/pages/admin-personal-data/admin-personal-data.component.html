@@ -13,35 +13,6 @@
 
   <!-- -->
 
-  <section *ngIf="this.museum" class="content-left ml-3 mr-2">
-    <!-- Section Museum Forms-->
-    <section class="mt-2">
-      <div class="card">
-        <div class="card-body">
-
-          <label for="termsOfUse">Nutzungsbedingungen</label>
-          <textarea id="termsOfUse" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="museum.getContent(selectedLanguage).termsOfUse"></textarea>
-
-          <label for="privacyTerms">Datenschutzerklärung</label>
-          <textarea id="privacyTerms" class="form-control mb-2" [placeholder]="placeholder"
-                    [(ngModel)]="museum.getContent(selectedLanguage).privacyTerms" rows="5"></textarea>
-
-          <label for="imprint">Impressum</label>
-          <textarea id="imprint" class="form-control mb-2" [placeholder]="placeholder"
-                    [(ngModel)]="museum.getContent(selectedLanguage).imprint" rows="5"></textarea>
-
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <button (click)="updateMuseum()" class="btn btn-success w-100" aria-label="Save museum">
-                Speichern
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </section>
   <section *ngIf="this.museum" class="content-right ml-3 mr-2">
 
     <!--Neues Passwort anlegen-->

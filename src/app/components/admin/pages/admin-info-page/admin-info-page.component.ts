@@ -27,8 +27,8 @@ export class AdminInfoPageComponent implements OnInit {
   placeholder = utils.placeholder;
 
   breadcrumbs = [
-    new Breadcrumb('Infoseiten', '/admin/info-pages'),
-    new Breadcrumb('Infoseite')
+    new Breadcrumb('Seitenleiste', '/admin/info-pages'),
+    new Breadcrumb('Info-Seite')
   ];
 
   constructor(
@@ -81,7 +81,7 @@ export class AdminInfoPageComponent implements OnInit {
   }
 
   deleteInfoPage() {
-    if (confirm('Sind Sie sicher, dass Sie diese Infoseite unwiderruflich löschen möchten?')) {
+    if (confirm('Sind Sie sicher, dass Sie diese Info-Seite unwiderruflich löschen möchten?')) {
 
       this.infoPageService.deleteInfoPage(this.infoPage).subscribe(
         () => this.router.navigate(['admin/info-pages/'])
