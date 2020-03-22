@@ -62,11 +62,11 @@ export class AdminNewExhibitComponent implements OnInit {
 
               if (parentModel === 'Museum') {
                 this.breadcrumbs = [
-                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
                   new Breadcrumb('Neues Exponat')];
               } else {
                 this.breadcrumbs = [
-                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
                   new Breadcrumb('Ausstellung', '/admin/exposition/' + this.expositionId),
                   new Breadcrumb('Neues Exponat')];
               }

@@ -70,7 +70,7 @@ export class AdminExpositionStatsComponent implements OnInit {
         this.exposition = exposition;
 
         this.breadcrumbs = [
-          new Breadcrumb('Home', '/admin/home'),
+          new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
           new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exposition._id),
           new Breadcrumb('Statistik')];
 

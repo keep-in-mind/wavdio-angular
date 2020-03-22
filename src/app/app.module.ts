@@ -36,7 +36,7 @@ import {AdminExhibitStatsComponent} from './components/admin/pages/admin-exhibit
 import {AdminExpositionComponent} from './components/admin/pages/admin-exposition/admin-exposition.component';
 import {AdminExpositionStatsComponent} from './components/admin/pages/admin-exposition-stats/admin-exposition-stats.component';
 import {AdminHeaderComponent} from './components/admin/parts/admin-header/admin-header.component';
-import {AdminHomeComponent} from './components/admin/pages/admin-home/admin-home.component';
+import {AdminExhibitsExpositionsComponent} from './components/admin/pages/admin-exhibits-expositions/admin-exhibits-expositions.component';
 import {AdminImageDetailsComponent} from './components/admin/parts/admin-image-details/admin-image-details.component';
 import {AdminInfoPageComponent} from './components/admin/pages/admin-info-page/admin-info-page.component';
 import {AdminInfoPagesComponent} from './components/admin/pages/admin-info-pages/admin-info-pages.component';
@@ -99,9 +99,9 @@ const appRoutes: Routes = [
       {path: '', component: AdminLoginComponent},
       {path: 'exhibit/:id', component: AdminExhibitComponent},
       {path: 'exhibit/new/:expo_id', component: AdminNewExhibitComponent},
+      {path: 'exhibits-expositions', component: AdminExhibitsExpositionsComponent},
       {path: 'exposition/:id', component: AdminExpositionComponent},
       {path: 'exposition/new', component: AdminNewExpositionComponent},
-      {path: 'home', component: AdminHomeComponent},
       {path: 'info-page/:id', component: AdminInfoPageComponent},
       {path: 'info-page/new', component: AdminNewInfoPageComponent},
       {path: 'info-pages', component: AdminInfoPagesComponent},
@@ -127,7 +127,7 @@ const appRoutes: Routes = [
     AdminExpositionComponent,
     AdminExpositionStatsComponent,
     AdminHeaderComponent,
-    AdminHomeComponent,
+    AdminExhibitsExpositionsComponent,
     AdminImageDetailsComponent,
     AdminInfoPageComponent,
     AdminInfoPagesComponent,

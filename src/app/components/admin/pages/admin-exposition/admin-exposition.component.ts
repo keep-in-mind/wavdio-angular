@@ -38,7 +38,7 @@ export class AdminExpositionComponent implements OnInit {
   placeholder = utils.placeholder;
 
   breadcrumbs: Breadcrumb[] = [
-    new Breadcrumb('Home', '/admin/home'),
+    new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
     new Breadcrumb('Ausstellung')
   ];
 
@@ -123,7 +123,7 @@ export class AdminExpositionComponent implements OnInit {
       this.expositionService.deleteExposition(this.exposition)
         .subscribe(res => {
           console.log(res);
-          this.router.navigate(['/admin/home']);
+          this.router.navigate(['/admin/exhibits-expositions']);
         }, (err) => {
           console.log(err);
           this.showAlertMessage(3, 5, 'Da ist etwas schief gegangen. Prüfen Sie bitte erneut Ihre Eingabedaten.');

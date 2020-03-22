@@ -73,11 +73,11 @@ export class AdminExhibitComponent implements OnInit {
 
               if (this.exhibit.parentModel === 'Museum') {
                 this.breadcrumbs = [
-                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
                   new Breadcrumb('Exponat')];
               } else {
                 this.breadcrumbs = [
-                  new Breadcrumb('Home', '/admin/home'),
+                  new Breadcrumb('Exponate & Rundgänge', '/admin/exhibits-expositions'),
                   new Breadcrumb('Ausstellung', '/admin/exposition/' + this.exhibit.parent),
                   new Breadcrumb('Exponat')];
               }
@@ -137,7 +137,7 @@ export class AdminExhibitComponent implements OnInit {
       this.exhibitService.deleteExhibit(this.exhibit).subscribe(
         result => {
           if (parentModel === 'Museum') {
-            this.router.navigate(['admin/home']);
+            this.router.navigate(['admin/exhibits-expositions']);
           } else {
             this.router.navigate(['admin/exposition/', this.exhibit.parent]);
           }
