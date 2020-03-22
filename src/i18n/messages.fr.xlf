@@ -492,25 +492,25 @@
 
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">41</context>
         </context-group>
@@ -522,7 +522,7 @@
 
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">49</context>
         </context-group>
@@ -534,7 +534,7 @@
 
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">52</context>
         </context-group>
@@ -546,7 +546,7 @@
 
         <context-group purpose="location">
           <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-image-details/admin-image-details.component.html
+            app/components/admin/parts/admin-image-details/admin-image-details.component.html
           </context>
           <context context-type="linenumber">55</context>
         </context-group>
@@ -557,8 +557,7 @@
         <target state="new">Chargement...</target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-spinner/admin-spinner.component.html
+          <context context-type="sourcefile">app/components/admin/parts/admin-spinner/admin-spinner.component.html
           </context>
           <context context-type="linenumber">3</context>
         </context-group>
@@ -573,8 +572,7 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-spinner/admin-spinner.component.html
+          <context context-type="sourcefile">app/components/admin/parts/admin-spinner/admin-spinner.component.html
           </context>
           <context context-type="linenumber">5</context>
         </context-group>
@@ -589,8 +587,7 @@
         </target>
 
         <context-group purpose="location">
-          <context context-type="sourcefile">
-            app/components/admin/parts/admin-part-qr-code/admin-qr-code.component.html
+          <context context-type="sourcefile">app/components/admin/parts/admin-qr-code/admin-qr-code.component.html
           </context>
           <context context-type="linenumber">17</context>
         </context-group>

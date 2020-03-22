@@ -231,40 +231,40 @@
       <trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
         <source>Description</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
         <source>Delete</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-image-details/admin-image-details.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-image-details/admin-image-details.component.html</context>
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
@@ -273,14 +273,14 @@
           Print
         </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-qr-code/admin-qr-code.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-qr-code/admin-qr-code.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="94516fa213706c67ce5a5b5765681d7fb032033a" datatype="html">
         <source>Loading...</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-spinner/admin-spinner.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-spinner/admin-spinner.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -289,7 +289,7 @@
     Uploading file...
   </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/components/admin/parts/admin-part-spinner/admin-spinner.component.html</context>
+          <context context-type="sourcefile">app/components/admin/parts/admin-spinner/admin-spinner.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
