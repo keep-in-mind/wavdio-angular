@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {AuthenticationService} from '../../../../services/authentification.service';
+import {AuthenticationService, TokenPayloadUpdate} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
 import {CookielawService} from '../../../../services/cookielaw.service';
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 import {Setting} from '../../../../models/setting';
 import {SettingService} from '../../../../services/setting.service';
 
@@ -14,13 +16,23 @@ import {SettingService} from '../../../../services/setting.service';
 })
 export class AdminSettingsComponent implements OnInit {
 
-  setting: Setting;
-
   breadcrumbs: Breadcrumb[] = [new Breadcrumb('Einstellungen')];
+
+  setting: Setting;
+  museum: Museum;
+
+  user: TokenPayloadUpdate = {
+    username: '',
+    password: '',
+    newUsername: '',
+    newPassword: ''
+  };
+  newPasswordRepeat: string;
 
   constructor(
     private router: Router,
     private settingService: SettingService,
+    private museumService: MuseumService,
     private auth: AuthenticationService,
     public cookieLawService: CookielawService) {
   }
@@ -28,11 +40,16 @@ export class AdminSettingsComponent implements OnInit {
   ngOnInit() {
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['/admin']);
-    } else {
-      this.settingService.getSettings().subscribe(
-        settings => this.setting = settings[0]
-      );
+      return;
     }
+
+    this.settingService.getSettings().subscribe(
+      settings => this.setting = settings[0]
+    );
+
+    this.museumService.getMuseums().subscribe(museums => {
+      this.museum = museums[0];
+    });
   }
 
   updateSetting() {
@@ -48,5 +65,12 @@ export class AdminSettingsComponent implements OnInit {
         // }
       }
     );
+  }
+
+  updateUser() {
+    if (this.user.newPassword === this.newPasswordRepeat) {
+      this.auth.update(this.user).subscribe();
+      this.router.navigate(['/admin/settings']);
+    }
   }
 }
