@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <app-admin-sidebar class="sidebar"></app-admin-sidebar>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+
+  <!-- Left Column -->
+
+  <section *ngIf="museum" class="content-left m-2">
+    <div class="card">
+      <div class="card-body">
+
+        <!-- Welcome Text -->
+
+        <label for="welcome-text">Begrüßungstext</label>
+        <textarea id="welcome-text" class="form-control" rows="7" [placeholder]="placeholder"
+                  [(ngModel)]="museum.getContent(selectedLanguage).welcomeText"></textarea>
+
+        <!-- Save -->
+
+        <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save changes">
+          Speichern
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right Column: Logo -->
+
+  <section *ngIf="museum" class="content-right m-2">
+    <app-admin-box-card descHeader="Logo">
+
+      <!-- Header: Upload/Delete Button -->
+
+      <div header>
+        <fa-icon class="fa-lg" (click)="logoInput.click()"
+                 [hidden]="museum.getContent(selectedLanguage).logo"
+                 icon="plus-circle" aria-label="Add logo"></fa-icon>
+
+        <form class="d-none">
+          <input #logoInput type="file" name="file" (change)="uploadLogo($event)">
+        </form>
+
+        <fa-icon class="fa-lg" (click)="deleteLogo()"
+                 [hidden]="!museum.getContent(selectedLanguage).logo"
+                 icon="minus-circle" aria-label="Delete logo"></fa-icon>
+      </div>
+
+      <!-- Body: Logo -->
+
+      <div body>
+        <img *ngIf="museum.getContent(selectedLanguage).logo" class="w-100"
+             [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).logo.filename"
+             [alt]="museum.getContent(selectedLanguage).logo.alternativeText"
+             (click)="openLogoBigView()"/>
+      </div>
+    </app-admin-box-card>
+  </section>
+
+</div>

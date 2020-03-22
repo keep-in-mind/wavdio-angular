@@ -19,10 +19,6 @@
       <div class="card">
         <div class="card-body">
 
-          <label for="welcomeText">Begrüßungstext</label>
-          <textarea id="welcomeText" class="form-control mb-2" rows="5" [placeholder]="placeholder"
-                    [(ngModel)]="museum.getContent(selectedLanguage).welcomeText"></textarea>
-
           <label for="termsOfUse">Nutzungsbedingungen</label>
           <textarea id="termsOfUse" class="form-control mb-2" rows="5" [placeholder]="placeholder"
                     [(ngModel)]="museum.getContent(selectedLanguage).termsOfUse"></textarea>
@@ -47,29 +43,6 @@
     </section>
   </section>
   <section *ngIf="this.museum" class="content-right ml-3 mr-2">
-
-    <!-- Logo -->
-    <section class="mt-2">
-      <app-admin-box-card descHeader="Logo">
-        <div header>
-          <fa-icon [hidden]="museum.getContent(selectedLanguage).logo" (click)="onLogoInput.click()"
-                   class="fa-lg" icon="plus-circle"
-                   aria-label="Add logo">
-          </fa-icon>
-          <form class="d-none">
-            <input #onLogoInput (change)="onLogoChanged($event)" type="file" name="file">
-          </form>
-          <fa-icon [hidden]="!museum.getContent(selectedLanguage).logo" class="fa-lg" icon="minus-circle"
-                   (click)="deleteLogo()"
-                   aria-label="Delete logo"></fa-icon>
-        </div>
-        <div body>
-          <img *ngIf="museum.getContent(selectedLanguage).logo" (click)="openLogoBigView()" class="w-100"
-               [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).logo.filename"
-               [alt]="museum.getContent(selectedLanguage).logo.alternativeText"/>
-        </div>
-      </app-admin-box-card>
-    </section>
 
     <!--Neues Passwort anlegen-->
     <section class="mt-2">

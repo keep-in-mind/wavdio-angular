@@ -56,7 +56,7 @@ export class AdminPersonalDataComponent implements OnInit {
   updateUser() {
     if (this.user.newPassword === this.newPasswordRepeat) {
       this.auth.update(this.user).subscribe();
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/admin/personal-data']);
     }
   }
 
@@ -71,12 +71,6 @@ export class AdminPersonalDataComponent implements OnInit {
         }
       );
     }
-  }
-
-  openLogoBigView() {
-    const modal = this.modalService.open(AdminImageDetailsComponent, {centered: true});
-    modal.componentInstance.museum = this.museum;
-    modal.componentInstance.logo = true;
   }
 
   openImageBigView() {
@@ -110,22 +104,6 @@ export class AdminPersonalDataComponent implements OnInit {
     );
   }
 
-  onLogoChanged(event: Event) {
-    const inputElement = <HTMLInputElement>event.target;
-    const file = inputElement.files[0];
-    const randomFilename = FileService.randomizeFilename(file.name);
-
-    // reset invisible <input> for next, potentially identical file selection (ensure onChange() call)
-    inputElement.value = '';
-
-    const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
-    this.fileService.uploadFile(this.museum._id, file, randomFilename).subscribe(() => {
-      this.museum.getContent(this.locale).logo = new Image(randomFilename, 'alt');
-      this.museumService.updateMuseum(this.museum).subscribe();
-      spinner.close();
-    });
-  }
-
   onImageChanged(event: Event) {
     const inputElement = <HTMLInputElement>event.target;
     const file = inputElement.files[0];
@@ -139,13 +117,6 @@ export class AdminPersonalDataComponent implements OnInit {
       this.museum.getContent(this.locale).image = new Image(randomFilename, 'alt');
       this.museumService.updateMuseum(this.museum).subscribe();
       spinner.close();
-    });
-  }
-
-  deleteLogo() {
-    this.fileService.deleteFile(this.museum._id, this.museum.getContent(this.locale).logo.filename).subscribe(() => {
-      this.museum.getContent(this.locale).logo = null;
-      this.museumService.updateMuseum(this.museum).subscribe();
     });
   }
 

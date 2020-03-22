@@ -33,7 +33,7 @@ export class AdminLoginComponent implements OnInit {
     this.auth.logout();
     this.auth.login(this.credentials).subscribe(() => {
       this.isIncorrect = false;
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/admin/welcome']);
     }, (err) => { this.isIncorrect = true; }
     );
 
@@ -43,7 +43,7 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit() {
     // this.auth.register(this.credentialsInit).subscribe();
     if (this.auth.isLoggedIn()) {
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/admin/welcome']);
     }
   }
 
