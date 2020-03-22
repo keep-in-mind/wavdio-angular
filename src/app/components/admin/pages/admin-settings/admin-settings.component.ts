@@ -70,7 +70,7 @@ export class AdminSettingsComponent implements OnInit {
   updateUser() {
     if (this.user.newPassword === this.newPasswordRepeat) {
       this.auth.update(this.user).subscribe();
-      this.router.navigate(['/admin/personal-data']);
+      this.router.navigate(['/admin/settings']);
     }
   }
 }

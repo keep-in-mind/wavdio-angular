@@ -45,7 +45,6 @@ import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-
 import {AdminNewExhibitComponent} from './components/admin/pages/admin-new-exhibit/admin-new-exhibit.component';
 import {AdminNewExpositionComponent} from './components/admin/pages/admin-new-exposition/admin-new-exposition.component';
 import {AdminNewInfoPageComponent} from './components/admin/pages/admin-new-info-page/admin-new-info-page.component';
-import {AdminPersonalDataComponent} from './components/admin/pages/admin-personal-data/admin-personal-data.component';
 import {AdminQrCodeComponent} from './components/admin/parts/admin-qr-code/admin-qr-code.component';
 import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
 import {AdminSidebarComponent} from './components/admin/parts/admin-sidebar/admin-sidebar.component';
@@ -106,7 +105,6 @@ const appRoutes: Routes = [
       {path: 'info-page/:id', component: AdminInfoPageComponent},
       {path: 'info-pages', component: AdminInfoPagesComponent},
       {path: 'museum', component: AdminMuseumComponent},
-      {path: 'personal-data', component: AdminPersonalDataComponent},
       {path: 'settings', component: AdminSettingsComponent},
       {path: 'statistics/exhibit/:id', component: AdminExhibitStatsComponent},
       {path: 'statistics/exposition/:id', component: AdminExpositionStatsComponent},
@@ -136,7 +134,6 @@ const appRoutes: Routes = [
     AdminNewExhibitComponent,
     AdminNewExpositionComponent,
     AdminNewInfoPageComponent,
-    AdminPersonalDataComponent,
     AdminQrCodeComponent,
     AdminSettingsComponent,
     AdminSidebarComponent,
