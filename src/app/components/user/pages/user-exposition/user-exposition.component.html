@@ -1,0 +1,70 @@
+<div id="page">
+
+  <app-user-app-bar backArrow="true"></app-user-app-bar>
+
+  <!-- Page Content -->
+  <main>
+
+    <!-- Exposition Logo -->
+    <div style="position: relative; padding-top: 61.8%">
+      <img *ngIf="exposition && exposition.logo"
+           style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
+           class="w-100"
+           [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
+           [alt]="exposition.logo.alternativeText"
+           [routerLink]="'/exposition/' + this.exposition._id + '/fullscreen'"/>
+    </div>
+
+    <!-- Exposition Title -->
+    <h1 *ngIf="exposition" class="mt-2 px-2">{{ exposition.getContent(locale).name }}</h1>
+
+    <!-- Tabs -->
+    <mat-tab-group mat-stretch-tabs>
+
+      <!-- Info -->
+      <mat-tab label="Info" i18n-label>
+        <p *ngIf="exposition" class="p-2">
+          <markdown>{{ exposition.getContent(locale).info }}</markdown>
+        </p>
+      </mat-tab>
+
+      <!-- Exhibits -->
+      <mat-tab label="Exhibits" i18n-label>
+        <section *ngIf="exposition" role="main">
+          <div class="container">
+            <div class="grid-container pb-5">
+              <div *ngFor="let exhibit of exhibits" class="mx-auto">
+                <app-common-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
+                                         [link]="'/exhibit/' + exhibit._id"></app-common-exhibit-card>
+              </div>
+            </div>
+          </div>
+        </section>
+      </mat-tab>
+
+    </mat-tab-group>
+  </main>
+
+  <footer>
+    <section *ngIf="exposition" role="contentinfo" class="fixed-bottom"
+             style="height: 48px; background-color: #f5f5f5">
+      <nav class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col icons py-2 text-center">
+              <fa-icon role="button" aria-label="Like" icon="heart"
+                       [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"></fa-icon>
+            </div>
+            <div class="col icons py-2 text-center">
+              <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
+                       aria-label="Comment"></fa-icon>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </footer>
+
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

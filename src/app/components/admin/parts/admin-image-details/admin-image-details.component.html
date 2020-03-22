@@ -1,0 +1,58 @@
+<section class="content p-3">
+  <ng-container *ngIf="this.exhibit">
+    <img [src]="'/uploads/' + this.exhibit._id + '/' + this.exhibit.getContent(this.lang).images[this.index].filename"
+    [alt]="this.exhibit.getContent(this.lang).images[this.index].alternativeText">
+  </ng-container>
+  <ng-container *ngIf="this.exposition">
+    <img *ngIf="this.exposition.logo" [src]="'/uploads/' + this.exposition._id + '/' + this.exposition.logo.filename"
+    [alt]="this.exposition.logo.alternativeText">
+  </ng-container>
+  <ng-container *ngIf="this.museum && this.logo">
+    <img *ngIf="this.museum.getContent(this.locale).logo"
+         [src]="'/uploads/' + this.museum._id + '/' + this.museum.getContent(this.locale).logo.filename"
+         [alt]="museum.getContent(locale).logo.alternativeText">
+  </ng-container>
+  <ng-container *ngIf="this.museum && !this.logo">
+    <img *ngIf="this.museum.getContent(this.locale).image"
+         [src]="'/uploads/' + this.museum._id + '/' + this.museum.getContent(this.locale).image.filename"
+         [alt]="museum.getContent(locale).image.alternativeText">
+  </ng-container>
+</section>
+<section class="content p-3">
+  <div class="form-row mb-2">
+    <ng-container *ngIf="this.exhibit">
+      <label for="image-alternativeText" i18n>Description</label>
+      <textarea id="image-alternativeText" class="form-control mb-2" rows="3"
+                [(ngModel)]="this.exhibit.getContent(this.lang).images[this.index].alternativeText"></textarea>
+    </ng-container>
+    <ng-container *ngIf="this.exposition">
+      <label for="exposition-logo-alternativeText" i18n>Description</label>
+      <textarea *ngIf="this.exposition.logo" id="exposition-logo-alternativeText" class="form-control mb-2" rows="3" [(ngModel)]="this.exposition.logo.alternativeText"></textarea>
+    </ng-container>
+
+    <ng-container *ngIf="this.museum && this.logo">
+      <label for="museum-logo-alternativeText" i18n>Description</label>
+      <textarea *ngIf="this.museum.getContent(this.locale).logo"
+                id="museum-logo-alternativeText"
+                class="form-control mb-2" rows="3"
+                [(ngModel)]="this.museum.getContent(locale).logo.alternativeText"></textarea>
+    </ng-container>
+    <ng-container *ngIf="this.museum && !this.logo">
+      <label for="museum-image-alternativeText" i18n>Description</label>
+      <textarea *ngIf="this.museum.getContent(this.locale).image"
+                id="museum-image-alternativeText"
+                class="form-control mb-2" rows="3"
+                [(ngModel)]="this.museum.getContent(locale).image.alternativeText"></textarea>
+    </ng-container>
+
+    <div class="col-4">
+      <button class="btn btn-success w-100" (click)="handleUpdate()" i18n>Save</button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-danger w-100" (click)="handleDelete()" i18n>Delete</button>
+    </div>
+    <div class="col-4">
+      <button (click)="this.modal.close()" class="btn btn-secondary w-100" i18n>Cancel</button>
+    </div>
+  </div>
+</section>

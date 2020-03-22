@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-admin-sidebar></app-admin-sidebar>
+  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <section class="content-left ml-3 mr-2">
+
+    <!-- Stand-alone exhibits -->
+    <section class="mt-2">
+      <app-admin-box-card descHeader="Exhibits">
+        <div header>
+          <a *ngIf="museum"
+             routerLink="/admin/exhibit/new/{{museum._id}}"
+             routerLinkActive="active">
+
+            <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let exhibit of exhibits">
+          <app-common-exhibit-card [exhibit]="exhibit"
+                                   [width]="'125px'"
+                                   [height]="'150px'"
+                                   [selectedLanguage]="selectedLanguage"
+                                   [link]="'/admin/exhibit/'+ exhibit._id">
+          </app-common-exhibit-card>
+        </div>
+      </app-admin-box-card>
+    </section>
+
+    <!-- Section Expositions -->
+    <section class="mt-2">
+      <app-admin-box-card descHeader="Ausstellungen">
+        <div header>
+          <a routerLink="/admin/exposition/new" routerLinkActive="active">
+            <fa-icon aria-label="Add exposition" class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let exposition of expositions">
+          <app-common-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
+                                      [selectedLanguage]="selectedLanguage"
+                                      [link]="'/admin/exposition/'+ exposition._id"></app-common-exposition-card>
+        </div>
+      </app-admin-box-card>
+    </section>
+  </section>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

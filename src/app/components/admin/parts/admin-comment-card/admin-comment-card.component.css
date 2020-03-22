@@ -1,0 +1,8 @@
+.admin-part-comment-card {
+  padding: 8px;
+
+  border: 1px solid gray;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}

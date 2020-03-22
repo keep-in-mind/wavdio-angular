@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <section class="sidebar">
+    <app-admin-sidebar></app-admin-sidebar>
+  </section>
+
+  <!-- Header -->
+
+  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+  <section class="content-left ml-3 mr-2">
+    <!-- Section Infoseiten -->
+    <section *ngIf="infoPages" class="mt-2">
+      <app-admin-box-card descHeader="Info-Seiten">
+        <div header>
+          <a routerLink="/admin/info-page/new" routerLinkActive="active">
+            <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
+          </a>
+        </div>
+        <div body *ngFor="let infoPage of infoPages">
+          <a routerLink="/admin/info-page/{{ infoPage._id }}" routerLinkActive="active">
+            <div class="card-size card m-1">
+              <div class="card-body">
+                <h4 class="small truncate">{{infoPage.name}}</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </app-admin-box-card>
+    </section>
+  </section>
+  <section class="content-right ml-3 mr-2">
+    <!-- Section Lageplan -->
+    <section *ngIf="museum" class="mt-2">
+      <app-admin-box-card descHeader="Lageplan">
+        <div header>
+          <fa-icon aria-label="Add site plan" [hidden]="museum.getContent(selectedLanguage).sitePlan" (click)="onSitePlanInput.click()"
+                   class="fa-lg"
+                   icon="plus-circle">
+          </fa-icon>
+          <form class="d-none">
+            <input #onSitePlanInput (change)="onSitePlanChanged($event)" type="file" name="file">
+          </form>
+          <fa-icon aria-label="Delete site plan" [hidden]="!museum.getContent(selectedLanguage).sitePlan" class="fa-lg" icon="minus-circle"
+                   (click)="deleteSitePlan()"></fa-icon>
+        </div>
+        <div body>
+          <img *ngIf="museum.getContent(selectedLanguage).sitePlan" class="w-100"
+               [alt]="museum.getContent(selectedLanguage).sitePlan.alternativeText"
+               [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).sitePlan.filename"/>
+        </div>
+      </app-admin-box-card>
+    </section>
+  </section>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

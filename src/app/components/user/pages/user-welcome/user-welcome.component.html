@@ -1,0 +1,59 @@
+<div id="page">
+
+  <app-user-app-bar></app-user-app-bar>
+
+  <!-- Page Content -->
+  <main>
+
+    <!-- wAVdio Logo -->
+    <div style="position: relative; padding-top: 30%; margin: 8%">
+      <img *ngIf="museum && museum.getContent(locale).logo; else defaultLogo"
+           style="position: absolute; height: 100%; left: 0; top: 0; object-fit: contain"
+           class="w-100"
+           [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).logo.filename"
+           [alt]="museum.getContent(locale).logo.alternativeText"/>
+      <ng-template #defaultLogo>
+        <img style="position: absolute; height: 100%; left: 0; top: 0; object-fit: contain"
+             class="w-100"
+             src="../../../../../assets/images/wAVdio_Logo_gross.png"
+             alt="wAVdio Logo"/>
+      </ng-template>
+    </div>
+
+    <!-- Welcome Text -->
+    <div *ngIf="museum" style="margin: 5%; text-align: center">
+      <markdown>{{ museum.getContent(locale).welcomeText }}</markdown>
+    </div>
+
+    <a [routerLink]="termsOfUseFlag ? '/museum' : ''" style="display: block; text-align: center; margin: auto">
+      <img style="width: 30%" [src]="'assets/images/continue_' + locale + '.png'">
+    </a>
+
+    <!-- Agreements Section -->
+    <section id="agreement" class="mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
+                     (change)="onTermsChange()">
+              <label for="termsOfUse">
+                <span i18n>I accept the </span>
+                <a routerLink="/usage-terms" i18n>terms of use</a>
+                <span i18n> and the </span>
+                <a routerLink="/privacy-policy" i18n>privacy policy</a>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <section role="contentinfo" style="height: 48px; background-color: #f5f5f5"></section>
+  </footer>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>

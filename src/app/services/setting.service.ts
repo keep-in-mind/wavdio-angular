@@ -1,13 +1,11 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
 import {NGXLogger} from 'ngx-logger';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
-import {Setting} from '../models/setting';
-
 import {AuthenticationService} from './authentification.service';
+import {Setting} from '../models/setting';
 
 @Injectable({providedIn: 'root'})
 export class SettingService {
@@ -25,49 +23,44 @@ export class SettingService {
     this.logger.trace('getSettings()');
 
     return this.http.get<Setting[]>(this.url).pipe(
-      tap((readSettings: Setting[]) =>
-        this.logger.trace('getSettings().next(readSettings: Setting[])', readSettings)),
-      catchError(this.handleError('getSettings()', []))
+      tap(readSettings => this.logger.trace('getSettings(...)', readSettings)),
+      catchError(this.handleError('getSettings(...)', []))
     );
   }
 
   public createSetting(setting: Setting): Observable<Setting> {
-    this.logger.trace('createSetting(setting: Setting)', setting);
+    this.logger.trace('createSetting(setting)', setting);
 
     return this.http.post<Setting>(this.url, setting, this.auth.getAuthorizationHeader()).pipe(
-      tap((createdSetting: Setting) =>
-        this.logger.trace('createSetting().next(createdSettings: Setting)', createdSetting)),
-      catchError(this.handleError<Setting>('createSetting()'))
+      tap(createdSetting => this.logger.trace('createSetting(...)', createdSetting)),
+      catchError(this.handleError<Setting>('createSetting(...)'))
     );
   }
 
   public getSetting(_id: string): Observable<Setting> {
-    this.logger.trace('getSetting(_id: string)', _id);
+    this.logger.trace('getSetting(_id)', _id);
 
     return this.http.get<Setting>(`${this.url}/${_id}`).pipe(
-      tap((readSetting: Setting) =>
-        this.logger.trace('getSetting().next(readSetting: Setting)', readSetting)),
-      catchError(this.handleError<Setting>('getSetting()'))
+      tap(readSetting => this.logger.trace('getSetting(...)', readSetting)),
+      catchError(this.handleError<Setting>('getSetting(...)'))
     );
   }
 
   public updateSetting(setting: Setting): Observable<Setting> {
-    this.logger.trace('updateSetting(setting: Setting)', setting);
+    this.logger.trace('updateSetting(setting)', setting);
 
     return this.http.patch<Setting>(`${this.url}/${setting._id}`, setting, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedSetting: Setting) =>
-        this.logger.trace('updateSetting().next(updatedSetting: Setting)', updatedSetting)),
-      catchError(this.handleError<Setting>('updateSetting()'))
+      tap(updatedSetting => this.logger.trace('updateSetting(...)', updatedSetting)),
+      catchError(this.handleError<Setting>('updateSetting(...)'))
     );
   }
 
   public deleteSetting(setting: Setting): Observable<Setting> {
-    this.logger.trace('deleteSetting(setting: Setting)', setting);
+    this.logger.trace('deleteSetting(setting)', setting);
 
     return this.http.delete<Setting>(`${this.url}/${setting._id}`, this.auth.getAuthorizationHeader()).pipe(
-      tap((deletedSetting: Setting) =>
-        this.logger.trace('deleteSetting().next(deletedSetting: Setting)', deletedSetting)),
-      catchError(this.handleError<Setting>('deleteSetting()'))
+      tap(deletedSetting => this.logger.trace('deleteSetting(...)', deletedSetting)),
+      catchError(this.handleError<Setting>('deleteSetting(...)'))
     );
   }
 

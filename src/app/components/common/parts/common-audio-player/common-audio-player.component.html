@@ -1,0 +1,30 @@
+<section class="player">
+  <audio #audioplayer (timeupdate)="updateTimeAudio()">
+    <ng-container *ngFor="let audio_file of exhibit.getContent(selectedLanguage).audio">
+      <source [src]="'/uploads/' + exhibit._id + '/' + audio_file.filename"
+              [type]="audio_file.mimeType">
+    </ng-container>
+    <p>Your browser does not support the HTML5 audio feature.</p>
+  </audio>
+  <progress #progressAudio class="progress" min='0' max='100' value='0'>0%</progress>
+  <div #timeAudio class="time">00:00</div>
+  <div class="controls">
+    <button class="playpause" (click)="playPauseAudio()" aria-label="Play and pause audio">
+      <ng-container *ngIf="!audioPlaying">
+        <fa-icon icon="play" size="lg"></fa-icon>
+      </ng-container>
+      <ng-container *ngIf="audioPlaying">
+        <fa-icon icon="pause" size="lg"></fa-icon>
+      </ng-container>
+    </button>
+    <button class="stop" (click)="stopItAudio()" aria-label="Stop audio">
+      <fa-icon class="fa-lg" icon="stop"></fa-icon>
+    </button>
+    <button class="rwd" (click)="rewindAudio()" aria-label="Rewind audio">
+      <fa-icon class="fa-lg" icon="backward"></fa-icon>
+    </button>
+    <button class="fwd" (click)="forwardAudio()" aria-label="Fast forward audio">
+      <fa-icon class="fa-lg" icon="forward"></fa-icon>
+    </button>
+  </div>
+</section>

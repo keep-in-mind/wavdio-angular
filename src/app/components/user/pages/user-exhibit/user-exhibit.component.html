@@ -1,0 +1,110 @@
+<div id="page">
+
+  <app-user-app-bar *ngIf="exhibit && exhibit.parentModel === 'Museum'"
+                    backArrow="true"></app-user-app-bar>
+  <app-user-app-bar *ngIf="exhibit && exhibit.parentModel === 'Exposition' && exposition"
+                    backArrow="true"></app-user-app-bar>
+
+  <!-- Page Content -->
+  <main>
+
+    <!-- Carousel Section -->
+    <app-user-carousel *ngIf="exhibit && exhibit.getContent(locale).images.length"
+                       [id]="exhibit._id" [images]="exhibit.getContent(locale).images"></app-user-carousel>
+
+    <!-- Exhibit Title -->
+    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ exhibit.getContent(locale).name }}</h1>
+
+    <!-- Media Player Section -->
+    <section *ngIf="exhibit">
+      <div class="container">
+        <div class="mx-auto">
+          <!-- AUDIO -->
+          <div class="mt-4" body *ngIf="exhibit.getContent(locale).audio.length">
+            <hr class="hl">
+            <section class="player">
+              <div class="phones">
+                <fa-icon icon="headphones" size="lg"></fa-icon>
+              </div>
+
+              <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-audio-player>
+
+              <div *ngIf="exhibit.getContent(locale).transcript" style="text-align: center; margin-top: 2pt">
+                <button (click)="openTranscript(transcriptModal)" aria-label="Open transcript">
+                  <fa-icon class="fa-lg" icon="book-reader"></fa-icon>
+                </button>
+              </div>
+              <ng-template #transcriptModal let-c="close" let-d="dismiss">
+                <div class="modal-header" style="overflow-y: initial !important">
+                  <h4 class="modal-title" id="modal-basic-title" i18n>Audio Transcript</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="overflow-y: auto; height:400pt;">
+                  <p>{{exhibit.getContent(locale).transcript.text}}</p>
+                </div>
+              </ng-template>
+            </section>
+          </div>
+          <!-- VIDEO -->
+          <div body *ngIf="exhibit.getContent(locale).video.length">
+            <hr class="hl">
+            <section class="player">
+              <div class="camera">
+                <fa-icon icon="video" size="lg"></fa-icon>
+              </div>
+
+              <app-common-video-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-video-player>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p *ngIf="exhibit" class="p-2">
+      <markdown>{{exhibit.getContent(locale).info}}</markdown>
+    </p>
+  </main>
+
+  <footer>
+    <section *ngIf="exhibit" role="contentinfo">
+      <nav class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 icons py-2 text-center">
+              <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExhibit()"
+                       aria-label="Like"></fa-icon>
+            </div>
+            <div class="col-8 input-group py-2">
+              <div class="input-group-prepend">
+                <button [attr.disabled]="isFirst()" (click)="prevExhibit()" type="button" class="btn btn-outline-secondary"
+                        aria-label="Go to previous exhibit">
+                  <fa-icon icon="chevron-left"></fa-icon>
+                </button>
+              </div>
+              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
+                     placeholder="Exhibit number">
+              <div class="input-group-append">
+                <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
+                        aria-label="Search by exhibit number">
+                  <fa-icon icon="search-location"></fa-icon>
+                </button>
+                <button [attr.disabled]="isLast()" (click)="nextExhibit()" type="button" class="btn btn-outline-secondary" aria-label="Go to next exhibit">
+                  <fa-icon icon="chevron-right"></fa-icon>
+                </button>
+              </div>
+            </div>
+            <div class="col-2 icons py-2 text-center">
+              <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
+                       aria-label="Comment"></fa-icon>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </footer>
+</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>
