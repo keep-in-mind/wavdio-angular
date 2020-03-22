@@ -22,23 +22,23 @@ export class FileService {
   }
 
   public uploadFile(id: string, file: File, uploadFilename: string): Observable<File> {
-    this.logger.trace('uploadFile(id: string, file: File, uploadFilename: string)', id, file, uploadFilename);
+    this.logger.trace('uploadFile(id, file, uploadFilename)', id, file, uploadFilename);
 
     const formData = new FormData();
     formData.append('file', file, uploadFilename);
 
     return this.http.post<File>(`/upload/${id}`, formData).pipe(
-      tap(() => this.logger.trace('uploadFile().next()')),
-      catchError(this.handleError<File>('uploadFile()'))
+      tap(() => this.logger.trace('uploadFile(...)')),
+      catchError(this.handleError<File>('uploadFile(...)'))
     );
   }
 
   public deleteFile(id: string, uploadFilename: string): Observable<File> {
-    this.logger.trace('deleteFile(id: string, uploadFilename: string)', id, uploadFilename);
+    this.logger.trace('deleteFile(id, uploadFilename)', id, uploadFilename);
 
     return this.http.delete<File>(`/upload/${id}/${uploadFilename}`).pipe(
-      tap(() => this.logger.trace('deleteFile().next()')),
-      catchError(this.handleError<File>('deleteFile()'))
+      tap(() => this.logger.trace('deleteFile(...)')),
+      catchError(this.handleError<File>('deleteFile(...)'))
     );
   }
 

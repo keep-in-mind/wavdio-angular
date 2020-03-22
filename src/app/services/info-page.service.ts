@@ -23,49 +23,44 @@ export class InfoPageService {
     this.logger.trace('getInfoPages()');
 
     return this.http.get<InfoPage[]>(this.url).pipe(
-      tap((readInfoPages: InfoPage[]) =>
-        this.logger.trace('getInfoPages().next(readInfoPages: InfoPage[])', readInfoPages)),
-      catchError(this.handleError('getInfoPages()', []))
+      tap(readInfoPages => this.logger.trace('getInfoPages(...)', readInfoPages)),
+      catchError(this.handleError('getInfoPages(...)', []))
     );
   }
 
   public createInfoPage(infoPage: InfoPage): Observable<InfoPage> {
-    this.logger.trace('createInfoPage(infoPage: InfoPage)', infoPage);
+    this.logger.trace('createInfoPage(infoPage)', infoPage);
 
     return this.http.post<InfoPage>(this.url, infoPage, this.auth.getAuthorizationHeader()).pipe(
-      tap((createdInfoPage: InfoPage) =>
-        this.logger.trace('createInfoPage().next(createdInfoPage: InfoPage)', createdInfoPage)),
-      catchError(this.handleError<InfoPage>('createInfoPage()'))
+      tap(createdInfoPage => this.logger.trace('createInfoPage(...)', createdInfoPage)),
+      catchError(this.handleError<InfoPage>('createInfoPage(...)'))
     );
   }
 
   public getInfoPage(_id: string): Observable<InfoPage> {
-    this.logger.trace('getInfoPage(_id: string)', _id);
+    this.logger.trace('getInfoPage(_id)', _id);
 
     return this.http.get<InfoPage>(`${this.url}/${_id}`).pipe(
-      tap((readInfoPage: InfoPage) =>
-        this.logger.trace('getInfoPage().next(readInfoPage: InfoPage)', readInfoPage)),
-      catchError(this.handleError<InfoPage>('getInfoPage()'))
+      tap(readInfoPage => this.logger.trace('getInfoPage(...)', readInfoPage)),
+      catchError(this.handleError<InfoPage>('getInfoPage(...)'))
     );
   }
 
   public updateInfoPage(infoPage: InfoPage): Observable<InfoPage> {
-    this.logger.trace('updateInfoPage(infoPage: InfoPage)', infoPage);
+    this.logger.trace('updateInfoPage(infoPage)', infoPage);
 
     return this.http.patch<InfoPage>(`${this.url}/${infoPage._id}`, infoPage, this.auth.getAuthorizationHeader()).pipe(
-      tap((updatedInfoPage: InfoPage) =>
-        this.logger.trace('updateInfoPage().next(updatedInfoPage: InfoPage)', updatedInfoPage)),
-      catchError(this.handleError<InfoPage>('updateInfoPage()'))
+      tap(updatedInfoPage => this.logger.trace('updateInfoPage(...)', updatedInfoPage)),
+      catchError(this.handleError<InfoPage>('updateInfoPage(...)'))
     );
   }
 
   public deleteInfoPage(infoPage: InfoPage): Observable<InfoPage> {
-    this.logger.trace('deleteInfoPage(infoPage: InfoPage)', infoPage);
+    this.logger.trace('deleteInfoPage(infoPage)', infoPage);
 
     return this.http.delete<InfoPage>(`${this.url}/${infoPage._id}`, this.auth.getAuthorizationHeader()).pipe(
-      tap((deletedInfoPage: InfoPage) =>
-        this.logger.trace('deleteInfoPage().next(deletedInfoPage: InfoPage)', deletedInfoPage)),
-      catchError(this.handleError<InfoPage>('deleteInfoPage()'))
+      tap(deletedInfoPage => this.logger.trace('deleteInfoPage(...)', deletedInfoPage)),
+      catchError(this.handleError<InfoPage>('deleteInfoPage(...)'))
     );
   }
 
