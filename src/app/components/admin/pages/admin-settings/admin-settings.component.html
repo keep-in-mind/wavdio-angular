@@ -14,25 +14,25 @@
         <ul *ngIf="this.setting" style="margin: 0; padding: 0; list-style-type:none">
           <li style="display: flex; align-items: center">
             <input id="check_german" type="checkbox" name="active_language" value="de"
-              [(ngModel)]="this.setting.activeLangs.de" (ngModelChange)="this.updateSetting()">
+                   [(ngModel)]="this.setting.activeLangs.de" (ngModelChange)="this.updateSetting()">
             <img class="mx-2" src="../../../../../assets/images/de.png"/>
             <label for="check_german" style="margin: 0">Deutsch</label>
           </li>
           <li style="display: flex; align-items: center">
             <input id="check_english" type="checkbox" name="active_language" value="en"
-              [(ngModel)]="this.setting.activeLangs.en" (ngModelChange)="this.updateSetting()">
+                   [(ngModel)]="this.setting.activeLangs.en" (ngModelChange)="this.updateSetting()">
             <img class="mx-2" src="../../../../../assets/images/en.png"/>
             <label for="check_english" style="margin: 0">Englisch</label>
           </li>
           <li style="display: flex; align-items: center">
             <input id="check_spanish" type="checkbox" name="active_language" value="es"
-              [(ngModel)]="this.setting.activeLangs.es" (ngModelChange)="this.updateSetting()">
+                   [(ngModel)]="this.setting.activeLangs.es" (ngModelChange)="this.updateSetting()">
             <img class="mx-2" src="../../../../../assets/images/es.png"/>
             <label for="check_spanish" style="margin: 0">Spanisch</label>
           </li>
           <li style="display: flex; align-items: center">
             <input id="check_french" type="checkbox" name="active_language" value="fr"
-              [(ngModel)]="this.setting.activeLangs.fr" (ngModelChange)="this.updateSetting()">
+                   [(ngModel)]="this.setting.activeLangs.fr" (ngModelChange)="this.updateSetting()">
             <img class="mx-2" src="../../../../../assets/images/fr.png"/>
             <label for="check_french" style="margin: 0">Französisch</label>
           </li>
@@ -44,72 +44,56 @@
 
   <!-- Right Column: Update Credentials -->
 
-  <section *ngIf="this.museum" class="content-right ml-3 mr-2">
-    <section class="mt-2">
-      <div class="card">
-        <div class="card-header">Benutzername und Passwort ändern</div>
-        <div class="card-body">
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <label for="username">Benutzername</label>
-              <input id="username" class="form-control" type="text"
-                     [(ngModel)]="user.username">
-            </div>
+  <section *ngIf="this.museum" class="content-right m-2">
+    <div class="card">
+      <div class="card-header">Benutzername und Passwort ändern</div>
+      <div class="card-body">
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <label for="username">Benutzername</label>
+            <input id="username" class="form-control" type="text"
+                   [(ngModel)]="user.username">
           </div>
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <label for="newUsername">Neuer Benutzername</label>
-              <input id="newUsername" class="form-control" type="text"
-                     [(ngModel)]="user.newUsername">
-            </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <label for="newUsername">Neuer Benutzername</label>
+            <input id="newUsername" class="form-control" type="text"
+                   [(ngModel)]="user.newUsername">
           </div>
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <label for="password">Altes Passwort</label>
-              <input id="password" class="form-control" type="password"
-                     [(ngModel)]="user.password">
-            </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <label for="password">Altes Passwort</label>
+            <input id="password" class="form-control" type="password"
+                   [(ngModel)]="user.password">
           </div>
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <label for="newPassword">Neues Passwort</label>
-              <input id="newPassword" class="form-control" type="password"
-                     [(ngModel)]="user.newPassword">
-            </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <label for="newPassword">Neues Passwort</label>
+            <input id="newPassword" class="form-control" type="password"
+                   [(ngModel)]="user.newPassword">
           </div>
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <label for="newPasswordRepeat">Neues Passwort wiederholen</label>
-              <input id="newPasswordRepeat" class="form-control" type="password"
-                     [(ngModel)]="newPasswordRepeat">
-            </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <label for="newPasswordRepeat">Neues Passwort wiederholen</label>
+            <input id="newPasswordRepeat" class="form-control" type="password"
+                   [(ngModel)]="newPasswordRepeat">
           </div>
-          <div class="form-row mb-2">
-            <div class="col-12">
-              <button (click)="updateUser()" class="btn btn-success w-100" aria-label="Update user data">
-                Benutzerdaten aktualisieren
-              </button>
-            </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col-12">
+            <button (click)="updateUser()" class="btn btn-success w-100" aria-label="Update user data">
+              Benutzerdaten aktualisieren
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </section>
 
 </div>
-<div *ngIf="this.cookieLawService">
-  <ng-container *ngIf='this.cookieLawService.isAccepted()'>
-    <div class="fixed-bottom text-center">
-      <div class="p-3 mb-2 bg-secondary text-white">
-        <h3>Diese Website verwendet Cookies</h3>
-        <p> – nähere Informationen dazu und zu Ihren
-          Rechten als Benutzer finden Sie in
-          unserer Datenschutzerklärung am Ende der Seite. Klicken Sie auf „Ich stimme zu“, um Cookies zu akzeptieren und
-          direkt unsere Website besuchen zu können.</p>
-        <button type="button" class="btn btn-light btn-lg" (click)="this.cookieLawService.accepted()">Ich stimme
-          zu
-        </button>
-      </div>
-    </div>
-  </ng-container>
-</div>
+
+<app-common-cookie-banner></app-common-cookie-banner>
