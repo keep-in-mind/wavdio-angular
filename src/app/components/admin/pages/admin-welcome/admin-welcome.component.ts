@@ -93,7 +93,7 @@ export class AdminWelcomeComponent implements OnInit {
   openLogoBigView() {
     const modal = this.modalService.open(AdminImageDetailsComponent, {centered: true});
     modal.componentInstance.museum = this.museum;
-    modal.componentInstance.image = false; // show logo
+    modal.componentInstance.logo = true;
   }
 
   private showAlertMessage(type: number, seconds: number, message: string) {
