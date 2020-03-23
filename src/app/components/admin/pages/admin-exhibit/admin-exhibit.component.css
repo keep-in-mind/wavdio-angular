@@ -42,3 +42,35 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/*
+ * MYTOOLTIP
+ */
+
+.mytooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Mytooltip text */
+.mytooltip .mytooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the mytooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  top: -5px;
+  right: 105%;
+}
+
+/* Show the mytooltip text when you mouse over the mytooltip container */
+.mytooltip:hover .mytooltiptext {
+  visibility: visible;
+}
