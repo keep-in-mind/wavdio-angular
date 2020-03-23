@@ -45,6 +45,8 @@ export class AdminExhibitComponent implements OnInit {
 
   breadcrumbs: Breadcrumb[] = null; // created when exhibit loaded
 
+  multi = false; // set when clicking multi-upload button, unset after upload
+
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     private activatedRoute: ActivatedRoute,
@@ -181,7 +183,14 @@ export class AdminExhibitComponent implements OnInit {
 
     const spinner = this.modalService.open(AdminSpinnerComponent, {centered: true, backdrop: 'static', keyboard: false});
     this.fileService.uploadFile(this.exhibit._id, file, randomFilename).subscribe(() => {
-      this.exhibit.getContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
+      if (!this.multi) {
+        this.exhibit.getContent(this.selectedLanguage).images.push(new Image(randomFilename, 'alt'));
+      } else {
+        ['de', 'en', 'fr', 'es'].forEach(lang => {
+          this.exhibit.getContent(lang).images.push(new Image(randomFilename, 'alt'));
+        });
+        this.multi = false;
+      }
       this.updateExhibit();
       spinner.close();
     });

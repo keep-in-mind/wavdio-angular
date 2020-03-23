@@ -19,7 +19,7 @@
   width: auto;
 }
 
-fa-icon[icon="minus-circle"]:hover, fa-icon[icon="plus-circle"]:hover {
+fa-icon[icon="minus-circle"]:hover, fa-icon[icon="plus-circle"]:hover, fa-icon[icon="plus-square"]:hover {
   cursor: pointer;
 }
 
@@ -28,6 +28,10 @@ fa-icon[icon="minus-circle"] {
 }
 
 fa-icon[icon="plus-circle"] {
+  color: #008800;
+}
+
+fa-icon[icon="plus-square"] {
   color: #008800;
 }
 
