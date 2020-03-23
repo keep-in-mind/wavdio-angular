@@ -45,7 +45,7 @@ fa-icon[icon="plus-square"] {
 
 @media (min-width: 576px) {
   .wrapper {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 240px 1fr;
   }
 }
 
