@@ -83,7 +83,7 @@
       <app-admin-box-card descHeader="Bilder">
         <div header>
           <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
-          <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg ml-2" icon="plus-square"></fa-icon>
+          <fa-icon aria-label="Upload Image" (click)="multi = true; uploadImageInput.click()" class="fa-lg ml-2" icon="plus-square"></fa-icon>
           <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
         </div>
         <div body *ngFor="let image of exhibit.getContent(selectedLanguage).images; let i = index">
