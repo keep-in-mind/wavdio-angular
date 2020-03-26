@@ -4,9 +4,17 @@
 
 @include mat-core();
 
-$primary-palette: mat-palette($mat-grey);
-$accent-palette:  mat-palette($mat-blue-gray);
+$primary: mat-palette($mat-grey);
+$accent:  mat-palette($mat-blue-gray);
 
-$theme: mat-dark-theme($primary-palette, $accent-palette);
+$theme: mat-dark-theme($primary, $accent);
 
 @include angular-material-theme($theme);
+
+a, a:hover {
+  color: mat-color($primary, lighter);
+}
+
+markdown a {
+  text-decoration: underline;
+}

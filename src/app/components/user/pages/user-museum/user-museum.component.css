@@ -28,11 +28,6 @@ mat-sidenav-content main {
   overflow: auto;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
 .icons {
   font-size: 1.5rem;
 }
