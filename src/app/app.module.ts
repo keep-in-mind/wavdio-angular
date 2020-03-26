@@ -9,6 +9,7 @@ import {
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -176,6 +177,7 @@ const appRoutes: Routes = [
     }),
     MarkdownModule.forRoot(),
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
@@ -191,7 +193,7 @@ const appRoutes: Routes = [
       enableTracing: false
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    SlickCarouselModule
+    SlickCarouselModule,
   ],
   exports: [
     UserCommentComponent
