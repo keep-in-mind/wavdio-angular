@@ -68,43 +68,43 @@
     </p>
   </main>
 
-  <footer>
-    <section *ngIf="exhibit" role="contentinfo">
-      <nav class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-2 icons py-2 text-center">
-              <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExhibit()"
-                       aria-label="Like"></fa-icon>
+  <mat-toolbar class="mat-elevation-z4" style="height: 64px">
+    <section *ngIf="exhibit" role="contentinfo" style="width: 100%">
+      <div class="container">
+        <div class="row">
+          <div class="col-2 icons py-2 text-center">
+            <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExhibit()"
+                     aria-label="Like"></fa-icon>
+          </div>
+          <div class="col-8 input-group py-2">
+            <div class="input-group-prepend">
+              <button [attr.disabled]="isFirst()" (click)="prevExhibit()" type="button"
+                      class="btn btn-outline-secondary"
+                      aria-label="Go to previous exhibit">
+                <fa-icon icon="chevron-left"></fa-icon>
+              </button>
             </div>
-            <div class="col-8 input-group py-2">
-              <div class="input-group-prepend">
-                <button [attr.disabled]="isFirst()" (click)="prevExhibit()" type="button" class="btn btn-outline-secondary"
-                        aria-label="Go to previous exhibit">
-                  <fa-icon icon="chevron-left"></fa-icon>
-                </button>
-              </div>
-              <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
-                     placeholder="Exhibit number">
-              <div class="input-group-append">
-                <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
-                        aria-label="Search by exhibit number">
-                  <fa-icon icon="search-location"></fa-icon>
-                </button>
-                <button [attr.disabled]="isLast()" (click)="nextExhibit()" type="button" class="btn btn-outline-secondary" aria-label="Go to next exhibit">
-                  <fa-icon icon="chevron-right"></fa-icon>
-                </button>
-              </div>
-            </div>
-            <div class="col-2 icons py-2 text-center">
-              <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
-                       aria-label="Comment"></fa-icon>
+            <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control"
+                   placeholder="Exhibit number">
+            <div class="input-group-append">
+              <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
+                      aria-label="Search by exhibit number">
+                <fa-icon icon="search-location"></fa-icon>
+              </button>
+              <button [attr.disabled]="isLast()" (click)="nextExhibit()" type="button" class="btn btn-outline-secondary"
+                      aria-label="Go to next exhibit">
+                <fa-icon icon="chevron-right"></fa-icon>
+              </button>
             </div>
           </div>
+          <div class="col-2 icons py-2 text-center">
+            <fa-icon icon="comment-alt" (click)="openComment()" class="mr-2 ml-auto py-3"
+                     aria-label="Comment"></fa-icon>
+          </div>
         </div>
-      </nav>
+      </div>
     </section>
-  </footer>
+  </mat-toolbar>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>
