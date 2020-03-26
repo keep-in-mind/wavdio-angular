@@ -1,4 +1,4 @@
-<section id="comment" role="dialog" [attr.aria-label]="descCommentLabel">
+<mat-card id="comment" role="dialog" [attr.aria-label]="descCommentLabel">
   <div class="container">
     <div class="form py-3" role="form">
       <div class="form-group">
@@ -6,15 +6,15 @@
         <textarea class="form-control" [(ngModel)]="comment" id="formComment" rows="7"></textarea>
       </div>
       <div class="clearfix mb-2">
-        <button type="button" class="btn btn-secondary float-left" (click)="modal.close()" i18n>
+        <button mat-flat-button type="button" class="float-left" (click)="modal.close()" i18n>
           Cancel
         </button>
-        <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right" i18n>
+        <button mat-flat-button color="accent" type="submit" (click)="onSubmit()" class="float-right" i18n>
           Submit
         </button>
       </div>
     </div>
   </div>
-</section>
+</mat-card>
 
 <app-common-cookie-banner></app-common-cookie-banner>
