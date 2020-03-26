@@ -1,5 +1,5 @@
 <a routerLink="{{ link }}" routerLinkActive="active" [attr.aria-labelledby]="'linkLabel_'+exhibit._id">
-  <div class="card m-1" [ngClass]="{'inactive-item' : exhibit.active == false}"
+  <mat-card class="card m-1 p-0" [ngClass]="{'inactive-item' : exhibit.active == false}"
        [ngStyle]="{'height': height, 'width': width}">
     <img *ngIf="exhibit.getContent(selectedLanguage).images.length; else elseifcase"
          [src]="'/uploads/' + exhibit._id + '/' + exhibit.getContent(selectedLanguage).images[0].filename"
@@ -17,5 +17,5 @@
          id="linkLabel_{{exhibit._id}}">{{exhibit.code}} - {{exhibit.getContent(selectedLanguage).name}}
       </p>
     </div>
-  </div>
+  </mat-card>
 </a>
