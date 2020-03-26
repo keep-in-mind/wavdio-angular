@@ -93,6 +93,10 @@ body, html {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+markdown a {
+  text-decoration: underline;
+}
+
 /*
  * DARK THEME
  */

@@ -14,7 +14,3 @@ $theme: mat-dark-theme($primary, $accent);
 a, a:hover {
   color: mat-color($primary, lighter);
 }
-
-markdown a {
-  text-decoration: underline;
-}
