@@ -9,3 +9,11 @@
 #user-component {
   height: 100vh;
 }
+
+/*
+ * DARK MODE
+ */
+
+#user-component {
+  background-color: #121212;
+}
