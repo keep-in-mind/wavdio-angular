@@ -370,6 +370,7 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="128b80baef1fc73c59cce8111863ffb95e83f420" datatype="html">
         <source>and the</source>
         <target state="new">und die</target>
@@ -642,6 +643,7 @@
           <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="a42350c5165435aceffea802b6e4449aba431c80" datatype="html">
         <source>I accept the</source>
         <target state="new">Ich akzeptiere die</target>
