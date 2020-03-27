@@ -65,6 +65,20 @@
       </div>
     </app-admin-box-card>
 
+    <!-- Site Plan Text -->
+
+    <div class="card mt-2">
+      <div class="card-body">
+        <label for="site-plan-text">Lageplan Beschreibung</label>
+        <textarea id="site-plan-text" class="form-control" rows="5" [placeholder]="placeholder"
+                  [(ngModel)]="museum.getContent(selectedLanguage).sitePlanText"></textarea>
+
+        <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save museum">
+          Speichern
+        </button>
+      </div>
+    </div>
+
     <!-- Info Pages -->
 
     <div class="mt-2">
