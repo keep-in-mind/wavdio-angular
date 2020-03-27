@@ -14,5 +14,5 @@ p {
 }
 
 mat-toolbar {
-  height: 64px;
+  flex-shrink: 0;
 }
