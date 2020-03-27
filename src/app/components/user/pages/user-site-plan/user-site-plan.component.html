@@ -7,8 +7,8 @@
 
     <img *ngIf="museum && museum.getContent(locale).sitePlan" class="w-100"
          [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).sitePlan.filename"
-         alt="Museum Site Plan" i18n-alt
-         routerLink="/siteplan/fullscreen"/>
+         [alt]="museum.getContent(locale).sitePlan.alternativeText"
+         routerLink="/site-plan/fullscreen"/>
 
     <!-- Site Plan Text -->
 
