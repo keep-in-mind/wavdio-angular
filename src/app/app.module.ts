@@ -91,7 +91,8 @@ const appRoutes: Routes = [
       {path: 'museum', component: UserMuseumComponent},
       {path: 'museum/fullscreen', component: UserMuseumFullscreenComponent},
       {path: 'privacy-policy', component: UserPrivacyPolicyComponent},
-      {path: 'site-plan', component: UserSitePlanFullscreenComponent},
+      {path: 'site-plan', component: UserSitePlanComponent},
+      {path: 'site-plan/fullscreen', component: UserSitePlanFullscreenComponent},
       {path: 'usage-terms', component: UserUsageTermsComponent}
     ]
   },
