@@ -1,4 +1,15 @@
+#user-site-plan-component {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
 main {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+p {
   padding: 8px;
 }
 

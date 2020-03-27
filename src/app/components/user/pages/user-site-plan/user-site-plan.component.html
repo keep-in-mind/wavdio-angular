@@ -1,8 +1,20 @@
-<div id="user-site-plan">
+<div id="user-site-plan-component">
   <app-user-app-bar backArrow="true" title="Site Plan" i18n-title></app-user-app-bar>
 
   <main *ngIf="museum">
-    <markdown>{{ museum.getContent(locale).sitePlanText }}</markdown>
+
+    <!-- Site Plan -->
+
+    <img *ngIf="museum && museum.getContent(locale).sitePlan" class="w-100"
+         [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).sitePlan.filename"
+         alt="Museum Site Plan" i18n-alt
+         routerLink="/siteplan/fullscreen"/>
+
+    <!-- Site Plan Text -->
+
+    <p> <!-- Applying padding to markdown directly behaves strangely -->
+      <markdown>{{ museum.getContent(locale).sitePlanText }}</markdown>
+    </p>
   </main>
 
   <mat-toolbar class="mat-elevation-z4"></mat-toolbar>
