@@ -71,12 +71,12 @@ import {UserInfoPageComponent} from './components/user/pages/user-info-page/user
 import {UserMuseumComponent} from './components/user/pages/user-museum/user-museum.component';
 import {UserMuseumFullscreenComponent} from './components/user/pages/user-museum-fullscreen/user-museum-fullscreen.component';
 import {UserPrivacyPolicyComponent} from './components/user/pages/user-privacy-policy/user-privacy-policy.component';
+import {UserSitePlanComponent} from './components/user/pages/user-site-plan/user-site-plan.component';
 import {UserSitePlanFullscreenComponent} from './components/user/pages/user-site-plan-fullscreen/user-site-plan-fullscreen.component';
 import {UserUsageTermsComponent} from './components/user/pages/user-usage-terms/user-usage-terms.component';
 import {UserWelcomeComponent} from './components/user/pages/user-welcome/user-welcome.component';
 
 import {environment} from '../environments/environment';
-import { UserSitePlanComponent } from './components/user/pages/user-site-plan/user-site-plan.component';
 
 const appRoutes: Routes = [
   {
@@ -161,10 +161,10 @@ const appRoutes: Routes = [
     UserMuseumComponent,
     UserMuseumFullscreenComponent,
     UserPrivacyPolicyComponent,
+    UserSitePlanComponent,
     UserSitePlanFullscreenComponent,
     UserUsageTermsComponent,
-    UserWelcomeComponent,
-    UserSitePlanComponent
+    UserWelcomeComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -195,7 +195,7 @@ const appRoutes: Routes = [
       enableTracing: false
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    SlickCarouselModule,
+    SlickCarouselModule
   ],
   exports: [
     UserCommentComponent

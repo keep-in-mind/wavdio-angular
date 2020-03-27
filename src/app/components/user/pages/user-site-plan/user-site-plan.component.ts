@@ -1,4 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+
+import {Museum} from '../../../../models/museum';
+import {MuseumService} from '../../../../services/museum.service';
 
 @Component({
   selector: 'app-user-site-plan',
@@ -7,9 +10,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class UserSitePlanComponent implements OnInit {
 
-  constructor() {
+  museum: Museum;
+
+  constructor(
+    @Inject(LOCALE_ID) private locale: string,
+    private museumService: MuseumService) {
   }
 
   ngOnInit() {
+    this.museumService.getMuseums().subscribe(
+      museum => this.museum = museum[0]
+    );
   }
 }
