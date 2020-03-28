@@ -12,3 +12,12 @@ input[type=checkbox] {
   flex-grow: 1;
   overflow: auto;
 }
+
+#agreement {
+  margin: auto;
+  max-width: 300px;
+}
+
+#agreement a {
+  text-decoration: underline;
+}

@@ -31,21 +31,14 @@
 
     <!-- Agreements Section -->
     <section id="agreement" class="mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="form-check">
-              <mat-checkbox [checked]="termsOfUseFlag"
-                            (change)="onTermsChange()" ngPreserveWhitespaces>
-                  <span i18n>I accept the</span>
-                  <a routerLink="/usage-terms" i18n>terms of use</a>
-                  <span i18n>and the</span>
-                  <a routerLink="/privacy-policy" i18n>privacy policy</a>
-              </mat-checkbox>
-            </div>
-          </div>
-        </div>
-      </div>
+      <mat-checkbox [checked]="termsOfUseFlag" (change)="onTermsChange()" ngPreserveWhitespaces>
+        <small>
+          <span i18n>I accept the</span>
+          <a routerLink="/usage-terms" i18n>terms of use</a>
+          <span i18n>and the</span>
+          <a routerLink="/privacy-policy" i18n>privacy policy</a>
+        </small>
+      </mat-checkbox>
     </section>
   </main>
 
