@@ -31,8 +31,8 @@
 
     <!-- Agreements Section -->
     <section id="agreement" class="mt-4">
-      <mat-checkbox [checked]="termsOfUseFlag" (change)="onTermsChange()" ngPreserveWhitespaces>
-        <small>
+      <mat-checkbox [checked]="termsOfUseFlag" (change)="onTermsChange()">
+        <small ngPreserveWhitespaces>
           <span i18n>I accept the</span>
           <a routerLink="/usage-terms" i18n>terms of use</a>
           <span i18n>and the</span>
