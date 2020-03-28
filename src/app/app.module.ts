@@ -10,6 +10,7 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -178,6 +179,7 @@ const appRoutes: Routes = [
     MarkdownModule.forRoot(),
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,

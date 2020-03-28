@@ -33,16 +33,15 @@
     <section id="agreement" class="mt-4">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center">
+          <div class="col-12">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
-                     (change)="onTermsChange()">
-              <label for="termsOfUse" ngPreserveWhitespaces>
-                <span i18n>I accept the</span>
-                <a routerLink="/usage-terms" i18n>terms of use</a>
-                <span i18n>and the</span>
-                <a routerLink="/privacy-policy" i18n>privacy policy</a>
-              </label>
+              <mat-checkbox [checked]="termsOfUseFlag"
+                            (change)="onTermsChange()" ngPreserveWhitespaces>
+                  <span i18n>I accept the</span>
+                  <a routerLink="/usage-terms" i18n>terms of use</a>
+                  <span i18n>and the</span>
+                  <a routerLink="/privacy-policy" i18n>privacy policy</a>
+              </mat-checkbox>
             </div>
           </div>
         </div>
