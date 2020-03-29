@@ -74,3 +74,11 @@ img {
 .mytooltip:hover .mytooltiptext {
   visibility: visible;
 }
+
+/*
+ * Audio Player
+ */
+
+#audio-player {
+  width: 100%;
+}
