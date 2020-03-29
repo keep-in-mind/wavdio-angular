@@ -74,28 +74,26 @@
                role="button" aria-label="Like"></fa-icon>
 
       <div id="navigation-controls">
-        <button [attr.disabled]="isFirst()" (click)="prevExhibit()"
-                class="btn btn-outline-secondary"
+        <button class="btn btn-outline-secondary" [attr.disabled]="isFirst()" (click)="prevExhibit()"
                 aria-label="Go to previous exhibit">
           <fa-icon icon="chevron-left"></fa-icon>
         </button>
 
-        <input role="search" type="number" [(ngModel)]="filterNumber" class="form-control d-inline-block"
-               placeholder="Exhibit number">
+        <input type="number" class="form-control" [(ngModel)]="filterNumber" role="search">
 
-        <button (click)="manualSelect()" class="btn btn-outline-secondary" type="button"
+        <button class="btn btn-outline-secondary" (click)="manualSelect()"
                 aria-label="Search by exhibit number">
           <fa-icon icon="search-location"></fa-icon>
         </button>
 
-        <button [attr.disabled]="isLast()" (click)="nextExhibit()"
-                class="btn btn-outline-secondary"
+        <button class="btn btn-outline-secondary" [attr.disabled]="isLast()" (click)="nextExhibit()"
                 aria-label="Go to next exhibit">
           <fa-icon icon="chevron-right"></fa-icon>
         </button>
       </div>
 
-      <fa-icon icon="comment-alt" (click)="openComment()" role="button" aria-label="Comment"></fa-icon>
+      <fa-icon icon="comment-alt" (click)="openComment()"
+               role="button" aria-label="Comment"></fa-icon>
     </mat-toolbar>
   </footer>
 </div>
