@@ -567,6 +567,18 @@
         </context-group>
       </trans-unit>
 
+      <trans-unit id="70842cf070c66147800e909249c7f015b8f02b6e" datatype="html">
+        <source>Your browser does not support the HTML5 audio feature.</source>
+        <target state="new">Ton navigateur ne prend pas en charge la fonction audio HTML5.</target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/components/common/parts/common-audio-player/common-audio-player.component.html
+          </context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+
       <trans-unit id="ad5d5911834c88cee73c38949a280b0efcfe3ea4" datatype="html">
         <source>
           Print
@@ -605,6 +617,18 @@
           <context context-type="sourcefile">app/components/common/pages/common-error/common-error.component.html
           </context>
           <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="7ecf90d090401256ab65a80b48afd1bd1b72c497" datatype="html">
+        <source>Your browser does not support the HTML5 video feature.</source>
+        <target state="new">Ton navigateur ne prend pas en charge la fonction vidéo HTML5.</target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            app/components/common/parts/common-video-player/common-video-player.component.html
+          </context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
 
@@ -648,7 +672,7 @@
           <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
-      
+
       <trans-unit id="a42350c5165435aceffea802b6e4449aba431c80" datatype="html">
         <source>I accept the</source>
         <target state="new">J'accepte les</target>

@@ -4,7 +4,7 @@
       <source [src]="'/uploads/' + exhibit._id + '/' + video_file.filename"
               [type]="video_file.mimeType">
     </ng-container>
-    <p>Your browser does not support the HTML5 video feature.</p>
+    <p i18n>Your browser does not support the HTML5 video feature.</p>
   </video>
   <progress #progress class="progress" min='0' max='100' value='0'>0%</progress>
   <div #time class="time">00:00</div>
