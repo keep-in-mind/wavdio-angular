@@ -26,17 +26,17 @@ a {
   color: red;
 }
 
-/*.card-size {*/
-/*  max-width: 100%;*/
-/*  max-height: 220px;*/
-/*}*/
-
 html {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 button:hover {
   color: black;
+}
+
+.player {
+  max-width: 360px;
+  margin: auto;
 }
 
 .camera {
