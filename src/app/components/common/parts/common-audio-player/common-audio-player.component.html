@@ -12,9 +12,6 @@
   <!-- Progress Bar -->
   <progress #progressAudio class="progress" min='0' max='100' value='0'>0%</progress>
 
-  <!-- Time -->
-  <div #timeAudio class="time">00:00</div>
-
   <div class="controls">
     <!-- Play/Pause -->
     <button class="playpause" (click)="playPauseAudio()" aria-label="Play and pause audio">
@@ -40,5 +37,8 @@
     <button class="fwd" (click)="forwardAudio()" aria-label="Fast forward audio">
       <fa-icon class="fa-lg" icon="forward"></fa-icon>
     </button>
+
+    <!-- Time -->
+    <div #timeAudio class="time">00:00</div>
   </div>
 </section>
