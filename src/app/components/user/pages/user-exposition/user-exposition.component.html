@@ -44,21 +44,23 @@
 
     </mat-tab-group>
   </main>
-  
-  <mat-toolbar *ngIf="exposition" class="mat-elevation-z4" style="height: 64px">
-    <div class="container">
-      <div class="row">
-        <div class="col icons py-2 text-center">
-          <fa-icon role="button" aria-label="Like" icon="heart"
-                   [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"></fa-icon>
-        </div>
-        <div class="col icons py-2 text-center">
-          <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
-                   aria-label="Comment"></fa-icon>
+
+  <footer>
+    <mat-toolbar *ngIf="exposition" class="mat-elevation-z4" style="height: 64px">
+      <div class="container">
+        <div class="row">
+          <div class="col icons py-2 text-center">
+            <fa-icon role="button" aria-label="Like" icon="heart"
+                     [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"></fa-icon>
+          </div>
+          <div class="col icons py-2 text-center">
+            <fa-icon (click)="openComment()" icon="comment-alt" class="mr-2 ml-auto py-3"
+                     aria-label="Comment"></fa-icon>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-toolbar>
+    </mat-toolbar>
+  </footer>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>
