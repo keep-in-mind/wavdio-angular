@@ -1,7 +1,3 @@
-input[type=checkbox] {
-  transform: scale(2);
-}
-
 #page {
   display: flex;
   height: 100vh;
@@ -11,4 +7,13 @@ input[type=checkbox] {
 #page main {
   flex-grow: 1;
   overflow: auto;
+}
+
+#agreement {
+  margin: auto;
+  max-width: 300px;
+}
+
+#agreement a {
+  text-decoration: underline;
 }
