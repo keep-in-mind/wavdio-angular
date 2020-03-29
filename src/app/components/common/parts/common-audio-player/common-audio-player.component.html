@@ -10,25 +10,25 @@
   </audio>
 
   <!-- Progress Bar -->
-  <progress #progressAudio class="progress" min='0' max='100' value='0'>0%</progress>
+  <progress #progressAudio class="progress" max="100" value="0">0%</progress>
 
   <div class="controls">
     <!-- Play/Pause -->
-    <fa-icon icon="play" *ngIf="!audioPlaying" class="playpause" (click)="playPauseAudio()"
+    <fa-icon icon="play" *ngIf="!audioPlaying" (click)="playPauseAudio()"
              aria-label="Play and pause audio"></fa-icon>
-    <fa-icon icon="pause" *ngIf="audioPlaying" class="playpause" (click)="playPauseAudio()"
+    <fa-icon icon="pause" *ngIf="audioPlaying" (click)="playPauseAudio()"
              aria-label="Play and pause audio"></fa-icon>
 
     <!-- Stop -->
-    <fa-icon icon="stop" class="stop" (click)="stopItAudio()" aria-label="Stop audio"></fa-icon>
+    <fa-icon icon="stop" (click)="stopItAudio()" aria-label="Stop audio"></fa-icon>
 
     <!-- Rewind -->
-    <fa-icon icon="backward" class="rwd" (click)="rewindAudio()" aria-label="Rewind audio"></fa-icon>
+    <fa-icon icon="backward" (click)="rewindAudio()" aria-label="Rewind audio"></fa-icon>
 
     <!-- Forward -->
-    <fa-icon class="fwd" icon="forward" (click)="forwardAudio()" aria-label="Fast forward audio"></fa-icon>
+    <fa-icon icon="forward" (click)="forwardAudio()" aria-label="Fast forward audio"></fa-icon>
 
     <!-- Time -->
-    <div #timeAudio class="time">00:00</div>
+    <div #timeAudio>00:00</div>
   </div>
 </section>
