@@ -1,44 +1,19 @@
 progress {
   width: 100%;
-  height: 15px;
-  background-color: black;
+  height: 16px;
+  /*background-color: black;*/
 }
 
-progress::-moz-progress-bar {
-  background-color: white !important;
-}
+/*progress::-moz-progress-bar {*/
+/*  background-color: white !important;*/
+/*}*/
 
 .controls {
-  width: 100%;
   margin-top: 8px;
-  text-align: center;
 }
 
-.playpause, .stop, .fwd, .rwd, .time {
+.controls > * {
   display: inline-block;
   width: 20%;
-}
-
-@media only screen
-and (max-device-width: 599px) {
-
-  .time {
-    font-size: 10pt;
-  }
-
-  .fa-lg {
-    margin-left: -5px;
-  }
-}
-
-@media only screen
-and (min-device-width: 600px) {
-
-  .time {
-    font-size: 15pt;
-  }
-
-  .playpause, .stop, .fwd, .rwd {
-    height: 30px;
-  }
+  text-align: center;
 }
