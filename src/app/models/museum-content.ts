@@ -14,6 +14,7 @@ export class MuseumContent {
   logo: Image;
   image: Image;
   sitePlan: Image;
+  sitePlanText: string;
 
   constructor(
     lang: string,
@@ -25,7 +26,8 @@ export class MuseumContent {
     imprint: string,
     logo: Image,
     image: Image,
-    sitePlan: Image) {
+    sitePlan: Image,
+    sitePlanText: string) {
 
     this.lang = lang;
     this.name = name;
@@ -37,5 +39,6 @@ export class MuseumContent {
     this.logo = logo;
     this.image = image;
     this.sitePlan = sitePlan;
+    this.sitePlanText = sitePlanText;
   }
 }
