@@ -1,53 +1,23 @@
-.player {
-  box-sizing: border-box;
-  resize: none;
-  width: 360px;
-  max-width: 100%;
-  margin: 10px auto;
-}
-
 progress {
   width: 100%;
-  height: 15px;
-  background-color: black;
+  height: 16px;
+  background-color: grey;
 }
 
-progress::-moz-progress-bar {
-  background-color: white !important;
+.controls {
+  margin-top: 8px;
 }
 
-.time .controls {
-  width: 100%;
-  height: 100%;
+.controls > * {
+  display: inline-block;
+  width: 20%;
   text-align: center;
 }
 
-.playpause, .stop, .fwd, .rwd {
-  display: inline-block;
-  width: 25%;
-  border: 1px solid;
+progress::-webkit-progress-value {
+  background-color: white;
 }
 
-@media only screen
-and (max-device-width: 599px) {
-
-  .time {
-    font-size: 10pt;
-  }
-
-  .fa-lg {
-    margin-left: -5px;
-  }
-}
-
-@media only screen
-and (min-device-width: 600px) {
-
-  .time {
-    font-size: 15pt;
-  }
-
-  .playpause, .stop, .fwd, .rwd {
-    height: 30px;
-  }
+progress::-moz-progress-bar {
+  background-color: white;
 }

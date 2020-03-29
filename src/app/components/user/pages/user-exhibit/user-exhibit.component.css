@@ -72,6 +72,11 @@ button:hover {
   color: black;
 }
 
-.phones, .camera {
+.player {
+  max-width: 360px;
+  margin: auto;
+}
+
+.camera {
   text-align: center;
 }

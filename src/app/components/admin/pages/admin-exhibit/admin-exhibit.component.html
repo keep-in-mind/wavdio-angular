@@ -178,7 +178,7 @@
             </div>
           </ng-container>
         </div>
-        <div body *ngIf="exhibit.getContent(selectedLanguage).audio.length">
+        <div body id="audio-player" *ngIf="exhibit.getContent(selectedLanguage).audio.length">
           <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-audio-player>
         </div>
       </app-admin-box-card>

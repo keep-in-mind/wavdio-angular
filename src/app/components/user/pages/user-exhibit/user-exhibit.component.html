@@ -12,21 +12,13 @@
     <app-user-carousel *ngIf="exhibit && exhibit.getContent(locale).images.length"
                        [id]="exhibit._id" [images]="exhibit.getContent(locale).images"></app-user-carousel>
 
-    <!-- Exhibit Title -->
-    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ exhibit.getContent(locale).name }}</h1>
-
     <!-- Media Player Section -->
     <section *ngIf="exhibit">
       <div class="container">
         <div class="mx-auto">
           <!-- AUDIO -->
-          <div class="mt-4" body *ngIf="exhibit.getContent(locale).audio.length">
-            <hr class="hl">
+          <div class="mt-2" *ngIf="exhibit.getContent(locale).audio.length">
             <section class="player">
-              <div class="phones">
-                <fa-icon icon="headphones" size="lg"></fa-icon>
-              </div>
-
               <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-audio-player>
 
               <div *ngIf="exhibit.getContent(locale).transcript" style="text-align: center; margin-top: 2pt">
@@ -46,7 +38,9 @@
                 </div>
               </ng-template>
             </section>
+            <hr>
           </div>
+
           <!-- VIDEO -->
           <div body *ngIf="exhibit.getContent(locale).video.length">
             <hr class="hl">
@@ -58,10 +52,14 @@
               <app-common-video-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-video-player>
 
             </section>
+            <hr>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Exhibit Title -->
+    <h1 *ngIf="exhibit" class="mt-2 px-2">{{ exhibit.getContent(locale).name }}</h1>
 
     <p *ngIf="exhibit" class="p-2">
       <markdown>{{exhibit.getContent(locale).info}}</markdown>
