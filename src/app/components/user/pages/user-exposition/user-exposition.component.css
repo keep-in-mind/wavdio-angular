@@ -18,6 +18,15 @@ mat-toolbar {
 }
 
 /*
+ * Footer
+ */
+
+mat-toolbar fa-icon {
+  width: 50%;
+  text-align: center;
+}
+
+/*
  *
  */
 
