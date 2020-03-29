@@ -1,3 +1,7 @@
+/*
+ * Flex layout
+ */
+
 #page {
   display: flex;
   height: 100vh;
@@ -8,6 +12,23 @@
   flex-grow: 1;
   overflow: auto;
 }
+
+mat-toolbar {
+  flex-shrink: 0;
+}
+
+/*
+ * Footer
+ */
+
+mat-toolbar fa-icon {
+  width: 50%;
+  text-align: center;
+}
+
+/*
+ *
+ */
 
 h1 {
   font-size: 20px;
