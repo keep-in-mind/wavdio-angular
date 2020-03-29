@@ -15,12 +15,15 @@
   <div class="controls">
     <!-- Play/Pause -->
     <button class="playpause" (click)="playPauseAudio()" aria-label="Play and pause audio">
-      <ng-container *ngIf="!audioPlaying">
+      <ng-container *ngIf="audioPlaying; then pause else play"></ng-container>
+
+      <ng-template #play>
         <fa-icon icon="play" size="lg"></fa-icon>
-      </ng-container>
-      <ng-container *ngIf="audioPlaying">
+      </ng-template>
+
+      <ng-template #pause>
         <fa-icon icon="pause" size="lg"></fa-icon>
-      </ng-container>
+      </ng-template>
     </button>
 
     <!-- Stop -->
