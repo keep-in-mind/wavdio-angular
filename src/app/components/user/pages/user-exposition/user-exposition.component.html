@@ -46,12 +46,13 @@
   </main>
 
   <footer>
-    <mat-toolbar class="mat-elevation-z4">
-      <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}"
-               *ngIf="exposition" (click)="likeUnlikeExposition()"
+    <mat-toolbar *ngIf="exposition" class="mat-elevation-z4">
+      <!-- Like -->
+      <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"
                role="button" aria-label="Like"></fa-icon>
-      <fa-icon icon="comment-alt"
-               *ngIf="exposition" (click)="openComment()"
+
+      <!-- Comment -->
+      <fa-icon icon="comment-alt" (click)="openComment()"
                role="button" aria-label="Comment"></fa-icon>
     </mat-toolbar>
   </footer>
