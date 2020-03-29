@@ -21,6 +21,10 @@ mat-toolbar {
  * Footer
  */
 
+mat-toolbar {
+  padding: 0;
+}
+
 mat-toolbar fa-icon {
   width: 50%;
   text-align: center;
