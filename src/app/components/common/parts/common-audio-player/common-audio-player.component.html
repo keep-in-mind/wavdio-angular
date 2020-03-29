@@ -14,25 +14,19 @@
 
   <div class="controls">
     <!-- Play/Pause -->
-    <button class="playpause" (click)="playPauseAudio()" aria-label="Play and pause audio">
-      <fa-icon *ngIf="!audioPlaying" icon="play" size="lg"></fa-icon>
-      <fa-icon *ngIf="audioPlaying" icon="pause" size="lg"></fa-icon>
-    </button>
+    <fa-icon icon="play" *ngIf="!audioPlaying" class="playpause" (click)="playPauseAudio()"
+             aria-label="Play and pause audio"></fa-icon>
+    <fa-icon icon="pause" *ngIf="audioPlaying" class="playpause" (click)="playPauseAudio()"
+             aria-label="Play and pause audio"></fa-icon>
 
     <!-- Stop -->
-    <button class="stop" (click)="stopItAudio()" aria-label="Stop audio">
-      <fa-icon class="fa-lg" icon="stop"></fa-icon>
-    </button>
+    <fa-icon icon="stop" class="stop" (click)="stopItAudio()" aria-label="Stop audio"></fa-icon>
 
     <!-- Rewind -->
-    <button class="rwd" (click)="rewindAudio()" aria-label="Rewind audio">
-      <fa-icon class="fa-lg" icon="backward"></fa-icon>
-    </button>
+    <fa-icon icon="backward" class="rwd" (click)="rewindAudio()" aria-label="Rewind audio"></fa-icon>
 
     <!-- Forward -->
-    <button class="fwd" (click)="forwardAudio()" aria-label="Fast forward audio">
-      <fa-icon class="fa-lg" icon="forward"></fa-icon>
-    </button>
+    <fa-icon class="fwd" icon="forward" (click)="forwardAudio()" aria-label="Fast forward audio"></fa-icon>
 
     <!-- Time -->
     <div #timeAudio class="time">00:00</div>

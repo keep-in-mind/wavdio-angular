@@ -25,7 +25,6 @@ progress::-moz-progress-bar {
 .playpause, .stop, .fwd, .rwd, .time {
   display: inline-block;
   width: 20%;
-  border: 1px solid;
 }
 
 @media only screen
