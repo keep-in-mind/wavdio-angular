@@ -13,7 +13,7 @@ export class UserCarouselComponent implements OnInit {
   @Input() images: Image[];
 
   slideConfig = {
-    dots: true,
+    dots: false,
     prevArrow: '#prevSlide',
     nextArrow: '#nextSlide',
   };
