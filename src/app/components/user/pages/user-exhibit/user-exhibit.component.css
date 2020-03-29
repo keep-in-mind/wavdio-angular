@@ -1,3 +1,7 @@
+/*
+ * Flex layout
+ */
+
 #page {
   display: flex;
   height: 100vh;
@@ -8,6 +12,40 @@
   flex-grow: 1;
   overflow: auto;
 }
+
+mat-toolbar {
+  flex-shrink: 0;
+}
+
+/*
+ * Footer
+ */
+
+mat-toolbar {
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+mat-toolbar fa-icon {
+  flex-grow: 1;
+  text-align: center;
+}
+
+mat-toolbar #navigation-controls {
+  flex-grow: 0;
+  flex-shrink: 0
+}
+
+mat-toolbar #navigation-controls input {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+
+/*
+ *
+ */
 
 a {
   color: inherit;
