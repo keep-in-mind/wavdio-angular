@@ -31,26 +31,16 @@
 
     <!-- Agreements Section -->
     <section id="agreement" class="mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
-                     (change)="onTermsChange()">
-              <label for="termsOfUse">
-                <span i18n>I accept the </span>
-                &nbsp;<a routerLink="/usage-terms" i18n>terms of use</a>
-                &nbsp;<span i18n> and the </span>
-                &nbsp;<a routerLink="/privacy-policy" i18n>privacy policy</a>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <mat-checkbox [checked]="termsOfUseFlag" (change)="onTermsChange()">
+        <small ngPreserveWhitespaces>
+          <span i18n>I accept the</span>
+          <a routerLink="/usage-terms" i18n>terms of use</a>
+          <span i18n>and the</span>
+          <a routerLink="/privacy-policy" i18n>privacy policy</a>
+        </small>
+      </mat-checkbox>
     </section>
   </main>
-
-  <mat-toolbar class="mat-elevation-z4" style="height: 64px"></mat-toolbar>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

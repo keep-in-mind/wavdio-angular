@@ -1,6 +1,22 @@
-// Material Theming: https://material.angular.io/guide/theming
-
 @import '~@angular/material/theming';
+
+/*
+ * Fix multi-line checkbox labels: https://github.com/angular/components/issues/8416
+ */
+
+// adds breaks to the mat-checkboxes with long labels
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+// rather than center the checkbox, put the checkbox in the first line
+.mat-checkbox-inner-container {
+  margin-top: 4px !important;
+}
+
+/*
+ * Material Theming: https://material.angular.io/guide/theming
+ */
 
 @include mat-core();
 
@@ -10,6 +26,10 @@ $accent:  mat-palette($mat-blue-gray);
 $theme: mat-dark-theme($primary, $accent);
 
 @include angular-material-theme($theme);
+
+/*
+ *
+ */
 
 a, a:hover {
   color: mat-color($primary, lighter);
