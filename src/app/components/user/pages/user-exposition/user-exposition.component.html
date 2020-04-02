@@ -29,17 +29,13 @@
       </mat-tab>
 
       <!-- Exhibits -->
-      <mat-tab label="Exhibits" i18n-label>
-        <section *ngIf="exposition" role="main">
-          <div class="container">
-            <div class="grid-container pb-5">
-              <div *ngFor="let exhibit of exhibits" class="mx-auto">
-                <app-common-exhibit-card [exhibit]="exhibit" [selectedLanguage]="locale" [width]="'125px'" [height]="'150px'"
-                                         [link]="'/exhibit/' + exhibit._id"></app-common-exhibit-card>
-              </div>
-            </div>
-          </div>
-        </section>
+      <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
+        <div class="card-grid">
+          <app-common-exhibit-card *ngFor="let exhibit of exhibits"
+                                   [exhibit]="exhibit" height="150px"
+                                   [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
+          </app-common-exhibit-card>
+        </div>
       </mat-tab>
 
     </mat-tab-group>

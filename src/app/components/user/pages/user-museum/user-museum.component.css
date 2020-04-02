@@ -56,3 +56,14 @@ h1 {
 mat-sidenav {
   width: 80%;
 }
+
+/*
+ * Card Grid
+ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 8px;
+  margin: 8px;
+}
