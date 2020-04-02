@@ -46,6 +46,6 @@
 }
 
 img {
-  object-fit: contain;
+  object-fit: cover;
   background-color: black
 }
