@@ -76,27 +76,23 @@
         </mat-tab>
 
         <!-- Exhibits -->
-        <mat-tab *ngIf="exhibits && exhibits.length > 0" label="Exhibits" i18n-label>
-          <section *ngIf="museum" class="mt-4 css-grid" role="main">
-            <app-common-exhibit-card *ngFor="let exhibit of exhibits" height='150px'
-                                     [exhibit]="exhibit" [selectedLanguage]="locale"
-                                     [link]="'/exhibit/' + exhibit._id"></app-common-exhibit-card>
-          </section>
+        <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
+          <div class="card-grid">
+            <app-common-exhibit-card *ngFor="let exhibit of exhibits"
+                                     [exhibit]="exhibit" height="150px"
+                                     [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
+            </app-common-exhibit-card>
+          </div>
         </mat-tab>
 
         <!-- Expositions -->
-        <mat-tab *ngIf="expositions && expositions.length > 0" label="Expositions" i18n-label>
-          <section *ngIf="museum" class="mt-4" role="main">
-            <div class="container">
-              <div class="grid-container pb-5">
-                <div *ngFor="let exposition of expositions" class="mx-auto">
-                  <app-common-exposition-card [exposition]="exposition" [selectedLanguage]="locale" [width]="'125px'"
-                                              [height]="'150px'"
-                                              [link]="'/exposition/' + exposition._id"></app-common-exposition-card>
-                </div>
-              </div>
-            </div>
-          </section>
+        <mat-tab *ngIf="expositions" label="Expositions" i18n-label>
+          <div class="card-grid">
+            <app-common-exposition-card *ngFor="let exposition of expositions"
+                                     [exposition]="exposition" height="150px"
+                                     [selectedLanguage]="locale" [link]="'/exposition/' + exposition._id">
+            </app-common-exposition-card>
+          </div>
         </mat-tab>
 
       </mat-tab-group>
