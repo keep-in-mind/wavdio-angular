@@ -8,9 +8,9 @@
 
   <!-- Back Arrow -->
 
-  <button mat-icon-button *ngIf="backArrow" (click)="location.back()">
+  <a mat-icon-button *ngIf="backArrow" [routerLink]="backUrl">
     <mat-icon>arrow_back</mat-icon>
-  </button>
+  </a>
 
   <!-- Title -->
 
