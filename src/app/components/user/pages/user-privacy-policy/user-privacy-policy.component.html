@@ -1,5 +1,5 @@
 <div id="page">
-  <app-user-app-bar backArrow="true" backUrl="/museum" title="Privacy Policy" i18n-title></app-user-app-bar>
+  <app-user-app-bar backArrow="true" backUrl=".." title="Privacy Policy" i18n-title></app-user-app-bar>
 
   <main *ngIf="museum" style="padding: 8px">
     <markdown>{{ museum.getContent(locale).privacyTerms }}</markdown>
