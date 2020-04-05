@@ -15,6 +15,7 @@ export class UserAppBarComponent implements OnInit {
 
   @Input() sidenav: MatSidenav;
   @Input() backArrow: boolean;
+  @Input() backUrl: string;
   @Input() title: string;
 
   setting: Setting;
