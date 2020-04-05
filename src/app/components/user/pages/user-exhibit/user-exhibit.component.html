@@ -17,7 +17,7 @@
       <div class="container">
         <div class="mx-auto">
           <!-- AUDIO -->
-          <div class="mt-2" *ngIf="exhibit.getContent(locale).audio.length">
+          <div class="mt-4" *ngIf="exhibit.getContent(locale).audio.length">
             <section class="player">
               <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="locale"></app-common-audio-player>
 
