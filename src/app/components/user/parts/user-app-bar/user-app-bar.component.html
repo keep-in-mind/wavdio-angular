@@ -20,28 +20,32 @@
 
   <div style="flex-grow: 1"></div>
 
-  <div *ngIf="setting && setting.activeLangs.de" class="menu-entry">
-    <a [href]="'/de' + this.router.url" i18n>
-      <img src="assets/images/de.png" alt="German Flag Icon"/>
-    </a>
-  </div>
+  <a *ngIf="setting && setting.activeLangs.de"
+     [class.inactive]="locale != 'de'"
+     [href]="'/de' + this.router.url">
 
-  <div *ngIf="setting && setting.activeLangs.en" class="menu-entry">
-    <a [href]="'/en' + this.router.url" i18n>
-      <img src="assets/images/en.png" alt="English Flag Icon"/>
-    </a>
-  </div>
+    <img src="assets/images/de.png" alt="German Flag Icon"/>
+  </a>
 
-  <div *ngIf="setting && setting.activeLangs.es" class="menu-entry">
-    <a [href]="'/es' + this.router.url" i18n>
-      <img src="assets/images/es.png" alt="Spanish Flag Icon"/>
-    </a>
-  </div>
+  <a *ngIf="setting && setting.activeLangs.en"
+     [class.inactive]="locale != 'en'"
+     [href]="'/en' + this.router.url">
 
-  <div *ngIf="setting && setting.activeLangs.fr" class="menu-entry">
-    <a [href]="'/fr' + this.router.url" i18n>
-      <img src="assets/images/fr.png" alt="French Flag Icon"/>
-    </a>
-  </div>
+    <img src="assets/images/en.png" alt="English Flag Icon"/>
+  </a>
+
+  <a *ngIf="setting && setting.activeLangs.es"
+     [class.inactive]="locale != 'es'"
+     [href]="'/es' + this.router.url">
+
+    <img src="assets/images/es.png" alt="Spanish Flag Icon"/>
+  </a>
+
+  <a *ngIf="setting && setting.activeLangs.fr"
+     [class.inactive]="locale != 'fr'"
+     [href]="'/fr' + this.router.url">
+
+    <img src="assets/images/fr.png" alt="French Flag Icon"/>
+  </a>
 
 </mat-toolbar>

@@ -3,6 +3,14 @@
   padding-right: 8px;
 }
 
+a:not(:last-child) {
+  margin-right: 8px;
+}
+
 a, a:hover {
   text-decoration: none;
+}
+
+a.inactive > img {
+  filter: grayscale(50%);
 }
