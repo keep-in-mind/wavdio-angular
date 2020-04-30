@@ -20,14 +20,6 @@ export class UserAppBarComponent implements OnInit {
 
   setting: Setting;
 
-  // Same alt texts used multiple times
-  langAltTexts = {
-    de: 'German Flag Icon',
-    en: 'British Flag Icon',
-    es: 'Spanish Flag Icon',
-    fr: 'French Flag Icon'
-  };
-
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     public router: Router,

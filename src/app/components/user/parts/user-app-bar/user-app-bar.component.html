@@ -20,37 +20,28 @@
 
   <div style="flex-grow: 1"></div>
 
-  <div *ngIf="setting">
-    <mat-menu #appMenu="matMenu">
-      <div *ngIf="this.setting.activeLangs.de" class="menu-entry">
-        <a [href]="'/de' + this.router.url" i18n>
-          <img src="assets/images/de.png" [alt]="langAltTexts['de']"/>
-          German
-        </a>
-      </div>
-      <div *ngIf="this.setting.activeLangs.en" class="menu-entry">
-        <a [href]="'/en' + this.router.url" i18n>
-          <img src="assets/images/en.png" [alt]="langAltTexts['en']"/>
-          English
-        </a>
-      </div>
-      <div *ngIf="this.setting.activeLangs.es" class="menu-entry">
-        <a [href]="'/es' + this.router.url" i18n>
-          <img src="assets/images/es.png" [alt]="langAltTexts['es']"/>
-          Spanish
-        </a>
-      </div>
-      <div *ngIf="this.setting.activeLangs.fr" class="menu-entry">
-        <a [href]="'/fr' + this.router.url" i18n>
-          <img src="assets/images/fr.png" [alt]="langAltTexts['fr']"/>
-          French
-        </a>
-      </div>
-    </mat-menu>
+  <div *ngIf="setting && setting.activeLangs.de" class="menu-entry">
+    <a [href]="'/de' + this.router.url" i18n>
+      <img src="assets/images/de.png" alt="German Flag Icon"/>
+    </a>
+  </div>
 
-    <button mat-icon-button [matMenuTriggerFor]="appMenu" aria-label="Show available languages">
-      <img [src]="'assets/images/' + locale + '.png'" [alt]="langAltTexts[locale]"/>
-    </button>
+  <div *ngIf="setting && setting.activeLangs.en" class="menu-entry">
+    <a [href]="'/en' + this.router.url" i18n>
+      <img src="assets/images/en.png" alt="English Flag Icon"/>
+    </a>
+  </div>
+
+  <div *ngIf="setting && setting.activeLangs.es" class="menu-entry">
+    <a [href]="'/es' + this.router.url" i18n>
+      <img src="assets/images/es.png" alt="Spanish Flag Icon"/>
+    </a>
+  </div>
+
+  <div *ngIf="setting && setting.activeLangs.fr" class="menu-entry">
+    <a [href]="'/fr' + this.router.url" i18n>
+      <img src="assets/images/fr.png" alt="French Flag Icon"/>
+    </a>
   </div>
 
 </mat-toolbar>
