@@ -12,5 +12,5 @@ a, a:hover {
 }
 
 a.inactive > img {
-  filter: grayscale(50%);
+  filter: grayscale(70%);
 }
