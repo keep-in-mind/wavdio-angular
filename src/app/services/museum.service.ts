@@ -41,6 +41,7 @@ export class MuseumService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
+      console.error(error);
       this.logger.error(operation, error);
 
       const errorString = JSON.stringify(error);
