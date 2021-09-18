@@ -6,8 +6,8 @@
           <h1 class="card-title truncate"> {{ exhibit.getContent(lang).name }}</h1>
           <h2 class="card-subtitle">{{ exhibit.code }}</h2>
           <div>
-            <ngx-qrcode [qrc-element-type]="this.elementType"
-                        [qrc-value]="'http://' + host + ':'  + port + '/exhibit/' + exhibit._id">
+            <ngx-qrcode [elementType]="this.elementType"
+                        [value]="'http://' + host + ':'  + port + '/exhibit/' + exhibit._id">
             </ngx-qrcode>
           </div>
         </section>

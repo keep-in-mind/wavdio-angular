@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Exhibit} from '../../../../models/exhibit';
+import {NgxQrcodeElementTypes} from 'ngx-qrcode2';
 
 @Component({
   selector: 'app-admin-qr-code',
@@ -9,7 +10,7 @@ import {Exhibit} from '../../../../models/exhibit';
 })
 export class AdminQrCodeComponent implements OnInit {
 
-  elementType: 'url' | 'canvas' | 'img' = 'url';
+  elementType: NgxQrcodeElementTypes.URL;
   host: string;
   port: string;
 
