@@ -9,80 +9,34 @@
           "builder": "@angular-devkit/build-angular:browser",
           "configurations": {
             "de": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "i18nFile": "src/i18n/messages.de.xlf",
-              "i18nLocale": "de",
               "localize": [
                 "de"
-              ],
-              "outputPath": "dist/wavdio-angular-de"
+              ]
             },
             "en": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "i18nFile": "src/i18n/messages.en.xlf",
-              "i18nLocale": "en",
               "localize": [
                 "en"
-              ],
-              "outputPath": "dist/wavdio-angular-en"
+              ]
             },
             "es": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "i18nFile": "src/i18n/messages.es.xlf",
-              "i18nLocale": "es",
               "localize": [
                 "es"
-              ],
-              "outputPath": "dist/wavdio-angular-es"
+              ]
             },
             "fr": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "i18nFile": "src/i18n/messages.fr.xlf",
-              "i18nLocale": "fr",
               "localize": [
                 "fr"
-              ],
-              "outputPath": "dist/wavdio-angular-fr"
+              ]
             },
-            "prod-de": {
-              "aot": true,
+            "production": {
               "budgets": [
                 {
                   "maximumError": "5mb",
                   "maximumWarning": "2mb",
                   "type": "initial"
-                },
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
                 }
               ],
               "buildOptimizer": true,
-              "deployUrl": "/de/",
               "extractCss": true,
               "extractLicenses": true,
               "fileReplacements": [
@@ -90,108 +44,6 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ],
-              "localize": [
-                "de"
-              ],
-              "namedChunks": false,
-              "optimization": true,
-              "outputHashing": "all",
-              "outputPath": "dist",
-              "sourceMap": false,
-              "vendorChunk": false
-            },
-            "prod-en": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumError": "5mb",
-                  "maximumWarning": "2mb",
-                  "type": "initial"
-                },
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "buildOptimizer": true,
-              "deployUrl": "/en/",
-              "extractCss": true,
-              "extractLicenses": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "localize": [
-                "en"
-              ],
-              "namedChunks": false,
-              "optimization": true,
-              "outputHashing": "all",
-              "outputPath": "dist",
-              "sourceMap": false,
-              "vendorChunk": false
-            },
-            "prod-es": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumError": "5mb",
-                  "maximumWarning": "2mb",
-                  "type": "initial"
-                },
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "buildOptimizer": true,
-              "deployUrl": "/es/",
-              "extractCss": true,
-              "extractLicenses": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "localize": [
-                "es"
-              ],
-              "namedChunks": false,
-              "optimization": true,
-              "outputHashing": "all",
-              "outputPath": "dist",
-              "sourceMap": false,
-              "vendorChunk": false
-            },
-            "prod-fr": {
-              "aot": true,
-              "budgets": [
-                {
-                  "maximumError": "5mb",
-                  "maximumWarning": "2mb",
-                  "type": "initial"
-                },
-                {
-                  "maximumWarning": "6kb",
-                  "type": "anyComponentStyle"
-                }
-              ],
-              "buildOptimizer": true,
-              "deployUrl": "/fr/",
-              "extractCss": true,
-              "extractLicenses": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "localize": [
-                "fr"
               ],
               "namedChunks": false,
               "optimization": true,
@@ -207,6 +59,12 @@
               "src/assets",
               "src/favicon.ico",
               "src/manifest.webmanifest"
+            ],
+            "budgets": [
+              {
+                "maximumWarning": "6kb",
+                "type": "anyComponentStyle"
+              }
             ],
             "index": "src/index.html",
             "localize": true,
