@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "wAVdio": {
+      "i18n": {
+        "locales": {
+          "de": "src/i18n/messages.de.xlf",
+          "en": "src/i18n/messages.en.xlf",
+          "es": "src/i18n/messages.es.xlf",
+          "fr": "src/i18n/messages.fr.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,6 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/wAVdio",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -42,39 +51,58 @@
           "configurations": {
             "de": {
               "aot": true,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "outputPath": "dist/wAVdio-de",
               "i18nFile": "src/i18n/messages.de.xlf",
-              "i18nFormat": "xlf",
               "i18nLocale": "de"
             },
             "en": {
               "aot": true,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "outputPath": "dist/wAVdio-en",
               "i18nFile": "src/i18n/messages.en.xlf",
-              "i18nFormat": "xlf",
               "i18nLocale": "en"
             },
             "es": {
               "aot": true,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "outputPath": "dist/wAVdio-es",
               "i18nFile": "src/i18n/messages.es.xlf",
-              "i18nFormat": "xlf",
               "i18nLocale": "es"
             },
             "fr": {
               "aot": true,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "outputPath": "dist/wAVdio-fr",
               "i18nFile": "src/i18n/messages.fr.xlf",
-              "i18nFormat": "xlf",
               "i18nLocale": "fr"
             },
             "prod-de": {
               "aot": true,
-              "outputPath": "dist/de",
-              "i18nFile": "src/i18n/messages.de.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "de",
-              "baseHref": "/de/",
+            "localize": [
+              "de"
+            ],
+              "outputPath": "dist",
               "deployUrl": "/de/",
               "optimization": true,
               "outputHashing": "all",
@@ -95,16 +123,19 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "prod-en": {
               "aot": true,
-              "outputPath": "dist/en",
-              "i18nFile": "src/i18n/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
-              "baseHref": "/en/",
+            "localize": [
+              "en"
+            ],
+              "outputPath": "dist",
               "deployUrl": "/en/",
               "optimization": true,
               "outputHashing": "all",
@@ -125,16 +156,19 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "prod-es": {
               "aot": true,
-              "outputPath": "dist/es",
-              "i18nFile": "src/i18n/messages.es.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "es",
-              "baseHref": "/es/",
+            "localize": [
+              "es"
+            ],
+              "outputPath": "dist",
               "deployUrl": "/es/",
               "optimization": true,
               "outputHashing": "all",
@@ -155,16 +189,19 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "prod-fr": {
               "aot": true,
-              "outputPath": "dist/fr",
-              "i18nFile": "src/i18n/messages.fr.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "fr",
-              "baseHref": "/fr/",
+            "localize": [
+              "fr"
+            ],
+              "outputPath": "dist",
               "deployUrl": "/fr/",
               "optimization": true,
               "outputHashing": "all",
@@ -185,6 +222,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }

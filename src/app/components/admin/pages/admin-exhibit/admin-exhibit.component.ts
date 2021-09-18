@@ -39,7 +39,7 @@ export class AdminExhibitComponent implements OnInit {
   alertMessage: string;
   showAlert: boolean;
 
-  @ViewChild('iconAudio', {static: false}) set content6(content: ElementRef) {
+  @ViewChild('iconAudio') set content6(content: ElementRef) {
     this.iconAudio = content;
   }
 

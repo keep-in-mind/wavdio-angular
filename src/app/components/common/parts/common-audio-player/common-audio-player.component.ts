@@ -14,15 +14,15 @@ export class CommonAudioPlayerComponent implements OnInit {
   @Input() exhibit: Exhibit;
   @Input() selectedLanguage;
 
-  @ViewChild('audioplayer', {static: false}) set content5(content: ElementRef) {
+  @ViewChild('audioplayer') set content5(content: ElementRef) {
     this.audioplayer = content;
   }
 
-  @ViewChild('timeAudio', {static: false}) set content7(content: ElementRef) {
+  @ViewChild('timeAudio') set content7(content: ElementRef) {
     this.timeAudio = content;
   }
 
-  @ViewChild('progressAudio', {static: false}) set content8(content: ElementRef) {
+  @ViewChild('progressAudio') set content8(content: ElementRef) {
     this.progressAudio = content;
   }
 

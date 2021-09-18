@@ -13,15 +13,15 @@ export class CommonVideoPlayerComponent implements OnInit {
   @Input() exhibit: Exhibit;
   @Input() selectedLanguage;
 
-  @ViewChild('videoplayer', {static: false}) set content(content: ElementRef) {
+  @ViewChild('videoplayer') set content(content: ElementRef) {
     this.videoplayer = content;
   }
 
-  @ViewChild('time', {static: false}) set content3(content: ElementRef) {
+  @ViewChild('time') set content3(content: ElementRef) {
     this.time = content;
   }
 
-  @ViewChild('progress', {static: false}) set content4(content: ElementRef) {
+  @ViewChild('progress') set content4(content: ElementRef) {
     this.progress = content;
   }
 
