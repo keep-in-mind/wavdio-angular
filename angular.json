@@ -18,6 +18,9 @@
               ],
               "i18nFile": "src/i18n/messages.de.xlf",
               "i18nLocale": "de",
+              "localize": [
+                "de"
+              ],
               "outputPath": "dist/wavdio-angular-de"
             },
             "en": {
@@ -30,6 +33,9 @@
               ],
               "i18nFile": "src/i18n/messages.en.xlf",
               "i18nLocale": "en",
+              "localize": [
+                "en"
+              ],
               "outputPath": "dist/wavdio-angular-en"
             },
             "es": {
@@ -42,6 +48,9 @@
               ],
               "i18nFile": "src/i18n/messages.es.xlf",
               "i18nLocale": "es",
+              "localize": [
+                "es"
+              ],
               "outputPath": "dist/wavdio-angular-es"
             },
             "fr": {
@@ -54,6 +63,9 @@
               ],
               "i18nFile": "src/i18n/messages.fr.xlf",
               "i18nLocale": "fr",
+              "localize": [
+                "fr"
+              ],
               "outputPath": "dist/wavdio-angular-fr"
             },
             "prod-de": {
@@ -200,7 +212,7 @@
             "localize": true,
             "main": "src/main.ts",
             "ngswConfigPath": "ngsw-config.json",
-            "outputPath": "dist/wavdio-angular",
+            "outputPath": "dist/",
             "polyfills": "src/polyfills.ts",
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
