@@ -1,6 +1,6 @@
 import {Location} from '@angular/common';
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core';
-import {MatSidenav} from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import {Router} from '@angular/router';
 
 import {Setting} from '../../../../models/setting';
