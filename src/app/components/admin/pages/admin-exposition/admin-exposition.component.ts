@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminImageDetailsComponent} from '../../parts/admin-image-details/admin-image-details.component';
-import {AdminQrCodeComponent} from '../../parts/admin-qr-code/admin-qr-code.component';
+// import {AdminQrCodeComponent} from '../../parts/admin-qr-code/admin-qr-code.component';
 import {AdminSpinnerComponent} from '../../parts/admin-spinner/admin-spinner.component';
 import {AuthenticationService} from '../../../../services/authentification.service';
 import {Breadcrumb} from '../../../../models/breadcrumb';
@@ -111,9 +111,9 @@ export class AdminExpositionComponent implements OnInit {
   }
 
   openQRCode() {
-    const modal = this.modalService.open(AdminQrCodeComponent, {centered: true});
-    modal.componentInstance.exhibits = this.exhibits;
-    modal.componentInstance.lang = this.selectedLanguage;
+    // const modal = this.modalService.open(AdminQrCodeComponent, {centered: true});
+    // modal.componentInstance.exhibits = this.exhibits;
+    // modal.componentInstance.lang = this.selectedLanguage;
   }
 
   deleteExposition() {
