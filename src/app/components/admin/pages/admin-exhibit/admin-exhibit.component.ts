@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbDropdownConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {AdminImageDetailsComponent} from '../../parts/admin-image-details/admin-image-details.component';
-// import {AdminQrCodeComponent} from '../../parts/admin-qr-code/admin-qr-code.component';
+import {AdminQrCodeComponent} from '../../parts/admin-qr-code/admin-qr-code.component';
 import {AdminSpinnerComponent} from '../../parts/admin-spinner/admin-spinner.component';
 import {Audio} from '../../../../models/audio';
 import {AuthenticationService} from '../../../../services/authentification.service';
@@ -95,9 +95,9 @@ export class AdminExhibitComponent implements OnInit {
   }
 
   openQRCode() {
-    // const modal = this.modalService.open(AdminQrCodeComponent, {centered: true});
-    // modal.componentInstance.exhibits.push(this.exhibit);
-    // modal.componentInstance.lang = this.selectedLanguage;
+    const modal = this.modalService.open(AdminQrCodeComponent, {centered: true});
+    modal.componentInstance.exhibits.push(this.exhibit);
+    modal.componentInstance.lang = this.selectedLanguage;
   }
 
   openImageBigView(index, lang) {

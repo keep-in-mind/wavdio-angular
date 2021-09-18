@@ -25,7 +25,7 @@ import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
 import {MarkdownModule} from 'ngx-markdown';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
-// import {NgxQRCodeModule} from 'ngx-qrcode2';
+import {NgxQRCodeModule} from 'ngx-qrcode2';
 
 import {AdminAlertComponent} from './components/admin/parts/admin-alert/admin-alert.component';
 import {AdminBoxCardComponent} from './components/admin/parts/admin-box-card/admin-box-card.component';
@@ -45,7 +45,7 @@ import {AdminMuseumComponent} from './components/admin/pages/admin-museum/admin-
 import {AdminNewExhibitComponent} from './components/admin/pages/admin-new-exhibit/admin-new-exhibit.component';
 import {AdminNewExpositionComponent} from './components/admin/pages/admin-new-exposition/admin-new-exposition.component';
 import {AdminNewInfoPageComponent} from './components/admin/pages/admin-new-info-page/admin-new-info-page.component';
-// import {AdminQrCodeComponent} from './components/admin/parts/admin-qr-code/admin-qr-code.component';
+import {AdminQrCodeComponent} from './components/admin/parts/admin-qr-code/admin-qr-code.component';
 import {AdminSettingsComponent} from './components/admin/pages/admin-settings/admin-settings.component';
 import {AdminSidebarComponent} from './components/admin/parts/admin-sidebar/admin-sidebar.component';
 import {AdminSpinnerComponent} from './components/admin/parts/admin-spinner/admin-spinner.component';
@@ -138,7 +138,7 @@ const appRoutes: Routes = [
     AdminNewExhibitComponent,
     AdminNewExpositionComponent,
     AdminNewInfoPageComponent,
-    // AdminQrCodeComponent,
+    AdminQrCodeComponent,
     AdminSettingsComponent,
     AdminSidebarComponent,
     AdminSpinnerComponent,
@@ -192,7 +192,7 @@ const appRoutes: Routes = [
     NgbModule,
     NgxChartsModule,
     NgxPrintModule,
-    // NgxQRCodeModule,
+    NgxQRCodeModule,
     RouterModule.forRoot(appRoutes, {
       onSameUrlNavigation: 'reload',
       enableTracing: false
@@ -205,7 +205,7 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     AdminImageDetailsComponent,
-    // AdminQrCodeComponent,
+    AdminQrCodeComponent,
     AdminSpinnerComponent,
     UserCommentComponent
   ],
