@@ -60,6 +60,7 @@
     "ngx-markdown": "^8.2.2",
     "ngx-print": "^1.2.1",
     "ngx-qrcode2": "^9.0.0",
+    "ngx-slick-carousel": "~0.4.7",
     "popper.js": "^1.16.1",
     "rotating-file-stream": "^1.4.6",
     "rxjs": "^6.6.7",
