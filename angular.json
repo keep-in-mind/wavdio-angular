@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wAVdio": {
+    "wavdio-angular": {
       "i18n": {
         "locales": {
           "de": "src/i18n/messages.de.xlf",
@@ -22,7 +22,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/wAVdio",
+            "outputPath": "dist/wavdio-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,7 +57,7 @@
                   "maximumWarning": "6kb"
                 }
               ],
-              "outputPath": "dist/wAVdio-de",
+              "outputPath": "dist/wavdio-angular-de",
               "i18nFile": "src/i18n/messages.de.xlf",
               "i18nLocale": "de"
             },
@@ -69,7 +69,7 @@
                   "maximumWarning": "6kb"
                 }
               ],
-              "outputPath": "dist/wAVdio-en",
+              "outputPath": "dist/wavdio-angular-en",
               "i18nFile": "src/i18n/messages.en.xlf",
               "i18nLocale": "en"
             },
@@ -81,7 +81,7 @@
                   "maximumWarning": "6kb"
                 }
               ],
-              "outputPath": "dist/wAVdio-es",
+              "outputPath": "dist/wavdio-angular-es",
               "i18nFile": "src/i18n/messages.es.xlf",
               "i18nLocale": "es"
             },
@@ -93,7 +93,7 @@
                   "maximumWarning": "6kb"
                 }
               ],
-              "outputPath": "dist/wAVdio-fr",
+              "outputPath": "dist/wavdio-angular-fr",
               "i18nFile": "src/i18n/messages.fr.xlf",
               "i18nLocale": "fr"
             },
@@ -234,28 +234,28 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wAVdio:build",
+            "browserTarget": "wavdio-angular:build",
             "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "de": {
-              "browserTarget": "wAVdio:build:de"
+              "browserTarget": "wavdio-angular:build:de"
             },
             "en": {
-              "browserTarget": "wAVdio:build:en"
+              "browserTarget": "wavdio-angular:build:en"
             },
             "es": {
-              "browserTarget": "wAVdio:build:es"
+              "browserTarget": "wavdio-angular:build:es"
             },
             "fr": {
-              "browserTarget": "wAVdio:build:fr"
+              "browserTarget": "wavdio-angular:build:fr"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wAVdio:build"
+            "browserTarget": "wavdio-angular:build"
           }
         },
         "test": {
@@ -316,7 +316,7 @@
         }
       }
     },
-    "wAVdio-e2e": {
+    "wavdio-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -325,11 +325,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wAVdio:serve"
+            "devServerTarget": "wavdio-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wAVdio:serve:production"
+              "devServerTarget": "wavdio-angular:serve:production"
             }
           }
         },
@@ -345,5 +345,5 @@
       }
     }
   },
-  "defaultProject": "wAVdio"
+  "defaultProject": "wavdio-angular"
 }
