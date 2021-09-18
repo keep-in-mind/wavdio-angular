@@ -37,5 +37,19 @@
     "jasmine-core": "^3.9.0",
     "jasmine-spec-reporter": "^4.2.1",
     "typescript": "~3.5.3"
+  },
+  "dependencies": {
+    "@angular/animations": "^8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/forms": "^8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/pwa": "^0.1102.14",
+    "@angular/router": "^8.2.14",
+    "@angular/service-worker": "^8.2.14"
   }
 }
