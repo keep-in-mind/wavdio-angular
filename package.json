@@ -55,7 +55,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^4.13.21",
     "morgan": "^1.10.0",
-    "ngx-cookie-service": "^2.4.0",
+    "ngx-cookie-service": "~2.1.0",
     "ngx-logger": "~4.1.9",
     "ngx-markdown": "^8.2.2",
     "ngx-print": "^1.2.1",
