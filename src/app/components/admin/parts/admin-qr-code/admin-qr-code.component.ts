@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Exhibit} from '../../../../models/exhibit';
-import {NgxQrcodeElementTypes} from 'ngx-qrcode2';
+import {NgxQrcodeElementTypes} from '@techiediaries/ngx-qrcode';
 
 @Component({
   selector: 'app-admin-qr-code',

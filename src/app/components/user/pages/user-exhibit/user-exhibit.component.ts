@@ -6,14 +6,12 @@ import {CookieService} from 'ngx-cookie-service';
 
 import {CookielawService} from '../../../../services/cookielaw.service';
 import {Exhibit} from '../../../../models/exhibit';
-import {ExhibitContent} from '../../../../models/exhibit-content';
 import {ExhibitService} from '../../../../services/exhibit.service';
 import {Exposition} from '../../../../models/exposition';
 import {ExpositionService} from '../../../../services/exposition.service';
 import {InfoPageService} from '../../../../services/info-page.service';
 import {Like} from '../../../../models/like';
 import {Museum} from '../../../../models/museum';
-import {MuseumContent} from '../../../../models/museum-content';
 import {MuseumService} from '../../../../services/museum.service';
 import {UserCommentComponent} from '../../parts/user-comment/user-comment.component';
 

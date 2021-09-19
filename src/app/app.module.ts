@@ -22,9 +22,9 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CookieService} from 'ngx-cookie-service';
 import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
 import {MarkdownModule} from 'ngx-markdown';
-import {SlickCarouselModule} from 'ngx-slick-carousel';
+import {SlickCarouselModule} from '@gdznela/ngx-slick-carousel';
 import {NgxPrintModule} from 'ngx-print';
-import {NgxQRCodeModule} from 'ngx-qrcode2';
+import {NgxQRCodeModule} from '@techiediaries/ngx-qrcode';
 
 import {AdminAlertComponent} from './components/admin/parts/admin-alert/admin-alert.component';
 import {AdminBoxCardComponent} from './components/admin/parts/admin-box-card/admin-box-card.component';
