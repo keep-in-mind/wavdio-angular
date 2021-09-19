@@ -1,20 +1,20 @@
 <mat-card id="comment" role="dialog" [attr.aria-label]="descCommentLabel">
-  <div class="container">
-    <div class="form py-3" role="form">
-      <div class="form-group">
-        <label for="formComment" i18n>Enter comment:</label>
-        <textarea class="form-control" [(ngModel)]="comment" id="formComment" rows="7"></textarea>
-      </div>
-      <div class="clearfix mb-2">
-        <button mat-flat-button type="button" class="float-left" (click)="modal.close()" i18n>
-          Cancel
-        </button>
-        <button mat-flat-button color="accent" type="submit" (click)="onSubmit()" class="float-right" i18n>
-          Submit
-        </button>
-      </div>
+    <div class="container">
+        <div class="form py-3" role="form">
+            <div class="form-group">
+                <label for="formComment" i18n>Enter comment:</label>
+                <textarea class="form-control" [(ngModel)]="comment" id="formComment" rows="7"></textarea>
+            </div>
+            <div class="clearfix mb-2">
+                <button mat-flat-button type="button" class="float-left" (click)="modal.close()" i18n>
+                    Cancel
+                </button>
+                <button mat-flat-button color="accent" type="submit" (click)="onSubmit()" class="float-right" i18n>
+                    Submit
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </mat-card>
 
 <app-common-cookie-banner></app-common-cookie-banner>

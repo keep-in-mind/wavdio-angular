@@ -1,9 +1,9 @@
 <div *ngIf="infoPage" id="page">
-  <app-user-app-bar backArrow="true" backUrl="/museum" [title]="infoPage.name"></app-user-app-bar>
+    <app-user-app-bar backArrow="true" backUrl="/museum" [title]="infoPage.name"></app-user-app-bar>
 
-  <main style="padding: 8px">
-    <markdown>{{infoPage.text}}</markdown>
-  </main>
+    <main style="padding: 8px">
+        <markdown>{{infoPage.text}}</markdown>
+    </main>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

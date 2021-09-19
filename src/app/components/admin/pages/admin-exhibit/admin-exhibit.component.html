@@ -1,189 +1,206 @@
 <div class="wrapper">
-  <section class="sidebar">
-    <app-admin-sidebar></app-admin-sidebar>
-  </section>
-
-  <!-- Header -->
-
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
-                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
-
-  <app-admin-alert *ngIf="showAlert" class="header mt-2"
-                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
-
-  <!-- -->
-
-  <section *ngIf="exhibit" class="content-left ml-3 mr-2">
-    <!-- Section Exposition Forms-->
-    <section class="mt-2">
-      <div class="card">
-        <div class="card-body">
-          <div class="form-row mb-2">
-            <div class="col-9">
-              <label for="name">Titel</label>
-              <input id="name" class="form-control" type="text"
-                     [(ngModel)]="exhibit.getContent(selectedLanguage).name">
-
-            </div>
-            <div class="col-3">
-              <label for="code">Code</label>
-              <input id="code" class="form-control" type="number" min="100" max="999"
-                     [(ngModel)]="exhibit.code">
-            </div>
-          </div>
-          <div class="mb-2">
-            <label class="mr-2" for="active">Aktiv</label>
-            <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
-          </div>
-          <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="exhibit.getContent(selectedLanguage).info"></textarea>
-          <label for="note">Notizen</label>
-          <textarea id="note" notizen class="form-control mb-2" [(ngModel)]="exhibit.note" rows="7"></textarea>
-          <div class="form-row mb-2">
-            <div class="col-6">
-              <button (click)="updateExhibit()" class="btn btn-success w-100" aria-label="Save exhibit">
-                Speichern
-              </button>
-            </div>
-            <div class="col-6">
-              <button (click)="deleteExhibit()" class="btn btn-danger w-100" aria-label="Delete exhibit">
-                Löschen
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="sidebar">
+        <app-admin-sidebar></app-admin-sidebar>
     </section>
-    <!-- Section External Links -->
-    <section class="mt-2">
-      <div class="card">
-        <div class="card-body">
-          <div class="form-row">
-            <div class="col-lg-6">
-              <button [routerLink]="'/admin/statistics/exhibit/'+ exhibit._id" class="btn btn-primary w-100"
-                      aria-label="Show exhibit statistics">
-                Statistik anzeigen
-              </button>
+
+    <!-- Header -->
+
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                      showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+
+    <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                     [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+
+    <!-- -->
+
+    <section *ngIf="exhibit" class="content-left ml-3 mr-2">
+        <!-- Section Exposition Forms-->
+        <section class="mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-row mb-2">
+                        <div class="col-9">
+                            <label for="name">Titel</label>
+                            <input id="name" class="form-control" type="text"
+                                   [(ngModel)]="exhibit.getContent(selectedLanguage).name">
+
+                        </div>
+                        <div class="col-3">
+                            <label for="code">Code</label>
+                            <input id="code" class="form-control" type="number" min="100" max="999"
+                                   [(ngModel)]="exhibit.code">
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="mr-2" for="active">Aktiv</label>
+                        <input id="active" type="checkbox" [(ngModel)]="exhibit.active">
+                    </div>
+                    <label for="info">Beschreibung</label>
+                    <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
+                              [(ngModel)]="exhibit.getContent(selectedLanguage).info"></textarea>
+                    <label for="note">Notizen</label>
+                    <textarea id="note" notizen class="form-control mb-2" [(ngModel)]="exhibit.note"
+                              rows="7"></textarea>
+                    <div class="form-row mb-2">
+                        <div class="col-6">
+                            <button (click)="updateExhibit()" class="btn btn-success w-100" aria-label="Save exhibit">
+                                Speichern
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button (click)="deleteExhibit()" class="btn btn-danger w-100" aria-label="Delete exhibit">
+                                Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6">
-              <button (click)="this.openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max" placement="top"
-              aria-label="Show exhibit QR code">
-                QR-Plakette
-              </button>
+        </section>
+        <!-- Section External Links -->
+        <section class="mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-lg-6">
+                            <button [routerLink]="'/admin/statistics/exhibit/'+ exhibit._id"
+                                    class="btn btn-primary w-100"
+                                    aria-label="Show exhibit statistics">
+                                Statistik anzeigen
+                            </button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button (click)="this.openQRCode()" class="btn btn-primary w-100 mt-lg-0 mt-2 text-max"
+                                    placement="top"
+                                    aria-label="Show exhibit QR code">
+                                QR-Plakette
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
     </section>
-  </section>
-  <section *ngIf="exhibit" class="content-right ml-3 mr-2">
-    <!-- Section Images -->
-    <section class="mt-2">
-      <app-admin-box-card descHeader="Bilder">
-        <div header>
-          <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
-          <div class="mytooltip">
-            <fa-icon aria-label="Upload Image" (click)="multi = true; uploadImageInput.click()" class="fa-lg ml-2" icon="plus-square"></fa-icon>
-            <span class="mytooltiptext">Zu allen Sprachen hinzufügen</span>
-          </div>
-          <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
-        </div>
-        <div body *ngFor="let image of exhibit.getContent(selectedLanguage).images; let i = index">
-          <div class="profile-pic p-1">
-            <img class="img-thumbnail" (click)="openImageBigView(i, selectedLanguage)"
-                 [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
-          </div>
-        </div>
-      </app-admin-box-card>
+    <section *ngIf="exhibit" class="content-right ml-3 mr-2">
+        <!-- Section Images -->
+        <section class="mt-2">
+            <app-admin-box-card descHeader="Bilder">
+                <div header>
+                    <fa-icon aria-label="Upload Image" (click)="uploadImageInput.click()" class="fa-lg"
+                             icon="plus-circle"></fa-icon>
+                    <div class="mytooltip">
+                        <fa-icon aria-label="Upload Image" (click)="multi = true; uploadImageInput.click()"
+                                 class="fa-lg ml-2"
+                                 icon="plus-square"></fa-icon>
+                        <span class="mytooltiptext">Zu allen Sprachen hinzufügen</span>
+                    </div>
+                    <input #uploadImageInput class="d-none" (change)="onImageChanged($event)" type="file">
+                </div>
+                <div body *ngFor="let image of exhibit.getContent(selectedLanguage).images; let i = index">
+                    <div class="profile-pic p-1">
+                        <img class="img-thumbnail" (click)="openImageBigView(i, selectedLanguage)"
+                             [src]="'/uploads/' + exhibit._id + '/' + image.filename" [alt]="image.alternativeText"/>
+                    </div>
+                </div>
+            </app-admin-box-card>
+        </section>
+        <!-- Section Video -->
+        <section class="mt-2">
+            <app-admin-box-card descHeader="Video">
+                <div header>
+                    <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg"
+                             icon="plus-circle"></fa-icon>
+                    <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file"
+                           accept="video/*">
+                    <ng-container *ngIf="exhibit.getContent(selectedLanguage).video.length">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px'
+                                    ngbDropdownToggle
+                                    aria-label="Show deletable videos">
+                                <fa-icon icon="minus-circle" size="lg"></fa-icon>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <div style="text-align:center">Datei löschen..</div>
+                                <hr style="margin-top: 0;margin-bottom: 0;">
+                                <button class="dropdown-item"
+                                        *ngFor="let video_file of exhibit.getContent(selectedLanguage).video"
+                                        (click)="deleteVideo(video_file.filename)"
+                                        aria-label="Delete video">
+                                    {{video_file.filename}}
+                                </button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div body *ngIf="exhibit.getContent(selectedLanguage).video.length">
+                    <app-common-video-player [exhibit]="exhibit"
+                                             [selectedLanguage]="selectedLanguage"></app-common-video-player>
+                </div>
+            </app-admin-box-card>
+        </section>
+        <!-- Section Audio -->
+        <section class="mt-2">
+            <app-admin-box-card descHeader="Audio">
+                <div header>
+                    <!-- Transcript -->
+                    <fa-icon aria-label="Open Transcript" *ngIf="exhibit.getContent(selectedLanguage).transcript"
+                             style="margin-right: 10pt;cursor: pointer;"
+                             (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
+                    <button *ngIf="!exhibit.getContent(selectedLanguage).transcript"
+                            (click)="uploadTranscriptInput.click()" style="margin-right: 10pt"
+                            aria-label="Add transcript">
+                        Transkript hinzufügen
+                    </button>
+                    <button *ngIf="exhibit.getContent(selectedLanguage).transcript" style="margin-right: 10pt"
+                            (click)="deleteTranscript(exhibit.getContent(selectedLanguage).transcript.filename)"
+                            aria-label="Delete transcript">
+                        Transkript löschen
+                    </button>
+                    <input #uploadTranscriptInput class="d-none" (change)="onTranscriptChanged($event)" type="file"
+                           accept=".txt">
+                    <ng-template #transcriptModal let-c="close" let-d="dismiss">
+                        <div class="modal-header" style="overflow-y: initial !important">
+                            <h4 class="modal-title" id="modal-basic-title">Audio Transkript</h4>
+                            <button type="button" class="close" aria-label="Close transcript"
+                                    (click)="d('Cross click')">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="overflow-y: auto; height:400pt;">
+                            <p>{{exhibit.getContent(selectedLanguage).transcript.text}}</p>
+                        </div>
+                    </ng-template>
+                    <!-- End Transcript-->
+                    <fa-icon aria-label="Upload audio" (click)="uploadAudioInput.click()" class="fa-lg"
+                             icon="plus-circle"></fa-icon>
+                    <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file"
+                           accept="audio/*">
+                    <ng-container *ngIf="exhibit.getContent(selectedLanguage).audio.length">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px'
+                                    ngbDropdownToggle
+                                    aria-label="Show deletable audios">
+                                <fa-icon icon="minus-circle" size="lg"></fa-icon>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                                <div style="text-align:center">Datei löschen..</div>
+                                <hr style="margin-top: 0;margin-bottom: 0;">
+                                <button class="dropdown-item"
+                                        *ngFor="let audio_file of exhibit.getContent(selectedLanguage).audio"
+                                        (click)="deleteAudio(audio_file.filename)"
+                                        aria-label="Delete audio">
+                                    {{audio_file.filename}}
+                                </button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div body id="audio-player" *ngIf="exhibit.getContent(selectedLanguage).audio.length">
+                    <app-common-audio-player [exhibit]="exhibit"
+                                             [selectedLanguage]="selectedLanguage"></app-common-audio-player>
+                </div>
+            </app-admin-box-card>
+        </section>
     </section>
-    <!-- Section Video -->
-    <section class="mt-2">
-      <app-admin-box-card descHeader="Video">
-        <div header>
-          <fa-icon aria-label="Upload Video" (click)="uploadVideoInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
-          <input #uploadVideoInput class="d-none" (change)="onVideoChanged($event)" type="file" accept="video/*">
-          <ng-container *ngIf="exhibit.getContent(selectedLanguage).video.length">
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn btn-link" id="dropdownBasic1" style='margin-bottom: 5px' ngbDropdownToggle
-                      aria-label="Show deletable videos">
-                <fa-icon icon="minus-circle" size="lg"></fa-icon>
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <div style="text-align:center">Datei löschen..</div>
-                <hr style="margin-top: 0;margin-bottom: 0;">
-                <button class="dropdown-item"
-                        *ngFor="let video_file of exhibit.getContent(selectedLanguage).video"
-                        (click)="deleteVideo(video_file.filename)"
-                        aria-label="Delete video">
-                  {{video_file.filename}}
-                </button>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-        <div body *ngIf="exhibit.getContent(selectedLanguage).video.length">
-          <app-common-video-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-video-player>
-        </div>
-      </app-admin-box-card>
-    </section>
-    <!-- Section Audio -->
-    <section class="mt-2">
-      <app-admin-box-card descHeader="Audio">
-        <div header>
-          <!-- Transcript -->
-          <fa-icon aria-label="Open Transcript" *ngIf="exhibit.getContent(selectedLanguage).transcript" style="margin-right: 10pt;cursor: pointer;"
-          (click)="openTranscript(transcriptModal)" class="fa-lg" icon="book-reader"></fa-icon>
-          <button *ngIf="!exhibit.getContent(selectedLanguage).transcript"
-                  (click)="uploadTranscriptInput.click()" style="margin-right: 10pt"
-                  aria-label="Add transcript">
-            Transkript hinzufügen
-          </button>
-          <button *ngIf="exhibit.getContent(selectedLanguage).transcript" style="margin-right: 10pt"
-                  (click)="deleteTranscript(exhibit.getContent(selectedLanguage).transcript.filename)"
-                  aria-label="Delete transcript">
-            Transkript löschen
-          </button>
-          <input #uploadTranscriptInput class="d-none" (change)="onTranscriptChanged($event)" type="file" accept=".txt">
-          <ng-template #transcriptModal let-c="close" let-d="dismiss">
-              <div class="modal-header" style="overflow-y: initial !important">
-                <h4 class="modal-title" id="modal-basic-title">Audio Transkript</h4>
-                <button type="button" class="close" aria-label="Close transcript" (click)="d('Cross click')">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body" style="overflow-y: auto; height:400pt;">
-                <p>{{exhibit.getContent(selectedLanguage).transcript.text}}</p>
-              </div>
-            </ng-template>
-          <!-- End Transcript-->
-          <fa-icon aria-label="Upload audio"(click)="uploadAudioInput.click()" class="fa-lg" icon="plus-circle"></fa-icon>
-          <input #uploadAudioInput class="d-none" (change)="onAudioChanged($event)" type="file" accept="audio/*">
-          <ng-container *ngIf="exhibit.getContent(selectedLanguage).audio.length">
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn btn-link" id="dropdownBasic2" style='margin-bottom: 4px' ngbDropdownToggle
-                      aria-label="Show deletable audios">
-                <fa-icon icon="minus-circle" size="lg"></fa-icon>
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                <div style="text-align:center">Datei löschen..</div>
-                <hr style="margin-top: 0;margin-bottom: 0;">
-                <button class="dropdown-item"
-                        *ngFor="let audio_file of exhibit.getContent(selectedLanguage).audio"
-                        (click)="deleteAudio(audio_file.filename)"
-                        aria-label="Delete audio">
-                  {{audio_file.filename}}
-                </button>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-        <div body id="audio-player" *ngIf="exhibit.getContent(selectedLanguage).audio.length">
-          <app-common-audio-player [exhibit]="exhibit" [selectedLanguage]="selectedLanguage"></app-common-audio-player>
-        </div>
-      </app-admin-box-card>
-    </section>
-  </section>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

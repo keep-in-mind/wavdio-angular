@@ -1,19 +1,19 @@
 #page {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }
 
 #page main {
-  flex-grow: 1;
-  overflow: auto;
+    flex-grow: 1;
+    overflow: auto;
 }
 
 #agreement {
-  margin: auto;
-  max-width: 300px;
+    margin: auto;
+    max-width: 300px;
 }
 
 #agreement a {
-  text-decoration: underline;
+    text-decoration: underline;
 }

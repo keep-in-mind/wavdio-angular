@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core'
 
 @Component({
     selector: 'app-admin-alert',
@@ -16,14 +16,14 @@ export class AdminAlertComponent implements OnInit {
         'secondary',
         'light',
         'dark'
-    ];
+    ]
 
     constructor() {
     }
 
-    @Input() alertType: number;
-    @Input() alertMessage: string;
-    @Input() alertTimeout: number;
+    @Input() alertType: number
+    @Input() alertMessage: string
+    @Input() alertTimeout: number
 
     ngOnInit(): void {
     }

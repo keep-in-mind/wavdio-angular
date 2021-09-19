@@ -1,10 +1,10 @@
 export class Like {
 
-  _id: string;
+    _id: string
 
-  timestamp: Date;
+    timestamp: Date
 
-  constructor(timestamp: Date) {
-    this.timestamp = timestamp;
-  }
+    constructor(timestamp: Date) {
+        this.timestamp = timestamp
+    }
 }

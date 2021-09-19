@@ -3,18 +3,18 @@
  */
 
 #page {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }
 
 #page main {
-  flex-grow: 1;
-  overflow: auto;
+    flex-grow: 1;
+    overflow: auto;
 }
 
 mat-toolbar {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 /*
@@ -22,25 +22,25 @@ mat-toolbar {
  */
 
 mat-toolbar {
-  display: flex;
-  width: 100%;
-  padding: 0;
+    display: flex;
+    width: 100%;
+    padding: 0;
 }
 
 mat-toolbar fa-icon {
-  flex-grow: 1;
-  text-align: center;
+    flex-grow: 1;
+    text-align: center;
 }
 
 mat-toolbar #navigation-controls {
-  flex-grow: 0;
-  flex-shrink: 0
+    flex-grow: 0;
+    flex-shrink: 0
 }
 
 mat-toolbar #navigation-controls input {
-  display: inline-block;
-  width: 80px;
-  text-align: center;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
 }
 
 /*
@@ -48,35 +48,35 @@ mat-toolbar #navigation-controls input {
  */
 
 h1 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .icons {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .liked {
-  color: red;
+    color: red;
 }
 
 html {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 button:hover {
-  color: black;
+    color: black;
 }
 
 .player {
-  max-width: 360px;
-  margin: auto;
+    max-width: 360px;
+    margin: auto;
 }
 
 .camera {
-  text-align: center;
+    text-align: center;
 }

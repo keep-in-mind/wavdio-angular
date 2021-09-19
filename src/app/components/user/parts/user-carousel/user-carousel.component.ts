@@ -1,26 +1,26 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core'
 
-import {Image} from '../../../../models/image';
+import {Image} from '../../../../models/image'
 
 @Component({
-  selector: 'app-user-carousel',
-  templateUrl: './user-carousel.component.html',
-  styleUrls: ['./user-carousel.component.css']
+    selector: 'app-user-carousel',
+    templateUrl: './user-carousel.component.html',
+    styleUrls: ['./user-carousel.component.css']
 })
 export class UserCarouselComponent implements OnInit {
 
-  @Input() id: string;
-  @Input() images: Image[];
+    @Input() id: string
+    @Input() images: Image[]
 
-  slideConfig = {
-    dots: false,
-    prevArrow: '#prevSlide',
-    nextArrow: '#nextSlide',
-  };
+    slideConfig = {
+        dots: false,
+        prevArrow: '#prevSlide',
+        nextArrow: '#nextSlide',
+    }
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 }

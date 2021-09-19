@@ -1,8 +1,8 @@
 export class View {
 
-  timestamp: Date;
+    timestamp: Date
 
-  constructor(timestamp: Date) {
-    this.timestamp = timestamp;
-  }
+    constructor(timestamp: Date) {
+        this.timestamp = timestamp
+    }
 }

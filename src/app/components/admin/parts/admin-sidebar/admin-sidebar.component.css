@@ -1,53 +1,53 @@
 div {
-  height: 100%;
+    height: 100%;
 }
 
 ul {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 ul > :last-child {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 ul li {
-  border: 0 none;
-  margin-top: -1px;
-  padding: 12px 0;
-  text-align: center;
+    border: 0 none;
+    margin-top: -1px;
+    padding: 12px 0;
+    text-align: center;
 }
 
 .long-text {
-  display: none;
+    display: none;
 }
 
 .short-text {
-  display: inline-block;
-  font-size: 24px;
+    display: inline-block;
+    font-size: 24px;
 }
 
 @media (min-width: 576px) {
-  .long-text {
-    display: inline-block;
-    text-align: left;
-  }
+    .long-text {
+        display: inline-block;
+        text-align: left;
+    }
 
-  .short-text {
-    display: none;
-  }
+    .short-text {
+        display: none;
+    }
 
-  ul li {
-    text-align: left;
-  }
+    ul li {
+        text-align: left;
+    }
 }
 
 .long-text fa-icon {
-  display: inline-block;
-  width: 40px;
-  text-align: center
+    display: inline-block;
+    width: 40px;
+    text-align: center
 }

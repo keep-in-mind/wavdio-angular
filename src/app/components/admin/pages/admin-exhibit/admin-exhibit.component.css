@@ -1,9 +1,9 @@
 html {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 button:hover {
-  color: black;
+    color: black;
 }
 
 /*
@@ -13,34 +13,34 @@ button:hover {
 */
 
 .profile-pic {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
 }
 
 img {
-  width: 75px;
-  height: 75px;
+    width: 75px;
+    height: 75px;
 
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .profile-pic:hover .remove {
-  display: block;
+    display: block;
 }
 
 .remove {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-top: 8px;
-  padding-right: 8px;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 8px;
+    padding-right: 8px;
 }
 
 .text-max {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /*
@@ -48,31 +48,31 @@ img {
  */
 
 .mytooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 /* Mytooltip text */
 .mytooltip .mytooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
 
-  /* Position the mytooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
+    /* Position the mytooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
 
-  top: -5px;
-  right: 105%;
+    top: -5px;
+    right: 105%;
 }
 
 /* Show the mytooltip text when you mouse over the mytooltip container */
 .mytooltip:hover .mytooltiptext {
-  visibility: visible;
+    visibility: visible;
 }
 
 /*
@@ -80,5 +80,5 @@ img {
  */
 
 #audio-player {
-  width: 100%;
+    width: 100%;
 }

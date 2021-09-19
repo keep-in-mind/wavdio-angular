@@ -1,21 +1,21 @@
 <div *ngIf="ready" id="exhibit-fullscreen-component" style="position:relative;">
-  <button mat-button id="prevSlide" class="carousel-button" type="button">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
-  <button mat-button id="nextSlide" class="carousel-button" type="button">
-    <mat-icon>chevron_right</mat-icon>
-  </button>
-  <button mat-button id="close" class="carousel-button" type="button" (click)="location.back()">
-    <mat-icon>close</mat-icon>
-  </button>
+    <button mat-button id="prevSlide" class="carousel-button" type="button">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-button id="nextSlide" class="carousel-button" type="button">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+    <button mat-button id="close" class="carousel-button" type="button" (click)="location.back()">
+        <mat-icon>close</mat-icon>
+    </button>
 
-  <ngx-slick-carousel [config]="slideConfig">
-    <ng-container>
-      <div ngxSlickItem *ngFor="let image of exhibit.getContent(locale).images">
-        <div style="width: 100%; height: 100vh">
-          <img [src]="'/uploads/' + this.exhibit._id + '/' + image.filename" [alt]="image.alternativeText">
-        </div>
-      </div>
-    </ng-container>
-  </ngx-slick-carousel>
+    <ngx-slick-carousel [config]="slideConfig">
+        <ng-container>
+            <div ngxSlickItem *ngFor="let image of exhibit.getContent(locale).images">
+                <div style="width: 100%; height: 100vh">
+                    <img [src]="'/uploads/' + this.exhibit._id + '/' + image.filename" [alt]="image.alternativeText">
+                </div>
+            </div>
+        </ng-container>
+    </ngx-slick-carousel>
 </div>

@@ -1,26 +1,27 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 
-import {Exhibit} from '../../../../models/exhibit';
+import {Exhibit} from '../../../../models/exhibit'
+import {NgxQrcodeElementTypes} from '@techiediaries/ngx-qrcode'
 
 @Component({
-  selector: 'app-admin-qr-code',
-  templateUrl: './admin-qr-code.component.html',
-  styleUrls: ['./admin-qr-code.component.css']
+    selector: 'app-admin-qr-code',
+    templateUrl: './admin-qr-code.component.html',
+    styleUrls: ['./admin-qr-code.component.css']
 })
 export class AdminQrCodeComponent implements OnInit {
 
-  elementType: 'url' | 'canvas' | 'img' = 'url';
-  host: string;
-  port: string;
+    elementType: NgxQrcodeElementTypes.URL
+    host: string
+    port: string
 
-  exhibits: Exhibit[] = [];
-  lang: string;
+    exhibits: Exhibit[] = []
+    lang: string
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-    this.host = window.location.hostname;
-    this.port = window.location.port;
-  }
+    ngOnInit() {
+        this.host = window.location.hostname
+        this.port = window.location.port
+    }
 }

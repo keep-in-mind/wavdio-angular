@@ -1,57 +1,57 @@
 <div id="page">
 
-  <app-user-app-bar backArrow="true" backUrl="/museum"></app-user-app-bar>
+    <app-user-app-bar backArrow="true" backUrl="/museum"></app-user-app-bar>
 
-  <!-- Page Content -->
-  <main>
+    <!-- Page Content -->
+    <main>
 
-    <!-- Exposition Logo -->
-    <div style="position: relative; padding-top: 61.8%">
-      <img *ngIf="exposition && exposition.logo"
-           style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
-           class="w-100"
-           [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
-           [alt]="exposition.logo.alternativeText"
-           [routerLink]="'/exposition/' + this.exposition._id + '/fullscreen'"/>
-    </div>
-
-    <!-- Exposition Title -->
-    <h1 *ngIf="exposition" class="mt-2 px-2">{{ exposition.getContent(locale).name }}</h1>
-
-    <!-- Tabs -->
-    <mat-tab-group mat-stretch-tabs>
-
-      <!-- Info -->
-      <mat-tab label="Info" i18n-label>
-        <p *ngIf="exposition" class="p-2">
-          <markdown>{{ exposition.getContent(locale).info }}</markdown>
-        </p>
-      </mat-tab>
-
-      <!-- Exhibits -->
-      <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
-        <div class="card-grid">
-          <app-common-exhibit-card *ngFor="let exhibit of exhibits"
-                                   [exhibit]="exhibit" height="150px"
-                                   [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
-          </app-common-exhibit-card>
+        <!-- Exposition Logo -->
+        <div style="position: relative; padding-top: 61.8%">
+            <img *ngIf="exposition && exposition.logo"
+                 style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
+                 class="w-100"
+                 [src]="'/uploads/' + exposition._id + '/' + exposition.logo.filename"
+                 [alt]="exposition.logo.alternativeText"
+                 [routerLink]="'/exposition/' + this.exposition._id + '/fullscreen'"/>
         </div>
-      </mat-tab>
 
-    </mat-tab-group>
-  </main>
+        <!-- Exposition Title -->
+        <h1 *ngIf="exposition" class="mt-2 px-2">{{ exposition.getContent(locale).name }}</h1>
 
-  <footer>
-    <mat-toolbar *ngIf="exposition" class="mat-elevation-z4">
-      <!-- Like -->
-      <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"
-               role="button" aria-label="Like"></fa-icon>
+        <!-- Tabs -->
+        <mat-tab-group mat-stretch-tabs>
 
-      <!-- Comment -->
-      <fa-icon icon="comment-alt" (click)="openComment()"
-               role="button" aria-label="Comment"></fa-icon>
-    </mat-toolbar>
-  </footer>
+            <!-- Info -->
+            <mat-tab label="Info" i18n-label>
+                <p *ngIf="exposition" class="p-2">
+                    <markdown>{{ exposition.getContent(locale).info }}</markdown>
+                </p>
+            </mat-tab>
+
+            <!-- Exhibits -->
+            <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
+                <div class="card-grid">
+                    <app-common-exhibit-card *ngFor="let exhibit of exhibits"
+                                             [exhibit]="exhibit" height="150px"
+                                             [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
+                    </app-common-exhibit-card>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+    </main>
+
+    <footer>
+        <mat-toolbar *ngIf="exposition" class="mat-elevation-z4">
+            <!-- Like -->
+            <fa-icon icon="heart" [ngClass]="{'liked' : likedFlag == true}" (click)="likeUnlikeExposition()"
+                     role="button" aria-label="Like"></fa-icon>
+
+            <!-- Comment -->
+            <fa-icon icon="comment-alt" (click)="openComment()"
+                     role="button" aria-label="Comment"></fa-icon>
+        </mat-toolbar>
+    </footer>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

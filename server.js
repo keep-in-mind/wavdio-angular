@@ -10,9 +10,9 @@ const app = express()
 app.use(express.static('./dist/'))
 
 const proxyOptions = {
-  forwardPath: function(req, res) {
-    return req.originalUrl
-  }
+    forwardPath: function (req, res) {
+        return req.originalUrl
+    }
 }
 
 app.use('/api', proxy(backend, proxyOptions))
@@ -20,7 +20,7 @@ app.use('/upload', proxy(backend, proxyOptions))
 app.use('/uploads', proxy(backend, proxyOptions))
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/dist/de/index.html'))
+    res.sendFile(path.join(__dirname, '/dist/de/index.html'))
 })
 
 app.listen(port)

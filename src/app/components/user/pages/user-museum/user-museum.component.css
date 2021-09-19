@@ -1,60 +1,60 @@
 mat-sidenav {
-  max-width: 280px;
+    max-width: 280px;
 }
 
 #sidenav-flex {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #sidenav-flex main {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 mat-sidenav header img {
-  width: 100%;
-  padding: 20px 20% 20px 20%;
+    width: 100%;
+    padding: 20px 20% 20px 20%;
 }
 
 mat-sidenav-content {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }
 
 mat-sidenav-content main {
-  flex-grow: 1;
-  overflow: auto;
+    flex-grow: 1;
+    overflow: auto;
 }
 
 .icons {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .liked {
-  color: red;
+    color: red;
 }
 
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
 }
 
 .truncate {
-  width: 70%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 h1 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 mat-sidenav {
-  width: 80%;
+    width: 80%;
 }
 
 /*
@@ -62,8 +62,8 @@ mat-sidenav {
  */
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 8px;
-  margin: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 8px;
+    margin: 8px;
 }

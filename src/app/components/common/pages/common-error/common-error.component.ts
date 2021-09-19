@@ -1,19 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
 
 @Component({
-  selector: 'app-common-error',
-  templateUrl: './common-error.component.html',
-  styleUrls: ['./common-error.component.css']
+    selector: 'app-common-error',
+    templateUrl: './common-error.component.html',
+    styleUrls: ['./common-error.component.css']
 })
 export class CommonErrorComponent implements OnInit {
 
-  constructor(private router: Router) { }
+    constructor(private router: Router) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  backHome() {
-    this.router.navigate(['']);
-  }
+    backHome() {
+        this.router.navigate([''])
+    }
 }

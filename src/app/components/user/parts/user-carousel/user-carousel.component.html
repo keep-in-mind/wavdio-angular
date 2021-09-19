@@ -1,21 +1,21 @@
 <div id="carousel-container">
-  <button mat-button id="prevSlide" class="carousel-button" type="button">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
-  <button mat-button id="nextSlide" class="carousel-button" type="button">
-    <mat-icon>chevron_right</mat-icon>
-  </button>
+    <button mat-button id="prevSlide" class="carousel-button" type="button">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-button id="nextSlide" class="carousel-button" type="button">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
 
-  <ngx-slick-carousel [config]="slideConfig">
-    <ng-container>
-      <div ngxSlickItem *ngFor="let image of this.images; let i = index" [attr.data-index]="i">
-        <div class="golden-cut-outer">
-          <div class="golden-cut-inner">
-            <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText"
-                 [routerLink]="'/exhibit/' + this.id + '/fullscreen'" [queryParams]="{slide: i}">
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </ngx-slick-carousel>
+    <ngx-slick-carousel [config]="slideConfig">
+        <ng-container>
+            <div ngxSlickItem *ngFor="let image of this.images; let i = index" [attr.data-index]="i">
+                <div class="golden-cut-outer">
+                    <div class="golden-cut-inner">
+                        <img [src]="'/uploads/' + this.id + '/' + image.filename" [alt]="image.alternativeText"
+                             [routerLink]="'/exhibit/' + this.id + '/fullscreen'" [queryParams]="{slide: i}">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ngx-slick-carousel>
 </div>

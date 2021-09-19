@@ -1,18 +1,18 @@
 h1 {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 h2 {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 .card-size {
-  width: 200px;
-  text-align: center;
+    width: 200px;
+    text-align: center;
 }
 
 .truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

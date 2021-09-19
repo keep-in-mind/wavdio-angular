@@ -1,103 +1,104 @@
 <mat-sidenav-container>
 
-  <!-- Sidenav -->
-  <mat-sidenav #sidenav>
-    <div id="sidenav-flex">
+    <!-- Sidenav -->
+    <mat-sidenav #sidenav>
+        <div id="sidenav-flex">
 
-      <!-- wAVdio Logo -->
-      <header>
-        <img *ngIf="museum && museum.getContent(locale).logo; else defaultLogo"
-             [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).logo.filename"
-             [alt]="museum.getContent(locale).logo.alternativeText"/>
-        <ng-template #defaultLogo>
-          <img src="assets/images/wAVdio_Logo_gross.png" alt="wAVdio Logo"/>
-        </ng-template>
-      </header>
+            <!-- wAVdio Logo -->
+            <header>
+                <img *ngIf="museum && museum.getContent(locale).logo; else defaultLogo"
+                     [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).logo.filename"
+                     [alt]="museum.getContent(locale).logo.alternativeText"/>
+                <ng-template #defaultLogo>
+                    <img src="assets/images/wAVdio_Logo_gross.png" alt="wAVdio Logo"/>
+                </ng-template>
+            </header>
 
-      <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
 
-      <!-- Site Plan and Info Pages -->
-      <main>
-        <mat-nav-list>
-          <a mat-list-item routerLink="/site-plan" i18n>Site Plan</a>
+            <!-- Site Plan and Info Pages -->
+            <main>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/site-plan" i18n>Site Plan</a>
 
-          <a mat-list-item *ngFor="let infoPage of infoPages"
-             routerLink="/info-page/{{ infoPage._id }}"
-             routerLinkActive="active">
+                    <a mat-list-item *ngFor="let infoPage of infoPages"
+                       routerLink="/info-page/{{ infoPage._id }}"
+                       routerLinkActive="active">
 
-            {{ infoPage.name }}
-          </a>
-        </mat-nav-list>
-      </main>
+                        {{ infoPage.name }}
+                    </a>
+                </mat-nav-list>
+            </main>
 
-      <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
 
-      <!-- Usage Terms, Privacy Policy and Imprint -->
-      <footer>
-        <mat-nav-list>
-          <a mat-list-item routerLink="/museum/usage-terms" i18n>Terms of Use</a>
-          <a mat-list-item routerLink="/museum/privacy-policy" i18n>Privacy Policy</a>
-          <a mat-list-item routerLink="/imprint" i18n>Imprint</a>
-        </mat-nav-list>
-      </footer>
+            <!-- Usage Terms, Privacy Policy and Imprint -->
+            <footer>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/museum/usage-terms" i18n>Terms of Use</a>
+                    <a mat-list-item routerLink="/museum/privacy-policy" i18n>Privacy Policy</a>
+                    <a mat-list-item routerLink="/imprint" i18n>Imprint</a>
+                </mat-nav-list>
+            </footer>
 
-    </div>
-  </mat-sidenav>
+        </div>
+    </mat-sidenav>
 
-  <!-- Main Page -->
-  <mat-sidenav-content id="page">
+    <!-- Main Page -->
+    <mat-sidenav-content id="page">
 
-    <app-user-app-bar [sidenav]="sidenav"></app-user-app-bar>
+        <app-user-app-bar [sidenav]="sidenav"></app-user-app-bar>
 
-    <!-- Page Content -->
-    <main style="position: relative">
+        <!-- Page Content -->
+        <main style="position: relative">
 
-      <!-- Museum Logo -->
-      <div style="position: relative; padding-top: 61.8%">
-        <img *ngIf="museum && museum.getContent(locale).image"
-             style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
-             class="w-100"
-             [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).image.filename"
-             [alt]="museum.getContent(locale).image.alternativeText"
-             routerLink="/museum/fullscreen"/>
-      </div>
+            <!-- Museum Logo -->
+            <div style="position: relative; padding-top: 61.8%">
+                <img *ngIf="museum && museum.getContent(locale).image"
+                     style="position: absolute; height: 100%; left: 0; top: 0; object-fit: cover"
+                     class="w-100"
+                     [src]="'/uploads/' + museum._id + '/' + museum.getContent(locale).image.filename"
+                     [alt]="museum.getContent(locale).image.alternativeText"
+                     routerLink="/museum/fullscreen"/>
+            </div>
 
-      <!-- Museum Title -->
-      <h1 *ngIf="museum" class="mt-2 px-2">{{ museum.getContent(locale).name }}</h1>
+            <!-- Museum Title -->
+            <h1 *ngIf="museum" class="mt-2 px-2">{{ museum.getContent(locale).name }}</h1>
 
-      <!-- Tabs -->
-      <mat-tab-group mat-stretch-tabs>
+            <!-- Tabs -->
+            <mat-tab-group mat-stretch-tabs>
 
-        <!-- Info -->
-        <mat-tab label="Info" i18n-label>
-          <p *ngIf="museum" class="p-2">
-            <markdown>{{ museum.getContent(locale).info }}</markdown>
-          </p>
-        </mat-tab>
+                <!-- Info -->
+                <mat-tab label="Info" i18n-label>
+                    <p *ngIf="museum" class="p-2">
+                        <markdown>{{ museum.getContent(locale).info }}</markdown>
+                    </p>
+                </mat-tab>
 
-        <!-- Exhibits -->
-        <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
-          <div class="card-grid">
-            <app-common-exhibit-card *ngFor="let exhibit of exhibits"
-                                     [exhibit]="exhibit" height="150px"
-                                     [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
-            </app-common-exhibit-card>
-          </div>
-        </mat-tab>
+                <!-- Exhibits -->
+                <mat-tab *ngIf="exhibits" label="Exhibits" i18n-label>
+                    <div class="card-grid">
+                        <app-common-exhibit-card *ngFor="let exhibit of exhibits"
+                                                 [exhibit]="exhibit" height="150px"
+                                                 [selectedLanguage]="locale" [link]="'/exhibit/' + exhibit._id">
+                        </app-common-exhibit-card>
+                    </div>
+                </mat-tab>
 
-        <!-- Expositions -->
-        <mat-tab *ngIf="expositions" label="Expositions" i18n-label>
-          <div class="card-grid">
-            <app-common-exposition-card *ngFor="let exposition of expositions"
-                                     [exposition]="exposition" height="150px"
-                                     [selectedLanguage]="locale" [link]="'/exposition/' + exposition._id">
-            </app-common-exposition-card>
-          </div>
-        </mat-tab>
+                <!-- Expositions -->
+                <mat-tab *ngIf="expositions" label="Expositions" i18n-label>
+                    <div class="card-grid">
+                        <app-common-exposition-card *ngFor="let exposition of expositions"
+                                                    [exposition]="exposition" height="150px"
+                                                    [selectedLanguage]="locale"
+                                                    [link]="'/exposition/' + exposition._id">
+                        </app-common-exposition-card>
+                    </div>
+                </mat-tab>
 
-      </mat-tab-group>
-    </main>
-  </mat-sidenav-content>
+            </mat-tab-group>
+        </main>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 
 <app-common-cookie-banner></app-common-cookie-banner>

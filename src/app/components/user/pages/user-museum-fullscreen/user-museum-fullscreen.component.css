@@ -1,32 +1,32 @@
 #museum-fullscreen-component {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 button {
-  position: absolute;
-  z-index: 1000;
+    position: absolute;
+    z-index: 1000;
 
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 
-  background-color: rgba(20, 20, 20, 0.5);
-  color: white;
+    background-color: rgba(20, 20, 20, 0.5);
+    color: white;
 }
 
 #close {
-  top: 20px;
-  right: 20px;
+    top: 20px;
+    right: 20px;
 }
 
 button mat-icon {
-  transform: scale(2);
+    transform: scale(2);
 }
 
 img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: black
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black
 }
