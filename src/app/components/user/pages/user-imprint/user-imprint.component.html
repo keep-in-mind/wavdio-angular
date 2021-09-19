@@ -1,9 +1,9 @@
 <div id="page">
-  <app-user-app-bar backArrow="true" backUrl="/museum" title="Imprint" i18n-title></app-user-app-bar>
+    <app-user-app-bar backArrow="true" backUrl="/museum" title="Imprint" i18n-title></app-user-app-bar>
 
-  <main *ngIf="museum" style="padding: 8px">
-    <markdown>{{ museum.getContent(locale).imprint }}</markdown>
-  </main>
+    <main *ngIf="museum" style="padding: 8px">
+        <markdown>{{ museum.getContent(locale).imprint }}</markdown>
+    </main>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

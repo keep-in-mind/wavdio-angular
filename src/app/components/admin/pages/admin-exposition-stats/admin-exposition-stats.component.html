@@ -1,70 +1,70 @@
 <div class="wrapper">
-  <aside class="sidebar">
-    <app-admin-sidebar></app-admin-sidebar>
-  </aside>
+    <aside class="sidebar">
+        <app-admin-sidebar></app-admin-sidebar>
+    </aside>
 
-  <!-- Header -->
+    <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
 
-  <main class="content mx-3">
+    <main class="content mx-3">
 
-    <!-- Likes -->
+        <!-- Likes -->
 
-    <div class="card mt-2">
-      <div class="card-header">
-        Likes
-      </div>
-      <div class="card-body" style="width: 90%">
-        <ngx-charts-line-chart
-          [scheme]="colorScheme"
-          [results]="multi"
-          [gradient]="gradient"
-          [xAxis]="showXAxis"
-          [yAxis]="showYAxis"
-          [legend]="showLegend"
-          [showXAxisLabel]="showXAxisLabel"
-          [showYAxisLabel]="showYAxisLabel"
-          [xAxisLabel]="xAxisLabel"
-          [yAxisLabel]="yAxisLabel"
-          [autoScale]="autoScale"
-          [timeline]="timeline">
-        </ngx-charts-line-chart>
-      </div>
-    </div>
-
-    <!-- Exhibits -->
-
-    <div class="card mt-2">
-      <div class="card-header">
-        Exponate
-      </div>
-      <div class="card-body d-flex flex-wrap">
-        <app-common-exhibit-card
-          *ngFor="let exhibit of exhibits"
-          [selectedLanguage]="locale"
-          [exhibit]="exhibit"
-          [width]="'125px'"
-          [height]="'150px'"
-          [link]="'/admin/statistics/exhibit/'+ exhibit._id">
-        </app-common-exhibit-card>
-      </div>
-    </div>
-
-    <!-- Comments -->
-
-    <div *ngIf="exposition" class="card mt-2">
-      <div class="card-header">
-        Kommentare
-      </div>
-      <div class="card-body">
-        <div *ngFor="let comment of exposition.comments">
-          <app-admin-comment-card>{{comment.text}}</app-admin-comment-card>
+        <div class="card mt-2">
+            <div class="card-header">
+                Likes
+            </div>
+            <div class="card-body" style="width: 90%">
+                <ngx-charts-line-chart
+                        [scheme]="colorScheme"
+                        [results]="multi"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [autoScale]="autoScale"
+                        [timeline]="timeline">
+                </ngx-charts-line-chart>
+            </div>
         </div>
-      </div>
-    </div>
 
-  </main>
+        <!-- Exhibits -->
+
+        <div class="card mt-2">
+            <div class="card-header">
+                Exponate
+            </div>
+            <div class="card-body d-flex flex-wrap">
+                <app-common-exhibit-card
+                        *ngFor="let exhibit of exhibits"
+                        [selectedLanguage]="locale"
+                        [exhibit]="exhibit"
+                        [width]="'125px'"
+                        [height]="'150px'"
+                        [link]="'/admin/statistics/exhibit/'+ exhibit._id">
+                </app-common-exhibit-card>
+            </div>
+        </div>
+
+        <!-- Comments -->
+
+        <div *ngIf="exposition" class="card mt-2">
+            <div class="card-header">
+                Kommentare
+            </div>
+            <div class="card-body">
+                <div *ngFor="let comment of exposition.comments">
+                    <app-admin-comment-card>{{comment.text}}</app-admin-comment-card>
+                </div>
+            </div>
+        </div>
+
+    </main>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

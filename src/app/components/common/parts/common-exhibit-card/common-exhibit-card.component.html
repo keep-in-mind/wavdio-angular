@@ -1,21 +1,21 @@
 <a routerLink="{{ link }}" routerLinkActive="active" [attr.aria-labelledby]="'linkLabel_'+exhibit._id">
-  <mat-card class="card m-1 p-0" [ngClass]="{'inactive-item' : exhibit.active == false}"
-       [ngStyle]="{'height': height, 'width': width}">
-    <img *ngIf="exhibit.getContent(selectedLanguage).images.length; else elseifcase"
-         [src]="'/uploads/' + exhibit._id + '/' + exhibit.getContent(selectedLanguage).images[0].filename"
-         [alt]="exhibit.getContent(selectedLanguage).images[0].alternativeText">
-    <ng-template #elseifcase>
-      <img *ngIf="exhibit.getContent('de').images.length; else elsecase"
-           [src]="'/uploads/' + exhibit._id + '/' + exhibit.getContent('de').images[0].filename"
-           [alt]="exhibit.getContent('de').images[0].filename">
-    </ng-template>
-    <ng-template #elsecase>
-      <img src="/assets/images/noimage.png" alt="No Image">
-    </ng-template>
-    <div class="card-body p-0">
-      <p class="card-text text-center small p-1 my-0"
-         id="linkLabel_{{exhibit._id}}">{{exhibit.code}} - {{exhibit.getContent(selectedLanguage).name}}
-      </p>
-    </div>
-  </mat-card>
+    <mat-card class="card m-1 p-0" [ngClass]="{'inactive-item' : exhibit.active == false}"
+              [ngStyle]="{'height': height, 'width': width}">
+        <img *ngIf="exhibit.getContent(selectedLanguage).images.length; else elseifcase"
+             [src]="'/uploads/' + exhibit._id + '/' + exhibit.getContent(selectedLanguage).images[0].filename"
+             [alt]="exhibit.getContent(selectedLanguage).images[0].alternativeText">
+        <ng-template #elseifcase>
+            <img *ngIf="exhibit.getContent('de').images.length; else elsecase"
+                 [src]="'/uploads/' + exhibit._id + '/' + exhibit.getContent('de').images[0].filename"
+                 [alt]="exhibit.getContent('de').images[0].filename">
+        </ng-template>
+        <ng-template #elsecase>
+            <img src="/assets/images/noimage.png" alt="No Image">
+        </ng-template>
+        <div class="card-body p-0">
+            <p class="card-text text-center small p-1 my-0"
+               id="linkLabel_{{exhibit._id}}">{{exhibit.code}} - {{exhibit.getContent(selectedLanguage).name}}
+            </p>
+        </div>
+    </mat-card>
 </a>

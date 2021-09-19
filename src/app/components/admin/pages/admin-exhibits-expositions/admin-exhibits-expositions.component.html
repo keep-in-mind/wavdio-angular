@@ -1,45 +1,46 @@
 <div class="wrapper">
-  <app-admin-sidebar class="sidebar"></app-admin-sidebar>
+    <app-admin-sidebar class="sidebar"></app-admin-sidebar>
 
-  <!-- Header -->
+    <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
-                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                      showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
-  <!-- Left Column: Stand-alone Exhibits -->
+    <!-- Left Column: Stand-alone Exhibits -->
 
-  <section class="content-left m-2">
-    <app-admin-box-card descHeader="Exponate">
-      <div header>
-        <a *ngIf="museum" routerLink="/admin/exhibit/new/{{museum._id}}" routerLinkActive="active">
-          <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
-        </a>
-      </div>
+    <section class="content-left m-2">
+        <app-admin-box-card descHeader="Exponate">
+            <div header>
+                <a *ngIf="museum" routerLink="/admin/exhibit/new/{{museum._id}}" routerLinkActive="active">
+                    <fa-icon aria-label="Add exhibit" class="fa-lg" icon="plus-circle"></fa-icon>
+                </a>
+            </div>
 
-      <div body *ngFor="let exhibit of exhibits">
-        <app-common-exhibit-card [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
-                                 [selectedLanguage]="selectedLanguage" [link]="'/admin/exhibit/'+ exhibit._id">
-        </app-common-exhibit-card>
-      </div>
-    </app-admin-box-card>
-  </section>
+            <div body *ngFor="let exhibit of exhibits">
+                <app-common-exhibit-card [exhibit]="exhibit" [width]="'125px'" [height]="'150px'"
+                                         [selectedLanguage]="selectedLanguage" [link]="'/admin/exhibit/'+ exhibit._id">
+                </app-common-exhibit-card>
+            </div>
+        </app-admin-box-card>
+    </section>
 
-  <!-- Right Column: Expositions -->
+    <!-- Right Column: Expositions -->
 
-  <section class="content-right m-2">
-    <app-admin-box-card descHeader="Rundgänge">
-      <div header>
-        <a routerLink="/admin/exposition/new" routerLinkActive="active">
-          <fa-icon aria-label="Add exposition" class="fa-lg" icon="plus-circle"></fa-icon>
-        </a>
-      </div>
+    <section class="content-right m-2">
+        <app-admin-box-card descHeader="Rundgänge">
+            <div header>
+                <a routerLink="/admin/exposition/new" routerLinkActive="active">
+                    <fa-icon aria-label="Add exposition" class="fa-lg" icon="plus-circle"></fa-icon>
+                </a>
+            </div>
 
-      <div body *ngFor="let exposition of expositions">
-        <app-common-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
-                                    [selectedLanguage]="selectedLanguage" [link]="'/admin/exposition/'+ exposition._id"></app-common-exposition-card>
-      </div>
-    </app-admin-box-card>
-  </section>
+            <div body *ngFor="let exposition of expositions">
+                <app-common-exposition-card [exposition]="exposition" [width]="'125px'" [height]="'150px'"
+                                            [selectedLanguage]="selectedLanguage"
+                                            [link]="'/admin/exposition/'+ exposition._id"></app-common-exposition-card>
+            </div>
+        </app-admin-box-card>
+    </section>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

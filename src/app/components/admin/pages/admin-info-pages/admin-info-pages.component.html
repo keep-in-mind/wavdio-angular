@@ -1,103 +1,104 @@
 <div class="wrapper">
-  <app-admin-sidebar class="sidebar"></app-admin-sidebar>
+    <app-admin-sidebar class="sidebar"></app-admin-sidebar>
 
-  <!-- Header -->
+    <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
-                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                      showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
-  <app-admin-alert *ngIf="showAlert" class="header mt-2"
-                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+    <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                     [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
 
-  <!-- Left Column -->
+    <!-- Left Column -->
 
-  <section *ngIf="this.museum" class="content-left m-2">
-    <div class="card">
-      <div class="card-body">
+    <section *ngIf="this.museum" class="content-left m-2">
+        <div class="card">
+            <div class="card-body">
 
-        <!-- Usage Terms, Privacy Policy, Imprint -->
+                <!-- Usage Terms, Privacy Policy, Imprint -->
 
-        <label for="termsOfUse">Nutzungsbedingungen</label>
-        <textarea id="termsOfUse" class="form-control" rows="5" [placeholder]="placeholder"
-                  [(ngModel)]="museum.getContent(selectedLanguage).termsOfUse"></textarea>
+                <label for="termsOfUse">Nutzungsbedingungen</label>
+                <textarea id="termsOfUse" class="form-control" rows="5" [placeholder]="placeholder"
+                          [(ngModel)]="museum.getContent(selectedLanguage).termsOfUse"></textarea>
 
-        <label class="mt-2" for="privacyTerms">Datenschutzerklärung</label>
-        <textarea id="privacyTerms" class="form-control" rows="5" [placeholder]="placeholder"
-                  [(ngModel)]="museum.getContent(selectedLanguage).privacyTerms"></textarea>
+                <label class="mt-2" for="privacyTerms">Datenschutzerklärung</label>
+                <textarea id="privacyTerms" class="form-control" rows="5" [placeholder]="placeholder"
+                          [(ngModel)]="museum.getContent(selectedLanguage).privacyTerms"></textarea>
 
-        <label class="mt-2" for="imprint">Impressum</label>
-        <textarea id="imprint" class="form-control" rows="5" [placeholder]="placeholder"
-                  [(ngModel)]="museum.getContent(selectedLanguage).imprint"></textarea>
+                <label class="mt-2" for="imprint">Impressum</label>
+                <textarea id="imprint" class="form-control" rows="5" [placeholder]="placeholder"
+                          [(ngModel)]="museum.getContent(selectedLanguage).imprint"></textarea>
 
-        <!-- Save -->
+                <!-- Save -->
 
-        <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save museum">
-          Speichern
-        </button>
-      </div>
-    </div>
-  </section>
+                <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save museum">
+                    Speichern
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <!-- Right Column -->
+    <!-- Right Column -->
 
-  <section *ngIf="museum" class="content-right m-2">
+    <section *ngIf="museum" class="content-right m-2">
 
-    <!-- Site Plan -->
+        <!-- Site Plan -->
 
-    <app-admin-box-card descHeader="Lageplan">
-      <div header>
-        <fa-icon aria-label="Add site plan" [hidden]="museum.getContent(selectedLanguage).sitePlan"
-                 (click)="onSitePlanInput.click()"
-                 class="fa-lg"
-                 icon="plus-circle">
-        </fa-icon>
-        <form class="d-none">
-          <input #onSitePlanInput (change)="uploadSitePlan($event)" type="file" name="file">
-        </form>
-        <fa-icon aria-label="Delete site plan" [hidden]="!museum.getContent(selectedLanguage).sitePlan" class="fa-lg"
-                 icon="minus-circle"
-                 (click)="deleteSitePlan()"></fa-icon>
-      </div>
-      <div body>
-        <img *ngIf="museum.getContent(selectedLanguage).sitePlan" class="w-100"
-             [alt]="museum.getContent(selectedLanguage).sitePlan.alternativeText"
-             [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).sitePlan.filename"/>
-      </div>
-    </app-admin-box-card>
+        <app-admin-box-card descHeader="Lageplan">
+            <div header>
+                <fa-icon aria-label="Add site plan" [hidden]="museum.getContent(selectedLanguage).sitePlan"
+                         (click)="onSitePlanInput.click()"
+                         class="fa-lg"
+                         icon="plus-circle">
+                </fa-icon>
+                <form class="d-none">
+                    <input #onSitePlanInput (change)="uploadSitePlan($event)" type="file" name="file">
+                </form>
+                <fa-icon aria-label="Delete site plan" [hidden]="!museum.getContent(selectedLanguage).sitePlan"
+                         class="fa-lg"
+                         icon="minus-circle"
+                         (click)="deleteSitePlan()"></fa-icon>
+            </div>
+            <div body>
+                <img *ngIf="museum.getContent(selectedLanguage).sitePlan" class="w-100"
+                     [alt]="museum.getContent(selectedLanguage).sitePlan.alternativeText"
+                     [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).sitePlan.filename"/>
+            </div>
+        </app-admin-box-card>
 
-    <!-- Site Plan Text -->
+        <!-- Site Plan Text -->
 
-    <div class="card mt-2">
-      <div class="card-body">
-        <label for="site-plan-text">Lageplan Beschreibung</label>
-        <textarea id="site-plan-text" class="form-control" rows="5" [placeholder]="placeholder"
-                  [(ngModel)]="museum.getContent(selectedLanguage).sitePlanText"></textarea>
+        <div class="card mt-2">
+            <div class="card-body">
+                <label for="site-plan-text">Lageplan Beschreibung</label>
+                <textarea id="site-plan-text" class="form-control" rows="5" [placeholder]="placeholder"
+                          [(ngModel)]="museum.getContent(selectedLanguage).sitePlanText"></textarea>
 
-        <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save museum">
-          Speichern
-        </button>
-      </div>
-    </div>
-
-    <!-- Info Pages -->
-
-    <div class="mt-2">
-      <app-admin-box-card descHeader="Info-Seiten">
-        <div header>
-          <a routerLink="/admin/info-page/new" routerLinkActive="active">
-            <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
-          </a>
+                <button class="btn btn-success w-100 mt-2" (click)="updateMuseum()" aria-label="Save museum">
+                    Speichern
+                </button>
+            </div>
         </div>
 
-        <div body>
-          <a *ngFor="let infoPage of infoPages"
-             routerLink="/admin/info-page/{{ infoPage._id }}" routerLinkActive="active">
-            {{infoPage.name}}
-          </a>
+        <!-- Info Pages -->
+
+        <div class="mt-2">
+            <app-admin-box-card descHeader="Info-Seiten">
+                <div header>
+                    <a routerLink="/admin/info-page/new" routerLinkActive="active">
+                        <fa-icon aria-label="Add info page" class="fa-lg" icon="plus-circle"></fa-icon>
+                    </a>
+                </div>
+
+                <div body>
+                    <a *ngFor="let infoPage of infoPages"
+                       routerLink="/admin/info-page/{{ infoPage._id }}" routerLinkActive="active">
+                        {{infoPage.name}}
+                    </a>
+                </div>
+            </app-admin-box-card>
         </div>
-      </app-admin-box-card>
-    </div>
-  </section>
+    </section>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

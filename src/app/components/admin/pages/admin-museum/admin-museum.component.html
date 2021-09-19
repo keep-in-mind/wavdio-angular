@@ -1,79 +1,80 @@
 <div class="wrapper">
-  <section class="sidebar">
-    <app-admin-sidebar></app-admin-sidebar>
-  </section>
+    <section class="sidebar">
+        <app-admin-sidebar></app-admin-sidebar>
+    </section>
 
-  <!-- Header -->
+    <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
-                    showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"
+                      showLanguageSelection="true" (languageSelected)="selectedLanguage = $event"></app-admin-header>
 
-  <app-admin-alert *ngIf="showAlert" class="header mt-2"
-                   [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
+    <app-admin-alert *ngIf="showAlert" class="header mt-2"
+                     [alertType]="alertType" [alertTimeout]="5" [alertMessage]="alertMessage"></app-admin-alert>
 
-  <!-- Left Column -->
+    <!-- Left Column -->
 
-  <section *ngIf="museum" class="content-left m-2">
-    <div class="card">
-      <div class="card-body">
+    <section *ngIf="museum" class="content-left m-2">
+        <div class="card">
+            <div class="card-body">
 
-        <!-- Title -->
+                <!-- Title -->
 
-        <label for="name">Titel</label>
-        <input id="name" class="form-control" type="text" [(ngModel)]="museum.getContent(selectedLanguage).name">
+                <label for="name">Titel</label>
+                <input id="name" class="form-control" type="text"
+                       [(ngModel)]="museum.getContent(selectedLanguage).name">
 
-        <!-- Description -->
+                <!-- Description -->
 
-        <div class="mt-2">
-          <label for="info">Beschreibung</label>
-          <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
-                    [(ngModel)]="museum.getContent(selectedLanguage).info"></textarea>
+                <div class="mt-2">
+                    <label for="info">Beschreibung</label>
+                    <textarea id="info" class="form-control mb-2" rows="7" [placeholder]="placeholder"
+                              [(ngModel)]="museum.getContent(selectedLanguage).info"></textarea>
+                </div>
+
+                <!-- Save & Delete -->
+
+                <div class="form-row mt-2">
+                    <div class="col-6">
+                        <button class="btn btn-success w-100" (click)="updateMuseum()" aria-label="Save exposition">
+                            Speichern
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Save & Delete -->
+    <!-- Right Column: Image -->
 
-        <div class="form-row mt-2">
-          <div class="col-6">
-            <button class="btn btn-success w-100" (click)="updateMuseum()" aria-label="Save exposition">
-              Speichern
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section *ngIf="museum" class="content-right m-2">
+        <app-admin-box-card descHeader="Bild">
 
-  <!-- Right Column: Image -->
+            <!-- Header: Upload/Delete Button -->
 
-  <section *ngIf="museum" class="content-right m-2">
-    <app-admin-box-card descHeader="Bild">
+            <div header>
+                <fa-icon class="fa-lg" (click)="onImageInput.click()"
+                         [hidden]="museum.getContent(selectedLanguage).image"
+                         icon="plus-circle" aria-label="Add image"></fa-icon>
 
-      <!-- Header: Upload/Delete Button -->
+                <form class="d-none">
+                    <input #onImageInput type="file" name="file" (change)="onImageChanged($event)">
+                </form>
 
-      <div header>
-        <fa-icon class="fa-lg" (click)="onImageInput.click()"
-                 [hidden]="museum.getContent(selectedLanguage).image"
-                 icon="plus-circle" aria-label="Add image"></fa-icon>
+                <fa-icon class="fa-lg" (click)="deleteImage()"
+                         [hidden]="!museum.getContent(selectedLanguage).image"
+                         icon="minus-circle" aria-label="Delete image"></fa-icon>
+            </div>
 
-        <form class="d-none">
-          <input #onImageInput type="file" name="file" (change)="onImageChanged($event)">
-        </form>
+            <!-- Body: Image -->
 
-        <fa-icon class="fa-lg" (click)="deleteImage()"
-                 [hidden]="!museum.getContent(selectedLanguage).image"
-                 icon="minus-circle" aria-label="Delete image"></fa-icon>
-      </div>
-
-      <!-- Body: Image -->
-
-      <div body>
-        <img *ngIf="museum.getContent(selectedLanguage).image" class="w-100"
-             [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).image.filename"
-             [alt]="museum.getContent(selectedLanguage).image.alternativeText"
-             (click)="openImageBigView()"/>
-      </div>
-    </app-admin-box-card>
-  </section>
+            <div body>
+                <img *ngIf="museum.getContent(selectedLanguage).image" class="w-100"
+                     [src]="'/uploads/' + museum._id + '/' + museum.getContent(selectedLanguage).image.filename"
+                     [alt]="museum.getContent(selectedLanguage).image.alternativeText"
+                     (click)="openImageBigView()"/>
+            </div>
+        </app-admin-box-card>
+    </section>
 </div>
 
 <app-common-cookie-banner></app-common-cookie-banner>

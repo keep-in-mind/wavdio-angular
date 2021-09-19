@@ -1,23 +1,23 @@
 progress {
-  width: 100%;
-  height: 12px;
-  background-color: grey;
+    width: 100%;
+    height: 12px;
+    background-color: grey;
 }
 
 .controls {
-  margin-top: 12px;
+    margin-top: 12px;
 }
 
 .controls > * {
-  display: inline-block;
-  width: 20%;
-  text-align: center;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
 }
 
 progress::-webkit-progress-value {
-  background-color: white;
+    background-color: white;
 }
 
 progress::-moz-progress-bar {
-  background-color: white;
+    background-color: white;
 }

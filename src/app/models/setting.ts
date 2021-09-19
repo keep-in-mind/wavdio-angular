@@ -1,16 +1,16 @@
 export class Setting {
 
-  _id: string;
-  activeLangs: ActiveLangs;
+    _id: string
+    activeLangs: ActiveLangs
 
-  constructor(activeLangs: ActiveLangs) {
-    this.activeLangs = activeLangs;
-  }
+    constructor(activeLangs: ActiveLangs) {
+        this.activeLangs = activeLangs
+    }
 }
 
 class ActiveLangs {
-  de: boolean;
-  en: boolean;
-  es: boolean;
-  fr: boolean;
+    de: boolean
+    en: boolean
+    es: boolean
+    fr: boolean
 }

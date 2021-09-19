@@ -1,15 +1,15 @@
 export class InfoPage {
 
-  _id: string;
+    _id: string
 
-  lang: string;
+    lang: string
 
-  name: string;
-  text: string;
+    name: string
+    text: string
 
-  constructor(name: string, text: string, lang: string) {
-    this.lang = lang;
-    this.name = name;
-    this.text = text;
-  }
+    constructor(name: string, text: string, lang: string) {
+        this.lang = lang
+        this.name = name
+        this.text = text
+    }
 }

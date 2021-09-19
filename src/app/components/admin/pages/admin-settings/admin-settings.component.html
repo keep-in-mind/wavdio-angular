@@ -1,75 +1,75 @@
 <div class="wrapper">
-  <app-admin-sidebar class="sidebar"></app-admin-sidebar>
+    <app-admin-sidebar class="sidebar"></app-admin-sidebar>
 
-  <!-- Header -->
+    <!-- Header -->
 
-  <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
+    <app-admin-header class="header" [breadcrumbs]="breadcrumbs"></app-admin-header>
 
-  <!-- Left Column: Active Languages -->
+    <!-- Left Column: Active Languages -->
 
-  <section class="content-left m-2">
-    <app-admin-box-card descHeader="Sprachen">
-      <div body>
+    <section class="content-left m-2">
+        <app-admin-box-card descHeader="Sprachen">
+            <div body>
 
-        <ul *ngIf="this.setting" style="margin: 0; padding: 0; list-style-type:none">
-          <li style="display: flex; align-items: center">
-            <input id="check_german" type="checkbox" name="active_language" value="de"
-                   [(ngModel)]="this.setting.activeLangs.de" (ngModelChange)="this.updateSetting()">
-            <img class="mx-2" src="assets/images/de.png"/>
-            <label for="check_german" style="margin: 0">Deutsch</label>
-          </li>
-          <li style="display: flex; align-items: center">
-            <input id="check_english" type="checkbox" name="active_language" value="en"
-                   [(ngModel)]="this.setting.activeLangs.en" (ngModelChange)="this.updateSetting()">
-            <img class="mx-2" src="assets/images/en.png"/>
-            <label for="check_english" style="margin: 0">Englisch</label>
-          </li>
-          <li style="display: flex; align-items: center">
-            <input id="check_spanish" type="checkbox" name="active_language" value="es"
-                   [(ngModel)]="this.setting.activeLangs.es" (ngModelChange)="this.updateSetting()">
-            <img class="mx-2" src="assets/images/es.png"/>
-            <label for="check_spanish" style="margin: 0">Spanisch</label>
-          </li>
-          <li style="display: flex; align-items: center">
-            <input id="check_french" type="checkbox" name="active_language" value="fr"
-                   [(ngModel)]="this.setting.activeLangs.fr" (ngModelChange)="this.updateSetting()">
-            <img class="mx-2" src="assets/images/fr.png"/>
-            <label for="check_french" style="margin: 0">Französisch</label>
-          </li>
-        </ul>
+                <ul *ngIf="this.setting" style="margin: 0; padding: 0; list-style-type:none">
+                    <li style="display: flex; align-items: center">
+                        <input id="check_german" type="checkbox" name="active_language" value="de"
+                               [(ngModel)]="this.setting.activeLangs.de" (ngModelChange)="this.updateSetting()">
+                        <img class="mx-2" src="assets/images/de.png"/>
+                        <label for="check_german" style="margin: 0">Deutsch</label>
+                    </li>
+                    <li style="display: flex; align-items: center">
+                        <input id="check_english" type="checkbox" name="active_language" value="en"
+                               [(ngModel)]="this.setting.activeLangs.en" (ngModelChange)="this.updateSetting()">
+                        <img class="mx-2" src="assets/images/en.png"/>
+                        <label for="check_english" style="margin: 0">Englisch</label>
+                    </li>
+                    <li style="display: flex; align-items: center">
+                        <input id="check_spanish" type="checkbox" name="active_language" value="es"
+                               [(ngModel)]="this.setting.activeLangs.es" (ngModelChange)="this.updateSetting()">
+                        <img class="mx-2" src="assets/images/es.png"/>
+                        <label for="check_spanish" style="margin: 0">Spanisch</label>
+                    </li>
+                    <li style="display: flex; align-items: center">
+                        <input id="check_french" type="checkbox" name="active_language" value="fr"
+                               [(ngModel)]="this.setting.activeLangs.fr" (ngModelChange)="this.updateSetting()">
+                        <img class="mx-2" src="assets/images/fr.png"/>
+                        <label for="check_french" style="margin: 0">Französisch</label>
+                    </li>
+                </ul>
 
-      </div>
-    </app-admin-box-card>
-  </section>
+            </div>
+        </app-admin-box-card>
+    </section>
 
-  <!-- Right Column: Update Credentials -->
+    <!-- Right Column: Update Credentials -->
 
-  <section *ngIf="this.museum" class="content-right m-2">
-    <div class="card">
-      <div class="card-header">Benutzername und Passwort ändern</div>
-      <div class="card-body">
+    <section *ngIf="this.museum" class="content-right m-2">
+        <div class="card">
+            <div class="card-header">Benutzername und Passwort ändern</div>
+            <div class="card-body">
 
-        <label for="username">Benutzername</label>
-        <input id="username" class="form-control" type="text" [(ngModel)]="user.username">
+                <label for="username">Benutzername</label>
+                <input id="username" class="form-control" type="text" [(ngModel)]="user.username">
 
-        <label class="mt-2" for="newUsername">Neuer Benutzername</label>
-        <input id="newUsername" class="form-control" type="text" [(ngModel)]="user.newUsername">
+                <label class="mt-2" for="newUsername">Neuer Benutzername</label>
+                <input id="newUsername" class="form-control" type="text" [(ngModel)]="user.newUsername">
 
-        <label class="mt-2" for="password">Altes Passwort</label>
-        <input id="password" class="form-control" type="password" [(ngModel)]="user.password">
+                <label class="mt-2" for="password">Altes Passwort</label>
+                <input id="password" class="form-control" type="password" [(ngModel)]="user.password">
 
-        <label class="mt-2" for="newPassword">Neues Passwort</label>
-        <input id="newPassword" class="form-control" type="password" [(ngModel)]="user.newPassword">
+                <label class="mt-2" for="newPassword">Neues Passwort</label>
+                <input id="newPassword" class="form-control" type="password" [(ngModel)]="user.newPassword">
 
-        <label class="mt-2" for="newPasswordRepeat">Neues Passwort wiederholen</label>
-        <input id="newPasswordRepeat" class="form-control" type="password" [(ngModel)]="newPasswordRepeat">
+                <label class="mt-2" for="newPasswordRepeat">Neues Passwort wiederholen</label>
+                <input id="newPasswordRepeat" class="form-control" type="password" [(ngModel)]="newPasswordRepeat">
 
-        <button class="btn btn-success w-100 mt-2" (click)="updateUser()" aria-label="Update user data">
-          Benutzerdaten aktualisieren
-        </button>
-      </div>
-    </div>
-  </section>
+                <button class="btn btn-success w-100 mt-2" (click)="updateUser()" aria-label="Update user data">
+                    Benutzerdaten aktualisieren
+                </button>
+            </div>
+        </div>
+    </section>
 
 </div>
 

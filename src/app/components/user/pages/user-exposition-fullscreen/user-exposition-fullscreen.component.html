@@ -1,9 +1,9 @@
 <div *ngIf="exposition" id="exposition-fullscreen-component">
 
-  <button mat-button id="close" type="button" (click)="location.back()">
-    <mat-icon>close</mat-icon>
-  </button>
+    <button mat-button id="close" type="button" (click)="location.back()">
+        <mat-icon>close</mat-icon>
+    </button>
 
-  <img [src]="'/uploads/' + this.exposition._id + '/' + exposition.logo.filename"
-       [alt]="exposition.logo.alternativeText">
+    <img [src]="'/uploads/' + this.exposition._id + '/' + exposition.logo.filename"
+         [alt]="exposition.logo.alternativeText">
 </div>
