@@ -193,9 +193,10 @@ const appRoutes: Routes = [
     NgxPrintModule,
     NgxQRCodeModule,
     RouterModule.forRoot(appRoutes, {
-      onSameUrlNavigation: 'reload',
-      enableTracing: false
-    }),
+    onSameUrlNavigation: 'reload',
+    enableTracing: false,
+    relativeLinkResolution: 'legacy'
+}),
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     SlickCarouselModule
   ],
