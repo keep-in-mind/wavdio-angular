@@ -202,12 +202,6 @@ const appRoutes: Routes = [
   exports: [
     UserCommentComponent
   ],
-  entryComponents: [
-    AdminImageDetailsComponent,
-    AdminQrCodeComponent,
-    AdminSpinnerComponent,
-    UserCommentComponent
-  ],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
