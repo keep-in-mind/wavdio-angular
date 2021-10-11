@@ -15,6 +15,7 @@
 
 mat-toolbar {
     flex-shrink: 0;
+    background: #FDF5E6;
 }
 
 /*
