@@ -1,5 +1,5 @@
 {
-  "name": "wavdio-angular",
+  "name": "@keep-in-mind/wavdio-angular",
   "version": "2.2.0",
   "scripts": {
     "build": "ng build",
