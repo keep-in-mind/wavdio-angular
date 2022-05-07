@@ -488,7 +488,7 @@
 
             <trans-unit id="ef257517ce6fec66c50793d73abc54759187c1f9" datatype="html">
                 <source>Exhibits</source>
-                <target state="final">Exhibits</target>
+                <target state="final">Events</target>
 
                 <context-group purpose="location">
                     <context context-type="sourcefile">
@@ -716,7 +716,7 @@
 
             <trans-unit id="250bc3fd8d35392b2090f1184b0fbe5b859eca3c" datatype="html">
                 <source>Expositions</source>
-                <target state="final">Expositions</target>
+                <target state="final">Attractions</target>
 
                 <context-group purpose="location">
                     <context context-type="sourcefile">

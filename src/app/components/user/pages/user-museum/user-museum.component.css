@@ -6,6 +6,7 @@ mat-sidenav {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: #fdf5e6;
 }
 
 #sidenav-flex main {

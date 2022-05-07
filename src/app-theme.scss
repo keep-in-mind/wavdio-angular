@@ -20,10 +20,116 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-grey);
-$accent: mat-palette($mat-blue-gray);
+$custom-green: (
+        50 : #f2f2e0,
+        100 : #dedeb3,
+        200 : #c8c880,
+        300 : #b2b14d,
+        400 : #a2a126,
+        500 : #919000,
+        600 : #898800,
+        700 : #7e7d00,
+        800 : #747300,
+        900 : #626100,
+        A100 : #fffe92,
+        A200 : #fffd5f,
+        A400 : #fffc2c,
+        A700 : #fffc13,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
 
-$theme: mat-dark-theme($primary, $accent);
+$custom-beige: (
+        50 : #fffefc,
+        100 : #fefcf8,
+        200 : #fefaf3,
+        300 : #fef8ee,
+        400 : #fdf7ea,
+        500 : #fdf5e6,
+        600 : #fdf4e3,
+        700 : #fcf2df,
+        800 : #fcf0db,
+        900 : #fceed5,
+        A100 : #fdf5e6,
+        A200 : #fdf5e6,
+        A400 : #fdf5e6,
+        A700 : #fdf5e6,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #000000,
+                600 : #000000,
+                700 : #000000,
+                800 : #000000,
+                900 : #000000,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+$custom-brown: (
+        50 : #faede4,
+        100 : #f2d2bc,
+        200 : #e9b48f,
+        300 : #e09662,
+        400 : #d98040,
+        500 : #d2691e,
+        600 : #cd611a,
+        700 : #c75616,
+        800 : #c14c12,
+        900 : #b63b0a,
+        A100 : #ffe8e1,
+        A200 : #ffc1ae,
+        A400 : #ff9a7b,
+        A700 : #ff8762,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+$custom-brown: mat-palette($custom-brown);
+$custom-beige: mat-palette($custom-beige);
+$custom-green: mat-palette($custom-green);
+
+$primary: mat-palette($custom-green, 500);
+$accent: mat-palette($custom-brown, 500);
+$theme: mat-light-theme($primary, $accent);
+$custom-background-color: map_get($custom-beige, 500);
+$background: map-get($theme, background);
+$background: map_merge($background, (background: $custom-background-color));
+$theme: map_merge($theme, (background: $background));
 
 @include angular-material-theme($theme);
 
@@ -32,5 +138,5 @@ $theme: mat-dark-theme($primary, $accent);
  */
 
 a, a:hover {
-  color: mat-color($primary, lighter);
+  color: mat-color($primary, darken);
 }
